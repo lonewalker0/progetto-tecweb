@@ -14,8 +14,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Comprimi progetto
-        run: zip -r Festival.zip . -i ./progetto-tecweb/Src 
-
+        run: zip -r Festival.zip $GITHUB_WORKSPACE/Docs $GITHUB_WORKSPACE/Src
+        
       - name: Carica l'artefatto
         uses: actions/upload-artifact@v3
         with:
