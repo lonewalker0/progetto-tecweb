@@ -1,0 +1,23 @@
+name: Download
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  esegui-azione:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del codice
+        uses: actions/checkout@v2
+
+      - name: Comprimi progetto
+        run: tar -czf tecnolum_festival.tar.gz .
+
+      - name: Carica l'artefatto
+        uses: actions/upload-artifact@v2
+        with:
+          name: Festival
+          path: tecnolum_festival.tar.gz
