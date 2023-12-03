@@ -11,13 +11,13 @@ jobs:
 
     steps:
       - name: Checkout del codice
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Comprimi progetto
         run: tar -czf tecnolum_festival.tar.gz .
 
       - name: Carica l'artefatto
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Festival
           path: tecnolum_festival.tar.gz
