@@ -1,0 +1,37 @@
+version: '3.7'
+
+services:
+  web:
+    image: php:8.1-apache
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/var/www/html
+      - ./php:/var/www/html/php
+      - ./css:/var/www/html/css
+      - ./js:/var/www/html/js
+      - ./apache/conf:/etc/apache2/sites-available
+    depends_on:
+      - phpmyadmin
+
+  db:
+    image: mariadb:10.6
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    ports:
+      - "8081:80"
+    environment:
+      - PMA_ARBITRARY=1
+    depends_on:
+      - db
+
+volumes:
+  mysql_data:
