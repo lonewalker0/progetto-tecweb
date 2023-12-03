@@ -14,10 +14,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Comprimi progetto
-        run:  tar -czf progetto-tecweb.tar.gz -C src 
+        run: zip -r Festival.zip progetto-tecweb/Src 
 
       - name: Carica l'artefatto
         uses: actions/upload-artifact@v3
         with:
           name: Festival
-          path: progetto-tecweb.tar.gz
+          path: Festival.zip
