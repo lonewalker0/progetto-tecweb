@@ -23,4 +23,11 @@ $ docker-compose logs
 
 Una volta avviato il docker, andare su localhost:8080 
 
+I file html andranno inseriti nell'apposita cartella html e così per gli altri 
+
+Se si vogliono effettuare modifiche ai files bisogna creare un nuovo branch, connettendolo alle relative issue.
+
+Una volta apportate le modifiche, si apre la pull request, se si vuole continuare a modificare la si apre in modalità draft.
+
+Per effettuare il merge bisogna che le modifiche vengano approvate e risolte eventuali conversazioni.
 
