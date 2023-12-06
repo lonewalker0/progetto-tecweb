@@ -16,29 +16,12 @@ jobs:
         run: |
           brew install typst
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Compilazione
         run: |
-          cd DocsSrc
-          typst compile main.typ relazione.pdf --font-path=assets/fonts
-      - name: Verify PDF exists
-        run: |
-          if [ ! -f relazione.pdf ]; then
-            echo "Error: relazione.pdf not found!"
-            exit 1
-          fi
-      - name: Spostamento relazione
-        run: |
-          mv relazione.pdf ../relazione.pdf
-      - name: Verify moved PDF exists
-        run: |
-          if [ ! -f ../relazione.pdf ]; then
-            echo "Error: ../relazione.pdf not found after move!"
-            exit 1
-          fi
+          typst compile DocsSrc/main.typ relazione.pdf --font-path=assets/fonts
       - name: Add and commit
         run: |
-          cd ..
           git add relazione.pdf
           git commit -m "Relazione compilata"
           git push
