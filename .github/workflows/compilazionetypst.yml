@@ -3,7 +3,7 @@ name: compilazione relazione
 on:
   pull_request:
     branches:
-      - "*"
+      - "main"
       paths: 
       - 'DocsSrc/**''
 jobs:
