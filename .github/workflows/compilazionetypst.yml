@@ -1,9 +1,11 @@
 name: compilazione relazione
 
+run-name: Relazione pdf
+
 on:
   pull_request:
     branches:
-      - "main"
+      - 'main'
       paths: 
       - 'DocsSrc/**'
 jobs:
