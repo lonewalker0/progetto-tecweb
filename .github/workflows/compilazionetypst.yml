@@ -1,11 +1,9 @@
 name: compilazione relazione
 
 on:
-  pull_request:
+  push:
     branches:
-      - "main"
-      paths: 
-      - 'DocsSrc/**''
+      - "*"
 jobs:
   compilazione:
     runs-on: ubuntu-latest
