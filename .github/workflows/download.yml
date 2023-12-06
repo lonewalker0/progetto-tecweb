@@ -17,7 +17,8 @@ jobs:
         run: |
             cd $GITHUB_WORKSPACE
             zip -r Festival.zip Docs Src
-        
+      - name: Maschera il valore del secret token
+        run: echo "::add-mask::$ACCESS_TOKEN"
       - name: Carica l'artefatto
         uses: actions/upload-artifact@v3
         with:
