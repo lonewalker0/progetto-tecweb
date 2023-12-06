@@ -1,4 +1,4 @@
-name: compilazione relazione
+name: Download
 
 on:
   push:
@@ -6,29 +6,20 @@ on:
       - "*"
 
 jobs:
-  compilazione:
+  esegui-azione:
     runs-on: ubuntu-latest
 
     steps:
-      - name: passo1 installazione typst
-        uses: Homebrew/actions/setup-homebrew@master
-      - name: passo2 installazione typst
+      - name: Checkout del codice
+        uses: actions/checkout@v4
+
+      - name: Comprimi progetto
         run: |
-          brew install typst
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      - name: Compilazione
-        run: |
-          cd DocsSrc
-          typst compile main.typ relazione.pdf --font-path=assets/fonts
-      - name: Spostamento relazione
-        run: |
-          mv relazione.pdf ../relazione.pdf
-      - name: Add and commit
-        run: |
-          cd ..
-          git add relazione.pdf
-          git commit -m "Relazione compilata"
-          git push
-        env:
-          GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          cd $GITHUB_WORKSPACE
+          zip -r Festival.zip Docs Src
+
+      - name: Carica l'artefatto
+        uses: actions/upload-artifact@v3
+        with:
+          name: Festival
+          path: Festival.zip

@@ -15,17 +15,20 @@ jobs:
       - name: passo2 installazione typst
         run: |
           brew install typst
-      - name:
-        uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
       - name: Compilazione
-        uses: cd /DocsSrc && typst compile main.typ relazione.pdf --font-path=assets/fonts
-      - name: spostamento relazione
-        uses: |
+        run: |
+          cd DocsSrc
+          typst compile main.typ relazione.pdf --font-path=assets/fonts
+      - name: Spostamento relazione
+        run: |
           mv relazione.pdf ../relazione.pdf
-      - name: add e commit
-        uses: cd ..
+      - name: Add and commit
+        run: |
+          cd ..
           git add relazione.pdf
-          git commit -m "relazione compilata"
+          git commit -m "Relazione compilata"
           git push
         env:
-        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
