@@ -1,26 +1,34 @@
-name: Download
+name: compilazione relazione
 
 on:
   push:
     branches:
-      - '*'
+      - "*"
 
 jobs:
-  esegui-azione:
+  compilazione:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout del codice
-        uses: actions/checkout@v4
-
-      - name: Comprimi progetto
+      - name: passo1 installazione typst
+        uses: Homebrew/actions/setup-homebrew@master
+      - name: passo2 installazione typst
         run: |
-            cd $GITHUB_WORKSPACE
-            zip -r Festival.zip Docs Src
-      - name: Maschera il valore del secret token
-        run: echo "::add-mask::$ACCESS_TOKEN"
-      - name: Carica l'artefatto
-        uses: actions/upload-artifact@v3
-        with:
-          name: Festival
-          path: Festival.zip
+          brew install typst
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Compilazione
+        run: |
+          cd DocsSrc
+          typst compile main.typ relazione.pdf --font-path=assets/fonts
+      - name: Spostamento relazione
+        run: |
+          mv relazione.pdf ../relazione.pdf
+      - name: Add and commit
+        run: |
+          cd ..
+          git add relazione.pdf
+          git commit -m "Relazione compilata"
+          git push
+        env:
+          GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
