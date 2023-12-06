@@ -3,7 +3,7 @@ name: compilazione relazione
 run-name: Relazione pdf
 
 on:
-  pull_request:
+  push:
     branches:
       - 'main'
       paths: 
