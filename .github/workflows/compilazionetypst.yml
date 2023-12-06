@@ -1,31 +1,34 @@
 name: compilazione relazione
 
 on:
-  push:
-    branches:
-      - "*"
+  pull_request:
+    paths:
+      - 'DocsSrc/**'
+      branches:
+      - main
 
 jobs:
-  compilazione:
+  compilazione: 
     runs-on: ubuntu-latest
 
     steps:
-      - name: passo1 installazione typst
+      - name:  passo1 installazione typst
         uses: Homebrew/actions/setup-homebrew@master
-      - name: passo2 installazione typst
+      - name:  passo2 installazione typst
         run: |
-          brew install typst
-      - name:
+            brew install typst
+      - name: 
         uses: actions/checkout@v3
       - name: Compilazione
         uses: cd /DocsSrc && typst compile main.typ relazione.pdf --font-path=assets/fonts
       - name: spostamento relazione
         uses: |
-          mv relazione.pdf ../relazione.pdf
+            mv relazione.pdf ../relazione.pdf
       - name: add e commit
-        uses: cd ..
-          git add relazione.pdf
-          git commit -m "relazione compilata"
-          git push
+        uses: 
+            cd ..
+            git add relazione.pdf
+            git commit -m "relazione compilata"
+            git push
         env:
         GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
