@@ -2,10 +2,11 @@ name: compilazione relazione
 
 on:
   pull_request:
-    paths:
-      - 'DocsSrc/**'
-      branches:
+    branches:
       - main
+      paths:
+        - 'DocsSrc/**'
+      
 
 jobs:
   compilazione: 
