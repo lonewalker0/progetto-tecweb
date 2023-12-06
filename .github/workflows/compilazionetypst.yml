@@ -20,6 +20,10 @@ jobs:
       - name: Compilazione
         run: |
           typst compile DocsSrc/main.typ relazione.pdf --font-path=assets/fonts
+      - name: Configure Git
+        run: |
+          git config --global user.email "azione@azione.com"
+          git config --global user.name "GitHub Actions"
       - name: Add and commit
         run: |
           git add relazione.pdf
