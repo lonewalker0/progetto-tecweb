@@ -7,10 +7,7 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./html:/var/www/html:ro
-      - ./php:/var/www/php:ro
-      - ./css:/var/www/css:ro
-      - ./js:/var/www/js:ro
+      - ./src:/var/www/html
       - ./apache/conf:/etc/apache2/sites-available
       - ./config/php.ini:/usr/local/etc/php/php.ini
     depends_on:
