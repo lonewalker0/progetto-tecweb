@@ -4,10 +4,8 @@ run-name: Relazione pdf
 
 on:
   push:
-    branches:
-      - 'main'
-      paths: 
-      - 'DocsSrc/**'
+    paths:
+      - "DocsSrc/**"
 jobs:
   compilazione:
     runs-on: ubuntu-latest
