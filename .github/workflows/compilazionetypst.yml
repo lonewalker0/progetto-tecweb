@@ -2,10 +2,8 @@ name: compilazione relazione
 
 on:
   push:
-    paths:
-      - "DocsSrc/**"
-      branches:
-      - '*'
+    branches:
+      - "*"
 
 jobs:
   compilazione:
