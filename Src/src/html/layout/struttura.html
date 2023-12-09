@@ -5,28 +5,26 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="keywords" content={{keyword}}>
-        <meta name="description" content={{description}}>
-        <title>TechnoLum Festival</title>
-        <link rel="icon" href="../assets/logofavicon.png" type="image/png">
-    </head>
-    <body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="{{keyword}}" />
+    <meta name="description" content="{{description}}" />
+    <title>TechnoLum Festival</title>
+    <link rel="icon" href="../assets/logofavicon.png" type="image/png" />
+  </head>
+  <body>
+    {{header}}
 
-        {{header}}
-        
-        <nav id="menù" role="navigazione" aria-label="navigazione menù">
-            {{menù}}
-        </nav>
-        <nav id="breadcrumb" role="sezione corrente" aria-label="Ti trovi nella sezione:">
-            {{breadcrumbs}}
-        </nav>
-        <main>
-            {{main}}
-        </main>
-        {{footer}}
-        
-    </body>
-
+    <nav id="menù" role="navigazione" aria-label="navigazione menù">
+      {{menù}}
+    </nav>
+    <nav
+      id="breadcrumb"
+      role="sezione corrente"
+      aria-label="Ti trovi nella sezione:"
+    >
+      <p>Ti trovi in: <span lang="{{breadcrumblen}}">{{breadcrumb}}</span></p>
+    </nav>
+    {{footer}}
+  </body>
 </html>
