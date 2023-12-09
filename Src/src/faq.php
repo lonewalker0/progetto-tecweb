@@ -2,7 +2,7 @@
 include('phputilities/PageBuilder.php');
 
 
-$breadcrumbs = 'Home';
+$breadcrumbs = 'FAQ';
 $breadcrumblen = 'en'; 
 $keyword = 'Festival, Techno, Shop, Prevendite, Concerti, Lum250, Artisti, Merch'; 
 $description = 'Pagina dedicata al festival Techno Lum250'; 
