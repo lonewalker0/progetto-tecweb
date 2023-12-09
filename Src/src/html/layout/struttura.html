@@ -9,11 +9,7 @@
     <link rel="icon" href="../assets/logofavicon.png" type="image/png" />
   </head>
   <body>
-    {{header}}
-
-    <nav id="menù" role="navigazione" aria-label="navigazione menù">
-      {{menu}}
-    </nav>
+    {{header}} {{menu}}
     <nav
       id="breadcrumb"
       role="sezione corrente"
@@ -21,6 +17,6 @@
     >
       <p>Ti trovi in: <span lang="{{breadcrumblen}}">{{breadcrumb}}</span></p>
     </nav>
-    {{footer}}
+    {{main}} {{footer}}
   </body>
 </html>

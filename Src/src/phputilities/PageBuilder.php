@@ -10,7 +10,7 @@ class PageBuilder {
         
         $html = str_replace('{{header}}', $header, $html);
         $html = str_replace('{{keyword}}', $keyword, $html);
-        $menu = self::createMenu($breadcrumb); //al momento torna solo home; 
+        $menu = self::createMenu($breadcrumb); 
         $html = str_replace('{{menu}}', $menu, $html);
         $html = str_replace('{{description}}', $description, $html);
         $html = str_replace('{{breadcrumb}}', $breadcrumb, $html);
@@ -24,20 +24,18 @@ class PageBuilder {
         // Cerca la corrispondenza tra la breadcrumb e gli elementi del menu
         preg_match_all('/<li\b[^>]*>(?:(?!<\/?li\b[^>]*>).|(?R))*<\/li>/', $menu, $matches);
         //viene creato un array matches che continiene tutti i li; 
-    
-
         // Ottieni gli elementi <li> corrispondenti alla breadcrumb
-        $breadcrumbItems = array_filter($matches[0], 
-        //anonimous function;
-        function ($item) use ($breadcrumb) {
-            return stripos($item, $breadcrumb) !== false;
-        });
+        foreach ($matches[0] as $item) {
+            echo $matches[0];
+            if (stripos($item, $breadcrumb) !== false) {
+                // Rimuovi i tag <a> dall'elemento <li>
+                $liWithoutATags = self::removeATags($item);
     
-        // Rimuovi i tag <a> dall'elemento <li>        
-        $liWithoutATags = self::removeATags($breadcrumbItems[0]);
-
-        // Replace the original <li> in $menu with the modified one
-        $menu = str_replace($breadcrumbItems[0], $liWithoutATags, $menu);
+                // Replace the original <li> in $menu with the modified one
+                $menu = str_replace($item, $liWithoutATags, $menu);
+                return $menu;
+            }
+        }
         return $menu; 
 
 
@@ -52,7 +50,7 @@ class PageBuilder {
 
     private static function removeATags($li_not_modified): string {
         // Use a more comprehensive regex and the 's' modifier
-        $limodified = preg_replace('/<a\b[^>]*>.*?<\/a>/s', '', $li_not_modified);
+        $limodified = preg_replace('/<a\b([^>]*)>(.*?)<\/a>/s', '$2', $li_not_modified);
         return $limodified;
     }
     
