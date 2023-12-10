@@ -28,10 +28,10 @@ html {
   font-family: var(--font-body-family);
 }
 header {
-  position: static;
+  position: relative;
   display: flex;
   padding: 2em;
-  border-bottom: 5px solid;
+  border: 5px solid;
   border-color: var(--textcolor);
   align-items: center;
   justify-content: space-between;
@@ -52,19 +52,37 @@ header img {
   align-items: center;
   flex-wrap: wrap;
   align-self: flex-start;
+  padding: auto;
+  border:solid;
+  border-color:var(--textcolor);
+  
+  
 }
 
 .logo {
-  margin-left: 1em; /* Aggiungi spaziatura tra i loghi (puoi regolare secondo le tue esigenze) */
+  padding:0.5em;
+  margin:auto;
+  border:solid red;
+   /* Aggiungi spaziatura tra i loghi (puoi regolare secondo le tue esigenze) */
+  height: auto;
+  width:auto;
+  display:inline-block;
+  text-align: center;
 }
 
 .logo a {
-  display: block; /* Imposta il link come blocco per occupare tutta l'altezza del logo */
+  display: block;
+  margin:0; /* Imposta il link come blocco per occupare tutta l'altezza del logo */
 }
 
 .logo img {
-  max-width: 95%;
-  height: auto;
+  
+  height:95%;
+  width: 95%;
+  display: block; /* Ensure the image is treated as a block element */
+  margin: 0 auto;
+  margin-left:0;
+  
 }
 
 
@@ -75,6 +93,8 @@ footer {
   text-align: center;
   align-items: center;
   border-top: 2px solid;
+  border-color: var(--textcolor);
+  border: 5px solid;
   border-color: var(--textcolor);
 }
 .social-icon-footer {
@@ -87,7 +107,17 @@ nav,
 a {
   display: inline;
   color: #e69d6f;
-  margin-left:2em;
+  margin-left:0;
+}
+
+nav{
+  border:solid;
+  border-color:var(--textcolor);
+  
+}
+
+nav #menu{
+  margin-left:0;
 }
 
 nav#menu > ul {
@@ -128,7 +158,7 @@ nav#menu li:hover > ul {
 #breadcrumb p{
   max-width: 1024px;
   margin:auto;
-  text-align: left;
+  text-align: left !important;
 }
 .sottomenu,
 .sottomenu2 {
@@ -140,12 +170,7 @@ nav#menu li:hover > ul {
   visibility: visible;
 }
 
-#social-icon {
-  padding: 3px;
-  position: static;
-  align-items: center;
-  vertical-align: top;
-}
+
 #facebook-logo {
   display: inline-block;
   list-style-type: none;
