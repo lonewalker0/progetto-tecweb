@@ -1,0 +1,103 @@
+:root
+{     
+    --backgroundcolor: #111606;     
+    --textcolor: #B1DD40 ;     
+    --contentxtcolor: #ADD8E6;     
+    --headertxtcolor: #008B8B;    
+    --breadcolor: #FFF8DC;     
+    --linkcolor:  #B1DD40;       
+    --newscolor: #FFF8DC;     
+    --newstxtcolor: #4169E1;     
+    --contentbgcolor: #ADD8E6; 
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+html
+{
+    background-color: var(--backgroundcolor);
+    line-height: 1.5em;
+    font-size: 100%;
+    margin: out;
+    max-width: 2048px;
+}
+header
+{
+    position:static;
+    display: flex;
+    padding: 2px;
+    border-bottom: 5px solid;
+    border-color: var(--textcolor);
+    align-items: center;
+    float: right;
+}
+footer
+{
+    position: static;
+    display: inline;
+    padding: 2px;
+    text-align: center;
+    align-items: center;
+    border-top: 2px solid;
+    border-color: var(--textcolor);
+}
+nav, a
+{
+    display:inline;
+    color: #E69D6F;    
+}
+.sottomenù, .sottomenù2
+{
+    display:none;
+    visibility:hidden;
+}
+#sottomenù:hover .sottomenù
+{
+    display: inline;
+    visibility: visible;
+}
+#sottomenù2:hover .sottomenù2
+{
+    display: inline;
+    visibility: visible;
+}
+#social-icon
+{
+    padding: 3px;
+    position: static;
+    align-items: center;
+    vertical-align: top;
+}
+#facebook-logo
+{
+    display:inline-block;
+    list-style-type: none;
+    text-align: center;
+    width: 32px;
+}
+#facebook-logo:hover
+{
+    background-color: #005B47;
+    background-size: 50px;
+    transition-delay:200ms;
+    border-radius: 3px;        
+    line-height: 1.5em;
+}
+h1
+{
+    color:var(--textcolor);
+    text-align: center;
+    font-size: 75px;
+}
+p
+{
+    color:var(--textcolor);
+    text-align: center;
+    font-size: 16px;
+}
