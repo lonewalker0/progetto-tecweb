@@ -2,8 +2,8 @@
 include('phputilities/PageBuilder.php');
 
 
-$breadcrumb = 'Prevendite';
-$breadcrumblen = 'en'; 
+$breadcrumb = 'Storia';
+$breadcrumblen = 'it'; 
 $keyword = 'Festival, Techno, Shop, Prevendite, Concerti, Lum250, Artisti, Merch'; 
 $description = 'Pagina dedicata al festival Techno Lum250'; 
 
