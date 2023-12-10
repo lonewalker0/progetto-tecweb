@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="{{keyword}}" />
+    <meta name="description" content="{{description}}" />
+    <title>{{title}}</title>
+    <link rel="icon" href="../../assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body>
+    {{header}} {{menu}}
+    <nav
+      id="breadcrumb"
+      role="sezione corrente"
+      aria-label="Ti trovi nella sezione:"
+    >
+      <p>Ti trovi in: <span lang="{{breadcrumblen}}">{{breadcrumb}}</span></p>
+    </nav>
+    {{main}} {{footer}}
+  </body>
+</html>
