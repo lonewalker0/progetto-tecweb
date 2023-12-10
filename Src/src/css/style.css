@@ -85,29 +85,31 @@ header img {
   
 }
 
+main{
+  flex:1;
+}
 
 footer {
   position: static;
   display: inline;
   padding: 2em;
+  bottom: 0;
+  
   text-align: center;
   align-items: center;
   border-top: 2px solid;
   border-color: var(--textcolor);
   border: 5px solid;
   border-color: var(--textcolor);
+  margin-top:auto;
 }
-.social-icon-footer {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  align-self: flex-start;
-}
-nav,
+
+nav 
 a {
   display: inline;
   color: #e69d6f;
   margin-left:0;
+  
 }
 
 nav{
@@ -116,22 +118,33 @@ nav{
   
 }
 
-nav #menu{
-  margin-left:0;
-}
 
 nav#menu > ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
   display: flex;
-  width:95%;
+  width:auto;
   justify-content: space-between;
 }
 
 nav#menu li {
-  margin-right: 3em; /* Aggiungi spaziatura tra le voci del menu */
+   /* Aggiungi spaziatura tra le voci del menu */
   position: relative;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-size:2em;
+}
+
+nav #menu li > a{
+  display: inline-block;
+ 
+}
+
+nav #menu li a{
+  padding:1em;
 }
 
 nav#menu ul ul {
@@ -140,16 +153,27 @@ nav#menu ul ul {
   position: absolute;
   background-color: var(--backgroundcolor); /* Colore di sfondo per il sottomenu */
   box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.1); /* Ombra per il sottomenu */
-  top:95%;
-  left:0;
-  width:95%;
+  
+  
+  
+  
 }
 
 nav#menu li:hover > ul {
   display: flex;
   flex-direction: column; /* Mostra il sottomenu in verticale */
 }
+nav#menu ul ul a {
+  padding: 1em;
+}
 
+nav #menu ul li:hover {
+  background-color: #5fe7c9;
+  
+  transition-delay: 200ms;
+  
+  
+}
 
 #breadcrumb{
   padding: 1em;
@@ -164,20 +188,16 @@ nav#menu li:hover > ul {
 .sottomenu2 {
   display: none;
   visibility: hidden;
+  top:95%;
+  /*left:0;*/
 }
 #sottomenu:hover .sottomenu,#sottomenu2:hover .sottomenu2 {
-  display: inline;
+  display:flex;
   visibility: visible;
+  background-color:rgba(17, 22, 6, 0.95);
 }
 
-
-#facebook-logo {
-  display: inline-block;
-  list-style-type: none;
-  text-align: center;
-  width: 32px;
-}
-#facebook-logo:hover {
+.logo:hover {
   background-color: #005b47;
   background-size: 50px;
   transition-delay: 200ms;
@@ -187,10 +207,12 @@ nav#menu li:hover > ul {
 h1 {
   color: var(--textcolor);
   text-align: center;
-  font-size: 75px;
+  font-size: 4em;
 }
 p {
   color: var(--textcolor);
   text-align: center;
-  font-size: 16px;
+  font-size: 0.75em;
 }
+
+
