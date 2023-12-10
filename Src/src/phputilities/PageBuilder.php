@@ -2,7 +2,7 @@
 
 class PageBuilder {
 
-    public static function buildPage($breadcrumb, $breadcrumblen, $keyword, $description, $main): string {
+    public static function buildPage($breadcrumb, $breadcrumblen, $title,  $keyword, $description, $main): string {
 
         $html = file_get_contents(__DIR__ . '/../html/layout/struttura.html');
         $header = file_get_contents(__DIR__ . '/../html/layout/header.html');
@@ -10,6 +10,7 @@ class PageBuilder {
         
         $html = str_replace('{{header}}', $header, $html);
         $html = str_replace('{{keyword}}', $keyword, $html);
+        $html = str_replace('{{title}}', $title, $html); 
         $menu = self::createMenu($breadcrumb); 
         $html = str_replace('{{menu}}', $menu, $html);
         $html = str_replace('{{description}}', $description, $html);
@@ -26,7 +27,6 @@ class PageBuilder {
         //viene creato un array matches che continiene tutti i li; 
         // Ottieni gli elementi <li> corrispondenti alla breadcrumb
         foreach ($matches[0] as $item) {
-            echo $matches[0];
             if (stripos($item, $breadcrumb) !== false) {
                 // Rimuovi i tag <a> dall'elemento <li>
                 $liWithoutATags = self::removeATags($item);
