@@ -1,9 +1,10 @@
 name: Download
 
+run-name: Download
 on:
   push:
     branches:
-      - '*'
+      - "*"
 
 jobs:
   esegui-azione:
