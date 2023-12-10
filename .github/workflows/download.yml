@@ -9,6 +9,9 @@ on:
 jobs:
   esegui-azione:
     runs-on: ubuntu-latest
+    env:
+      MY_API_KEY: ${{ secrets.ACCESS_TOKEN }}
+
 
     steps:
       - name: Checkout del codice
@@ -16,9 +19,10 @@ jobs:
 
       - name: Comprimi progetto
         run: |
-          cd $GITHUB_WORKSPACE
-          zip -r Festival.zip DocsSrc Src
-
+            cd $GITHUB_WORKSPACE
+            zip -r Festival.zip Docs Src
+      - name: Maschera il valore del secret token
+        run: echo "::add-mask::$MY_API_KEY"
       - name: Carica l'artefatto
         uses: actions/upload-artifact@v3
         with:
