@@ -1,5 +1,6 @@
 name: Download
 
+run-name: Download
 on:
   push:
     branches:
@@ -16,7 +17,7 @@ jobs:
       - name: Comprimi progetto
         run: |
           cd $GITHUB_WORKSPACE
-          zip -r Festival.zip Docs Src
+          zip -r Festival.zip DocsSrc Src
 
       - name: Carica l'artefatto
         uses: actions/upload-artifact@v3
