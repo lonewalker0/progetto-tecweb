@@ -8,6 +8,7 @@
   --newscolor: #fff8dc;
   --newstxtcolor: #4169e1;
   --contentbgcolor: #add8e6;
+  --font-body-family:"Roboto Condensed", sans-serif;
 }
 * {
   margin: 0;
@@ -21,46 +22,124 @@ body {
 html {
   background-color: var(--backgroundcolor);
   line-height: 1.5em;
-  font-size: 100%;
-  margin: out;
+  font-size: 95%;
+  margin: auto;
   max-width: 2048px;
+  font-family: var(--font-body-family);
 }
 header {
   position: static;
   display: flex;
-  padding: 2px;
+  padding: 2em;
   border-bottom: 5px solid;
   border-color: var(--textcolor);
   align-items: center;
-  float: right;
+  justify-content: space-between;
+
+
+  
 }
+
+header img {
+  max-width: 95%;
+  height: auto;
+  display: block; /* Imposta l'immagine come blocco */
+  margin: 0 auto; /* Centra l'immagine orizzontalmente */
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-self: flex-start;
+}
+
+.logo {
+  margin-left: 1em; /* Aggiungi spaziatura tra i loghi (puoi regolare secondo le tue esigenze) */
+}
+
+.logo a {
+  display: block; /* Imposta il link come blocco per occupare tutta l'altezza del logo */
+}
+
+.logo img {
+  max-width: 95%;
+  height: auto;
+}
+
+
 footer {
   position: static;
   display: inline;
-  padding: 2px;
+  padding: 2em;
   text-align: center;
   align-items: center;
   border-top: 2px solid;
   border-color: var(--textcolor);
 }
+.social-icon-footer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-self: flex-start;
+}
 nav,
 a {
   display: inline;
   color: #e69d6f;
+  margin-left:2em;
 }
-.sottomenù,
-.sottomenù2 {
+
+nav#menu > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width:95%;
+  justify-content: space-between;
+}
+
+nav#menu li {
+  margin-right: 3em; /* Aggiungi spaziatura tra le voci del menu */
+  position: relative;
+}
+
+nav#menu ul ul {
+  list-style: none;
+  display: none;
+  position: absolute;
+  background-color: var(--backgroundcolor); /* Colore di sfondo per il sottomenu */
+  box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.1); /* Ombra per il sottomenu */
+  top:95%;
+  left:0;
+  width:95%;
+}
+
+nav#menu li:hover > ul {
+  display: flex;
+  flex-direction: column; /* Mostra il sottomenu in verticale */
+}
+
+
+#breadcrumb{
+  padding: 1em;
+}
+
+#breadcrumb p{
+  max-width: 1024px;
+  margin:auto;
+  text-align: left;
+}
+.sottomenu,
+.sottomenu2 {
   display: none;
   visibility: hidden;
 }
-#sottomenù:hover .sottomenù {
+#sottomenu:hover .sottomenu,#sottomenu2:hover .sottomenu2 {
   display: inline;
   visibility: visible;
 }
-#sottomenù2:hover .sottomenù2 {
-  display: inline;
-  visibility: visible;
-}
+
 #social-icon {
   padding: 3px;
   position: static;
