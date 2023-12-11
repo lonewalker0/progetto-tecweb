@@ -183,6 +183,7 @@ nav #menu ul li:hover {
   max-width: 1024px;
   margin:auto;
   text-align: left !important;
+  font-size:1.25em;
 }
 .sottomenu,
 .sottomenu2 {
