@@ -216,4 +216,13 @@ p {
   font-size: 0.75em;
 }
 
+#error404{
+  
+  display: flex;
+  border:solid red;
+  border-color: #b1dd40;
+  
+  align-items: center;
+  text-align: center;
+}
 
