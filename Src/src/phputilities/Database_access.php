@@ -11,38 +11,53 @@ class DBAccess {
    public function open_connection() {
        mysqli_report(MYSQLI_REPORT_ERROR);
 
-       $this->connection = mysqli_connect(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DATABASE_NAME);
+       try {
+        $this->connection = mysqli_connect(DBAccess::HOST_DB, DBAccess::USERNAME, DBAccess::PASSWORD, DBAccess::DATABASE_NAME);
 
-       if (mysqli_connect_errno()) {
-           echo "Errore di connessione al database: " . mysqli_connect_error();
-           return false;
-       } else {
-           return true;
-       }
+        if (!$this->connection) {
+            throw new Exception("Errore di connessione al database: " . mysqli_connect_error());
+        }
+
+        echo "Connessione al database avvenuta con successo!";
+        return true;
+        } catch (Exception $e) {
+            echo "Errore: " . $e->getMessage();
+            return false;
+        }
    }
 
    public function close_connection() {
-       if ($this->connection) {
-           mysqli_close($this->connection);
-           echo "Connessione al database chiusa con successo.";
-       }
-   }
+    try {
+        if ($this->connection) {
+            mysqli_close($this->connection);
+            echo "Connessione al database chiusa con successo.";
+        }
+    } catch (Exception $e) {
+        echo "Errore durante la chiusura della connessione: " . $e->getMessage();
+    }
+}
    
    #funzione per passargli la query
    public function executeQuery($query) {
-    $result = mysqli_query($this->connection, $query) or die("Errore DB: " . mysqli_error($this->connection));
-
-    return $result;
-}
-        #gli va passato il result della funzione precedente per la visualizzazione
-    public function fetchAllRows($result) {
+    try {
+        $result = mysqli_query($this->connection, $query);
 
         if (!$result) {
-            echo "Errore nella query: " . mysqli_error($this->connection);
-            return false;
+            throw new Exception("Errore nella query: " . mysqli_error($this->connection));
         }
 
+        return $result;
+    } catch (Exception $e) {
+        echo "Errore: " . $e->getMessage();
+        return false;
+    }
+}
 
+    public function fetchAllRows($result) {
+        try {
+        if (!$result) {
+            throw new Exception("Errore nella query: " . mysqli_error($this->connection));
+        }
 
         $rows = array();
 
@@ -53,7 +68,11 @@ class DBAccess {
         mysqli_free_result($result);
 
         return $rows;
+    } catch (Exception $e) {
+        echo "Errore: " . $e->getMessage();
+        return false;
     }
+}
 }
 
 ?>
