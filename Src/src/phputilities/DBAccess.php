@@ -2,13 +2,13 @@
 
 class DBAccess {
    
-   private const HOST_DB = "localhost";
+   private const HOST_DB = "db";
    private const DATABASE_NAME = "dbtecweb";
    private const USERNAME = "root";
    private const PASSWORD = "root";
    private $connection;
 
-   public function open_connection() {
+   public function openConnection(): bool{
        mysqli_report(MYSQLI_REPORT_ERROR);
 
        try {
@@ -17,8 +17,6 @@ class DBAccess {
         if (!$this->connection) {
             throw new Exception("Errore di connessione al database: " . mysqli_connect_error());
         }
-
-        echo "Connessione al database avvenuta con successo!";
         return true;
         } catch (Exception $e) {
             echo "Errore: " . $e->getMessage();
@@ -26,7 +24,7 @@ class DBAccess {
         }
    }
 
-   public function close_connection() {
+   public function closeConnection(): void{
     try {
         if ($this->connection) {
             mysqli_close($this->connection);
@@ -38,10 +36,10 @@ class DBAccess {
 }
    
    #funzione per passargli la query
-   public function executeQuery($query) {
+   public function executeQuery($query){
     try {
         $result = mysqli_query($this->connection, $query);
-
+        echo "pene"; 
         if (!$result) {
             throw new Exception("Errore nella query: " . mysqli_error($this->connection));
         }
@@ -52,8 +50,8 @@ class DBAccess {
         return false;
     }
 }
-
-    public function fetchAllRows($result) {
+    //ricordarsi di toglierla se non viene usata
+    public function fetchAllRows($result): string{
         try {
         if (!$result) {
             throw new Exception("Errore nella query: " . mysqli_error($this->connection));
