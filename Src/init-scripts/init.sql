@@ -10,5 +10,8 @@ CREATE TABLE IF NOT EXISTS users (
 
 INSERT INTO users (username, password) VALUES
     ('user1', 'password1'),
-    ('user2', 'password2'),
-    ('tony2bo', 'tonytomilli');
+    ('user2', 'password2'); 
+
+    
+
+
