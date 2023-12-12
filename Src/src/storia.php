@@ -2,7 +2,7 @@
 include('phputilities/PageBuilder.php');
 
 
-$breadcrumb = 'Storia';
+$breadcrumb = 'Festival >> Storia';
 $breadcrumblen = 'it'; 
 $title = 'Storia | TechnoLum250';
 $keyword = 'Festival, Techno, Shop, Prevendite, Concerti, Lum250, Artisti, Merch'; 

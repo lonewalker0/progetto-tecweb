@@ -14,6 +14,7 @@ class PageBuilder {
         $menu = self::createMenu($breadcrumb); 
         $html = str_replace('{{menu}}', $menu, $html);
         $html = str_replace('{{description}}', $description, $html);
+        $html = str_replace('{{breadcrumblen}}',$breadcrumblen,$html);
         $html = str_replace('{{breadcrumb}}', $breadcrumb, $html);
         $html = str_replace('{{main}}', $main, $html);
         $html = str_replace('{{footer}}', $footer, $html);

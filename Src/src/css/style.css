@@ -8,6 +8,7 @@
   --newscolor: #fff8dc;
   --newstxtcolor: #4169e1;
   --contentbgcolor: #add8e6;
+  --font-body-family:"Roboto Condensed", sans-serif;
 }
 * {
   margin: 0;
@@ -21,59 +22,183 @@ body {
 html {
   background-color: var(--backgroundcolor);
   line-height: 1.5em;
-  font-size: 100%;
-  margin: out;
+  font-size: 95%;
+  margin: auto;
   max-width: 2048px;
+  font-family: var(--font-body-family);
 }
 header {
-  position: static;
+  position: relative;
   display: flex;
-  padding: 2px;
-  border-bottom: 5px solid;
+  padding: 2em;
+  border: 5px solid;
   border-color: var(--textcolor);
   align-items: center;
-  float: right;
+  justify-content: space-between;
+
+
+  
 }
+
+header img {
+  max-width: 95%;
+  height: auto;
+  display: block; /* Imposta l'immagine come blocco */
+  margin: 0 auto; /* Centra l'immagine orizzontalmente */
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  align-self: flex-start;
+  padding: auto;
+  border:solid;
+  border-color:var(--textcolor);
+  
+  
+}
+
+.logo {
+  padding:0.5em;
+  margin:auto;
+  border:solid red;
+   /* Aggiungi spaziatura tra i loghi (puoi regolare secondo le tue esigenze) */
+  height: auto;
+  width:auto;
+  display:inline-block;
+  text-align: center;
+}
+
+.logo a {
+  display: block;
+  margin:0; /* Imposta il link come blocco per occupare tutta l'altezza del logo */
+}
+
+.logo img {
+  
+  height:95%;
+  width: 95%;
+  display: block; /* Ensure the image is treated as a block element */
+  margin: 0 auto;
+  margin-left:0;
+  
+}
+
+main{
+  flex:1;
+}
+
 footer {
   position: static;
   display: inline;
-  padding: 2px;
+  padding: 2em;
+  bottom: 0;
+  
   text-align: center;
   align-items: center;
   border-top: 2px solid;
   border-color: var(--textcolor);
+  border: 5px solid;
+  border-color: var(--textcolor);
+  margin-top:auto;
 }
-nav,
+
+nav 
 a {
   display: inline;
   color: #e69d6f;
+  margin-left:0;
+  
 }
-.sottomenù,
-.sottomenù2 {
+
+nav{
+  border:solid;
+  border-color:var(--textcolor);
+  
+}
+
+
+nav#menu > ul {
+  list-style: none;
+  padding: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+  display: flex;
+  width:auto;
+  justify-content: space-between;
+}
+
+nav#menu li {
+   /* Aggiungi spaziatura tra le voci del menu */
+  position: relative;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  font-size:2em;
+}
+
+nav #menu li > a{
+  display: inline-block;
+ 
+}
+
+nav #menu li a{
+  padding:1em;
+}
+
+nav#menu ul ul {
+  list-style: none;
+  display: none;
+  position: absolute;
+  background-color: var(--backgroundcolor); /* Colore di sfondo per il sottomenu */
+  box-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.1); /* Ombra per il sottomenu */
+  
+  
+  
+  
+}
+
+nav#menu li:hover > ul {
+  display: flex;
+  flex-direction: column; /* Mostra il sottomenu in verticale */
+}
+nav#menu ul ul a {
+  padding: 1em;
+}
+
+nav #menu ul li:hover {
+  background-color: #5fe7c9;
+  
+  transition-delay: 200ms;
+  
+  
+}
+
+#breadcrumb{
+  padding: 1em;
+}
+
+#breadcrumb p{
+  max-width: 1024px;
+  margin:auto;
+  text-align: left !important;
+  font-size:1.25em;
+}
+.sottomenu,
+.sottomenu2 {
   display: none;
   visibility: hidden;
+  top:95%;
+  /*left:0;*/
 }
-#sottomenù:hover .sottomenù {
-  display: inline;
+#sottomenu:hover .sottomenu,#sottomenu2:hover .sottomenu2 {
+  display:flex;
   visibility: visible;
+  background-color:rgba(17, 22, 6, 0.95);
 }
-#sottomenù2:hover .sottomenù2 {
-  display: inline;
-  visibility: visible;
-}
-#social-icon {
-  padding: 3px;
-  position: static;
-  align-items: center;
-  vertical-align: top;
-}
-#facebook-logo {
-  display: inline-block;
-  list-style-type: none;
-  text-align: center;
-  width: 32px;
-}
-#facebook-logo:hover {
+
+.logo:hover {
   background-color: #005b47;
   background-size: 50px;
   transition-delay: 200ms;
@@ -83,10 +208,21 @@ a {
 h1 {
   color: var(--textcolor);
   text-align: center;
-  font-size: 75px;
+  font-size: 4em;
 }
 p {
   color: var(--textcolor);
   text-align: center;
-  font-size: 16px;
+  font-size: 0.75em;
 }
+
+#error404{
+  
+  display: flex;
+  border:solid red;
+  border-color: #b1dd40;
+  
+  align-items: center;
+  text-align: center;
+}
+
