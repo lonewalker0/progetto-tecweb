@@ -17,10 +17,10 @@
                 <i class="fa fa-solid fa-bars fa-4x hamburger-fa " onmouseenter="showMenu()"></i>                
                 <nav id="menu-header" class="menù is-invisible" role="navigazione" aria-label="navigazione menù" >
                     <ul class="menù-ul">
-                        <li class="li-hover" lang="en"><a href="#" tabindex="1" lang="en">Home</a></li>
+                        <li class="li-hover" lang="en"><a href="index.php" tabindex="1" lang="en">Home</a></li>
                         <li class="sottomenù-li " lang="en" aria-haspopup="true" aria-expanded="false">Festival
                             <ul class="sottomenù-ul">
-                                <li class="li-sottomenu li-hover"><a href="chisiamo.php" tabindex="2" >Chi siamo</a></li>
+                                <li class="li-sottomenu li-hover"><a href="#" tasbindex="2" >Chi siamo</a></li>
                                 <li class="li-sottomenu li-hover"><a href="location.php" lang="en" tabindex="3">Location</a></li>
                                 <li class="li-sottomenu li-hover "><a href="storia.php" tabindex="4">Storia del <span lang="en">Festival</span></a></li>
                             </ul>                    
@@ -45,14 +45,9 @@
             </div>
         </header>
         <nav class="breadcrumb" role="sezione corrente" aria-label="Ti trovi nella sezione:">
-            <p>Ti trovi in: <span lang="en">Home</span></p>
+            <p>Ti trovi in: Chi siamo</p>
         </nav>
-        <!-- QUESTA è LA PARTE DEL PROGRAMMA DEL FESTIVA L-->
-        <div class="programma">
-            <h1>Il programma del festival è il seguente</h1>
-            <h2>Questo è un h2 invece!</h2>
-            <h3>Guarda la gallery per saperne di più!</h3>
-        </div>
+        <!-- QUESTA è LA PARTE DEL CHI SIAMO DEL FESTIVA L-->
         <!-- QUESTA è LA PARTE DEL FOOTER DEL FESTIVAL-->
         <footer>
             <div class="social-icon-footer">
@@ -71,4 +66,3 @@
         </footer>
     </body>
 </html>
-

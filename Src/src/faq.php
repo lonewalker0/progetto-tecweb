@@ -17,21 +17,21 @@
                 <i class="fa fa-solid fa-bars fa-4x hamburger-fa " onmouseenter="showMenu()"></i>                
                 <nav id="menu-header" class="menù is-invisible" role="navigazione" aria-label="navigazione menù" >
                     <ul class="menù-ul">
-                        <li class="li-hover" lang="en"><a href="#" tabindex="1" lang="en">Home</a></li>
+                        <li class="li-hover" lang="en"><a href="index.php" tabindex="1" lang="en">Home</a></li>
                         <li class="sottomenù-li " lang="en" aria-haspopup="true" aria-expanded="false">Festival
                             <ul class="sottomenù-ul">
-                                <li class="li-sottomenu li-hover"><a href="chisiamo.php" tabindex="2" >Chi siamo</a></li>
+                                <li class="li-sottomenu li-hover"><a href="#" tasbindex="2" >Chi siamo</a></li>
                                 <li class="li-sottomenu li-hover"><a href="location.php" lang="en" tabindex="3">Location</a></li>
                                 <li class="li-sottomenu li-hover "><a href="storia.php" tabindex="4">Storia del <span lang="en">Festival</span></a></li>
                             </ul>                    
                         </li>
                         <li class="sottomenù2-li" lang="en" aria-haspopup="true" aria-expanded="false" tabindex="0">Shop
                             <ul class="sottomenù2-ul">
-                                <li class="li-sottomenu li-hover"><a href="merch.php" lang="en" tabindex="5"><abbr title="Merchandise">Merch</abbr></a></li>
+                                <li class="li-sottomenu li-hover"><a href="merch.php" lang="en" tabindex="5"><abbr title="Merchandise"><span lang="en">Merch</span></abbr></a></li>
                                 <li class="li-sottomenu li-hover"><a href="biglietti.php" tabindex="6">Prevendite</a></li>
                             </ul>
                         </li>
-                        <li class="li-hover"><a href="faq.php" lang="en" tabindex="7"><abbr title="Frequently Asked Questions">FAQ</abbr></a></li>
+                        <li class="li-hover"><a href="#" lang="en" tabindex="7"><abbr title="Frequently Asked Questions"><span lang="en">FAQ</span></abbr></a></li>
                         <li class="li-hover"><a href="account.php" lang="en" tabindex="8">Account</a></li>
                     </ul>
                 </nav>
@@ -45,14 +45,9 @@
             </div>
         </header>
         <nav class="breadcrumb" role="sezione corrente" aria-label="Ti trovi nella sezione:">
-            <p>Ti trovi in: <span lang="en">Home</span></p>
+            <p>Ti trovi in: <span lang="en"><abbr title="Frequently Asked Question">FAQ</abbr></span></p>
         </nav>
-        <!-- QUESTA è LA PARTE DEL PROGRAMMA DEL FESTIVA L-->
-        <div class="programma">
-            <h1>Il programma del festival è il seguente</h1>
-            <h2>Questo è un h2 invece!</h2>
-            <h3>Guarda la gallery per saperne di più!</h3>
-        </div>
+        <!-- QUESTA è LA PARTE DEL FAQ DEL FESTIVA L-->
         <!-- QUESTA è LA PARTE DEL FOOTER DEL FESTIVAL-->
         <footer>
             <div class="social-icon-footer">
@@ -71,4 +66,3 @@
         </footer>
     </body>
 </html>
-

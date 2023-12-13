@@ -88,6 +88,10 @@ nav, a
     display: flex;
     justify-content: center;
 }
+.error404
+{
+    text-align: center;
+}
 /*SEZIONE DEDICATA AL LOGO, ALL'HAMBURGER E AL BREAD FINISCE QUI*/
 /*SEZIONE DEDICATA AI VARI MENU E SOTTOMENU DEL NAV*/
 .menù
@@ -103,10 +107,8 @@ nav, a
 }
 .sottomenù-ul, .sottomenù2-ul
 {
-    /*display:none;*/
     opacity:0;
-    height:0;
-    /*visibility:hidden;*/
+    display:none;
     transition: 100ms;
     list-style-type: none;
 }
@@ -115,10 +117,9 @@ nav, a
   from {opacity: 0;}
   to {opacity:1;}
 }
-
 .sottomenù-li:hover .sottomenù-ul
 {
-    height: auto;
+    display:block;
     opacity:1;
     transition: 100ms;
     animation-name: animation-sottomenu;
@@ -126,7 +127,7 @@ nav, a
 }
 .sottomenù2-li:hover .sottomenù2-ul
 {
-    height: auto;
+    display:block;
     opacity:1;
     transition: 100ms;
     animation-name: animation-sottomenu;
