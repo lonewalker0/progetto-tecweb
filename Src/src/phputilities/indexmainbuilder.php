@@ -34,9 +34,13 @@ class IndexMainBuilder
 
     public function buildMainHTML(): string{
         // Loop through the EventEntry instances and generate HTML
+        //qui manca da creare ancora tutto il carosello e il fatto che manco il counter
+        $this->mainHTML = '<div id="program"><p>Programma</p>';
         foreach ($this->eventEntries as $event) {
             $this->mainHTML .= $event->generateHTML();
         }
+
+        $this->mainHTML .= '</div>';
         return $this->mainHTML;
     }
 }
