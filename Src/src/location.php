@@ -1,17 +1,13 @@
 <?php
 include('phputilities/PageBuilder.php');
 
-
 $breadcrumb = 'Festival >> Location';
 $breadcrumblen = 'en'; 
 $title = 'Location | TechnoLum250'; 
-$keyword = 'Festival, Techno, Shop, Prevendite, Concerti, Lum250, Artisti, Merch'; 
-$description = 'Pagina dedicata al festival Techno Lum250'; 
+$keyword = 'Festival, Techno, Lum250, Location, Posto, Dove, Mappa, Indirizzo, Come arrivare';
+$description = 'Scopri la location del festival TechnoLum250, dove si svolgerà e come raggiungerla.'; 
 
-$main = "<h1>Programma</h1>";
+$main = "<h1>Location</h1>";
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);
-
-
-
 ?>
