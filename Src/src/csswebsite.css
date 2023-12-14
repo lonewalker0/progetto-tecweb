@@ -12,13 +12,26 @@
 }
 /** UTILITIES DI COMPARSA E SCOMPARSA DEL MENU*/
 .is-invisible {
-  transition: 0.6s;
-  opacity: 0;
-  visibility: hidden;
+    transition: 0.6s;
+    opacity: 0;
+    visibility: hidden;
 }
 .is-visible {
-  opacity: 1;
-  visibility: visible !important;
+    opacity: 1;
+    visibility: visible !important;
+  
+}
+.rotate-ham
+{
+    transform: rotate(-90deg);
+    transition: 300ms;
+    transition-timing-function: ease-in-out;
+}
+.unrotate-ham
+{
+    transform: rotate(0deg);
+    transition: 300ms;
+    transition-timing-function: ease-in-out;
 }
 /*FINE UTILITIES*/
 *{
@@ -28,7 +41,7 @@
 body{
     display: flex;
     flex-direction: column;
-    min-height: 100xp;
+    min-height: 100px;
 }
 html
 {
@@ -49,14 +62,19 @@ header
     justify-content: space-between;
 }
 footer
-{
-    position: static;
-    display: inline-block;
+{    
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:auto;
+    width:100%;
+    display:auto;
     padding: 2px;
     text-align: center;
     align-items: stretch;
     border-top: 2px solid;
     border-color: var(--textcolor);
+
 }
 nav, a
 {
@@ -74,12 +92,25 @@ nav, a
     align-self: center;
     width: 33%;
 }
+.hamburger-fa
+{
+    transform: rotate(0deg);
+    transition: 300ms;
+    transition-timing-function: ease-in-out;
+}
+.hamburger-fa:hover
+{
+    transform: rotate(-90deg);
+    transition: 300ms;
+    transition-timing-function: ease-in-out;
+}
 .breadcrumb
 {
     padding: 4px;
     text-align: left;
     justify-content: center;
     font-size:25px;
+    border-bottom: 2px solid var(--textcolor);
 }
 .logo
 {
@@ -96,7 +127,6 @@ nav, a
 /*SEZIONE DEDICATA AI VARI MENU E SOTTOMENU DEL NAV*/
 .menù
 {
-    /*visibility:hidden;*/
     list-style-type: none;
     transition: 200ms;
 }
@@ -258,11 +288,37 @@ p
     padding: 5px;
     line-height: 1.5em;
 }
+.technoLum
+{
+    text-align:center;
+    width: 98%;
+    margin-left:25px;
+    opacity: 0.7;
+    transition: 300ms;
+    transform: rotate(-1deg);
+    transition-timing-function: ease-in-out;
+}
+.technoLum:hover
+{
+    opacity:1;
+    filter:saturate(150%);
+    transform: rotate(0deg);
+    transition: 300ms;
+    transition-timing-function: ease-in-out;
+    color:#FFB235;
+}
+.storia
+{
+    margin-top:0;
+    line-height: 1.5em;
+    text-align: center;
+    white-space: pre-wrap;
+}
 /*Sezione termini e privacy*/
-.termini-privacy
+.termini-condizioni, .privacy-policy
 {
     padding: 2px;
-    display: inline-block;
+    display: auto;
     line-height: 2em;
    
 }

@@ -20,7 +20,7 @@
                         <li class="li-hover" lang="en"><a href="index.php" tabindex="1" lang="en">Home</a></li>
                         <li class="sottomenù-li " lang="en" aria-haspopup="true" aria-expanded="false">Festival
                             <ul class="sottomenù-ul">
-                                <li class="li-sottomenu li-hover"><a href="#" tabindex="2" >Chi siamo</a></li>
+                                <li class="li-sottomenu li-hover"><a href="chisiamo.php" tabindex="2" >Chi siamo</a></li>
                                 <li class="li-sottomenu li-hover"><a href="location.php" lang="en" tabindex="3">Location</a></li>
                                 <li class="li-sottomenu li-hover "><a href="storia.php" tabindex="4">Storia del <span lang="en">Festival</span></a></li>
                             </ul>                    
@@ -28,7 +28,7 @@
                         <li class="sottomenù2-li" lang="en" aria-haspopup="true" aria-expanded="false" tabindex="0">Shop
                             <ul class="sottomenù2-ul">
                                 <li class="li-sottomenu li-hover"><a href="merch.php" lang="en" tabindex="5"><abbr title="Merchandise">Merch</abbr></a></li>
-                                <li class="li-sottomenu li-hover"><a href="prevendite.php" tabindex="6">Prevendite</a></li>
+                                <li class="li-sottomenu li-hover"><a href="#" tabindex="6">Prevendite</a></li>
                             </ul>
                         </li>
                         <li class="li-hover"><a href="faq.php" lang="en" tabindex="7"><abbr title="Frequently Asked Questions">FAQ</abbr></a></li>
@@ -45,9 +45,9 @@
             </div>
         </header>
         <nav class="breadcrumb" role="none" aria-label="Ti trovi nella sezione:">
-            <p>Ti trovi in: Chi siamo</p>
+            <p>Ti trovi in: Prevendite</p>
         </nav>
-        <!-- QUESTA è LA PARTE DEL CHI SIAMO DEL FESTIVAL-->
+        <!-- QUESTA è LA PARTE DELLE PREVENDITE/BIGLIETTI DEL FESTIVAL-->
         <!-- QUESTA è LA PARTE DEL FOOTER DEL FESTIVAL-->
         <footer>
             <div class="social-icon-footer">
