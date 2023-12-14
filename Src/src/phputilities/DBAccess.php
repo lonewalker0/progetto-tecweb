@@ -71,6 +71,12 @@ class DBAccess {
         return false;
     }
 }
+
+    public function getConnection() {
+        return $this->connection;
+}
+
+
 }
 
 ?>
