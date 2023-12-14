@@ -13,7 +13,7 @@ class Form{
 
 
 
-        $form=' <form action="/processa_form.php" method="post">
+      $form=' <form action="/processa_form.php" method="post">
         <fieldset>
           <legend>Accesso</legend>
     

@@ -30,10 +30,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['username'] = $username;
             echo "Accesso riuscito! Benvenuto, $username!";
         } catch (Exception $e) {
-            // Gestisci gli errori
+            
             echo "Errore durante il login: " . $e->getMessage();
         }
-    } else {
+    } elseif (isset($_POST['logout'])) {
+        
+        session_unset();
+        session_destroy();
+        echo "Logout eseguito con successo!";
+    } 
+    else {
         
         echo "Azione non supportata.";
     }

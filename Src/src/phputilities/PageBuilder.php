@@ -54,7 +54,7 @@ class PageBuilder {
         $limodified = preg_replace('/<a\b([^>]*)>(.*?)<\/a>/s', '$2', $li_not_modified);
         return $limodified;
     }
-    
+        
 
 }
 ?>
