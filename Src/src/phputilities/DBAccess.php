@@ -28,7 +28,6 @@ class DBAccess {
     try {
         if ($this->connection) {
             mysqli_close($this->connection);
-            echo "Connessione al database chiusa con successo.";
         }
     } catch (Exception $e) {
         echo "Errore durante la chiusura della connessione: " . $e->getMessage();
@@ -38,8 +37,7 @@ class DBAccess {
    #funzione per passargli la query
    public function executeQuery($query){
     try {
-        $result = mysqli_query($this->connection, $query);
-        echo "pene"; 
+        $result = mysqli_query($this->connection, $query); 
         if (!$result) {
             throw new Exception("Errore nella query: " . mysqli_error($this->connection));
         }

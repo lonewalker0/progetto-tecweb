@@ -8,7 +8,7 @@ class DBOperation{
         $this->db = $db;
     }
 
-    public function registerUser($username, $password) {
+    public function registerUser($username, $password){
         try {
             $this->db->openConnection();
 
@@ -26,7 +26,6 @@ class DBOperation{
             $rowCount = mysqli_fetch_assoc($checkResult)['count'];
 
             if ($rowCount > 0) {
-                echo "L'utente esiste già.";
                 return false;
             }
 
@@ -48,18 +47,17 @@ class DBOperation{
                 throw new Exception("Errore durante l'inserimento dell'utente: " . mysqli_error($this->db->getConnection()));
             }
 
-            echo "Registrazione utente avvenuta con successo!";
             return true;
 
 
         } catch (Exception $e) {
-            echo "Errore durante la registrazione dell'utente: " . $e->getMessage();
+            
         } finally {
             $this->db->closeConnection();
         }
     }
 
-    public function loginUser($username, $password) {
+    public function loginUser($username, $password): bool {
         try {
             $this->db->openConnection();
 
@@ -77,7 +75,7 @@ class DBOperation{
             $result = mysqli_stmt_get_result($stmt);
 
             if ($result->num_rows === 0) {
-                echo "L'utente non esiste.";
+                
                 return false;
             }
 
@@ -85,10 +83,10 @@ class DBOperation{
             $storedHashedPassword = $row['password'];
 
             if (password_verify($password, $storedHashedPassword)) {
-                echo "Login avvenuto con successo!";
+                
                 return true;
             } else {
-                echo "Password inserita non corretta.";
+                
                 return false;
             }
 
@@ -97,7 +95,7 @@ class DBOperation{
             error_log("Errore durante il login: " . $e->getMessage());
 
             // Restituisci un messaggio di errore generico all'utente
-            echo "Si è verificato un errore durante il login. Riprova più tardi.";
+            
             return false;
 
         } finally {

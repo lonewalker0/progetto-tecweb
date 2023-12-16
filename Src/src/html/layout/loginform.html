@@ -1,21 +1,48 @@
 <form action="phputilities/loginprocess.php" method="post">
-    <fieldset>
-      <legend>Accesso</legend>
-
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required aria-required="true">
-      </div>
-
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required aria-required="true">
-      </div>
-
-    </fieldset>
+  <fieldset>
+    <legend>Accesso</legend>
 
     <div>
-      <button type="submit" name="accedi" value="Accedi" role="button" aria-label="Accedi al tuo account">Accedi</button>
-      <button type="submit" name="registrati" value="Registrati" role="button" aria-label="Registrati per un nuovo account">Registrati</button>
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        required
+        aria-required="true"
+      />
     </div>
-  </form>
+
+    <div>
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        aria-required="true"
+      />
+    </div>
+  </fieldset>
+
+  <div>
+    <button
+      type="submit"
+      name="accedi"
+      value="accedi"
+      role="button"
+      aria-label="Accedi al tuo account"
+    >
+      Accedi
+    </button>
+    <button
+      type="submit"
+      name="registrati"
+      value="registrati"
+      role="button"
+      aria-label="Registrati per un nuovo account"
+    >
+      Registrati
+    </button>
+  </div>
+</form>

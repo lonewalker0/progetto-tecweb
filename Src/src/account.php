@@ -8,13 +8,17 @@ $title = 'Account | TechnoLum250';
 $keyword = 'Festival, Techno, Lum250, Account, Dati personali, Pagamenti, Biglietti, Ordini'; 
 $description = 'Gestisci il tuo account TechnoLum250, modifica i tuoi dati personali, visualizza i tuoi pagamenti, i tuoi biglietti e i tuoi ordini.'; 
 
+session_start(); 
+
 if(!$_SESSION["username"]){
     $main=file_get_contents(__DIR__ .'/html/layout/loginform.html');
-    
-
 }else{
     $main="<h1>Benvenuto</h1>";
+    $main .= '<form action="phputilities/logoutprocess.php" method="post"> <button type="submit" name="logout">Logout</button></form>'; 
 }
+
+#aggiungo rapido form per eseguire il logout
+
 
 
    
