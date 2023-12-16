@@ -10,6 +10,10 @@ $description = 'Gestisci il tuo account TechnoLum250, modifica i tuoi dati perso
 
 if(!$_SESSION["username"]){
     $main=file_get_contents(__DIR__ .'/html/layout/loginform.html');
+    
+
+}else{
+    $main="<h1>Benvenuto</h1>";
 }
 
 

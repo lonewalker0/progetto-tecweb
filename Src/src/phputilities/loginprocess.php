@@ -4,7 +4,7 @@ require_once('DBAccess.php');
 require_once('DBOperations.php');
 
 session_start();
-
+  echo "ciao";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -13,20 +13,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dbAccess = new DBAccess();
     $dbOperations = new DBOperations($dbAccess);
 
-    if (isset($_POST['registrazione'])) {
-        
+    if (isset($_POST['Registrati'])) {
+        echo "<h1>ciao</h1>";
         try {
             $dbOperations->registerUser($username, $password);
             $_SESSION['username'] = $username;
             echo "Registrazione riuscita! Benvenuto, $username!";
-            header("Location : account.php");
-            die();
+            #header("Location : account.php");
+            #die();
         } catch (Exception $e) {
             
             echo "Errore durante la registrazione: " . $e->getMessage();
         }
-    } elseif (isset($_POST['accesso'])) {
-        
+    } elseif (isset($_POST['Accedi'])) {
+        echo "<h1>ciao</h1>";
         try {
             $dbOperations->loginUser($username, $password);
             $_SESSION['username'] = $username;
