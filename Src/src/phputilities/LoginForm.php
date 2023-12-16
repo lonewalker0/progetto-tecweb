@@ -1,6 +1,6 @@
 <?php
-
-class Form{
+# in questo file ci butti la nuova classe utente e admin 
+class LoginForm{
     public static function buildForm() : string{
 
       session_start(); 

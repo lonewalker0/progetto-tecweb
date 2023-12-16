@@ -19,6 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $dbOperations->registerUser($username, $password);
             $_SESSION['username'] = $username;
             echo "Registrazione riuscita! Benvenuto, $username!";
+            header("Location : account.php");
+            die();
         } catch (Exception $e) {
             
             echo "Errore durante la registrazione: " . $e->getMessage();
