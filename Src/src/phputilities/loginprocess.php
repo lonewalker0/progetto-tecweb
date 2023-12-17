@@ -3,8 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-
-require_once('DBOperation.php');
+include('DBOperation.php');
 
 session_start();
 

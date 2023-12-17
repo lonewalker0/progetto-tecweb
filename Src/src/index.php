@@ -10,7 +10,6 @@ $description = 'Pagina dedicata al festival Techno Lum250, con il nostro program
 
 // Create an instance of IndexMainBuilder
 $indexMainBuilder = new IndexMainBuilder();
-
 // Call the buildMainHTML method to get the generated HTML
 $main = $indexMainBuilder->buildMainHTML();
 

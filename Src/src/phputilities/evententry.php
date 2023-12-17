@@ -21,14 +21,13 @@ class EventEntry
             throw new Exception("Failed to load template from file: $templateFilePath");
         }
         } catch (Exception $e) {
-            // Handle the exception, log it, or rethrow it as needed
             echo "An error occurred: " . $e->getMessage();
         }
     }
 
     public function generateHTML(): string
     {
-        // Replace placeholders in the template with actual values
+        
         $html = str_replace(
             ['{{performer}}', '{{image}}', '{{datetime}}', '{{time}}', '{{Description}}'],
             [$this->performer, $this->image, $this->datetime, $this->time, $this->description],
@@ -37,5 +36,27 @@ class EventEntry
 
         return $html;
     }
+
+    
+    public function generateEliminationHTML(): string
+{
+    $html = '<div class="event-container">';
+    $html .= '   <img src="' . $this->image . '" alt="foto di ' . $this->performer . '">';
+    $html .= '   <p>Artista: ' . $this->performer . '</p>';
+    $html .= '   <p>Data: ' . $this->datetime . '</p>';
+    $html .= '   <p>Ora: ' . $this->time . '</p>';
+    $html .= '   <p>Descrizione: ' . $this->description . '</p>';
+
+    // Form to handle deletion
+    $html .= '   <form action="phputilities/eventEleminationHandler.php" method="post">';
+    $html .= '       <input type="hidden" name="event_artist" value="' . $this->performer . '">';
+    $html .= '       <button type="submit" name="delete_event">Delete</button>';
+    $html .= '   </form>';
+
+    $html .= '</div>';
+
+    return $html;
+}
+
 }
     ?>

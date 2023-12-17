@@ -1,10 +1,15 @@
 <?php
-include "DBAccess.php";
+include('DBAccess.php'); 
+include('evententry.php'); 
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 class DBOperation{
     private $db;
 
-    public function __construct(DBAccess $db) {
+    public function __construct() {
+        $db = new DBAccess(); 
         $this->db = $db;
     }
 
@@ -126,7 +131,66 @@ class DBOperation{
         }
     }
     
+    public function getEventEntries(): array
+{
+    $eventEntries = [];
 
+    $query = "SELECT * FROM Programma";
+
+    try {
+        $this->db->openConnection();
+        $result = $this->db->executeQuery($query);
+
+            if ($result) {
+                while ($row = $result->fetch_assoc()) {
+                    $event = new EventEntry(
+                        $row['artist_name'],
+                        $row['image_path'],
+                        $row['date'],
+                        $row['hour'],
+                        $row['description']
+                    );
+                    $eventEntries[] = $event;
+                }
+
+
+            $this->db->closeConnection();
+        } else {
+            throw new Exception("Database connection error: " . $this->db->getErrorMessage());
+        }
+    } catch (Exception $e) {
+        error_log($e->getMessage());
+        throw $e;
+    }
+
+    return $eventEntries;
+}
+
+public function deleteEvent($artistName): bool {
+    try {
+        $this->db->openConnection();
+        $sql = "DELETE FROM Programma WHERE artist_name = ?";
+        $stmt = mysqli_prepare($this->db->getConnection(), $sql);
+        mysqli_stmt_bind_param($stmt, "s", $artistName);
+        mysqli_stmt_execute($stmt);
+
+    
+        if (mysqli_stmt_affected_rows($stmt) > 0) {
+            return true;
+        } else {
+            return false; 
+            
+        }
+    } catch (Exception $e) {
+            // Registra l'errore nei log del server
+            error_log("Errore durante l'eliminazione: " . $e->getMessage());
+
+            return false;
+
+    } finally {
+            $this->db->closeConnection();
+        }
+}      
 }
 
 

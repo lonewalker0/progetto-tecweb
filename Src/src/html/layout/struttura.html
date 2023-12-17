@@ -2,21 +2,23 @@
 
 <html lang="it">
   <head>
-    <meta charset="UTF-8">
-    <meta name="keywords" content="{{keyword}}">
-    <meta name="description" content="{{description}}">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="{{keyword}}" />
+    <meta name="description" content="{{description}}" />
     <title>{{title}}</title>
-    <link rel="icon" href="../../assets/favicon.png" type="image/png">
+    <link rel="icon" href="../../assets/favicon.png" type="image/png" />
+    <!--
     <link rel="stylesheet" href="../../css/newstyle.css">
-    <!-- box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+     box icons 
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    -->
   </head>
   <body>
     {{header}} {{menu}}
-    <nav
-      id="breadcrumb"
-      aria-label="Ti trovi nella sezione:"
-    >
+    <nav id="breadcrumb" aria-label="Ti trovi nella sezione:">
       <p>Ti trovi in: <span lang="{{breadcrumblen}}">{{breadcrumb}}</span></p>
     </nav>
     {{main}} {{footer}}
