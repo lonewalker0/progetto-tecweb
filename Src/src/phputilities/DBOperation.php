@@ -8,54 +8,54 @@ class DBOperation{
         $this->db = $db;
     }
 
-    public function registerUser($username, $password){
+    public function registerUser($username, $password) {
         try {
             $this->db->openConnection();
-
-            $checkQuery = "SELECT COUNT(*) as count FROM users WHERE username = ?";
+    
+            // Check if the username already exists
+            $checkQuery = "SELECT 1 FROM users WHERE username = ? LIMIT 1";
             $checkStmt = mysqli_prepare($this->db->getConnection(), $checkQuery);
-
+    
             if (!$checkStmt) {
-                throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->db->getConnection()));
+                throw new Exception("Error preparing the query: " . mysqli_error($this->db->getConnection()));
             }
-
+    
             mysqli_stmt_bind_param($checkStmt, "s", $username);
             mysqli_stmt_execute($checkStmt);
-
+    
             $checkResult = mysqli_stmt_get_result($checkStmt);
-            $rowCount = mysqli_fetch_assoc($checkResult)['count'];
-
-            if ($rowCount > 0) {
-                return false;
+    
+            if (mysqli_fetch_assoc($checkResult)) {
+                return false; // Username already exists
             }
-
-            // Hash della password
+    
+            // Hash the password
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-            // Esegui la query per inserire l'utente nel database
-            $insertQuery = "INSERT INTO users (username, password) VALUES (?, ?)";
+    
+            // Insert the user into the database with is_admin set to false
+            $insertQuery = "INSERT INTO users (username, password, is_admin) VALUES (?, ?, false)";
             $insertStmt = mysqli_prepare($this->db->getConnection(), $insertQuery);
-
+    
             if (!$insertStmt) {
-                throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->db->getConnection()));
+                throw new Exception("Error preparing the query: " . mysqli_error($this->db->getConnection()));
             }
-
+    
             mysqli_stmt_bind_param($insertStmt, "ss", $username, $hashedPassword);
             $insertSuccess = mysqli_stmt_execute($insertStmt);
-
+    
             if (!$insertSuccess) {
-                throw new Exception("Errore durante l'inserimento dell'utente: " . mysqli_error($this->db->getConnection()));
+                throw new Exception("Error during user insertion: " . mysqli_error($this->db->getConnection()));
             }
-
-            return true;
-
-
+    
+            return true; // User successfully registered
+    
         } catch (Exception $e) {
             
         } finally {
             $this->db->closeConnection();
         }
     }
+    
 
     public function loginUser($username, $password): bool {
         try {
@@ -83,10 +83,8 @@ class DBOperation{
             $storedHashedPassword = $row['password'];
 
             if (password_verify($password, $storedHashedPassword)) {
-                
                 return true;
             } else {
-                
                 return false;
             }
 
@@ -94,14 +92,41 @@ class DBOperation{
             // Registra l'errore nei log del server
             error_log("Errore durante il login: " . $e->getMessage());
 
-            // Restituisci un messaggio di errore generico all'utente
-            
             return false;
 
         } finally {
             $this->db->closeConnection();
         }
     }
+
+
+    public function isAdmin($username): bool {
+        try {
+            $this->db->openConnection();
+            // Execute a query to check if the user is an admin
+            $query = "SELECT is_admin FROM users WHERE username = ?";
+            $stmt = mysqli_prepare($this->db->getConnection(), $query);
+            if (!$stmt) {
+                throw new Exception("Error preparing the query: " . mysqli_error($this->db->getConnection()));
+            }
+            mysqli_stmt_bind_param($stmt, "s", $username);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+            if ($result->num_rows === 0) {
+                return false; // User not found
+            }
+            $row = mysqli_fetch_assoc($result);
+            $isAdmin = $row['is_admin'];
+            return (bool) $isAdmin;
+        } catch (Exception $e) {
+            error_log("Error checking if user is admin: " . $e->getMessage());
+            return false;
+        } finally {
+            $this->db->closeConnection();
+        }
+    }
+    
+
 }
 
 
