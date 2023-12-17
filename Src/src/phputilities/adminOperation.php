@@ -27,7 +27,7 @@ class adminOperation
 
         // AddEventForm div with the form
         $html .= '<div id="addEventForm">';
-        $html .= file_get_contents(__DIR__ . '/../html/form/addEventForm.htm0l');
+        $html .= file_get_contents(__DIR__ . '/../html/form/addEventForm.html');
         $html .= '</div>';
 
         return $html;
