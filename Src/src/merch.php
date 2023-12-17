@@ -1,7 +1,7 @@
 <?php
 include('phputilities/PageBuilder.php');
 
-$breadcrumb = 'Shop >> Merch';
+$breadcrumb = 'Merch';
 $breadcrumblen = 'en';
 $title = 'Merch | TechnoLum250'; 
 $keyword = 'Merch, Shop, Magliette, Felpe, Gadget, Store, Acquisto, Compra, Prodotti, Ufficiali'; 

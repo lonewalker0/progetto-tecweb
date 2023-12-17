@@ -161,7 +161,7 @@ header {
     width: 100%; /* full width */
     height: 60px;
     padding-left: 1em;
-    background-color: rgba(37, 53, 25, 0.8);
+    background-color: rgba(37, 53, 25, 0.7);
     display: flex;
     align-items: center;
 }
@@ -182,7 +182,7 @@ footer {
     color: var(--text-color);
     text-align: center;
     padding: 20px 0;
-    margin-top: 20px;
+    margin-top: 0;
 }
   
 .social-icons {
@@ -215,3 +215,42 @@ footer {
     color: var(--text-color);
 }
   
+/* Main */
+
+main {
+    top: 195px;
+    box-sizing: border-box;
+    background-color: var(--dark-bg-color);
+}
+
+.programma-entry {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    
+}
+
+.programma-entry img {
+    width: 25%;
+    
+}
+
+.entry-info {
+    margin-left: auto;
+    background-color: var(--light-bg-color);
+}
+
+/* Sponsor */
+
+section {
+    text-align: center;
+    background-color: var(--text-color);
+}
+
+section h1 {
+    color: var(--dark-bg-color);
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 1rem;
+}

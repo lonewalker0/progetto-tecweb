@@ -1,7 +1,7 @@
 <?php
 include('phputilities/PageBuilder.php');
 
-$breadcrumb = 'Festival >> Chi siamo';
+$breadcrumb = 'Chi siamo';
 $breadcrumblen = 'it'; 
 $title = 'Chi siamo | TechnoLum250';
 $keyword = 'Festival, Techno, Lum250, Informazioni, Organizzatori;'; 

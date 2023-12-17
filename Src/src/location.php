@@ -1,7 +1,7 @@
 <?php
 include('phputilities/PageBuilder.php');
 
-$breadcrumb = 'Festival >> Location';
+$breadcrumb = 'Location';
 $breadcrumblen = 'en'; 
 $title = 'Location | TechnoLum250'; 
 $keyword = 'Festival, Techno, Lum250, Location, Posto, Dove, Mappa, Indirizzo, Come arrivare';

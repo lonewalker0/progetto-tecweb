@@ -1,7 +1,7 @@
 <?php
 include('phputilities/PageBuilder.php');
 
-$breadcrumb = 'Shop >> Prevendite';
+$breadcrumb = 'Prevendite';
 $breadcrumblen = 'it';
 $title = 'Prevendite | TechnoLum250'; 
 $keyword = 'Festival, Techno, Lum250, Prevendite, Biglietti, Acquisto, Compra, Ticket, Pass'; 
