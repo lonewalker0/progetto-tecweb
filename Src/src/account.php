@@ -10,22 +10,28 @@ $description = 'Gestisci il tuo account TechnoLum250, modifica i tuoi dati perso
 
 session_start(); 
 
-if(!$_SESSION["username"]){
-    $main=file_get_contents(__DIR__ .'/html/layout/loginform.html');
-}else{
-    $main="<h1>Benvenuto</h1>";
-    $main .= '<form action="phputilities/logoutprocess.php" method="post"> <button type="submit" name="logout">Logout</button></form>'; 
+if (!isset($_SESSION["username"])) {
+    // User is not logged in
+    $main = file_get_contents(__DIR__ . '/html/layout/loginform.html');
+} else {
+    // User is logged in
+    $main = "<h1>Welcome";
+
+    if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] === true) {
+        // Admin-specific content
+        $main .= " Admin";
+    } elseif (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] === false) {
+        // Non-admin-specific content
+        $main .= " Non-Admin";
+    }
+
+    $main .= "</h1>";
+    $main .= '<form action="phputilities/logoutprocess.php" method="post"> <button type="submit" name="logout">Logout</button></form>';
+
+    // Add other user-specific content here
 }
 
-#aggiungo rapido form per eseguire il logout
-
-
-
-   
-    # se l'utente non è autenticato allora mi mostri il form altrimenti 
-
-    #controllo dell'utente, se è admin o normale
-   
+    
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);
 ?>
