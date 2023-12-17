@@ -5,7 +5,6 @@ ini_set('display_errors', 1);
 
 
 include('phputilities/PageBuilder.php');
-include('phputilities/LoginForm.php');
 include('phputilities/adminOperation.php'); 
 
 $breadcrumb = 'Account';
@@ -18,7 +17,7 @@ $description = 'Gestisci il tuo account TechnoLum250, modifica i tuoi dati perso
 
 if (!isset($_SESSION["username"])) {
     // User is not logged in
-    $main = file_get_contents(__DIR__ . '/html/layout/loginform.html');
+    $main = file_get_contents(__DIR__ . '/html/form/loginform.html');
 } else {
 
     if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] === true) {

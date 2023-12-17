@@ -140,58 +140,80 @@ class DBOperation{
     try {
         $this->db->openConnection();
         $result = $this->db->executeQuery($query);
-
-            if ($result) {
-                while ($row = $result->fetch_assoc()) {
-                    $event = new EventEntry(
-                        $row['artist_name'],
-                        $row['image_path'],
-                        $row['date'],
-                        $row['hour'],
-                        $row['description']
-                    );
-                    $eventEntries[] = $event;
-                }
-
-
-            $this->db->closeConnection();
-        } else {
-            throw new Exception("Database connection error: " . $this->db->getErrorMessage());
-        }
+        while ($row = $result->fetch_assoc()) {
+            $event = new EventEntry(
+                $row['artist_name'],
+                $row['image_path'],
+                $row['date'],
+                $row['hour'],
+                $row['description']
+            );
+            $eventEntries[] = $event;}
     } catch (Exception $e) {
         error_log($e->getMessage());
         throw $e;
+    } finally {
+        $this->db->closeConnection(); 
     }
 
     return $eventEntries;
 }
 
-public function deleteEvent($artistName): bool {
+    public function deleteEvent($artistName): bool {
+        try {
+            $this->db->openConnection();
+            $sql = "DELETE FROM Programma WHERE artist_name = ?";
+            $stmt = mysqli_prepare($this->db->getConnection(), $sql);
+            mysqli_stmt_bind_param($stmt, "s", $artistName);
+            mysqli_stmt_execute($stmt);
+
+        
+            if (mysqli_stmt_affected_rows($stmt) > 0) {
+                return true;
+            } else {
+                return false; 
+
+            }
+        } catch (Exception $e) {
+                // Registra l'errore nei log del server
+                error_log("Errore durante l'eliminazione: " . $e->getMessage());
+
+                return false;
+
+        } finally {
+                $this->db->closeConnection();
+            }
+    }      
+
+public function addEvent($artistName, $date, $hour, $imagePath, $description): bool {
     try {
         $this->db->openConnection();
-        $sql = "DELETE FROM Programma WHERE artist_name = ?";
+        $sql = "INSERT INTO Programma (artist_name, date, hour, image_path, description) VALUES (?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($this->db->getConnection(), $sql);
-        mysqli_stmt_bind_param($stmt, "s", $artistName);
+        mysqli_stmt_bind_param($stmt, "sssss", $artistName, $date, $hour, $imagePath, $description);
         mysqli_stmt_execute($stmt);
 
-    
-        if (mysqli_stmt_affected_rows($stmt) > 0) {
-            return true;
-        } else {
-            return false; 
-            
-        }
+        $success = mysqli_stmt_affected_rows($stmt) > 0;
+
+        return $success;
+
     } catch (Exception $e) {
             // Registra l'errore nei log del server
-            error_log("Errore durante l'eliminazione: " . $e->getMessage());
-
-            return false;
+            error_log("Errore durante l'inserimento:  " . $e->getMessage());
+        return false;
 
     } finally {
             $this->db->closeConnection();
         }
-}      
+}  
+
+
+
+
+
 }
+
+
 
 
 

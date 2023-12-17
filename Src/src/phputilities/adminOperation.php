@@ -11,26 +11,27 @@ class adminOperation
         $this->dbOperation = $dbOperation;
     }
 
-    public function getMain(): string
-{
-    $html = "<h1>Welcome Admin!</h1>";
-
-    $events = $this->dbOperation->getEventEntries();
-
-    $html .= '<div id="ProgramManagement">';
     
-    foreach ($events as $event) {
-        $html .= $event->generateEliminationHTML();
+    public function getMain(): string
+    {
+        $html = "<h1>Welcome Admin!</h1>";
+
+        $html .= '<div id="ProgramManagement">';
+        #costruzione del menu per l'elimizazione
+        $events = $this->dbOperation->getEventEntries();
+        $html .= '<p>Manutenzione del programma</p>';
+        foreach ($events as $event) {
+            $html .= $event->generateEliminationHTML();
+        }
+        $html .= '</div>';
+
+        // AddEventForm div with the form
+        $html .= '<div id="addEventForm">';
+        $html .= file_get_contents(__DIR__ . '/../html/form/addEventForm.htm0l');
+        $html .= '</div>';
+
+        return $html;
     }
-
-    $html .= '</div>';
-    $html .= '</div>';
-
-    // Add more admin-specific HTML content as needed
-
-    return $html;
-}
-    // Add other admin-specific methods here
 }
 
 ?>
