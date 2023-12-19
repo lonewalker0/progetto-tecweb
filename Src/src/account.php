@@ -15,7 +15,7 @@ $description = 'Gestisci il tuo account TechnoLum250, modifica i tuoi dati perso
 
 
 
-if (!isset($_SESSION["username"])) {
+if (!isset($_SESSION["username"]) || $_SESSION['login_error']===true) {
     // User is not logged in
     $main = file_get_contents(__DIR__ . '/html/form/loginform.html');
 } else {
