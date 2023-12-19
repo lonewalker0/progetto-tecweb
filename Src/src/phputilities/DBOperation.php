@@ -13,7 +13,7 @@ class DBOperation{
         $this->db = $db;
     }
 
-    public static function sanitizeInput($input, $maxLength = 255)
+    public static function sanitizeInput($input, $maxLength = 255) : string
     {
         
         $input = substr($input, 0, $maxLength);

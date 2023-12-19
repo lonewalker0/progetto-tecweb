@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = DBOperation::sanitizeInput($_POST['password']);
 
     
-    $dbAccess = new DBAccess();
-    $DBOperation = new DBOperation($dbAccess);
+    #$dbAccess = new DBAccess();
+    $DBOperation = new DBOperation();
 
     if (isset($_POST['registrati'])) {
             try {
