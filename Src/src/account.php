@@ -23,15 +23,12 @@ if (!isset($_SESSION["username"]) ) {
 
         
         $main = file_get_contents(__DIR__ . '/html/form/loginform.html');
-        //$main = str_replace('{{loginError}}', $loginError, $main);
+        
 
-        // Pulisci la variabile di sessione dell'errore
+        
         unset($_SESSION['login_error']);
 
-        // Ricontrolla il login e imposta eventualmente login_error
-        // Questo potrebbe coinvolgere il tentativo di accesso e il reindirizzamento
-        // Puoi gestire questa parte in modo più specifico a seconda del tuo flusso di lavoro
-        // ...
+        
 
     } while ($loginError);
 } else {
