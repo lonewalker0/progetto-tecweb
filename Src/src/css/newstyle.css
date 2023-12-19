@@ -9,6 +9,7 @@
     box-sizing: border-box; /* border-box for padding and border */
     list-style: none; /* no list bullets */
     text-decoration: none; /* no underline */
+    box-sizing: border-box;
 }
 
 :root {
@@ -240,6 +241,71 @@ main {
     margin-left: auto;
     background-color: var(--light-bg-color);
 }
+
+/*Carosello dinamico del main */
+.carosello
+{
+    display:none;
+}
+.puntini
+{
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.puntini:hover, .active
+{
+    background-color: #717171;
+}
+.carosello-puntini
+{
+    text-align:center;
+}
+.img-carosello
+{
+    width: 100%;
+    vertical-align: middle;
+}
+.carosello-dinamico
+{
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+.descrizione
+{
+    color: black;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+@keyframes fade
+{
+    from{opacity: 0.4}
+    to{opacity: 1}
+}
+.fade
+{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.numero-img
+{
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
 
 /* Sponsor */
 
