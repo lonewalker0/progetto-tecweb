@@ -13,6 +13,25 @@ class DBOperation{
         $this->db = $db;
     }
 
+    public static function sanitizeInput($input, $maxLength = 255)
+    {
+        
+        $input = substr($input, 0, $maxLength);
+
+        //togli gli spazi bianchi 
+        $input = trim($input);
+
+        //per attacchi di tipo xss, hihihi
+        $input = htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
+
+        $input = str_replace(['"', "'", "<", ">", ";", "\\"], "", $input);
+
+        $input = preg_replace('/\s/', '', $input);
+ 
+
+        return $input;
+    }
+
     public function registerUser($username, $password) {
         try {
             $this->db->openConnection();
@@ -55,7 +74,8 @@ class DBOperation{
             return true; // User successfully registered
     
         } catch (Exception $e) {
-            
+            error_log("Error during user registration: " . $e->getMessage());
+            return false;
         } finally {
             $this->db->closeConnection();
         }

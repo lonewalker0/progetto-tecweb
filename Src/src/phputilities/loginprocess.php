@@ -8,8 +8,8 @@ include('DBOperation.php');
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $username = DBOperation::sanitizeInput($_POST['username']);
+    $password = DBOperation::sanitizeInput($_POST['password']);
 
     
     $dbAccess = new DBAccess();
