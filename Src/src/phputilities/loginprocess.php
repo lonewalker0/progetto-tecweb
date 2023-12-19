@@ -54,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 #qui è da cambiare e bisogna andare a mostrare l'errore in qualche modo, adesso c'è da capire come fare. 
                 #Non basta rimandare all'index, bisogna rimandare a account.php con qualche dato in più tipo dati non validi
                 // Credenziali errate, imposta un messaggio di errore
+                
                 $_SESSION['login_error'] = true;
                 header("Location: ../account.php");
                 die();

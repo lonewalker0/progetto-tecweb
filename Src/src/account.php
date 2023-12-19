@@ -17,18 +17,20 @@ $description = 'Gestisci il tuo account TechnoLum250, modifica i tuoi dati perso
 
 if (!isset($_SESSION["username"]) ) {
     // User is not logged in
+    $firstIteration=true;
+    $errormessage='<div id=error_login><p>Credenziali non corrette</p></div>';
     do {
         // Recupera il messaggio di errore se presente
         $loginError = isset($_SESSION['login_error']) ? $_SESSION['login_error'] : '';
 
         
         $main = file_get_contents(__DIR__ . '/html/form/loginform.html');
-        
+        $main = str_replace('{{loginerror}}', $firstIteration ? '' : $errormessage, $main);
 
         
         unset($_SESSION['login_error']);
 
-        
+        $firstIteration=false;
 
     } while ($loginError);
 } else {
