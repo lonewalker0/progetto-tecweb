@@ -6,6 +6,7 @@ class EventEntry
     private $datetime;
     private $time;
     private $description;
+    private $template; 
 
     public function __construct($performer, $image, $datetime, $time, $description)
     {
@@ -18,7 +19,7 @@ class EventEntry
         try {
         $this->template = file_get_contents(__DIR__ . '/../html/event.html');
         if ($this->template === false) {
-            throw new Exception("Failed to load template from file: $templateFilePath");
+            throw new Exception("Failed to load template from file");
         }
         } catch (Exception $e) {
             echo "An error occurred: " . $e->getMessage();

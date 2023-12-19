@@ -15,3 +15,4 @@ $main = $indexMainBuilder->buildMainHTML();
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);
 ?>
+include('./js/function.js')
