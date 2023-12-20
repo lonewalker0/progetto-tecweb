@@ -316,7 +316,26 @@ section {
 
 section h1 {
     color: var(--dark-bg-color);
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 500;
+    font-weight: bold;
     padding: 1rem;
 }
+
+.sponsors-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create three equal columns */
+    gap: 20px; /* Adjust the gap between sponsor icons as needed */
+  }
+  
+  .sponsor-icon {
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  
+  .sponsor-icon img {
+    max-width: 20%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image within the sponsor icon */
+  }
