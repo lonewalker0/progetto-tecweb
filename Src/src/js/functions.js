@@ -56,3 +56,13 @@ function validateForm() {
   return true;
 }
 
+
+document.addEventListener("DOMContentLoaded", function() {
+  var errorDiv = document.getElementById("error_login");
+  if (errorDiv) {
+      errorDiv.style.display = "block"; 
+      setTimeout(function() {
+          errorDiv.style.display = "none"; 
+      }, 2500); 
+  }
+});
