@@ -43,6 +43,8 @@ function validateForm() {
   var passwordInput = document.getElementById('password');
   var confermaPasswordInput = document.getElementById('confermaPassword');
   var passwordError = document.getElementById('passwordError');
+  
+  
   if (passwordInput.value !== confermaPasswordInput.value) {
       passwordError.textContent = 'Le password non coincidono.';
       return false;
