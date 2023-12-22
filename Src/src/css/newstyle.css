@@ -300,7 +300,7 @@ main {
 .fade
 {
     animation-name: fade;
-    animation-duration: 1.5s;
+    animation-duration: 2s;
 }
 /* Sponsor */
 
@@ -352,4 +352,10 @@ section h4
     vertical-align: middle;
     margin-top: 30px;
     margin-bottom: 30px;
+}
+
+/*COUNTDOWN */
+.countdown
+{
+    display:none;
 }

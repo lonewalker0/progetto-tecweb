@@ -1,7 +1,6 @@
 <?php
 include('phputilities/PageBuilder.php');
 include('phputilities/indexmainbuilder.php'); 
-
 $breadcrumb = 'Home';
 $breadcrumblen = 'en'; 
 $title = 'Home | TechnoLum250'; 
@@ -15,4 +14,3 @@ $main = $indexMainBuilder->buildMainHTML();
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);
 ?>
-include('./js/function.js')
