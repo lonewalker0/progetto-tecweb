@@ -41,6 +41,7 @@ header {
     height: 100px;
     background: var(--light-bg-color); 
     box-shadow: 0 1px 4px hsl(0 4% 15% / 10%); /* shadow */
+    z-index: 10;
 }
 
 .nav {
@@ -109,7 +110,7 @@ header {
     font-size: 1.4rem;
     color: var(--text-color);
     font-weight: 400;
-    z-index: 1;
+    z-index: 10;
 }
   
 .menu ul {
@@ -165,6 +166,7 @@ header {
     background-color: rgba(37, 53, 25, 0.7);
     display: flex;
     align-items: center;
+    z-index: 10;
 }
   
 #breadcrumb p {
@@ -256,9 +258,9 @@ main {
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
-    transition: background-color 0.6s ease;
+    transition: background-color 1s ease;
 }
-.puntini:hover, .active
+.active
 {
     background-color: #717171;
 }
@@ -270,17 +272,20 @@ main {
 {
     width: 100%;
     vertical-align: middle;
+    background-size: cover;
 }
 .carosello-dinamico
-{
-    max-width: 1000px;
+{    
+    margin-left:auto;
+    margin-right:auto;
+    width: 50%;
     position: relative;
-    margin: auto;
+    padding: 2px;
 }
 .descrizione
 {
     color: black;
-    font-size: 15px;
+    font-size: 25px;
     padding: 8px 12px;
     position: absolute;
     bottom: 8px;
@@ -297,16 +302,6 @@ main {
     animation-name: fade;
     animation-duration: 1.5s;
 }
-.numero-img
-{
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-}
-
-
 /* Sponsor */
 
 section {
@@ -321,21 +316,40 @@ section h1 {
     font-weight: bold;
     padding: 1rem;
 }
-
-.sponsors-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create three equal columns */
-    gap: 20px; /* Adjust the gap between sponsor icons as needed */
-  }
-  
-  .sponsor-icon {
-    box-sizing: border-box;
-    padding: 20px;
-  }
-  
-  .sponsor-icon img {
-    max-width: 20%;
-    height: auto;
-    display: block;
-    margin: 0 auto; /* Center the image within the sponsor icon */
-  }
+section h4
+{
+    color: var(--dark-bg-color);
+    font-size: 1.5em;
+    font-weight: 500;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    text-align: left;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.sponsors-container 
+{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 75%;
+} 
+.sponsor-icon 
+{
+    transition: transform .2s;
+    object-fit: none;
+}
+.sponsor-icon:hover
+{
+    object-fit: none;
+    padding: auto;
+    height:auto;
+    transform: scale(1.25);
+}
+.sponsor-icon img 
+{
+    max-width: 30%;
+    object-fit: cover;
+    vertical-align: middle;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
