@@ -5,7 +5,12 @@ USE dbtecweb;
 CREATE TABLE users (
     username VARCHAR(255) PRIMARY KEY,
     password VARCHAR(255) NOT NULL,
-    is_admin BOOLEAN NOT NULL
+    is_admin BOOLEAN NOT NULL,
+    nome VARCHAR(255),
+    cognome VARCHAR(255),
+    eta INT,
+    indirizzo VARCHAR(255),
+    email VARCHAR(255) UNIQUE
 );
 
 INSERT INTO users (username, password, is_admin) VALUES ('admin', '$2y$10$sJAmdb2vfldMZ3hFwPJCVOR5GoUKLocPQsGhlouVHw8sx8V5WnSuO', 1);

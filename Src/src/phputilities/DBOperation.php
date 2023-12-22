@@ -32,7 +32,7 @@ class DBOperation{
         return $input;
     }
 
-    public function registerUser($username, $password) {
+    public function registerUser($username, $password, $nome, $cognome, $eta, $indirizzo, $email) {
         try {
             $this->db->openConnection();
     
@@ -57,14 +57,14 @@ class DBOperation{
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
             // Insert the user into the database with is_admin set to false
-            $insertQuery = "INSERT INTO users (username, password, is_admin) VALUES (?, ?, false)";
+            $insertQuery = "INSERT INTO users (username, password, is_admin, nome, cognome, eta, indirizzo, email) VALUES (?, ?, false, ?, ?, ?, ?, ?)";
             $insertStmt = mysqli_prepare($this->db->getConnection(), $insertQuery);
     
             if (!$insertStmt) {
                 throw new Exception("Error preparing the query: " . mysqli_error($this->db->getConnection()));
             }
     
-            mysqli_stmt_bind_param($insertStmt, "ss", $username, $hashedPassword);
+            mysqli_stmt_bind_param($insertStmt, "ssisiss", $username, $hashedPassword, $nome, $cognome, $eta, $indirizzo, $email);
             $insertSuccess = mysqli_stmt_execute($insertStmt);
     
             if (!$insertSuccess) {

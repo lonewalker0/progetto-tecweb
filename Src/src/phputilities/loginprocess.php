@@ -17,7 +17,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['registrati'])) {
             try {
-            $result = $DBOperation->registerUser($username, $password);
+                $nome = DBOperation::sanitizeInput($_POST['nome']);
+                $cognome = DBOperation::sanitizeInput($_POST['cognome']);
+                $eta = DBOperation::sanitizeInput($_POST['eta']);
+                $indirizzo = DBOperation::sanitizeInput($_POST['indirizzo']);
+                $email = DBOperation::sanitizeInput($_POST['email']);
+
+                $result = $DBOperation->registerUser($username, $password, $nome, $cognome, $eta, $indirizzo, $email);
+            
             if($result){
                 $_SESSION['username'] = $username;
                 $_SESSION['is_admin'] = false; #solo i non admin si possono registrare
