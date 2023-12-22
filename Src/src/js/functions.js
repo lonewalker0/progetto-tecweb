@@ -60,9 +60,9 @@ function validateForm() {
 document.addEventListener("DOMContentLoaded", function() {
   var errorDiv = document.getElementById("error_login");
   if (errorDiv) {
-      errorDiv.style.display = "block"; // Mostra il messaggio di errore
+      errorDiv.style.display = "block"; 
       setTimeout(function() {
-          errorDiv.style.display = "none"; // Nascondi il messaggio di errore dopo 2.5 secondi
-      }, 2500); // 2500 millisecondi corrispondono a 2.5 secondi
+          errorDiv.style.display = "none"; 
+      }, 2500); 
   }
 });
