@@ -22,7 +22,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $eta = DBOperation::sanitizeInput($_POST['eta']);
                 $indirizzo = DBOperation::sanitizeInput($_POST['indirizzo']);
                 $email = DBOperation::sanitizeInput($_POST['email']);
-                
 
                 $result = $DBOperation->registerUser($username, $password, $nome, $cognome, $eta, $indirizzo, $email);
             

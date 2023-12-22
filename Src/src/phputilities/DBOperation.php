@@ -57,14 +57,14 @@ class DBOperation{
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
             // Insert the user into the database with is_admin set to false
-            $insertQuery = "INSERT INTO users (username, password, is_admin, nome, cognome, eta, indirizzo, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $insertQuery = "INSERT INTO users (username, password, is_admin, nome, cognome, eta, indirizzo, email) VALUES (?, ?, false, ?, ?, ?, ?, ?)";
             $insertStmt = mysqli_prepare($this->db->getConnection(), $insertQuery);
     
             if (!$insertStmt) {
                 throw new Exception("Error preparing the query: " . mysqli_error($this->db->getConnection()));
             }
-            $is_admin=0;
-            mysqli_stmt_bind_param($insertStmt, "ssississ", $username, $hashedPassword,$is_admin, $nome, $cognome, $eta, $indirizzo, $email);
+    
+            mysqli_stmt_bind_param($insertStmt, "ssisiss", $username, $hashedPassword, $nome, $cognome, $eta, $indirizzo, $email);
             $insertSuccess = mysqli_stmt_execute($insertStmt);
     
             if (!$insertSuccess) {
