@@ -62,3 +62,140 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 2500); // 2500 millisecondi corrispondono a 2.5 secondi
   }
 });
+
+//funzione per andare ad aggiungere un paragrafo al div di errore
+function appendError(conteinerId, message) {
+  const errorElement = document.createElement("p");
+  errorElement.setAttribute("role", "alert");
+  errorElement.setAttribute("aria-live", "assertive");
+  errorElement.setAttribute("aria-atomic", "true");
+  errorElement.textContent = message;
+  conteinerId.appendChild(errorElement);
+}
+function contineCaratteriSpeciali(stringa) {
+  // espressione regolare che prende tutti i caratteri speciali
+  const espressione = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+  return espressione.test(stringa);
+}
+function formatoData(stringa) {
+  // Espressione regolare per corrispondere al formato data standard (YYYY-MM-DD)
+  const espressione = /^\d{4}-\d{2}-\d{2}$/;
+  return !espressione.test(stringa);
+}
+function formatoOra(stringa) {
+  // Espressione regolare per corrispondere al formato ora standard (HH:mm)
+  const espressione = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/;
+  return !espressione.test(stringa);
+}
+
+function validazioneFormAggiutaEvento() {
+  const errorContainer = document.getElementById(
+    "errorContainerAggiuntaEvento"
+  );
+  errorContainer.innerHTML = "";
+  //mi prendo tutti i valori dei campi di imput
+  const artistName = document.forms["formAggiuntaEvento"]["artist_name"].value;
+  const date = document.forms["formAggiuntaEvento"]["date"].value;
+  const hour = document.forms["formAggiuntaEvento"]["hour"].value;
+  const description = document.forms["formAggiuntaEvento"]["description"].value;
+
+  //per l'immagine tocca fare cosi altrimenti non ci si riesce a validare
+  const image = document.getElementById("image").files[0];
+
+  let isValid = true;
+  if (artistName.trim() === "") {
+    isValid = false;
+    document.getElementById("artist_name").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "Nome dell'artista è obbligatorio!");
+  } else {
+    document
+      .getElementById("artist_name")
+      .setAttribute("aria-invalid", "false");
+  }
+  if (contineCaratteriSpeciali(artistName)) {
+    isValid = false;
+    document.getElementById("artist_name").setAttribute("aria-invalid", "true");
+    appendError(
+      errorContainer,
+      "Il nome dell'artista non può contenere caratteri speciali!"
+    );
+  } else {
+    document
+      .getElementById("artist_name")
+      .setAttribute("aria-invalid", "false");
+  }
+  if (description.trim() === "") {
+    isValid = false;
+    document.getElementById("description").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "La descrizione è obbligatoria!");
+  } else {
+    document
+      .getElementById("artist_name")
+      .setAttribute("aria-invalid", "false");
+  }
+  if (contineCaratteriSpeciali(description)) {
+    isValid = false;
+    document.getElementById("description").setAttribute("aria-invalid", "true");
+    appendError(
+      errorContainer,
+      "La descrizione non può contenere caratteri speciali!"
+    );
+  } else {
+    document
+      .getElementById("description")
+      .setAttribute("aria-invalid", "false");
+  }
+  if (formatoData(date)) {
+    isValid = false;
+    document.getElementById("date").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "Inserisci una data valida!");
+  } else {
+    document.getElementById("date").setAttribute("aria-invalid", "false");
+  }
+  if (formatoOra(hour)) {
+    isValid = false;
+    document.getElementById("hour").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "Inserisci un'orario valido!");
+  } else {
+    document.getElementById("hour").setAttribute("aria-invalid", "false");
+  }
+
+  //validazione immagine
+  const estensioniAmmesse = ["image/jpeg", "image/png", "image/gif"];
+  const dimensioneMassima = 1 * 1024 * 1024; // 1 MB
+  if (!image) {
+    isValid = false;
+    document.getElementById("image").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "L'immagine è obbligatoria!");
+  } else if (!estensioniAmmesse.includes(image.type)) {
+    isValid = false;
+    document.getElementById("image").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "Formato del file immagine non supportato!");
+  } else if (image.size > dimensioneMassima) {
+    isValid = false;
+    document.getElementById("image").setAttribute("aria-invalid", "true");
+    appendError(
+      errorContainer,
+      "La dimensione del file immagine non deve superare 1 MB!"
+    );
+  } else {
+    document.getElementById("image").setAttribute("aria-invalid", "false");
+  }
+  if (isValid) {
+    return true;
+  }
+  return false;
+}
+
+//altrimenti non funziona perchè il form viene istanziato solo dopo
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .getElementById("formAggiuntaEvento")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (validazioneFormAggiutaEvento()) {
+        event.target.submit();
+      }
+      return false;
+    });
+});

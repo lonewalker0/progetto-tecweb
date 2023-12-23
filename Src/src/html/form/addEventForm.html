@@ -1,24 +1,35 @@
 <form
+  id="formAggiuntaEvento"
   action="phputilities/eventAddHandler.php"
-  method="post"
+  method="POST"
   enctype="multipart/form-data"
 >
   <p>Aggiungi un nuovo evento</p>
 
+  <div id="errorContainerAggiuntaEvento"></div>
+
   <label for="artist_name">Nome dell'artista:</label>
-  <input type="text" name="artist_name" value="{{artistName}}" required /><br />
+  <input
+    type="text"
+    id="artist_name"
+    name="artist_name"
+    value="{{artistName}}"
+    required
+  /><br />
 
   <label for="date">Data:</label>
-  <input type="date" name="date" value="{{date}}" required /><br />
+  <input type="date" id="date" name="date" value="{{date}}" required /><br />
 
   <label for="hour">Ora:</label>
-  <input type="time" name="hour" value="{{hour}}" required /><br />
+  <input type="time" id="hour" name="hour" value="{{hour}}" required /><br />
 
   <label for="image">Immagine:</label>
-  <input type="file" name="image" accept="image/*" required /><br />
+  <input type="file" id="image" name="image" accept="image/*" y /><br />
 
   <label for="description">Descrizione:</label>
-  <textarea name="description" required>{{description}}</textarea><br />
+  <textarea id="description" name="description" required>
+{{description}}</textarea
+  ><br />
 
   <input type="submit" name="add_event" value="Aggiungi evento" />
 </form>
