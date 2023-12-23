@@ -263,10 +263,68 @@ public function getUserInfo($username) {
     }
 }
 
+public function updateEmail($username, $newEmail) {
+    try {
+        $this->db->openConnection();
 
+        // Esegui la query per aggiornare l'email dell'utente
+        $query = "UPDATE users SET email = ? WHERE username = ?";
+        $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
+        if (!$stmt) {
+            throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->db->getConnection()));
+        }
 
+        mysqli_stmt_bind_param($stmt, "ss", $newEmail, $username);
+        $success = mysqli_stmt_execute($stmt);
 
+        if (!$success) {
+            throw new Exception("Errore durante l'aggiornamento dell'email: " . mysqli_error($this->db->getConnection()));
+        }
+
+        return $success;
+
+    } catch (Exception $e) {
+        // Registra l'errore nei log del server
+        error_log("Errore durante l'aggiornamento dell'email: " . $e->getMessage());
+
+        return false;
+
+    } finally {
+        $this->db->closeConnection();
+    }
+}
+
+public function updateIndirizzo($username, $newAddress) {
+    try {
+        $this->db->openConnection();
+
+        // Esegui la query per aggiornare l'email dell'utente
+        $query = "UPDATE users SET indirizzo = ? WHERE username = ?";
+        $stmt = mysqli_prepare($this->db->getConnection(), $query);
+
+        if (!$stmt) {
+            throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->db->getConnection()));
+        }
+
+        mysqli_stmt_bind_param($stmt, "ss", $newAddress, $username);
+        $success = mysqli_stmt_execute($stmt);
+
+        if (!$success) {
+            throw new Exception("Errore durante l'aggiornamento dell'email: " . mysqli_error($this->db->getConnection()));
+        }
+
+        return $success;
+
+    } catch (Exception $e) {
+        // Registra l'errore nei log del server
+        error_log("Errore durante l'aggiornamento dell'email: " . $e->getMessage());
+
+        return false;
+
+    } finally {
+        $this->db->closeConnection();
+    }
 }
 
 
@@ -274,6 +332,87 @@ public function getUserInfo($username) {
 
 
 
+public function verifyOldPassword($username, $oldPassword) {
+    try {
+        $this->db->openConnection();
+        // Esegui la query per ottenere la password corrente dell'utente
+        $query = "SELECT password FROM users WHERE username = ?";
+        $stmt = mysqli_prepare($this->db->getConnection(), $query);
+
+        if (!$stmt) {
+            throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->db->getConnection()));
+        }
+
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
+
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($result->num_rows === 0) {
+            throw new Exception("Utente non trovato.");
+        }
+
+        $row = mysqli_fetch_assoc($result);
+        $currentPassword = $row['password'];
+
+        // Verifica se la vecchia password è corretta
+        if (!password_verify($oldPassword, $currentPassword)) {
+            return false;
+        }
+
+        return true;
+
+    } catch (Exception $e) {
+        // Registra l'errore nei log del server
+        error_log("Errore durante la verifica della vecchia password: " . $e->getMessage());
+
+        return false;
+
+    } finally {
+        $this->db->closeConnection();
+    }
+}
+
+public function updatePassword($username, $newPassword) {
+    try {
+        $this->db->openConnection();
+
+        // Genera l'hash della nuova password
+        $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+        // Esegui la query per aggiornare la password dell'utente
+        $query = "UPDATE users SET password = ? WHERE username = ?";
+        $stmt = mysqli_prepare($this->db->getConnection(), $query);
+
+        if (!$stmt) {
+            throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->db->getConnection()));
+        }
+
+        mysqli_stmt_bind_param($stmt, "ss", $hashedNewPassword, $username);
+        $success = mysqli_stmt_execute($stmt);
+
+        if (!$success) {
+            throw new Exception("Errore durante l'aggiornamento della password: " . mysqli_error($this->db->getConnection()));
+        }
+
+        return $success;
+
+    } catch (Exception $e) {
+        // Registra l'errore nei log del server
+        error_log("Errore durante l'aggiornamento della password: " . $e->getMessage());
+
+        return false;
+
+    } finally {
+        $this->db->closeConnection();
+    }
+}
+
+
+
+
+
+}
 
 
 ?>
