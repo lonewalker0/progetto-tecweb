@@ -1,5 +1,5 @@
 <?php
-
+#funzioni php che ritoranono true se l'imput è valido. per fare il sanitize. 
 
 function isValidHour($hour) {
     // A simple check for the format HH:MM
