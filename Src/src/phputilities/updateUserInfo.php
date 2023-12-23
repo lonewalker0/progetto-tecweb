@@ -1,6 +1,6 @@
 <?php
 require_once 'DBOperation.php';
-
+session_start();
 $dbOperation = new DBOperation();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -25,29 +25,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Verifica se la vecchia password è corretta se l'utente sta cercando di cambiare la password
     if (!empty($nuova_password)) {
-       # if (!$dbOperation->verifyOldPassword($username, $vecchia_password)) {
-       #     die("La vecchia password non è corretta.");
-       # }
-
-        // Verifica se la nuova password e la conferma della password coincidono
-        if ($nuova_password !== $conferma_password) {
-            die("La nuova password e la conferma della password non coincidono.");
+        if (!$dbOperation->verifyOldPassword($username, $vecchia_password)) {
+            die("La vecchia password non è corretta.");
         }
 
+        
+
         // Aggiorna la password nel database
-       # $dbOperation->updatePassword($username, $nuova_password);
+        $dbOperation->updatePassword($username, $nuova_password);
     }
 
     // Aggiorna gli altri dati nel database solo se non sono vuoti
     if (!empty($indirizzo)) {
-       # $dbOperation->updateIndirizzo($username, $indirizzo);
+        $dbOperation->updateIndirizzo($username, $indirizzo);
     }
 
     if (!empty($email)) {
         $dbOperation->updateEmail($username, $email);
     }
 
-    echo "Modifiche apportate con successo.";
+    header("Location: ../account.php"); 
+    die();
 } else {
     
     die("Richiesta non valida.");

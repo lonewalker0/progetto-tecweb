@@ -28,7 +28,7 @@ class accountOperation {
                 $output .= "<p>Email: " . $userInfo['email'] . "</p>";
 
                 $output .= "<h3>Modifiche account</h3>";
-                $output .= "<form action='updateUserInfo.php' method='post'>";
+                $output .= "<form action='phputilities/updateUserInfo.php' method='post'>";
                 $output .= "<p><label for='indirizzo'>Indirizzo:</label> <input type='text' id='indirizzo' name='indirizzo'></p>";
                 $output .= "<p><label for='email'>Email:</label> <input type='text' id='email' name='email'></p>";
                 $output .= "<p><label for='nuova_password'>Nuova Password:</label> <input type='password' id='nuova_password' name='nuova_password'></p>";
