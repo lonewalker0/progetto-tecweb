@@ -57,14 +57,14 @@ class DBOperation{
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
             // Insert the user into the database with is_admin set to false
-            $insertQuery = "INSERT INTO users (username, password, is_admin, nome, cognome, eta, indirizzo, email) VALUES (?, ?, false, ?, ?, ?, ?, ?)";
+            $insertQuery = "INSERT INTO users (username, password, is_admin, nome, cognome, eta, indirizzo, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $insertStmt = mysqli_prepare($this->db->getConnection(), $insertQuery);
     
             if (!$insertStmt) {
                 throw new Exception("Error preparing the query: " . mysqli_error($this->db->getConnection()));
             }
-    
-            mysqli_stmt_bind_param($insertStmt, "ssisiss", $username, $hashedPassword, $nome, $cognome, $eta, $indirizzo, $email);
+            $is_admin=0;
+            mysqli_stmt_bind_param($insertStmt, "ssississ", $username, $hashedPassword,$is_admin, $nome, $cognome, $eta, $indirizzo, $email);
             $insertSuccess = mysqli_stmt_execute($insertStmt);
     
             if (!$insertSuccess) {
@@ -226,6 +226,42 @@ public function addEvent($artistName, $date, $hour, $imagePath, $description): b
             $this->db->closeConnection();
         }
 }  
+
+public function getUserInfo($username) {
+    try {
+        $this->db->openConnection();
+
+        // Esegui la query per ottenere le informazioni dell'utente
+        $query = "SELECT username, nome, cognome, eta, indirizzo, email FROM users WHERE username = ?";
+        $stmt = mysqli_prepare($this->db->getConnection(), $query);
+
+        if (!$stmt) {
+            throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->db->getConnection()));
+        }
+
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
+
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($result->num_rows === 0) {
+            return false;
+        }
+
+        $userInfo = mysqli_fetch_assoc($result);
+
+        return $userInfo;
+
+    } catch (Exception $e) {
+        // Registra l'errore nei log del server
+        error_log("Errore durante il recupero delle informazioni dell'utente: " . $e->getMessage());
+
+        return false;
+
+    } finally {
+        $this->db->closeConnection();
+    }
+}
 
 
 

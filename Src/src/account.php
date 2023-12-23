@@ -6,6 +6,7 @@ ini_set('display_errors', 1);
 
 include('phputilities/PageBuilder.php');
 include('phputilities/adminOperation.php'); 
+include('phputilities/accountOperation.php');
 
 $breadcrumb = 'Account';
 $breadcrumblen = 'en'; 
@@ -42,6 +43,8 @@ if (!isset($_SESSION["username"]) ) {
     } elseif (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] === false) {
         // Non-admin-specific content
         $main = " Non-Admin";
+        $accountOperation= new accountOperation();
+        $main.=$accountOperation->getMain();
     }
     $main .= '<form action="phputilities/logoutprocess.php" method="post"> <button type="submit" name="logout">Logout</button></form>';
 
