@@ -25,7 +25,12 @@ class adminOperation
         }
         $html .= '</div>';
 
-        // AddEventForm div with the form
+       
+        if (isset($_SESSION['error'])) {
+            $html .='<div id="error-message">' . $_SESSION['error'] . '</div>';
+            unset($_SESSION['error']);
+        }
+        
         $html .= '<div id="addEventForm">';
         $html .= file_get_contents(__DIR__ . '/../html/form/addEventForm.html');
         $html .= '</div>';

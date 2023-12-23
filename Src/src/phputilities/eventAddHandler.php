@@ -1,20 +1,32 @@
 <?php
 include('DBOperation.php');
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 $dboperation = new DBOperation(); 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_event'])) {
-    $artistName = $_POST['artist_name'];
-    $date = $_POST['date'];
-    $hour = $_POST['hour'];
-    $description = $_POST['description'];
+    $artistName = filter_var($_POST['artist_name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $date = filter_var($_POST['date'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $hour = filter_var($_POST['hour'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $description = strip_tags($_POST['description'], '<br>');
+    #faccio solo il sanitize per questa cosa.
 
-    // Gestisci il caricamento dell'immagine
+
+    session_start(); 
+    $maxFileSize = 1000 * 1024; // 500KB in bytes
+    if ($_FILES['image']['size'] > $maxFileSize) {
+        $_SESSION['error'] = "L'immagine è troppo larga";
+        header("Location: ../account.php");
+        die();}
+
     $nomeFileImmagine = $_FILES['image']['name'];
-    $percorsoTemporaneoImmagine = $_FILES['image']['tmp_name'];
+    $percorsoTemporaneoImmagine = $_FILES['image']['tmp_name']; 
+
     $percorsoCaricamentoImmagine = "../assets/artisti/" . $artistName . "." . pathinfo($nomeFileImmagine, PATHINFO_EXTENSION);
     $percorsoImmagineDB = "assets/artisti/" . $artistName . "." . pathinfo($nomeFileImmagine, PATHINFO_EXTENSION);
 
-    // Check if the file type is allowed
+    // Controllo se il tipo è ammesso
     $allowedExtensions = ['jpg', 'jpeg', 'png', 'svg'];
     $fileExtension = strtolower(pathinfo($nomeFileImmagine, PATHINFO_EXTENSION));
 
