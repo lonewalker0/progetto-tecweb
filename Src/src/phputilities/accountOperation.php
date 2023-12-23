@@ -27,6 +27,17 @@ class accountOperation {
                 $output .= "<p>Indirizzo: " . $userInfo['indirizzo'] . "</p>";
                 $output .= "<p>Email: " . $userInfo['email'] . "</p>";
 
+                $output .= "<h3>Modifiche account</h3>";
+                $output .= "<form action='updateUserInfo.php' method='post'>";
+                $output .= "<p><label for='indirizzo'>Indirizzo:</label> <input type='text' id='indirizzo' name='indirizzo'></p>";
+                $output .= "<p><label for='email'>Email:</label> <input type='text' id='email' name='email'></p>";
+                $output .= "<p><label for='nuova_password'>Nuova Password:</label> <input type='password' id='nuova_password' name='nuova_password'></p>";
+                $output .= "<p><label for='conferma_password'>Conferma Nuova Password:</label> <input type='password' id='conferma_password' name='conferma_password'></p>";
+                $output .= "<p><label for='vecchia_password'>Vecchia Password:</label> <input type='password' id='vecchia_password' name='vecchia_password'></p>";
+                $output .= "<input type='hidden' name='username' value='" . $username . "'>";
+                $output .= "<input type='submit' value='Salva modifiche'>";
+                $output .= "</form>";
+
                 return $output;
             } else {
                 return "<p>Utente non trovato.</p>";
