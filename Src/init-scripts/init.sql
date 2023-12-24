@@ -59,6 +59,6 @@ CREATE TABLE Ordini (
     quantita INT NOT NULL,
     data_acquisto DATETIME NOT NULL,
     prezzo FLOAT NOT NULL,
-    FOREIGN KEY (id_utente) REFERENCES users(username),
+    FOREIGN KEY (username) REFERENCES users(username),
     FOREIGN KEY (id_biglietto) REFERENCES Biglietti(id)
 );

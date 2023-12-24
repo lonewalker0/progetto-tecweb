@@ -523,12 +523,42 @@ public function getBigliettiEntries(): array
     return $bigliettiEntries;
 }
 
+public function getPrezzoBiglietto($id) : int {
+    try {
+        $this->db->openConnection();
+        $id = mysqli_real_escape_string($this->db->getConnection(), $id);
+        $sql = "SELECT prezzo FROM Biglietti WHERE id = ?";
+        $stmt = mysqli_prepare($this->db->getConnection(), $sql);
+        mysqli_stmt_bind_param($stmt, "i", $id);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $prezzo);
+
+        if (mysqli_stmt_fetch($stmt)) {
+            // Restituisce il prezzo del biglietto
+            return $prezzo;
+        } else {
+            // Biglietto non trovato
+            return null;
+        }
+
+    } catch (Exception $e) {
+        // Registra l'errore nei log del server
+        error_log("Errore durante il recupero del prezzo: " . $e->getMessage());
+        return null;
+
+    } finally {
+        $this->db->closeConnection();
+    }
+}
+
+
+
 public function addOrder($username, $ticketId, $purchaseDate, $quantity, $prezzo): bool {
     try {
         $this->db->openConnection();
-        $sql = "INSERT INTO ordini (username, id_biglietto,quantita, data_acquisto,prezzo ) VALUES (?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO Ordini (username, id_biglietto, quantita, data_acquisto, prezzo ) VALUES (?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($this->db->getConnection(), $sql);
-        mysqli_stmt_bind_param($stmt, "sisid", $username, $ticketId, $purchaseDate, $quantity,$prezzo);
+        mysqli_stmt_bind_param($stmt, "siisd", $username, $ticketId, $quantity, $purchaseDate,$prezzo);
         mysqli_stmt_execute($stmt);
 
         $success = mysqli_stmt_affected_rows($stmt) > 0;

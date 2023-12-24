@@ -11,19 +11,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Recupera i dati dal modulo
         $username = $_SESSION['username']; 
-        $ticketId = $_POST['biglietto'. $_POST['id']]; // Assicura che il campo biglietto sia presente nel tuo modulo
+        $productId = $_GET["id"]; 
         $quantity = $_POST['quantita']; // Assicura che il campo quantita sia presente nel tuo modulo
         $purchaseDate = date("Y-m-d H:i:s"); // Imposta la data di acquisto come data corrente
-
+        $prezzosingolo=$dboperation->getPrezzoBiglietto($productId);
+        $prezzo_totale= $quantity * $prezzosingolo;
         
 
         
 
             // Aggiungi l'ordine nel database
-            $success = $dboperation->addOrder($username, $ticketId, $purchaseDate, $quantity,$prezzo);
+            $success = $dboperation->addOrder($username, $productId, $purchaseDate, $quantity,$prezzo_totale);
 
             if ($success) {
-                echo "Acquisto completato con successo!";
+                header("Location: ../conferma_acquisto.html"); 
+                die();
             } else {
                 echo "Errore durante l'acquisto. Si prega di riprovare.";
             }
