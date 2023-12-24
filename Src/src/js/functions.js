@@ -1,7 +1,52 @@
+let imgIndex = 0;
+
 document.addEventListener("DOMContentLoaded", function () {
-  let imgIndex = 0;
   carosello();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  triggerView();
+  countdownFestival();
+});
+
+const getCountdown = (eventDate) => {
+  let countdownFestival = eventDate.getTime();
+
+  let oggi = new Date().getTime();
+  let intervallo = countdownFestival - oggi;
+
+  let giorni = Math.floor(intervallo / (1000 * 60 * 60 * 24));
+  let ore = Math.floor((intervallo % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minuti = Math.floor((intervallo % (1000 * 60 * 60)) / (1000 * 60));
+  let secondi = Math.floor((intervallo % (1000 * 60)) / 1000);
+
+  if (intervallo < 0) return null;
+
+  return "| " + giorni + "d " + ore + "h " + minuti + "m " + secondi + "s ";
+};
+function countdownFestival() {
+  const DOMELEMENT = document.getElementById("intervalloFestival");
+  const eventDate = new Date("Jul 5, 2024 12:00:00");
+  setInterval(() => {
+    const countDown = getCountdown(eventDate);
+    DOMELEMENT.innerHTML = countDown || "EXPIRED";
+  }, 1000);
+}
+function triggerView() {
+  const df = document.getElementById("dataFestival");
+  const cd = document.getElementById("intervalloFestival");
+  let type = true;
+  setInterval(() => {
+    type = !type;
+    if (type) {
+      df.style.display = "block";
+      cd.style.display = "none";
+    } else {
+      df.style.display = "none";
+      cd.style.display = "block";
+    }
+  }, 4000);
+}
 
 function carosello() {
   let i;
@@ -215,13 +260,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 //calcolare il prezzo totale del biglietto, prima di inviare l'acquisto al submit
 
 function calculateTotalPrice(id) {
-  var quantitaInput = document.getElementById('quantita-' + id);
-  var prezzoTotaleParagraph = document.getElementById('prezzo-totale-' + id);
-  var prezzoElement = document.getElementById('prezzo-' + id);
+  var quantitaInput = document.getElementById("quantita-" + id);
+  var prezzoTotaleParagraph = document.getElementById("prezzo-totale-" + id);
+  var prezzoElement = document.getElementById("prezzo-" + id);
 
   // Ottenere il valore contenuto all'interno del <dd>
   var prezzoSingolo = parseFloat(prezzoElement.textContent.trim());
@@ -230,21 +274,22 @@ function calculateTotalPrice(id) {
 
   // Aggiorna il testo del paragrafo
   if (!isNaN(prezzoSingolo) && !isNaN(quantita) && quantita > 0) {
-      prezzoTotaleParagraph.innerHTML = 'Prezzo totale: ' + prezzoTotale.toFixed(2) + '€';
-      prezzoTotaleParagraph.style.display = 'block';
+    prezzoTotaleParagraph.innerHTML =
+      "Prezzo totale: " + prezzoTotale.toFixed(2) + "€";
+    prezzoTotaleParagraph.style.display = "block";
   } else {
-      prezzoTotaleParagraph.style.display = 'none';
+    prezzoTotaleParagraph.style.display = "none";
   }
 }
 
 // Aggiungi event listener per ogni campo di quantità
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   var quantitaInputs = document.querySelectorAll('[id^="quantita-"]');
 
   quantitaInputs.forEach(function (input) {
-      var id = input.id.split('-')[1];
-      input.addEventListener('input', function () {
-          calculateTotalPrice(id);
-      });
+    var id = input.id.split("-")[1];
+    input.addEventListener("input", function () {
+      calculateTotalPrice(id);
+    });
   });
 });

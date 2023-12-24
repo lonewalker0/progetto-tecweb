@@ -13,5 +13,5 @@ $indexMainBuilder = new IndexMainBuilder();
 $main = $indexMainBuilder->buildMainHTML();
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);
-echo '<script src="js/intervalloFestival.js"></script>';
+
 ?>
