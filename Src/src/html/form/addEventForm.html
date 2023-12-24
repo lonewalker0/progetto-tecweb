@@ -6,8 +6,6 @@
 >
   <p>Aggiungi un nuovo evento</p>
 
-  <div id="errorContainerAggiuntaEvento"></div>
-
   <label for="artist_name">Nome dell'artista:</label>
   <input
     type="text"
@@ -24,7 +22,7 @@
   <input type="time" id="hour" name="hour" value="{{hour}}" required /><br />
 
   <label for="image">Immagine:</label>
-  <input type="file" id="image" name="image" accept="image/*" y /><br />
+  <input type="file" id="image" name="image" accept="image/*" required /><br />
 
   <label for="description">Descrizione:</label>
   <textarea id="description" name="description" required>

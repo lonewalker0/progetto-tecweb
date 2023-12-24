@@ -72,6 +72,7 @@ function appendError(conteinerId, message) {
   errorElement.textContent = message;
   conteinerId.appendChild(errorElement);
 }
+
 function contineCaratteriSpeciali(stringa) {
   // espressione regolare che prende tutti i caratteri speciali
   const espressione = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
@@ -184,6 +185,7 @@ function validazioneFormAggiutaEvento() {
   if (isValid) {
     return true;
   }
+
   return false;
 }
 

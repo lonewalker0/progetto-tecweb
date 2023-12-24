@@ -407,6 +407,36 @@ public function updatePassword($username, $newPassword) {
         $this->db->closeConnection();
     }
 }
+public function isArtistNameExists($artistName) {
+    try {
+        $this->db->openConnection();
+        $query = "SELECT COUNT(*) FROM Programma WHERE artist_name = ?";
+        $stmt = mysqli_prepare($this->db->getConnection(), $query);
+
+        if (!$stmt) {
+            throw new Exception("Errore nella preparazione della query: " . mysqli_error($this->db->getConnection()));
+        }
+
+        mysqli_stmt_bind_param($stmt, "s", $artistName);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $count);
+        mysqli_stmt_fetch($stmt);
+        
+
+        return $count > 0; #ritorna 1 solo se c'è un una corrispondenza
+
+    } catch (Exception $e) {
+        // Registra l'errore nei log del server
+        error_log("Errore durante il controllo dell'esistenza del nome dell'artista: " . $e->getMessage());
+
+        return false;
+
+    } finally {
+        $this->db->closeConnection();
+    }
+}
+    
+
 
 
 
