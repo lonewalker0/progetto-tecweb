@@ -52,3 +52,13 @@ INSERT INTO Biglietti (nome, descrizione, image_path, data_ora_inizio, data_ora_
 ( 'Intero', 'Intero comprende tutte le giornate','assets/biglietti/biglietto.png','2023-07-05 12:00:00' ,'2023-07-08 02:00:00' , 110.00),
 ( 'vip', 'VIP tutte le giornate con inclusi incontri con gli artisti','assets/biglietti/biglietto.png','2023-07-05 12:00:00' ,'2023-07-08 02:00:00', 150.00);
 
+CREATE TABLE Ordini (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    id_biglietto INT NOT NULL,
+    quantita INT NOT NULL,
+    data_acquisto DATETIME NOT NULL,
+    prezzo FLOAT NOT NULL,
+    FOREIGN KEY (id_utente) REFERENCES users(username),
+    FOREIGN KEY (id_biglietto) REFERENCES Biglietti(id)
+);

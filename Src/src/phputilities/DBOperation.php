@@ -523,6 +523,27 @@ public function getBigliettiEntries(): array
     return $bigliettiEntries;
 }
 
+public function addOrder($username, $ticketId, $purchaseDate, $quantity, $prezzo): bool {
+    try {
+        $this->db->openConnection();
+        $sql = "INSERT INTO ordini (username, id_biglietto,quantita, data_acquisto,prezzo ) VALUES (?, ?, ?, ?, ?)";
+        $stmt = mysqli_prepare($this->db->getConnection(), $sql);
+        mysqli_stmt_bind_param($stmt, "sisid", $username, $ticketId, $purchaseDate, $quantity,$prezzo);
+        mysqli_stmt_execute($stmt);
+
+        $success = mysqli_stmt_affected_rows($stmt) > 0;
+
+        return $success;
+
+    } catch (Exception $e) {
+        // Registra l'errore nei log del server
+        error_log("Errore durante l'inserimento:  " . $e->getMessage());
+        return false;
+
+    } finally {
+        $this->db->closeConnection();
+    }
+}
 
 }
 
