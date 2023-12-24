@@ -216,10 +216,6 @@ main {
     
 }
 
-.programma-entry:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
 .programma-entry img {
     width: 25%;
     padding: 2rem;
@@ -233,22 +229,27 @@ main {
     color: black;
 }
 
-.programma-entry:after {
+.programma-entry:nth-child(even) {
+    float: right;
+}
+  
+.programma-entry:nth-child(odd) {
+    float: left;
+}
+  
+.programma-entry::after {
     content: "";
-    flex: 1;
+    display: table;
+    clear: both;
 }
 
-#event-title {
+/* Carosello dinamico del main */
 
-}
-
-/*Carosello dinamico del main */
-.carosello
-{
+.carosello {
     display:none;
 }
-.puntini
-{
+
+.puntini {
     cursor: pointer;
     height: 15px;
     width: 15px;
@@ -258,30 +259,30 @@ main {
     display: inline-block;
     transition: background-color 1s ease;
 }
-.active
-{
+
+.active {
     background-color: #717171;
 }
-.carosello-puntini
-{
+
+.carosello-puntini {
     text-align:center;
 }
-.img-carosello
-{
+
+.img-carosello {
     width: 100%;
     vertical-align: middle;
     background-size: cover;
 }
-.carosello-dinamico
-{    
+
+.carosello-dinamico {    
     margin-left:auto;
     margin-right:auto;
     width: 50%;
     position: relative;
     padding: 2px;
 }
-.descrizione
-{
+
+.descrizione {
     color: black;
     font-size: 25px;
     padding: 8px 12px;
@@ -290,16 +291,17 @@ main {
     width: 100%;
     text-align: center;
 }
-@keyframes fade
-{
+
+@keyframes fade {
     from{opacity: 0.4};
     to{opacity: 1};
 }
-.fade
-{
+
+.fade {
     animation-name: fade;
     animation-duration: 2s;
 }
+
 /* Sponsor */
 
 section {
@@ -314,8 +316,8 @@ section h1 {
     font-weight: bold;
     padding: 1rem;
 }
-section h4
-{
+
+section h4 {
     color: black;
     font-size: 2rem;
     font-weight: 500;
@@ -325,26 +327,26 @@ section h4
     margin-left: 15px;
     margin-right: 15px;
 }
-.sponsors-container 
-{
+
+.sponsors-container {
     display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 75%;
 } 
-.sponsor-icon 
-{
+
+.sponsor-icon {
     transition: transform .2s;
     object-fit: none;
 }
-.sponsor-icon:hover
-{
+
+.sponsor-icon:hover {
     object-fit: none;
     padding: auto;
     height:auto;
     transform: scale(1.25);
 }
-.sponsor-icon img 
-{
+
+.sponsor-icon img {
     max-width: 30%;
     object-fit: cover;
     vertical-align: middle;
@@ -352,8 +354,8 @@ section h4
     margin-bottom: 30px;
 }
 
-/*COUNTDOWN */
-.countdown
-{
+/* Countdown */
+
+.countdown {
     display:none;
 }
