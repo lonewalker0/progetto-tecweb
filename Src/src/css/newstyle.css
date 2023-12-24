@@ -136,24 +136,6 @@ header {
 .menu a:hover, .menu a:focus {
     color: var(--light-bg-color);
 }
-  
-.menu .dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: var(--dark-bg-color);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-    z-index: 2;
-}
-  
-.menu li:hover .dropdown, .menu li:focus-within .dropdown {
-    display: block;
-}
-  
-.menu .dropdown li {
-    display: block;
-}
 
 /* Breadcrumb */
 
@@ -223,7 +205,7 @@ footer {
 main {
     top: 195px;
     box-sizing: border-box;
-    background-color: var(--dark-bg-color);
+    background-color: var(--light-bg-color);
 }
 
 .programma-entry {
@@ -234,14 +216,30 @@ main {
     
 }
 
+.programma-entry:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
 .programma-entry img {
     width: 25%;
+    padding: 2rem;
+    border-radius: 15px;
     
 }
 
 .entry-info {
     margin-left: auto;
     background-color: var(--light-bg-color);
+    color: black;
+}
+
+.programma-entry:after {
+    content: "";
+    flex: 1;
+}
+
+#event-title {
+
 }
 
 /*Carosello dinamico del main */
@@ -294,8 +292,8 @@ main {
 }
 @keyframes fade
 {
-    from{opacity: 0.4}
-    to{opacity: 1}
+    from{opacity: 0.4};
+    to{opacity: 1};
 }
 .fade
 {
@@ -318,8 +316,8 @@ section h1 {
 }
 section h4
 {
-    color: var(--dark-bg-color);
-    font-size: 1.5em;
+    color: black;
+    font-size: 2rem;
     font-weight: 500;
     font-weight: bold;
     border-bottom: 1px solid black;
