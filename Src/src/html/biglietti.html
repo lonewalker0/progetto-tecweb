@@ -1,0 +1,35 @@
+<main>
+    <div class="biglietto-entry" id="biglietto-1" role="article">
+      <img
+        src="{{image}}"
+        alt="foto di biglietto"
+        role="img"
+        aria-labelledby="event-title"
+      />
+      <div class="entry-info-biglietto">
+       
+            <dl>
+                <dt id="biglietto-title">{{nome}}</dt>
+
+                <dt>Data inizio:</dt>
+                <dd><time datetime="{{datetime_inizio}}">{{datetime_inizio}}</time></dd>
+
+                <dt>Data fine:</dt>
+                <dd><time datetime="{{datetime_fine}}">{{datetime_fine}}</time></dd>
+
+                <dt>Descrizione:</dt>
+                <dd>{{Description}}</dd>
+
+                <dt>Prezzo:</dt>
+                <dd>{{prezzo}}</dd>
+            </dl>
+        
+      </div>
+    </div>
+    <form action="/processa_acquisto.php" method="post">
+        <label for="quantita-1">Quantità:</label>
+        <input type="number" id="quantita-1" name="quantita" min="1" required>
+        <input type="hidden" name="biglietto_id" value="{{id}}"> 
+        <input type="submit" value="Acquista">
+    </form>
+  </main>
