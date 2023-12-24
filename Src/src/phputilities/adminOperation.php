@@ -23,17 +23,17 @@ class adminOperation
         foreach ($events as $event) {
             $html .= $event->generateEliminationHTML();
         }
-        $html .= '</div>';
+        
 
-       
+        $html .= '<div id="errorContainerAggiuntaEvento">'; #è lo stesso container utilizzato dalla validazione di js
         if (isset($_SESSION['add_event_form_errors'])) {
-            $html .=  '<div id="error-message">';
             foreach ($_SESSION['add_event_form_errors'] as $error) {
-                $html .=  '<div>' . $error . '</div>';
+                $html .= '    <p>' . $error . '</p>';
             }
-            $html .=  '</div>';
             unset($_SESSION['add_event_form_errors']);
         }
+        $html .= '</div>';
+        
         
         $html .= '<div id="addEventForm">';
         $formContent = file_get_contents(__DIR__ . '/../html/form/addEventForm.html');

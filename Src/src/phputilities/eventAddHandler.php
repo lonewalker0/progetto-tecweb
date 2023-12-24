@@ -1,4 +1,7 @@
 <?php
+
+
+
 include('DBOperation.php');
 include('validationElement.php'); 
 
@@ -6,7 +9,8 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 $dboperation = new DBOperation(); 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_event'])) {
+#if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artist_name'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     session_start();
 
     $errors = [];
@@ -31,6 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_event'])) {
     if (!in_array($_FILES['image']['type'], $allowedFileTypes)) {
         $errors[] = "Tipo di file non supportato. Inserisci un'immagine JPEG, PNG o GIF.";
     }
+    $artistName = $_POST['artist_name'];
+    if ($dboperation->isArtistNameExists($artistName)) {
+        $errors[] = "L'evento dell'artista con il nome '$artistName' è già presente nel database.";}
 
     
     if (!empty($errors)) {

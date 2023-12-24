@@ -46,13 +46,13 @@ if (!isset($_SESSION["username"]) ) {
         $accountOperation= new accountOperation();
         $main.=$accountOperation->getMain();
     }
-    $main .= '<form action="phputilities/logoutprocess.php" method="post"> <button type="submit" name="logout">Logout</button></form>';
+    #bottone per il logout
+    $main .= '<form id="logout-button" action="phputilities/logoutprocess.php" method="post"> <button type="submit" name="logout">Logout</button></form>';
 
-    // Add other user-specific content here
 }
 
     
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);
-echo '<script src="js/requiredfield.js"></script>'
+
 ?>
