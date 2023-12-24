@@ -14,7 +14,8 @@ $main = "<h1>Prevendite</h1>";
 // Verifica se l'utente è autenticato
 if (!isset($_SESSION['username'])) {
     $main .= "<p>Per procedere all'acquisto dei biglietti, si prega di autenticarsi. <a href='account.php' tabindex=0>Accedi</a></p>";
-} else {
+}
+else {
     
     // Altre cose da mostrare solo agli utenti autenticati
     $bigliettobuilder= new BigliettiBuilder();

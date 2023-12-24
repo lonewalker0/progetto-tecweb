@@ -17,6 +17,7 @@ class accountOperation {
         if (!empty($username)) {
             // Recupera le informazioni dell'utente
             $userInfo = $this->dbOperation->getUserInfo($username);
+            $userorder= $this->dbOperation->getUserOrders($username);
 
             // Assicurati che l'array restituito contenga le informazioni dell'utente
             if ($userInfo) {
@@ -37,6 +38,23 @@ class accountOperation {
                 $output .= "<input type='hidden' name='username' value='" . $username . "'>";
                 $output .= "<input type='submit' value='Salva modifiche'>";
                 $output .= "</form>";
+                $output .= "<h4>Ordini effettuati</h4>";
+                if(!empty($userorder)) {
+                    
+                    foreach ($userorder as $order) {
+                        $output .= "<p>Numero d'ordine: " . $order['numero_ordine'] . "</p>";
+                        $output .= "<p>Data di acquisto: " . $order['data_acquisto'] . "</p>";
+                        $output .= "<p>Tipo di biglietto: " . $order['tipo_biglietto'] . "</p>";
+                        $output .= "<p>Descrizione:". $order["descrizione"] . "</p>";
+                        $output .= "<p>Prezzo totale: " . $order['prezzo_totale'] . "€</p>";
+                        $output .= "<hr>"; // Separatore tra gli ordini
+                    }
+                } else {
+                    $output .= "<p>Nessun ordine effettuato.</p>";
+                }
+                
+
+
 
                 return $output;
             } else {

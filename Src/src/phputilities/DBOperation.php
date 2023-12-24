@@ -575,6 +575,45 @@ public function addOrder($username, $ticketId, $purchaseDate, $quantity, $prezzo
     }
 }
 
+public function getUserOrders($username) {
+    try {
+        $this->db->openConnection();
+
+        // Esegui una query per ottenere le informazioni sugli ordini dell'utente
+        $sql = "SELECT Ordini.id AS numero_ordine, Ordini.data_acquisto, Biglietti.nome AS tipo_biglietto, Biglietti.descrizione as descrizione, Ordini.prezzo
+                FROM Ordini
+                INNER JOIN Biglietti ON Ordini.id_biglietto = Biglietti.id
+                WHERE Ordini.username = ?";
+        $stmt = mysqli_prepare($this->db->getConnection(), $sql);
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $numero_ordine, $data_acquisto, $tipo_biglietto, $descrizione, $prezzo);
+
+        $orders = [];
+
+        // Recupera tutti gli ordini dell'utente
+        while (mysqli_stmt_fetch($stmt)) {
+            $orders[] = [
+                'numero_ordine' => $numero_ordine,
+                'data_acquisto' => $data_acquisto,
+                'tipo_biglietto' => $tipo_biglietto,
+                'descrizione' => $descrizione,
+                'prezzo_totale' => $prezzo
+            ];
+        }
+
+        return $orders;
+
+    } catch (Exception $e) {
+        // Registra l'errore nei log del server
+        error_log("Errore durante il recupero degli ordini dell'utente: " . $e->getMessage());
+        return [];
+
+    } finally {
+        $this->db->closeConnection();
+    }
+}
+
 }
 
 
