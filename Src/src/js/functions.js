@@ -214,3 +214,37 @@ document.addEventListener("DOMContentLoaded", function () {
     oldPasswordField.required = this.value.trim() !== "";
   });
 });
+
+
+//calcolare il prezzo totale del biglietto, prima di inviare l'acquisto al submit
+
+function calculateTotalPrice(id) {
+  var quantitaInput = document.getElementById('quantita-' + id);
+  var prezzoTotaleParagraph = document.getElementById('prezzo-totale-' + id);
+  var prezzoElement = document.getElementById('prezzo-' + id);
+
+  // Ottenere il valore contenuto all'interno del <dd>
+  var prezzoSingolo = parseFloat(prezzoElement.textContent.trim());
+  var quantita = parseInt(quantitaInput.value, 10);
+  var prezzoTotale = prezzoSingolo * quantita;
+
+  // Aggiorna il testo del paragrafo
+  if (!isNaN(prezzoSingolo) && !isNaN(quantita) && quantita > 0) {
+      prezzoTotaleParagraph.innerHTML = 'Prezzo totale: ' + prezzoTotale.toFixed(2) + '€';
+      prezzoTotaleParagraph.style.display = 'block';
+  } else {
+      prezzoTotaleParagraph.style.display = 'none';
+  }
+}
+
+// Aggiungi event listener per ogni campo di quantità
+document.addEventListener('DOMContentLoaded', function () {
+  var quantitaInputs = document.querySelectorAll('[id^="quantita-"]');
+
+  quantitaInputs.forEach(function (input) {
+      var id = input.id.split('-')[1];
+      input.addEventListener('input', function () {
+          calculateTotalPrice(id);
+      });
+  });
+});
