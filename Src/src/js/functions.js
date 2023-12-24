@@ -1,14 +1,61 @@
 let imgIndex = 0;
 
+// Aggiungi event listener per ogni campo di quantità
 document.addEventListener("DOMContentLoaded", function () {
-  carosello();
-});
+  var quantitaInputs = document.querySelectorAll('[id^="quantita-"]');
 
+  quantitaInputs.forEach(function (input) {
+    var id = input.id.split("-")[1];
+    input.addEventListener("input", function () {
+      calculateTotalPrice(id);
+    });
+  });
+});
+//altrimenti non funziona perchè il form viene istanziato solo dopo
 document.addEventListener("DOMContentLoaded", function () {
-  triggerView();
-  countdownFestival();
+  document
+    .getElementById("formAggiuntaEvento")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (validazioneFormAggiutaEvento()) {
+        event.target.submit();
+      }
+      return false;
+    });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  var newPasswordField = document.getElementById("nuova_password");
+  var confirmPasswordField = document.getElementById("conferma_password2");
+  var oldPasswordField = document.getElementById("vecchia_password");
 
+  // Aggiungi un gestore agli eventi per il campo di input della nuova password
+  newPasswordField.addEventListener("input", function () {
+    // Rendi i campi obbligatori solo se la nuova password ha un valore
+    confirmPasswordField.required = this.value.trim() !== "";
+    oldPasswordField.required = this.value.trim() !== "";
+  });
+});
+//se il path della pagina è progetto-git/index.php crea due eventListener per il carosello e il countdown
+if(window.location.pathname === '/progetto-git/index.php')
+{
+    //eventListener per la visualizzazione del carosello e per la visualizzazione del countdown del festival
+    document.addEventListener("DOMContentLoaded", function () {
+        carosello();        
+        countdownFestival();
+        triggerView();
+    });
+}
+//eventListener per la visualizzazione dell'errore
+document.addEventListener("DOMContentLoaded", function () {
+  var errorDiv = document.getElementById("error_login");
+  if (errorDiv) {
+    errorDiv.style.display = "block"; // Mostra il messaggio di errore
+    setTimeout(function () {
+      errorDiv.style.display = "none"; // Nascondi il messaggio di errore dopo 2.5 secondi
+    }, 2500); // 2500 millisecondi corrispondono a 2.5 secondi
+  }
+});
+//funzione per il countdown del festival
 const getCountdown = (eventDate) => {
   let countdownFestival = eventDate.getTime();
 
@@ -24,6 +71,7 @@ const getCountdown = (eventDate) => {
 
   return "| " + giorni + "d " + ore + "h " + minuti + "m " + secondi + "s ";
 };
+//funzione per il countdown del festival
 function countdownFestival() {
   const DOMELEMENT = document.getElementById("intervalloFestival");
   const eventDate = new Date("Jul 5, 2024 12:00:00");
@@ -32,6 +80,7 @@ function countdownFestival() {
     DOMELEMENT.innerHTML = countDown || "EXPIRED";
   }, 1000);
 }
+//funzione per il countdown del festival
 function triggerView() {
   const df = document.getElementById("dataFestival");
   const cd = document.getElementById("intervalloFestival");
@@ -48,6 +97,7 @@ function triggerView() {
   }, 4000);
 }
 
+//funzione per il carosello del festival
 function carosello() {
   let i;
   let img = document.getElementsByClassName("carosello");
@@ -97,17 +147,6 @@ function validateForm() {
   // Restituisce true solo se tutte le validazioni sono superate
   return true;
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-  var errorDiv = document.getElementById("error_login");
-  if (errorDiv) {
-    errorDiv.style.display = "block"; // Mostra il messaggio di errore
-    setTimeout(function () {
-      errorDiv.style.display = "none"; // Nascondi il messaggio di errore dopo 2.5 secondi
-    }, 2500); // 2500 millisecondi corrispondono a 2.5 secondi
-  }
-});
-
 //funzione per andare ad aggiungere un paragrafo al div di errore
 function appendError(conteinerId, message) {
   const errorElement = document.createElement("p");
@@ -233,35 +272,7 @@ function validazioneFormAggiutaEvento() {
 
   return false;
 }
-
-//altrimenti non funziona perchè il form viene istanziato solo dopo
-document.addEventListener("DOMContentLoaded", function () {
-  document
-    .getElementById("formAggiuntaEvento")
-    .addEventListener("submit", function (event) {
-      event.preventDefault();
-      if (validazioneFormAggiutaEvento()) {
-        event.target.submit();
-      }
-      return false;
-    });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  var newPasswordField = document.getElementById("nuova_password");
-  var confirmPasswordField = document.getElementById("conferma_password2");
-  var oldPasswordField = document.getElementById("vecchia_password");
-
-  // Aggiungi un gestore agli eventi per il campo di input della nuova password
-  newPasswordField.addEventListener("input", function () {
-    // Rendi i campi obbligatori solo se la nuova password ha un valore
-    confirmPasswordField.required = this.value.trim() !== "";
-    oldPasswordField.required = this.value.trim() !== "";
-  });
-});
-
 //calcolare il prezzo totale del biglietto, prima di inviare l'acquisto al submit
-
 function calculateTotalPrice(id) {
   var quantitaInput = document.getElementById("quantita-" + id);
   var prezzoTotaleParagraph = document.getElementById("prezzo-totale-" + id);
@@ -281,15 +292,3 @@ function calculateTotalPrice(id) {
     prezzoTotaleParagraph.style.display = "none";
   }
 }
-
-// Aggiungi event listener per ogni campo di quantità
-document.addEventListener("DOMContentLoaded", function () {
-  var quantitaInputs = document.querySelectorAll('[id^="quantita-"]');
-
-  quantitaInputs.forEach(function (input) {
-    var id = input.id.split("-")[1];
-    input.addEventListener("input", function () {
-      calculateTotalPrice(id);
-    });
-  });
-});
