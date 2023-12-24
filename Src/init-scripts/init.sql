@@ -46,9 +46,9 @@ CREATE TABLE Biglietti (
 );
 
 INSERT INTO Biglietti (nome, descrizione, image_path, data_ora_inizio, data_ora_fine, prezzo) VALUES
-(1, 'giornata_singola', 'Giornata Singola - 5 Luglio','assets/biglietti/biglietto.png', '2023-07-05 12:00:00', '2023-07-06 02:30:00', 50.00),
-(2, 'giornata_singola', 'Giornata Singola - 6 Luglio','assets/biglietti/biglietto.png', '2023-07-06 15:00:00', '2023-07-07 04:30:00', 55.00),
-(3, 'giornata_singola', 'Giornata Singola - 7 Luglio','assets/biglietti/biglietto.png', '2023-07-07 15:30:00', '2023-07-08 02:00:00', 50.00),
-(4, 'Intero', 'Intero comprende tutte le giornate','assets/biglietti/biglietto.png','2023-07-05 12:00:00' ,'2023-07-08 02:00:00' , 110.00),
-(5, 'vip', 'VIP tutte le giornate con inclusi incontri con gli artisti','assets/biglietti/biglietto.png','2023-07-05 12:00:00' ,'2023-07-08 02:00:00', 150.00);
+( 'GiornataSingola', 'Giornata Singola - 5 Luglio','assets/biglietti/biglietto.png', '2023-07-05 12:00:00', '2023-07-06 02:30:00', 50.00),
+( 'GiornataSingola', 'Giornata Singola - 6 Luglio','assets/biglietti/biglietto.png', '2023-07-06 15:00:00', '2023-07-07 04:30:00', 55.00),
+( 'GiornataSingola', 'Giornata Singola - 7 Luglio','assets/biglietti/biglietto.png', '2023-07-07 15:30:00', '2023-07-08 02:00:00', 50.00),
+( 'Intero', 'Intero comprende tutte le giornate','assets/biglietti/biglietto.png','2023-07-05 12:00:00' ,'2023-07-08 02:00:00' , 110.00),
+( 'vip', 'VIP tutte le giornate con inclusi incontri con gli artisti','assets/biglietti/biglietto.png','2023-07-05 12:00:00' ,'2023-07-08 02:00:00', 150.00);
 

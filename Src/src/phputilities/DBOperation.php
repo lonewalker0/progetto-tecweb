@@ -1,6 +1,7 @@
 <?php
 include('DBAccess.php'); 
 include('evententry.php'); 
+include('bigliettientry.php');
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);

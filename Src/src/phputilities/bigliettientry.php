@@ -31,6 +31,21 @@ class BigliettiEntry {
             echo "An error occurred: " . $e->getMessage();
         }
     }
+
+    public function generateHTML(): string
+    {
+        
+        $html = str_replace(
+            ['{{nome}}', '{{image}}', '{{datetime_inizio}}', '{{datetime_fine}}', '{{Description}}','{{prezzo}}','{{id}}'],
+            [$this->nome, $this->image, $this->datetime_inizio, $this->datetime_fine, $this->description, $this->prezzo, $this->id],
+            $this->template
+        );
+
+        return $html;
+    }
+
+
+
 }
 
 

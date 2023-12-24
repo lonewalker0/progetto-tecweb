@@ -1,5 +1,6 @@
 <?php
 include('phputilities/PageBuilder.php');
+include('phputilities/bigliettibuilder.php');
 session_start();
 $breadcrumb = 'Prevendite';
 $breadcrumblen = 'it';
@@ -16,6 +17,8 @@ if (!isset($_SESSION['username'])) {
 } else {
     
     // Altre cose da mostrare solo agli utenti autenticati
+    $bigliettobuilder= new BigliettiBuilder();
+    $main.=$bigliettobuilder->buildBigliettoHtml();
 }
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);
 ?>
