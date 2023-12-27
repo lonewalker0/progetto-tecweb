@@ -192,6 +192,7 @@ public function getMerchItems(): array
         $result = $this->db->executeQuery($query);
         while ($row = $result->fetch_assoc()) {
             $merchItem = new MerchItem(
+                $row['id'], 
                 $row['productImage'],
                 $row['productName'],
                 $row['productColor'],

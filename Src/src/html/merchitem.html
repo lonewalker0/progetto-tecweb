@@ -1,13 +1,17 @@
 <article class="product">
   <img
     src="{{productImage}}"
-    alt="{{productName}}"
+    alt="Foto di: {{productName}}"
     role="img"
-    aria-labelledby="{{productLongDescription}}"
+    aria-labelledby="description{{productId}}"
   />
   <div class="entry-info">
     <p id="productTitle">{{productName}}</p>
     <p>Color: <span>{{productColor}}</span></p>
     <p>Price: <span>{{productPrice}}</span></p>
+    <p>
+      Description:
+      <span id="description{{productId}}">{{productDescription}}</span>
+    </p>
   </div>
 </article>
