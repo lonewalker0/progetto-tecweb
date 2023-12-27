@@ -2,6 +2,7 @@
 include('DBAccess.php'); 
 include('evententry.php'); 
 include('bigliettientry.php');
+include('merchItem.php'); 
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -179,6 +180,37 @@ class DBOperation{
 
     return $eventEntries;
 }
+
+public function getMerchItems(): array
+{
+    $merchItems = [];
+
+    $query = "SELECT * FROM Shop";
+
+    try {
+        $this->db->openConnection();
+        $result = $this->db->executeQuery($query);
+        while ($row = $result->fetch_assoc()) {
+            $merchItem = new MerchItem(
+                $row['productImage'],
+                $row['productName'],
+                $row['productColor'],
+                $row['productPrice'],
+                $row['productLongDescription']
+            );
+            $merchItems[] = $merchItem;
+        }
+    } catch (Exception $e) {
+        error_log($e->getMessage());
+        throw $e;
+    } finally {
+        $this->db->closeConnection();
+    }
+
+    return $merchItems;
+}
+
+
 
     public function deleteEvent($artistName): bool {
         try {

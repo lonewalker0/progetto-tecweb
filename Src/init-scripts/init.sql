@@ -62,3 +62,22 @@ CREATE TABLE Ordini (
     FOREIGN KEY (username) REFERENCES users(username),
     FOREIGN KEY (id_biglietto) REFERENCES Biglietti(id)
 );
+
+
+CREATE TABLE Shop (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    productImage VARCHAR(255),
+    productName VARCHAR(255),
+    productColor VARCHAR(50),
+    productPrice DECIMAL(10, 2),
+    productLongDescription TEXT
+);
+
+
+INSERT INTO Shop (productImage, productName, productColor, productPrice, productLongDescription)
+VALUES
+('assets/merchitem/redT.png', 'Festival T-Shirt', 'Red', 19.99, 'Comfortable and stylish red t-shirt, perfect for festivals.'),
+
+('assets/merchitem/bluecap.png', 'Leather Wristband', 'Black', 9.99, 'Black leather wristband with festival logo.'),
+
+('assets/merchitem/bluecap.png', 'Summer Hat', 'Blue', 14.99, 'Blue summer hat to keep you cool under the festival sun.');

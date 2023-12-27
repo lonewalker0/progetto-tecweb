@@ -16,19 +16,21 @@ class EventEntry
         $this->time = $time;
         $this->description = $description;
 
-        try {
-        $this->template = file_get_contents(__DIR__ . '/../html/event.html');
-        if ($this->template === false) {
-            throw new Exception("Failed to load template from file");
-        }
-        } catch (Exception $e) {
-            echo "An error occurred: " . $e->getMessage();
-        }
+        
     }
 
     public function generateHTML(): string
     {
         
+        try {
+            $this->template = file_get_contents(__DIR__ . '/../html/event.html');
+            if ($this->template === false) {
+                throw new Exception("Failed to load template from file");
+            }
+            } catch (Exception $e) {
+                echo "An error occurred: " . $e->getMessage();
+            }
+
         $html = str_replace(
             ['{{performer}}', '{{image}}', '{{datetime}}', '{{time}}', '{{Description}}'],
             [$this->performer, $this->image, $this->datetime, $this->time, $this->description],
