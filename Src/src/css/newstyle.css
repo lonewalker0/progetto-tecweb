@@ -203,8 +203,6 @@ footer {
 /* Main */
 
 main {
-    top: 195px;
-    box-sizing: border-box;
     background-color: var(--light-bg-color);
 }
 
@@ -218,29 +216,27 @@ main {
 
 .programma-entry img {
     width: 25%;
-    padding: 2rem;
-    border-radius: 15px;
-    
+    padding: 0;
+    border-radius: 100px;
+    box-shadow: 0 4px 8px var(--dark-bg-color);
+    box-sizing: border-box;
 }
 
 .entry-info {
     margin-left: auto;
+    padding: 1rem;
     background-color: var(--light-bg-color);
-    color: black;
+    color: var(--dark-bg-color);
+    font-size: 1.5rem;
+    font-weight: 400;
 }
 
-.programma-entry:nth-child(even) {
-    float: right;
-}
-  
-.programma-entry:nth-child(odd) {
-    float: left;
-}
-  
-.programma-entry::after {
-    content: "";
-    display: table;
-    clear: both;
+#event-title {
+    font-size: 2rem;
+    font-weight: 500;
+    font-weight: bold;
+    padding: 1rem;
+    color: var(--text-color);
 }
 
 /* Carosello dinamico del main */
@@ -274,7 +270,7 @@ main {
     background-size: cover;
 }
 
-.carosello-dinamico {    
+.carosello-dinamico {
     margin-left:auto;
     margin-right:auto;
     width: 50%;
