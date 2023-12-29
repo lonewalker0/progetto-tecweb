@@ -122,7 +122,7 @@ header {
 .menu li {
     display: inline-block;
     position: relative;
-    margin-right: 15rem;
+    margin-right: 2rem;
 }
   
 .menu a {
@@ -145,7 +145,7 @@ header {
     width: 100%; /* full width */
     height: 60px;
     padding-left: 1em;
-    background-color: rgba(37, 53, 25, 0.7);
+    background-color: rgba(244, 252, 237, 0.7);
     display: flex;
     align-items: center;
     z-index: 10;
@@ -156,7 +156,7 @@ header {
     text-align: left !important;
     font-size: 1.25em;
     font-size: 1.4rem;
-    color: var(--text-color);
+    color: var(--dark-bg-color);
     font-weight: 400;
 }
 
@@ -203,30 +203,30 @@ footer {
 /* Main */
 
 main {
-    background-color: var(--light-bg-color);
+    background-color: var(--dark-bg-color);;
 }
 
 .programma-entry {
     margin: 0;
     padding: 0;
+    margin-top: 12rem;
     display: flex;
     align-items: center;
-    
+    box-shadow: 0 4px 8px var(--dark-bg-color);    
 }
 
 .programma-entry img {
     width: 25%;
     padding: 0;
-    border-radius: 100px;
-    box-shadow: 0 4px 8px var(--dark-bg-color);
+    border-radius: 60px;
     box-sizing: border-box;
 }
 
 .entry-info {
     margin-left: auto;
     padding: 1rem;
-    background-color: var(--light-bg-color);
-    color: var(--dark-bg-color);
+    background-color: var(--dark-bg-color);
+    color: var(--text-color);
     font-size: 1.5rem;
     font-weight: 400;
 }
@@ -354,4 +354,66 @@ section h4 {
 
 .countdown {
     display:none;
+}
+
+/* Domande */
+
+.faq-container {
+    margin: 0 auto; /* Center the container */
+    margin-top: 15rem;
+    padding: 1rem;
+    background-color: var(--light-bg-color);
+    border: solid;
+    border-color: red;
+}
+ .faq-container > h1 {
+    color: var(--dark-bg-color);
+    font-size: 3rem;
+    font-weight: 500;
+    font-weight: bold;
+ }
+.faq-section {
+    margin-bottom: 30px;
+    border: solid;
+    border-color: orange;
+}
+
+.faq-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--dark-bg-color);
+}
+
+.faq-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid;
+    border-color: purple;
+}
+
+.faq-item {
+    width: 20%;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-right: 20px; /* Spacing between boxes */
+    margin-bottom: 20px;
+    background-color: var(--dark-bg-color);
+    border: solid;
+    border-color: blue;
+}
+
+.question {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--light-bg-color);
+}
+
+.answer {
+    margin-bottom: 10px;
+}
+
+.note {
+    font-style: italic;
 }
