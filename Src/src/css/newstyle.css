@@ -1,14 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,400;0,500;1,500&display=swap');
-
 * {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Gill Sans', sans-serif;
     margin: 0;
     padding: 0;
-    scroll-padding-top: 2rem; /* height of the header */
-    scroll-behavior: smooth; /* smooth scrolling */
-    box-sizing: border-box; /* border-box for padding and border */
-    list-style: none; /* no list bullets */
-    text-decoration: none; /* no underline */
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration: none;
     box-sizing: border-box;
 }
 
@@ -57,11 +54,12 @@ header {
     font-size: 1.8rem;
     color: var(--dark-bg-color);
     font-weight: 500;
-    padding-left: 1rem;     
+    padding-left: 1rem;
+    font-weight: bold;   
 }
 
 .logo-text {
-    margin-right: 7px;
+    margin-right: 7px;  
     font-style: italic;
     text-transform: uppercase;
 }
@@ -77,22 +75,25 @@ header {
 .icons {
     display: flex;
     align-items: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     cursor: pointer;
     color: var(--dark-bg-color);
+    transition: transform 0.3s ease;
 }
 
-.icons i {
-    margin-right: 14px;
-    transition: color 0.3s ease;
+.icons img {
+    width: 1.6rem; /* Adjust the width to make the icons smaller */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Adjust margin as needed */
 }
 
-.icons i:hover, .icons i:focus {
-    color: var(--text-color);
+.icons img:hover, .icons img:focus {
+    transform: scale(1.2);
 }
 
 .separator {
     margin: 0 10px;
+    margin-bottom: 0.7rem;
 }
 
 /* Navigation Menu */
@@ -110,6 +111,7 @@ header {
     font-size: 1.4rem;
     color: var(--text-color);
     font-weight: 400;
+    font-weight: bold;
     z-index: 10;
 }
   
@@ -163,27 +165,31 @@ header {
 /* Footer */
 
 footer {
-    background-color: var(--dark-bg-color);
-    color: var(--text-color);
+    background-color: var(--ligth-bg-color);
+    color: var(--dark-bg-color);
     text-align: center;
     padding: 20px 0;
     margin-top: 0;
 }
   
-.social-icons {
-    margin-bottom: 10px;  
-    cursor: pointer;  
-}
-  
-.social-icons i {
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
     font-size: 2rem;
-    margin: 0 10px;
-    color: var(--light-bg-color);
-    transition: color 0.3s ease;   
 }
 
-.social-icons i:hover, .social-icons i:focus {
-    color: var(--text-color);
+.footer-icons img {
+    width: 1.6rem;
+    height: auto;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.footer-icons img:hover, .footer-icons img:focus {
+    transform: scale(1.3);
 }
 
 .footer-content {
@@ -359,7 +365,7 @@ section h4 {
 /* Domande */
 
 .faq-container {
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto;
     margin-top: 15rem;
     padding: 1rem;
     background-color: var(--light-bg-color);
@@ -385,6 +391,7 @@ section h4 {
 }
 
 .faq-box-container {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     border: solid;
@@ -394,7 +401,7 @@ section h4 {
 .faq-item {
     width: 20%;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-right: 20px; /* Spacing between boxes */
@@ -411,7 +418,7 @@ section h4 {
 }
 
 .answer {
-    margin-bottom: 10px;
+    margin-bottom: 10px;  
 }
 
 .note {

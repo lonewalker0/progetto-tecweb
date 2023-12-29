@@ -24,13 +24,13 @@ $main = "
     <div class='faq-item'>
         <p class='question'>Qual'è la <span lang='en'>line-up</span>?</p>
         <p class='answer'>Tieni d'occhio i nostri canali social per essere il primo a sapere quando arriveranno nuovi nomi al TechnoLum250 Festival.</p>
-        <p class='answer note'>Puoi scoprire la <span lang='en'>line-up </span><a href='index.php'>qui<a/>.</p>
+        <p class='answer note'>Puoi scoprire la <span lang='en'>line-up </span>nella pagina <a href='index.php'>home<a/>.</p>
     </div>
 
     <div class='faq-item'>
         <p class='question'>Quali oggetti sono vietati all'interno di TechnoLum250 festival?</p>
         <p class='answer'>Non è ammesso entrare nel territorio del festival con i seguenti oggetti:</p>
-        <ul class='answer'>
+        <ul>
             <li>armi da fuoco, armi bianche e oggetti appuntiti</li>
             <li>droga (eccetto per medicinali accompagnati da prescrizione medica)</li>
             <li>bottiglie o contenitori di vetro</li>
@@ -53,7 +53,7 @@ $main = "
     <div class='faq-item'>
         <p class='question'>Dove posso acquistare i biglietti per TechnoLum250 Festival 2024?</p>
         <p class='answer'>Registrati presso la nostra pagina <span lang='en'>Account</span> per avere accesso alla vendita dei biglietti.
-        Maggiori informazioni riguardo la registrazione e la gestione dei propri acquisti possono essere trovati <a href='account.php'>qui<a/>.</p>
+        Maggiori informazioni riguardo la registrazione e la gestione dei propri acquisti possono essere trovati nella pagina<a href='account.php'>account<a/>.</p>
         <p class='answer note'>Importante: la registrazione non garantisce l'acquisto dei biglietti, che saranno disponibili in quantità limitata.</p>
     </div>
 
