@@ -165,7 +165,7 @@ header {
 /* Footer */
 
 footer {
-    background-color: var(--ligth-bg-color);
+    background-color: var(--light-bg-color);
     color: var(--dark-bg-color);
     text-align: center;
     padding: 20px 0;
@@ -362,6 +362,38 @@ section h4 {
     display:none;
 }
 
+/* Chi siamo */
+
+.chi-siamo {
+    margin: 0 auto;
+    margin-top: 15rem;
+    padding: 2rem;
+    background-color: var(--light-bg-color);
+    color: var(--dark-bg-color);
+}
+
+.chi-siamo > h1 {
+    padding-bottom: 2rem;
+    color: var(--dark-bg-color);
+    font-size: 3rem;
+    font-weight: 500;
+    font-weight: bold;
+}
+
+#img-chi-siamo {
+    width: 75%;
+    margin-bottom: 1rem;
+}
+
+#testo-chi-siamo {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.ringraziamenti {
+    margin-bottom: 0.5rem;
+}
+
 /* Domande */
 
 .faq-container {
@@ -369,56 +401,70 @@ section h4 {
     margin-top: 15rem;
     padding: 1rem;
     background-color: var(--light-bg-color);
-    border: solid;
-    border-color: red;
+    color: var(--dark-bg-color);
+    /* border: solid;
+    border-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
- .faq-container > h1 {
+
+.faq-container > h1 {
+    padding-bottom: 2rem;
     color: var(--dark-bg-color);
     font-size: 3rem;
     font-weight: 500;
     font-weight: bold;
- }
+}
+
 .faq-section {
     margin-bottom: 30px;
-    border: solid;
-    border-color: orange;
+    /* border: solid;
+    border-color: orange; */
+    width: 100%;
 }
 
 .faq-title {
     font-size: 24px;
     margin-bottom: 15px;
-    color: var(--dark-bg-color);
+    margin-left: 11rem;
 }
 
 .faq-box-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    border: solid;
-    border-color: purple;
+    /* border: solid;
+    border-color: purple; */
+    justify-content: center;
 }
 
 .faq-item {
-    width: 20%;
+    width: 25%;
     box-sizing: border-box;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-right: 20px; /* Spacing between boxes */
-    margin-bottom: 20px;
-    background-color: var(--dark-bg-color);
+    padding: 2rem;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+    margin-right: 50px; /* Spacing between boxes */
+    margin-bottom: 50px;
+    /* background-color: var(--dark-bg-color);
     border: solid;
-    border-color: blue;
+    border-color: blue; */
 }
 
 .question {
     font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: var(--light-bg-color);
+    font-weight: bold;
+    margin-bottom: 10px;;
+    /* color: var(--light-bg-color); */
 }
 
 .answer {
     margin-bottom: 10px;  
+}
+
+.faq-item .answer ul {
+    margin-bottom: 10px;
 }
 
 .note {
