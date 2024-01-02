@@ -23,7 +23,7 @@ class IndexMainBuilder
 
         
         #Loop through the EventEntry instances and generate HTML
-        $this->mainHTML .= '<div id="program"><p>Il nostro Programma</p>';
+        $this->mainHTML .= '<h1>Programma</h1>';
         foreach ($this->eventEntries as $event) {
             $this->mainHTML .= $event->generateHTML();
         }
