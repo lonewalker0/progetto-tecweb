@@ -622,6 +622,10 @@ section h4 {
   font-style: italic;
 }
 
+/*ERROR 404*/
+
+/*ERROR 500*/
+
 main {
   margin-top: 30rem; /* Adjust the value to move the main section down as needed */
   overflow-y: auto; /* Allows vertical scrolling if the content overflows */

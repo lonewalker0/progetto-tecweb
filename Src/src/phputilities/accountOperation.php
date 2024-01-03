@@ -38,17 +38,33 @@ class accountOperation {
                 $output .= "<input type='hidden' name='username' value='" . $username . "'>";
                 $output .= "<input type='submit' value='Salva modifiche'>";
                 $output .= "</form>";
-                $output .= "<h4>Ordini effettuati</h4>";
+                $output .= "<h4>Ordini</h4>";
                 if(!empty($userorder)) {
+                    $output .= "<table id='tabellaordini' summary='La tabella ha 5 colonne ed informa su tutti gli ordini effettuati dallo utente visualizzando Numero ordine, Data di acquisto, tipologia di biglietto, descrizione,prezzo totale>";
+                    $output .= "<caption>Ordini Effettuati</caption>";
+                    $output .= "<thead>";
+                    $output .= "<tr>";
+                    $output .= "<th scope='col'>Numero Ordine</th>";
+                    $output .= "<th scope='col'>Data Acquisto</th>";
+                    $output .= "<th scope='col'>Tipologia Biglietto</th>";
+                    $output .= "<th scope='col'>Descrizione</th>";
+                    $output .= "<th scope='col'>Prezzo Totale</th>";
+                    $output .= "</tr>";
+                    $output .= "</thead>";
+                    $output .= "<tbody>";
                     
                     foreach ($userorder as $order) {
-                        $output .= "<p>Numero d'ordine: " . $order['numero_ordine'] . "</p>";
-                        $output .= "<p>Data di acquisto: " . $order['data_acquisto'] . "</p>";
-                        $output .= "<p>Tipo di biglietto: " . $order['tipo_biglietto'] . "</p>";
-                        $output .= "<p>Descrizione:". $order["descrizione"] . "</p>";
-                        $output .= "<p>Prezzo totale: " . $order['prezzo_totale'] . "€</p>";
-                        $output .= "<hr>"; // Separatore tra gli ordini
+                        $output .= "<tr>";
+                        $output .= "<td data-title='Numero Ordine'>" . $order['numero_ordine'] . "</th>";
+                        $output .= "<td data-title='Data Acquisto'><time datetime='" . $order['data_acquisto'] . "'>" . $order['data_acquisto'] . "</time></td>";
+                        $output .= "<td data-title='Tipologia Biglietto'> " . $order['tipo_biglietto'] . "</td>";
+                        $output .= "<td data-title='Descrizione'>". $order["descrizione"] . "</td>";
+                        $output .= "<td data-title='Prezzo Totale'>" . $order['prezzo_totale'] . "€</td>";
+                        $output .= "</tr>";
                     }
+                    
+                    $output .= "</tbody>";
+                    $output .= "</table>";
                 } else {
                     $output .= "<p>Nessun ordine effettuato.</p>";
                 }
