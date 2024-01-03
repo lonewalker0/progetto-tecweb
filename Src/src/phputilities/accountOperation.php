@@ -52,16 +52,17 @@ class accountOperation {
                     $output .= "</tr>";
                     $output .= "</thead>";
                     $output .= "<tbody>";
-                    $output .= "<tr>";
+                    
                     foreach ($userorder as $order) {
-                        $output .= "<th data-title='Numero Ordine' scope='row'>" . $order['numero_ordine'] . "</th>";
+                        $output .= "<tr>";
+                        $output .= "<td data-title='Numero Ordine'>" . $order['numero_ordine'] . "</th>";
                         $output .= "<td data-title='Data Acquisto'><time datetime='" . $order['data_acquisto'] . "'>" . $order['data_acquisto'] . "</time></td>";
                         $output .= "<td data-title='Tipologia Biglietto'> " . $order['tipo_biglietto'] . "</td>";
                         $output .= "<td data-title='Descrizione'>". $order["descrizione"] . "</td>";
                         $output .= "<td data-title='Prezzo Totale'>" . $order['prezzo_totale'] . "€</td>";
-                        
+                        $output .= "</tr>";
                     }
-                    $output .= "</tr>";
+                    
                     $output .= "</tbody>";
                     $output .= "</table>";
                 } else {
