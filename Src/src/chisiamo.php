@@ -8,7 +8,7 @@ $keyword = 'Festival, Techno, Lum250, Informazioni, Organizzatori;';
 $description = 'Vieni a conoscere coloro che hanno reso possibile il festival TechnoLum250, organizzatori, collaboratori e volontari.'; 
 
 $main = "
-<div class='chi-siamo'>
+<div class='chi-siamo-container'>
 
     <h1>Chi siamo</h1>
 

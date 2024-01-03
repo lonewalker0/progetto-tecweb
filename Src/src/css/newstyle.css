@@ -23,16 +23,33 @@ body {
     color: var(--text-color);
     background-color: var(--light-bg-color);
     max-width: 1920px;
-    margin-top: 15rem;
+    margin-top: 8rem;
     font-size: 1.2rem;
 }
 
 h1 {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
     color: var(--dark-bg-color);
     font-size: 3rem;
     font-weight: 500;
+    font-weight: bold;
+}
+
+h2 {
+    text-align: center;
+    padding: 1rem;
+    color: var(--dark-bg-color);
+    font-size: 2.6rem;
+    font-weight: 500;
+    font-weight: bold;
+}
+
+h4 {
+    padding: 1rem;
+    color: var(--dark-bg-color);
+    font-size: 1.8rem;
+    font-weight: 400;
     font-weight: bold;
 }
 
@@ -44,21 +61,18 @@ h1 {
 /* Header */
 
 header {
-    position: fixed; /* fixed position */
-    top: 0; /* stick to the top */
-    left: 0; /* stick to the left */
-    width: 100%; /* full width */
-    height: 100px;
-    background: var(--light-bg-color); 
-    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%); /* shadow */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4rem;
+    background: var(--light-bg-color);
     z-index: 10;
 }
 
 .nav {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 1rem;
 }
 
 .logo {
@@ -71,17 +85,10 @@ header {
     font-weight: bold;   
 }
 
-.logo-text {
+#logo-text {
     margin-right: 7px;  
     font-style: italic;
     text-transform: uppercase;
-}
-
-.logo a {
-    color: var(--text-color);
-}
-
-.logo a:visited {
     color: var(--text-color);
 }
 
@@ -95,43 +102,33 @@ header {
 }
 
 .icons img {
-    width: 1.6rem; /* Adjust the width to make the icons smaller */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Adjust margin as needed */
+    width: 1.6rem;
+    height: auto;
+    margin-right: 10px;
 }
 
 .icons img:hover, .icons img:focus {
     transform: scale(1.2);
 }
 
-.separator {
-    margin: 0 10px;
-    margin-bottom: 0.7rem;
-}
-
 /* Navigation Menu */
 
 .menu {
     position: fixed;
-    top: 100px;
-    left: 0;
-    height: 80px;
+    top: 4rem;
+    height: 4rem;
     display: flex;
+    align-items: center;
     width: 100%;
     justify-content: center;
     background-color: var(--dark-bg-color);
-    padding: 15px;
     font-size: 1.4rem;
-    color: var(--text-color);
     font-weight: 400;
     font-weight: bold;
-    z-index: 10;
 }
   
 .menu ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 .menu li {
@@ -142,7 +139,6 @@ header {
   
 .menu a {
     display: block;
-    padding: 10px;
     text-decoration: none;
     color: var(--text-color);
     transition: color 0.3s ease;
@@ -155,24 +151,22 @@ header {
 /* Breadcrumb */
 
 #breadcrumb {
-    position: fixed; /* fixed position */
-    top: 180px; /* stick to the top */
-    width: 100%; /* full width */
-    height: 60px;
+    position: fixed;
+    top: 8rem;
+    width: 100%;
+    height: 2rem;
     padding-left: 1em;
     background-color: rgba(244, 252, 237, 0.7);
     display: flex;
     align-items: center;
-    z-index: 10;
 }
   
 #breadcrumb p {
-    max-width: 1290px;
-    text-align: left !important;
-    font-size: 1.25em;
-    font-size: 1.4rem;
+    text-align: left;
+    padding-left: 1rem;
+    font-size: 1rem;
     color: var(--dark-bg-color);
-    font-weight: 400;
+    font-weight: bold;
 }
 
 /* Footer */
@@ -180,9 +174,9 @@ header {
 footer {
     background-color: var(--light-bg-color);
     color: var(--dark-bg-color);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     text-align: center;
-    padding: 20px 0;
-    padding-top: 2rem;
     border-top: solid;
     border-width: 2px;
     border-color: var(--dark-bg-color);
@@ -233,13 +227,8 @@ footer {
 .programma-entry { 
     /* border: solid;
     border-color: blue; */
-    width: 100%;
-    box-sizing: border-box;
     display: flex;  
-}
-
-.programma-entry:nth-of-type(even) {
-    flex-direction: row-reverse;
+    margin-bottom: 4rem;
 }
 
 .programma-entry img {
@@ -255,9 +244,10 @@ footer {
     flex: 1;
     width: 40%;
     box-sizing: border-box;
-    margin: 6rem;
+    margin: 4rem;
+    margin-right: 2rem;
     margin-left: 2rem;
-    padding: 4rem;
+    padding: 2rem;
     background-color: var(--dark-bg-color);
     color: var(--light-bg-color);
     font-size: 1.5rem;
@@ -340,22 +330,14 @@ footer {
 section {
     text-align: center;
     background-color: var(--text-color);
-}
-
-section h1 {
-    color: var(--dark-bg-color);
-    font-size: 3rem;
-    font-weight: 500;
-    font-weight: bold;
-    padding: 2rem;
+    border-top: solid;
+    border-width: 2px;
+    border-color: var(--dark-bg-color);
 }
 
 section h4 {
-    color: black;
-    font-size: 2rem;
-    font-weight: 500;
-    font-weight: bold;
-    border-bottom: 1px solid black;
+    padding: 0;
+    border-bottom: 1px solid var(--dark-bg-color);
     text-align: left;
     margin-left: 15px;
     margin-right: 15px;
@@ -395,9 +377,9 @@ section h4 {
 
 /* Chi siamo */
 
-.chi-siamo {
+.chi-siamo-container {
     margin: 0 auto;
-    margin-top: 15rem;
+    padding: 1rem;
     background-color: var(--light-bg-color);
     color: var(--dark-bg-color);
     margin-bottom: 2rem;
@@ -405,7 +387,7 @@ section h4 {
     border-color: blue; */
 }
 
-.chi-siamo > h1 {
+.chi-siamo-container > h1 {
     padding-bottom: 2rem;
     color: var(--dark-bg-color);
     font-size: 3rem;
@@ -414,8 +396,8 @@ section h4 {
 }
 
 #img-chi-siamo {
-    width: 1366px;
-    height: 768px;
+    width: 900px;
+    height: auto;
     margin: 0 auto 1rem;
     display: block;
     margin-bottom: 2rem;
@@ -426,8 +408,9 @@ section h4 {
 }
 
 .chi-siamo-contenuto {
-    width: 1366px;
+    max-width: 900px;
     margin: 0 auto;
+    padding: 1rem;
     text-align:left;
     /* border: solid;
     border-color: green; */
@@ -453,11 +436,58 @@ section h4 {
     border-color: brown; */
 }
 
+/* Location */
+
+.location-container {
+    margin: 0 auto;
+    padding: 1rem;
+    padding-bottom: 0;
+    background-color: var(--light-bg-color);
+    color: var(--dark-bg-color);
+    margin-bottom: 2rem;
+    /* border: solid;
+    border-color: blue; */
+}
+
+.location-contenuto {
+    padding: 2rem;
+    padding-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: solid;
+    border-color: purple; */
+}
+
+#map {
+    width: 600px;
+    height: 600px;
+    box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+    border-radius: 4px;
+    /* border: solid;
+    border-color: red; */
+}
+
+.testo-location {
+    max-width: 60%;
+    padding: 1rem;
+    /* border: solid;
+    border-color: orange; */
+}
+
+.testo-location p {
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+}
+
+#indirizzo {
+    font-style: italic;
+}
+
 /* Domande */
 
 .faq-container {
     margin: 0 auto;
-    margin-top: 15rem;
     padding: 1rem;
     background-color: var(--light-bg-color);
     color: var(--dark-bg-color);
@@ -485,8 +515,8 @@ section h4 {
 
 .faq-title {
     font-size: 24px;
-    margin-bottom: 15px;
-    margin-left: 11rem;
+    margin-bottom: 1rem;
+    margin-left: 12rem;
 }
 
 .faq-box-container {
@@ -504,8 +534,8 @@ section h4 {
     padding: 2rem;
     border-radius: 4px;
     box-shadow: 0 0 10px rgba(37, 53, 25, 1);
-    margin-right: 50px;
-    margin-bottom: 50px; 
+    margin-right: 2rem;
+    margin-bottom: 2rem; 
     /* border: solid;
     border-color: blue; */
 }

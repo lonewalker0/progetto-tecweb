@@ -69,6 +69,7 @@ $main = "
          Il <span lang='en'>voucher</span> elettronico che rappresenta il biglietto non è nominale e per questo può essere trasferito senza una procedura particolare.</p>
     </div>
     </div>
+</div>
 
     <div class='faq-section'>
         <h2 class='faq-title'>Info utili</h2>
