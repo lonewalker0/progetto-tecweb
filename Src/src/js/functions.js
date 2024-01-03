@@ -1,5 +1,5 @@
 let imgIndex = 0;
-
+let caroselloj = 0;
 // Aggiungi event listener per ogni campo di quantità
 document.addEventListener("DOMContentLoaded", function () {
   var quantitaInputs = document.querySelectorAll('[id^="quantita-"]');
@@ -69,7 +69,7 @@ const getCountdown = (eventDate) => {
 
   if (intervallo < 0) return null;
 
-  return "| " + giorni + "d " + ore + "h " + minuti + "m " + secondi + "s ";
+  return " " + giorni + "d " + ore + "h " + minuti + "m " + secondi + "s ";
 };
 //funzione per il countdown del festival
 function countdownFestival() {
@@ -87,23 +87,34 @@ function triggerView() {
   let type = true;
   setInterval(() => {
     type = !type;
-    if (type) {
-      df.style.display = "block";
-      cd.style.display = "none";
-    } else {
-      df.style.display = "none";
-      cd.style.display = "block";
+    if (type) 
+    {
+      df.classList.add("data-block");
+      df.classList.remove("data-none");
+      cd.classList.add("countdown-none");
+      cd.classList.remove("countdown-block");
+    } 
+    else 
+    {
+      df.classList.add("data-none");
+      df.classList.remove("data-block");
+      cd.classList.add("countdown-block");
+      cd.classList.remove("countdown-none");
     }
+    
   }, 4000);
 }
 
 //funzione per il carosello del festival
 function carosello() {
   let i;
-  let img = document.getElementsByClassName("carosello");
+  let img = document.getElementsByClassName("carosello-none");
   let puntini = document.getElementsByClassName("puntini");
   for (i = 0; i < img.length; i++) {
-    img[i].style.display = "none";
+    if(caroselloj > 0)
+    {
+        img[i].classList.remove("carosello-block");
+    }
   }
   imgIndex++;
   if (imgIndex > img.length) {
@@ -114,11 +125,12 @@ function carosello() {
   }
   for (i = 0; i < img.length; i++) {
     if (i === imgIndex - 1) {
-      img[imgIndex - 1].style.display = "block";
+      img[imgIndex - 1].classList.add("carosello-block");
       puntini[imgIndex - 1].className += " active";
     }
   }
-  setTimeout(carosello, 2000); //Cambia l'immagine del carosello ogni 2 secondi
+  caroselloj++;
+  setTimeout(carosello, 4000); //Cambia l'immagine del carosello ogni 2 secondi
 }
 
 function validateForm() {
