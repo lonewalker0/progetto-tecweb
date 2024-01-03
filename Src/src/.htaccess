@@ -1,10 +1,16 @@
-<Files "errors/error404.php">
-    Require all denied
-</Files>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+</IfModule>
 
-<Files "errors/error500.php">
+# Blocca l'accesso diretto a error404.php
+<FilesMatch "errors/error404.php">
     Require all denied
-</Files>
+</FilesMatch>
+
+
+
+
+
 
 
 ErrorDocument 404 /errors/error404.php
