@@ -6,6 +6,10 @@ class PageBuilder {
 
         $html = file_get_contents(__DIR__ . '/../html/layout/struttura.html');
         $header = file_get_contents(__DIR__ . '/../html/layout/header.html');
+        if (trim($breadcrumb) === 'Home') {
+        $header = self::removeHomeLogoLink($header);
+        }
+
         $footer = file_get_contents(__DIR__ . '/../html/layout/footer.html');
         
         $html = str_replace('{{header}}', $header, $html);
@@ -21,7 +25,12 @@ class PageBuilder {
 
         return $html;
     }
-    
+
+    public static function removeHomeLogoLink($header): string {
+        $header = preg_replace('/<a\b[^>]*href="index\.php"[^>]*>(.*?)<\/a>/s', '$1', $header);
+        return $header;
+    }
+
     public static function resolveCircularLinks($menu, $breadcrumb) {
         // converte menu e braedcrumb in minuscolo => case insensitive
         $menuArray = explode(PHP_EOL, $menu);
