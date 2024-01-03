@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 //se il path della pagina è progetto-git/index.php crea due eventListener per il carosello e il countdown
-if(window.location.pathname === '/progetto-git/index.php')
+if(window.location.pathname === '../index.php')
 {
     //eventListener per la visualizzazione del carosello e per la visualizzazione del countdown del festival
     document.addEventListener("DOMContentLoaded", function () {
