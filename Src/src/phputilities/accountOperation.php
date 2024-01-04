@@ -22,23 +22,40 @@ class accountOperation {
             // Assicurati che l'array restituito contenga le informazioni dell'utente
             if ($userInfo) {
                 // Costruisci la stringa HTML per visualizzare le informazioni dell'utente
-                $output = "<p>Nome: " . $userInfo['nome'] . "</p>";
-                $output .= "<p>Cognome: " . $userInfo['cognome'] . "</p>";
-                $output .= "<p>Età: " . $userInfo['eta'] . "</p>";
-                $output .= "<p>Indirizzo: " . $userInfo['indirizzo'] . "</p>";
-                $output .= "<p>Email: " . $userInfo['email'] . "</p>";
+                $output = "<h2>Informazioni account</h2>";
+                $output .= "<dl>"; // Inizio lista descrittiva
+
+                $output .= "<dt>Nome:</dt>";
+                $output .= "<dd>" . $userInfo['nome'] . "</dd>";
+
+                $output .= "<dt>Cognome:</dt>";
+                $output .= "<dd>" . $userInfo['cognome'] . "</dd>";
+
+                $output .= "<dt>Età:</dt>";
+                $output .= "<dd>" . $userInfo['eta'] . "</dd>";
+
+                $output .= "<dt>Indirizzo:</dt>";
+                $output .= "<dd>" . $userInfo['indirizzo'] . "</dd>";
+
+                $output .= "<dt>Email:</dt>";
+                $output .= "<dd>" . $userInfo['email'] . "</dd>";
+
+                $output .= "</dl>";       
 
                 $output .= "<h3>Modifiche account</h3>";
                 $output .= "<form action='phputilities/updateUserInfo.php' method='post'>";
+                $output .= "<fieldset>";
+                $output .= "<legend>Aggiornamento dati</legend>";
                 $output .= "<p><label for='indirizzo'>Indirizzo:</label> <input type='text' id='indirizzo' name='indirizzo'></p>";
                 $output .= "<p><label for='email'>Email:</label> <input type='text' id='email' name='email'></p>";
                 $output .= "<p><label for='nuova_password'>Nuova Password:</label> <input type='password' id='nuova_password' name='nuova_password'></p>";
                 $output .= "<p><label for='conferma_password2'>Conferma Nuova Password:</label> <input type='password' id='conferma_password2' name='conferma_password'></p>";
                 $output .= "<p><label for='vecchia_password'>Vecchia Password:</label> <input type='password' id='vecchia_password' name='vecchia_password'></p>";
                 $output .= "<input type='hidden' name='username' value='" . $username . "'>";
+                $output .= "</fieldset>";
                 $output .= "<input type='submit' value='Salva modifiche'>";
                 $output .= "</form>";
-                $output .= "<h2>Ordini</h4>";
+                $output .= "<h2>Ordini</h2>";
                 if(!empty($userorder)) {
                     $output .= "<table id='tabellaordini' summary='La tabella ha 5 colonne ed informa su tutti gli ordini effettuati dallo utente visualizzando Numero ordine, Data di acquisto, tipologia di biglietto, descrizione,prezzo totale>";
                     $output .= "<caption>Ordini Effettuati</caption>";
