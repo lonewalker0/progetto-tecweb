@@ -14,21 +14,18 @@
   --light-bg-color: #f4fced;
 }
 
-img 
-{
+img {
   width: 100%;
 }
 
-body 
-{
+body {
   color: var(--text-color);
   background-color: var(--light-bg-color);
   max-width: 1920px;
   font-size: 1.2rem;
 }
 
-h1 
-{
+h1 {
   text-align: center;
   padding: 1rem;
   color: var(--dark-bg-color);
@@ -58,7 +55,6 @@ h4 {
 .container {
   margin: 0;
   width: 100%;
-  
 }
 
 /* Header */
@@ -72,7 +68,7 @@ header {
   margin-top: 0;
 }
 
-.nav {
+.flexContainerHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -92,8 +88,7 @@ header {
   padding: 0; /* Ensures there's no extra padding */
   border: none; /* Removes any border that might affect the size */
   height: auto; /* Ensures the anchor height matches the image if the image height is variable */
-  max-height: 100px; /* Matches the max-height of the image to constrain the anchor */
-  transition: all .5s ease-in-out;
+  max-height: 100px;
 }
 
 .logo img {
@@ -112,24 +107,40 @@ header {
   max-width: 100%;
 }
 
+#aiutoSkipnav {
+  display: none;
+}
+
+#aiutoSkipnav {
+  display: block;
+}
+
 .countdown-data {
+  width: 300px; /* Replace with the width you want */
+  height: 100px; /* Replace with the height you want */
+  overflow: hidden; /* This will hide any content that overflows the div's box */
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-left: 1.5rem;
+  text-align: center;
 }
 
 .countdown-data p {
   font-size: 30px;
+  background-color: var(--dark-bg-color);
+  padding: 8px;
+  border-radius: 8px;
 }
 
-.vertical-bar {
-  font-size: 4rem; /* Adjust the size to make it bigger */
-  color: var(--dark-bg-color); /* Set the color to dark green */
-  /* Add any additional styling such as font weight if necessary */
+#vertical-bar-container {
+  border-left: 5px solid var(--dark-bg-color); /* Vertical bar style */
+  margin: 0 10px;
+  height: 2em;
 }
 
 .icons {
-  display:flex;
+  display: flex;
   align-items: center;
   padding: 0;
 }
@@ -140,22 +151,18 @@ header {
     justify-content: center; /* Center align the entire navigation container */
   }
 
-  .left-group {
-    flex-direction: column; /* Stack the children of .left-group vertically */
-    align-items: center; /* Center align the items horizontally within .left-group */
-    margin-bottom: 1rem; /* Add some space below .left-group, if needed */
-  }
-
   .icons {
     display: none; /* Hide icons at this breakpoint */
   }
 
-  .vertical-bar {
-    display: none;
+  .left-group {
+    /* Use the order property to control the position of the skip link */
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start of the flex container */
   }
 
-  .logo a {
-    max-height: none; /* Remove max-height restriction for smaller screens */
+  #vertical-bar-container {
+    display: none;
   }
 
   .logo img {
@@ -169,17 +176,18 @@ header {
   margin-right: 10px;
 }
 
-.logo a:hover, .logo a:focus {
+.logo a:hover,
+.logo a:focus {
   transform: scale(1.1); /* Slight increase */
 }
 
 /* Navigation Menu */
 
 .menu {
-  top: 4.9em;
+  top: 15em;
   position: fixed;
   height: 3rem;
-  display:inline-flex;
+  display: inline-flex;
   align-items: center;
   width: 100%;
   justify-content: center;
@@ -187,7 +195,7 @@ header {
   font-size: 1.4rem;
   font-weight: 400;
   font-weight: bold;
-  z-index : 10;
+  z-index: 10;
 }
 
 .menu ul {
@@ -217,7 +225,7 @@ header {
 #breadcrumb {
   top: 8.2em;
   position: fixed;
-  display:flex;
+  display: flex;
   width: 100%;
   height: 1.5em;
   padding-left: 1em;
@@ -226,8 +234,7 @@ header {
   align-items: center;
   z-index: 10;
 }
-#breadcrumb p 
-{
+#breadcrumb p {
   text-align: left;
   padding-left: 1rem;
   font-size: 1.15em;
@@ -336,19 +343,18 @@ footer {
 /* Carosello dinamico del main */
 
 .carosello-none {
-    display:none;
+  display: none;
 }
 
-.carosello-block
-{
-    display:block;
-    background-image: url('../assets/artisti/tony2milli.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    width: auto;
-    height: 600px;
-    align-content: center;
-    object-fit: cover;
+.carosello-block {
+  display: block;
+  background-image: url("../assets/artisti/tony2milli.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: auto;
+  height: 600px;
+  align-content: center;
+  object-fit: cover;
 }
 
 .puntini {
@@ -412,53 +418,53 @@ footer {
 /* Sponsor */
 
 section {
-    text-align: center;
-    background-color: var(--text-color);
-    border-top: 3px inset var(--dark-bg-color);
-    margin-bottom: 0;
-    align-items: center;
+  text-align: center;
+  background-color: var(--text-color);
+  border-top: 3px inset var(--dark-bg-color);
+  margin-bottom: 0;
+  align-items: center;
 }
 
 section h4 {
-    padding: 0;
-    border-bottom: 1px solid var(--dark-bg-color);
-    text-align: left;
-    margin-left: 15px;
-    margin-right: 15px;
+  padding: 0;
+  border-bottom: 1px solid var(--dark-bg-color);
+  text-align: left;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 .sponsors-container {
-    display: inline-grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 75%;
-} 
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 75%;
+}
 
 .sponsor-icon {
-    transition: transform .2s;
-    vertical-align: middle;
-    margin-top: 30px;
-    margin-bottom: 30px;
+  transition: transform 0.2s;
+  vertical-align: middle;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .sponsor-icon:hover {
-    transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .sponsor-icon img {
-    max-width: 30%;
-    object-fit: cover;
-    vertical-align: middle;
+  max-width: 30%;
+  object-fit: cover;
+  vertical-align: middle;
 }
 
 /* Countdown */
 
-.countdown-none, .data-none
-{
-    display:none;
+.countdown-none,
+.data-none {
+  display: none;
 }
-.countdown-block, .data-block
-{
-    display:block;
+.countdown-block,
+.data-block {
+  display: block;
 }
 
 /* Chi siamo */
