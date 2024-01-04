@@ -1,13 +1,13 @@
-<div class="biglietto-entry" id="biglietto-1" role="article">
+<div class="biglietto-entry" id="biglietto-{{id}}" role="article">
   <img
     src="{{image}}"
-    alt="foto di biglietto"
-    role="img"
-    aria-labelledby="event-title"
-  />
+    alt="biglietto {{nome}} per l'entrata"
+    
+    aria-labelledby="biglietto-title{{id}}"
+  >
   <div class="entry-info-biglietto">
     <dl>
-      <dt id="biglietto-title">{{nome}}</dt>
+      <dt id="biglietto-title{{id}}">{{nome}}</dt>
       <dt>Descrizione:</dt>
       <dd>{{Description}}</dd>
 
@@ -23,7 +23,10 @@
     </dl>
   </div>
 </div>
+<h3>Acquista Biglietto {{nome}}</h3>
 <form action="phputilities/processa_acquisto.php?id={{id}}" method="post">
+  <fieldset>
+    <legend>Acquisto</legend>
   <label for="quantita-1">Quantità:</label>
   <input
     type="number"
@@ -32,8 +35,9 @@
     min="1"
     max="5"
     required
-  />
-  <input type="hidden" name="{{id}}" value="{{id}}" />
-  <input type="submit" value="Acquista" />
+  >
+</fieldset>
+  <input type="hidden" name="{{id}}" value="{{id}}" >
+  <input type="submit" value="Acquista" >
   <p id="prezzo-totale-{{id}}"></p>
 </form>

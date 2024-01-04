@@ -27,7 +27,7 @@ class BigliettiBuilder
         }
 
         // Concatena l'HTML dei biglietti alla proprietà $mainHTML
-        $this->mainHTML .= '<div id="biglietti"><p>Biglietti</p>' . $bigliettiHtml . '</div>';
+        $this->mainHTML .= '<div id="biglietti"><h2>Biglietti</h2>' . $bigliettiHtml . '</div>';
 
         return $this->mainHTML;
     }

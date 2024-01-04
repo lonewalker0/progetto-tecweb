@@ -57,7 +57,8 @@ class accountOperation {
                 $output .= "</form>";
                 $output .= "<h2>Ordini</h2>";
                 if(!empty($userorder)) {
-                    $output .= "<table id='tabellaordini' summary='La tabella ha 5 colonne ed informa su tutti gli ordini effettuati dallo utente visualizzando Numero ordine, Data di acquisto, tipologia di biglietto, descrizione,prezzo totale>";
+                    $output .= "<p id=dtable>La tabella ha 5 colonne ed informa su tutti gli ordini effettuati dallo utente visualizzando Numero ordine, Data di acquisto, tipologia di biglietto, descrizione,prezzo totale</p>";
+                    $output .= "<table id='tabellaordini' aria-describedby='dtable'>";
                     $output .= "<caption>Ordini Effettuati</caption>";
                     $output .= "<thead>";
                     $output .= "<tr>";
@@ -72,7 +73,7 @@ class accountOperation {
                     
                     foreach ($userorder as $order) {
                         $output .= "<tr>";
-                        $output .= "<td data-title='Numero Ordine'>" . $order['numero_ordine'] . "</th>";
+                        $output .= "<td data-title='Numero Ordine'>" . $order['numero_ordine'] . "</td>";
                         $output .= "<td data-title='Data Acquisto'><time datetime='" . $order['data_acquisto'] . "'>" . $order['data_acquisto'] . "</time></td>";
                         $output .= "<td data-title='Tipologia Biglietto'> " . $order['tipo_biglietto'] . "</td>";
                         $output .= "<td data-title='Descrizione'>". $order["descrizione"] . "</td>";
