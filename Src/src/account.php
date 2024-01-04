@@ -24,8 +24,8 @@ if (!isset($_SESSION["username"]) ) {
         // Recupera il messaggio di errore se presente
         $loginError = isset($_SESSION['login_error']) ? $_SESSION['login_error'] : '';
 
-        
-        $main = file_get_contents(__DIR__ . '/html/form/loginform.html');
+        $main = "<h1>Accedi o Registrati</h1>";
+        $main .= file_get_contents(__DIR__ . '/html/form/loginform.html');
         $main = str_replace('{{loginerror}}', $firstIteration ? '' : $errormessage, $main);
 
         

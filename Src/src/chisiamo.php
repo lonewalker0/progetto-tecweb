@@ -12,7 +12,7 @@ $main = "
 
     <h1>Chi siamo</h1>
 
-    <img src='assets/festival.png' id='img-chi-siamo' alt='Evento festival'/>
+    <img src='assets/festival.png' id='img-chi-siamo' alt='Evento festival'>
 
     <div class='chi-siamo-contenuto'>
 

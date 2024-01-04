@@ -19,7 +19,7 @@ class adminOperation
         $html .= '<div id="ProgramManagement">';
         #costruzione del menu per l'elimizazione
         $events = $this->dbOperation->getEventEntries();
-        $html .= '<p>Manutenzione del programma</p>';
+        $html .= '<h2>Manutenzione del programma</h2>';
         foreach ($events as $event) {
             $html .= $event->generateEliminationHTML();
         }
@@ -61,6 +61,7 @@ class adminOperation
         
 
         $formContent = str_replace($placeholders, $replaceValues, $formContent);
+        $html .= "<h3>Aggiungi Evento</h3>";
         $html .= $formContent;
         $html .= '</div>';
 

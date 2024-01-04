@@ -44,7 +44,7 @@ class EventEntry
     public function generateEliminationHTML(): string
 {
     $html = '<div class="event-container">';
-    $html .= '   <img src="' . $this->image . '" alt="foto di ' . $this->performer . '">';
+    $html .= '   <img src="' . $this->image . '" alt="ritratto dello artista ' . $this->performer . '">';
     $html .= '   <p>Artista: ' . $this->performer . '</p>';
     $html .= '   <p>Data: ' . $this->datetime . '</p>';
     $html .= '   <p>Ora: ' . $this->time . '</p>';
