@@ -32,6 +32,7 @@ h1 {
   font-size: 3rem;
   font-weight: 500;
   font-weight: bold;
+  margin-top: 20px;
 }
 
 h2 {
@@ -54,6 +55,7 @@ h4 {
 .container {
   margin: 0;
   width: 100%;
+  
 }
 
 /* Header */
@@ -62,14 +64,13 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 4em;
   background: var(--light-bg-color);
   z-index: 10;
   margin-top: 0;
 }
 
 .nav {
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px;
@@ -78,7 +79,7 @@ header {
 }
 
 .left-group {
-  display: inline-flex;
+  display: flex;
   align-items: center;
 }
 
@@ -173,8 +174,8 @@ header {
 /* Navigation Menu */
 
 .menu {
+  top: 4.9em;
   position: fixed;
-  top: 4.75em;
   height: 3rem;
   display:inline-flex;
   align-items: center;
@@ -184,7 +185,7 @@ header {
   font-size: 1.4rem;
   font-weight: 400;
   font-weight: bold;
-  z-index: 10;
+  z-index : 10;
 }
 
 .menu ul {
@@ -212,10 +213,11 @@ header {
 /* Breadcrumb */
 
 #breadcrumb {
+  top: 8.2em;
   position: fixed;
-  margin-top:auto;
+  display:flex;
   width: 100%;
-  height: 2rem;
+  height: 1.5em;
   padding-left: 1em;
   background-color: lightgray;
   display: flex;
@@ -226,7 +228,7 @@ header {
 {
   text-align: left;
   padding-left: 1rem;
-  font-size: 1rem;
+  font-size: 1.15em;
   color: var(--dark-bg-color);
   font-weight: bold;
 }
@@ -340,8 +342,11 @@ footer {
     display:block;
     background-image: url('../assets/artisti/tony2milli.jpg');
     background-position: center;
+    background-repeat: no-repeat;
     width: auto;
     height: 600px;
+    align-content: center;
+    object-fit: cover;
 }
 
 .puntini {
@@ -372,8 +377,8 @@ footer {
 .carosello-dinamico {
   margin-left: auto;
   margin-right: auto;
-  width: 75%;
-  position: relative;
+  width: 100%;
+  position: static;
   padding: 2px;
   margin-top: 1.5em;
 }
@@ -399,7 +404,7 @@ footer {
 
 .fade {
   animation-name: fade;
-  animation-duration: 2s;
+  animation-duration: 4s;
 }
 
 /* Sponsor */
@@ -642,7 +647,7 @@ section h4 {
 /*ERROR 500*/
 
 main {
-  margin-top: 8em; /* Adjust the value to move the main section down as needed */
+  margin-top: 10em; /* Adjust the value to move the main section down as needed */
   overflow-y: auto; /* Allows vertical scrolling if the content overflows */
   max-height: auto; /* Optional: sets the maximum height for the main section */
   padding: 0; /* Optional: adds some space inside the main section */
