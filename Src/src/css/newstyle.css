@@ -14,18 +14,21 @@
   --light-bg-color: #f4fced;
 }
 
-img {
+img 
+{
   width: 100%;
 }
 
-body {
+body 
+{
   color: var(--text-color);
   background-color: var(--light-bg-color);
   max-width: 1920px;
   font-size: 1.2rem;
 }
 
-h1 {
+h1 
+{
   text-align: center;
   padding: 1rem;
   color: var(--dark-bg-color);
@@ -74,7 +77,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  background-color: var(--light-bg-color);
+  background-color: lightslategrey;
   margin-top: 0;
 }
 
@@ -90,6 +93,7 @@ header {
   border: none; /* Removes any border that might affect the size */
   height: auto; /* Ensures the anchor height matches the image if the image height is variable */
   max-height: 100px; /* Matches the max-height of the image to constrain the anchor */
+  transition: all .5s ease-in-out;
 }
 
 .logo img {
@@ -165,10 +169,8 @@ header {
   margin-right: 10px;
 }
 
-.logo a:hover,
-.logo a:focus {
+.logo a:hover, .logo a:focus {
   transform: scale(1.1); /* Slight increase */
-  transition: transform 0.3s ease;
 }
 
 /* Navigation Menu */
@@ -237,7 +239,7 @@ header {
 
 footer {
   position: relative;
-  background-color: var(--light-bg-color);
+  background-color: lightslategrey;
   color: var(--dark-bg-color);
   padding-top: 1rem;
   padding-bottom: 1rem;
