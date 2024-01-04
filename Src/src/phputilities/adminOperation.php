@@ -64,6 +64,7 @@ class adminOperation
         $html .= "<h3>Aggiungi Evento</h3>";
         $html .= $formContent;
         $html .= '</div>';
+        $html .= '</div>';
 
 
         return $html;

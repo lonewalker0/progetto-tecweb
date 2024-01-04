@@ -38,7 +38,7 @@ class accountOperation {
                 $output .= "<input type='hidden' name='username' value='" . $username . "'>";
                 $output .= "<input type='submit' value='Salva modifiche'>";
                 $output .= "</form>";
-                $output .= "<h4>Ordini</h4>";
+                $output .= "<h2>Ordini</h4>";
                 if(!empty($userorder)) {
                     $output .= "<table id='tabellaordini' summary='La tabella ha 5 colonne ed informa su tutti gli ordini effettuati dallo utente visualizzando Numero ordine, Data di acquisto, tipologia di biglietto, descrizione,prezzo totale>";
                     $output .= "<caption>Ordini Effettuati</caption>";

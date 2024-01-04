@@ -76,7 +76,7 @@ $main = "
             <div class='faq-box-container'>
                 <div class='faq-item'>
                     <p class='question'>Dove parcheggiare?</p>
-                    <p class='answer'</p>
+                    <p class='answer'></p>
                 </div>
 
                 <div class='faq-item'>

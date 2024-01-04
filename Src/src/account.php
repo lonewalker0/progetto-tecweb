@@ -42,7 +42,7 @@ if (!isset($_SESSION["username"]) ) {
         $main = $adminOperation->getMain(); 
     } elseif (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] === false) {
         // Non-admin-specific content
-        $main = " Non-Admin";
+        $main = "<h1>Il mio account</h1>";
         $accountOperation= new accountOperation();
         $main.=$accountOperation->getMain();
     }
