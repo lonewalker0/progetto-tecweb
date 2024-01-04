@@ -63,7 +63,6 @@ class adminOperation
         $formContent = str_replace($placeholders, $replaceValues, $formContent);
         $html .= $formContent;
         $html .= '</div>';
-        $html .= '</div>';
 
 
         return $html;
