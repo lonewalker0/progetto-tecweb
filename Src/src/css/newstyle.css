@@ -1,4 +1,5 @@
-* {
+* 
+{
   font-family: "Trebuchet MS", sans-serif;
   margin: 0;
   padding: 0;
@@ -10,22 +11,28 @@
 
 :root {
   --text-color: #79fe0c;
-  --dark-bg-color: #253519;
-  --light-bg-color: #f4fced;
+  --dark-bg-color: #212121;
+  --light-bg-color: #bb5522;
+  --footer-bg-color: #7C7B6A;
+  --header-bg-color: #7C7B6A;
 }
 
-img {
+img 
+{
   width: 100%;
 }
 
-body {
+body 
+{
   color: var(--text-color);
-  background-color: var(--light-bg-color);
   max-width: 1920px;
   font-size: 1.2rem;
+  background-size: cover;
+  height:100%;
 }
 
-h1 {
+h1 
+{
   text-align: center;
   padding: 1rem;
   color: var(--dark-bg-color);
@@ -35,7 +42,8 @@ h1 {
   margin-top: 20px;
 }
 
-h2 {
+h2 
+{
   text-align: center;
   padding: 1rem;
   color: var(--dark-bg-color);
@@ -44,7 +52,8 @@ h2 {
   font-weight: bold;
 }
 
-h4 {
+h4 
+{
   padding: 1rem;
   color: var(--dark-bg-color);
   font-size: 1.8rem;
@@ -52,7 +61,8 @@ h4 {
   font-weight: bold;
 }
 
-.container {
+.container 
+{
   margin: 0;
   width: 100%;
 }
@@ -63,9 +73,9 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: var(--light-bg-color);
   z-index: 10;
   margin-top: 0;
+  background-color: var(--header-bg-color);
 }
 
 .flexContainerHeader {
@@ -73,7 +83,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 5px;
-  background-color: lightslategrey;
+  border:none;
   margin-top: 0;
 }
 
@@ -88,7 +98,8 @@ header {
   padding: 0; /* Ensures there's no extra padding */
   border: none; /* Removes any border that might affect the size */
   height: auto; /* Ensures the anchor height matches the image if the image height is variable */
-  max-height: 100px;
+  max-height: 100px; /* Matches the max-height of the image to constrain the anchor */
+  transition: all .5s ease-in-out;
 }
 
 .logo img {
@@ -99,7 +110,17 @@ header {
   max-width: 100%; /* Ensures image is not bigger than its container */
 }
 
-.logo a img {
+#aiutoSkipnav
+{
+    display:none;
+}
+#aiutoSkipnav
+{
+    display:block;
+}
+
+.logo a img 
+{
   height: auto;
   width: auto;
   max-height: 100px;
@@ -107,43 +128,31 @@ header {
   max-width: 100%;
 }
 
-#aiutoSkipnav {
-  display: none;
-}
-
-#aiutoSkipnav {
-  display: block;
-}
-
 .countdown-data {
-  width: 300px; /* Replace with the width you want */
-  height: 100px; /* Replace with the height you want */
-  overflow: hidden; /* This will hide any content that overflows the div's box */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  margin-left: 1.5rem;
 }
 
 .countdown-data p {
   font-size: 30px;
-  background-color: var(--dark-bg-color);
-  padding: 8px;
-  border-radius: 8px;
 }
 
-#vertical-bar-container {
-  border-left: 5px solid var(--dark-bg-color); /* Vertical bar style */
-  margin: 0 10px;
-  height: 2em;
+#vertical-bar-container 
+{
+  border-left: 5px solid var (--dark-bg-color);
+  margin: 0 10 0 0;
+  height: 2em;  
 }
 
 .icons {
-  display: flex;
+  display:flex;
   align-items: center;
-  padding: 0;
+  padding: 2px;
+  
 }
+
+
 
 /* Usa la larghezza critica del contenitore .nav come punto di rottura */
 @media (max-width: 770px) {
@@ -151,18 +160,22 @@ header {
     justify-content: center; /* Center align the entire navigation container */
   }
 
+  .left-group {
+    flex-direction: column; /* Stack the children of .left-group vertically */
+    align-items: center; /* Center align the items horizontally within .left-group */
+    margin-bottom: 1rem; /* Add some space below .left-group, if needed */
+  }
+
   .icons {
     display: none; /* Hide icons at this breakpoint */
   }
 
-  .left-group {
-    /* Use the order property to control the position of the skip link */
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the start of the flex container */
+  .vertical-bar {
+    display: none;
   }
 
-  #vertical-bar-container {
-    display: none;
+  .logo a {
+    max-height: none; /* Remove max-height restriction for smaller screens */
   }
 
   .logo img {
@@ -174,20 +187,27 @@ header {
   width: 1.6rem;
   height: auto;
   margin-right: 10px;
+  margin-left: 10px;
+  transition: transform .1s ease-in-out;
+  cursor: pointer;
 }
 
-.logo a:hover,
-.logo a:focus {
+.icons img:hover,
+.icons img:focus {
+  transform: scale(1.25);
+}
+
+.logo a:hover, .logo a:focus {
   transform: scale(1.1); /* Slight increase */
 }
 
 /* Navigation Menu */
 
 .menu {
-  top: 15em;
+  top: 4.9em;
   position: fixed;
   height: 3rem;
-  display: inline-flex;
+  display:inline-flex;
   align-items: center;
   width: 100%;
   justify-content: center;
@@ -195,7 +215,7 @@ header {
   font-size: 1.4rem;
   font-weight: 400;
   font-weight: bold;
-  z-index: 10;
+  z-index : 10;
 }
 
 .menu ul {
@@ -215,26 +235,51 @@ header {
   transition: color 0.3s ease;
 }
 
-.menu a:hover,
-.menu a:focus {
-  color: var(--light-bg-color);
+#punto-ind, #punto-loc, #punto-dom, #punto-mer, #punto-chi, #punto-pre, #punto-acc
+{
+    background-color: var(--light-bg-color);
+    height: 2px;
+    width: 0px;
+    padding-top: 2px;
+    position:absolute;
+    margin-left:20px;
+    right: 0;
+    transition: all .5s ease;
+    cursor: pointer;
 }
+
+.menu a:hover,
+.menu a:focus
+{
+    color: var(--light-bg-color);
+}
+
+nav.menu a:hover > div#punto-ind,
+nav.menu a:hover > div#punto-loc,
+nav.menu a:hover > div#punto-mer,
+nav.menu a:hover > div#punto-chi,
+nav.menu a:hover > div#punto-pre,
+nav.menu a:hover > div#punto-acc,
+nav.menu a:hover > div#punto-dom
+{
+    width:100%;
+} 
 
 /* Breadcrumb */
 
 #breadcrumb {
+  position:relative;
   top: 8.2em;
-  position: fixed;
-  display: flex;
+  display:flex;
   width: 100%;
-  height: 1.5em;
+  height: 2em;
   padding-left: 1em;
   background-color: lightgray;
   display: flex;
   align-items: center;
-  z-index: 10;
 }
-#breadcrumb p {
+#breadcrumb p 
+{
   text-align: left;
   padding-left: 1rem;
   font-size: 1.15em;
@@ -244,15 +289,18 @@ header {
 
 /* Footer */
 
-footer {
+footer
+{
   position: relative;
-  background-color: lightslategrey;
+  bottom: 0;
+  width: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
   color: var(--dark-bg-color);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  background-color: var(--footer-bg-color);
   text-align: center;
-  border-top: 2px inset var(--dark-bg-color);
-  height: auto;
+  border-top: 2px solid black;
 }
 
 .footer-icons {
@@ -263,17 +311,18 @@ footer {
   font-size: 2rem;
 }
 
-.footer-icons img {
+.footer-icons img 
+{
   width: 1.6rem;
   height: auto;
   margin: 0 10px;
   cursor: pointer;
-  transition: transform 0.1s ease;
+  transition: transform .1s ease-in-out;
 }
 
 .footer-icons img:hover,
 .footer-icons img:focus {
-  transform: scale(1.3);
+  transform: scale(1.25);
 }
 
 .footer-content {
@@ -318,7 +367,7 @@ footer {
   flex: 1;
   width: 40%;
   box-sizing: border-box;
-  margin: 4rem;
+  margin-top: 4em;
   margin-right: 2rem;
   margin-left: 2rem;
   padding: 2rem;
@@ -343,18 +392,19 @@ footer {
 /* Carosello dinamico del main */
 
 .carosello-none {
-  display: none;
+    display:none;
 }
 
-.carosello-block {
-  display: block;
-  background-image: url("../assets/artisti/tony2milli.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  width: auto;
-  height: 600px;
-  align-content: center;
-  object-fit: cover;
+.carosello-block
+{
+    display:block;
+    background-image: url('../assets/artisti/tony2milli.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 600px;
+    align-content: center;
+    object-fit: cover;
 }
 
 .puntini {
@@ -376,12 +426,6 @@ footer {
   text-align: center;
 }
 
-.img-carosello {
-  width: 100%;
-  vertical-align: middle;
-  background-size: cover;
-}
-
 .carosello-dinamico {
   margin-left: auto;
   margin-right: auto;
@@ -391,19 +435,9 @@ footer {
   margin-top: 1.5em;
 }
 
-.descrizione {
-  color: black;
-  font-size: 25px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
 @keyframes fade {
   from {
-    opacity: 0.4;
+    opacity: 0.6;
   }
   to {
     opacity: 1;
@@ -418,53 +452,53 @@ footer {
 /* Sponsor */
 
 section {
-  text-align: center;
-  background-color: var(--text-color);
-  border-top: 3px inset var(--dark-bg-color);
-  margin-bottom: 0;
-  align-items: center;
+    text-align: center;
+    background-color: var(--text-color);
+    border-top: 3px inset var(--dark-bg-color);
+    margin-bottom: 0;
+    align-items: center;
 }
 
 section h4 {
-  padding: 0;
-  border-bottom: 1px solid var(--dark-bg-color);
-  text-align: left;
-  margin-left: 15px;
-  margin-right: 15px;
+    padding: 0;
+    border-bottom: 1px solid var(--dark-bg-color);
+    text-align: left;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .sponsors-container {
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  width: 75%;
-}
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 75%;
+} 
 
 .sponsor-icon {
-  transition: transform 0.2s;
-  vertical-align: middle;
-  margin-top: 30px;
-  margin-bottom: 30px;
+    transition: transform .2s;
+    vertical-align: middle;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .sponsor-icon:hover {
-  transform: scale(1.25);
+    transform: scale(1.25);
 }
 
 .sponsor-icon img {
-  max-width: 30%;
-  object-fit: cover;
-  vertical-align: middle;
+    max-width: 30%;
+    object-fit: cover;
+    vertical-align: middle;
 }
 
 /* Countdown */
 
-.countdown-none,
-.data-none {
-  display: none;
+.countdown-none, .data-none
+{
+    display:none;
 }
-.countdown-block,
-.data-block {
-  display: block;
+.countdown-block, .data-block
+{
+    display:block;
 }
 
 /* Chi siamo */
@@ -474,7 +508,6 @@ section h4 {
   padding: 1rem;
   background-color: var(--light-bg-color);
   color: var(--dark-bg-color);
-  margin-bottom: 2rem;
   /* border: solid;
     border-color: blue; */
 }
@@ -536,7 +569,6 @@ section h4 {
   padding-bottom: 0;
   background-color: var(--light-bg-color);
   color: var(--dark-bg-color);
-  margin-bottom: 2rem;
   /* border: solid;
     border-color: blue; */
 }
@@ -655,8 +687,8 @@ section h4 {
 /*ERROR 500*/
 
 main {
-  margin-top: 10em; /* Adjust the value to move the main section down as needed */
-  overflow-y: auto; /* Allows vertical scrolling if the content overflows */
-  max-height: auto; /* Optional: sets the maximum height for the main section */
+  margin-top: 8.2em; /* Adjust the value to move the main section down as needed */
+  min-height: 100%; /* Optional: sets the maximum height for the main section */
   padding: 0; /* Optional: adds some space inside the main section */
+  background-color: var(--light-bg-color);
 }
