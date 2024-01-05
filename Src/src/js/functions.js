@@ -1,6 +1,11 @@
 let imgIndex = 0;
 let caroselloj = 0;
-// Aggiungi event listener per ogni campo di quantità
+
+document.addEventListener("DOMContentLoaded", function () {
+  countdownFestival();
+  triggerView();
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   var quantitaInputs = document.querySelectorAll('[id^="quantita-"]');
 
@@ -11,40 +16,40 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-//altrimenti non funziona perchè il form viene istanziato solo dopo
+
 document.addEventListener("DOMContentLoaded", function () {
-  document
-    .getElementById("formAggiuntaEvento")
-    .addEventListener("submit", function (event) {
+  var form = document.getElementById("formAggiuntaEvento");
+  if (form) {
+    form.addEventListener("submit", function (event) {
       event.preventDefault();
       if (validazioneFormAggiutaEvento()) {
         event.target.submit();
       }
       return false;
     });
+  }
 });
+
 document.addEventListener("DOMContentLoaded", function () {
   var newPasswordField = document.getElementById("nuova_password");
   var confirmPasswordField = document.getElementById("conferma_password2");
   var oldPasswordField = document.getElementById("vecchia_password");
-
-  // Aggiungi un gestore agli eventi per il campo di input della nuova password
-  newPasswordField.addEventListener("input", function () {
-    // Rendi i campi obbligatori solo se la nuova password ha un valore
-    confirmPasswordField.required = this.value.trim() !== "";
-    oldPasswordField.required = this.value.trim() !== "";
-  });
-});
-//se il path della pagina è progetto-git/index.php crea due eventListener per il carosello e il countdown
-if(window.location.pathname === '/progetto-git/index.php')
-{
-    //eventListener per la visualizzazione del carosello e per la visualizzazione del countdown del festival
-    document.addEventListener("DOMContentLoaded", function () {
-        carosello();        
-        countdownFestival();
-        triggerView();
+  if (newPasswordField && confirmPasswordField && oldPasswordField) {
+    // Aggiungi un gestore agli eventi per il campo di input della nuova password
+    newPasswordField.addEventListener("input", function () {
+      // Rendi i campi obbligatori solo se la nuova password ha un valore
+      confirmPasswordField.required = this.value.trim() !== "";
+      oldPasswordField.required = this.value.trim() !== "";
     });
+  }
+});
+
+if (window.location.pathname === "/index.php") {
+  document.addEventListener("DOMContentLoaded", function () {
+    carosello();
+  });
 }
+
 //eventListener per la visualizzazione dell'errore
 document.addEventListener("DOMContentLoaded", function () {
   var errorDiv = document.getElementById("error_login");
@@ -87,33 +92,27 @@ function triggerView() {
   let type = true;
   setInterval(() => {
     type = !type;
-    if (type) 
-    {
+    if (type) {
       df.classList.add("data-block");
       df.classList.remove("data-none");
       cd.classList.add("countdown-none");
       cd.classList.remove("countdown-block");
-    } 
-    else 
-    {
+    } else {
       df.classList.add("data-none");
       df.classList.remove("data-block");
       cd.classList.add("countdown-block");
       cd.classList.remove("countdown-none");
     }
-    
   }, 4000);
 }
 
-//funzione per il carosello del festival
 function carosello() {
   let i;
   let img = document.getElementsByClassName("carosello-none");
   let puntini = document.getElementsByClassName("puntini");
   for (i = 0; i < img.length; i++) {
-    if(caroselloj > 0)
-    {
-        img[i].classList.remove("carosello-block");
+    if (caroselloj > 0) {
+      img[i].classList.remove("carosello-block");
     }
   }
   imgIndex++;
