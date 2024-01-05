@@ -28,7 +28,7 @@ class IndexMainBuilder
             $this->mainHTML .= $event->generateHTML();
         }
 
-        $this->mainHTML .= '</div>';
+        #$this->mainHTML .= '</div>';
 
 
         $this->mainHTML .=  file_get_contents(__DIR__ . '/../html/sponsor.html');
