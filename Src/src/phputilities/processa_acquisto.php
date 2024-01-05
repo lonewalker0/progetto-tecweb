@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         
         if ($_SESSION['is_admin']) {
-            echo "Gli amministratori non possono acquistare i biglietti.";
+           echo "Gli amministratori non possono acquistare i biglietti.";
             die();
         }
         // Recupera i dati dal modulo

@@ -35,6 +35,7 @@ class BigliettiEntry {
     public function generateHTML(): string
     {
         
+        
         $html = str_replace(
             ['{{nome}}', '{{image}}', '{{datetime_inizio}}', '{{datetime_fine}}', '{{Description}}','{{prezzo}}','{{id}}'],
             [$this->nome, $this->image, $this->datetime_inizio, $this->datetime_fine, $this->description, $this->prezzo, $this->id],

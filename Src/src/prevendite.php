@@ -15,6 +15,10 @@ $main = "<h1>Prevendite</h1>";
 if (!isset($_SESSION['username'])) {
     $main .= "<p>Per procedere all'acquisto dei biglietti, si prega di autenticarsi. <a href='account.php' tabindex=0>Accedi</a></p>";
 }
+else if($_SESSION["is_admin"]){
+    $main .= "<h2>Gli admin non possono comprare biglietti </h2>";
+
+}
 else {
     
     // Altre cose da mostrare solo agli utenti autenticati
