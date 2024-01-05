@@ -1,17 +1,23 @@
 <article class="product">
+  <h2>{{productName}}</h2>
   <img
     src="{{productImage}}"
-    alt="Foto di: {{productName}}"
-    role="img"
+    alt="{{productName}}"
+    
     aria-labelledby="description{{productId}}"
-  />
+  >
   <div class="entry-info">
-    <p id="productTitle">{{productName}}</p>
-    <p>Color: <span>{{productColor}}</span></p>
-    <p>Price: <span>{{productPrice}}</span></p>
-    <p>
-      Description:
-      <span id="description{{productId}}">{{productDescription}}</span>
-    </p>
+    <dl class="product-details">
+      <dt class="product-title">{{productName}}</dt>
+  
+      <dt>Colore:</dt>
+      <dd><span>{{productColor}}</span></dd>
+  
+      <dt>Prezzo:</dt>
+      <dd><span>{{productPrice}} €</span></dd>
+  
+      <dt>Descrizione:</dt>
+      <dd><span id="description{{productId}}">{{productDescription}}</span></dd>
+  </dl>
   </div>
 </article>

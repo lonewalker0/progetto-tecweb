@@ -1,15 +1,27 @@
 <div class="event-container">
-  <div class="programma-entry" id="programma-1" role="article">
+  <div class="programma-entry" id="programma-{{performer}}" role="article">
     <img
       src="{{image}}"
       alt="ritratto di {{performer}}"
-      aria-labelledby="event-title"
+      aria-labelledby="event-title-{{performer}}"
     >
     <div class="entry-info">
-      <p id="event-title">{{performer}}</p>
-      <p>Data: <time datetime="{{datetime}}">{{datetime}}</time></p>
-      <p>Ora: <time datetime="{{time}}">{{time}}</time></p>
-      <p>Descrizione: {{Description}}</p>
+
+
+      <dl class="event-details">
+        <dt id="event-title-{{performer}}"></dt>
+        <dd>{{performer}}</dd>
+    
+        <dt>Data:</dt>
+        <dd><time datetime="{{datetime}}">{{datetime}}</time></dd>
+    
+        <dt>Ora:</dt>
+        <dd><time datetime="{{time}}">{{time}}</time></dd>
+    
+        <dt>Descrizione:</dt>
+        <dd>{{Description}}</dd>
+    </dl>
+
     </div>
   </div>
 </div>

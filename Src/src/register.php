@@ -14,8 +14,8 @@ $keyword = 'Festival, Techno, Lum250, Account, Dati personali, Pagamenti, Biglie
 $description = 'Registrati al sito di TechnoLum250, inserisci i dati personali e le informazioni di accesso.'; 
 
 
-
-$main=file_get_contents(__DIR__.'/html/form/registerform.html');    
+$main = "<h1>Registrazione</h1>";
+$main .=file_get_contents(__DIR__.'/html/form/registerform.html');    
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);
 ?>

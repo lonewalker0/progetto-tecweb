@@ -80,8 +80,14 @@ CREATE TABLE Shop (
 
 INSERT INTO Shop (productImage, productName, productColor, productPrice, productLongDescription)
 VALUES
-('assets/merchitem/redT.png', 'Festival T-Shirt', 'Red', 19.99, 'Comfortable and stylish red t-shirt, perfect for festivals.'),
+('assets/merchitem/redT.png', 'Festival T-Shirt', 'Rosso', 19.99, 'Maglietta rossa comoda e alla moda, perfetta per i festival.'),
 
-('assets/merchitem/bluecap.png', 'Leather Wristband', 'Black', 9.99, 'Black leather wristband with festival logo.'),
+('assets/merchitem/bluecap.png', 'Braccialetto in Pelle', 'Nero', 9.99, 'Braccialetto in pelle nera con logo del festival.'),
 
-('assets/merchitem/bluecap.png', 'Summer Hat', 'Blue', 14.99, 'Blue summer hat to keep you cool under the festival sun.');
+('assets/merchitem/bluecap.png', 'Cappellino Estivo', 'Blu', 14.99, 'Cappello estivo blu per mantenerti fresco sotto il sole del festival.
+
+
+
+
+
+');

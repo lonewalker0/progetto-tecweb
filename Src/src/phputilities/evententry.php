@@ -8,6 +8,8 @@ class EventEntry
     private $description;
     private $template; 
 
+    
+
     public function __construct($performer, $image, $datetime, $time, $description)
     {
         $this->performer = $performer;
