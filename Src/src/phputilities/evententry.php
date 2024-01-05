@@ -45,15 +45,24 @@ class EventEntry
 {
     $html = '<div class="event-container">';
     $html .= '   <img src="' . $this->image . '" alt="ritratto dello artista ' . $this->performer . '">';
-    $html .= '   <p>Artista: ' . $this->performer . '</p>';
-    $html .= '   <p>Data: ' . $this->datetime . '</p>';
-    $html .= '   <p>Ora: ' . $this->time . '</p>';
-    $html .= '   <p>Descrizione: ' . $this->description . '</p>';
+    $html .= '   <dl>';
+    $html .= '       <dt>Artista:</dt>';
+    $html .= '       <dd>' . $this->performer . '</dd>';
+
+    $html .= '       <dt>Data:</dt>';
+    $html .= '       <dd>' . $this->datetime . '</dd>';
+
+    $html .= '       <dt>Ora:</dt>';
+    $html .= '       <dd>' . $this->time . '</dd>';
+
+    $html .= '       <dt>Descrizione:</dt>';
+    $html .= '       <dd>' . $this->description . '</dd>';
+    $html .= '   </dl>';
 
     // Form to handle deletion
     $html .= '   <form action="phputilities/eventEleminationHandler.php" method="post">';
     $html .= '       <input type="hidden" name="event_artist" value="' . $this->performer . '">';
-    $html .= '       <button type="submit" name="delete_event">Delete</button>';
+    $html .= '       <input type="submit" name="delete_event" value="Delete">';
     $html .= '   </form>';
 
     $html .= '</div>';

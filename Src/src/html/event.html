@@ -6,10 +6,19 @@
       aria-labelledby="event-title"
     >
     <div class="entry-info">
-      <p id="event-title">{{performer}}</p>
-      <p>Data: <time datetime="{{datetime}}">{{datetime}}</time></p>
-      <p>Ora: <time datetime="{{time}}">{{time}}</time></p>
-      <p>Descrizione: {{Description}}</p>
+      <dl class="event-details">
+        <dt class="event-title"></dt>
+        <dd>{{performer}}</dd>
+    
+        <dt>Data:</dt>
+        <dd><time datetime="{{datetime}}">{{datetime}}</time></dd>
+    
+        <dt>Ora:</dt>
+        <dd><time datetime="{{time}}">{{time}}</time></dd>
+    
+        <dt>Descrizione:</dt>
+        <dd>{{Description}}</dd>
+    </dl>
     </div>
   </div>
 </div>
