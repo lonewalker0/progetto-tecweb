@@ -9,12 +9,13 @@
   text-decoration: none;
 }
 
-:root {
+:root 
+{
   --text-color: #79fe0c;
   --dark-bg-color: #212121;
   --light-bg-color: #bb5522;
-  --footer-bg-color: #7C7B6A;
-  --header-bg-color: #7C7B6A;
+  --footer-bg-color: #A28440;
+  --header-bg-color: #A28440;
 }
 
 img 
@@ -69,7 +70,8 @@ h4
 
 /* Header */
 
-header {
+header 
+{
   position: fixed;
   top: 0;
   width: 100%;
@@ -78,7 +80,8 @@ header {
   background-color: var(--header-bg-color);
 }
 
-.flexContainerHeader {
+.flexContainerHeader 
+{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -87,12 +90,14 @@ header {
   margin-top: 0;
 }
 
-.left-group {
+.left-group 
+{
   display: flex;
   align-items: center;
 }
 
-.logo a {
+.logo a 
+{
   display: flex; /* Makes the anchor block-level to fit the content */
   line-height: 0; /* Removes any extra line-height space */
   padding: 0; /* Ensures there's no extra padding */
@@ -102,7 +107,8 @@ header {
   transition: all .5s ease-in-out;
 }
 
-.logo img {
+.logo img 
+{
   height: auto; /* Maintains aspect ratio */
   width: auto; /* Adjusts width as per your logo's aspect ratio */
   max-height: 100px; /* Adjusts to the desired size */
@@ -128,7 +134,8 @@ header {
   max-width: 100%;
 }
 
-.countdown-data {
+.countdown-data 
+{
   display: flex;
   align-items: center;
   margin-left: 1.5rem;
@@ -140,22 +147,22 @@ header {
 
 #vertical-bar-container 
 {
-  border-left: 5px solid var (--dark-bg-color);
-  margin: 0 10 0 0;
-  height: 2em;  
+  border-left: 5px solid var(--dark-bg-color);
+  height: 50px;  
 }
 
-.icons {
+.icons 
+{
   display:flex;
   align-items: center;
   padding: 2px;
-  
 }
 
 
 
 /* Usa la larghezza critica del contenitore .nav come punto di rottura */
-@media (max-width: 770px) {
+@media (max-width: 770px) 
+{
   .nav {
     justify-content: center; /* Center align the entire navigation container */
   }
@@ -274,7 +281,7 @@ nav.menu a:hover > div#punto-dom
   width: 100%;
   height: 2em;
   padding-left: 1em;
-  background-color: lightgray;
+  background-color: lightslategrey;
   display: flex;
   align-items: center;
 }
@@ -363,6 +370,13 @@ footer
     border-color: purple; */
 }
 
+main h1
+{
+  border-bottom: 2px solid black;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .entry-info {
   flex: 1;
   width: 40%;
@@ -397,17 +411,21 @@ footer
 
 .carosello-block
 {
+    margin-left: auto;
+    margin-right: auto;
     display:block;
     background-image: url('../assets/artisti/tony2milli.jpg');
     background-position: center;
     background-repeat: no-repeat;
-    width: auto;
+    width: 600px;
     height: 600px;
-    align-content: center;
-    object-fit: cover;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0px 0px 40px rgba(37, 53, 25, 1);
 }
 
-.puntini {
+.puntini 
+{
   cursor: pointer;
   height: 15px;
   width: 15px;
@@ -418,20 +436,20 @@ footer
   transition: background-color 1s ease;
 }
 
-.active {
+.active 
+{
   background-color: #717171;
 }
 
-.carosello-puntini {
+.carosello-puntini 
+{
   text-align: center;
 }
 
-.carosello-dinamico {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+.carosello-dinamico 
+{
   position: static;
-  padding: 2px;
+  padding: 10px;
   margin-top: 1.5em;
 }
 
@@ -457,11 +475,14 @@ section {
     border-top: 3px inset var(--dark-bg-color);
     margin-bottom: 0;
     align-items: center;
+    padding-bottom: 20px;
 }
 
-section h4 {
+section h3 {
+    font-size: 30px;
+    color: var(--dark-bg-color);
     padding: 0;
-    border-bottom: 1px solid var(--dark-bg-color);
+    border-bottom: 2px solid var(--dark-bg-color);
     text-align: left;
     margin-left: 15px;
     margin-right: 15px;
@@ -471,6 +492,7 @@ section h4 {
     display: inline-grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 75%;
+    align-items: center;
 } 
 
 .sponsor-icon {
@@ -630,20 +652,22 @@ section h4 {
   font-weight: bold;
 }
 
-.faq-section {
+.faq-section 
+{
   width: 100%;
   margin-bottom: 2rem;
   /* border: solid;
     border-color: orange; */
 }
 
-.faq-title {
+.faq-title 
+{
   font-size: 24px;
   margin-bottom: 1rem;
-  margin-left: 12rem;
 }
 
-.faq-box-container {
+.faq-box-container 
+{
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -660,6 +684,7 @@ section h4 {
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
   margin-right: 2rem;
   margin-bottom: 2rem;
+  background-color: #C6C6C6;
   /* border: solid;
     border-color: blue; */
 }
@@ -687,7 +712,7 @@ section h4 {
 /*ERROR 500*/
 
 main {
-  margin-top: 8.2em; /* Adjust the value to move the main section down as needed */
+  margin-top: 8.1em; /* Adjust the value to move the main section down as needed */
   min-height: 100%; /* Optional: sets the maximum height for the main section */
   padding: 0; /* Optional: adds some space inside the main section */
   background-color: var(--light-bg-color);
