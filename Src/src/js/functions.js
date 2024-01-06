@@ -57,9 +57,10 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-if (window.location.pathname === "/index.php") {
+if (window.location.pathname === "/progetto-git/index.php") {
   document.addEventListener("DOMContentLoaded", function () {
     carosello();
+    document.addEventListener("scroll", scrollView);
   });
 }
 
@@ -170,6 +171,30 @@ function validateForm() {
 
   // Restituisce true solo se tutte le validazioni sono superate
   return true;
+}
+
+//funzione che fa visualizzare il bordo con animazione sotto la scritta programma
+function scrollView()
+{
+  let animazione = document.querySelectorAll(".programma-animation");
+  let animazione2 = document.querySelectorAll(".programma-animation2");
+  for(var i = 0; i < animazione.length; i++)
+  {
+    let altezza = window.innerHeight;
+    let top = animazione[i].getBoundingClientRect().top;
+    let visibile = 150;
+    if(top < altezza - visibile)
+    {
+      animazione[i].classList.add("active");
+      animazione2[i].classList.add("active");
+    }
+    else
+    {
+      animazione[i].classList.remove("active");
+      animazione2[i].classList.remove("active");
+    }
+  }
+
 }
 //funzione per andare ad aggiungere un paragrafo al div di errore
 function appendError(conteinerId, message) {
