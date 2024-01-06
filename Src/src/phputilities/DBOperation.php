@@ -34,6 +34,33 @@ class DBOperation{
         return $input;
     }*/
 
+    public function checkIfUserExists($username) {
+        try {
+            $this->db->openConnection();
+    
+            // Check if the username already exists
+            $checkQuery = "SELECT 1 FROM users WHERE username = ? LIMIT 1";
+            $checkStmt = mysqli_prepare($this->db->getConnection(), $checkQuery);
+    
+            if (!$checkStmt) {
+                throw new Exception("Error preparing the query: " . mysqli_error($this->db->getConnection()));
+            }
+    
+            mysqli_stmt_bind_param($checkStmt, "s", $username);
+            mysqli_stmt_execute($checkStmt);
+    
+            $checkResult = mysqli_stmt_get_result($checkStmt);
+    
+            return (bool) mysqli_fetch_assoc($checkResult);
+    
+        } catch (Exception $e) {
+            error_log("Error checking if user exists: " . $e->getMessage());
+            return false;
+        } finally {
+            $this->db->closeConnection();
+        }
+    }
+
     public function registerUser($username, $password, $nome, $cognome, $eta, $indirizzo, $email) {
         try {
             $this->db->openConnection();

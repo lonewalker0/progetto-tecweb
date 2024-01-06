@@ -344,11 +344,7 @@ function validazioneFormLogin(){
       .getElementById("password")
       .setAttribute("aria-invalid", "false");
   }
-  if(isValid){
-    return true;
-  }else{
-    return false;
-  }
+  return isValid;
   
 
 }
