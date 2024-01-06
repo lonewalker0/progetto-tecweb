@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("formLogin");
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     });
   }
-});
+});*/
 
 document.addEventListener("DOMContentLoaded", function () {
   var newPasswordField = document.getElementById("nuova_password");
