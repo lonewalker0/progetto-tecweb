@@ -31,8 +31,6 @@ header {
   position: relative;
   display: flex;
   padding: 2em;
-  border: 5px solid;
-  border-color: var(--textcolor);
   align-items: center;
   justify-content: space-between;
 
@@ -97,9 +95,6 @@ footer {
   text-align: center;
   align-items: center;
   border-top: 2px solid;
-  border-color: var(--textcolor);
-  border: 5px solid;
-  border-color: var(--textcolor);
   margin-top:auto;
 }
 

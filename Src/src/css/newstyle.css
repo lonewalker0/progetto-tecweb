@@ -9,11 +9,13 @@
 }
 
 :root {
-  --text-color: #79fe0c;
-  --dark-bg-color: #212121;
-  --light-bg-color: #bb5522;
-  --footer-bg-color: #a28440;
-  --header-bg-color: #a28440;
+  /* Coppia 1 */
+  --verde-lime: #79FE0C;
+  --verde-scuro: #253519; 
+
+  /* Coppia 2 */
+  --verde-salvia: #9AAD85;
+  --verde-nero: #171E10;
 }
 
 img {
@@ -21,7 +23,8 @@ img {
 }
 
 body {
-  color: var(--text-color);
+  background-color: var(--verde-nero);
+  color: var(--verde-lime);
   max-width: 1920px;
   font-size: 1.2rem;
   background-size: cover;
@@ -31,7 +34,7 @@ body {
 h1 {
   text-align: center;
   padding: 1rem;
-  color: var(--dark-bg-color);
+  color: var(--verde-lime);
   font-size: 3rem;
   font-weight: 500;
   font-weight: bold;
@@ -41,15 +44,15 @@ h1 {
 h2 {
   text-align: center;
   padding: 1rem;
-  color: var(--dark-bg-color);
+  color: var(--verde-nero);
   font-size: 2.6rem;
   font-weight: 500;
   font-weight: bold;
 }
 
-h4 {
+h3 {
   padding: 1rem;
-  color: var(--dark-bg-color);
+  color: var(--verde-nero);
   font-size: 1.8rem;
   font-weight: 400;
   font-weight: bold;
@@ -68,7 +71,7 @@ header {
   width: 100%;
   z-index: 10;
   margin-top: 0;
-  background-color: var(--header-bg-color);
+  background-color: var(--verde-scuro);
 }
 
 .flexContainerHeader {
@@ -115,7 +118,7 @@ header {
 #aiutoSkipnav a:focus {
   overflow: visible;
   position: static;
-  background-color: var(--text-color); /* Green background */
+  background-color: var(--verde-nero); /* Green background */
   color: white;
   border-radius: 15px; /* Rounded corners */
   text-align: center;
@@ -126,7 +129,7 @@ header {
 
 #aiutoSkipnav:focus,
 #aiutoSkipnav:focus-within {
-  margin-left: 10px;
+  margin-left: 2rem;
 }
 
 .logo a img {
@@ -148,7 +151,7 @@ header {
 }
 
 #vertical-bar-container {
-  border-left: 5px solid var(--dark-bg-color);
+  border-left: 5px solid var(--verde-lime);
   height: 50px;
 }
 
@@ -216,7 +219,7 @@ header {
   align-items: center;
   width: 100%;
   justify-content: center;
-  background-color: var(--dark-bg-color);
+  background-color: var(--verde-nero);
   font-size: 1.4rem;
   font-weight: 400;
   font-weight: bold;
@@ -236,7 +239,7 @@ header {
 .menu a {
   display: block;
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--verde-salvia);
   transition: color 0.3s ease;
 }
 
@@ -282,7 +285,7 @@ nav.menu a:hover > div#punto-dom {
   width: 100%;
   height: 2em;
   padding-left: 1em;
-  background-color: lightslategrey;
+  background-color: var(--verde-scuro);
   display: flex;
   align-items: center;
 }
@@ -307,6 +310,7 @@ footer {
   background-color: var(--footer-bg-color);
   text-align: center;
   border-top: 2px solid black;
+  padding: 2rem 0 2rem 0;
 }
 
 .footer-icons {
@@ -349,23 +353,30 @@ footer {
 .event-container {
   margin: 0;
   padding: 2rem;
+  
   /* border: solid;
-    border-color: orange; */
+  border-color: white; */
 }
+
 .programma-entry {
-  /* border: solid;
-    border-color: blue; */
   display: flex;
+  align-items: center;
   margin-bottom: 4rem;
+  
+  /* border: solid;
+  border-color: purple; */
 }
 
 .programma-entry img {
-  width: 25%;
-  padding: 0;
+  width: 450px;
+  height: 450px;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+  padding: 1rem;
+  background-color: var(--verde-scuro);
+  
   /* border: solid;
-    border-color: purple; */
+  border-color: red; */
 }
 
 main h1 {
@@ -376,20 +387,18 @@ main h1 {
 
 .entry-info {
   flex: 1;
-  width: 40%;
-  box-sizing: border-box;
-  margin-top: 4em;
-  margin-right: 2rem;
-  margin-left: 2rem;
+  max-width: 70%;
+  margin: 2rem 2rem 2rem 2rem;
   padding: 2rem;
-  background-color: var(--dark-bg-color);
+  background-color: var(--verde-scuro);
   color: var(--light-bg-color);
   font-size: 1.5rem;
   font-weight: 400;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+  
   /* border: solid;
-    border-color: red; */
+  border-color: brown; */
 }
 
 .event-title {
@@ -397,7 +406,10 @@ main h1 {
   font-weight: 500;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: var(--text-color);
+  color: white;
+  
+  /* border: solid;
+  border-color: orange; */
 }
 
 /* Carosello dinamico del main */
@@ -463,8 +475,8 @@ main h1 {
 
 section {
   text-align: center;
-  background-color: var(--text-color);
-  border-top: 3px inset var(--dark-bg-color);
+  background-color: var(--verde-salvia);
+  border-top: 3px inset var(--verde-nero);
   margin-bottom: 0;
   align-items: center;
   padding-bottom: 20px;
@@ -472,9 +484,9 @@ section {
 
 section h3 {
   font-size: 30px;
-  color: var(--dark-bg-color);
+  color: var(--verde-nero);
   padding: 0;
-  border-bottom: 2px solid var(--dark-bg-color);
+  border-bottom: 2px solid var(--verde-nero);
   text-align: left;
   margin-left: 15px;
   margin-right: 15px;
@@ -522,8 +534,9 @@ section h3 {
   padding: 1rem;
   background-color: var(--light-bg-color);
   color: var(--dark-bg-color);
+  
   /* border: solid;
-    border-color: blue; */
+  border-color: white; */
 }
 
 .chi-siamo-container > h1 {
@@ -540,10 +553,13 @@ section h3 {
   margin: 0 auto 1rem;
   display: block;
   margin-bottom: 2rem;
+  padding: 1rem;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
   border-radius: 4px;
+  background-color: var(--verde-scuro);
+  
   /* border: solid;
-    border-color: purple; */
+  border-color: purple; */
 }
 
 .chi-siamo-contenuto {
@@ -551,28 +567,34 @@ section h3 {
   margin: 0 auto;
   padding: 1rem;
   text-align: left;
+  background-color: var(--verde-scuro);
+  border-radius: 4px;
+  
   /* border: solid;
-    border-color: green; */
+  border-color: red; */
 }
 
 #testo-chi-siamo {
   margin-bottom: 2rem;
   text-align: justify;
+  
   /* border: solid;
-    border-color: red; */
+  border-color: brown; */
 }
 
 .ringraziamenti {
   font-weight: bold;
   margin-bottom: 0.5rem;
+  
   /* border: solid;
-    border-color: orange; */
+  border-color: orange; */
 }
 
 #ul-ringraziamenti {
   list-style: none;
+  
   /* border: solid;
-    border-color: brown; */
+  border-color: yellow; */
 }
 
 /* Location */
@@ -583,6 +605,7 @@ section h3 {
   padding-bottom: 0;
   background-color: var(--light-bg-color);
   color: var(--dark-bg-color);
+
   /* border: solid;
     border-color: blue; */
 }
@@ -597,11 +620,18 @@ section h3 {
     border-color: purple; */
 }
 
+.location-contenuto h2 {
+  color: var(--verde-lime);
+}
+
 #map {
   width: 600px;
   height: 600px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
   border-radius: 4px;
+  padding: 1rem;
+  background-color: var(--verde-scuro);
+  border: none;
   /* border: solid;
     border-color: red; */
 }
@@ -609,6 +639,9 @@ section h3 {
 .testo-location {
   max-width: 60%;
   padding: 1rem;
+  margin-left: 2rem;
+  border-radius: 4px;
+  background-color: var(--verde-scuro);
   /* border: solid;
     border-color: orange; */
 }
@@ -673,7 +706,7 @@ section h3 {
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
   margin-right: 2rem;
   margin-bottom: 2rem;
-  background-color: #c6c6c6;
+  background-color: var(--verde-scuro);
   /* border: solid;
     border-color: blue; */
 }
