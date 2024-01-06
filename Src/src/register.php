@@ -15,6 +15,10 @@ $description = 'Registrati al sito di TechnoLum250, inserisci i dati personali e
 
 
 $main = "<h1>Registrazione</h1>";
+
+
+
+
 $main .=file_get_contents(__DIR__.'/html/form/registerform.html');    
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);

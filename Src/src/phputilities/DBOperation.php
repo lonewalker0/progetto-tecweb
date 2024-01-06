@@ -15,7 +15,7 @@ class DBOperation{
         $this->db = $db;
     }
 
-    public static function sanitizeInput($input, $maxLength = 255) : string
+    /*public static function sanitizeInput($input, $maxLength = 255) : string
     {
         
         $input = substr($input, 0, $maxLength);
@@ -32,7 +32,7 @@ class DBOperation{
  
 
         return $input;
-    }
+    }*/
 
     public function registerUser($username, $password, $nome, $cognome, $eta, $indirizzo, $email) {
         try {

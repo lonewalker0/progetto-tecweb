@@ -18,22 +18,34 @@ $description = 'Gestisci il tuo account TechnoLum250, modifica i tuoi dati perso
 
 if (!isset($_SESSION["username"]) ) {
     // User is not logged in
-    $firstIteration=true;
+    #$firstIteration=true;
     $errormessage='<div id=error_login><p>Credenziali non corrette</p></div>';
-    do {
+    #do {
         // Recupera il messaggio di errore se presente
-        $loginError = isset($_SESSION['login_error']) ? $_SESSION['login_error'] : '';
-
-        $main = "<h1>Accedi o Registrati</h1>";
+        $main = "<h1>Accedi</h1>";
         $main .= file_get_contents(__DIR__ . '/html/form/loginform.html');
-        $main = str_replace('{{loginerror}}', $firstIteration ? '' : $errormessage, $main);
+        $loginError = isset($_SESSION['login_error']) ? $_SESSION['login_error'] : '';
+        if($_SESSION['login_error']==true){
+                $main .= $errormessage;
+                #$main = str_replace('{{loginerror}}',$errormessage, $main);
+
+        }
+        
+        
+        
+        $main.="<span>Non hai un account</span>";
+        $main .="<a href='register.php'>Registrati</a>";
+        
+       # $main = str_replace('{{loginerror}}', $firstIteration ? '' : $errormessage, $main);
+       # $main = str_replace('{{utente}}', $firstIteration ? '' : $errormessage, $main);
+
 
         
-        unset($_SESSION['login_error']);
+        #unset($_SESSION['login_error']);
 
-        $firstIteration=false;
+       # $firstIteration=false;
 
-    } while ($loginError);
+   # } while ($loginError);
 } else {
 
     if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] === true) {

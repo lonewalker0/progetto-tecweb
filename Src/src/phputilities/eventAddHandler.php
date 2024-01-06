@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 $dboperation = new DBOperation(); 
-#if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['artist_name'])) {
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     session_start();
 
