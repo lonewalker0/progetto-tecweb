@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "Errore nel caricamento dell'immagine.";
     }
     if (!isValidString($_POST['artist_name']) or !isValidString($_POST['description'])) {
-        $errors[] = "Non sono accettati caratteri speciali!";
+        $errors[] = "Non è accettato codice htm!";
     }
     if (!isValidHour($_POST['hour'])) {
         $errors[] = "Orario inserito non valido!";

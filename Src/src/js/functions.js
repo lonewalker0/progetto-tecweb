@@ -168,11 +168,12 @@ function appendError(conteinerId, message) {
   conteinerId.appendChild(errorElement);
 }
 
-function contineCaratteriSpeciali(stringa) {
-  // espressione regolare che prende tutti i caratteri speciali
-  const espressione = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-  return espressione.test(stringa);
+function StringaValida(string) {
+  // This regex pattern checks for HTML tags or entities
+  const pattern = /<[^>]*>|&[^;]+;/;
+  return !pattern.test(string);
 }
+
 function formatoData(stringa) {
   // Espressione regolare per corrispondere al formato data standard (YYYY-MM-DD)
   const espressione = /^\d{4}-\d{2}-\d{2}$/;
@@ -208,13 +209,10 @@ function validazioneFormAggiutaEvento() {
       .getElementById("artist_name")
       .setAttribute("aria-invalid", "false");
   }
-  if (contineCaratteriSpeciali(artistName)) {
+  if (!StringaValida(artistName)) {
     isValid = false;
     document.getElementById("artist_name").setAttribute("aria-invalid", "true");
-    appendError(
-      errorContainer,
-      "Il nome dell'artista non può contenere caratteri speciali!"
-    );
+    appendError(errorContainer, "Non inserire codice HTML!");
   } else {
     document
       .getElementById("artist_name")
@@ -229,13 +227,10 @@ function validazioneFormAggiutaEvento() {
       .getElementById("artist_name")
       .setAttribute("aria-invalid", "false");
   }
-  if (contineCaratteriSpeciali(description)) {
+  if (!StringaValida(description)) {
     isValid = false;
     document.getElementById("description").setAttribute("aria-invalid", "true");
-    appendError(
-      errorContainer,
-      "La descrizione non può contenere caratteri speciali!"
-    );
+    appendError(errorContainer, "Non inserire codice HTML!");
   } else {
     document
       .getElementById("description")
