@@ -43,6 +43,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });*/
 
+/*document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("RegistrationForm");
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (validazioneFormRegistrazione()) {
+        event.target.submit();
+      }
+      return false;
+    });
+  }
+});*/
+
 document.addEventListener("DOMContentLoaded", function () {
   var newPasswordField = document.getElementById("nuova_password");
   var confirmPasswordField = document.getElementById("conferma_password2");
@@ -212,6 +225,23 @@ function StringaValida(string) {
   return !pattern.test(string);
 }
 
+function isValidAge(age) {
+  if (!Number.isInteger(age) || age <= 0) {
+      return false;
+  }
+  var minAge = 16;
+  return age >= minAge;
+}
+function isValidEmail(email) {
+  // Pattern per la validazione dell'indirizzo email
+  var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  var isEmailValid = emailPattern.test(email);
+
+  var hasHtmlTagsOrEntities = !StringaValida(email);
+
+  return isEmailValid && !hasHtmlTagsOrEntities;
+}
 function formatoData(stringa) {
   // Espressione regolare per corrispondere al formato data standard (YYYY-MM-DD)
   const espressione = /^\d{4}-\d{2}-\d{2}$/;
@@ -343,6 +373,102 @@ function validazioneFormLogin(){
     document
       .getElementById("password")
       .setAttribute("aria-invalid", "false");
+  }
+  return isValid;
+  
+
+}
+
+function validazioneFormRegistrazione(){
+  const errorContainer = document.getElementById(
+    "errorContainerRegistrazione"
+  );
+  errorContainer.innerHTML = "";
+  const nome = document.forms["RegistrationForm"]["nome"].value;
+  const cognome = document.forms["RegistrationForm"]["cognome"].value;
+  const eta = document.forms["RegistrationForm"]["eta"].value;
+  const indirizzo = document.forms["RegistrationForm"]["indirizzo"].value;
+  const email = document.forms["RegistrationForm"]["email"].value;
+  const username = document.forms["RegistrationForm"]["username"].value;
+  const password = document.forms["RegistrationForm"]["password"].value;
+  const confermapassword = document.forms["RegistrationForm"]["confermaPassword"].value;
+
+  let isValid = true;
+  if (!StringaValida(nome)) {
+    isValid = false;
+    document.getElementById("nome").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "questo campo non accetta codice HTML!");
+  } else {
+    document
+      .getElementById("nome")
+      .setAttribute("aria-invalid", "false");
+  }
+  if (!StringaValida(cognome)) {
+    isValid = false;
+    document.getElementById("cognome").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "questo campo non accetta codice HTML!");
+  } else {
+    document
+      .getElementById("cognome")
+      .setAttribute("aria-invalid", "false");
+  }
+  if (!isValidAge(eta)) {
+    isValid = false;
+    document.getElementById("eta").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "eta non valida");
+  } else {
+    document
+      .getElementById("eta")
+      .setAttribute("aria-invalid", "false");
+  }
+  if (!StringaValida(indirizzo)) {
+    isValid = false;
+    document.getElementById("indirizzo").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "questo campo non accetta codice HTML!");
+  } else {
+    document
+      .getElementById("indirizzo")
+      .setAttribute("aria-invalid", "false");
+  }
+  if (!StringaValida(username)) {
+    isValid = false;
+    document.getElementById("username").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "questo campo non accetta codice HTML!");
+  } else {
+    document
+      .getElementById("username")
+      .setAttribute("aria-invalid", "false");
+  }
+  if (!StringaValida(password)) {
+    isValid = false;
+    document.getElementById("password").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "questo campo non accetta codice HTML!");
+  } else {
+    document
+      .getElementById("password")
+      .setAttribute("aria-invalid", "false");
+  }
+  if (!StringaValida(confermapassword)) {
+    isValid = false;
+    document.getElementById("confermaPassword").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "questo campo non accetta codice HTML!");
+  } else {
+    document
+      .getElementById("confermaPassword")
+      .setAttribute("aria-invalid", "false");
+  }
+  if (!isValidEmail(email)) {
+    isValid = false;
+    document.getElementById("email").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "formato email non valido");
+  } else {
+    document
+      .getElementById("email")
+      .setAttribute("aria-invalid", "false");
+  }
+  if (password !== confermapassword) {
+    isValid = false;
+    appendError(errorContainer, "Le password non coincidono");
   }
   return isValid;
   
