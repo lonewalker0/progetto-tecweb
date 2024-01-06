@@ -31,6 +31,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("formLogin");
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (validazioneFormLogin()) {
+        event.target.submit();
+      }
+      return false;
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   var newPasswordField = document.getElementById("nuova_password");
   var confirmPasswordField = document.getElementById("conferma_password2");
   var oldPasswordField = document.getElementById("vecchia_password");
@@ -277,6 +290,42 @@ function validazioneFormAggiutaEvento() {
   }
 
   return false;
+}
+
+function validazioneFormLogin(){
+  const errorContainer = document.getElementById(
+    "error_login"
+  );
+  errorContainer.innerHTML = "";
+  const username = document.forms["formLogin"]["username"].value;
+  const password = document.forms["formLogin"]["password"].value;
+
+  let isValid = true;
+  if (!StringaValida(username)) {
+    isValid = false;
+    document.getElementById("username").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "questo campo non accetta codice HTML!");
+  } else {
+    document
+      .getElementById("username")
+      .setAttribute("aria-invalid", "false");
+  }
+  if (!StringaValida(password)) {
+    isValid = false;
+    document.getElementById("password").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "questo campo non accetta codice HTML!");
+  } else {
+    document
+      .getElementById("password")
+      .setAttribute("aria-invalid", "false");
+  }
+  if(isValid){
+    return true;
+  }else{
+    return false;
+  }
+  
+
 }
 //calcolare il prezzo totale del biglietto, prima di inviare l'acquisto al submit
 function calculateTotalPrice(id) {

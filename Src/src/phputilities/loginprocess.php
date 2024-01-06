@@ -4,12 +4,28 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 include('DBOperation.php');
+include('validationElement.php'); 
+
 
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    $errors = "";
+
+    if (!isValidString($_POST['username']) or !isValidString($_POST['password'])) {
+        $errors = "<p>Non è accettato codice html!</p>";
+    }
+    if (!empty($errors)) {
+        
+        
+        $_SESSION['add_login_form_errors'] = $errors;
+        header("Location: ../account.php");
+        die();
+    }else{
+
     $username = $_POST['username'];
-    $password = ($_POST['password']);
+    $password = $_POST['password'];
 
     
     #$dbAccess = new DBAccess();
@@ -42,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
     }
+}
     
 
 } 

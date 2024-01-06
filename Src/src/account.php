@@ -20,11 +20,18 @@ if (!isset($_SESSION["username"]) ) {
     
     $main = "<h1>Accedi</h1>";
     $main .= file_get_contents(__DIR__ . '/html/form/loginform.html');
+
+    if (isset($_SESSION['add_login_form_errors'])) {
+         
+            $main = str_replace('{{loginerror}}', $_SESSION['add_login_form_errors'], $main) ;
+        
+        unset($_SESSION['add_login_form_errors']);
+    }
     
     // Check if there is an error in the session
     if(isset($_SESSION['NomeUtente_Error'])){
         // Set the error message
-        $errormessage = '<div id="error_login"><p>Credenziali non corrette!</p></div>';
+        $errormessage = '<p>Credenziali non corrette!</p>';
         // Replace the placeholders with the actual error message and username
         $main = str_replace('{{loginerror}}', $errormessage, $main);
         $main = str_replace('{{NomeUtenteDaReinserire}}', $_SESSION['NomeUtente_Error'], $main);
