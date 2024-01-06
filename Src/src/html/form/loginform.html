@@ -1,5 +1,5 @@
 <form action="phputilities/loginprocess.php" method="post">
- <!--- {{loginerror}}-->
+  {{loginerror}}
   <fieldset>
     <legend>Accesso</legend>
 
@@ -9,10 +9,11 @@
         type="text"
         id="username"
         name="username"
+        value="{{NomeUtenteDaReinserire}}"
         required
         aria-required="true"
         maxlength="50"
-      >
+      />
     </div>
 
     <div>
@@ -24,7 +25,7 @@
         required
         aria-required="true"
         maxlength="50"
-      >
+      />
     </div>
   </fieldset>
 
@@ -34,9 +35,6 @@
       name="accedi"
       value="accedi"
       aria-label="Accedi al tuo account"
-    >
-      
-    
-   
+    />
   </div>
 </form>

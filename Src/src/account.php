@@ -17,35 +17,29 @@ $description = 'Gestisci il tuo account TechnoLum250, modifica i tuoi dati perso
 
 
 if (!isset($_SESSION["username"]) ) {
-    // User is not logged in
-    #$firstIteration=true;
-    $errormessage='<div id=error_login><p>Credenziali non corrette</p></div>';
-    #do {
-        // Recupera il messaggio di errore se presente
-        $main = "<h1>Accedi</h1>";
-        $main .= file_get_contents(__DIR__ . '/html/form/loginform.html');
-        $loginError = isset($_SESSION['login_error']) ? $_SESSION['login_error'] : '';
-        if($_SESSION['login_error']==true){
-                $main .= $errormessage;
-                #$main = str_replace('{{loginerror}}',$errormessage, $main);
+    
+    $main = "<h1>Accedi</h1>";
+    $main .= file_get_contents(__DIR__ . '/html/form/loginform.html');
+    
+    // Check if there is an error in the session
+    if(isset($_SESSION['NomeUtente_Error'])){
+        // Set the error message
+        $errormessage = '<div id="error_login"><p>Credenziali non corrette!</p></div>';
+        // Replace the placeholders with the actual error message and username
+        $main = str_replace('{{loginerror}}', $errormessage, $main);
+        $main = str_replace('{{NomeUtenteDaReinserire}}', $_SESSION['NomeUtente_Error'], $main);
+        // Reset or clear the session variable to avoid showing the error after refreshing the page
+        unset($_SESSION['NomeUtente_Error']);
+    } else {
+        // If there is no error, replace the placeholders with an empty string
+        $main = str_replace('{{loginerror}}', "", $main);
+        $main = str_replace('{{NomeUtenteDaReinserire}}', "", $main);
+    }
+    
+    $main .= "<span>Non hai un account</span>";
+    $main .= "<a href='register.php'>Registrati</a>";
 
-        }
         
-        
-        
-        $main.="<span>Non hai un account</span>";
-        $main .="<a href='register.php'>Registrati</a>";
-        
-       # $main = str_replace('{{loginerror}}', $firstIteration ? '' : $errormessage, $main);
-       # $main = str_replace('{{utente}}', $firstIteration ? '' : $errormessage, $main);
-
-
-        
-        #unset($_SESSION['login_error']);
-
-       # $firstIteration=false;
-
-   # } while ($loginError);
 } else {
 
     if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] === true) {
