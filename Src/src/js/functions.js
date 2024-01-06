@@ -212,7 +212,7 @@ function validazioneFormAggiutaEvento() {
   if (!StringaValida(artistName)) {
     isValid = false;
     document.getElementById("artist_name").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non inserire codice HTML!");
+    appendError(errorContainer, "Il nome del artista non accetta codice HTML!");
   } else {
     document
       .getElementById("artist_name")
@@ -230,7 +230,7 @@ function validazioneFormAggiutaEvento() {
   if (!StringaValida(description)) {
     isValid = false;
     document.getElementById("description").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non inserire codice HTML!");
+    appendError(errorContainer, "Nella descrizione non è ammesso codice HTML!");
   } else {
     document
       .getElementById("description")
