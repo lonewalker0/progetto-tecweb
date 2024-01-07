@@ -201,13 +201,40 @@ header {
   div.icons {
     display: none; /* Hide icons at this breakpoint */
   }
-
+  div.left-group
+  {
+    align-items: center;
+    justify-content:space-around;
+    width:100%
+  }
+  div.countdown-data
+  {
+    margin-left:0;
+    width:100px;
+    height: 4rem;
+  }
+  div.countdown-data p,
+  div.countdown-data p#intervalloFestival.countdown-block
+  {
+    font-size: 18px;
+    text-align:center;
+  }
   .logo a {
     max-height: none; /* Remove max-height restriction for smaller screens */
   }
 
   .logo img {
     max-height: 100px; /* You can adjust the size for smaller screens if needed */
+  }
+  
+  div#punto-ind,
+  div#punto-loc,
+  div#punto-dom,
+  div#punto-mer,
+  div#punto-chi,
+  div#punto-pre,
+  div#punto-acc {
+    display: none;
   }
   main h1
   {
@@ -220,8 +247,8 @@ header {
   }
   span.puntini
   {
-    width: 5px;
-    height: 5px;
+    width: 10px;
+    height: 10px;
   }
   div.programma-entry
   {
@@ -306,6 +333,7 @@ header {
   }
   section h2
   {
+    color: var(--verde-nero);
     font-size: 2rem;
   }
   html body main#mainContent
