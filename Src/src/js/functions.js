@@ -37,6 +37,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("formUpdate");
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (validazioneFormUpdate()) {
+        event.target.submit();
+      }
+      return false;
+    });
+  }
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   var newPasswordField = document.getElementById("nuova_password");
@@ -400,6 +412,63 @@ function validazioneFormRegistrazione() {
     appendError(errorContainer, "Le password non coincidono");
   }
   return isValid;
+}
+
+function validazioneFormUpdate(){
+  const errorContainer = document.getElementById(
+    "errorupdate"
+  );
+  errorContainer.innerHTML = "";
+  const indirizzo = document.forms["formUpdate"]["indirizzo"].value;
+  const email = document.forms["formUpdate"]["email"].value;
+  const nuovapassword = document.forms["formUpdate"]["nuova_password"].value;
+  const confermapassword = document.forms["formUpdate"]["conferma_password2"].value;
+  const passwordvecchia = document.forms["formUpdate"]["vecchia_password"].value;
+  
+  let isValid = true;
+  if (indirizzo.trim() !== "") {
+    if (!StringaValida(indirizzo)) {
+      isValid = false;
+      document.getElementById("indirizzo").setAttribute("aria-invalid", "true");
+      appendError(errorContainer, "Questo campo non accetta codice HTML!");
+    } else {
+      document.getElementById("indirizzo").setAttribute("aria-invalid", "false");
+    }
+  }
+  if (email.trim() !== "") {
+    if (!isValidEmail(email)) {
+      isValid = false;
+      document.getElementById("email").setAttribute("aria-invalid", "true");
+      appendError(errorContainer, "Questo campo non accetta codice HTML!");
+    } else {
+      document.getElementById("email").setAttribute("aria-invalid", "false");
+    }
+  }
+  if (passwordvecchia.trim() !== "" || nuovapassword.trim() !== "" || confermapassword.trim() !== "") {
+    // Verifica che la stringa mandata sia valida
+    if (!StringaValida(passwordvecchia) || !StringaValida(nuovapassword) || !StringaValida(confermapassword)) {
+      isValid = false;
+      document.getElementById("vecchia_password").setAttribute("aria-invalid", "true");
+      document.getElementById("nuova_password").setAttribute("aria-invalid", "true");
+      document.getElementById("conferma_password2").setAttribute("aria-invalid", "true");
+      appendError(errorContainer, "Le password contengono caratteri non validi.");
+    } else {
+      // Verifica che la nuova password e la conferma coincidano
+      if (nuovapassword.trim() !== confermapassword.trim()) {
+        isValid = false;
+        document.getElementById("nuova_password").setAttribute("aria-invalid", "true");
+        document.getElementById("conferma_password2").setAttribute("aria-invalid", "true");
+        appendError(errorContainer, "La nuova password e la conferma password non coincidono.");
+      } else {
+        document.getElementById("vecchia_password").setAttribute("aria-invalid", "false");
+        document.getElementById("nuova_password").setAttribute("aria-invalid", "false");
+        document.getElementById("conferma_password2").setAttribute("aria-invalid", "false");
+      }
+    }
+  }
+
+  return isValid;
+
 }
 //calcolare il prezzo totale del biglietto, prima di inviare l'acquisto al submit
 function calculateTotalPrice(id) {

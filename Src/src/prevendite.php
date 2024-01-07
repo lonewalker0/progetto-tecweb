@@ -25,5 +25,8 @@ else {
     $bigliettobuilder= new BigliettiBuilder();
     $main.=$bigliettobuilder->buildBigliettoHtml();
 }
+
+
+
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);
 ?>
