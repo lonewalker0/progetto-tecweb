@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });*/
 
-/*document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("RegistrationForm");
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     });
   }
-});*/
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   var newPasswordField = document.getElementById("nuova_password");
@@ -159,32 +159,8 @@ function carosello() {
   setTimeout(carosello, 4000); //Cambia l'immagine del carosello ogni 4 secondi
 }
 
-function validateForm() {
-  // Validazione dell'età (deve essere maggiore di 16)
-  var etaInput = document.getElementById("eta");
-  var etaError = document.getElementById("etaError");
-  if (etaInput.value < 16) {
-    etaError.textContent = "Devi avere almeno 16 anni.";
-    return false;
-  } else {
-    etaError.textContent = "";
-  }
 
-  // Validazione delle password (devono coincidere)
-  var passwordInput = document.getElementById("password");
-  var confermaPasswordInput = document.getElementById("confermaPassword");
-  var passwordError = document.getElementById("passwordError");
 
-  if (passwordInput.value !== confermaPasswordInput.value) {
-    passwordError.textContent = "Le password non coincidono.";
-    return false;
-  } else {
-    passwordError.textContent = "";
-  }
-
-  // Restituisce true solo se tutte le validazioni sono superate
-  return true;
-}
 
 //funzione che fa visualizzare il bordo con animazione sotto la scritta programma
 function scrollView()
@@ -351,7 +327,7 @@ function validazioneFormLogin(){
   const errorContainer = document.getElementById(
     "error_login"
   );
-  errorContainer.innerHTML = "";
+  
   const username = document.forms["formLogin"]["username"].value;
   const password = document.forms["formLogin"]["password"].value;
 
