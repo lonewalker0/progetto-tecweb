@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });*/
 
-/*document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
   var form = document.getElementById("RegistrationForm");
   if (form) {
@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     });
   }
-});*/
-/*document.addEventListener("DOMContentLoaded", function () {
+});
+document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("formUpdate");
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     });
   }
-});*/
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   var newPasswordField = document.getElementById("nuova_password");
@@ -355,7 +355,7 @@ function validazioneFormLogin() {
     }
   });
 
-  return isValid;
+  return isValid; // Aggiunto per restituire il risultato della validazione
 }
 
 function validazioneFormRegistrazione() {
@@ -363,7 +363,8 @@ function validazioneFormRegistrazione() {
   errorContainer.innerHTML = "";
   const nome = document.forms["RegistrationForm"]["nome"].value;
   const cognome = document.forms["RegistrationForm"]["cognome"].value;
-  const eta = document.forms["RegistrationForm"]["eta"].value;
+  const etastring = document.forms["RegistrationForm"]["eta"].value;
+  const eta = parseInt(etastring, 10);
   const indirizzo = document.forms["RegistrationForm"]["indirizzo"].value;
   const email = document.forms["RegistrationForm"]["email"].value;
   const username = document.forms["RegistrationForm"]["username"].value;
