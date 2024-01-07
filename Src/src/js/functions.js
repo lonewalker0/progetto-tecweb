@@ -2,11 +2,6 @@ let imgIndex = 0;
 let caroselloj = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
-  countdownFestival();
-  triggerView();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
   var quantitaInputs = document.querySelectorAll('[id^="quantita-"]');
 
   quantitaInputs.forEach(function (input) {
@@ -73,6 +68,8 @@ document.addEventListener("DOMContentLoaded", function () {
 if (window.location.pathname === "/progetto-git/index.php") {
   document.addEventListener("DOMContentLoaded", function () {
     carosello();
+    countdownFestival();
+    triggerView();
     document.addEventListener("scroll", scrollView);
   });
 }

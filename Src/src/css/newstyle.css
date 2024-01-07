@@ -44,7 +44,7 @@ h1 {
 h2 {
   text-align: center;
   padding: 1rem;
-  color: var(--verde-nero);
+  color: var(--verde-lime);
   font-size: 2.6rem;
   font-weight: 500;
   font-weight: bold;
@@ -162,23 +162,44 @@ header {
 }
 
 /* Usa la larghezza critica del contenitore .nav come punto di rottura */
-@media (max-width: 770px) {
-  .nav {
-    justify-content: center; /* Center align the entire navigation container */
+@media only screen and (max-width: 770px) {
+  nav#breadcrumb
+  {
+    top:12rem;
+    font-size:1rem;
   }
-
+  nav.menu
+  {
+    top: 7.8rem;
+    height:4rem;
+    font-size:1rem;
+  }
+  nav.menu ul
+  {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    padding-top:15px;
+    padding-bottom: 15px; 
+  }
+  nav.menu ul li
+  {
+    text-align:center;
+    margin-right:0;
+  }
+  nav.menu ul li a
+  {
+    justify-content: center;
+    font-size: 1rem;
+  }
   .left-group {
-    flex-direction: column; /* Stack the children of .left-group vertically */
+    flex-direction: row; /* Stack the children of .left-group vertically */
     align-items: center; /* Center align the items horizontally within .left-group */
     margin-bottom: 1rem; /* Add some space below .left-group, if needed */
   }
 
-  .icons {
+  div.icons {
     display: none; /* Hide icons at this breakpoint */
-  }
-
-  .vertical-bar {
-    display: none;
   }
 
   .logo a {
@@ -186,7 +207,126 @@ header {
   }
 
   .logo img {
-    max-height: 150px; /* You can adjust the size for smaller screens if needed */
+    max-height: 100px; /* You can adjust the size for smaller screens if needed */
+  }
+  main h1
+  {
+    font-size:2rem;
+  }
+  div.carosello-block
+  {
+    width: 300px;
+    height: 300px;
+  }
+  span.puntini
+  {
+    width: 5px;
+    height: 5px;
+  }
+  div.programma-entry
+  {
+    display: flex;
+  }
+  div.programma-entry img
+  {
+    width:150px;
+    height:150px;
+  }
+  div.entry-info
+  {
+    font-size: 1rem;
+    display: inline;
+    flex-direction: column;
+    margin: 16px;
+    padding: 32px;
+  }
+  div.entry-info dl dd.event-title
+  {
+    font-size: 1.3rem;
+  }
+  div.chi-siamo-container > h1
+  {
+    font-size: 1.5rem;
+  }
+  div.chi-siamo-container #img-chi-siamo
+  {
+    width:300px;
+    height: auto;
+  }
+  div.chi-siamo-contenuto
+  {
+    font-size: 0.8rem;
+  }
+  div.location-container h1
+  {
+    font-size: 1.5rem;
+  }
+  div.location-contenuto iframe#map
+  {
+    width: 150px;
+    height: 150px;
+  }
+  div.location-contenuto div.testo-location
+  {
+    margin-left:16px;
+  }
+  div.location-contenuto div.testo-location h2
+  {
+    font-size: 1.2rem;
+    padding: 4px;
+  }
+  div.location-contenuto div.testo-location p, 
+  div.location-contenuto div.testo-location p#indirizzo
+  {
+    font-size: 0.8rem;
+  }
+  div.faq-container h1
+  {
+    font-size: 1.8rem;
+  }
+  div.faq-container div.faq-section h2
+  {
+    font-size:1.2rem;
+  }
+  div.faq-item
+  {
+    width: 45%;
+    padding: 16px;
+    margin: 8px;
+  }
+  p.question
+  {
+      font-size: 1rem;
+  }
+  div.faq-item p.answer,
+  div.faq-item ul.answer,
+  div.faq-item p.answer.note
+  {
+    font-size: 0.6rem;
+  }
+  section h2
+  {
+    font-size: 2rem;
+  }
+  html body main#mainContent
+  {
+    margin-top: 10em;
+  }
+  main#mainContent section h3
+  {
+    font-size: 1.5rem;
+  }
+  html body footer
+  {
+    padding: 0.8rem 0 0.8rem 0;
+  }
+  div.footer-icons img
+  {
+    width:1.2rem;
+  }
+  div.footer-content
+  {
+    font-size:0.8rem;
   }
 }
 
@@ -382,7 +522,7 @@ footer {
 div.programma-animation, div.programma-animation2{
     margin-top: 10px;
     background-color: var(--verde-lime);
-    transition: all 1s ease-in-out;
+    transition: all 0.8s ease-in-out;
     position: absolute;
     width:0;
     height:2px;
