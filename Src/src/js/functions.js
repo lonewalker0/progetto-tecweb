@@ -25,7 +25,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+<<<<<<< HEAD
 document.addEventListener("DOMContentLoaded", function () {
+=======
+/*document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("formLogin");
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (validazioneFormLogin()) {
+        event.target.submit();
+      }
+      return false;
+    });
+  }
+});*/
+
+/*document.addEventListener("DOMContentLoaded", function () {
+>>>>>>> d8dc300 (fix)
   var form = document.getElementById("RegistrationForm");
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -36,8 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     });
   }
-});
-document.addEventListener("DOMContentLoaded", function () {
+});*/
+/*document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("formUpdate");
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -48,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     });
   }
-});
+});*/
 
 document.addEventListener("DOMContentLoaded", function () {
   var newPasswordField = document.getElementById("nuova_password");
@@ -309,8 +326,16 @@ function validazioneFormAggiutaEvento() {
   return false;
 }
 
+<<<<<<< HEAD
 function validazioneFormLogin() {
   const errorContainer = document.getElementById("error_login");
+=======
+function validazioneFormLogin(){
+  const errorContainer = document.getElementById(
+    "error_login"
+  );
+  errorContainer.innerHTML = "";
+>>>>>>> d8dc300 (fix)
 
   const username = document.forms["formLogin"]["username"].value;
   const password = document.forms["formLogin"]["password"].value;
