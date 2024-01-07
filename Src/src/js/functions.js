@@ -33,8 +33,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
+      console.log("Submit event intercepted.");
       if (validazioneFormLogin()) {
+        console.log("Form is valid. Submitting...");
         event.target.submit();
+      } else {
+        console.log("Form is not valid.");
       }
       return false;
     });
@@ -91,7 +95,7 @@ if (window.location.pathname === "/index.php") {
 }
 
 //eventListener per la visualizzazione dell'errore
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   var errorDiv = document.getElementById("error_login");
   if (errorDiv) {
     errorDiv.style.display = "block"; // Mostra il messaggio di errore
@@ -99,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
       errorDiv.style.display = "none"; // Nascondi il messaggio di errore dopo 2.5 secondi
     }, 2500); // 2500 millisecondi corrispondono a 2.5 secondi
   }
-});
+});*/
 //funzione per il countdown del festival
 const getCountdown = (eventDate) => {
   let countdownFestival = eventDate.getTime();
@@ -329,27 +333,28 @@ function validazioneFormAggiutaEvento() {
 
 function validazioneFormLogin() {
   const errorContainer = document.getElementById("error_login");
+  console.log("Funzione di validazione chiamata.");
+  errorContainer.innerHTML = "";
 
-
-
-  const username = document.forms["formLogin"]["username"].value;
-  const password = document.forms["formLogin"]["password"].value;
+  const fieldsToValidate = [
+    { name: "username", errorMessage: "Questo campo non accetta codice HTML!" },
+    { name: "password", errorMessage: "Questo campo non accetta codice HTML!" }
+  ];
 
   let isValid = true;
-  if (!StringaValida(username)) {
-    isValid = false;
-    document.getElementById("username").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "questo campo non accetta codice HTML!");
-  } else {
-    document.getElementById("username").setAttribute("aria-invalid", "false");
-  }
-  if (!StringaValida(password)) {
-    isValid = false;
-    document.getElementById("password").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "questo campo non accetta codice HTML!");
-  } else {
-    document.getElementById("password").setAttribute("aria-invalid", "false");
-  }
+
+  fieldsToValidate.forEach(field => {
+    const value = document.forms["formLogin"][field.name].value;
+
+    if (!StringaValida(value)) {
+      isValid = false;
+      document.getElementById(field.name).setAttribute("aria-invalid", "true");
+      appendError(errorContainer, field.errorMessage);
+    } else {
+      document.getElementById(field.name).setAttribute("aria-invalid", "false");
+    }
+  });
+
   return isValid;
 }
 
