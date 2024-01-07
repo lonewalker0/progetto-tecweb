@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-<<<<<<< HEAD
-document.addEventListener("DOMContentLoaded", function () {
-=======
+
+
+
 /*document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("formLogin");
   if (form) {
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });*/
 
 /*document.addEventListener("DOMContentLoaded", function () {
->>>>>>> d8dc300 (fix)
+
   var form = document.getElementById("RegistrationForm");
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -326,16 +326,11 @@ function validazioneFormAggiutaEvento() {
   return false;
 }
 
-<<<<<<< HEAD
+
 function validazioneFormLogin() {
   const errorContainer = document.getElementById("error_login");
-=======
-function validazioneFormLogin(){
-  const errorContainer = document.getElementById(
-    "error_login"
-  );
-  errorContainer.innerHTML = "";
->>>>>>> d8dc300 (fix)
+
+
 
   const username = document.forms["formLogin"]["username"].value;
   const password = document.forms["formLogin"]["password"].value;
