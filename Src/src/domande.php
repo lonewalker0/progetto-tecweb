@@ -8,7 +8,7 @@ $keyword = 'Festival, Techno, Lum250, Domande, FAQ, Risposte, Informazioni, Info
 $description = 'Hai dubbi o domande sul festival TechnoLum250? Vieni a leggere le nostre FAQ e trova le risposte che cerchi.'; 
 
 $main = "
-<div class='faq-container'>
+<div id='faq-container'>
 
 <h1>Domande frequenti (FAQ)</h1>
 

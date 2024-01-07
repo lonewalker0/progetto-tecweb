@@ -11,7 +11,7 @@
 :root {
   --verde-lime: #B1DD40;
   --verde-scuro: #111606;
-  --background-opacity: #1f280a;
+  --background-opacity: #1F280A;
 }
 
 img {
@@ -30,7 +30,7 @@ body {
 h1 {
   text-align: center;
   padding: 1rem;
-  color: var(--verde-salvia);
+  color: var(--verde-lime);
   font-size: 3rem;
   font-weight: 500;
   font-weight: bold;
@@ -68,6 +68,8 @@ header {
   z-index: 10;
   margin-top: 0;
   
+  border: solid;
+  border-color: blue;
 }
 
 #flexContainerHeader {
@@ -75,13 +77,13 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  margin: 2rem 4rem 2rem 4rem;
+  margin: 1rem 4rem 1rem 4rem;
   height: 5rem;
   border-radius: 1rem;
   background-color: var(--background-opacity);
 
-  /* border: solid;
-  border-color: white; */
+  border: solid;
+  border-color: purple;
 }
 
 #left-group {
@@ -226,8 +228,8 @@ header {
   background-color: var(--background-opacity);
   border-radius: 1rem;
 
-  /* border: solid;
-  border-color: yellow; */
+  border: solid;
+  border-color: red;
 }
 
 .menu ul {
@@ -285,15 +287,20 @@ nav.menu a:hover > div#punto-dom {
 
 #breadcrumb {
   position: relative;
-  top: 15rem;
+  top: 12rem;
   display: flex;
   width: 100%;
   height: 2em;
-  padding-left: 4rem;
+  width: calc(100% - 8rem);
+  margin: 1rem 4rem 1rem 4rem;
   background-color: var(--verde-scuro);
   display: flex;
   align-items: center;
+
+  border: solid;
+  border-color: brown;
 }
+
 #breadcrumb p {
   text-align: left;
   padding-left: 1rem;
@@ -311,14 +318,14 @@ footer {
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: auto;
-  color: var(--dark-bg-color);
-  background-color: var(--footer-bg-color);
   text-align: center;
-  border-top: 2px solid black;
   padding: 2rem 0 2rem 0;
+
+  border: solid;
+  border-color: green;
 }
 
-.footer-icons {
+.icons {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -326,7 +333,7 @@ footer {
   font-size: 2rem;
 }
 
-.footer-icons img {
+.icons img {
   width: 1.6rem;
   height: auto;
   margin: 0 10px;
@@ -334,8 +341,8 @@ footer {
   transition: transform 0.1s ease-in-out;
 }
 
-.footer-icons img:hover,
-.footer-icons img:focus {
+.icons img:hover,
+.icons img:focus {
   transform: scale(1.25);
 }
 
@@ -357,10 +364,10 @@ footer {
 
 .event-container {
   margin: 0;
-  padding: 2rem;
+  padding: 1rem;
   
-  /* border: solid;
-  border-color: white; */
+  border: solid;
+  border-color: orange;
 }
 
 .programma-entry {
@@ -504,12 +511,14 @@ div.programma-animation2.active{
   margin-bottom: 0;
   align-items: center;
   padding-bottom: 20px;
+  margin: 1rem;
+  border-radius: 1rem;
 
-  /* border: solid;
-  border-color: red; */
+  border: solid;
+  border-color: white;
 }
 
-#sponzor h2 {
+#sponsor h2 {
   color: var(--verde-scuro);
 }
 
@@ -560,31 +569,29 @@ div.programma-animation2.active{
 
 /* Chi siamo */
 
-.chi-siamo-container {
+#chi-siamo-container {
   margin: 0 auto;
   padding: 1rem;
-  background-color: var(--light-bg-color);
-  color: var(--dark-bg-color);
   
-  /* border: solid;
-  border-color: white; */
+  border: solid;
+  border-color: orange;
 }
 
 #img-chi-siamo {
-  width: 900px;
+  width: 800px;
   height: auto;
-  margin: 0 auto 1rem;
   display: block;
+  margin: 0;
   margin-bottom: 2rem;
   padding: 1rem;
   border-radius: 4px;
-  background-color: var(--verde-scuro);
+  background-color: var(--background-opacity);
   
-  /* border: solid;
-  border-color: purple; */
+  border: solid;
+  border-color: white;
 }
 
-.chi-siamo-contenuto {
+#chi-siamo-contenuto {
   max-width: 900px;
   margin: 0 auto;
   padding: 1rem;
@@ -592,20 +599,25 @@ div.programma-animation2.active{
   background-color: var(--verde-scuro);
   border-radius: 4px;
   
-  /* border: solid;
-  border-color: red; */
+  border: solid;
+  border-color: yellow;
 }
 
-#testo-chi-siamo {
+#chi-siamo-testo {
   margin-bottom: 2rem;
   text-align: justify;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--verde-lime);
+  color: var(--verde-scuro);
   
-  /* border: solid;
-  border-color: brown; */
+  border: solid;
+  border-color: greenyellow;
 }
 
-.ringraziamenti {
+#ringraziamenti {
   font-weight: bold;
+  margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   
   /* border: solid;
@@ -621,53 +633,53 @@ div.programma-animation2.active{
 
 /* Location */
 
-.location-container {
+#location-container {
   margin: 0 auto;
   padding: 1rem;
   padding-bottom: 0;
   background-color: var(--light-bg-color);
   color: var(--dark-bg-color);
 
-  /* border: solid;
-    border-color: blue; */
+  border: solid;
+  border-color: orange;
 }
 
-.location-contenuto {
+#location-contenuto {
   padding: 2rem;
   padding-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: solid;
-    border-color: purple; */
-}
+  background-color: var(--verde-lime);
+  color: var(--verde-scuro);
+  border-radius: 1rem;
 
-.location-contenuto h2 {
-  color: var(--verde-lime);
+  border: solid;
+  border-color: yellow;
 }
 
 #map {
   width: 600px;
   height: 600px;
   border-radius: 4px;
-  padding: 1rem;
-  background-color: var(--verde-scuro);
+  box-shadow: 0 0 10px rgba(37, 53, 25, 1);
   border: none;
-  /* border: solid;
-    border-color: red; */
+
+  border: solid;
+  border-color: white;
 }
 
-.testo-location {
+#testo-location {
   max-width: 60%;
   padding: 1rem;
   margin-left: 2rem;
   border-radius: 4px;
-  background-color: var(--verde-scuro);
+
   /* border: solid;
     border-color: orange; */
 }
 
-.testo-location p {
+#testo-location p {
   padding-left: 1rem;
   padding-bottom: 0.5rem;
 }
@@ -678,7 +690,7 @@ div.programma-animation2.active{
 
 /* Domande */
 
-.faq-container {
+#faq-container {
   margin: 0 auto;
   padding: 1rem;
   background-color: var(--light-bg-color);
@@ -686,15 +698,17 @@ div.programma-animation2.active{
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* border: solid;
-    border-color: red; */
+
+  border: solid;
+  border-color: orange;
 }
 
 .faq-section {
   width: 100%;
   margin-bottom: 2rem;
+
   /* border: solid;
-    border-color: orange; */
+  border-color: yellow; */
 }
 
 .faq-title {
@@ -707,8 +721,9 @@ div.programma-animation2.active{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  /* border: solid;
-    border-color: purple; */
+
+  border: solid;
+  border-color: white;
 }
 
 .faq-item {
@@ -718,9 +733,11 @@ div.programma-animation2.active{
   border-radius: 4px;
   margin-right: 2rem;
   margin-bottom: 2rem;
-  background-color: var(--verde-scuro);
+  background-color: var(--verde-lime);
+  color: var(--verde-scuro);
+
   /* border: solid;
-    border-color: blue; */
+  border-color: yellowgreen; */
 }
 
 .question {
