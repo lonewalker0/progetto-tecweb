@@ -19,9 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $purchaseDate = date("Y-m-d H:i:s"); // Imposta la data di acquisto come data corrente
         $prezzosingolo=$dboperation->getPrezzoBiglietto($productId);
         $prezzo_totale= $quantity * $prezzosingolo;
-        
 
-        
+               
 
             // Aggiungi l'ordine nel database
             $success = $dboperation->addOrder($username, $productId, $purchaseDate, $quantity,$prezzo_totale);

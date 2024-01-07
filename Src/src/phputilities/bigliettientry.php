@@ -24,6 +24,7 @@ class BigliettiEntry {
 
         try {
         $this->template = file_get_contents(__DIR__ . '/../html/biglietti.html');
+        
         if ($this->template === false) {
             throw new Exception("Failed to load template from file");
         }
