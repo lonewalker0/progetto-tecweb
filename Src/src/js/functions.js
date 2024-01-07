@@ -25,19 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-/*document.addEventListener("DOMContentLoaded", function () {
-  var form = document.getElementById("formLogin");
-  if (form) {
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-      if (validazioneFormLogin()) {
-        event.target.submit();
-      }
-      return false;
-    });
-  }
-});*/
-
 document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("RegistrationForm");
   if (form) {
@@ -65,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-if (window.location.pathname === "/progetto-git/index.php") {
+if (window.location.pathname === "/index.php") {
   document.addEventListener("DOMContentLoaded", function () {
     carosello();
     countdownFestival();
@@ -109,23 +96,22 @@ function countdownFestival() {
     DOMELEMENT.innerHTML = countDown || "EXPIRED";
   }, 1000);
 }
-//funzione per il countdown del festival
+
 function triggerView() {
   const df = document.getElementById("dataFestival");
   const cd = document.getElementById("intervalloFestival");
-  let type = true;
+
   setInterval(() => {
-    type = !type;
-    if (type) {
-      df.classList.add("data-block");
-      df.classList.remove("data-none");
-      cd.classList.add("countdown-none");
-      cd.classList.remove("countdown-block");
+    if (df.classList.contains("show")) {
+      df.classList.remove("show");
+      df.classList.add("hide");
+      cd.classList.remove("hide");
+      cd.classList.add("show");
     } else {
-      df.classList.add("data-none");
-      df.classList.remove("data-block");
-      cd.classList.add("countdown-block");
-      cd.classList.remove("countdown-none");
+      df.classList.add("show");
+      df.classList.remove("hide");
+      cd.classList.add("hide");
+      cd.classList.remove("show");
     }
   }, 4000);
 }
@@ -156,31 +142,22 @@ function carosello() {
   setTimeout(carosello, 4000); //Cambia l'immagine del carosello ogni 4 secondi
 }
 
-
-
-
 //funzione che fa visualizzare il bordo con animazione sotto la scritta programma
-function scrollView()
-{
+function scrollView() {
   let animazione = document.querySelectorAll(".programma-animation");
   let animazione2 = document.querySelectorAll(".programma-animation2");
-  for(var i = 0; i < animazione.length; i++)
-  {
+  for (var i = 0; i < animazione.length; i++) {
     let altezza = window.innerHeight;
     let top = animazione[i].getBoundingClientRect().top;
     let visibile = 150;
-    if(top < altezza - visibile)
-    {
+    if (top < altezza - visibile) {
       animazione[i].classList.add("active");
       animazione2[i].classList.add("active");
-    }
-    else
-    {
+    } else {
       animazione[i].classList.remove("active");
       animazione2[i].classList.remove("active");
     }
   }
-
 }
 //funzione per andare ad aggiungere un paragrafo al div di errore
 function appendError(conteinerId, message) {
@@ -200,7 +177,7 @@ function StringaValida(string) {
 
 function isValidAge(age) {
   if (!Number.isInteger(age) || age <= 0) {
-      return false;
+    return false;
   }
   var minAge = 16;
   return age >= minAge;
@@ -320,11 +297,9 @@ function validazioneFormAggiutaEvento() {
   return false;
 }
 
-function validazioneFormLogin(){
-  const errorContainer = document.getElementById(
-    "error_login"
-  );
-  
+function validazioneFormLogin() {
+  const errorContainer = document.getElementById("error_login");
+
   const username = document.forms["formLogin"]["username"].value;
   const password = document.forms["formLogin"]["password"].value;
 
@@ -334,28 +309,20 @@ function validazioneFormLogin(){
     document.getElementById("username").setAttribute("aria-invalid", "true");
     appendError(errorContainer, "questo campo non accetta codice HTML!");
   } else {
-    document
-      .getElementById("username")
-      .setAttribute("aria-invalid", "false");
+    document.getElementById("username").setAttribute("aria-invalid", "false");
   }
   if (!StringaValida(password)) {
     isValid = false;
     document.getElementById("password").setAttribute("aria-invalid", "true");
     appendError(errorContainer, "questo campo non accetta codice HTML!");
   } else {
-    document
-      .getElementById("password")
-      .setAttribute("aria-invalid", "false");
+    document.getElementById("password").setAttribute("aria-invalid", "false");
   }
   return isValid;
-  
-
 }
 
-function validazioneFormRegistrazione(){
-  const errorContainer = document.getElementById(
-    "errorContainerRegistrazione"
-  );
+function validazioneFormRegistrazione() {
+  const errorContainer = document.getElementById("errorContainerRegistrazione");
   errorContainer.innerHTML = "";
   const nome = document.forms["RegistrationForm"]["nome"].value;
   const cognome = document.forms["RegistrationForm"]["cognome"].value;
@@ -364,7 +331,8 @@ function validazioneFormRegistrazione(){
   const email = document.forms["RegistrationForm"]["email"].value;
   const username = document.forms["RegistrationForm"]["username"].value;
   const password = document.forms["RegistrationForm"]["password"].value;
-  const confermapassword = document.forms["RegistrationForm"]["confermaPassword"].value;
+  const confermapassword =
+    document.forms["RegistrationForm"]["confermaPassword"].value;
 
   let isValid = true;
   if (!StringaValida(nome)) {
@@ -372,58 +340,48 @@ function validazioneFormRegistrazione(){
     document.getElementById("nome").setAttribute("aria-invalid", "true");
     appendError(errorContainer, "questo campo non accetta codice HTML!");
   } else {
-    document
-      .getElementById("nome")
-      .setAttribute("aria-invalid", "false");
+    document.getElementById("nome").setAttribute("aria-invalid", "false");
   }
   if (!StringaValida(cognome)) {
     isValid = false;
     document.getElementById("cognome").setAttribute("aria-invalid", "true");
     appendError(errorContainer, "questo campo non accetta codice HTML!");
   } else {
-    document
-      .getElementById("cognome")
-      .setAttribute("aria-invalid", "false");
+    document.getElementById("cognome").setAttribute("aria-invalid", "false");
   }
   if (!isValidAge(eta)) {
     isValid = false;
     document.getElementById("eta").setAttribute("aria-invalid", "true");
     appendError(errorContainer, "eta non valida");
   } else {
-    document
-      .getElementById("eta")
-      .setAttribute("aria-invalid", "false");
+    document.getElementById("eta").setAttribute("aria-invalid", "false");
   }
   if (!StringaValida(indirizzo)) {
     isValid = false;
     document.getElementById("indirizzo").setAttribute("aria-invalid", "true");
     appendError(errorContainer, "questo campo non accetta codice HTML!");
   } else {
-    document
-      .getElementById("indirizzo")
-      .setAttribute("aria-invalid", "false");
+    document.getElementById("indirizzo").setAttribute("aria-invalid", "false");
   }
   if (!StringaValida(username)) {
     isValid = false;
     document.getElementById("username").setAttribute("aria-invalid", "true");
     appendError(errorContainer, "questo campo non accetta codice HTML!");
   } else {
-    document
-      .getElementById("username")
-      .setAttribute("aria-invalid", "false");
+    document.getElementById("username").setAttribute("aria-invalid", "false");
   }
   if (!StringaValida(password)) {
     isValid = false;
     document.getElementById("password").setAttribute("aria-invalid", "true");
     appendError(errorContainer, "questo campo non accetta codice HTML!");
   } else {
-    document
-      .getElementById("password")
-      .setAttribute("aria-invalid", "false");
+    document.getElementById("password").setAttribute("aria-invalid", "false");
   }
   if (!StringaValida(confermapassword)) {
     isValid = false;
-    document.getElementById("confermaPassword").setAttribute("aria-invalid", "true");
+    document
+      .getElementById("confermaPassword")
+      .setAttribute("aria-invalid", "true");
     appendError(errorContainer, "questo campo non accetta codice HTML!");
   } else {
     document
@@ -435,17 +393,13 @@ function validazioneFormRegistrazione(){
     document.getElementById("email").setAttribute("aria-invalid", "true");
     appendError(errorContainer, "formato email non valido");
   } else {
-    document
-      .getElementById("email")
-      .setAttribute("aria-invalid", "false");
+    document.getElementById("email").setAttribute("aria-invalid", "false");
   }
   if (password !== confermapassword) {
     isValid = false;
     appendError(errorContainer, "Le password non coincidono");
   }
   return isValid;
-  
-
 }
 //calcolare il prezzo totale del biglietto, prima di inviare l'acquisto al submit
 function calculateTotalPrice(id) {
