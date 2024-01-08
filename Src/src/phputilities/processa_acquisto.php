@@ -8,19 +8,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     try {
         
-        if ($_SESSION['is_admin']) {
+        if (isset($_SESSION['is_admin'])){//ci dice se l'utente è loggato
+            if ($_SESSION['is_admin']===true) {//se è admin
             $_SESSION['purchase_result'] = "<p>Sei loggato come admin, acquisto negato!</p>"; 
             header("Location: ../prevendite.php"); 
-            die();
-        }
-        else if (!isset($_SESSION['username'])) {
+            die(); }}
+        else{//l'utente non è loggato
             $_SESSION['purchase_result'] = "<p>Per procedere all'acquisto dei biglietti, si prega di autenticarsi. <a href='account.php' tabindex=0>Accedi</a></p>";
             header("Location: ../prevendite.php"); 
-            die(); 
-        }
+            die();}
+        
         // Recupera i dati dal modulo
         $username = $_SESSION['username']; 
-        $productId = $_POST['{{id}}']; 
+        $productId = $_POST['id']; 
         $quantity = $_POST['quantita']; // Assicura che il campo quantita sia presente nel tuo modulo
         $purchaseDate = date("Y-m-d H:i:s"); // Imposta la data di acquisto come data corrente
         $prezzosingolo=$dboperation->getPrezzoBiglietto($productId);
