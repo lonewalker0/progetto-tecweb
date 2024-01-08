@@ -11,22 +11,13 @@ $description = 'Acquista i biglietti per il festival TechnoLum250, scopri i nost
 $main = "<h1>Prevendite</h1>";
 
 
-// Verifica se l'utente è autenticato
-if (!isset($_SESSION['username'])) {
-    $main .= "<p>Per procedere all'acquisto dei biglietti, si prega di autenticarsi. <a href='account.php' tabindex=0>Accedi</a></p>";
-}
-else if($_SESSION["is_admin"]){
-    $main .= "<h2>Gli admin non possono comprare biglietti </h2>";
 
+if (!isset($_SESSION['purchase_result'])) {
+    $main .= "<div id='purchase_result'> " . $_SESSION['purchase_result'] . "</div>";
+    unset($_SESSION['purchase_result']);
 }
-else {
-    
-    // Altre cose da mostrare solo agli utenti autenticati
     $bigliettobuilder= new BigliettiBuilder();
     $main.=$bigliettobuilder->buildBigliettoHtml();
-}
-
-
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);
 ?>

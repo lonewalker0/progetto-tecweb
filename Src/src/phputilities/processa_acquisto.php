@@ -9,12 +9,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         
         if ($_SESSION['is_admin']) {
-           echo "Gli amministratori non possono acquistare i biglietti.";
+            $_SESSION['purchase_result'] = "<p>Sei loggato come admin, acquisto negato!</p>"; 
+            header("Location: ../prevendite.php"); 
             die();
+        }
+        else if (!isset($_SESSION['username'])) {
+            $_SESSION['purchase_result'] = "<p>Per procedere all'acquisto dei biglietti, si prega di autenticarsi. <a href='account.php' tabindex=0>Accedi</a></p>";
+            header("Location: ../prevendite.php"); 
+            die(); 
         }
         // Recupera i dati dal modulo
         $username = $_SESSION['username']; 
-        $productId = $_GET["id"]; 
+        $productId = $_POST['{{id}}']; 
         $quantity = $_POST['quantita']; // Assicura che il campo quantita sia presente nel tuo modulo
         $purchaseDate = date("Y-m-d H:i:s"); // Imposta la data di acquisto come data corrente
         $prezzosingolo=$dboperation->getPrezzoBiglietto($productId);
@@ -26,10 +32,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $success = $dboperation->addOrder($username, $productId, $purchaseDate, $quantity,$prezzo_totale);
 
             if ($success) {
-                header("Location: ../conferma_acquisto.html"); 
+                $_SESSION['purchase_result'] = "<p>Aquisto avvenuto con successo! :)</p>";
+                header("Location: ../prevendite.php"); 
                 die();
             } else {
-                echo "Errore durante l'acquisto. Si prega di riprovare.";
+                $_SESSION['purchase_result'] = "<p>C'è stato un errore nel processo di acquisto, si prega di riprovare :(</p>";
+                header("Location: ../prevendite.php"); 
+                die();
             }
 
         
