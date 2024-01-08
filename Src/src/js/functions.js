@@ -93,7 +93,23 @@ if (window.location.pathname === "/progetto-git/index.php") {
     document.addEventListener("scroll", scrollView);
   });
 }
-
+/*if(window.location.pathname === '/progetto-git/chisiamo.php')                 //animazione sulla scritta thisisTechnoLum250
+{
+  document.addEventListener("DOMContentLoaded", function()
+  {
+      thisisTechnoLum();
+  });
+}*/
+//funzione di animazione sulla scritta This IS TechnoLum250
+function thisisTechnoLum()
+{
+    if(document.getElementById('this-is').classList.contains('fade'))
+    {
+      document.getElementById('this-is').classList.remove('fade');
+    }
+    document.getElementById('this-is').classList.add('fade');
+    setTimeout(thisisTechnoLum, 3500);
+}
 //eventListener per la visualizzazione dell'errore
 /*document.addEventListener("DOMContentLoaded", function () {
   var errorDiv = document.getElementById("error_login");

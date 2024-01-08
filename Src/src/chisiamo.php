@@ -9,7 +9,21 @@ $description = 'Vieni a conoscere coloro che hanno reso possibile il festival Te
 
 $main = "
 <div id='chi-siamo-container'>
-
+    <h1 id='this-is' class='fade'>THIS IS TECHNOLUM250</h1>
+    <div id='storia-festival'>
+        <p>
+            Nel cuore della città, tra luci scintillanti e futuriste, fioriva il TechnoLum250 Festival. 
+            Un'esperienza unica che fondeva musica e tecnologia in un incantevole sinfonìa di suoni e colori.
+            Ogni anno, il mondo si fermava per cedere il passo a questa celebrazione eccezionale. 
+            Il festival era più di una mera esposizione di talenti musicali; era l'incarnazione dell'innovazione.
+            I palchi vibravano con le performance dei più grandi artisti elettronici, 
+            ma le strade e gli spazi erano altrettanto vivaci con installazioni interattive e workshop all'avanguardia.
+            Il TechnoLum250 non era solo un evento; era un mondo in cui la creatività umana si univa all'evoluzione tecnologica. 
+            Le luci danzavano in sincronia con le note, creando un'esperienza sensoriale straordinaria. 
+            Il climax del festival, uno spettacolo di luci e suoni che dipingeva il cielo, 
+            lasciava gli spettatori incantati e con il desiderio di tornare l'anno successivo per rivivere quell'incanto.
+        </p>
+    </div>
     <h1>Chi siamo</h1>
 
      <div id='chi-siamo-contenuto'>

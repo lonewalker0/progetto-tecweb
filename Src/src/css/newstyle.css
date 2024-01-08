@@ -67,7 +67,6 @@ header {
   width: 100%;
   z-index: 10;
   margin-top: 0;
-  
   border: solid;
   border-color: blue;
 }
@@ -81,7 +80,6 @@ header {
   height: 5rem;
   border-radius: 1rem;
   background-color: var(--background-opacity);
-
   border: solid;
   border-color: purple;
 }
@@ -299,7 +297,6 @@ footer {
   flex-basis: auto;
   text-align: center;
   padding: 2rem 0 2rem 0;
-
   border: solid;
   border-color: green;
 }
@@ -514,6 +511,7 @@ div.programma-animation2.active{
   animation-name: fade, reverse-fade;
   animation-duration: 2s, 2s;
   animation-delay: 0s, 2s;
+  animation-iteration-count: infinite, infinite;
 }
 
 /* Sponsor */
@@ -588,6 +586,22 @@ div.programma-animation2.active{
   
   border: solid;
   border-color: orange;
+}
+
+#storia-festival
+{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var(--verde-lime);
+  color: var(--verde-scuro);
+  border-radius: 1rem;
+}
+
+#storia-festival p
+{
+  font-weight: 100;
+  text-align:justify;
 }
 
 #img-chi-siamo {
