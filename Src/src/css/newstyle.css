@@ -1,0 +1,770 @@
+* {
+  font-family: "Trebuchet MS", sans-serif;
+  margin: 0;
+  padding: 0;
+  scroll-padding-top: 2rem;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+:root {
+  --verde-lime: #B1DD40;
+  --verde-scuro: #111606;
+  --background-opacity: #1F280A;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  background-color: var(--verde-scuro);
+  color: var(--verde-lime);
+  max-width: 1920px;
+  font-size: 1.2rem;
+  background-size: cover;
+  height: 100%;
+}
+
+h1 {
+  text-align: center;
+  padding: 1rem;
+  color: var(--verde-lime);
+  font-size: 3rem;
+  font-weight: 500;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+h2 {
+  text-align: center;
+  padding: 1rem;
+  color: var(--verde-nero);
+  font-size: 2.6rem;
+  font-weight: 500;
+  font-weight: bold;
+}
+
+h3 {
+  padding: 1rem;
+  color: var(--verde-nero);
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-weight: bold;
+}
+
+.container {
+  margin: 0;
+  width: 100%;
+}
+
+/* Header */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  margin-top: 0;
+  
+  border: solid;
+  border-color: blue;
+}
+
+#flexContainerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem 4rem 1rem 4rem;
+  height: 5rem;
+  border-radius: 1rem;
+  background-color: var(--background-opacity);
+
+  border: solid;
+  border-color: purple;
+}
+
+#left-group {
+  display: flex;
+  align-items: center;
+}
+
+#logo a {
+  display: flex; /* Makes the anchor block-level to fit the content */
+  line-height: 0; /* Removes any extra line-height space */
+  padding: 0; /* Ensures there's no extra padding */
+  height: auto; /* Ensures the anchor height matches the image if the image height is variable */
+  max-height: 100px; /* Matches the max-height of the image to constrain the anchor */
+  transition: all 0.5s ease-in-out;
+}
+
+#logo img {
+  height: auto; /* Maintains aspect ratio */
+  width: auto; /* Adjusts width as per your logo's aspect ratio */
+  max-height: 100px; /* Adjusts to the desired size */
+  display: flex; /* Removes default inline spacing */
+  max-width: 100%; /* Ensures image is not bigger than its container */
+}
+
+#aiutoSkipnav {
+  position: absolute;
+  left: -9999px;
+  top: -9999px;
+  overflow: hidden;
+}
+
+#aiutoSkipnav:focus,
+#aiutoSkipnav:focus-within,
+#aiutoSkipnav a:focus {
+  overflow: visible;
+  position: static;
+  color: white;
+  border-radius: 15px; /* Rounded corners */
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#aiutoSkipnav:focus,
+#aiutoSkipnav:focus-within {
+  margin-left: 2rem;
+}
+
+#logo a img {
+  height: auto;
+  width: auto;
+  max-height: 100px;
+  display: block;
+  max-width: 100%;
+}
+
+#countdown-data {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+
+#countdown-data p {
+  font-size: 30px;
+}
+
+#vertical-bar-container {
+  border-left: 5px solid var(--verde-lime);
+  height: 50px;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+}
+
+/* Usa la larghezza critica del contenitore .nav come punto di rottura */
+@media (max-width: 770px) {
+  .nav {
+    justify-content: center; /* Center align the entire navigation container */
+  }
+
+  .left-group {
+    flex-direction: column; /* Stack the children of .left-group vertically */
+    align-items: center; /* Center align the items horizontally within .left-group */
+    margin-bottom: 1rem; /* Add some space below .left-group, if needed */
+  }
+
+  .icons {
+    display: none; /* Hide icons at this breakpoint */
+  }
+
+  .vertical-bar {
+    display: none;
+  }
+
+  .logo a {
+    max-height: none; /* Remove max-height restriction for smaller screens */
+  }
+
+  .logo img {
+    max-height: 150px; /* You can adjust the size for smaller screens if needed */
+  }
+}
+
+.icons img {
+  width: 1.6rem;
+  height: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+  transition: transform 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+.icons img:hover,
+.icons img:focus {
+  transform: scale(1.25);
+}
+
+.logo a:hover,
+.logo a:focus {
+  transform: scale(1.1); /* Slight increase */
+}
+
+/* Navigation Menu */
+
+.menu {
+  top: 7rem;
+  position: fixed;
+  width: calc(100% - 8rem);
+  margin: 1rem 4rem 1rem 4rem;
+  height: 3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-weight: bold;
+  z-index: 10;
+  background-color: var(--background-opacity);
+  border-radius: 1rem;
+
+  border: solid;
+  border-color: red;
+}
+
+.menu ul {
+  list-style: none;
+}
+
+.menu li {
+  display: inline-block;
+  position: relative;
+  margin-right: 2rem;
+}
+
+.menu a {
+  display: block;
+  text-decoration: none;
+  color: var(--verde-lime);
+  /* color: white;
+  transition: color 0.3s ease; */
+}
+
+div#punto-ind,
+div#punto-loc,
+div#punto-dom,
+div#punto-mer,
+div#punto-chi,
+div#punto-pre,
+div#punto-acc {
+  background-color: var(--verde-lime);
+  height: 2px;
+  width: 0px;
+  padding-top: 2px;
+  position: absolute;
+  margin-left: 20px;
+  right: 0;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.menu a:hover,
+.menu a:focus {
+  color: var(--verde-lime);
+}
+
+nav.menu a:hover > div#punto-ind,
+nav.menu a:hover > div#punto-loc,
+nav.menu a:hover > div#punto-mer,
+nav.menu a:hover > div#punto-chi,
+nav.menu a:hover > div#punto-pre,
+nav.menu a:hover > div#punto-acc,
+nav.menu a:hover > div#punto-dom {
+  width: 100%;
+}
+
+/* Breadcrumb */
+
+#breadcrumb {
+  position: relative;
+  top: 12rem;
+  display: flex;
+  width: 100%;
+  height: 2em;
+  width: calc(100% - 8rem);
+  margin: 1rem 4rem 1rem 4rem;
+  background-color: var(--verde-scuro);
+  display: flex;
+  align-items: center;
+
+  border: solid;
+  border-color: brown;
+}
+
+#breadcrumb p {
+  text-align: left;
+  padding-left: 1rem;
+  font-size: 1.15em;
+  color: var(--dark-bg-color);
+  font-weight: bold;
+}
+
+/* Footer */
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+  text-align: center;
+  padding: 2rem 0 2rem 0;
+
+  border: solid;
+  border-color: green;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.icons img {
+  width: 1.6rem;
+  height: auto;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+.icons img:hover,
+.icons img:focus {
+  transform: scale(1.25);
+}
+
+#footer-content {
+  font-size: 1.4rem;
+  font-weight: 200;
+  margin-right: 10px;
+}
+
+#footer-content a {
+  color: var(--verde-lime);
+}
+
+#footer-content a:visited {
+  color: var(--verde-lime);
+}
+
+/* Main */
+
+.event-container {
+  margin: 0;
+  padding: 1rem;
+  
+  border: solid;
+  border-color: orange;
+}
+
+.programma-entry {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+  background-color: var(--verde-lime);
+  border-radius: 1rem;
+
+  /* border: solid;
+  border-color: purple; */
+}
+
+.programma-entry img {
+  width: 450px;
+  height: 450px;
+  border-radius: 4px;
+  margin: 1rem;
+  box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+
+  /* border: solid;
+  border-color: red; */
+}
+
+div.programma-animation, div.programma-animation2{
+    margin-top: 10px;
+    background-color: var(--verde-lime);
+    transition: all 1s ease-in-out;
+    position: absolute;
+    width:0;
+    height:2px;
+}
+div.programma-animation{
+    left:50%;
+}
+div.programma-animation2{
+    right:50%;
+}
+div.programma-animation.active,
+div.programma-animation2.active{
+  width:48%;
+}
+.entry-info {
+  flex: 1;
+  max-width: 70%;
+  margin: 2rem 2rem 2rem 2rem;
+  padding: 2rem;
+  color: var(--verde-scuro);
+  font-size: 1.5rem;
+  font-weight: 400;
+  
+  /* border: solid;
+  border-color: brown; */
+}
+
+.event-title {
+  font-size: 2rem;
+  font-weight: 500;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: white;
+  
+  /* border: solid;
+  border-color: orange; */
+}
+
+/* Carosello dinamico del main */
+
+.carosello-none {
+  display: none;
+}
+
+.carosello-block {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-image: url("../assets/artisti/tony2milli.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 600px;
+  height: 600px;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+}
+
+.puntini {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 1s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.carosello-puntini {
+  text-align: center;
+}
+
+.carosello-dinamico {
+  position: static;
+  padding: 10px;
+  margin-top: 1.5em;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-reverse
+{
+  from{
+    opacity:1;
+  }
+  to
+  {
+    opacity: 0;
+  }
+}
+
+.fade {
+  animation-name: fade, fade-reverse;
+  animation-duration: 2s, 2s;
+  animation-delay: 0s, 2s;
+}
+
+/* Sponsor */
+
+#sponsor {
+  text-align: center;
+  background-color: var(--verde-lime);
+  margin-bottom: 0;
+  align-items: center;
+  padding-bottom: 20px;
+  margin: 1rem;
+  border-radius: 1rem;
+
+  border: solid;
+  border-color: white;
+}
+
+#sponsor h2 {
+  color: var(--verde-scuro);
+}
+
+#sponsor h3 {
+  font-size: 30px;
+  color: var(--verde-scuro);
+  padding: 0;
+  border-bottom: 2px solid var(--verde-scuro);
+  text-align: left;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.sponsors-container {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 75%;
+  align-items: center;
+}
+
+.sponsor-icon {
+  transition: transform 0.2s;
+  vertical-align: middle;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.sponsor-icon:hover {
+  transform: scale(1.25);
+}
+
+.sponsor-icon img {
+  max-width: 30%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+/* Countdown */
+
+.countdown-none,
+.data-none {
+  display: none;
+}
+.countdown-block,
+.data-block {
+  display: block;
+}
+
+/* Chi siamo */
+
+#chi-siamo-container {
+  margin: 0 auto;
+  padding: 1rem;
+  
+  border: solid;
+  border-color: orange;
+}
+
+#img-chi-siamo {
+  width: 800px;
+  height: auto;
+  display: block;
+  margin: 0;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: var(--background-opacity);
+  
+  border: solid;
+  border-color: white;
+}
+
+#chi-siamo-contenuto {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: left;
+  background-color: var(--verde-scuro);
+  border-radius: 4px;
+  
+  border: solid;
+  border-color: yellow;
+}
+
+#chi-siamo-testo {
+  margin-bottom: 2rem;
+  text-align: justify;
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--verde-lime);
+  color: var(--verde-scuro);
+  
+  border: solid;
+  border-color: greenyellow;
+}
+
+#ringraziamenti {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  
+  /* border: solid;
+  border-color: orange; */
+}
+
+#ul-ringraziamenti {
+  list-style: none;
+  
+  /* border: solid;
+  border-color: yellow; */
+}
+
+/* Location */
+
+#location-container {
+  margin: 0 auto;
+  padding: 1rem;
+  padding-bottom: 0;
+  background-color: var(--light-bg-color);
+  color: var(--dark-bg-color);
+
+  border: solid;
+  border-color: orange;
+}
+
+#location-contenuto {
+  padding: 2rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--verde-lime);
+  color: var(--verde-scuro);
+  border-radius: 1rem;
+
+  border: solid;
+  border-color: yellow;
+}
+
+#map {
+  width: 600px;
+  height: 600px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+  border: none;
+
+  border: solid;
+  border-color: white;
+}
+
+#testo-location {
+  max-width: 60%;
+  padding: 1rem;
+  margin-left: 2rem;
+  border-radius: 4px;
+
+  /* border: solid;
+    border-color: orange; */
+}
+
+#testo-location p {
+  padding-left: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+#indirizzo {
+  font-style: italic;
+}
+
+/* Domande */
+
+#faq-container {
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: var(--light-bg-color);
+  color: var(--dark-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: solid;
+  border-color: orange;
+}
+
+.faq-section {
+  width: 100%;
+  margin-bottom: 2rem;
+
+  /* border: solid;
+  border-color: yellow; */
+}
+
+.faq-title {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.faq-box-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  border: solid;
+  border-color: white;
+}
+
+.faq-item {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 2rem;
+  border-radius: 4px;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  background-color: var(--verde-lime);
+  color: var(--verde-scuro);
+
+  /* border: solid;
+  border-color: yellowgreen; */
+}
+
+.question {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.answer {
+  margin-bottom: 10px;
+}
+
+.faq-item .answer ul {
+  margin-bottom: 10px;
+}
+
+.note {
+  font-style: italic;
+}
+
+/*ERROR 404*/
+
+/*ERROR 500*/
+
+main {
+  margin-top: 8.1em; /* Adjust the value to move the main section down as needed */
+  min-height: 100%; /* Optional: sets the maximum height for the main section */
+  padding: 0; /* Optional: adds some space inside the main section */
+  background-color: var(--light-bg-color);
+}

@@ -1,0 +1,40 @@
+<form action="phputilities/loginprocess.php" method="post" id="formLogin" >
+  <div id="error_login">{{loginerror}}</div> 
+  <fieldset>
+    <legend>Accesso</legend>
+
+    <div>
+      <label for="username">Username:</label>
+      <input
+        type="text"
+        id="username"
+        name="username"
+        value="{{NomeUtenteDaReinserire}}"
+        required
+        aria-required="true"
+        maxlength="50"
+      />
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        aria-required="true"
+        maxlength="50"
+      />
+    </div>
+  </fieldset>
+
+  <div>
+    <input
+      type="submit"
+      name="accedi"
+      value="accedi"
+      aria-label="Accedi al tuo account"
+    />
+  </div>
+</form>

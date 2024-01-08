@@ -6,6 +6,10 @@ class PageBuilder {
 
         $html = file_get_contents(__DIR__ . '/../html/layout/struttura.html');
         $header = file_get_contents(__DIR__ . '/../html/layout/header.html');
+        if (trim($breadcrumb) === 'Home') {
+        $header = self::removeHomeLogoLink($header);
+        }
+
         $footer = file_get_contents(__DIR__ . '/../html/layout/footer.html');
         
         $html = str_replace('{{header}}', $header, $html);
@@ -21,40 +25,40 @@ class PageBuilder {
 
         return $html;
     }
-    
-    private static function Find_The_Right_a_to_be_removed($menu, $breadcrumb): string {
-        // Cerca la corrispondenza tra la breadcrumb e gli elementi del menu
-        preg_match_all('/<li\b[^>]*>(?:(?!<\/?li\b[^>]*>).|(?R))*<\/li>/', $menu, $matches);
-        //viene creato un array matches che continiene tutti i li; 
-        // Ottieni gli elementi <li> corrispondenti alla breadcrumb
-        foreach ($matches[0] as $item) {
-            if (stripos($item, $breadcrumb) !== false) {
-                // Rimuovi i tag <a> dall'elemento <li>
-                $liWithoutATags = self::removeATags($item);
-    
-                // Replace the original <li> in $menu with the modified one
-                $menu = str_replace($item, $liWithoutATags, $menu);
-                return $menu;
+
+    public static function removeHomeLogoLink($header): string {
+        $header = preg_replace('/<a\b[^>]*href="index\.php"[^>]*>(.*?)<\/a>/s', '$1', $header);
+        return $header;
+    }
+
+    public static function resolveCircularLinks($menu, $breadcrumb) {
+        // converte menu e braedcrumb in minuscolo => case insensitive
+        $menuArray = explode(PHP_EOL, $menu);
+        $breadcrumbLower = strtolower($breadcrumb);
+
+        foreach ($menuArray as $index => $menuItem) {
+            $menuItemLower = strtolower($menuItem);
+
+            // check se menu è contenuto in breadcrumb
+            if (strpos($menuItemLower, $breadcrumbLower) !== false) {
+                // se trova un match rimuove il link
+                $menuArray[$index] = self::removeATags($menuItem);
             }
         }
-        return $menu; 
+        return implode(PHP_EOL, $menuArray); // riconverte l'array in stringa
+    }
 
-
+    private static function removeATags($li_not_modified): string {
+        // usa un regex per rimuovere i tag <a> e </a>
+        $limodified = preg_replace('/<a\b([^>]*)>(.*?)<\/a>/s', '$2', $li_not_modified);
+        return $limodified;
     }
 
     private static function createMenu($breadcrumb): string {
         $menu = file_get_contents(__DIR__ . '/../html/layout/menu.html');
-        $menu = self::Find_The_Right_a_to_be_removed($menu, $breadcrumb); 
+        $menu = self::resolveCircularLinks($menu, $breadcrumb);
         return $menu; 
     }
-
-
-    private static function removeATags($li_not_modified): string {
-        // Use a more comprehensive regex and the 's' modifier
-        $limodified = preg_replace('/<a\b([^>]*)>(.*?)<\/a>/s', '$2', $li_not_modified);
-        return $limodified;
-    }
-    
 
 }
 ?>

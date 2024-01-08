@@ -1,0 +1,73 @@
+<?php
+
+
+include('DBOperation.php');
+include('validationElement.php'); 
+
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $DBOperation = new DBOperation();
+
+    $errors = [];
+    
+    if (!isValidString($_POST['nome']) or !isValidString($_POST['cognome'])
+         or !isValidString($_POST['indirizzo']) or !isValidString($_POST['username'])
+        or !isValidString($_POST['password']) or !isValidString($_POST['confermaPassword'])) {
+        $errors[] = "Non è accettato codice htm!";
+    }
+    if(!isValidEmail($_POST['email'])) {
+        $errors[] = 'Email non valida';
+    }
+    if(!isValidAge($_POST['eta'])){
+        $errors[] = 'Devi avere almeno 16 anni';
+    }
+    if ($_POST['password'] !== $_POST['confermaPassword']) {
+        $errors[] = "Le password non corrispondono.";
+    }
+    
+    $username = $_POST['username'];
+    if ($DBOperation->checkIfUserExists($username)) {
+        $errors[] = "L'username scelto' $username' è già registrato nel database.";}
+
+    
+    if (!empty($errors)) {
+        #se ci sono errori voglio rimandare alla pagina sia gli errori che i post attuali in maniera tale da ricostruire il form
+        $_SESSION['add_register_form_data'] = $_POST;
+        $_SESSION['add_register_form_errors'] = $errors;
+        header("Location: ../register.php");
+        die();
+    }
+    else {
+        
+            try {
+                $username = $_POST['username'];
+                $nome = $_POST['nome'];
+                $cognome = $_POST['cognome'];
+                $eta = $_POST['eta']; 
+                $indirizzo = $_POST['indirizzo']; 
+                $email = $_POST['email'];  
+                $password = $_POST['password']; 
+                $confermapassword = $_POST['confermaPassword']; 
+
+                $result = $DBOperation->registerUser($username, $password, $nome, $cognome, $eta, $indirizzo, $email);
+             //mettere variabili di sessione in caso di errori + quella generale di errore per capire se ce ne sono
+                if($result){
+                    $_SESSION['username'] = $username;
+                    $_SESSION['is_admin'] = false; #solo i non admin si possono registrare
+                    header("Location: ../account.php"); 
+                    die();}
+                else{
+                    header("Location: ../account.php"); 
+                    die();}
+            
+
+            } catch (Exception $e) {
+            
+                echo "Errore durante la registrazione: " . $e->getMessage();
+        }
+    }
+
+}
+
+?>
