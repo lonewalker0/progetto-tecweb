@@ -1,0 +1,28 @@
+/* Usa la larghezza critica del contenitore .nav come punto di rottura */
+@media (max-width: 770px) {
+    .nav {
+      justify-content: center; /* Center align the entire navigation container */
+    }
+  
+    .left-group {
+      flex-direction: column; /* Stack the children of .left-group vertically */
+      align-items: center; /* Center align the items horizontally within .left-group */
+      margin-bottom: 1rem; /* Add some space below .left-group, if needed */
+    }
+  
+    .icons {
+      display: none; /* Hide icons at this breakpoint */
+    }
+  
+    .vertical-bar {
+      display: none;
+    }
+  
+    .logo a {
+      max-height: none; /* Remove max-height restriction for smaller screens */
+    }
+  
+    .logo img {
+      max-height: 150px; /* You can adjust the size for smaller screens if needed */
+    }
+  }
