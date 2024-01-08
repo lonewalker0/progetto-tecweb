@@ -142,13 +142,21 @@ header {
 }
 
 #countdown-data {
-  display: flex;
+  display:flex;
   align-items: center;
   margin-left: 1.5rem;
 }
 
 #countdown-data p {
   font-size: 30px;
+}
+.show
+{
+  display: block;
+}
+.hide
+{
+  display:none;
 }
 
 #vertical-bar-container {
@@ -160,35 +168,6 @@ header {
   display: flex;
   align-items: center;
   padding: 2px;
-}
-
-/* Usa la larghezza critica del contenitore .nav come punto di rottura */
-@media (max-width: 770px) {
-  .nav {
-    justify-content: center; /* Center align the entire navigation container */
-  }
-
-  .left-group {
-    flex-direction: column; /* Stack the children of .left-group vertically */
-    align-items: center; /* Center align the items horizontally within .left-group */
-    margin-bottom: 1rem; /* Add some space below .left-group, if needed */
-  }
-
-  .icons {
-    display: none; /* Hide icons at this breakpoint */
-  }
-
-  .vertical-bar {
-    display: none;
-  }
-
-  .logo a {
-    max-height: none; /* Remove max-height restriction for smaller screens */
-  }
-
-  .logo img {
-    max-height: 150px; /* You can adjust the size for smaller screens if needed */
-  }
 }
 
 .icons img {
@@ -440,7 +419,7 @@ div.programma-animation2.active{
   display: none;
 }
 
-.carosello-block {
+/*.carosello-block {
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -452,28 +431,62 @@ div.programma-animation2.active{
   align-items: center;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+}*/
+#carosello-foto
+{
+  position: relative;
+  padding: 10px;
+  margin-top: 1.5em;
+}
+#foto0,
+#foto1,
+#foto2
+{
+  width:600px;
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+  background-position: center;
+  margin-left:auto;
+  margin-right: auto;
+}
+#foto0 {
+  background-image: url("../assets/artisti/tony2milli.jpg");
 }
 
+#foto1 {
+  background-image: url("../assets/artisti/tony2milli.jpg");
+}
+
+#foto2 {
+  background-image: url("../assets/artisti/tony2milli.jpg");
+}
+
+.foto-hide
+{
+  display:none;
+}
 .puntini {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: #717171;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 1s ease;
 }
 
 .active {
-  background-color: #717171;
+  background-color: var(--verde-lime);
 }
 
-.carosello-puntini {
+.carosello-puntini 
+{
   text-align: center;
 }
 
 .carosello-dinamico {
-  position: static;
+  position: relative;
   padding: 10px;
   margin-top: 1.5em;
 }
@@ -486,7 +499,7 @@ div.programma-animation2.active{
     opacity: 1;
   }
 }
-@keyframes fade-reverse
+@keyframes reverse-fade
 {
   from{
     opacity:1;
@@ -498,7 +511,7 @@ div.programma-animation2.active{
 }
 
 .fade {
-  animation-name: fade, fade-reverse;
+  animation-name: fade, reverse-fade;
   animation-duration: 2s, 2s;
   animation-delay: 0s, 2s;
 }
