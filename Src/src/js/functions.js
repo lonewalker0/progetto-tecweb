@@ -43,7 +43,10 @@ document.addEventListener("DOMContentLoaded", function () {
   if (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
-      if (validazioneFormEliminazioneUser() && confirm("Sei sicuro di voler eliminare l'account?")) {
+      if (
+        validazioneFormEliminazioneUser() &&
+        confirm("Sei sicuro di voler eliminare l'account?")
+      ) {
         event.target.submit();
       }
       return false;
@@ -91,35 +94,35 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
   // Controlla se siamo sulla pagina account.php prima di eseguire il codice
   if (window.location.pathname.includes("account.php")) {
-      var menuLinks = document.querySelectorAll('#sidebar a');
-      var sections = document.querySelectorAll('.section');
+    var menuLinks = document.querySelectorAll("#sidebar a");
+    var sections = document.querySelectorAll(".section");
 
-      // Nascondi tutte le sezioni tranne "Informazioni account" inizialmente
-      sections.forEach(function (section) {
-          if (section.id === 'informazioni') {
-              section.style.display = 'block';
+    // Nascondi tutte le sezioni tranne "Informazioni account" inizialmente
+    sections.forEach(function (section) {
+      if (section.id === "informazioni") {
+        section.style.display = "block";
+      } else {
+        section.style.display = "none";
+      }
+    });
+
+    menuLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        var targetSectionId = this.getAttribute("href").substring(1);
+
+        sections.forEach(function (section) {
+          if (section.id === targetSectionId) {
+            section.style.display = "block";
           } else {
-              section.style.display = 'none';
+            section.style.display = "none";
           }
+        });
       });
-
-      menuLinks.forEach(function (link) {
-          link.addEventListener('click', function (event) {
-              event.preventDefault();
-              var targetSectionId = this.getAttribute('href').substring(1);
-
-              sections.forEach(function (section) {
-                  if (section.id === targetSectionId) {
-                      section.style.display = 'block';
-                  } else {
-                      section.style.display = 'none';
-                  }
-              });
-          });
-      });
+    });
   }
 });
 
@@ -163,7 +166,6 @@ function triggerView() {
   const cd = document.getElementById("intervalloFestival");
   let type = true;
   setInterval(() => {
-    
     if (type) {
       df.classList.remove("show");
       df.classList.add("hide");
@@ -183,13 +185,13 @@ function carosello() {
   let caroselloimg;
   let idfoto = "foto";
   let i;
-  let img = document.querySelector('#carosello-foto');                //mi rappresenta tutto il carosello, nel suo insieme (senza comprendere i puntini)                        
-  let imgtot = img.querySelectorAll('*').length;                      //mi rappresenta il numero di foto del carosello
+  let img = document.querySelector("#carosello-foto"); //mi rappresenta tutto il carosello, nel suo insieme (senza comprendere i puntini)
+  let imgtot = img.querySelectorAll("*").length; //mi rappresenta il numero di foto del carosello
   let puntini = document.getElementsByClassName("puntini");
-  
+
   for (i = 0; i < imgtot; i++) {
     if (caroselloj > 0) {
-      caroselloimg = document.getElementById(idfoto + i);             //mi rappresenta la foto in cui sto lavorando in quel momento
+      caroselloimg = document.getElementById(idfoto + i); //mi rappresenta la foto in cui sto lavorando in quel momento
       caroselloimg.classList.remove("fade");
       caroselloimg.classList.add("foto-hide");
     }
@@ -203,7 +205,7 @@ function carosello() {
   }
   for (i = 0; i < imgtot; i++) {
     if (i === imgIndex - 1) {
-      caroselloimg = document.getElementById(idfoto + i)
+      caroselloimg = document.getElementById(idfoto + i);
       caroselloimg.classList.add("fade");
       caroselloimg.classList.remove("foto-hide");
       puntini[imgIndex - 1].className += " active";
@@ -248,7 +250,11 @@ function StringaValida(string) {
 function isValidAge(dateOfBirth) {
   var currentDate = new Date();
   var birthdateArray = dateOfBirth.split("-");
-  var birthdate = new Date(birthdateArray[0], birthdateArray[1] - 1, birthdateArray[2]);
+  var birthdate = new Date(
+    birthdateArray[0],
+    birthdateArray[1] - 1,
+    birthdateArray[2]
+  );
   var minAge = 16;
 
   var minBirthdate = new Date(currentDate);
@@ -409,8 +415,8 @@ function validazioneFormRegistrazione() {
   errorContainer.innerHTML = "";
   const nome = document.forms["RegistrationForm"]["nome"].value;
   const cognome = document.forms["RegistrationForm"]["cognome"].value;
-  const eta= document.forms["RegistrationForm"]["dataNascita"].value;
-  
+  const eta = document.forms["RegistrationForm"]["dataNascita"].value;
+
   const indirizzo = document.forms["RegistrationForm"]["indirizzo"].value;
   const email = document.forms["RegistrationForm"]["email"].value;
   const username = document.forms["RegistrationForm"]["username"].value;
@@ -438,7 +444,9 @@ function validazioneFormRegistrazione() {
     document.getElementById("dataNascita").setAttribute("aria-invalid", "true");
     appendError(errorContainer, "Devi avere almeno 16 anni per registrarti!");
   } else {
-    document.getElementById("dataNascita").setAttribute("aria-invalid", "false");
+    document
+      .getElementById("dataNascita")
+      .setAttribute("aria-invalid", "false");
   }
   if (!StringaValida(indirizzo)) {
     isValid = false;
@@ -573,7 +581,7 @@ function validazioneFormUpdate() {
   return isValid;
 }
 
-function validazioneFormEliminazioneUser(){
+function validazioneFormEliminazioneUser() {
   const errorContainer = document.getElementById("errorContainerEliminazione");
   errorContainer.innerHTML = "";
   const password = document.forms["formeliminaaccount"]["password"].value;

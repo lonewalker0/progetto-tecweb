@@ -9,7 +9,7 @@
 }
 
 :root {
-  --verde-lime: #B1DD40;
+  --verde-lime: #b1dd40;
   --verde-scuro: #111606;
 }
 
@@ -144,7 +144,7 @@ header {
 }
 
 #countdown-data {
-  display:flex;
+  display: flex;
   align-items: center;
   margin-left: 1.5rem;
 }
@@ -153,14 +153,12 @@ header {
   font-size: 30px;
 }
 
-.show
-{
+.show {
   display: block;
 }
 
-.hide
-{
-  display:none;
+.hide {
+  display: none;
 }
 
 .icons {
@@ -331,12 +329,11 @@ div#footer-content {
   font-size: 1.4rem;
   font-weight: 200;
 }
-#footer-content p
-{
+#footer-content p {
   margin-top: 10px;
 }
 #footer-content a {
-  display:inline-block;
+  display: inline-block;
   width: 140px;
   color: var(--verde-lime);
 }
@@ -345,27 +342,23 @@ div#footer-content {
   color: var(--verde-lime);
 }
 #footer-content a #privacy-animation,
-#footer-content a #privacy-animation2
-{
+#footer-content a #privacy-animation2 {
   margin-top: 28px;
   background-color: var(--verde-lime);
   transition: all 0.5s ease-in-out;
   position: absolute;
-  width:0;
-  height:2px;
+  width: 0;
+  height: 2px;
 }
-#footer-content a #privacy-animation
-{
-  left:50%;
+#footer-content a #privacy-animation {
+  left: 50%;
 }
-#footer-content a #privacy-animation2
-{
-  right:50%;
+#footer-content a #privacy-animation2 {
+  right: 50%;
 }
 #footer-content a:hover > #privacy-animation,
-#footer-content a:hover > #privacy-animation2
-{
-  width:75px;
+#footer-content a:hover > #privacy-animation2 {
+  width: 75px;
 }
 
 /* Main */
@@ -373,7 +366,7 @@ div#footer-content {
 .event-container {
   margin: 0;
   padding: 1rem;
-  
+
   border: solid;
   border-color: orange;
 }
@@ -400,23 +393,24 @@ div#footer-content {
   border-color: red; */
 }
 
-div.programma-animation, div.programma-animation2{
-    margin-top: 10px;
-    background-color: var(--verde-lime);
-    transition: all 1s ease-in-out;
-    position: absolute;
-    width:0;
-    height:2px;
+div.programma-animation,
+div.programma-animation2 {
+  margin-top: 10px;
+  background-color: var(--verde-lime);
+  transition: all 1s ease-in-out;
+  position: absolute;
+  width: 0;
+  height: 2px;
 }
-div.programma-animation{
-    left:50%;
+div.programma-animation {
+  left: 50%;
 }
-div.programma-animation2{
-    right:50%;
+div.programma-animation2 {
+  right: 50%;
 }
 div.programma-animation.active,
-div.programma-animation2.active{
-  width:48%;
+div.programma-animation2.active {
+  width: 48%;
 }
 .entry-info {
   flex: 1;
@@ -426,7 +420,7 @@ div.programma-animation2.active{
   color: var(--verde-scuro);
   font-size: 1.5rem;
   font-weight: 400;
-  
+
   /* border: solid;
   border-color: brown; */
 }
@@ -437,7 +431,7 @@ div.programma-animation2.active{
   font-weight: bold;
   margin-bottom: 1rem;
   color: white;
-  
+
   /* border: solid;
   border-color: orange; */
 }
@@ -461,22 +455,20 @@ div.programma-animation2.active{
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
 }*/
-#carosello-foto
-{
+#carosello-foto {
   position: relative;
   padding: 10px;
   margin-top: 1.5em;
 }
 #foto0,
 #foto1,
-#foto2
-{
-  width:600px;
+#foto2 {
+  width: 600px;
   height: 600px;
   background-position: center;
   background-size: cover;
   background-position: center;
-  margin-left:auto;
+  margin-left: auto;
   margin-right: auto;
 }
 #foto0 {
@@ -491,9 +483,8 @@ div.programma-animation2.active{
   background-image: url("../assets/artisti/tony2milli.jpg");
 }
 
-.foto-hide
-{
-  display:none;
+.foto-hide {
+  display: none;
 }
 .puntini {
   height: 15px;
@@ -509,8 +500,7 @@ div.programma-animation2.active{
   background-color: var(--verde-lime);
 }
 
-.carosello-puntini 
-{
+.carosello-puntini {
   text-align: center;
 }
 
@@ -606,13 +596,12 @@ div.programma-animation2.active{
 
 #chi-siamo-container {
   padding: 1rem;
-  
+
   border: solid;
   border-color: orange;
 }
 
-#storia-festival
-{
+#storia-festival {
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
@@ -621,10 +610,9 @@ div.programma-animation2.active{
   border-radius: 4px;
 }
 
-#storia-festival p
-{
+#storia-festival p {
   font-weight: 100;
-  text-align:justify;
+  text-align: justify;
 }
 
 #chi-siamo-contenuto {
@@ -635,7 +623,7 @@ div.programma-animation2.active{
   padding-top: 3rem;
   background-color: var(--verde-lime);
   border-radius: 4px;
-  
+
   border: solid;
   border-color: yellow;
 }
@@ -656,21 +644,21 @@ div.programma-animation2.active{
 #chi-siamo-testo {
   text-align: justify;
   color: var(--verde-scuro);
-  
+
   border: solid;
   border-color: black;
 }
 
 #ringraziamenti {
   font-weight: bold;
-  
+
   border: solid;
   border-color: orange;
 }
 
 #ul-ringraziamenti {
   list-style: none;
-  
+
   border: solid;
   border-color: yellow;
 }
@@ -813,8 +801,7 @@ main {
 }
 /*Privacy Policy*/
 
-div#privacy-container
-{
+div#privacy-container {
   display: block;
   background-color: var(--verde-lime);
   color: var(--verde-scuro);
@@ -826,18 +813,15 @@ div#privacy-container
 }
 div#privacy-container h2,
 div#privacy-container h3,
-div#privacy-container h4
-{
-  padding-left:0;
+div#privacy-container h4 {
+  padding-left: 0;
 }
-div#privacy-container ul li
-{
+div#privacy-container ul li {
   margin-left: 25px;
 }
-#privacy-title
-{
+#privacy-title {
   margin-top: 4rem;
-  color:var(--verde-lime);
+  color: var(--verde-lime);
   font-weight: 400;
   font-weight: bold;
   margin-top: 190px;
