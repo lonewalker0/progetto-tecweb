@@ -19,10 +19,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $indirizzo = $_POST['indirizzo'] ?? '';
     if (!empty($indirizzo) && !isValidString($indirizzo)) {
         $errors[]="L'indirizzo contiene caratteri non validi.";
+    }else{
+        if(!empty($indirizzo)){
+            $dbOperation->updateIndirizzo($username, $indirizzo);
+        }
     }
     $email = $_POST['email'] ?? '';
     if (!empty($email) && !isValidEmail($email)) {
         $errors[]="L'email non è valida.";
+    }else{
+        if(!empty($email)){
+            $dbOperation->updateEmail($username, $email);
+        }
+        
     }
     $nuova_password = $_POST['nuova_password'] ?? '';
     $conferma_password = $_POST['conferma_password'] ?? '';
@@ -57,25 +66,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $dbOperation->updatePassword($username, $nuova_password);
         }
     }
-    
+       
 
-    // Aggiorna gli altri dati nel database solo se non sono vuoti
-    if (!empty($indirizzo) && empty($errors)) {
-        $dbOperation->updateIndirizzo($username, $indirizzo);
-    }
-
-    if (!empty($email) && empty($errors)) {
-        $dbOperation->updateEmail($username, $email);
-    }
+    // Controlla se ci sono stati aggiornamenti e reindirizza di conseguenza
     if (!empty($errors)) {
-        
         $_SESSION['update_form_errors'] = $errors;
         header("Location: ../account.php");
         die();
-    }else{
-        header("Location: ../account.php"); 
-        die();
+    } else {
+        // Reindirizza alla pagina account.php solo se ci sono stati aggiornamenti
+        
+            header("Location: ../account.php");
+            die();
+        
     }
+    
+    
 
     
 } else {
