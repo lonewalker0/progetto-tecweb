@@ -12,7 +12,7 @@ $main = "<h1>Prevendite</h1>";
 
 
 
-if (!isset($_SESSION['purchase_result'])) {
+if (isset($_SESSION['purchase_result'])) {
     $main .= "<div id='purchase_result'> " . $_SESSION['purchase_result'] . "</div>";
     unset($_SESSION['purchase_result']);
 }
