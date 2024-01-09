@@ -521,28 +521,20 @@ div.programma-animation2.active{
 }
 
 @keyframes fade {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  50% {
     opacity: 1;
   }
-}
-@keyframes reverse-fade
-{
-  from{
-    opacity:1;
-  }
-  to
-  {
+  100% {
     opacity: 0;
   }
 }
 
 .fade {
-  animation-name: fade, reverse-fade;
-  animation-duration: 2s, 2s;
-  animation-delay: 0s, 2s;
+  animation-name: fade;
+  animation-duration: 4s;
   animation-iteration-count: infinite, infinite;
 }
 
