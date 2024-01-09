@@ -43,9 +43,9 @@ class accountOperation {
 
                 $output .= "</dl>";       
 
-                $output .= "<h3>Modifiche account</h3>";
+                $output .= "<h3>Modifica informazioni account account</h3>";
 
-                $output .= "<div id='errorupdate'>";
+                
                 
                 if (isset($_SESSION['update_form_errors'])) {
                     foreach ($_SESSION['update_form_errors'] as $error) {
@@ -53,7 +53,7 @@ class accountOperation {
                     }
                     unset($_SESSION['update_form_errors']);
                 }
-                $output .= "</div>";
+                
                 $htmlform = file_get_contents(__DIR__ . '/../html/form/UpdateDataUser.html');
                 $output .= str_replace("{{username}}", $username, $htmlform);
 
