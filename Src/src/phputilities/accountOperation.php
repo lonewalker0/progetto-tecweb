@@ -45,7 +45,7 @@ class accountOperation {
 
                 $output .= "<h3>Modifiche account</h3>";
 
-                $output .= "<div id='errorupdate>'";
+                $output .= "<div id='errorupdate'>";
                 
                 if (isset($_SESSION['update_form_errors'])) {
                     foreach ($_SESSION['update_form_errors'] as $error) {
@@ -54,22 +54,11 @@ class accountOperation {
                     unset($_SESSION['update_form_errors']);
                 }
                 $output .= "</div>";
-
-                $output .= "<form action='phputilities/updateUserInfo.php' method='post' id='formUpdate'>";
-                $output .= "<fieldset>";
-                $output .= "<legend>Aggiornamento dati</legend>";
-                $output .= "<p><label for='indirizzo'>Indirizzo:</label> <input type='text' id='indirizzo' name='indirizzo' value=''></p>";
-                $output .= "<p><label for='email'>Email:</label> <input type='text' id='email' name='email' value=''></p>";
-                $output .= "<p><label for='nuova_password'>Nuova Password:</label> <input type='password' id='nuova_password' name='nuova_password'></p>";
-                $output .= "<p><label for='conferma_password2'>Conferma Nuova Password:</label> <input type='password' id='conferma_password2' name='conferma_password'></p>";
-                $output .= "<p><label for='vecchia_password'>Vecchia Password:</label> <input type='password' id='vecchia_password' name='vecchia_password'></p>";
-                $output .= "<input type='hidden' name='username' value='" . $username . "'>";
-                $output .= "</fieldset>";
-                $output .= "<input type='submit' value='Salva modifiche'>";
-                $output .= "</form>";
+                $htmlform = file_get_contents(__DIR__ . '/../html/form/UpdateDataUser.html');
+                $output .= str_replace("{{username}}", $username, $htmlform);
 
 
-                
+
                 $output .= "<h2>Ordini</h2>";
                 if(!empty($userorder)) {
                     $output .= "<p id=dtable>La tabella ha 5 colonne ed informa su tutti gli ordini effettuati dallo utente visualizzando Numero ordine, Data di acquisto, tipologia di biglietto, descrizione,prezzo totale</p>";
