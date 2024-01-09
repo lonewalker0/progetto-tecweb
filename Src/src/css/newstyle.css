@@ -11,7 +11,6 @@
 :root {
   --verde-lime: #B1DD40;
   --verde-scuro: #111606;
-  --background-opacity: #1F280A;
 }
 
 img {
@@ -67,8 +66,9 @@ header {
   width: 100%;
   z-index: 10;
   margin-top: 0;
-  border: solid;
-  border-color: blue;
+
+  /* border: solid;
+  border-color: blue; */
 }
 
 #flexContainerHeader {
@@ -79,14 +79,18 @@ header {
   margin: 1rem 4rem 1rem 4rem;
   height: 5rem;
   border-radius: 1rem;
-  background-color: var(--background-opacity);
-  border: solid;
-  border-color: purple;
+  background-color: rgba(24, 31, 8, 0.85);
+
+  /* border: solid;
+  border-color: purple; */
 }
 
 #left-group {
   display: flex;
   align-items: center;
+
+  /* border: solid;
+  border-color: white; */
 }
 
 #logo a {
@@ -148,24 +152,25 @@ header {
 #countdown-data p {
   font-size: 30px;
 }
+
 .show
 {
   display: block;
 }
+
 .hide
 {
   display:none;
 }
 
-#vertical-bar-container {
-  border-left: 5px solid var(--verde-lime);
-  height: 50px;
-}
-
 .icons {
   display: flex;
   align-items: center;
+  margin-top: 1rem;
   padding: 2px;
+
+  /* border: solid;
+  border-color: violet; */
 }
 
 .icons img {
@@ -190,7 +195,7 @@ header {
 /* Navigation Menu */
 
 .menu {
-  top: 7rem;
+  top: 6rem;
   position: fixed;
   width: calc(100% - 8rem);
   margin: 1rem 4rem 1rem 4rem;
@@ -202,11 +207,11 @@ header {
   font-weight: 400;
   font-weight: bold;
   z-index: 10;
-  background-color: var(--background-opacity);
+  background-color: rgba(24, 31, 8, 0.85);
   border-radius: 1rem;
 
-  border: solid;
-  border-color: red;
+  /* border: solid;
+  border-color: red; */
 }
 
 .menu ul {
@@ -264,7 +269,7 @@ nav.menu a:hover > div#punto-dom {
 
 #breadcrumb {
   position: relative;
-  top: 12rem;
+  top: 10rem;
   display: flex;
   width: 100%;
   height: 2em;
@@ -274,8 +279,8 @@ nav.menu a:hover > div#punto-dom {
   display: flex;
   align-items: center;
 
-  border: solid;
-  border-color: brown;
+  /* border: solid;
+  border-color: brown; */
 }
 
 #breadcrumb p {
@@ -581,7 +586,6 @@ div.programma-animation2.active{
 /* Chi siamo */
 
 #chi-siamo-container {
-  margin: 0 auto;
   padding: 1rem;
   
   border: solid;
@@ -595,7 +599,7 @@ div.programma-animation2.active{
   padding: 1rem;
   background-color: var(--verde-lime);
   color: var(--verde-scuro);
-  border-radius: 1rem;
+  border-radius: 4px;
 }
 
 #storia-festival p
@@ -604,58 +608,52 @@ div.programma-animation2.active{
   text-align:justify;
 }
 
-#img-chi-siamo {
-  width: 800px;
-  height: auto;
-  display: block;
-  margin: 0;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  border-radius: 4px;
-  background-color: var(--background-opacity);
-  
-  border: solid;
-  border-color: white;
-}
-
 #chi-siamo-contenuto {
   max-width: 900px;
   margin: 0 auto;
-  padding: 1rem;
   text-align: left;
-  background-color: var(--verde-scuro);
+  padding: 1rem;
+  padding-top: 3rem;
+  background-color: var(--verde-lime);
   border-radius: 4px;
   
   border: solid;
   border-color: yellow;
 }
 
+#img-chi-siamo {
+  display: block;
+  margin: 0 auto;
+  width: 800px;
+  height: auto;
+  margin-bottom: 3rem;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+
+  border: solid;
+  border-color: white;
+}
+
 #chi-siamo-testo {
-  margin-bottom: 2rem;
   text-align: justify;
-  padding: 1rem;
-  border-radius: 1rem;
-  background-color: var(--verde-lime);
   color: var(--verde-scuro);
   
   border: solid;
-  border-color: greenyellow;
+  border-color: black;
 }
 
 #ringraziamenti {
   font-weight: bold;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
   
-  /* border: solid;
-  border-color: orange; */
+  border: solid;
+  border-color: orange;
 }
 
 #ul-ringraziamenti {
   list-style: none;
   
-  /* border: solid;
-  border-color: yellow; */
+  border: solid;
+  border-color: yellow;
 }
 
 /* Location */
@@ -673,13 +671,12 @@ div.programma-animation2.active{
 
 #location-contenuto {
   padding: 2rem;
-  padding-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--verde-lime);
   color: var(--verde-scuro);
-  border-radius: 1rem;
+  border-radius: 4px;
 
   border: solid;
   border-color: yellow;
@@ -726,8 +723,8 @@ div.programma-animation2.active{
   flex-direction: column;
   align-items: center;
 
-  border: solid;
-  border-color: orange;
+  /* border: solid;
+  border-color: orange; */
 }
 
 .faq-section {
@@ -749,8 +746,8 @@ div.programma-animation2.active{
   flex-wrap: wrap;
   justify-content: center;
 
-  border: solid;
-  border-color: white;
+  /* border: solid;
+  border-color: white; */
 }
 
 .faq-item {
