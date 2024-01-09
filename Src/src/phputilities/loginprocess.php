@@ -33,31 +33,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-    if (isset($_POST['accedi'])) {
-        try {
+    try {
+        $isUserLoggedIn = $DBOperation->loginUser($username, $password);
 
-            $isUserLoggedIn = $DBOperation->loginUser($username, $password);
-    
-            if ($isUserLoggedIn) {
-                $_SESSION['username'] = $username;
-                $isUserAdmin = $DBOperation->isAdmin($username); 
-                if ($isUserAdmin) {
-                    $_SESSION['is_admin'] = true;
-                } else {
-                    $_SESSION['is_admin'] = false;
-                }
-                header("Location: ../account.php");
-                die();
-            } else {        
-                $_SESSION['NomeUtente_Error'] = $username;
-                header("Location: ../account.php");
-                die();
+        if ($isUserLoggedIn) {
+            $_SESSION['username'] = $username;
+            $isUserAdmin = $DBOperation->isAdmin($username); 
+            if ($isUserAdmin) {
+                $_SESSION['is_admin'] = true;
+            } else {
+                $_SESSION['is_admin'] = false;
             }
-        } catch (Exception $e) {
-            echo "Errore durante il login: " . $e->getMessage();
+            header("Location: ../account.php");
+            die();
+        } else {        
+            $_SESSION['NomeUtente_Error'] = $username;
+            header("Location: ../account.php");
+            die();
         }
-
+    } catch (Exception $e) {
+        echo "Errore durante il login: " . $e->getMessage();
     }
+
+    
 }
     
 

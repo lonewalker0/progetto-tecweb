@@ -44,8 +44,9 @@ class accountOperation {
                 $output .= "</dl>";       
 
                 $output .= "<h3>Modifiche account</h3>";
-                $output .= "<form action='phputilities/updateUserInfo.php' method='post' id='formUpdate'>";
+
                 $output .= "<div id='errorupdate>'";
+                
                 if (isset($_SESSION['update_form_errors'])) {
                     foreach ($_SESSION['update_form_errors'] as $error) {
                         $output .= '    <p>' . $error . '</p>';
@@ -53,6 +54,8 @@ class accountOperation {
                     unset($_SESSION['update_form_errors']);
                 }
                 $output .= "</div>";
+
+                $output .= "<form action='phputilities/updateUserInfo.php' method='post' id='formUpdate'>";
                 $output .= "<fieldset>";
                 $output .= "<legend>Aggiornamento dati</legend>";
                 $output .= "<p><label for='indirizzo'>Indirizzo:</label> <input type='text' id='indirizzo' name='indirizzo' value=''></p>";
@@ -64,6 +67,9 @@ class accountOperation {
                 $output .= "</fieldset>";
                 $output .= "<input type='submit' value='Salva modifiche'>";
                 $output .= "</form>";
+
+
+                
                 $output .= "<h2>Ordini</h2>";
                 if(!empty($userorder)) {
                     $output .= "<p id=dtable>La tabella ha 5 colonne ed informa su tutti gli ordini effettuati dallo utente visualizzando Numero ordine, Data di acquisto, tipologia di biglietto, descrizione,prezzo totale</p>";

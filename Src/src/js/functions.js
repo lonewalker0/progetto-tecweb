@@ -25,28 +25,20 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-
-
-
-/*document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("formLogin");
   if (form) {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
-      console.log("Submit event intercepted.");
       if (validazioneFormLogin()) {
-        console.log("Form is valid. Submitting...");
         event.target.submit();
-      } else {
-        return false;
       }
-      
+      return false;
     });
   }
-});*/
+});
 
 document.addEventListener("DOMContentLoaded", function () {
-
   var form = document.getElementById("RegistrationForm");
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -58,7 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-/*document.addEventListener("DOMContentLoaded", function () {
+
+document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("formUpdate");
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -69,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return false;
     });
   }
-});*/
+});
 
 document.addEventListener("DOMContentLoaded", function () {
   var newPasswordField = document.getElementById("nuova_password");
@@ -94,16 +87,6 @@ if (window.location.pathname === "/index.php") {
   });
 }
 
-//eventListener per la visualizzazione dell'errore
-/*document.addEventListener("DOMContentLoaded", function () {
-  var errorDiv = document.getElementById("error_login");
-  if (errorDiv) {
-    errorDiv.style.display = "block"; // Mostra il messaggio di errore
-    setTimeout(function () {
-      errorDiv.style.display = "none"; // Nascondi il messaggio di errore dopo 2.5 secondi
-    }, 2500); // 2500 millisecondi corrispondono a 2.5 secondi
-  }
-});*/
 //funzione per il countdown del festival
 const getCountdown = (eventDate) => {
   let countdownFestival = eventDate.getTime();
@@ -203,7 +186,6 @@ function appendError(conteinerId, message) {
 }
 
 function StringaValida(string) {
-  // This regex pattern checks for HTML tags or entities
   const pattern = /<[^>]*>|&[^;]+;/;
   return !pattern.test(string);
 }
@@ -330,23 +312,27 @@ function validazioneFormAggiutaEvento() {
   return false;
 }
 
-
 function validazioneFormLogin() {
   const errorContainer = document.getElementById("error_login");
-  console.log("Funzione di validazione chiamata.");
   errorContainer.innerHTML = "";
 
   const fieldsToValidate = [
-    { name: "username", errorMessage: "Questo campo non accetta codice HTML!" },
-    { name: "password", errorMessage: "Questo campo non accetta codice HTML!" }
+    {
+      name: "username",
+      errorMessage: "Il campo username non accetta codice HTML!",
+    },
+    {
+      name: "password",
+      errorMessage: "Il campo password non accetta codice HTML!",
+    },
   ];
 
   let isValid = true;
 
-  fieldsToValidate.forEach(field => {
+  fieldsToValidate.forEach((field) => {
     const value = document.forms["formLogin"][field.name].value;
 
-    if (!StringaValida(value)) {
+    if (!StringaValida(value) && isValid == true) {
       isValid = false;
       document.getElementById(field.name).setAttribute("aria-invalid", "true");
       appendError(errorContainer, field.errorMessage);
@@ -376,42 +362,42 @@ function validazioneFormRegistrazione() {
   if (!StringaValida(nome)) {
     isValid = false;
     document.getElementById("nome").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "questo campo non accetta codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML!");
   } else {
     document.getElementById("nome").setAttribute("aria-invalid", "false");
   }
   if (!StringaValida(cognome)) {
     isValid = false;
     document.getElementById("cognome").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "questo campo non accetta codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML!");
   } else {
     document.getElementById("cognome").setAttribute("aria-invalid", "false");
   }
   if (!isValidAge(eta)) {
     isValid = false;
     document.getElementById("eta").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "eta non valida");
+    appendError(errorContainer, "Devi avere almeno 16 per registrarti!");
   } else {
     document.getElementById("eta").setAttribute("aria-invalid", "false");
   }
   if (!StringaValida(indirizzo)) {
     isValid = false;
     document.getElementById("indirizzo").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "questo campo non accetta codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML!");
   } else {
     document.getElementById("indirizzo").setAttribute("aria-invalid", "false");
   }
   if (!StringaValida(username)) {
     isValid = false;
     document.getElementById("username").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "questo campo non accetta codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML!");
   } else {
     document.getElementById("username").setAttribute("aria-invalid", "false");
   }
   if (!StringaValida(password)) {
     isValid = false;
     document.getElementById("password").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "questo campo non accetta codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML!");
   } else {
     document.getElementById("password").setAttribute("aria-invalid", "false");
   }
@@ -420,7 +406,7 @@ function validazioneFormRegistrazione() {
     document
       .getElementById("confermaPassword")
       .setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "questo campo non accetta codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML!");
   } else {
     document
       .getElementById("confermaPassword")
@@ -429,28 +415,28 @@ function validazioneFormRegistrazione() {
   if (!isValidEmail(email)) {
     isValid = false;
     document.getElementById("email").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "formato email non valido");
+    appendError(errorContainer, "formato email non valido!");
   } else {
     document.getElementById("email").setAttribute("aria-invalid", "false");
   }
   if (password !== confermapassword) {
     isValid = false;
-    appendError(errorContainer, "Le password non coincidono");
+    appendError(errorContainer, "Le password non coincidono!");
   }
   return isValid;
 }
 
-function validazioneFormUpdate(){
-  const errorContainer = document.getElementById(
-    "errorupdate"
-  );
+function validazioneFormUpdate() {
+  const errorContainer = document.getElementById("errorupdate");
   errorContainer.innerHTML = "";
   const indirizzo = document.forms["formUpdate"]["indirizzo"].value;
   const email = document.forms["formUpdate"]["email"].value;
   const nuovapassword = document.forms["formUpdate"]["nuova_password"].value;
-  const confermapassword = document.forms["formUpdate"]["conferma_password2"].value;
-  const passwordvecchia = document.forms["formUpdate"]["vecchia_password"].value;
-  
+  const confermapassword =
+    document.forms["formUpdate"]["conferma_password2"].value;
+  const passwordvecchia =
+    document.forms["formUpdate"]["vecchia_password"].value;
+
   let isValid = true;
   if (indirizzo.trim() !== "") {
     if (!StringaValida(indirizzo)) {
@@ -458,7 +444,9 @@ function validazioneFormUpdate(){
       document.getElementById("indirizzo").setAttribute("aria-invalid", "true");
       appendError(errorContainer, "Questo campo non accetta codice HTML!");
     } else {
-      document.getElementById("indirizzo").setAttribute("aria-invalid", "false");
+      document
+        .getElementById("indirizzo")
+        .setAttribute("aria-invalid", "false");
     }
   }
   if (email.trim() !== "") {
@@ -470,31 +458,59 @@ function validazioneFormUpdate(){
       document.getElementById("email").setAttribute("aria-invalid", "false");
     }
   }
-  if (passwordvecchia.trim() !== "" || nuovapassword.trim() !== "" || confermapassword.trim() !== "") {
-    // Verifica che la stringa mandata sia valida
-    if (!StringaValida(passwordvecchia) || !StringaValida(nuovapassword) || !StringaValida(confermapassword)) {
+  if (
+    passwordvecchia.trim() !== "" ||
+    nuovapassword.trim() !== "" ||
+    confermapassword.trim() !== ""
+  ) {
+    if (
+      !StringaValida(passwordvecchia) ||
+      !StringaValida(nuovapassword) ||
+      !StringaValida(confermapassword)
+    ) {
       isValid = false;
-      document.getElementById("vecchia_password").setAttribute("aria-invalid", "true");
-      document.getElementById("nuova_password").setAttribute("aria-invalid", "true");
-      document.getElementById("conferma_password2").setAttribute("aria-invalid", "true");
-      appendError(errorContainer, "Le password contengono caratteri non validi.");
+      document
+        .getElementById("vecchia_password")
+        .setAttribute("aria-invalid", "true");
+      document
+        .getElementById("nuova_password")
+        .setAttribute("aria-invalid", "true");
+      document
+        .getElementById("conferma_password2")
+        .setAttribute("aria-invalid", "true");
+      appendError(
+        errorContainer,
+        "Le password contengono caratteri non validi."
+      );
     } else {
       // Verifica che la nuova password e la conferma coincidano
       if (nuovapassword.trim() !== confermapassword.trim()) {
         isValid = false;
-        document.getElementById("nuova_password").setAttribute("aria-invalid", "true");
-        document.getElementById("conferma_password2").setAttribute("aria-invalid", "true");
-        appendError(errorContainer, "La nuova password e la conferma password non coincidono.");
+        document
+          .getElementById("nuova_password")
+          .setAttribute("aria-invalid", "true");
+        document
+          .getElementById("conferma_password2")
+          .setAttribute("aria-invalid", "true");
+        appendError(
+          errorContainer,
+          "La nuova password e la conferma password non coincidono."
+        );
       } else {
-        document.getElementById("vecchia_password").setAttribute("aria-invalid", "false");
-        document.getElementById("nuova_password").setAttribute("aria-invalid", "false");
-        document.getElementById("conferma_password2").setAttribute("aria-invalid", "false");
+        document
+          .getElementById("vecchia_password")
+          .setAttribute("aria-invalid", "false");
+        document
+          .getElementById("nuova_password")
+          .setAttribute("aria-invalid", "false");
+        document
+          .getElementById("conferma_password2")
+          .setAttribute("aria-invalid", "false");
       }
     }
   }
 
   return isValid;
-
 }
 //calcolare il prezzo totale del biglietto, prima di inviare l'acquisto al submit
 function calculateTotalPrice(id) {
