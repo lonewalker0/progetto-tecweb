@@ -63,7 +63,7 @@ h3 {
 header {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 1920px;
   z-index: 10;
   margin-top: 0;
 
@@ -78,7 +78,7 @@ header {
   padding: 1rem;
   margin: 1rem 4rem 1rem 4rem;
   height: 5rem;
-  border-radius: 1rem;
+  border-radius: 2rem;
   background-color: rgba(24, 31, 8, 0.85);
 
   /* border: solid;
@@ -86,9 +86,8 @@ header {
 }
 
 #left-group {
-  display: flex;
+  display:flex;
   align-items: center;
-
   /* border: solid;
   border-color: white; */
 }
@@ -143,6 +142,12 @@ header {
   max-width: 100%;
 }
 
+#vertical-bar-container{
+  height: 50px;
+  width: 4px;
+  background-color: var(--verde-lime);
+}
+
 #countdown-data {
   display: flex;
   align-items: center;
@@ -185,8 +190,8 @@ header {
   transform: scale(1.25);
 }
 
-.logo a:hover,
-.logo a:focus {
+#logo a:hover,
+#logo a:focus {
   transform: scale(1.1); /* Slight increase */
 }
 

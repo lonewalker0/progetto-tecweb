@@ -125,7 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
 if (window.location.pathname === "/index.php") {
   document.addEventListener("DOMContentLoaded", function () {
     carosello();
