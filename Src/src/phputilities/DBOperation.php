@@ -15,24 +15,7 @@ class DBOperation{
         $this->db = $db;
     }
 
-    /*public static function sanitizeInput($input, $maxLength = 255) : string
-    {
-        
-        $input = substr($input, 0, $maxLength);
-
-        //togli gli spazi bianchi 
-        $input = trim($input);
-
-        //per attacchi di tipo xss, hihihi
-        $input = htmlspecialchars($input, ENT_QUOTES, 'UTF-8');
-
-        $input = str_replace(['"', "'", "<", ">", ";", "\\"], "", $input);
-
-        $input = preg_replace('/\s/', '', $input);
- 
-
-        return $input;
-    }*/
+    
 
     public function checkIfUserExists($username) {
         try {
