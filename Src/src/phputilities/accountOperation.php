@@ -16,21 +16,23 @@ class accountOperation {
         $username = isset($_SESSION["username"]) ? $_SESSION["username"] : '';
 
         if (!empty($username)) {
+
             
             $userInfo = $this->dbOperation->getUserInfo($username);
             $userorder= $this->dbOperation->getUserOrders($username);
+            $output = file_get_contents(__DIR__ . '/../html/sidebar.html');           
 
             
             if ($userInfo) { //la condizione sarebbe sempre true ugualmente
             //mostro i dati personali del utente
-            $htmlTemplate = file_get_contents(__DIR__ . '/../html/informazioniUtente.html');;           
+            $htmlTemplate = file_get_contents(__DIR__ . '/../html/informazioniUtente.html');           
             $output = str_replace("{{nome}}", $userInfo['nome'], $htmlTemplate);
             $output = str_replace("{{cognome}}", $userInfo['cognome'], $output);
             $output = str_replace("{{eta}}", $userInfo['data_nascita'], $output);
             $output = str_replace("{{indirizzo}}", $userInfo['indirizzo'], $output);
             $output = str_replace("{{email}}", $userInfo['email'], $output);
-
-            $output .= "<h2>Modifica informazioni account account</h2>";
+            $output .= "<div class='section' id='modifica'>";
+            $output .= "<h2 >Modifica informazioni account account</h2>";
 
             if (isset($_SESSION['update_form_errors'])) {
                 foreach ($_SESSION['update_form_errors'] as $error) {
@@ -41,10 +43,10 @@ class accountOperation {
             
             $htmlform = file_get_contents(__DIR__ . '/../html/UpdateDataUser.html');
             $output .= str_replace("{{username}}", $username, $htmlform);
+            $output.="</div>";
 
-
-
-            $output .= "<h2>Ordini</h2>";
+            $output.= "<div class='section' id='ordini'>";
+            $output .= "<h2 >Ordini</h2>";
             if(!empty($userorder)) {
                 // $output .= "<p id=dtable>La tabella ha 5 colonne ed informa su tutti gli ordini effettuati dallo utente visualizzando Numero ordine, Data di acquisto, tipologia di biglietto, descrizione,prezzo totale</p>";
                 // $output .= "<table id='tabellaordini' aria-describedby='dtable'>";
@@ -91,9 +93,11 @@ class accountOperation {
                 } else {
                     $output .= "<p>Nessun ordine effettuato.</p>";
                 }
-                $output .="<h2>Elimina account</h2>";
+                $output .= "</div>";
+                $output .= "<div class='section' id='elimina' >";
+                $output .="<h2 >Elimina account</h2>";
                 $output .= "<p>Per eliminare account si rimanda a questa pagina<a href='eliminazione.php' tabindex=0>Eliminazione</a>";
-                
+                $output .= "</div>";
             }}
         return $output;}
             

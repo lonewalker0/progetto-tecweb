@@ -91,6 +91,38 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+  // Controlla se siamo sulla pagina account.php prima di eseguire il codice
+  if (window.location.pathname.includes("account.php")) {
+      var menuLinks = document.querySelectorAll('#sidebar a');
+      var sections = document.querySelectorAll('.section');
+
+      // Nascondi tutte le sezioni tranne "Informazioni account" inizialmente
+      sections.forEach(function (section) {
+          if (section.id === 'informazioni') {
+              section.style.display = 'block';
+          } else {
+              section.style.display = 'none';
+          }
+      });
+
+      menuLinks.forEach(function (link) {
+          link.addEventListener('click', function (event) {
+              event.preventDefault();
+              var targetSectionId = this.getAttribute('href').substring(1);
+
+              sections.forEach(function (section) {
+                  if (section.id === targetSectionId) {
+                      section.style.display = 'block';
+                  } else {
+                      section.style.display = 'none';
+                  }
+              });
+          });
+      });
+  }
+});
+
 if (window.location.pathname === "/index.php") {
   document.addEventListener("DOMContentLoaded", function () {
     carosello();
