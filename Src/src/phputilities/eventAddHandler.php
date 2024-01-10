@@ -32,6 +32,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isValidDate($_POST['date'])) {
         $errors[] = "Data inserita non valida!";
     }
+    if (!isAllowedDate($_POST['date'])) {
+        $errors[] = "La data deve essere sceltra tra 05/07/2024, 06/07/2024, o 07/07/2024!";
+    }
     if (!in_array($_FILES['image']['type'], $allowedFileTypes)) {
         $errors[] = "Tipo di file non supportato. Inserisci un'immagine JPEG, PNG o GIF.";
     }

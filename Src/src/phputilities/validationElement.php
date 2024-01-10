@@ -15,6 +15,11 @@ function isValidDate($date) {
     return (bool) preg_match('/^\d{4}-\d{2}-\d{2}$/', $date);
 }
 
+function isAllowedDate($dateString) {
+    $allowedDates = ["2024-07-05", "2024-07-06", "2024-07-07"];
+    return in_array($dateString, $allowedDates);
+}
+
 function isValidEmail($email) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         return false;

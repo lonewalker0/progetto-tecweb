@@ -125,6 +125,39 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Controlla se siamo sulla pagina account.php prima di eseguire il codice
+  if (window.location.pathname.includes("account.php")) {
+    var menuLinks = document.querySelectorAll("#sidebar a");
+    var sections = document.querySelectorAll(".section");
+
+    // Nascondi tutte le sezioni tranne "Informazioni account" inizialmente
+    sections.forEach(function (section) {
+      if (section.id === "informazioni") {
+        section.style.display = "block";
+      } else {
+        section.style.display = "none";
+      }
+    });
+
+    menuLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        var targetSectionId = this.getAttribute("href").substring(1);
+
+        sections.forEach(function (section) {
+          if (section.id === targetSectionId) {
+            section.style.display = "block";
+          } else {
+            section.style.display = "none";
+          }
+        });
+      });
+    });
+  }
+});
+
 if (window.location.pathname === "/index.php") {
   document.addEventListener("DOMContentLoaded", function () {
     carosello();
@@ -163,10 +196,9 @@ function countdownFestival() {
 function triggerView() {
   const df = document.getElementById("dataFestival");
   const cd = document.getElementById("intervalloFestival");
-
   let type = true;
   setInterval(() => {
-    if (type) {
+    if (df.classList.contains("show")) {
       df.classList.remove("show");
       df.classList.add("hide");
       cd.classList.remove("hide");
@@ -185,15 +217,11 @@ function carosello() {
   let caroselloimg;
   let idfoto = "foto";
   let i;
-  let img = document.querySelector("#carosello-foto"); //mi rappresenta tutto il carosello, nel suo insieme (senza comprendere i puntini)
-  let imgtot = img.querySelectorAll("*").length; //mi rappresenta il numero di foto del carosello
+  let img = document.getElementsByClassName("carosello-none");
   let puntini = document.getElementsByClassName("puntini");
-
-  for (i = 0; i < imgtot; i++) {
+  for (i = 0; i < img.length; i++) {
     if (caroselloj > 0) {
-      caroselloimg = document.getElementById(idfoto + i); //mi rappresenta la foto in cui sto lavorando in quel momento
-      caroselloimg.classList.remove("fade");
-      caroselloimg.classList.add("foto-hide");
+      img[i].classList.remove("carosello-block");
     }
   }
   imgIndex++;
@@ -205,9 +233,7 @@ function carosello() {
   }
   for (i = 0; i < imgtot; i++) {
     if (i === imgIndex - 1) {
-      caroselloimg = document.getElementById(idfoto + i);
-      caroselloimg.classList.add("fade");
-      caroselloimg.classList.remove("foto-hide");
+      img[imgIndex - 1].classList.add("carosello-block");
       puntini[imgIndex - 1].className += " active";
     }
   }
@@ -245,6 +271,11 @@ function appendError(conteinerId, message) {
 function StringaValida(string) {
   const pattern = /<[^>]*>|&[^;]+;/;
   return !pattern.test(string);
+}
+
+function isAllowedDate(dateString) {
+  const allowedDates = ["2024-07-05", "2024-07-06", "2024-07-07"];
+  return allowedDates.includes(dateString);
 }
 
 function isValidAge(dateOfBirth) {
@@ -307,6 +338,16 @@ function validazioneFormAggiutaEvento() {
     document
       .getElementById("artist_name")
       .setAttribute("aria-invalid", "false");
+  }
+  if (!isAllowedDate(date)) {
+    isValid = false;
+    document.getElementById("date").setAttribute("aria-invalid", "true");
+    appendError(
+      errorContainer,
+      "La data deve essere scelta tra 05/07/2024, 06/07/2024, o 07/07/2024!"
+    );
+  } else {
+    document.getElementById("date").setAttribute("aria-invalid", "false");
   }
   if (!StringaValida(artistName)) {
     isValid = false;

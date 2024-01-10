@@ -1,0 +1,21 @@
+<div class="event-container">
+  <img src="{{image}}" alt="ritratto dello artista {{performer}}" />
+  <dl>
+    <dt>Artista:</dt>
+    <dd>{{performer}}</dd>
+
+    <dt>Data:</dt>
+    <dd>{{datetime}}</dd>
+
+    <dt>Ora:</dt>
+    <dd>{{time}}</dd>
+
+    <dt>Descrizione:</dt>
+    <dd>{{Description}}</dd>
+  </dl>
+
+  <form action="phputilities/eventEleminationHandler.php" method="post">
+    <input type="hidden" name="event_artist" value="{{performer}}" />
+    <input type="submit" name="delete_event" value="Delete" />
+  </form>
+</div>

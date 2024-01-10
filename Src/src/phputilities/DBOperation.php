@@ -225,7 +225,7 @@ class DBOperation{
 {
     $eventEntries = [];
 
-    $query = "SELECT * FROM Programma";
+    $query = "SELECT * FROM Programma ORDER BY date, hour";
 
     try {
         $this->db->openConnection();
