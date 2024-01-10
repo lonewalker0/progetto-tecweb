@@ -43,13 +43,14 @@ function isValidEmail($email) {
     return true;
 }
 
-function isValidAge($age) {
-    if (!ctype_digit($age) || $age <= 0) {
-        return false;
-    }
-
+function isValidAge($dateOfBirth) {
+    $currentDate = new DateTime();
+    $birthdate = new DateTime($dateOfBirth);
+    
     $minAge = 16;
-    return $age >= $minAge;
+    $minBirthdate = $currentDate->modify("-$minAge years");
+
+    return $birthdate <= $minBirthdate;
 }
 
 ?>

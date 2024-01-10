@@ -13,16 +13,17 @@
     <label for="cognome">Cognome:</label>
     <input type="text" id="cognome" name="cognome" required value="{{cognome}}">
 
-    <label for="eta">Età:</label>
+    <label for="dataNascita">Data nascita:</label>
     <input
-      type="number"
-      id="eta"
-      name="eta"
+      type="date"
+      id="dataNascita"
+      name="dataNascita"
       required
-      aria-describedby="etaHint"
       value="{{eta}}"
+      min="1949-01-01"
+      
     >
-    <span id="etaHint">Inserisci la tua età come numero.</span>
+    
     <!--<div id="etaError" class="error-message" aria-live="assertive"></div>-->
 
     <label for="indirizzo">Indirizzo:</label>

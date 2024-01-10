@@ -14,21 +14,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isValidString($_POST['nome']) or !isValidString($_POST['cognome'])
          or !isValidString($_POST['indirizzo']) or !isValidString($_POST['username'])
         or !isValidString($_POST['password']) or !isValidString($_POST['confermaPassword'])) {
-        $errors[] = "Non è accettato codice htm!";
+        $errors[] = "Non è accettato codice HTML!";
     }
     if(!isValidEmail($_POST['email'])) {
-        $errors[] = 'Email non valida';
+        $errors[] = "Formato email non valido!";
     }
-    if(!isValidAge($_POST['eta'])){
-        $errors[] = 'Devi avere almeno 16 anni';
+    if(!isValidAge($_POST['dataNascita'])){
+        $errors[] = "Devi avere almeno 16 per registrarti!";
     }
     if ($_POST['password'] !== $_POST['confermaPassword']) {
-        $errors[] = "Le password non corrispondono.";
+        $errors[] = "Le password non coincidono!";
     }
     
     $username = $_POST['username'];
     if ($DBOperation->checkIfUserExists($username)) {
-        $errors[] = "L'username scelto' $username' è già registrato nel database.";}
+        $errors[] = "L'username scelto '$username' è già registrato nel database.";}
+    $email = $_POST['email'];
+    if ($DBOperation->checkIfEmailExists($email)) {
+        $errors[] = "L'email scelta '$email' è già registrata nel database.";}
 
     
     if (!empty($errors)) {
@@ -44,14 +47,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $username = $_POST['username'];
                 $nome = $_POST['nome'];
                 $cognome = $_POST['cognome'];
-                $eta = $_POST['eta']; 
+                $eta = $_POST['dataNascita']; 
                 $indirizzo = $_POST['indirizzo']; 
                 $email = $_POST['email'];  
                 $password = $_POST['password']; 
                 $confermapassword = $_POST['confermaPassword']; 
 
                 $result = $DBOperation->registerUser($username, $password, $nome, $cognome, $eta, $indirizzo, $email);
-             //mettere variabili di sessione in caso di errori + quella generale di errore per capire se ce ne sono
+                //mettere variabili di sessione in caso di errori
                 if($result){
                     $_SESSION['username'] = $username;
                     $_SESSION['is_admin'] = false; #solo i non admin si possono registrare

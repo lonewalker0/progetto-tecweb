@@ -56,6 +56,7 @@ if (!isset($_SESSION["username"]) ) {
     } elseif (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] === false) {
         // Non-admin-specific content
         $main = "<h1>Il mio account</h1>";
+        $main .= file_get_contents(__DIR__ . '/html/sidebar.html');
         $accountOperation= new accountOperation();
         $main.=$accountOperation->getMain();
     }

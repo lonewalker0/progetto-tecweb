@@ -8,7 +8,7 @@ CREATE TABLE users (
     is_admin BOOLEAN NOT NULL,
     nome VARCHAR(255),
     cognome VARCHAR(255),
-    eta INT,
+    data_nascita DATE,
     indirizzo VARCHAR(255),
     email VARCHAR(255) UNIQUE
 );
@@ -16,8 +16,8 @@ CREATE TABLE users (
 INSERT INTO users (username, password, is_admin) VALUES 
 ('admin', '$2y$10$sJAmdb2vfldMZ3hFwPJCVOR5GoUKLocPQsGhlouVHw8sx8V5WnSuO', 1);
 
-INSERT INTO users (username, password, is_admin, nome, cognome,eta, indirizzo,email) VALUES
-('user','$2y$10$8D4EMtUVTkZfOgKcqqXOtubJyVKSPpyku96UT20NGo7znAb6pabQS',0,'user','user',99,'via dei crucchi 45','user@user.com');
+INSERT INTO users (username, password, is_admin, nome, cognome,data_nascita, indirizzo,email) VALUES
+('user','$2y$10$8D4EMtUVTkZfOgKcqqXOtubJyVKSPpyku96UT20NGo7znAb6pabQS',0,'user','user','1990-01-15','via dei crucchi 45','user@user.com');
 
 CREATE TABLE Programma (
     artist_name VARCHAR(100) PRIMARY KEY,

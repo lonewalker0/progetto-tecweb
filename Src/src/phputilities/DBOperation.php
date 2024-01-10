@@ -61,7 +61,34 @@ class DBOperation{
         }
     }
 
-    public function registerUser($username, $password, $nome, $cognome, $eta, $indirizzo, $email) {
+    public function checkIfEmailExists($email) {
+        try {
+            $this->db->openConnection();
+    
+            // Check if the username already exists
+            $checkQuery = "SELECT 1 FROM users WHERE email = ? LIMIT 1";
+            $checkStmt = mysqli_prepare($this->db->getConnection(), $checkQuery);
+    
+            if (!$checkStmt) {
+                throw new Exception("Error preparing the query: " . mysqli_error($this->db->getConnection()));
+            }
+    
+            mysqli_stmt_bind_param($checkStmt, "s", $email);
+            mysqli_stmt_execute($checkStmt);
+    
+            $checkResult = mysqli_stmt_get_result($checkStmt);
+    
+            return (bool) mysqli_fetch_assoc($checkResult);
+    
+        } catch (Exception $e) {
+            error_log("Error checking if email exists: " . $e->getMessage());
+            return false;
+        } finally {
+            $this->db->closeConnection();
+        }
+    }
+
+    public function registerUser($username, $password, $nome, $cognome, $datanascita, $indirizzo, $email) {
         try {
             $this->db->openConnection();
     
@@ -86,14 +113,14 @@ class DBOperation{
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
             // Insert the user into the database with is_admin set to false
-            $insertQuery = "INSERT INTO users (username, password, is_admin, nome, cognome, eta, indirizzo, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $insertQuery = "INSERT INTO users (username, password, is_admin, nome, cognome, data_nascita, indirizzo, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $insertStmt = mysqli_prepare($this->db->getConnection(), $insertQuery);
     
             if (!$insertStmt) {
                 throw new Exception("Error preparing the query: " . mysqli_error($this->db->getConnection()));
             }
             $is_admin=0;
-            mysqli_stmt_bind_param($insertStmt, "ssississ", $username, $hashedPassword,$is_admin, $nome, $cognome, $eta, $indirizzo, $email);
+            mysqli_stmt_bind_param($insertStmt, "ssisssss", $username, $hashedPassword,$is_admin, $nome, $cognome, $datanascita, $indirizzo, $email);
             $insertSuccess = mysqli_stmt_execute($insertStmt);
     
             if (!$insertSuccess) {
@@ -152,7 +179,38 @@ class DBOperation{
             $this->db->closeConnection();
         }
     }
-
+    public function deleteUser($username) {
+        try {
+            $this->db->openConnection();
+    
+                
+            if ($username === 'admin') {
+                throw new Exception("Impossibile eliminare l'utente 'admin'.");
+            }
+    
+            $deleteQuery = "DELETE FROM users WHERE username = ?";
+            $deleteStmt = mysqli_prepare($this->db->getConnection(), $deleteQuery);
+    
+            if (!$deleteStmt) {
+                throw new Exception("Error preparing the query: " . mysqli_error($this->db->getConnection()));
+            }
+    
+            mysqli_stmt_bind_param($deleteStmt, "s", $username);
+            $deleteSuccess = mysqli_stmt_execute($deleteStmt);
+    
+            if (!$deleteSuccess) {
+                throw new Exception("Error during user deletion: " . mysqli_error($this->db->getConnection()));
+            }
+    
+            return true; 
+    
+        } catch (Exception $e) {
+            error_log("Error during user deletion: " . $e->getMessage());
+            return false;
+        } finally {
+            $this->db->closeConnection();
+        }
+    }
 
     public function isAdmin($username): bool {
         try {
@@ -293,7 +351,7 @@ public function getUserInfo($username) {
         $this->db->openConnection();
 
         // Esegui la query per ottenere le informazioni dell'utente
-        $query = "SELECT username, nome, cognome, eta, indirizzo, email FROM users WHERE username = ?";
+        $query = "SELECT username, nome, cognome, data_nascita, indirizzo, email FROM users WHERE username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
         if (!$stmt) {
