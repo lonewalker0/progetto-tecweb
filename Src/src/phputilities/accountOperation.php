@@ -91,6 +91,8 @@ class accountOperation {
                 } else {
                     $output .= "<p>Nessun ordine effettuato.</p>";
                 }
+                $output .="<h2>Elimina account</h2>";
+                $output .= "<p>Per eliminare account si rimanda a questa pagina<a href='eliminazione.php' tabindex=0>Eliminazione</a>";
                 
             }}
         return $output;}

@@ -179,7 +179,38 @@ class DBOperation{
             $this->db->closeConnection();
         }
     }
-
+    public function deleteUser($username) {
+        try {
+            $this->db->openConnection();
+    
+                
+            if ($username === 'admin') {
+                throw new Exception("Impossibile eliminare l'utente 'admin'.");
+            }
+    
+            $deleteQuery = "DELETE FROM users WHERE username = ?";
+            $deleteStmt = mysqli_prepare($this->db->getConnection(), $deleteQuery);
+    
+            if (!$deleteStmt) {
+                throw new Exception("Error preparing the query: " . mysqli_error($this->db->getConnection()));
+            }
+    
+            mysqli_stmt_bind_param($deleteStmt, "s", $username);
+            $deleteSuccess = mysqli_stmt_execute($deleteStmt);
+    
+            if (!$deleteSuccess) {
+                throw new Exception("Error during user deletion: " . mysqli_error($this->db->getConnection()));
+            }
+    
+            return true; 
+    
+        } catch (Exception $e) {
+            error_log("Error during user deletion: " . $e->getMessage());
+            return false;
+        } finally {
+            $this->db->closeConnection();
+        }
+    }
 
     public function isAdmin($username): bool {
         try {
