@@ -88,7 +88,7 @@ class DBOperation{
         }
     }
 
-    public function registerUser($username, $password, $nome, $cognome, $eta, $indirizzo, $email) {
+    public function registerUser($username, $password, $nome, $cognome, $datanascita, $indirizzo, $email) {
         try {
             $this->db->openConnection();
     
@@ -113,14 +113,14 @@ class DBOperation{
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
             // Insert the user into the database with is_admin set to false
-            $insertQuery = "INSERT INTO users (username, password, is_admin, nome, cognome, eta, indirizzo, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            $insertQuery = "INSERT INTO users (username, password, is_admin, nome, cognome, data_nascita, indirizzo, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $insertStmt = mysqli_prepare($this->db->getConnection(), $insertQuery);
     
             if (!$insertStmt) {
                 throw new Exception("Error preparing the query: " . mysqli_error($this->db->getConnection()));
             }
             $is_admin=0;
-            mysqli_stmt_bind_param($insertStmt, "ssississ", $username, $hashedPassword,$is_admin, $nome, $cognome, $eta, $indirizzo, $email);
+            mysqli_stmt_bind_param($insertStmt, "ssisssss", $username, $hashedPassword,$is_admin, $nome, $cognome, $datanascita, $indirizzo, $email);
             $insertSuccess = mysqli_stmt_execute($insertStmt);
     
             if (!$insertSuccess) {
@@ -320,7 +320,7 @@ public function getUserInfo($username) {
         $this->db->openConnection();
 
         // Esegui la query per ottenere le informazioni dell'utente
-        $query = "SELECT username, nome, cognome, eta, indirizzo, email FROM users WHERE username = ?";
+        $query = "SELECT username, nome, cognome, data_nascita, indirizzo, email FROM users WHERE username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
         if (!$stmt) {

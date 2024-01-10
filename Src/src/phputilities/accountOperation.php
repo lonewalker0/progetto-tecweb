@@ -26,7 +26,7 @@ class accountOperation {
             $htmlTemplate = file_get_contents(__DIR__ . '/../html/informazioniUtente.html');;           
             $output = str_replace("{{nome}}", $userInfo['nome'], $htmlTemplate);
             $output = str_replace("{{cognome}}", $userInfo['cognome'], $output);
-            $output = str_replace("{{eta}}", $userInfo['eta'], $output);
+            $output = str_replace("{{eta}}", $userInfo['data_nascita'], $output);
             $output = str_replace("{{indirizzo}}", $userInfo['indirizzo'], $output);
             $output = str_replace("{{email}}", $userInfo['email'], $output);
 

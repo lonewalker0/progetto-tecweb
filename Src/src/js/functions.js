@@ -190,13 +190,18 @@ function StringaValida(string) {
   return !pattern.test(string);
 }
 
-function isValidAge(age) {
-  if (!Number.isInteger(age) || age <= 0) {
-    return false;
-  }
+function isValidAge(dateOfBirth) {
+  var currentDate = new Date();
+  var birthdateArray = dateOfBirth.split("-");
+  var birthdate = new Date(birthdateArray[0], birthdateArray[1] - 1, birthdateArray[2]);
   var minAge = 16;
-  return age >= minAge;
+
+  var minBirthdate = new Date(currentDate);
+  minBirthdate.setFullYear(currentDate.getFullYear() - minAge);
+
+  return birthdate <= minBirthdate;
 }
+
 function isValidEmail(email) {
   // Pattern per la validazione dell'indirizzo email
   var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -349,8 +354,8 @@ function validazioneFormRegistrazione() {
   errorContainer.innerHTML = "";
   const nome = document.forms["RegistrationForm"]["nome"].value;
   const cognome = document.forms["RegistrationForm"]["cognome"].value;
-  const etastring = document.forms["RegistrationForm"]["eta"].value;
-  const eta = parseInt(etastring, 10);
+  const eta= document.forms["RegistrationForm"]["dataNascita"].value;
+  
   const indirizzo = document.forms["RegistrationForm"]["indirizzo"].value;
   const email = document.forms["RegistrationForm"]["email"].value;
   const username = document.forms["RegistrationForm"]["username"].value;
@@ -375,10 +380,10 @@ function validazioneFormRegistrazione() {
   }
   if (!isValidAge(eta)) {
     isValid = false;
-    document.getElementById("eta").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Devi avere almeno 16 per registrarti!");
+    document.getElementById("dataNascita").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "Devi avere almeno 16 anni per registrarti!");
   } else {
-    document.getElementById("eta").setAttribute("aria-invalid", "false");
+    document.getElementById("dataNascita").setAttribute("aria-invalid", "false");
   }
   if (!StringaValida(indirizzo)) {
     isValid = false;

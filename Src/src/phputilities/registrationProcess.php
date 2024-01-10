@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(!isValidEmail($_POST['email'])) {
         $errors[] = "Formato email non valido!";
     }
-    if(!isValidAge($_POST['eta'])){
+    if(!isValidAge($_POST['dataNascita'])){
         $errors[] = "Devi avere almeno 16 per registrarti!";
     }
     if ($_POST['password'] !== $_POST['confermaPassword']) {
@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $username = $_POST['username'];
                 $nome = $_POST['nome'];
                 $cognome = $_POST['cognome'];
-                $eta = $_POST['eta']; 
+                $eta = $_POST['dataNascita']; 
                 $indirizzo = $_POST['indirizzo']; 
                 $email = $_POST['email'];  
                 $password = $_POST['password']; 
