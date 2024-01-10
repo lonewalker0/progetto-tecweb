@@ -58,4 +58,14 @@ function isValidAge($dateOfBirth) {
     return $birthdate <= $minBirthdate;
 }
 
+function verificaValore($valore) {
+    
+        if ($valore >= 1 && $valore <= 5) {
+            return true;
+        } else {
+            return false; 
+        }
+    
+}
+
 ?>

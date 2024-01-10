@@ -26,8 +26,9 @@
 <form
   action="phputilities/processa_acquisto.php"
   method="post"
-  id="formCompraBiglietto"
+  id="formCompraBiglietto-{{id}}"
 >
+
   <fieldset>
     <legend>Acquisto</legend>
     <label for="quantita-1">Quantità:</label>
@@ -36,7 +37,7 @@
       id="quantita-{{id}}"
       name="quantita"
       min="1"
-      max="5"
+      
       required
     />
   </fieldset>

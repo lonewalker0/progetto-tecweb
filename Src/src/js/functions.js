@@ -13,6 +13,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  var formQuantita = document.querySelectorAll('[id^="formCompraBiglietto-"]');
+
+  formQuantita.forEach(function (form) {
+    // Aggiungi un gestore di eventi al form
+    form.addEventListener("submit", function (event) {
+      // Ottieni l'id del modulo
+      const id = form.id.split("-")[1];
+
+      console.log("Form ID:", id); // Log dell'id del modulo
+
+      event.preventDefault();
+      if (validazioneformquantita(id)) {
+        console.log("Validazione positiva, invio il modulo.");
+        event.target.submit();
+      } else {
+        console.log("Validazione negativa, impedisco l'invio del modulo.");
+        event.preventDefault(); // Evita l'invio del modulo se la validazione è negativa
+      }
+      return false;
+    });
+  });
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("formAggiuntaEvento");
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -80,6 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
   var newPasswordField = document.getElementById("nuova_password");
   var confirmPasswordField = document.getElementById("conferma_password2");
@@ -93,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   // Controlla se siamo sulla pagina account.php prima di eseguire il codice
@@ -273,9 +304,22 @@ function StringaValida(string) {
   return !pattern.test(string);
 }
 
+
 function isAllowedDate(dateString) {
   const allowedDates = ["2024-07-05", "2024-07-06", "2024-07-07"];
   return allowedDates.includes(dateString);
+}
+
+function verificaValore(valore) {
+  if (Number.isInteger(valore)) {
+      if (valore >= 1 && valore <= 5) {
+          return true;
+      } else {
+          return false;
+      }
+  } else {
+      return false;
+  }
 }
 
 function isValidAge(dateOfBirth) {
@@ -635,6 +679,23 @@ function validazioneFormEliminazioneUser() {
     document.getElementById("password").setAttribute("aria-invalid", "false");
   }
   return isValid;
+}
+
+function validazioneformquantita(id){
+  let quantitaInput=document.forms["formCompraBiglietto-"+id]["quantita-"+id].value;
+  const errorContainer = document.getElementById("purchase_result");
+  let quantitaNumero = parseInt(quantitaInput, 10);
+  let isValid=true;
+  if(!verificaValore(quantitaNumero)){
+    isValid=false;
+    document.getElementById("quantita-"+id).setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "deve essere un intero compreso tra 1 e 5!");
+  }else{
+    document.getElementById("quantita-"+id).setAttribute("aria-invalid", "false");
+    
+  }
+  return isValid;
+
 }
 //calcolare il prezzo totale del biglietto, prima di inviare l'acquisto al submit
 function calculateTotalPrice(id) {
