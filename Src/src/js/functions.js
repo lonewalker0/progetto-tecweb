@@ -39,6 +39,19 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("formeliminaaccount");
+  if (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (validazioneFormEliminazioneUser() && confirm("Sei sicuro di voler eliminare l'account?")) {
+        event.target.submit();
+      }
+      return false;
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("RegistrationForm");
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -515,6 +528,21 @@ function validazioneFormUpdate() {
     }
   }
 
+  return isValid;
+}
+
+function validazioneFormEliminazioneUser(){
+  const errorContainer = document.getElementById("errorContainerEliminazione");
+  errorContainer.innerHTML = "";
+  const password = document.forms["formeliminaaccount"]["password"].value;
+  let isValid = true;
+  if (!StringaValida(password)) {
+    isValid = false;
+    document.getElementById("password").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "Non è accettato codice HTML!");
+  } else {
+    document.getElementById("password").setAttribute("aria-invalid", "false");
+  }
   return isValid;
 }
 //calcolare il prezzo totale del biglietto, prima di inviare l'acquisto al submit
