@@ -9,7 +9,7 @@
 }
 
 :root {
-  --verde-lime: #B1DD40;
+  --verde-lime: #b1dd40;
   --verde-scuro: #111606;
 }
 
@@ -63,7 +63,7 @@ h3 {
 header {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 1920px;
   z-index: 10;
   margin-top: 0;
 
@@ -78,7 +78,11 @@ header {
   padding: 1rem;
   margin: 1rem 4rem 1rem 4rem;
   height: 5rem;
+<<<<<<< HEAD
   border-radius: 1rem;
+=======
+  border-radius: 2rem;
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
   background-color: rgba(24, 31, 8, 0.85);
 
   /* border: solid;
@@ -88,7 +92,10 @@ header {
 #left-group {
   display: flex;
   align-items: center;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
   /* border: solid;
   border-color: white; */
 }
@@ -143,6 +150,12 @@ header {
   max-width: 100%;
 }
 
+#vertical-bar-container {
+  height: 50px;
+  width: 4px;
+  background-color: var(--verde-lime);
+}
+
 #countdown-data {
   display:flex;
   align-items: center;
@@ -153,6 +166,7 @@ header {
   font-size: 30px;
 }
 
+<<<<<<< HEAD
 .show
 {
   display: block;
@@ -161,6 +175,14 @@ header {
 .hide
 {
   display:none;
+=======
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
 }
 
 .icons {
@@ -187,8 +209,8 @@ header {
   transform: scale(1.25);
 }
 
-.logo a:hover,
-.logo a:focus {
+#logo a:hover,
+#logo a:focus {
   transform: scale(1.1); /* Slight increase */
 }
 
@@ -331,12 +353,20 @@ div#footer-content {
   font-size: 1.4rem;
   font-weight: 200;
 }
+<<<<<<< HEAD
 #footer-content p
 {
   margin-top: 10px;
 }
 #footer-content a {
   display:inline-block;
+=======
+#footer-content p {
+  margin-top: 10px;
+}
+#footer-content a {
+  display: inline-block;
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
   width: 140px;
   color: var(--verde-lime);
 }
@@ -345,12 +375,17 @@ div#footer-content {
   color: var(--verde-lime);
 }
 #footer-content a #privacy-animation,
+<<<<<<< HEAD
 #footer-content a #privacy-animation2
 {
+=======
+#footer-content a #privacy-animation2 {
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
   margin-top: 28px;
   background-color: var(--verde-lime);
   transition: all 0.5s ease-in-out;
   position: absolute;
+<<<<<<< HEAD
   width:0;
   height:2px;
 }
@@ -366,6 +401,20 @@ div#footer-content {
 #footer-content a:hover > #privacy-animation2
 {
   width:75px;
+=======
+  width: 0;
+  height: 2px;
+}
+#footer-content a #privacy-animation {
+  left: 50%;
+}
+#footer-content a #privacy-animation2 {
+  right: 50%;
+}
+#footer-content a:hover > #privacy-animation,
+#footer-content a:hover > #privacy-animation2 {
+  width: 75px;
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
 }
 
 /* Main */
@@ -373,7 +422,7 @@ div#footer-content {
 .event-container {
   margin: 0;
   padding: 1rem;
-  
+
   border: solid;
   border-color: orange;
 }
@@ -400,23 +449,24 @@ div#footer-content {
   border-color: red; */
 }
 
-div.programma-animation, div.programma-animation2{
-    margin-top: 10px;
-    background-color: var(--verde-lime);
-    transition: all 1s ease-in-out;
-    position: absolute;
-    width:0;
-    height:2px;
+div.programma-animation,
+div.programma-animation2 {
+  margin-top: 10px;
+  background-color: var(--verde-lime);
+  transition: all 1s ease-in-out;
+  position: absolute;
+  width: 0;
+  height: 2px;
 }
-div.programma-animation{
-    left:50%;
+div.programma-animation {
+  left: 50%;
 }
-div.programma-animation2{
-    right:50%;
+div.programma-animation2 {
+  right: 50%;
 }
 div.programma-animation.active,
-div.programma-animation2.active{
-  width:48%;
+div.programma-animation2.active {
+  width: 48%;
 }
 .entry-info {
   flex: 1;
@@ -426,7 +476,7 @@ div.programma-animation2.active{
   color: var(--verde-scuro);
   font-size: 1.5rem;
   font-weight: 400;
-  
+
   /* border: solid;
   border-color: brown; */
 }
@@ -437,7 +487,7 @@ div.programma-animation2.active{
   font-weight: bold;
   margin-bottom: 1rem;
   color: white;
-  
+
   /* border: solid;
   border-color: orange; */
 }
@@ -461,22 +511,35 @@ div.programma-animation2.active{
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
 }*/
+<<<<<<< HEAD
 #carosello-foto
 {
+=======
+#carosello-foto {
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
   position: relative;
   padding: 10px;
   margin-top: 1.5em;
 }
 #foto0,
 #foto1,
+<<<<<<< HEAD
 #foto2
 {
   width:600px;
+=======
+#foto2 {
+  width: 600px;
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
   height: 600px;
   background-position: center;
   background-size: cover;
   background-position: center;
+<<<<<<< HEAD
   margin-left:auto;
+=======
+  margin-left: auto;
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
   margin-right: auto;
 }
 #foto0 {
@@ -491,9 +554,14 @@ div.programma-animation2.active{
   background-image: url("../assets/artisti/tony2milli.jpg");
 }
 
+<<<<<<< HEAD
 .foto-hide
 {
   display:none;
+=======
+.foto-hide {
+  display: none;
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
 }
 .puntini {
   height: 15px;
@@ -606,13 +674,17 @@ div.programma-animation2.active{
 
 #chi-siamo-container {
   padding: 1rem;
-  
+
   border: solid;
   border-color: orange;
 }
 
+<<<<<<< HEAD
 #storia-festival
 {
+=======
+#storia-festival {
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
@@ -621,10 +693,16 @@ div.programma-animation2.active{
   border-radius: 4px;
 }
 
+<<<<<<< HEAD
 #storia-festival p
 {
   font-weight: 100;
   text-align:justify;
+=======
+#storia-festival p {
+  font-weight: 100;
+  text-align: justify;
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
 }
 
 #chi-siamo-contenuto {
@@ -635,7 +713,7 @@ div.programma-animation2.active{
   padding-top: 3rem;
   background-color: var(--verde-lime);
   border-radius: 4px;
-  
+
   border: solid;
   border-color: yellow;
 }
@@ -649,6 +727,7 @@ div.programma-animation2.active{
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
 
+<<<<<<< HEAD
   border: solid;
   border-color: white;
 }
@@ -658,19 +737,38 @@ div.programma-animation2.active{
   color: var(--verde-scuro);
   
   border: solid;
+=======
+  border: solid;
+  border-color: white;
+}
+
+#chi-siamo-testo {
+  text-align: justify;
+  color: var(--verde-scuro);
+
+  border: solid;
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
   border-color: black;
 }
 
 #ringraziamenti {
   font-weight: bold;
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
   border: solid;
   border-color: orange;
 }
 
 #ul-ringraziamenti {
   list-style: none;
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
   border: solid;
   border-color: yellow;
 }
@@ -813,8 +911,12 @@ main {
 }
 /*Privacy Policy*/
 
+<<<<<<< HEAD
 div#privacy-container
 {
+=======
+div#privacy-container {
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
   display: block;
   background-color: var(--verde-lime);
   color: var(--verde-scuro);
@@ -826,6 +928,7 @@ div#privacy-container
 }
 div#privacy-container h2,
 div#privacy-container h3,
+<<<<<<< HEAD
 div#privacy-container h4
 {
   padding-left:0;
@@ -838,6 +941,17 @@ div#privacy-container ul li
 {
   margin-top: 4rem;
   color:var(--verde-lime);
+=======
+div#privacy-container h4 {
+  padding-left: 0;
+}
+div#privacy-container ul li {
+  margin-left: 25px;
+}
+#privacy-title {
+  margin-top: 4rem;
+  color: var(--verde-lime);
+>>>>>>> 9af87ff54735379434f11595f6bd273ca0dc9b4a
   font-weight: 400;
   font-weight: bold;
   margin-top: 190px;

@@ -125,7 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
 if (window.location.pathname === "/index.php") {
   document.addEventListener("DOMContentLoaded", function () {
     carosello();
@@ -164,6 +163,7 @@ function countdownFestival() {
 function triggerView() {
   const df = document.getElementById("dataFestival");
   const cd = document.getElementById("intervalloFestival");
+
   let type = true;
   setInterval(() => {
     if (type) {
