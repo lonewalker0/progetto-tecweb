@@ -86,7 +86,7 @@ header {
 }
 
 #left-group {
-  display:flex;
+  display: flex;
   align-items: center;
   /* border: solid;
   border-color: white; */
@@ -142,7 +142,7 @@ header {
   max-width: 100%;
 }
 
-#vertical-bar-container{
+#vertical-bar-container {
   height: 50px;
   width: 4px;
   background-color: var(--verde-lime);

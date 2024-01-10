@@ -163,6 +163,7 @@ function countdownFestival() {
 function triggerView() {
   const df = document.getElementById("dataFestival");
   const cd = document.getElementById("intervalloFestival");
+
   let type = true;
   setInterval(() => {
     if (type) {
