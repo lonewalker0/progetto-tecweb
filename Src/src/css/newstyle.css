@@ -9,9 +9,8 @@
 }
 
 :root {
-  --verde-lime: #B1DD40;
+  --verde-lime: #b1dd40;
   --verde-scuro: #111606;
-  --background-opacity: #1F280A;
 }
 
 img {
@@ -64,12 +63,12 @@ h3 {
 header {
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 1920px;
   z-index: 10;
   margin-top: 0;
-  
-  border: solid;
-  border-color: blue;
+
+  /* border: solid;
+  border-color: blue; */
 }
 
 #flexContainerHeader {
@@ -79,16 +78,18 @@ header {
   padding: 1rem;
   margin: 1rem 4rem 1rem 4rem;
   height: 5rem;
-  border-radius: 1rem;
-  background-color: var(--background-opacity);
+  border-radius: 2rem;
+  background-color: rgba(24, 31, 8, 0.85);
 
-  border: solid;
-  border-color: purple;
+  /* border: solid;
+  border-color: purple; */
 }
 
 #left-group {
   display: flex;
   align-items: center;
+  /* border: solid;
+  border-color: white; */
 }
 
 #logo a {
@@ -141,6 +142,12 @@ header {
   max-width: 100%;
 }
 
+#vertical-bar-container {
+  height: 50px;
+  width: 4px;
+  background-color: var(--verde-lime);
+}
+
 #countdown-data {
   display: flex;
   align-items: center;
@@ -151,44 +158,22 @@ header {
   font-size: 30px;
 }
 
-#vertical-bar-container {
-  border-left: 5px solid var(--verde-lime);
-  height: 50px;
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }
 
 .icons {
   display: flex;
   align-items: center;
+  margin-top: 1rem;
   padding: 2px;
-}
 
-/* Usa la larghezza critica del contenitore .nav come punto di rottura */
-@media (max-width: 770px) {
-  .nav {
-    justify-content: center; /* Center align the entire navigation container */
-  }
-
-  .left-group {
-    flex-direction: column; /* Stack the children of .left-group vertically */
-    align-items: center; /* Center align the items horizontally within .left-group */
-    margin-bottom: 1rem; /* Add some space below .left-group, if needed */
-  }
-
-  .icons {
-    display: none; /* Hide icons at this breakpoint */
-  }
-
-  .vertical-bar {
-    display: none;
-  }
-
-  .logo a {
-    max-height: none; /* Remove max-height restriction for smaller screens */
-  }
-
-  .logo img {
-    max-height: 150px; /* You can adjust the size for smaller screens if needed */
-  }
+  /* border: solid;
+  border-color: violet; */
 }
 
 .icons img {
@@ -205,15 +190,15 @@ header {
   transform: scale(1.25);
 }
 
-.logo a:hover,
-.logo a:focus {
+#logo a:hover,
+#logo a:focus {
   transform: scale(1.1); /* Slight increase */
 }
 
 /* Navigation Menu */
 
 .menu {
-  top: 7rem;
+  top: 6rem;
   position: fixed;
   width: calc(100% - 8rem);
   margin: 1rem 4rem 1rem 4rem;
@@ -225,11 +210,11 @@ header {
   font-weight: 400;
   font-weight: bold;
   z-index: 10;
-  background-color: var(--background-opacity);
+  background-color: rgba(24, 31, 8, 0.85);
   border-radius: 1rem;
 
-  border: solid;
-  border-color: red;
+  /* border: solid;
+  border-color: red; */
 }
 
 .menu ul {
@@ -287,7 +272,7 @@ nav.menu a:hover > div#punto-dom {
 
 #breadcrumb {
   position: relative;
-  top: 12rem;
+  top: 10rem;
   display: flex;
   width: 100%;
   height: 2em;
@@ -297,8 +282,8 @@ nav.menu a:hover > div#punto-dom {
   display: flex;
   align-items: center;
 
-  border: solid;
-  border-color: brown;
+  /* border: solid;
+  border-color: brown; */
 }
 
 #breadcrumb p {
@@ -320,7 +305,6 @@ footer {
   flex-basis: auto;
   text-align: center;
   padding: 2rem 0 2rem 0;
-
   border: solid;
   border-color: green;
 }
@@ -346,18 +330,40 @@ footer {
   transform: scale(1.25);
 }
 
-#footer-content {
+div#footer-content {
   font-size: 1.4rem;
   font-weight: 200;
-  margin-right: 10px;
 }
-
+#footer-content p {
+  margin-top: 10px;
+}
 #footer-content a {
+  display: inline-block;
+  width: 140px;
   color: var(--verde-lime);
 }
 
 #footer-content a:visited {
   color: var(--verde-lime);
+}
+#footer-content a #privacy-animation,
+#footer-content a #privacy-animation2 {
+  margin-top: 28px;
+  background-color: var(--verde-lime);
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  width: 0;
+  height: 2px;
+}
+#footer-content a #privacy-animation {
+  left: 50%;
+}
+#footer-content a #privacy-animation2 {
+  right: 50%;
+}
+#footer-content a:hover > #privacy-animation,
+#footer-content a:hover > #privacy-animation2 {
+  width: 75px;
 }
 
 /* Main */
@@ -365,7 +371,7 @@ footer {
 .event-container {
   margin: 0;
   padding: 1rem;
-  
+
   border: solid;
   border-color: orange;
 }
@@ -392,23 +398,24 @@ footer {
   border-color: red; */
 }
 
-div.programma-animation, div.programma-animation2{
-    margin-top: 10px;
-    background-color: var(--verde-lime);
-    transition: all 1s ease-in-out;
-    position: absolute;
-    width:0;
-    height:2px;
+div.programma-animation,
+div.programma-animation2 {
+  margin-top: 10px;
+  background-color: var(--verde-lime);
+  transition: all 1s ease-in-out;
+  position: absolute;
+  width: 0;
+  height: 2px;
 }
-div.programma-animation{
-    left:50%;
+div.programma-animation {
+  left: 50%;
 }
-div.programma-animation2{
-    right:50%;
+div.programma-animation2 {
+  right: 50%;
 }
 div.programma-animation.active,
-div.programma-animation2.active{
-  width:48%;
+div.programma-animation2.active {
+  width: 48%;
 }
 .entry-info {
   flex: 1;
@@ -418,7 +425,7 @@ div.programma-animation2.active{
   color: var(--verde-scuro);
   font-size: 1.5rem;
   font-weight: 400;
-  
+
   /* border: solid;
   border-color: brown; */
 }
@@ -429,7 +436,7 @@ div.programma-animation2.active{
   font-weight: bold;
   margin-bottom: 1rem;
   color: white;
-  
+
   /* border: solid;
   border-color: orange; */
 }
@@ -440,7 +447,7 @@ div.programma-animation2.active{
   display: none;
 }
 
-.carosello-block {
+/*.carosello-block {
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -452,20 +459,50 @@ div.programma-animation2.active{
   align-items: center;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+}*/
+#carosello-foto {
+  position: relative;
+  padding: 10px;
+  margin-top: 1.5em;
+}
+#foto0,
+#foto1,
+#foto2 {
+  width: 600px;
+  height: 600px;
+  background-position: center;
+  background-size: cover;
+  background-position: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#foto0 {
+  background-image: url("../assets/artisti/tony2milli.jpg");
 }
 
+#foto1 {
+  background-image: url("../assets/artisti/tony2milli.jpg");
+}
+
+#foto2 {
+  background-image: url("../assets/artisti/tony2milli.jpg");
+}
+
+.foto-hide {
+  display: none;
+}
 .puntini {
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: #717171;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 1s ease;
 }
 
 .active {
-  background-color: #717171;
+  background-color: var(--verde-lime);
 }
 
 .carosello-puntini {
@@ -473,34 +510,27 @@ div.programma-animation2.active{
 }
 
 .carosello-dinamico {
-  position: static;
+  position: relative;
   padding: 10px;
   margin-top: 1.5em;
 }
 
 @keyframes fade {
-  from {
+  0% {
     opacity: 0;
   }
-  to {
+  50% {
     opacity: 1;
   }
-}
-@keyframes fade-reverse
-{
-  from{
-    opacity:1;
-  }
-  to
-  {
+  100% {
     opacity: 0;
   }
 }
 
 .fade {
-  animation-name: fade, fade-reverse;
-  animation-duration: 2s, 2s;
-  animation-delay: 0s, 2s;
+  animation-name: fade;
+  animation-duration: 4s;
+  animation-iteration-count: infinite, infinite;
 }
 
 /* Sponsor */
@@ -570,65 +600,72 @@ div.programma-animation2.active{
 /* Chi siamo */
 
 #chi-siamo-container {
-  margin: 0 auto;
   padding: 1rem;
-  
+
   border: solid;
   border-color: orange;
 }
 
-#img-chi-siamo {
-  width: 800px;
-  height: auto;
-  display: block;
-  margin: 0;
-  margin-bottom: 2rem;
+#storia-festival {
+  max-width: 800px;
+  margin: 0 auto;
   padding: 1rem;
+  background-color: var(--verde-lime);
+  color: var(--verde-scuro);
   border-radius: 4px;
-  background-color: var(--background-opacity);
-  
-  border: solid;
-  border-color: white;
+}
+
+#storia-festival p {
+  font-weight: 100;
+  text-align: justify;
 }
 
 #chi-siamo-contenuto {
   max-width: 900px;
   margin: 0 auto;
-  padding: 1rem;
   text-align: left;
-  background-color: var(--verde-scuro);
+  padding: 1rem;
+  padding-top: 3rem;
+  background-color: var(--verde-lime);
   border-radius: 4px;
-  
+
   border: solid;
   border-color: yellow;
 }
 
-#chi-siamo-testo {
-  margin-bottom: 2rem;
-  text-align: justify;
-  padding: 1rem;
-  border-radius: 1rem;
-  background-color: var(--verde-lime);
-  color: var(--verde-scuro);
-  
+#img-chi-siamo {
+  display: block;
+  margin: 0 auto;
+  width: 800px;
+  height: auto;
+  margin-bottom: 3rem;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+
   border: solid;
-  border-color: greenyellow;
+  border-color: white;
+}
+
+#chi-siamo-testo {
+  text-align: justify;
+  color: var(--verde-scuro);
+
+  border: solid;
+  border-color: black;
 }
 
 #ringraziamenti {
   font-weight: bold;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  
-  /* border: solid;
-  border-color: orange; */
+
+  border: solid;
+  border-color: orange;
 }
 
 #ul-ringraziamenti {
   list-style: none;
-  
-  /* border: solid;
-  border-color: yellow; */
+
+  border: solid;
+  border-color: yellow;
 }
 
 /* Location */
@@ -646,13 +683,12 @@ div.programma-animation2.active{
 
 #location-contenuto {
   padding: 2rem;
-  padding-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--verde-lime);
   color: var(--verde-scuro);
-  border-radius: 1rem;
+  border-radius: 4px;
 
   border: solid;
   border-color: yellow;
@@ -699,8 +735,8 @@ div.programma-animation2.active{
   flex-direction: column;
   align-items: center;
 
-  border: solid;
-  border-color: orange;
+  /* border: solid;
+  border-color: orange; */
 }
 
 .faq-section {
@@ -722,8 +758,8 @@ div.programma-animation2.active{
   flex-wrap: wrap;
   justify-content: center;
 
-  border: solid;
-  border-color: white;
+  /* border: solid;
+  border-color: white; */
 }
 
 .faq-item {
@@ -767,4 +803,31 @@ main {
   min-height: 100%; /* Optional: sets the maximum height for the main section */
   padding: 0; /* Optional: adds some space inside the main section */
   background-color: var(--light-bg-color);
+}
+/*Privacy Policy*/
+
+div#privacy-container {
+  display: block;
+  background-color: var(--verde-lime);
+  color: var(--verde-scuro);
+  border-radius: 1rem;
+  padding: 4rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+  margin-top: 1rem;
+}
+div#privacy-container h2,
+div#privacy-container h3,
+div#privacy-container h4 {
+  padding-left: 0;
+}
+div#privacy-container ul li {
+  margin-left: 25px;
+}
+#privacy-title {
+  margin-top: 4rem;
+  color: var(--verde-lime);
+  font-weight: 400;
+  font-weight: bold;
+  margin-top: 190px;
 }
