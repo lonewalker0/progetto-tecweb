@@ -161,51 +161,41 @@ function countdownFestival() {
 function triggerView() {
   const df = document.getElementById("dataFestival");
   const cd = document.getElementById("intervalloFestival");
-  let type = true;
+
   setInterval(() => {
-    
-    if (type) {
+    if (df.classList.contains("show")) {
       df.classList.remove("show");
       df.classList.add("hide");
       cd.classList.remove("hide");
       cd.classList.add("show");
     } else {
-      df.classList.remove("hide");
       df.classList.add("show");
-      cd.classList.remove("show");
+      df.classList.remove("hide");
       cd.classList.add("hide");
+      cd.classList.remove("show");
     }
-    type = !type;
   }, 4000);
 }
 
 function carosello() {
-  let caroselloimg;
-  let idfoto = "foto";
   let i;
-  let img = document.querySelector('#carosello-foto');                //mi rappresenta tutto il carosello, nel suo insieme (senza comprendere i puntini)                        
-  let imgtot = img.querySelectorAll('*').length;                      //mi rappresenta il numero di foto del carosello
+  let img = document.getElementsByClassName("carosello-none");
   let puntini = document.getElementsByClassName("puntini");
-  
-  for (i = 0; i < imgtot; i++) {
+  for (i = 0; i < img.length; i++) {
     if (caroselloj > 0) {
-      caroselloimg = document.getElementById(idfoto + i);             //mi rappresenta la foto in cui sto lavorando in quel momento
-      caroselloimg.classList.remove("fade");
-      caroselloimg.classList.add("foto-hide");
+      img[i].classList.remove("carosello-block");
     }
   }
   imgIndex++;
-  if (imgIndex > imgtot) {
+  if (imgIndex > img.length) {
     imgIndex = 1;
   }
   for (i = 0; i < puntini.length; i++) {
     puntini[i].className = puntini[i].className.replace(" active", "");
   }
-  for (i = 0; i < imgtot; i++) {
+  for (i = 0; i < img.length; i++) {
     if (i === imgIndex - 1) {
-      caroselloimg = document.getElementById(idfoto + i)
-      caroselloimg.classList.add("fade");
-      caroselloimg.classList.remove("foto-hide");
+      img[imgIndex - 1].classList.add("carosello-block");
       puntini[imgIndex - 1].className += " active";
     }
   }
