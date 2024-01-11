@@ -80,7 +80,7 @@ CREATE TABLE Shop (
 
 INSERT INTO Shop (productImage, productName, productColor, productPrice, productLongDescription)
 VALUES
-('assets/merchitem/redT.png', 'Festival T-Shirt', 'Rosso', 19.99, 'Maglietta rossa comoda e alla moda, perfetta per i festival.'),
+('assets/merchitem/redT.png', 'Festival T-Shirt', 'Rosso', 19.99, 'T-shirt a maniche corta comoda e perfetta per i festival.'),
 
 ('assets/merchitem/bluecap.png', 'Braccialetto in Pelle', 'Nero', 9.99, 'Braccialetto in pelle nera con logo del festival.'),
 

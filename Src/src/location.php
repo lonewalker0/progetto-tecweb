@@ -18,7 +18,7 @@ $main = "
             </iframe>
 
             <div id='testo-location'>
-                <h2>Dove si svolge il technoLum250 Festival?</h2>
+                <h2 id='h2-location'>Dove si svolge il technoLum250 Festival?</h2>
                 <p>Il festival si svolge nel cuore della zona universitaria di Padova, più precisamente nel Dipartimento di Matematica. Indirizzo:</p>
                 <p id='indirizzo'>Via Luigi Luzzatti, 35121 Padova PD</p>
             </div>

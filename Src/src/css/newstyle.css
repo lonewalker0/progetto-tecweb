@@ -33,14 +33,14 @@ h1 {
   font-size: 3rem;
   font-weight: 500;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 1rem;
 }
 
 h2 {
   text-align: center;
   padding: 1rem;
   color: var(--verde-nero);
-  font-size: 2.6rem;
+  font-size: 2.2rem;
   font-weight: 500;
   font-weight: bold;
 }
@@ -304,9 +304,10 @@ footer {
   flex-shrink: 0;
   flex-basis: auto;
   text-align: center;
-  padding: 2rem 0 2rem 0;
-  border: solid;
-  border-color: green;
+  padding: 1rem 0 2rem 0;
+
+  /* border: solid;
+  border-color: green; */
 }
 
 .icons {
@@ -671,27 +672,23 @@ div.programma-animation2.active {
 /* Location */
 
 #location-container {
-  margin: 0 auto;
   padding: 1rem;
-  padding-bottom: 0;
-  background-color: var(--light-bg-color);
-  color: var(--dark-bg-color);
 
-  border: solid;
-  border-color: orange;
+  /* border: solid;
+  border-color: orange; */
 }
 
 #location-contenuto {
-  padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--verde-lime);
-  color: var(--verde-scuro);
+  margin: 1rem;
+  padding: 2rem;
   border-radius: 4px;
+  background-color: var(--verde-lime);
 
-  border: solid;
-  border-color: yellow;
+  /* border: solid;
+  border-color: yellow; */
 }
 
 #map {
@@ -701,28 +698,104 @@ div.programma-animation2.active {
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
   border: none;
 
-  border: solid;
-  border-color: white;
+  /* border: solid;
+  border-color: white; */
 }
 
 #testo-location {
-  max-width: 60%;
+  max-width: 50%;
   padding: 1rem;
-  margin-left: 2rem;
-  border-radius: 4px;
+  color: var(--verde-scuro);
 
   /* border: solid;
-    border-color: orange; */
+  border-color: red; */
+}
+
+#h2-location {
+  text-align: left;
 }
 
 #testo-location p {
   padding-left: 1rem;
   padding-bottom: 0.5rem;
+
+  /* border: solid;
+  border-color: purple; */
 }
 
 #indirizzo {
   font-style: italic;
 }
+
+/* Merch */
+
+.product {
+  margin: 4rem 0 4rem 0;
+  color: var(--verde-lime);
+
+  /* border: solid;
+  border-color: blue; */
+}
+
+#live-info {
+  font-style: italic;
+  text-align: center;
+
+  /* border: solid;
+  border-color: white; */
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 4px;
+  background-color: var(--verde-lime);
+
+  /* border: solid;
+  border-color: violet; */
+}
+
+.product-image {
+  width: 600px;
+  height: 600px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+
+  /* border: solid;
+  border-color: purple; */
+}
+
+.entry-info  {
+  color: var(--verde-scuro);
+
+  /* border: solid;
+  border-color: red; */
+}
+
+/* .product-details {
+  border: solid;
+  border-color: orange;
+} */
+
+.product-title {
+  display: none;
+
+  /* border: solid;
+  border-color: yellow; */
+}
+
+.definition-term {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+
+
+
+
 
 /* Domande */
 
