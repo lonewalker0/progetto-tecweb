@@ -6,8 +6,19 @@ function isValidHour($hour) {
     return (bool) preg_match('/^([0-1][0-9]|2[0-3]):([0-5][0-9])$/', $hour);
 }
 
-function isValidString($string) {
-    return !preg_match('/<[^>]*>|&[^;]+;/', $string);
+function isValidString($string, $minLength, $maxLength) {
+    $length = strlen($string);
+
+    if ($length < $minLength || $length > $maxLength) {
+        return false;
+    }
+
+    // Controllo l'assenza di tag HTML o entità HTML
+    if (preg_match('/<[^>]*>|&[^;]+;/', $string)) {
+        return false;
+    }
+
+        return true;
 }
 
 

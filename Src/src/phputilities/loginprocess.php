@@ -13,8 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = "";
 
-    if (!isValidString($_POST['username']) or !isValidString($_POST['password'])) {
-        $errors = "<p>Non è accettato codice html!</p>";
+    if (!isValidString($_POST['username'],4,20) or !isValidString($_POST['password'],4,50)) {
+        $errors = "<p>Non è accettato codice html o lunghezza non valida!</p>";
     }
     if (!empty($errors)) {
         

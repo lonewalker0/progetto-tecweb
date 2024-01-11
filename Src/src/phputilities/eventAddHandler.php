@@ -23,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_FILES['image']['error'] !== UPLOAD_ERR_OK) {
         $errors[] = "Errore nel caricamento dell'immagine.";
     }
-    if (!isValidString($_POST['artist_name']) or !isValidString($_POST['description'])) {
-        $errors[] = "Non è accettato codice htm!";
+    if (!isValidString($_POST['artist_name'],4,20) or !isValidString($_POST['description'],4,500)) {
+        $errors[] = "Non è accettato codice html o lunghezza non valida!";
     }
     if (!isValidHour($_POST['hour'])) {
         $errors[] = "Orario inserito non valido!";
