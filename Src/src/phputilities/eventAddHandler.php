@@ -23,14 +23,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_FILES['image']['error'] !== UPLOAD_ERR_OK) {
         $errors[] = "Errore nel caricamento dell'immagine.";
     }
-    if (!isValidString($_POST['artist_name']) or !isValidString($_POST['description'])) {
-        $errors[] = "Non è accettato codice htm!";
+    if (!isValidString($_POST['artist_name'],4,50) or !isValidString($_POST['description'],4,500)) {
+        $errors[] = "Non è accettato codice html o lunghezza non valida!";
     }
     if (!isValidHour($_POST['hour'])) {
         $errors[] = "Orario inserito non valido!";
     }
     if (!isValidDate($_POST['date'])) {
         $errors[] = "Data inserita non valida!";
+    }
+    if (!isAllowedDate($_POST['date'])) {
+        $errors[] = "La data deve essere sceltra tra 05/07/2024, 06/07/2024, o 07/07/2024!";
     }
     if (!in_array($_FILES['image']['type'], $allowedFileTypes)) {
         $errors[] = "Tipo di file non supportato. Inserisci un'immagine JPEG, PNG o GIF.";

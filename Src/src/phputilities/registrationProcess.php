@@ -11,10 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = [];
     
-    if (!isValidString($_POST['nome']) or !isValidString($_POST['cognome'])
-         or !isValidString($_POST['indirizzo']) or !isValidString($_POST['username'])
-        or !isValidString($_POST['password']) or !isValidString($_POST['confermaPassword'])) {
-        $errors[] = "Non è accettato codice HTML!";
+    if (!isValidString($_POST['nome'],2,30) or !isValidString($_POST['cognome'],2,30)
+         or !isValidString($_POST['indirizzo'],2,75) or !isValidString($_POST['username'],4,25)
+        or !isValidString($_POST['password'],4,50) or !isValidString($_POST['confermaPassword'],4,50)) {
+        $errors[] = "Non è accettato codice HTML o lunghezza stringa non valida!";
     }
     if(!isValidEmail($_POST['email'])) {
         $errors[] = "Formato email non valido!";

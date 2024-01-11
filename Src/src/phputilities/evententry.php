@@ -21,6 +21,10 @@ class EventEntry
         
     }
 
+    public function getDate(): string{
+        return $this->datetime; 
+    }
+
     public function generateHTML(): string
     {
         
@@ -33,9 +37,14 @@ class EventEntry
                 echo "An error occurred: " . $e->getMessage();
             }
 
+        //$html = str_replace(
+        //    ['{{performer}}', '{{image}}', '{{datetime}}', '{{time}}', '{{Description}}'],
+        //    [$this->performer, $this->image, $this->datetime, $this->time, $this->description],
+        //    $this->template
+        //);
         $html = str_replace(
-            ['{{performer}}', '{{image}}', '{{datetime}}', '{{time}}', '{{Description}}'],
-            [$this->performer, $this->image, $this->datetime, $this->time, $this->description],
+            ['{{performer}}', '{{image}}', '{{time}}', '{{Description}}'],
+            [$this->performer, $this->image, $this->time, $this->description],
             $this->template
         );
 
@@ -45,29 +54,20 @@ class EventEntry
     
     public function generateEliminationHTML(): string
 {
-    $html = '<div class="event-container">';
-    $html .= '   <img src="' . $this->image . '" alt="ritratto dello artista ' . $this->performer . '">';
-    $html .= '   <dl>';
-    $html .= '       <dt>Artista:</dt>';
-    $html .= '       <dd>' . $this->performer . '</dd>';
+    try {
+        $this->template = file_get_contents(__DIR__ . '/../html/eventElimination.html');
+        if ($this->template === false) {
+            throw new Exception("Failed to load template from file");
+        }
+    } catch (Exception $e) {
+        echo "An error occurred: " . $e->getMessage();
+    }
 
-    $html .= '       <dt>Data:</dt>';
-    $html .= '       <dd>' . $this->datetime . '</dd>';
-
-    $html .= '       <dt>Ora:</dt>';
-    $html .= '       <dd>' . $this->time . '</dd>';
-
-    $html .= '       <dt>Descrizione:</dt>';
-    $html .= '       <dd>' . $this->description . '</dd>';
-    $html .= '   </dl>';
-
-    // Form to handle deletion
-    $html .= '   <form action="phputilities/eventEleminationHandler.php" method="post">';
-    $html .= '       <input type="hidden" name="event_artist" value="' . $this->performer . '">';
-    $html .= '       <input type="submit" name="delete_event" value="Delete">';
-    $html .= '   </form>';
-
-    $html .= '</div>';
+    $html = str_replace(
+        ['{{performer}}', '{{image}}', '{{datetime}}', '{{time}}', '{{Description}}'],
+        [$this->performer, $this->image, $this->datetime, $this->time, $this->description],
+        $this->template
+    );
 
     return $html;
 }

@@ -13,6 +13,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  var formQuantita = document.querySelectorAll('[id^="formCompraBiglietto-"]');
+
+  formQuantita.forEach(function (form) {
+    // Aggiungi un gestore di eventi al form
+    form.addEventListener("submit", function (event) {
+      // Ottieni l'id del modulo
+      const id = form.id.split("-")[1];
+
+      console.log("Form ID:", id); // Log dell'id del modulo
+
+      event.preventDefault();
+      if (validazioneformquantita(id)) {
+        console.log("Validazione positiva, invio il modulo.");
+        event.target.submit();
+      } else {
+        console.log("Validazione negativa, impedisco l'invio del modulo.");
+        event.preventDefault(); // Evita l'invio del modulo se la validazione è negativa
+      }
+      return false;
+    });
+  });
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("formAggiuntaEvento");
   if (form) {
     form.addEventListener("submit", function (event) {
@@ -80,6 +108,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
   var newPasswordField = document.getElementById("nuova_password");
   var confirmPasswordField = document.getElementById("conferma_password2");
@@ -90,6 +120,39 @@ document.addEventListener("DOMContentLoaded", function () {
       // Rendi i campi obbligatori solo se la nuova password ha un valore
       confirmPasswordField.required = this.value.trim() !== "";
       oldPasswordField.required = this.value.trim() !== "";
+    });
+  }
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Controlla se siamo sulla pagina account.php prima di eseguire il codice
+  if (window.location.pathname.includes("account.php")) {
+    var menuLinks = document.querySelectorAll("#sidebar a");
+    var sections = document.querySelectorAll(".section");
+
+    // Nascondi tutte le sezioni tranne "Informazioni account" inizialmente
+    sections.forEach(function (section) {
+      if (section.id === "informazioni") {
+        section.style.display = "block";
+      } else {
+        section.style.display = "none";
+      }
+    });
+
+    menuLinks.forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        var targetSectionId = this.getAttribute("href").substring(1);
+
+        sections.forEach(function (section) {
+          if (section.id === targetSectionId) {
+            section.style.display = "block";
+          } else {
+            section.style.display = "none";
+          }
+        });
+      });
     });
   }
 });
@@ -125,6 +188,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
 if (window.location.pathname === "/index.php") {
   document.addEventListener("DOMContentLoaded", function () {
     carosello();
@@ -163,10 +227,9 @@ function countdownFestival() {
 function triggerView() {
   const df = document.getElementById("dataFestival");
   const cd = document.getElementById("intervalloFestival");
-
   let type = true;
   setInterval(() => {
-    if (type) {
+    if (df.classList.contains("show")) {
       df.classList.remove("show");
       df.classList.add("hide");
       cd.classList.remove("hide");
@@ -185,15 +248,11 @@ function carosello() {
   let caroselloimg;
   let idfoto = "foto";
   let i;
-  let img = document.querySelector("#carosello-foto"); //mi rappresenta tutto il carosello, nel suo insieme (senza comprendere i puntini)
-  let imgtot = img.querySelectorAll("*").length; //mi rappresenta il numero di foto del carosello
+  let img = document.getElementsByClassName("carosello-none");
   let puntini = document.getElementsByClassName("puntini");
-
-  for (i = 0; i < imgtot; i++) {
+  for (i = 0; i < img.length; i++) {
     if (caroselloj > 0) {
-      caroselloimg = document.getElementById(idfoto + i); //mi rappresenta la foto in cui sto lavorando in quel momento
-      caroselloimg.classList.remove("fade");
-      caroselloimg.classList.add("foto-hide");
+      img[i].classList.remove("carosello-block");
     }
   }
   imgIndex++;
@@ -205,9 +264,7 @@ function carosello() {
   }
   for (i = 0; i < imgtot; i++) {
     if (i === imgIndex - 1) {
-      caroselloimg = document.getElementById(idfoto + i);
-      caroselloimg.classList.add("fade");
-      caroselloimg.classList.remove("foto-hide");
+      img[imgIndex - 1].classList.add("carosello-block");
       puntini[imgIndex - 1].className += " active";
     }
   }
@@ -242,9 +299,29 @@ function appendError(conteinerId, message) {
   conteinerId.appendChild(errorElement);
 }
 
-function StringaValida(string) {
+function StringaValida(string, minLength, maxLength) {
   const pattern = /<[^>]*>|&[^;]+;/;
-  return !pattern.test(string);
+  const isValidLength = string.length >= minLength && string.length <= maxLength;
+
+  return isValidLength && !pattern.test(string);
+}
+
+
+function isAllowedDate(dateString) {
+  const allowedDates = ["2024-07-05", "2024-07-06", "2024-07-07"];
+  return allowedDates.includes(dateString);
+}
+
+function verificaValore(valore) {
+  if (Number.isInteger(valore)) {
+      if (valore >= 1 && valore <= 5) {
+          return true;
+      } else {
+          return false;
+      }
+  } else {
+      return false;
+  }
 }
 
 function isValidAge(dateOfBirth) {
@@ -269,7 +346,7 @@ function isValidEmail(email) {
 
   var isEmailValid = emailPattern.test(email);
 
-  var hasHtmlTagsOrEntities = !StringaValida(email);
+  var hasHtmlTagsOrEntities = !StringaValida(email,5,100);
 
   return isEmailValid && !hasHtmlTagsOrEntities;
 }
@@ -308,10 +385,20 @@ function validazioneFormAggiutaEvento() {
       .getElementById("artist_name")
       .setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(artistName)) {
+  if (!isAllowedDate(date)) {
+    isValid = false;
+    document.getElementById("date").setAttribute("aria-invalid", "true");
+    appendError(
+      errorContainer,
+      "La data deve essere scelta tra 05/07/2024, 06/07/2024, o 07/07/2024!"
+    );
+  } else {
+    document.getElementById("date").setAttribute("aria-invalid", "false");
+  }
+  if (!StringaValida(artistName,4,50)) {
     isValid = false;
     document.getElementById("artist_name").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Il nome del artista non accetta codice HTML!");
+    appendError(errorContainer, "Il nome del artista non accetta codice HTML o lunghezza stringa non valida!");
   } else {
     document
       .getElementById("artist_name")
@@ -326,10 +413,10 @@ function validazioneFormAggiutaEvento() {
       .getElementById("artist_name")
       .setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(description)) {
+  if (!StringaValida(description,4,500)) {
     isValid = false;
     document.getElementById("description").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Nella descrizione non è ammesso codice HTML!");
+    appendError(errorContainer, "Nella descrizione non è ammesso codice HTML o testo troppo lungo massimo 500 caratteri!");
   } else {
     document
       .getElementById("description")
@@ -385,11 +472,11 @@ function validazioneFormLogin() {
   const fieldsToValidate = [
     {
       name: "username",
-      errorMessage: "Il campo username non accetta codice HTML!",
+      errorMessage: "Il campo username non accetta codice HTML o lunghezza stringa non  valida!",
     },
     {
       name: "password",
-      errorMessage: "Il campo password non accetta codice HTML!",
+      errorMessage: "Il campo password non accetta codice HTML o lunghezza stringa non  valida!",
     },
   ];
 
@@ -398,7 +485,7 @@ function validazioneFormLogin() {
   fieldsToValidate.forEach((field) => {
     const value = document.forms["formLogin"][field.name].value;
 
-    if (!StringaValida(value) && isValid == true) {
+    if (!StringaValida(value,4,50) && isValid == true) {
       isValid = false;
       document.getElementById(field.name).setAttribute("aria-invalid", "true");
       appendError(errorContainer, field.errorMessage);
@@ -425,17 +512,17 @@ function validazioneFormRegistrazione() {
     document.forms["RegistrationForm"]["confermaPassword"].value;
 
   let isValid = true;
-  if (!StringaValida(nome)) {
+  if (!StringaValida(nome,2,50)) {
     isValid = false;
     document.getElementById("nome").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML o lunghezza non valida!");
   } else {
     document.getElementById("nome").setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(cognome)) {
+  if (!StringaValida(cognome,2,50)) {
     isValid = false;
     document.getElementById("cognome").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML o lunghezza non valida!");
   } else {
     document.getElementById("cognome").setAttribute("aria-invalid", "false");
   }
@@ -448,33 +535,33 @@ function validazioneFormRegistrazione() {
       .getElementById("dataNascita")
       .setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(indirizzo)) {
+  if (!StringaValida(indirizzo,2,75)) {
     isValid = false;
     document.getElementById("indirizzo").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML o lunghezza stringa non valida!");
   } else {
     document.getElementById("indirizzo").setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(username)) {
+  if (!StringaValida(username,4,30)) {
     isValid = false;
     document.getElementById("username").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTMLo o lunghezza non valida!");
   } else {
     document.getElementById("username").setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(password)) {
+  if (!StringaValida(password,4,50)) {
     isValid = false;
     document.getElementById("password").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML o lunghezza non valida!");
   } else {
     document.getElementById("password").setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(confermapassword)) {
+  if (!StringaValida(confermapassword,4,50)) {
     isValid = false;
     document
       .getElementById("confermaPassword")
       .setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML o lunghezza non valida!");
   } else {
     document
       .getElementById("confermaPassword")
@@ -507,10 +594,10 @@ function validazioneFormUpdate() {
 
   let isValid = true;
   if (indirizzo.trim() !== "") {
-    if (!StringaValida(indirizzo)) {
+    if (!StringaValida(indirizzo,2,75)) {
       isValid = false;
       document.getElementById("indirizzo").setAttribute("aria-invalid", "true");
-      appendError(errorContainer, "Questo campo non accetta codice HTML!");
+      appendError(errorContainer, "Questo campo non accetta codice HTML o lunghezza non valida!");
     } else {
       document
         .getElementById("indirizzo")
@@ -532,9 +619,9 @@ function validazioneFormUpdate() {
     confermapassword.trim() !== ""
   ) {
     if (
-      !StringaValida(passwordvecchia) ||
-      !StringaValida(nuovapassword) ||
-      !StringaValida(confermapassword)
+      !StringaValida(passwordvecchia,4,50) ||
+      !StringaValida(nuovapassword,4,50) ||
+      !StringaValida(confermapassword,4,50)
     ) {
       isValid = false;
       document
@@ -548,7 +635,7 @@ function validazioneFormUpdate() {
         .setAttribute("aria-invalid", "true");
       appendError(
         errorContainer,
-        "Le password contengono caratteri non validi."
+        "Le password contengono caratteri non validi o lunghezza non valida."
       );
     } else {
       // Verifica che la nuova password e la conferma coincidano
@@ -586,14 +673,31 @@ function validazioneFormEliminazioneUser() {
   errorContainer.innerHTML = "";
   const password = document.forms["formeliminaaccount"]["password"].value;
   let isValid = true;
-  if (!StringaValida(password)) {
+  if (!StringaValida(password,4,50)) {
     isValid = false;
     document.getElementById("password").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML o lunghezza non valida!");
   } else {
     document.getElementById("password").setAttribute("aria-invalid", "false");
   }
   return isValid;
+}
+
+function validazioneformquantita(id){
+  let quantitaInput=document.forms["formCompraBiglietto-"+id]["quantita-"+id].value;
+  const errorContainer = document.getElementById("purchase_result");
+  let quantitaNumero = parseInt(quantitaInput, 10);
+  let isValid=true;
+  if(!verificaValore(quantitaNumero)){
+    isValid=false;
+    document.getElementById("quantita-"+id).setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "deve essere un intero compreso tra 1 e 5!");
+  }else{
+    document.getElementById("quantita-"+id).setAttribute("aria-invalid", "false");
+    
+  }
+  return isValid;
+
 }
 //calcolare il prezzo totale del biglietto, prima di inviare l'acquisto al submit
 function calculateTotalPrice(id) {

@@ -1,5 +1,6 @@
 <?php
 include('DBOperation.php');
+include('validationElement.php');
 session_start();
 
 $dboperation=new DBOperation();
@@ -19,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die();}
         
         // Recupera i dati dal modulo
+        
         $username = $_SESSION['username']; 
         $productId = $_POST['id']; 
         $quantity = $_POST['quantita']; // Assicura che il campo quantita sia presente nel tuo modulo
@@ -26,7 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $prezzosingolo=$dboperation->getPrezzoBiglietto($productId);
         $prezzo_totale= $quantity * $prezzosingolo;
 
-               
+        if(!verificaValore($quantity)){
+            $errors= "<p>deve essere un intero compreso tra 1 e 5!</p>";
+            $_SESSION['purchase_result']=$errors;
+            header("Location: ../prevendite.php");
+            die();
+        }else{
 
             // Aggiungi l'ordine nel database
             $success = $dboperation->addOrder($username, $productId, $purchaseDate, $quantity,$prezzo_totale);
@@ -40,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: ../prevendite.php"); 
                 die();
             }
+        }
 
         
 
