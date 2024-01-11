@@ -30,13 +30,31 @@ CREATE TABLE Programma (
 
 
 INSERT INTO Programma (date, hour, image_path, description, artist_name)
-VALUES ('2024-07-05', '16:30:00', 'assets/artisti/tony2milli.jpg', "Tony 2Milli, nome d'arte di Mario Manuel Bruno (Paola, 14 giugno 2000), è un rapper e produttore italiano, originario di Milano. Patto Sliterich l'unica attività trap in Italia. ", 'Tony2Milli');
+VALUES ('2024-07-05', '19:30:00', 'assets/artisti/night-skinny.png', "Nella prima serata del festival, l'apertura sarà affidata al dj e produttore Night Skinny, considerato uno dei maggiori esponenti della scena rap italiana, con numerose collaborazioni con gli artisti nostrani del genere musicale.", 'The Night Skinny');
 
 INSERT INTO Programma (date, hour, image_path, description, artist_name)
-VALUES ('2024-07-06', '16:30:00', 'assets/artisti/tony2milli.jpg', "Tony 2Milli, nome d'arte di Mario Manuel Bruno (Paola, 14 giugno 2000), è un rapper e produttore italiano, originario di Milano. Patto Sliterich l'unica attività trap in Italia. ", 'Tony2Milli1');
+VALUES ('2024-07-05', '21:00:00', 'assets/artisti/kid-yugi.png', "Dopo il dj-set proposto da Night Skinny, l'evento prosegue con uno dei suoi collaboratori più affermati: Kid Yugi. Singolo dopo singolo gli sguardi della scena e del pubblico si poggiano sempre più di lui, raggiungendo l'apice con la pubblicazione di The Globe, il suo primo disco ufficiale, a novembre 2022.
+In 12 brani segna un esordio da rookie dell'anno.", 'Kid Yugi');
 
 INSERT INTO Programma (date, hour, image_path, description, artist_name)
-VALUES ('2024-07-07', '16:30:00', 'assets/artisti/tony2milli.jpg', "To, nome d'arte di Mario Manuel Bruno (Paola, 14 giugno 2000), è un rapper e produttore italiano, originario di Milano. Patto Sliterich l'unica attività trap in Italia. ", 'Tony2Milli2');
+VALUES ('2024-07-05', '22:30:00', 'assets/artisti/tony-boy.png', "La serata si conclude con l'artista di zona più influente dell'ultimo periodo. Tony Boy, rapper classe '99 nato a Padova, spicca per la sua capacità di scrittura, interpretazione e versatilità nel flow, mischiando tematiche sentimentali con un'attitudine più cruda.", 'Tony Boy');
+
+
+INSERT INTO Programma (date, hour, image_path, description, artist_name)
+VALUES ('2024-07-06', '19:15:00', 'assets/artisti/radical.png', "Radical è un cantante e producer romano, classe '95. Esordisce su Soundcloud nel 2017, figurando tra i fondatori e maggiori interpreti della scena Soundcloud Rap italiana; il performer emerge per l'attitudine dinamica e la straordinaria disinvoltura nella sperimentazione a partire dal genere trap, con numerosi crossover nel rock e l'elettronica. Contaminazioni di Cloud Rap e Metal sono una costante della sua produzione musicale. ", 'Radical');
+
+INSERT INTO Programma (date, hour, image_path, description, artist_name)
+VALUES ('2024-07-06', '20:30:00', 'assets/artisti/zyrtck.png', "Zyrtck è un artista romano di genere alternative trap, tra le proposte più in vista della già citata scena Soundcloud romana. Ballerino di background con un innata vocalità ed espressività, ha iniziato a parlare di “MOVIMENTO” come proprio trademark sin dai primi pezzi pubblicati sulla Nuvola Arancione.", 'Zyrtck');
+
+INSERT INTO Programma (date, hour, image_path, description, artist_name)
+VALUES ('2024-07-06', '21:15:00', 'assets/artisti/thelonius-b.png', "Hanno pubblicato solo un disco ufficiale, ma i Thelonious B. sono in giro da parecchio tempo. Nel 2020, questo duo iconico in bilico fra post-trap e emo-rap ha dato vita al primo album THB, che ha macinato milioni di stream sulle piattaforme e attirato l'attenzione di una grossa fetta di pubblico del genere. Poi, il successo nazionale grazie ad alcune hit e collaborazioni realizzate con Daytona KK, Rosa Chemical e Radical.", 'Thelonius B');
+
+INSERT INTO Programma (date, hour, image_path, description, artist_name)
+VALUES ('2024-07-06', '22:30', 'assets/artisti/rosa-chemical.png', "Rosa Chemical è un artista poliedrico, eclettico, dalle mille sfaccettature e non etichettabile, non ha dato sfogo alla sua creatività solo a livello musicale, con influenze che spaziano dall'hiphop alla trap all'elettronica, ma lavorando anche come modello per la marca italiana di moda Gucci, come art and creative director e dedicandosi anche alla scrittura di videoclip.", 'Rosa Chemical');
+
+
+INSERT INTO Programma (date, hour, image_path, description, artist_name)
+VALUES ('2024-07-07', '16:30:00', 'assets/artisti/', "To, nome d'arte di Mario Manuel Bruno (Paola, 14 giugno 2000), è un rapper e produttore italiano, originario di Milano. Patto Sliterich l'unica attività trap in Italia.", 'Tony2Milli2');
 
 
 CREATE TABLE Biglietti (

@@ -13,7 +13,7 @@ $main = "
 <h1>Domande frequenti (FAQ)</h1>
 
 <div class='faq-section'>
-    <h2 class='faq-title'>Informazioni generali sul festival</h2>
+    <h2>Informazioni generali sul festival</h2>
     <div class='faq-box-container'>
     <div class='faq-item'>
         <p class='question'>Qual è l'età minima per poter partecipare a TechnoLum250 Festival?</p>
@@ -48,7 +48,7 @@ $main = "
 </div>
 
 <div class='faq-section'>
-    <h2 class='faq-title'>Biglietti e acquisti</h2>
+    <h2>Biglietti e acquisti</h2>
     <div class='faq-box-container'>
     <div class='faq-item'>
         <p class='question'>Dove posso acquistare i biglietti per TechnoLum250 Festival 2024?</p>
@@ -72,7 +72,7 @@ $main = "
 </div>
 
     <div class='faq-section'>
-        <h2 class='faq-title'>Info utili</h2>
+        <h2>Info utili</h2>
             <div class='faq-box-container'>
                 <div class='faq-item'>
                     <p class='question'>Dove parcheggiare?</p>

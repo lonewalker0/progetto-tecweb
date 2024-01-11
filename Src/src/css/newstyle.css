@@ -40,7 +40,7 @@ h2 {
   text-align: center;
   padding: 1rem;
   color: var(--verde-nero);
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 500;
   font-weight: bold;
 }
@@ -371,16 +371,16 @@ div#footer-content {
 
 .event-container {
   margin: 0;
-  padding: 1rem;
+  padding: 0 1rem 0 1rem;
+  margin: 1rem 0 1rem 0;
 
-  border: solid;
-  border-color: orange;
+  /* border: solid;
+  border-color: orange; */
 }
 
 .programma-entry {
   display: flex;
   align-items: center;
-  margin-bottom: 4rem;
   background-color: var(--verde-lime);
   border-radius: 1rem;
 
@@ -429,17 +429,6 @@ div.programma-animation2.active {
 
   /* border: solid;
   border-color: brown; */
-}
-
-.event-title {
-  font-size: 2rem;
-  font-weight: 500;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  color: white;
-
-  /* border: solid;
-  border-color: orange; */
 }
 
 /* Carosello dinamico del main */
@@ -603,11 +592,12 @@ div.programma-animation2.active {
 #chi-siamo-container {
   padding: 1rem;
 
-  border: solid;
-  border-color: orange;
+  /* border: solid;
+  border-color: orange; */
 }
 
-#storia-festival {
+/*
+  #storia-festival {
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
@@ -620,18 +610,27 @@ div.programma-animation2.active {
   font-weight: 100;
   text-align: justify;
 }
+*/
 
 #chi-siamo-contenuto {
-  max-width: 900px;
+  max-width: 1080px;
   margin: 0 auto;
   text-align: left;
-  padding: 1rem;
+  padding: 2rem;
   padding-top: 3rem;
   background-color: var(--verde-lime);
   border-radius: 4px;
 
-  border: solid;
-  border-color: yellow;
+  /* border: solid;
+  border-color: yellow; */
+}
+
+#chi-siamo-contenuto h2 {
+  text-align: left;
+  padding-left: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--verde-scuro);
 }
 
 #img-chi-siamo {
@@ -639,34 +638,35 @@ div.programma-animation2.active {
   margin: 0 auto;
   width: 800px;
   height: auto;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
 
-  border: solid;
-  border-color: white;
+  /* border: solid;
+  border-color: white; */
 }
 
 #chi-siamo-testo {
   text-align: justify;
   color: var(--verde-scuro);
 
-  border: solid;
-  border-color: black;
+  /* border: solid;
+  border-color: black; */
 }
 
 #ringraziamenti {
+  margin-top: 1rem;
   font-weight: bold;
 
-  border: solid;
-  border-color: orange;
+  /* border: solid;
+  border-color: orange; */
 }
 
 #ul-ringraziamenti {
   list-style: none;
 
-  border: solid;
-  border-color: yellow;
+  /* border: solid;
+  border-color: yellow; */
 }
 
 /* Location */
@@ -792,11 +792,6 @@ div.programma-animation2.active {
   font-weight: bold;
 }
 
-
-
-
-
-
 /* Domande */
 
 #faq-container {
@@ -818,11 +813,6 @@ div.programma-animation2.active {
 
   /* border: solid;
   border-color: yellow; */
-}
-
-.faq-title {
-  font-size: 24px;
-  margin-bottom: 1rem;
 }
 
 .faq-box-container {
