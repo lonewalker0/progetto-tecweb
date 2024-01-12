@@ -5,6 +5,7 @@
   scroll-padding-top: 2rem;
   scroll-behavior: smooth;
   box-sizing: border-box;
+  font-size: 14px;
 }
 
 :root {
@@ -12,22 +13,22 @@
   --verde-scuro: #111606;
   --link: #0000C7;
   --visited-link: #6B006B;
+  --verde-scurino:rgba(24, 31, 8);
   --alt-link: white;
   --alt-visited-link: yellow;
 
 }
 
-img {
-  width: 100%;
-}
+
 
 body {
   background-color: var(--verde-scuro);
   color: var(--verde-lime);
   max-width: 1920px;
-  font-size: 1.2rem;
   background-size: cover;
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -35,9 +36,7 @@ h1 {
   padding: 1rem;
   color: var(--verde-lime);
   font-size: 3rem;
-  font-weight: 500;
   font-weight: bold;
-  margin-top: 20px;
 }
 
 h2 {
@@ -45,7 +44,6 @@ h2 {
   padding: 1rem;
   color: var(--verde-nero);
   font-size: 2rem;
-  font-weight: 500;
   font-weight: bold;
 }
 
@@ -53,7 +51,6 @@ h3 {
   padding: 1rem;
   color: var(--verde-nero);
   font-size: 1.8rem;
-  font-weight: 400;
   font-weight: bold;
 }
 a:link {
@@ -72,12 +69,8 @@ a:visited {
 /* Header */
 
 header {
-  position: fixed;
-  top: 0;
   width: calc(100% - 8rem);
-  margin: 1rem 4rem 1rem 4rem;
-  z-index: 10;
-  margin-top: 0;
+  margin: 1rem 4rem 1rem 4rem
 
   /* border: solid;
   border-color: blue; */
@@ -87,11 +80,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5rem 0 0.5rem 0;
-  padding: 1rem;
-  height: 5rem;
   border-radius: 1rem;
-  background-color: rgba(24, 31, 8, 0.85);
+  background-color: var(--verde-scurino );
 
   /* border: solid;
   border-color: purple; */
@@ -99,9 +89,7 @@ header {
 
 #left-group {
   display: flex;
-  align-items: center;
-  /* border: solid;
-  border-color: white; */
+  align-items: center;  
 }
 
 #logo a {
@@ -109,15 +97,13 @@ header {
   line-height: 0; /* Removes any extra line-height space */
   padding: 0; /* Ensures there's no extra padding */
   height: auto; /* Ensures the anchor height matches the image if the image height is variable */
-  max-height: 100px; /* Matches the max-height of the image to constrain the anchor */
+  max-height: 170px; /* Matches the max-height of the image to constrain the anchor */
   transition: all 0.5s ease-in-out;
 }
 
 #logo img {
-  height: auto; /* Maintains aspect ratio */
+  height: 170px; 
   width: auto; /* Adjusts width as per your logo's aspect ratio */
-  max-height: 100px; /* Adjusts to the desired size */
-  display: flex; /* Removes default inline spacing */
   max-width: 100%; /* Ensures image is not bigger than its container */
 }
 
@@ -133,12 +119,10 @@ header {
 #aiutoSkipnav a:focus {
   overflow: visible;
   position: static;
-  color: white;
-  border-radius: 15px; /* Rounded corners */
+  background-color: #B1DD40;
+  color: #111606;
+  border-radius: 3;
   text-align: center;
-  font-weight: bold;
-  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #aiutoSkipnav:focus,
@@ -147,11 +131,9 @@ header {
 }
 
 #logo a img {
-  height: auto;
   width: auto;
-  max-height: 100px;
-  display: block;
-  max-width: 100%;
+  height: 170px;
+  align-self: center;
 }
 
 #vertical-bar-container {
@@ -166,8 +148,9 @@ header {
   margin-left: 1.5rem;
 }
 
-#countdown-data p {
-  font-size: 30px;
+#countdown-data p{
+  font-size: 1.5rem;  
+  font-weight: bold;
 }
 
 .show {
@@ -183,9 +166,6 @@ header {
   align-items: center;
   margin-top: 1rem;
   padding: 2px;
-
-  /* border: solid;
-  border-color: violet; */
 }
 
 .icons img {
@@ -210,24 +190,28 @@ header {
 /* Navigation Menu */
 
 .menu {
-  top: 5rem;
-  position: fixed;
   width: calc(100% - 8rem);
-  margin: 1rem 4rem 1rem 4rem;
+  margin: 0rem 4rem 0rem 4rem;
   height: 3rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 1.4rem;
-  font-weight: 400;
   font-weight: bold;
-  z-index: 10;
-  background-color: rgba(24, 31, 8, 0.85);
+  background-color: var(--verde-scurino);
   border-radius: 1rem;
-
-  /* border: solid;
-  border-color: red; */
 }
+
+.fixed-menu {
+  position: fixed;  
+  z-index: 100; 
+}
+.fixed-menu + * {
+  padding-top: 3rem; /* Same as the height of the fixed menu */
+}
+
+
+
 
 .menu ul {
   list-style: none;
@@ -283,24 +267,14 @@ nav.menu a:hover > div#punto-dom {
 /* Breadcrumb */
 
 #breadcrumb {
-  position: relative;
-  top: 8.5rem;
-  display: flex;
   width: 100%;
-  height: 2em;
   width: calc(100% - 8rem);
   margin: 1rem 4rem 1rem 4rem;
   background-color: var(--verde-scuro);
-  display: flex;
-  align-items: center;
-
-  /* border: solid;
-  border-color: brown; */
 }
 
-#breadcrumb p {
+#breadcrumb p span {
   text-align: left;
-  font-size: 1.15em;
   color: var(--dark-bg-color);
   font-weight: bold;
 }
@@ -328,7 +302,7 @@ footer {
 }
 
 .icons img {
-  width: 1.6rem;
+  width: 20px;
   height: auto;
   margin: 0 10px;
   cursor: pointer;
@@ -385,7 +359,6 @@ div#footer-content {
   /*border: solid;
   border-color: red;*/
 }
-
 #navEventi li,
 #navEventi p {
   display: inline-block;
@@ -413,14 +386,11 @@ div#footer-content {
   align-items: center;
   background-color: var(--verde-lime);
   border-radius: 1rem;
-
-  /* border: solid;
-  border-color: purple; */
 }
 
 .programma-entry img {
-  width: 450px;
-  height: 450px;
+  width: 250px;
+  height: 250px;
   border-radius: 4px;
   margin: 1rem;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
@@ -431,6 +401,7 @@ div#footer-content {
 
 div.programma-animation,
 div.programma-animation2 {
+  
   margin-top: 10px;
   background-color: var(--verde-lime);
   transition: all 1s ease-in-out;
@@ -549,7 +520,7 @@ div.programma-animation2.active {
 .carosello-dinamico {
   position: relative;
   padding: 10px;
-  margin-top: 1.5em;
+  
 }
 
 @keyframes fade {
@@ -909,10 +880,8 @@ div.programma-animation2.active {
 /*ERROR 500*/
 
 main {
-  margin-top: 8.1em; /* Adjust the value to move the main section down as needed */
-  min-height: 100%; /* Optional: sets the maximum height for the main section */
-  padding: 0; /* Optional: adds some space inside the main section */
   background-color: var(--light-bg-color);
+  margin: 0rem 2rem 0rem 2rem;;
 }
 
 /*PRIVACY POLICY*/

@@ -25,6 +25,23 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  var menu = document.querySelector('.menu');
+  var originalMenuPosition = menu.offsetTop; // Get the original top position of the menu
+
+  window.addEventListener('scroll', function() {
+      if (window.scrollY >= originalMenuPosition) { 
+          menu.classList.add('fixed-menu');
+      } else {
+          menu.classList.remove('fixed-menu');
+      }
+  });
+});
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("formLogin");
   if (form) {
@@ -412,6 +429,7 @@ function validazioneFormLogin() {
 
 function validazioneFormRegistrazione() {
   const errorContainer = document.getElementById("errorContainerRegistrazione");
+  
   errorContainer.innerHTML = "";
   const nome = document.forms["RegistrationForm"]["nome"].value;
   const cognome = document.forms["RegistrationForm"]["cognome"].value;
@@ -494,7 +512,7 @@ function validazioneFormRegistrazione() {
   }
   if(!isValid)
   {
-      errorContainer.scrollIntoView({behavior: 'smooth'});
+    errorContainer.scrollIntoView({behavior: 'smooth'});
   }
   return isValid;
 }
@@ -620,3 +638,4 @@ function calculateTotalPrice(id) {
     prezzoTotaleParagraph.style.display = "none";
   }
 }
+

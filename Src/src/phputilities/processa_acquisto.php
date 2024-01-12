@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $prezzo_totale= $quantity * $prezzosingolo;
 
         if(!verificaValore($quantity)){
-            $errors= "<p>deve essere un intero compreso tra 1 e 5!</p>";
+            $errors= "<p>Puoi acquistare al massimo 5 biglietti alla volta!</p>";
             $_SESSION['purchase_result']=$errors;
             header("Location: ../prevendite.php");
             die();
