@@ -540,7 +540,7 @@ public function isArtistNameExists($artistName) {
     
 
 
-public function addBiglietto($nome, $descrizione, $imagePath,$datainizio,$datafine, $prezzo): bool {
+/*public function addBiglietto($nome, $descrizione, $imagePath,$datainizio,$datafine, $prezzo): bool {
     try {
         $this->db->openConnection();
         $nome = mysqli_real_escape_string($this->db->getConnection(), $nome);
@@ -591,7 +591,7 @@ public function deleteBiglietto($id): bool {
             $this->db->closeConnection();
         }
 }  
-
+*/
 public function getBigliettiEntries(): array
 {
     $bigliettiEntries = [];
@@ -607,9 +607,6 @@ public function getBigliettiEntries(): array
                 $row['id'],
                 $row['nome'],
                 $row['descrizione'],
-                $row['image_path'],
-                $row['data_ora_inizio'],
-                $row['data_ora_fine'],
                 $row['prezzo']
             );
             $bigliettiEntries[] = $bigliettoEntry;

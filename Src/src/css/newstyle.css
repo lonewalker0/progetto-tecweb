@@ -408,7 +408,6 @@ div#footer-content {
 .programma-entry {
   display: flex;
   align-items: center;
-  margin-bottom: 4rem;
   background-color: var(--verde-lime);
   border-radius: 1rem;
 
@@ -466,19 +465,6 @@ div.programma-animation2.active {
   display: none;
 }
 
-/*.carosello-block {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  background-image: url("../assets/artisti/tony2milli.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 600px;
-  height: 600px;
-  align-items: center;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(37, 53, 25, 1);
-}*/
 #carosello-foto {
   position: relative;
   padding: 10px;
@@ -585,10 +571,6 @@ div.programma-animation2.active {
 #sponsor-title {
   margin-top: 4rem;
   color: var(--verde-lime);
-}
-
-#sponsor h2 {
-  color: var(--verde-scuro);
 }
 
 #sponsor h3 {
@@ -774,7 +756,6 @@ div.programma-animation2.active {
 #indirizzo {
   font-style: italic;
 }
-
 
 /* Merch */
 

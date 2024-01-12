@@ -1,47 +1,32 @@
 <div class="biglietto-entry" id="biglietto-{{id}}" role="article">
-  <img
-    src="{{image}}"
-    alt="biglietto {{nome}} per l'entrata"
-    aria-labelledby="biglietto-title{{id}}"
-  />
   <div class="entry-info-biglietto">
+    <dt id="biglietto-title{{id}}">{{nome}}</dt>
     <dl>
-      <dt id="biglietto-title{{id}}">{{nome}}</dt>
       <dt>Descrizione:</dt>
       <dd>{{Description}}</dd>
-
-      <dt>Data inizio:</dt>
-      <dd><time datetime="{{datetime_inizio}}">{{datetime_inizio}}</time></dd>
-
-      <dt>Data fine:</dt>
-      <dd><time datetime="{{datetime_fine}}">{{datetime_fine}}</time></dd>
-
       <dt>Prezzo:</dt>
-
       <dd id="prezzo-{{id}}">{{prezzo}}€</dd>
     </dl>
   </div>
+  <form
+    action="phputilities/processa_acquisto.php"
+    method="post"
+    id="formCompraBiglietto-{{id}}"
+  >
+    <fieldset>
+      <legend>Acquisto</legend>
+      <label for="quantita-1">Quantità:</label>
+      <input
+        type="number"
+        id="quantita-{{id}}"
+        name="quantita"
+        min="1"
+        max="5"
+        required
+      />
+    </fieldset>
+    <input type="hidden" name="id" value="{{id}}" />
+    <input type="submit" value="Acquista" />
+    <p id="prezzo-totale-{{id}}"></p>
+  </form>
 </div>
-<h3>Acquista Biglietto {{nome}}</h3>
-<form
-  action="phputilities/processa_acquisto.php"
-  method="post"
-  id="formCompraBiglietto-{{id}}"
->
-
-  <fieldset>
-    <legend>Acquisto</legend>
-    <label for="quantita-1">Quantità:</label>
-    <input
-      type="number"
-      id="quantita-{{id}}"
-      name="quantita"
-      min="1"
-      
-      required
-    />
-  </fieldset>
-  <input type="hidden" name="id" value="{{id}}" />
-  <input type="submit" value="Acquista" />
-  <p id="prezzo-totale-{{id}}"></p>
-</form>
