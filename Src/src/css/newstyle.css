@@ -288,7 +288,6 @@ nav.menu a:hover > div#punto-dom {
 
 #breadcrumb p {
   text-align: left;
-  padding-left: 1rem;
   font-size: 1.15em;
   color: var(--dark-bg-color);
   font-weight: bold;
@@ -369,13 +368,26 @@ div#footer-content {
 
 /* Main */
 
+#navEventi {
+  text-align: center;
+
+  border: solid;
+  border-color: red;
+}
+
+#navEventi li,
+#navEventi p {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
 .event-container {
   margin: 0;
   padding: 0 1rem 0 1rem;
   margin: 1rem 0 1rem 0;
 
-  /* border: solid;
-  border-color: orange; */
+  border: solid;
+  border-color: orange;
 }
 
 .programma-entry {
@@ -384,8 +396,8 @@ div#footer-content {
   background-color: var(--verde-lime);
   border-radius: 1rem;
 
-  /* border: solid;
-  border-color: purple; */
+  border: solid;
+  border-color: purple;
 }
 
 .programma-entry img {
@@ -740,6 +752,7 @@ div.programma-animation2.active {
 #live-info {
   font-style: italic;
   text-align: center;
+  margin: 0 4rem 0 4rem;
 
   /* border: solid;
   border-color: white; */
