@@ -5,12 +5,16 @@
   scroll-padding-top: 2rem;
   scroll-behavior: smooth;
   box-sizing: border-box;
-  text-decoration: none;
 }
 
 :root {
-  --verde-lime: #b1dd40;
+  --verde-lime: #B1DD40;
   --verde-scuro: #111606;
+  --link: #33186B;
+  --visited-link: #332941;
+  --alt-link: #00C6FF;
+  --alt-visited-link: #7AB5BF;
+  
 }
 
 img {
@@ -24,6 +28,14 @@ body {
   font-size: 1.2rem;
   background-size: cover;
   height: 100%;
+}
+
+a:link {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--visited-link);
 }
 
 h1 {
@@ -368,11 +380,14 @@ div#footer-content {
 
 /* Main */
 
+/* Nav Eventi */
+
 #navEventi {
   text-align: center;
+  margin-bottom: 2rem;
 
-  border: solid;
-  border-color: red;
+  /* border: solid;
+  border-color: red; */
 }
 
 #navEventi li,
@@ -381,13 +396,21 @@ div#footer-content {
   margin-right: 0.5rem;
 }
 
+#navEventi a:link {
+  color: var(--alt-link);
+}
+
+#navEventi a:visited {
+  color: var(--alt-visited-link);
+}
+
 .event-container {
   margin: 0;
   padding: 0 1rem 0 1rem;
   margin: 1rem 0 1rem 0;
 
-  border: solid;
-  border-color: orange;
+  /* border: solid;
+  border-color: orange; */
 }
 
 .programma-entry {
@@ -396,8 +419,8 @@ div#footer-content {
   background-color: var(--verde-lime);
   border-radius: 1rem;
 
-  border: solid;
-  border-color: purple;
+  /* border: solid;
+  border-color: purple; */
 }
 
 .programma-entry img {
