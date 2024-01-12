@@ -20,16 +20,14 @@ class IndexMainBuilder
         
         
         $this->mainHTML =  file_get_contents(__DIR__ . '/../html/carosello.html');
-
-        $this->mainHTML .=  '<div id="programma-menu">'; 
+        $this->mainHTML .='<div id="programma-menu">';
         $this->mainHTML .= '<h1>Programma';
         $this->mainHTML .= '<div class="programma-animation"></div><div class="programma-animation2"></div></h1>';
         
         $dates = ['2024-07-05', '2024-07-06', '2024-07-07']; //date in programma
-            
-        $this->mainHTML .=  file_get_contents(__DIR__ . '/../html/navEventi.html');
-        $this->mainHTML .=  '</div>'; 
 
+        $this->mainHTML .=  file_get_contents(__DIR__ . '/../html/navEventi.html');
+        $this->mainHTML .= '</div>';
         foreach ($dates as $date) {
             $this->mainHTML .= "<div id='giornata" . str_replace('-', '', $date) . "'>";
             $this->mainHTML .= "<h2>$date</h2>"; 

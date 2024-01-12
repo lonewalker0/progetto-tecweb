@@ -96,7 +96,12 @@ class accountOperation {
                 $output .= "</div>";
                 $output .= "<div class='section' id='elimina' >";
                 $output .="<h2 >Elimina account</h2>";
-                $output .= "<p>Per eliminare account si rimanda a questa pagina<a href='eliminazione.php' tabindex=0>Eliminazione</a>";
+                $output .= "<div id='elimina-account'>";
+                $output .= "<p>Ti ricordiamo che durante l'eliminazione del tuo account verranno cancellati, dal nostro sistema, i seguenti dati personali:</p>";
+                $output .= "<li>Nome</li><li>Cognome</li><li>Indirizzo di residenza</li><li>Data di nascita</li>";
+                $output .= "<p>E i seguenti dati relativi al tuo account:</p>";
+                $output .= "<li>E-mail</li><li>Username</li><li>Password</li>";
+                $output .= "<p>Per eliminare il tuo account ti consigliamo di visitare la nostra pagina dedicata cliccando <a href='eliminazione.php' tabindex=0>qui</a></p></div>";
                 $output .= "</div>";
             }}
         return $output;}
