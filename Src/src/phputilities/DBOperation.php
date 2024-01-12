@@ -539,58 +539,57 @@ public function isArtistNameExists($artistName) {
 }
     
 
-
-public function addBiglietto($nome, $descrizione, $imagePath,$datainizio,$datafine, $prezzo): bool {
-    try {
-        $this->db->openConnection();
-        $nome = mysqli_real_escape_string($this->db->getConnection(), $nome);
-        $descrizione = mysqli_real_escape_string($this->db->getConnection(), $descrizione);
-        $imagePath = mysqli_real_escape_string($this->db->getConnection(), $imagePath);
-        $sql = "INSERT INTO Biglietti (nome, descrizione, image_path, data_ora_inizio, data_ora_fine, prezzo) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = mysqli_prepare($this->db->getConnection(), $sql);
-        mysqli_stmt_bind_param($stmt, "sssssd", $nome, $descrizione, $imagePath,$datainizio,$datafine, $prezzo);
-        mysqli_stmt_execute($stmt);
-
-        $success = mysqli_stmt_affected_rows($stmt) > 0;
-
-        return $success;
-
-    } catch (Exception $e) {
-            // Registra l'errore nei log del server
-            error_log("Errore durante l'inserimento:  " . $e->getMessage());
-        return false;
-
-    } finally {
-            $this->db->closeConnection();
-        }
-}  
-
-
-public function deleteBiglietto($id): bool {
-    try {
-        $this->db->openConnection();
-        $sql = "DELETE FROM Biglietti WHERE id = ?";
-        $stmt = mysqli_prepare($this->db->getConnection(), $sql);
-        mysqli_stmt_bind_param($stmt, "i", $id);
-        mysqli_stmt_execute($stmt);
-
-    
-        if (mysqli_stmt_affected_rows($stmt) > 0) {
-            return true;
-        } else {
-            return false; 
-
-        }
-    } catch (Exception $e) {
-            // Registra l'errore nei log del server
-            error_log("Errore durante l'eliminazione: " . $e->getMessage());
-
-            return false;
-
-    } finally {
-            $this->db->closeConnection();
-        }
-}  
+//
+//public function addBiglietto($nome, $descrizione, $imagePath,$datainizio,$datafine, $prezzo): bool {
+//    try {
+//        $this->db->openConnection();
+//        $nome = mysqli_real_escape_string($this->db->getConnection(), $nome);
+//        $descrizione = mysqli_real_escape_string($this->db->getConnection(), $descrizione);
+//        $imagePath = mysqli_real_escape_string($this->db->getConnection(), $imagePath);
+//        $sql = "INSERT INTO Biglietti (nome, descrizione, image_path, data_ora_inizio, data_ora_fine, prezzo) VALUES (?, ?, ?, ?, ?, ?)";
+//        $stmt = mysqli_prepare($this->db->getConnection(), $sql);
+//        mysqli_stmt_bind_param($stmt, "sssssd", $nome, $descrizione, $imagePath,$datainizio,$datafine, $prezzo);
+//        mysqli_stmt_execute($stmt);
+//
+//        $success = mysqli_stmt_affected_rows($stmt) > 0;
+//
+//        return $success;
+//
+//    } catch (Exception $e) {
+//            // Registra l'errore nei log del server
+//            error_log("Errore durante l'inserimento:  " . $e->getMessage());
+//        return false;
+//
+//    } finally {
+//            $this->db->closeConnection();
+//        }
+//}  
+//
+//public function deleteBiglietto($id): bool {
+//    try {
+//        $this->db->openConnection();
+//        $sql = "DELETE FROM Biglietti WHERE id = ?";
+//        $stmt = mysqli_prepare($this->db->getConnection(), $sql);
+//        mysqli_stmt_bind_param($stmt, "i", $id);
+//        mysqli_stmt_execute($stmt);
+//
+//    
+//        if (mysqli_stmt_affected_rows($stmt) > 0) {
+//            return true;
+//        } else {
+//            return false; 
+//
+//        }
+//    } catch (Exception $e) {
+//            // Registra l'errore nei log del server
+//            error_log("Errore durante l'eliminazione: " . $e->getMessage());
+//
+//            return false;
+//
+//    } finally {
+//            $this->db->closeConnection();
+//        }
+//}  
 
 public function getBigliettiEntries(): array
 {
@@ -607,9 +606,6 @@ public function getBigliettiEntries(): array
                 $row['id'],
                 $row['nome'],
                 $row['descrizione'],
-                $row['image_path'],
-                $row['data_ora_inizio'],
-                $row['data_ora_fine'],
                 $row['prezzo']
             );
             $bigliettiEntries[] = $bigliettoEntry;
@@ -650,9 +646,8 @@ public function getPrezzoBiglietto($id) : int {
     } finally {
         $this->db->closeConnection();
     }
+
 }
-
-
 
 public function addOrder($username, $ticketId, $purchaseDate, $quantity, $prezzo): bool {
     try {
