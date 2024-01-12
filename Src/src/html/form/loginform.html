@@ -1,9 +1,9 @@
 <form action="phputilities/loginprocess.php" method="post" id="formLogin" >
   <div id="error_login">{{loginerror}}</div> 
-  <fieldset>
+  <fieldset id="login-fieldset">
     <legend>Accesso</legend>
 
-    <div>
+    <div id="login-username">
       <label for="username">Username:</label>
       <input
         type="text"
@@ -13,10 +13,11 @@
         required
         aria-required="true"
         maxlength="50"
+        placeholder="Inserisci il tuo username"
       />
     </div>
 
-    <div>
+    <div id="login-password">
       <label for="password">Password:</label>
       <input
         type="password"
@@ -25,16 +26,27 @@
         required
         aria-required="true"
         maxlength="50"
+        placeholder="Inserisci la tua password"
       />
     </div>
   </fieldset>
 
-  <div>
+  <div id="login-registrati">
     <input
+      id="accedi"
       type="submit"
       name="accedi"
-      value="accedi"
+      value="Accedi"
       aria-label="Accedi al tuo account"
     />
+    <a href="register.php">
+      <input
+        id="registrazione"
+        type="button"
+        name="registrati"
+        value="Registrati"
+        aria-label="Crea un nuovo account"
+      />
+    </a>
   </div>
 </form>

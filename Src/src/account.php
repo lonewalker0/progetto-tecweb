@@ -31,7 +31,7 @@ if (!isset($_SESSION["username"]) ) {
     // Check if there is an error in the session
     if(isset($_SESSION['NomeUtente_Error'])){
         // Set the error message
-        $errormessage = '<p>Credenziali non corrette!</p>';
+        $errormessage = '<p>Username o password errati, prego riprovare!</p>';
         // Replace the placeholders with the actual error message and username
         $main = str_replace('{{loginerror}}', $errormessage, $main);
         $main = str_replace('{{NomeUtenteDaReinserire}}', $_SESSION['NomeUtente_Error'], $main);
@@ -42,10 +42,6 @@ if (!isset($_SESSION["username"]) ) {
         $main = str_replace('{{loginerror}}', "", $main);
         $main = str_replace('{{NomeUtenteDaReinserire}}', "", $main);
     }
-    
-    $main .= "<span>Non hai un account</span>";
-    $main .= "<a href='register.php'>Registrati</a>";
-
         
 } else {
 
@@ -55,13 +51,12 @@ if (!isset($_SESSION["username"]) ) {
         $main = $adminOperation->getMain(); 
     } elseif (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] === false) {
         // Non-admin-specific content
-        $main = "<h1>Il mio account</h1>";
-        $main .= file_get_contents(__DIR__ . '/html/sidebar.html');
+        $main = file_get_contents(__DIR__ . '/html/sidebar.html');
         $accountOperation= new accountOperation();
         $main.=$accountOperation->getMain();
     }
     #bottone per il logout
-    $main .= '<form id="logout-button" action="phputilities/logoutprocess.php" method="post"> <input type="submit" name="logout" value="Logout"></form>';
+    $main .= '<form id="logout-button" action="phputilities/logoutprocess.php" method="post"> <input id="input-logout" type="submit" name="logout" value="Logout"></form>';
 
 }
 

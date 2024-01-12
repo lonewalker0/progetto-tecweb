@@ -5,6 +5,7 @@
   scroll-padding-top: 2rem;
   scroll-behavior: smooth;
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 :root {
@@ -14,7 +15,7 @@
   --visited-link: #332941;
   --alt-link: #00C6FF;
   --alt-visited-link: #7AB5BF;
-  
+
 }
 
 img {
@@ -30,14 +31,6 @@ body {
   height: 100%;
 }
 
-a:link {
-  color: var(--link);
-}
-
-a:visited {
-  color: var(--visited-link);
-}
-
 h1 {
   text-align: center;
   padding: 1rem;
@@ -45,7 +38,7 @@ h1 {
   font-size: 3rem;
   font-weight: 500;
   font-weight: bold;
-  margin-top: 1rem;
+  margin-top: 20px;
 }
 
 h2 {
@@ -63,6 +56,13 @@ h3 {
   font-size: 1.8rem;
   font-weight: 400;
   font-weight: bold;
+}
+a:link {
+  color: var(--link);
+}
+
+a:visited {
+  color: var(--alt-visited-link);
 }
 
 .container {
@@ -308,17 +308,16 @@ nav.menu a:hover > div#punto-dom {
 /* Footer */
 
 footer {
-  position: relative;
+  position: static;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 4rem 0 4rem;
   bottom: 0;
-  width: 100%;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: auto;
+  border-radius: 2rem;
+  width: calc(100% - 8rem);
   text-align: center;
-  padding: 1rem 0 2rem 0;
-
-  /* border: solid;
-  border-color: green; */
+  padding: 2rem 0 2rem 0;
+  background-color: rgba(24, 31, 8, 0.85);
 }
 
 .icons {
@@ -356,7 +355,7 @@ div#footer-content {
 }
 
 #footer-content a:visited {
-  color: var(--verde-lime);
+  color: var(--alt-visited-link);
 }
 #footer-content a #privacy-animation,
 #footer-content a #privacy-animation2 {
@@ -380,14 +379,11 @@ div#footer-content {
 
 /* Main */
 
-/* Nav Eventi */
-
 #navEventi {
   text-align: center;
   margin-bottom: 2rem;
-
-  /* border: solid;
-  border-color: red; */
+  /*border: solid;
+  border-color: red;*/
 }
 
 #navEventi li,
@@ -395,7 +391,6 @@ div#footer-content {
   display: inline-block;
   margin-right: 0.5rem;
 }
-
 #navEventi a:link {
   color: var(--alt-link);
 }
@@ -416,6 +411,7 @@ div#footer-content {
 .programma-entry {
   display: flex;
   align-items: center;
+  margin-bottom: 4rem;
   background-color: var(--verde-lime);
   border-radius: 1rem;
 
@@ -453,6 +449,7 @@ div.programma-animation.active,
 div.programma-animation2.active {
   width: 48%;
 }
+
 .entry-info {
   flex: 1;
   max-width: 70%;
@@ -492,7 +489,10 @@ div.programma-animation2.active {
 }
 #foto0,
 #foto1,
-#foto2 {
+#foto2,
+#foto3,
+#foto4,
+#foto5 {
   width: 600px;
   height: 600px;
   background-position: center;
@@ -501,16 +501,29 @@ div.programma-animation2.active {
   margin-left: auto;
   margin-right: auto;
 }
+
 #foto0 {
   background-image: url("../assets/artisti/tony2milli.jpg");
 }
 
 #foto1 {
-  background-image: url("../assets/artisti/tony2milli.jpg");
+  background-image: url("../assets/artisti/anna-pepe.png");
 }
 
 #foto2 {
-  background-image: url("../assets/artisti/tony2milli.jpg");
+  background-image: url("../assets/artisti/gigi-dagostino.png");
+}
+
+#foto3 {
+  background-image: url("../assets/artisti/peggy-gou.png");
+}
+
+#foto4 {
+  background-image: url("../assets/artisti/night-skinny.png");
+}
+
+#foto5 {
+  background-image: url("../assets/artisti/prince.png");
 }
 
 .foto-hide {
@@ -627,12 +640,11 @@ div.programma-animation2.active {
 #chi-siamo-container {
   padding: 1rem;
 
-  /* border: solid;
-  border-color: orange; */
+  /*border: solid;
+  border-color: orange;*/
 }
-
 /*
-  #storia-festival {
+#storia-festival {
   max-width: 800px;
   margin: 0 auto;
   padding: 1rem;
@@ -640,12 +652,11 @@ div.programma-animation2.active {
   color: var(--verde-scuro);
   border-radius: 4px;
 }
-
+*/
 #storia-festival p {
   font-weight: 100;
   text-align: justify;
 }
-*/
 
 #chi-siamo-contenuto {
   max-width: 1080px;
@@ -655,9 +666,6 @@ div.programma-animation2.active {
   padding-top: 3rem;
   background-color: var(--verde-lime);
   border-radius: 4px;
-
-  /* border: solid;
-  border-color: yellow; */
 }
 
 #chi-siamo-contenuto h2 {
@@ -677,53 +685,56 @@ div.programma-animation2.active {
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
 
-  /* border: solid;
-  border-color: white; */
+  /*border: solid;
+  border-color: white;*/
 }
 
 #chi-siamo-testo {
   text-align: justify;
   color: var(--verde-scuro);
 
-  /* border: solid;
-  border-color: black; */
+  /*border: solid;
+  border-color: black;*/
 }
 
 #ringraziamenti {
-  margin-top: 1rem;
   font-weight: bold;
 
-  /* border: solid;
-  border-color: orange; */
+  /*border: solid;
+  border-color: orange;*/
 }
 
 #ul-ringraziamenti {
   list-style: none;
 
-  /* border: solid;
-  border-color: yellow; */
+  /*border: solid;
+  border-color: yellow;*/
 }
 
 /* Location */
 
 #location-container {
+  margin: 0 auto;
   padding: 1rem;
+  padding-bottom: 0;
+  background-color: var(--light-bg-color);
+  color: var(--dark-bg-color);
 
-  /* border: solid;
-  border-color: orange; */
+  border: solid;
+  border-color: orange;
 }
 
 #location-contenuto {
+  padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
-  padding: 2rem;
-  border-radius: 4px;
   background-color: var(--verde-lime);
+  color: var(--verde-scuro);
+  border-radius: 4px;
 
-  /* border: solid;
-  border-color: yellow; */
+  border: solid;
+  border-color: yellow;
 }
 
 #map {
@@ -733,99 +744,27 @@ div.programma-animation2.active {
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
   border: none;
 
-  /* border: solid;
-  border-color: white; */
+  border: solid;
+  border-color: white;
 }
 
 #testo-location {
-  max-width: 50%;
+  max-width: 60%;
   padding: 1rem;
-  color: var(--verde-scuro);
+  margin-left: 2rem;
+  border-radius: 4px;
 
   /* border: solid;
-  border-color: red; */
-}
-
-#h2-location {
-  text-align: left;
+    border-color: orange; */
 }
 
 #testo-location p {
   padding-left: 1rem;
   padding-bottom: 0.5rem;
-
-  /* border: solid;
-  border-color: purple; */
 }
 
 #indirizzo {
   font-style: italic;
-}
-
-/* Merch */
-
-.product {
-  margin: 4rem 0 4rem 0;
-  color: var(--verde-lime);
-
-  /* border: solid;
-  border-color: blue; */
-}
-
-#live-info {
-  font-style: italic;
-  text-align: center;
-  margin: 0 4rem 0 4rem;
-
-  /* border: solid;
-  border-color: white; */
-}
-
-.product-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem;
-  padding: 2rem;
-  border-radius: 4px;
-  background-color: var(--verde-lime);
-
-  /* border: solid;
-  border-color: violet; */
-}
-
-.product-image {
-  width: 600px;
-  height: 600px;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(37, 53, 25, 1);
-
-  /* border: solid;
-  border-color: purple; */
-}
-
-.entry-info  {
-  color: var(--verde-scuro);
-
-  /* border: solid;
-  border-color: red; */
-}
-
-/* .product-details {
-  border: solid;
-  border-color: orange;
-} */
-
-.product-title {
-  display: none;
-
-  /* border: solid;
-  border-color: yellow; */
-}
-
-.definition-term {
-  margin-top: 1rem;
-  font-weight: bold;
 }
 
 /* Domande */
@@ -903,8 +842,8 @@ main {
   padding: 0; /* Optional: adds some space inside the main section */
   background-color: var(--light-bg-color);
 }
-/*Privacy Policy*/
 
+/*PRIVACY POLICY*/
 div#privacy-container {
   display: block;
   background-color: var(--verde-lime);
@@ -929,4 +868,287 @@ div#privacy-container ul li {
   font-weight: 400;
   font-weight: bold;
   margin-top: 190px;
+}
+
+/*LOGIN FORM*/
+fieldset#login-fieldset
+{
+  margin: 1rem 4rem 1rem 4rem;
+  border-radius: 2rem;
+  border: 2px solid var(--verde-lime);
+  background-color: rgba(24, 31, 8, 0.85);
+}
+fieldset#login-fieldset legend
+{
+  display:none;
+  text-align: center;
+  font-size: 35px;
+}
+div#error_login p
+{
+  text-align: center;
+  font-size: 20px;
+  color:var(--verde-lime);
+}
+fieldset#login-fieldset div#login-username,
+fieldset#login-fieldset div#login-password
+{
+  display:grid;
+  width: 100%;
+  padding: 2rem;
+}
+fieldset#login-fieldset div#login-username input#username,
+fieldset#login-fieldset div#login-password input#password
+{
+  padding: 8px;
+  margin-top: 1rem;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 2rem;
+  border-radius: 1rem;
+  text-align: left;
+  font-size: 15px;
+  border-top: 2px inset var(--verde-lime);
+}
+fieldset#login-fieldset div label
+{
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  width: 50%;
+  margin-left:auto;
+  margin-right:auto;
+  align-items: center;
+}
+div#login-registrati 
+{
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  cursor: pointer;
+}
+div#login-registrati input#registrazione,
+div#login-registrati input#accedi
+{
+  width: 15%;
+  height: 2rem;
+  border-radius: 1rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/*REGISTER FORM*/
+fieldset#register-fieldset,
+fieldset#register-fieldset2{
+  display:grid;
+  margin: 1rem 4rem 1rem 4rem;
+  border-radius: 2rem;
+  border: 2px solid var(--verde-lime);
+  background-color: rgba(24, 31, 8, 0.85);
+  padding: 1rem;
+}
+
+fieldset#register-fieldset legend,
+fieldset#register-fieldset2 legend{
+  text-align: center;
+  font-size: 35px;
+}
+
+fieldset#register-fieldset label,
+fieldset#register-fieldset2 label{
+  display: flex;
+  justify-content: space-between;
+  font-size: 25px;
+  width: 50%;
+  margin-left:auto;
+  margin-right:auto;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+fieldset#register-fieldset input,
+fieldset#register-fieldset2 input{
+  margin-top: 1rem;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 2rem;
+  border-radius: 1rem;
+  text-align: left;
+  font-size: 15px;
+  border-top: 2px inset var(--verde-lime);
+  padding: 1rem;
+}
+
+form#RegistrationForm div
+{
+  display:flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+div input#registrati
+{
+  width: 15%;
+  height: 2rem;
+  border-radius: 1rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+fieldset#register-fieldset2 div#passwordError
+{
+  font-size: 20px;
+  padding: 1rem;
+}
+
+/*SIDEBAR ACCOUNT*/
+div#sidebar h1#h1-account{
+  margin-top:0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  padding:0;
+}
+
+div#sidebar{
+  float:left;
+  width:20%;
+  /*float a sinistra modificare*/
+  margin-top: 4rem;
+  margin-left: 4rem;
+  text-align:center;
+  border-radius:2rem;
+  background-color: rgba(24, 31, 8, 0.85);
+  padding: 2rem;
+  border: 1px solid var(--verde-lime);
+}
+
+div#sidebar li{
+  list-style: none;
+}
+
+div#sidebar li a,
+div#sidebar li a:visited{
+  color:var(--alt-visited-link);
+  font-size:25px;
+  text-align: center;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  padding:2px;
+}
+
+div#sidebar li a:hover{
+    color:var(--verde-scuro);
+    background-color:var(--verde-lime);
+}
+
+
+/*MODIFICA ACCOUNT*/
+fieldset#modifica-account
+{
+  float:right;
+  width: 65%;
+  /*display:grid;*/
+  margin: 1rem 4rem 1rem 4rem;
+  border-radius: 2rem;
+  border: 2px solid var(--verde-lime);
+  background-color: rgba(24, 31, 8, 0.85);
+  padding: 1rem;
+}
+fieldset#modifica-account legend{
+  font-size: 30px;
+  text-align: center;
+}
+fieldset#modifica-account p
+{
+  display:flex;
+  flex-direction: column;
+  padding: 1rem;
+  width:50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+fieldset#modifica-account p label
+{
+  font-size:25px;
+}
+fieldset#modifica-account input
+{
+  width: 100%;
+  height: 2rem;
+  border-radius: 8px;
+  padding: 2px;
+  font-size: 20px;
+}
+form#formUpdate div#salva-modifiche
+{
+  display:flex;
+  justify-content: space-around;
+  width: 70%;
+  float:right;
+}
+form#formUpdate input#input-salva
+{
+  width: 15%;
+  height: 2rem;
+  border-radius: 1rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/*INFORMAZIONI ACCOUNT*/
+div#informazioni{
+  width: 70%;
+  float:right;
+  margin-right: 4rem;
+  margin-bottom: 4rem;
+}
+
+div#informazioni dl{
+  margin-top:1rem;
+  display:flex;
+  flex-direction: column;
+  border: 1px solid var(--verde-lime);
+  background-color: rgba(24, 31, 8, 0.85);
+  border-radius: 2rem;
+  align-items: center;
+}
+
+div#informazioni dt{
+  padding-top:1rem;
+  font-size: 25px
+}
+
+div#informazioni dd{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 8px;
+  border: 1px solid var(--alt-visited-link);
+  border-radius: 2rem;
+  width: 20%;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+div#informazioni dd:hover{
+  background-color:var(--verde-lime);
+  color: var(--verde-scuro);
+}
+
+
+/*LOGOUT BUTTON*/
+form#logout-button
+{
+    width:5%;
+    margin: 4rem;
+}
+form#logout-button input#input-logout
+{
+    width: 100%;
+    border-radius: 1rem;
+    padding: 8px;
+    text-align: center;
+    font-size: 15px;;
 }
