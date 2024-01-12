@@ -5,16 +5,15 @@
   scroll-padding-top: 2rem;
   scroll-behavior: smooth;
   box-sizing: border-box;
-  text-decoration: none;
 }
 
 :root {
   --verde-lime: #B1DD40;
   --verde-scuro: #111606;
-  --link: #33186B;
-  --visited-link: #332941;
-  --alt-link: #00C6FF;
-  --alt-visited-link: #7AB5BF;
+  --link: #0000C7;
+  --visited-link: #6B006B;
+  --alt-link: white;
+  --alt-visited-link: yellow;
 
 }
 
@@ -62,7 +61,7 @@ a:link {
 }
 
 a:visited {
-  color: var(--alt-visited-link);
+  color: var(--visited-link);
 }
 
 .container {
@@ -75,7 +74,8 @@ a:visited {
 header {
   position: fixed;
   top: 0;
-  width: 1920px;
+  width: calc(100% - 8rem);
+  margin: 1rem 4rem 1rem 4rem;
   z-index: 10;
   margin-top: 0;
 
@@ -87,10 +87,10 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 0.5rem 0 0.5rem 0;
   padding: 1rem;
-  margin: 1rem 4rem 1rem 4rem;
   height: 5rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   background-color: rgba(24, 31, 8, 0.85);
 
   /* border: solid;
@@ -210,7 +210,7 @@ header {
 /* Navigation Menu */
 
 .menu {
-  top: 6rem;
+  top: 5rem;
   position: fixed;
   width: calc(100% - 8rem);
   margin: 1rem 4rem 1rem 4rem;
@@ -284,7 +284,7 @@ nav.menu a:hover > div#punto-dom {
 
 #breadcrumb {
   position: relative;
-  top: 10rem;
+  top: 8.5rem;
   display: flex;
   width: 100%;
   height: 2em;
@@ -311,12 +311,11 @@ footer {
   position: static;
   display: flex;
   flex-direction: column;
-  margin: 1rem 4rem 0 4rem;
-  bottom: 0;
-  border-radius: 2rem;
+  margin: 1rem 4rem 1rem 4rem;
+  border-radius: 1rem;
   width: calc(100% - 8rem);
   text-align: center;
-  padding: 2rem 0 2rem 0;
+  padding: 1rem 0 1rem 0;
   background-color: rgba(24, 31, 8, 0.85);
 }
 
@@ -381,7 +380,8 @@ div#footer-content {
 
 #navEventi {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 1rem 0 2rem 0;
+
   /*border: solid;
   border-color: red;*/
 }
@@ -411,7 +411,6 @@ div#footer-content {
 .programma-entry {
   display: flex;
   align-items: center;
-  margin-bottom: 4rem;
   background-color: var(--verde-lime);
   border-radius: 1rem;
 
@@ -485,7 +484,7 @@ div.programma-animation2.active {
 #carosello-foto {
   position: relative;
   padding: 10px;
-  margin-top: 1.5em;
+  margin-top: 1em;
 }
 #foto0,
 #foto1,
@@ -576,18 +575,18 @@ div.programma-animation2.active {
 #sponsor {
   text-align: center;
   background-color: var(--verde-lime);
-  margin-bottom: 0;
   align-items: center;
-  padding-bottom: 20px;
-  margin: 1rem;
+  padding: 1rem;
+  margin: 0 1rem 1rem 1rem;
   border-radius: 1rem;
 
-  border: solid;
-  border-color: white;
+  /* border: solid;
+  border-color: white; */
 }
 
-#sponsor h2 {
-  color: var(--verde-scuro);
+#sponsor-title {
+  margin-top: 4rem;
+  color: var(--verde-lime);
 }
 
 #sponsor h3 {
@@ -698,6 +697,7 @@ div.programma-animation2.active {
 }
 
 #ringraziamenti {
+  margin: 1rem 0 0.5rem 0;
   font-weight: bold;
 
   /*border: solid;
@@ -720,8 +720,8 @@ div.programma-animation2.active {
   background-color: var(--light-bg-color);
   color: var(--dark-bg-color);
 
-  border: solid;
-  border-color: orange;
+  /* border: solid;
+  border-color: orange; */
 }
 
 #location-contenuto {
@@ -733,8 +733,14 @@ div.programma-animation2.active {
   color: var(--verde-scuro);
   border-radius: 4px;
 
-  border: solid;
-  border-color: yellow;
+  /* border: solid;
+  border-color: yellow; */
+}
+
+#h2-location {
+  text-align: left;
+  padding-left: 1rem;
+  font-weight: bold;
 }
 
 #map {
@@ -744,8 +750,8 @@ div.programma-animation2.active {
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
   border: none;
 
-  border: solid;
-  border-color: white;
+  /* border: solid;
+  border-color: white; */
 }
 
 #testo-location {
@@ -766,7 +772,6 @@ div.programma-animation2.active {
 #indirizzo {
   font-style: italic;
 }
-
 
 /* Merch */
 
