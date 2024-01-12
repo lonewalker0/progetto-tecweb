@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   var menu = document.querySelector('.menu');
-  var originalMenuPosition = menu.offsetTop; // Get the original top position of the menu
+  var originalMenuPosition = menu.offsetTop; 
 
   window.addEventListener('scroll', function() {
       if (window.scrollY >= originalMenuPosition) { 
@@ -639,3 +639,11 @@ function calculateTotalPrice(id) {
   }
 }
 
+
+//funzione che visualizza i tutti gli ordini
+function showOrdini()
+{
+  let ordini = document.getElementById('tabellaordini');
+  ordini.classList.remove('tabella-hide');
+  ordini.classList.add('tabella-show');
+}

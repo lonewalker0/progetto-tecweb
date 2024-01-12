@@ -82,8 +82,7 @@ header {
   align-items: center;
   border-radius: 1rem;
   background-color: var(--verde-scurino );
-
-  /* border: solid;
+   /* border: solid;
   border-color: purple; */
 }
 
@@ -355,7 +354,6 @@ div#footer-content {
 #navEventi {
   text-align: center;
   margin: 1rem 0 2rem 0;
-
   /*border: solid;
   border-color: red;*/
 }
@@ -439,19 +437,6 @@ div.programma-animation2.active {
   display: none;
 }
 
-/*.carosello-block {
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  background-image: url("../assets/artisti/tony2milli.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 600px;
-  height: 600px;
-  align-items: center;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(37, 53, 25, 1);
-}*/
 #carosello-foto {
   position: relative;
   padding: 10px;
@@ -691,8 +676,8 @@ div.programma-animation2.active {
   background-color: var(--light-bg-color);
   color: var(--dark-bg-color);
 
-  /* border: solid;
-  border-color: orange; */
+  /*border: solid;
+  border-color: orange;*/
 }
 
 #location-contenuto {
@@ -704,8 +689,8 @@ div.programma-animation2.active {
   color: var(--verde-scuro);
   border-radius: 4px;
 
-  /* border: solid;
-  border-color: yellow; */
+  /*border: solid;
+  border-color: yellow;*/
 }
 
 #h2-location {
@@ -721,8 +706,8 @@ div.programma-animation2.active {
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
   border: none;
 
-  /* border: solid;
-  border-color: white; */
+  /*border: solid;
+  border-color: white;*/
 }
 
 #testo-location {
@@ -946,10 +931,10 @@ fieldset#login-fieldset div#login-password input#password
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  height: 2rem;
+  height: 2.5rem;
   border-radius: 1rem;
   text-align: left;
-  font-size: 15px;
+  font-size: 20px;
   border-top: 2px inset var(--verde-lime);
 }
 fieldset#login-fieldset div label
@@ -972,8 +957,8 @@ div#login-registrati
 div#login-registrati input#registrazione,
 div#login-registrati input#accedi
 {
-  width: 15%;
-  height: 2rem;
+  width: 10%;
+  height: 2.5rem;
   border-radius: 1rem;
   font-size: 20px;
   cursor: pointer;
@@ -1053,9 +1038,9 @@ div#sidebar h1#h1-account{
 
 div#sidebar{
   float:left;
-  width:20%;
-  /*float a sinistra modificare*/
-  margin-top: 4rem;
+  width:22.5%;
+  height: 100%;
+  margin-top: 5.5rem;
   margin-left: 4rem;
   text-align:center;
   border-radius:2rem;
@@ -1066,6 +1051,7 @@ div#sidebar{
 
 div#sidebar li{
   list-style: none;
+  line-height: 5rem;
 }
 
 div#sidebar li a,
@@ -1088,11 +1074,11 @@ div#sidebar li a:hover{
 fieldset#modifica-account
 {
   float:right;
-  width: 65%;
-  /*display:grid;*/
-  margin: 1rem 4rem 1rem 4rem;
+  width: 70%;
+  margin-bottom:4rem;
+  margin-right: 4rem;
   border-radius: 2rem;
-  border: 2px solid var(--verde-lime);
+  border: 1px solid var(--verde-lime);
   background-color: rgba(24, 31, 8, 0.85);
   padding: 1rem;
 }
@@ -1118,7 +1104,7 @@ fieldset#modifica-account input
   width: 100%;
   height: 2rem;
   border-radius: 8px;
-  padding: 2px;
+  padding: 1rem;
   font-size: 20px;
 }
 form#formUpdate div#salva-modifiche
@@ -1131,7 +1117,7 @@ form#formUpdate div#salva-modifiche
 form#formUpdate input#input-salva
 {
   width: 15%;
-  height: 2rem;
+  height: 2.5rem;
   border-radius: 1rem;
   font-size: 20px;
   cursor: pointer;
@@ -1178,18 +1164,78 @@ div#informazioni dd:hover{
   color: var(--verde-scuro);
 }
 
+/*ORDINI ACCOUNT*/
+
+div#ordini{
+  width: 70%;
+  margin-right: 4rem;
+  margin-bottom: 4rem;
+  float:right;
+}
+
+div#ordini div#dtable{
+  font-size: 25px;
+  border: 1px solid var(--verde-lime);
+  background-color: rgba(24, 31, 8, 0.85);
+  padding: 2rem;
+  border-radius: 2rem;  
+}
+
+div#ordini li{
+  padding: 1rem;
+  margin-left: 1rem;
+  font-size: 25px;
+}
+
+div#ordini a{
+  cursor:pointer;
+}
+
+.tabella-hide{
+  display:none;
+}
+
+.tabella-show{
+  width: 100%;
+  float:right;
+  border: 1px solid var(--verde-lime);
+  background-color: var(--verde-scuro);
+  border-radius: 2rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+div#ordini table#tabellaordini caption
+{
+  font-size: 30px;
+  padding:2rem;
+}
+div#ordini table#tabellaordini thead tr th
+{
+  padding: 1rem;
+  font-size: 25px;
+}
+div#ordini table#tabellaordini tbody tr td
+{
+  padding: 2rem;
+  font-size: 20px;
+}
+
 
 /*LOGOUT BUTTON*/
-form#logout-button
-{
-    width:5%;
-    margin: 4rem;
+form#logout-button{
+    display: flex;
+    float:left;
+    margin-left:4rem;
+    margin-top: 2rem;
+    width:22.5%;
+    justify-content: space-around;
 }
-form#logout-button input#input-logout
-{
-    width: 100%;
+
+form#logout-button input#input-logout{
+    width: 45%;
     border-radius: 1rem;
     padding: 8px;
     text-align: center;
-    font-size: 15px;;
+    font-size: 20px;;
 }

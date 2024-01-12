@@ -4,6 +4,7 @@ class BigliettiEntry {
     private $nome;
     private $description;
     private $prezzo;
+
     private $id;
 
     private $template; 
