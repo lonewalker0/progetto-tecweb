@@ -767,6 +767,73 @@ div.programma-animation2.active {
   font-style: italic;
 }
 
+
+/* Merch */
+
+.product {
+  margin: 4rem 0 4rem 0;
+  color: var(--verde-lime);
+
+  /* border: solid;
+  border-color: blue; */
+}
+
+#live-info {
+  font-style: italic;
+  text-align: center;
+  margin: 0 4rem 0 4rem;
+
+  /* border: solid;
+  border-color: white; */
+}
+
+.product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  padding: 2rem;
+  border-radius: 4px;
+  background-color: var(--verde-lime);
+
+  /* border: solid;
+  border-color: violet; */
+}
+
+.product-image {
+  width: 600px;
+  height: 600px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+
+  /* border: solid;
+  border-color: purple; */
+}
+
+.entry-info  {
+  color: var(--verde-scuro);
+
+  /* border: solid;
+  border-color: red; */
+}
+
+/* .product-details {
+  border: solid;
+  border-color: orange;
+} */
+
+.product-title {
+  display: none;
+
+  /* border: solid;
+  border-color: yellow; */
+}
+
+.definition-term {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
 /* Domande */
 
 #faq-container {
