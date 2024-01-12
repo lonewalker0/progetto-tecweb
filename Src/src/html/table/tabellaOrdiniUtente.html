@@ -1,9 +1,14 @@
-<p id="dtable">
+<div id="dtable">
   La tabella ha 5 colonne ed informa su tutti gli ordini effettuati dallo utente
-  visualizzando Numero ordine, Data di acquisto, tipologia di biglietto,
-  descrizione, prezzo totale
-</p>
-<table id="tabellaordini" aria-describedby="dtable">
+  visualizzando:
+  <li>Numero ordine (codice identificativo dell'ordine)</li>
+  <li>Data di acquisto</li>
+  <li>Tipologia di biglietto</li>
+  <li>Descrizione</li>
+  <li>Prezzo totale</li>
+  Per visualizzare la lista di tutti i tuoi ordini clicca <a onclick="showOrdini()">qui</a>
+</div>
+<table id="tabellaordini" class="tabella-hide" aria-describedby="dtable">
   <caption>
     Ordini Effettuati
   </caption>

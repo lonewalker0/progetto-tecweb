@@ -620,3 +620,12 @@ function calculateTotalPrice(id) {
     prezzoTotaleParagraph.style.display = "none";
   }
 }
+
+
+//funzione che visualizza i tutti gli ordini
+function showOrdini()
+{
+  let ordini = document.getElementById('tabellaordini');
+  ordini.classList.remove('tabella-hide');
+  ordini.classList.add('tabella-show');
+}
