@@ -61,8 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
       if (
-        validazioneFormEliminazioneUser() &&
-        confirm("Sei sicuro di voler eliminare l'account?")
+        validazioneFormEliminazioneUser()      
       ) {
         event.target.submit();
       }

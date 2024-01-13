@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Non è accettato codice HTML o lunghezza non valida!";
     }
     $password=$_POST['password'];
-    if(!$dboperation->verifyOldPassword($password, $username)) {
+    if(!$dboperation->verifyOldPassword($username,$password )) {
         $errors[] = "Password non corretta. Riprovare!";
     }
     
