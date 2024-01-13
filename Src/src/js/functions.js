@@ -182,6 +182,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     var timeout;
 
+    function hideScrollToTopBtn() {
+      // Nascondi il pulsante dopo 2 secondi di inattività
+      scrollToTopBtn.classList.add("hide");
+      scrollToTopBtn.classList.remove("show");
+    }
+
     window.addEventListener("scroll", function () {
       clearTimeout(timeout);
 
@@ -195,11 +201,7 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollToTopBtn.classList.remove("show");
       }
 
-      timeout = setTimeout(function () {
-        // Nascondi il pulsante dopo 2 secondi di inattività
-        scrollToTopBtn.classList.add("hide");
-        scrollToTopBtn.classList.remove("show");
-      }, 2000); // Puoi regolare il periodo di inattività a tuo piacimento
+      timeout = setTimeout(hideScrollToTopBtn, 2000); // Puoi regolare il periodo di inattività a tuo piacimento
     });
 
     scrollToTopBtn.addEventListener("click", function () {
@@ -209,6 +211,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Annulla il timeout quando il pulsante viene cliccato
       clearTimeout(timeout);
+    });
+
+    scrollToTopBtn.addEventListener("mouseenter", function () {
+      // Annulla il timeout quando il mouse entra nel pulsante
+      clearTimeout(timeout);
+    });
+
+    scrollToTopBtn.addEventListener("mouseleave", function () {
+      // Riavvia il timeout quando il mouse esce dal pulsante
+      timeout = setTimeout(hideScrollToTopBtn, 2000); // Puoi regolare il periodo di inattività a tuo piacimento
     });
   }
 });
