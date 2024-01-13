@@ -828,7 +828,7 @@ div.programma-animation2.active {
 
 /* Prevendite */
 
-#ticket-entry {
+.ticket-entry {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -878,15 +878,15 @@ div.programma-animation2.active {
   border-color: violet; */
 }
 
-#ticket-sale {
+/*ticket-sale {
   text-align: center;
   padding: 1rem;
   border-radius: 0.2rem;
   box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
   
-  /* border: solid;
-  border-color: brown; */
-}
+  *//* border: solid;
+  border-color: brown; 
+}*/
 
 .ticket-form {
   width: 19%;
