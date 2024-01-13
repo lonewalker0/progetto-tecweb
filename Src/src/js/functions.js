@@ -179,6 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   if (window.location.pathname === "/index.php") {
     var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    var navEventi = document.getElementById("navEventi");
 
     window.addEventListener("scroll", function () {
       if (window.scrollY > 300) {
@@ -193,7 +194,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     scrollToTopBtn.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      // Scorrimento graduale al navEventi
+      var navEventiPosition = navEventi.offsetTop;
+      window.scrollTo({ top: navEventiPosition -150, behavior: "smooth" });
     });
   }
 });
