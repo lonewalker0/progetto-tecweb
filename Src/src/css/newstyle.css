@@ -5,7 +5,7 @@
   scroll-padding-top: 2rem;
   scroll-behavior: smooth;
   box-sizing: border-box;
-  font-size: 14px;
+  font-size: 1.1rem;
 }
 
 :root {
@@ -77,10 +77,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 1rem 0 1rem;
   border-radius: 1rem;
   background-color: var(--verde-scurino);
 
-   /* border: solid;
+  /* border: solid;
   border-color: purple; */
 }
 
@@ -367,6 +368,7 @@ div#footer-content {
   height: 250px;
   border-radius: 4px;
   margin: 1rem;
+  margin-left: 3rem;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
 
   /* border: solid;
@@ -396,7 +398,7 @@ div.programma-animation2.active {
 .entry-info {
   flex: 1;
   max-width: 70%;
-  margin: 2rem 2rem 2rem 2rem;
+  margin: 2rem;
   padding: 2rem;
   color: var(--verde-scuro);
   font-size: 1.5rem;
@@ -822,6 +824,123 @@ div.programma-animation2.active {
 .definition-term {
   margin-top: 1rem;
   font-weight: bold;
+}
+
+/* Prevendite */
+
+#ticket-entry {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1080px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: var(--verde-lime);
+  color: var(--verde-scuro);
+  border-radius: 0.2rem;
+
+  /* border: solid;
+  border-color: orange; */
+}
+
+.hidden-element {
+  display: none;
+}
+
+.ticket-name {
+  padding: 2rem 1rem 2rem 1rem;
+  font-weight: bold;
+  font-size: 1.3rem;
+  background-color: var(--verde-scurino);
+  color: var(--verde-lime);
+  box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
+  border-radius: 0.2rem;
+
+  /* border: solid;
+  border-color: white; */
+}
+
+.ticket-description {
+  font-weight: bold;
+
+  /* border: solid;
+  border-color: purple; */
+}
+
+.ticket-price {
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+
+  /* border: solid;
+  border-color: violet; */
+}
+
+#ticket-sale {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
+  
+  /* border: solid;
+  border-color: brown; */
+}
+
+.ticket-form {
+  width: 19%;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
+  border-radius: 0.2rem;
+}
+
+fieldset {
+  border: none;
+}
+
+input[type="number"] {
+  border: none;
+  border-radius: 0.2rem;
+}
+
+input[type="submit"] {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: var(--verde-scurino);
+  color: var(--verde-lime);
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  transform: scale(1.1);
+}
+
+.total-price {
+  text-align: center;
+  margin-top: 0.5rem;
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+#purchase_result {
+  text-align: center;
+  margin: 1rem 0 1rem 0;
+  font-style: italic;
+}
+
+#purchase_result a {
+  color: var(--alt-link);
+}
+
+#purchase_result a:visited {
+  color: var(--alt-visited-link);
 }
 
 /* Domande */
