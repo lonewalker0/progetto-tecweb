@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", function () {
       clearTimeout(timeout);
 
-      if (window.scrollY > 300) {
+      if (window.scrollY > 1250) {
         // Aggiungi la classe 'show' e rimuovi la classe 'hide'
         scrollToTopBtn.classList.add("show");
         scrollToTopBtn.classList.remove("hide");
@@ -220,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     scrollToTopBtn.addEventListener("mouseleave", function () {
       // Riavvia il timeout quando il mouse esce dal pulsante
-      timeout = setTimeout(hideScrollToTopBtn, 2000); // Puoi regolare il periodo di inattività a tuo piacimento
+      timeout = setTimeout(hideScrollToTopBtn, 3000); // Puoi regolare il periodo di inattività a tuo piacimento
     });
   }
 });
