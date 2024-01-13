@@ -32,7 +32,6 @@ class accountOperation {
             $output = str_replace("{{indirizzo}}", $userInfo['indirizzo'], $output);
             $output = str_replace("{{email}}", $userInfo['email'], $output);
             $output .= "<div class='section' id='modifica'>";
-            $output .= "<h2 >Modifica informazioni account account</h2>";
 
             if (isset($_SESSION['update_form_errors'])) {
                 foreach ($_SESSION['update_form_errors'] as $error) {

@@ -893,7 +893,7 @@ div.programma-animation2.active {
 
 main {
   background-color: var(--light-bg-color);
-  margin: 0rem 2rem 0rem 2rem;
+  margin: 0rem 4rem 0rem 4rem;
 }
 
 /*PRIVACY POLICY*/
@@ -1064,15 +1064,18 @@ div#sidebar h1#h1-account{
 }
 
 div#sidebar{
-  float:left;
-  width:22.5%;
-  height: 100%;
+  display:flex;
+  width:100%;
   margin-top: 5.5rem;
-  margin-left: 4rem;
   text-align:center;
-  border-radius:2rem;
-  background-color: rgba(24, 31, 8, 0.85);
   padding: 2rem;
+  justify-content: space-around;
+}
+
+div#sidebar nav{
+  width: 22.5%;
+  border-radius:2rem;
+  background-color: var(--verde-scurino);
   border: 1px solid var(--verde-lime);
 }
 
@@ -1084,7 +1087,7 @@ div#sidebar li{
 div#sidebar li a,
 div#sidebar li a:visited{
   color:var(--alt-visited-link);
-  font-size:25px;
+  font-size:1.5rem;
   text-align: center;
   border-radius: 2rem;
   transition: all 0.2s ease-in-out;
@@ -1096,65 +1099,9 @@ div#sidebar li a:hover{
     background-color:var(--verde-lime);
 }
 
-
-/*MODIFICA ACCOUNT*/
-fieldset#modifica-account
-{
-  float:right;
-  width: 70%;
-  margin-bottom:4rem;
-  margin-right: 4rem;
-  border-radius: 2rem;
-  border: 1px solid var(--verde-lime);
-  background-color: rgba(24, 31, 8, 0.85);
-  padding: 1rem;
-}
-fieldset#modifica-account legend{
-  font-size: 30px;
-  text-align: center;
-}
-fieldset#modifica-account p
-{
-  display:flex;
-  flex-direction: column;
-  padding: 1rem;
-  width:50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-fieldset#modifica-account p label
-{
-  font-size:25px;
-}
-fieldset#modifica-account input
-{
-  width: 100%;
-  height: 2rem;
-  border-radius: 8px;
-  padding: 1rem;
-  font-size: 20px;
-}
-form#formUpdate div#salva-modifiche
-{
-  display:flex;
-  justify-content: space-around;
-  width: 70%;
-  float:right;
-}
-form#formUpdate input#input-salva
-{
-  width: 15%;
-  height: 2.5rem;
-  border-radius: 1rem;
-  font-size: 20px;
-  cursor: pointer;
-}
-
 /*INFORMAZIONI ACCOUNT*/
 div#informazioni{
-  width: 70%;
-  float:right;
-  margin-right: 4rem;
+  width: 100%;
   margin-bottom: 4rem;
 }
 
@@ -1170,7 +1117,7 @@ div#informazioni dl{
 
 div#informazioni dt{
   padding-top:1rem;
-  font-size: 25px
+  font-size: 1.5rem;
 }
 
 div#informazioni dd{
@@ -1181,7 +1128,7 @@ div#informazioni dd{
   border-radius: 2rem;
   width: 20%;
   text-align: center;
-  font-size: 20px;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -1191,17 +1138,66 @@ div#informazioni dd:hover{
   color: var(--verde-scuro);
 }
 
+/*MODIFICA ACCOUNT*/
+fieldset#modifica-account
+{
+  width: 100%;
+  margin-bottom:4rem;
+  margin-right: 4rem;
+  border-radius: 2rem;
+  border: 1px solid var(--verde-lime);
+  background-color: rgba(24, 31, 8, 0.85);
+  padding: 1rem;
+}
+fieldset#modifica-account legend{
+  font-size: 1.5rem;
+  text-align: center;
+}
+fieldset#modifica-account p
+{
+  display:flex;
+  flex-direction: column;
+  padding: 1rem;
+  width:50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+fieldset#modifica-account p label
+{
+  font-size:1.5rem;
+}
+fieldset#modifica-account input
+{
+  width: 100%;
+  height: 2rem;
+  border-radius: 8px;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+form#formUpdate div#salva-modifiche
+{
+  display:flex;
+  justify-content: space-around;
+  width: 100%;
+}
+form#formUpdate input#input-salva
+{
+  width: 12.5%;
+  height: 3rem;
+  border-radius: 1rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+
 /*ORDINI ACCOUNT*/
 
 div#ordini{
-  width: 70%;
-  margin-right: 4rem;
+  width: 100%;
   margin-bottom: 4rem;
-  float:right;
 }
 
 div#ordini div#dtable{
-  font-size: 25px;
+  font-size: 1.5rem;
   border: 1px solid var(--verde-lime);
   background-color: rgba(24, 31, 8, 0.85);
   padding: 2rem;
@@ -1211,20 +1207,15 @@ div#ordini div#dtable{
 div#ordini li{
   padding: 1rem;
   margin-left: 1rem;
-  font-size: 25px;
+  font-size: 1.5rem;
 }
 
 div#ordini a{
   cursor:pointer;
 }
 
-.tabella-hide{
-  display:none;
-}
-
-.tabella-show{
+table#tabellaordini{
   width: 100%;
-  float:right;
   border: 1px solid var(--verde-lime);
   background-color: var(--verde-scuro);
   border-radius: 2rem;
@@ -1234,25 +1225,24 @@ div#ordini a{
 
 div#ordini table#tabellaordini caption
 {
-  font-size: 30px;
+  font-size: 2rem;
   padding:2rem;
 }
 div#ordini table#tabellaordini thead tr th
 {
   padding: 1rem;
-  font-size: 25px;
+  font-size: 1.5rem;
 }
 div#ordini table#tabellaordini tbody tr td
 {
   padding: 2rem;
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
 /*ELIMINA ACCOUNT*/
 div#elimina{
   padding: 2rem;
-  width: 70%;
-  float: right;
+  width: 100%;
   margin-right:4rem;
 }
 
@@ -1266,22 +1256,21 @@ div#elimina div#elimina-account{
 }
 div#elimina div#elimina-account p{
   padding: 1rem;
-  font-size: 25px;
+  font-size: 1.5rem;
 }
 div#elimina div#elimina-account li
 {
-  font-size: 20px;
+  font-size: 1.5rem;
   margin-left:4rem;
   padding: 4px;
 }
 
 /*LOGOUT BUTTON*/
 form#logout div#logout-div{
-    position: sticky;
     display:flex;
-    float:left;
-    margin-left:4rem;
+    margin-left:auto;
     margin-top: 2rem;
+    margin-right:auto;
     width:22.5%;
     justify-content: space-around;
     
