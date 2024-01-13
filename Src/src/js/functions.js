@@ -180,7 +180,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var scrollToTopBtn = document.getElementById("scrollToTopBtn");
     var navEventi = document.getElementById("navEventi");
 
+    var timeout;
+
     window.addEventListener("scroll", function () {
+      clearTimeout(timeout);
+
       if (window.scrollY > 300) {
         // Aggiungi la classe 'show' e rimuovi la classe 'hide'
         scrollToTopBtn.classList.add("show");
@@ -190,12 +194,21 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollToTopBtn.classList.add("hide");
         scrollToTopBtn.classList.remove("show");
       }
+
+      timeout = setTimeout(function () {
+        // Nascondi il pulsante dopo 2 secondi di inattività
+        scrollToTopBtn.classList.add("hide");
+        scrollToTopBtn.classList.remove("show");
+      }, 2000); // Puoi regolare il periodo di inattività a tuo piacimento
     });
 
     scrollToTopBtn.addEventListener("click", function () {
       // Scorrimento graduale al navEventi
       var navEventiPosition = navEventi.offsetTop;
-      window.scrollTo({ top: navEventiPosition -150, behavior: "smooth" });
+      window.scrollTo({ top: navEventiPosition - 150, behavior: "smooth" });
+
+      // Annulla il timeout quando il pulsante viene cliccato
+      clearTimeout(timeout);
     });
   }
 });
