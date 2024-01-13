@@ -913,12 +913,35 @@ input[type="submit"] {
   border-radius: 0.2rem;
   background-color: var(--verde-scurino);
   color: var(--verde-lime);
+  border: 1px solid var(--verde-lime);
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  outline-color: var(--verde-lime);
+}
+
+input[type="button"] {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: var(--verde-scurino);
+  color: var(--verde-lime);
+  border: 1px solid var(--verde-lime);
   cursor: pointer;
   transition: transform 0.1s ease-in-out;
 }
 
+input[type="text"]:focus,
+input[type="password"]:focus{
+  outline: 1px solid var(--verde-lime);
+}
+
 input[type="submit"]:hover,
-input[type="submit"]:focus {
+input[type="submit"]:focus,
+input[type="button"]:hover,
+input[type="button"]:focus {
   transform: scale(1.1);
 }
 
@@ -989,8 +1012,12 @@ input[type="submit"]:focus {
   /* border: solid;
   border-color: yellowgreen; */
 }
+.faq-item ul li
+{
+  margin-left: 1.5rem;
+}
 
-.question {
+.question, .question span {
   font-size: 1.4rem;
   font-weight: bold;
   margin-bottom: 10px;
@@ -1033,15 +1060,20 @@ div#privacy-container h3,
 div#privacy-container h4 {
   padding-left: 0;
 }
+div#privacy-container h2 span{
+  font-size: 2rem;
+}
+
 div#privacy-container ul li {
   margin-left: 25px;
 }
 #privacy-title {
-  margin-top: 4rem;
+  margin-top: 2rem;
   color: var(--verde-lime);
-  font-weight: 400;
-  font-weight: bold;
-  margin-top: 190px;
+}
+#privacy-title span
+{
+  font-size: 3rem;
 }
 
 /*LOGIN FORM*/
@@ -1056,12 +1088,12 @@ fieldset#login-fieldset legend
 {
   display:none;
   text-align: center;
-  font-size: 35px;
+  font-size: 1.5rem;
 }
 div#error_login p
 {
   text-align: center;
-  font-size: 20px;
+  font-size: 1rem;
   color:var(--verde-lime);
 }
 fieldset#login-fieldset div#login-username,
@@ -1082,14 +1114,14 @@ fieldset#login-fieldset div#login-password input#password
   height: 2.5rem;
   border-radius: 1rem;
   text-align: left;
-  font-size: 20px;
-  border-top: 2px inset var(--verde-lime);
+  font-size: 1rem;
+  border: 2px solid var(--verde-lime);
 }
 fieldset#login-fieldset div label
 {
   display: flex;
   justify-content: space-between;
-  font-size: 25px;
+  font-size: 1.5rem;
   width: 50%;
   margin-left:auto;
   margin-right:auto;
@@ -1108,8 +1140,13 @@ div#login-registrati input#accedi
   width: 10%;
   height: 2.5rem;
   border-radius: 1rem;
-  font-size: 20px;
+  font-size: 1rem;
   cursor: pointer;
+}
+
+div#login-registrati input#accedi
+{
+  margin-right:1rem;
 }
 
 /*REGISTER FORM*/
@@ -1187,7 +1224,6 @@ div#sidebar h1#h1-account{
 div#sidebar{
   display:flex;
   width:100%;
-  margin-top: 5.5rem;
   text-align:center;
   padding: 2rem;
   justify-content: space-around;
@@ -1203,12 +1239,13 @@ div#sidebar nav{
 div#sidebar li{
   list-style: none;
   line-height: 5rem;
+  font-size:1.25rem;
 }
 
 div#sidebar li a,
 div#sidebar li a:visited{
   color:var(--alt-visited-link);
-  font-size:1.5rem;
+  font-size:1.25rem;
   text-align: center;
   border-radius: 2rem;
   transition: all 0.2s ease-in-out;
@@ -1238,7 +1275,7 @@ div#informazioni dl{
 
 div#informazioni dt{
   padding-top:1rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 div#informazioni dd{
@@ -1247,9 +1284,9 @@ div#informazioni dd{
   padding: 8px;
   border: 1px solid var(--alt-visited-link);
   border-radius: 2rem;
-  width: 20%;
+  width: 15%;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
@@ -1285,15 +1322,17 @@ fieldset#modifica-account p
 }
 fieldset#modifica-account p label
 {
-  font-size:1.5rem;
+  font-size:1.25rem;
 }
 fieldset#modifica-account input
 {
   width: 100%;
   height: 2rem;
-  border-radius: 8px;
+  border-radius: 2rem;
+  border: 1px solid var(--verde-lime);
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  margin-top: 8px;
 }
 form#formUpdate div#salva-modifiche
 {
@@ -1318,21 +1357,20 @@ div#ordini{
 }
 
 div#ordini div#dtable{
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   border: 1px solid var(--verde-lime);
   background-color: rgba(24, 31, 8, 0.85);
   padding: 2rem;
   border-radius: 2rem;  
+  width:70%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div#ordini li{
   padding: 1rem;
   margin-left: 1rem;
-  font-size: 1.5rem;
-}
-
-div#ordini a{
-  cursor:pointer;
+  font-size: 1.25rem;
 }
 
 table#tabellaordini{
@@ -1351,13 +1389,13 @@ div#ordini table#tabellaordini caption
 }
 div#ordini table#tabellaordini thead tr th
 {
-  padding: 1rem;
+  padding: 1.5rem;
   font-size: 1.5rem;
 }
 div#ordini table#tabellaordini tbody tr td
 {
   padding: 2rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 /*ELIMINA ACCOUNT*/
@@ -1375,10 +1413,17 @@ div#elimina div#elimina-account{
   border-radius: 2rem;
   padding:2rem;
 }
+
 div#elimina div#elimina-account p{
   padding: 1rem;
   font-size: 1.5rem;
 }
+
+div#elimina div#elimina-account p a{
+  font-size: 1.5rem;
+  color:var(--alt-visited-link);
+}
+
 div#elimina div#elimina-account li
 {
   font-size: 1.5rem;
@@ -1404,4 +1449,42 @@ form#logout div#logout-div input#input-logout{
     text-align: center;
     font-size: 20px;
     cursor:pointer;
+}
+
+/*ELIMINAZIONE ACCOUNT*/
+
+form#formeliminaaccount label
+{
+  margin-top: 2rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+form#formeliminaaccount input
+{
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+form#formeliminaaccount input[type="password"]
+{
+  margin-left: 1rem;
+  width:25%;
+  padding: 4px;
+  border-radius: 1rem;
+  color: var(--verde-lime);
+  border: 1px solid var(--verde-lime);
+  background-color: var(--verde-scurino);
+  margin-bottom: 4rem;
+}
+form#formeliminaaccount input[type="submit"]
+{
+  font-size: 1rem;
+  width:10%;
+  border-radius: 1rem;
+  border: 1px solid var(--verde-lime);
+  background-color: var(--verde-scurino);
+  padding: 0.5rem;
 }

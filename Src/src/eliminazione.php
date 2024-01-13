@@ -7,7 +7,7 @@ $title = 'Elimina Account | TechnoLum250';
 $keyword = 'Festival, Techno, Lum250, Account, Eliminazione;'; 
 $description = 'Eliminazione account dal festival :('; 
 
-$main= "<h1>Conferma Eliminazione</h1>";
+$main= "<h1 id='conferma'>Conferma eliminazione</h1>";
 $main.= '<div id="errorContainerEliminazione">'; 
         if (isset($_SESSION['form_delete_errors'])) {
             foreach ($_SESSION['form_delete_errors'] as $error) {
