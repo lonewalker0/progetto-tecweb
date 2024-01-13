@@ -974,6 +974,37 @@ input[type="button"]:focus {
   color: var(--alt-visited-link);
 }
 
+.ticket-vip {
+  text-align: center; /* Centra il contenuto rispetto alla pagina */
+}
+.ticket-vip p {
+  line-height: 1.5em;
+}
+
+.ticket-vip ul {
+  list-style-type: none;
+  padding: 1rem;
+ 
+  margin: 0; /* Rimuove il margine predefinito della lista */
+}
+
+.ticket-vip ul li {
+  margin-bottom: 2rem; /* Aggiunge spazio tra gli elementi della lista */
+  display: flex; /* Utilizza il modello di layout flexbox */
+  align-items: center; /* Centra gli elementi verticalmente */
+  justify-content: center;
+}
+
+.ticket-vip ul li::before {
+  content: url('../assets/arrow/spuntaverde.png'); /* Sostituisci con il percorso dell'immagine desiderata */
+  margin-right: 1rem;
+}
+
+.ticket-vip ul li span.vip-privilegi {
+  font-weight: bold;
+  
+}
+
 /* Domande */
 
 #faq-container {

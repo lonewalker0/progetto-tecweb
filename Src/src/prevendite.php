@@ -18,6 +18,7 @@ if (isset($_SESSION['purchase_result'])) {
 }
     $bigliettobuilder= new BigliettiBuilder();
     $main.=$bigliettobuilder->buildBigliettoHtml();
+    $main.=file_get_contents(__DIR__ .'/html/vip_description.html');
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);
 ?>
