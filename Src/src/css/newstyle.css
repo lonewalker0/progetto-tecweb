@@ -520,8 +520,13 @@ div.programma-animation2.active {
  
 }
 
+#scrollToTopBtn.hide{
+  display:none;
+}
 
-
+#scrollToTopBtn.show{
+  display:block;
+}
 
 #scrollToTopBtn:hover {
   bottom: 2.5em; /* Imposta la nuova distanza dal basso durante l'hover */

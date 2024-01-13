@@ -177,26 +177,24 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  
-
-  // Aggiungi un controllo per assicurarti che la funzione venga eseguita solo sulla pagina index.php
   if (window.location.pathname === "/index.php") {
-      
+    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-      var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 300) {
+        // Aggiungi la classe 'show' e rimuovi la classe 'hide'
+        scrollToTopBtn.classList.add("show");
+        scrollToTopBtn.classList.remove("hide");
+      } else {
+        // Aggiungi la classe 'hide' e rimuovi la classe 'show'
+        scrollToTopBtn.classList.add("hide");
+        scrollToTopBtn.classList.remove("show");
+      }
+    });
 
-      window.addEventListener("scroll", function () {
-          if (window.scrollY > 300) {
-              scrollToTopBtn.style.display = "block";
-          } else {
-              scrollToTopBtn.style.display = "none";
-          }
-      });
-
-      scrollToTopBtn.addEventListener("click", function () {
-          // Smooth scroll to the top
-          window.scrollTo({ top: 0, behavior: "smooth" });
-      });
+    scrollToTopBtn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   }
 });
 
