@@ -17,6 +17,13 @@
   --alt-link: white;
   --alt-visited-link: yellow;
 }
+::placeholder{
+  color:var(--verde-lime);
+  opacity: 1;
+}
+::-ms-input-placeholder{
+  color:var(--verde-lime);
+}
 
 body {
   background-color: var(--verde-scuro);
@@ -916,7 +923,6 @@ input[type="submit"] {
   border: 1px solid var(--verde-lime);
   cursor: pointer;
   transition: transform 0.1s ease-in-out;
-  outline-color: var(--verde-lime);
 }
 
 input[type="button"] {
@@ -934,7 +940,9 @@ input[type="button"] {
 }
 
 input[type="text"]:focus,
-input[type="password"]:focus{
+input[type="password"]:focus,
+input[type="submit"]:focus,
+input[type="email"]:focus{
   outline: 1px solid var(--verde-lime);
 }
 
@@ -1115,7 +1123,9 @@ fieldset#login-fieldset div#login-password input#password
   border-radius: 1rem;
   text-align: left;
   font-size: 1rem;
-  border: 2px solid var(--verde-lime);
+  color: var(--verde-lime);
+  border: 1px solid var(--verde-lime);
+  background-color: var(--verde-scurino);
 }
 fieldset#login-fieldset div label
 {
@@ -1188,7 +1198,9 @@ fieldset#register-fieldset2 input{
   border-radius: 1rem;
   text-align: left;
   font-size: 15px;
-  border-top: 2px inset var(--verde-lime);
+  color: var(--verde-lime);
+  background-color: var(--verde-scurino);
+  border: 1px solid var(--verde-lime);
   padding: 1rem;
 }
 
