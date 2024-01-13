@@ -142,6 +142,64 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Controlla se siamo sulla pagina account.php prima di eseguire il codice
+  if (window.location.pathname.includes("account.php")) {
+      var menuLinks = document.querySelectorAll("#adminnavEventi ul li a");
+      var sections = document.querySelectorAll(".section-admin");
+
+      // Nascondi tutte le sezioni tranne la prima inizialmente
+      sections.forEach(function (section, index) {
+          if (index === 0) {
+              section.style.display = "block";
+          } else {
+              section.style.display = "none";
+          }
+      });
+
+      menuLinks.forEach(function (link, index) {
+          link.addEventListener("click", function (event) {
+              event.preventDefault();
+              var targetSectionId = this.getAttribute("href").substring(1);
+
+              // Mostra solo la sezione con l'ID corrispondente e nascondi le altre
+              sections.forEach(function (section) {
+                  if (section.id === targetSectionId) {
+                      section.style.display = "block";
+                  } else {
+                      section.style.display = "none";
+                  }
+              });
+          });
+      });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  
+
+  // Aggiungi un controllo per assicurarti che la funzione venga eseguita solo sulla pagina index.php
+  if (window.location.pathname === "/index.php") {
+      
+
+      var scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+      window.addEventListener("scroll", function () {
+          if (window.scrollY > 300) {
+              scrollToTopBtn.style.display = "block";
+          } else {
+              scrollToTopBtn.style.display = "none";
+          }
+      });
+
+      scrollToTopBtn.addEventListener("click", function () {
+          // Smooth scroll to the top
+          window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+  }
+});
+
 if (window.location.pathname === "/index.php") {
   document.addEventListener("DOMContentLoaded", function () {
     carosello();

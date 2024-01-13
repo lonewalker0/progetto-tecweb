@@ -1,18 +1,27 @@
 <div class="event-container">
-  <img src="{{image}}" alt="ritratto dello artista {{performer}}" />
-  <dl>
-    <dt>Artista:</dt>
-    <dd>{{performer}}</dd>
+  <div class="programma-entry" role="article">
 
-    <dt>Data:</dt>
-    <dd>{{datetime}}</dd>
+    <img src="{{image}}" alt="ritratto di {{performer}}" />
 
-    <dt>Ora:</dt>
-    <dd>{{time}}</dd>
+    <div class="entry-info">
+      
+      <dl class="event-details">
 
-    <dt>Descrizione:</dt>
-    <dd>{{Description}}</dd>
-  </dl>
+        <dt class="definition-term">Artista:</dt>
+        <dd>{{performer}}</dd>
+
+        <!--<dt>Data:</dt>
+        <dd><time datetime="{{datetime}}">{{datetime}}</time></dd>-->
+
+        <dt class="definition-term">Ora:</dt>
+        <dd><time datetime="{{time}}">{{time}}</time></dd>
+
+        <dt class="definition-term">Descrizione:</dt>
+        <dd>{{Description}}</dd>
+
+      </dl>
+    </div>
+  </div>
 
   <form action="phputilities/eventEleminationHandler.php" method="post">
     <input type="hidden" name="event_artist" value="{{performer}}" />

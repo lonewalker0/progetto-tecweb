@@ -15,14 +15,28 @@ class adminOperation
     public function getMain(): string
     {
         $html = "<h1>Welcome Admin!</h1>";
-
+        $dates = ['2024-07-05', '2024-07-06', '2024-07-07'];
+        $html .= file_get_contents(__DIR__ . '/../html/adminsidebar.html');
         $html .= '<div id="ProgramManagement">';
         #costruzione del menu per l'elimizazione
         $events = $this->dbOperation->getEventEntries();
         $html .= '<h2>Manutenzione del programma</h2>';
-        foreach ($events as $event) {
-            $html .= $event->generateEliminationHTML();
-        }
+        foreach ($dates as $date) {
+            $html.= "<div class='section-admin' id='giornata" . str_replace('-', '', $date) . "admin'>";
+            $html .= "<h2> <time datetime='$date'>$date</time></h2>"; 
+
+            foreach ($events as $event) {
+                if ($event->getDate() === $date) {
+                    $html .= $event->generateEliminationHTML();
+                }
+            }
+
+            $html .= "</div>";}
+
+        //foreach ($events as $event) {
+         //   $html .= $event->generateEliminationHTML();
+        //}
+        
         
 
         $html .= '<div id="errorContainerAggiuntaEvento">'; #è lo stesso container utilizzato dalla validazione di js
@@ -35,7 +49,7 @@ class adminOperation
         $html .= '</div>';
         
         
-        $html .= '<div id="addEventForm">';
+        $html .= '<div class="section-admin" id="addEventForm">';
         $formContent = file_get_contents(__DIR__ . '/../html/form/addEventForm.html');
 
         // Replace placeholders in the form content
