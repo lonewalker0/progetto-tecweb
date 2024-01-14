@@ -47,11 +47,13 @@ if (!isset($_SESSION["username"]) ) {
 
     if (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] === true) {
         // Admin-specific content
-        $adminOperation = new adminOperation(); 
-        $main = $adminOperation->getMain(); 
+        $adminOperation = new adminOperation();
+        #bottone per il logout
+        $main = '<form id="logout" action="phputilities/logoutprocess.php" method="post"> <div id = "logout-div"><input id="input-logout" type="submit" name="logout" value="Logout"></div></form>'; 
+        $main .= $adminOperation->getMain(); 
     } elseif (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] === false) {
-        // Non-admin-specific content
-        $main = file_get_contents(__DIR__ . '/html/sidebar.html');
+        $main = '<form id="logout" action="phputilities/logoutprocess.php" method="post"> <div id = "logout-div"><input id="input-logout" type="submit" name="logout" value="Logout"></div></form>'; 
+        $main .= file_get_contents(__DIR__ . '/html/sidebar.html');
         $accountOperation= new accountOperation();
         $main.=$accountOperation->getMain();
     }
