@@ -413,6 +413,14 @@ function validazioneFormAggiutaEvento() {
   } else {
     document.getElementById("date").setAttribute("aria-invalid", "false");
   }
+  const allowedDates = ["25/07/2024", "26/07/2024", "27/07/2024"];
+  if (!allowedDates.includes(date)) {
+        isValid = false;
+        document.getElementById("date").setAttribute("aria-invalid", "true");
+        appendError(errorContainer, "La data deve essere 25, 26 o 27 Luglio 2024!");
+  } else {
+        document.getElementById("date").setAttribute("aria-invalid", "false");
+  }
   if (formatoOra(hour)) {
     isValid = false;
     document.getElementById("hour").setAttribute("aria-invalid", "true");
