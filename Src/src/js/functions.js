@@ -311,9 +311,11 @@ function appendError(conteinerId, message) {
   conteinerId.appendChild(errorElement);
 }
 
-function StringaValida(string) {
+function StringaValida(string, minLength, maxLength) {
   const pattern = /<[^>]*>|&[^;]+;/;
-  return !pattern.test(string);
+  const isValidLength = string.length >= minLength && string.length <= maxLength;
+
+  return isValidLength && !pattern.test(string);
 }
 
 function isValidAge(dateOfBirth) {
@@ -338,7 +340,7 @@ function isValidEmail(email) {
 
   var isEmailValid = emailPattern.test(email);
 
-  var hasHtmlTagsOrEntities = !StringaValida(email);
+  var hasHtmlTagsOrEntities = !StringaValida(email,5,100);
 
   return isEmailValid && !hasHtmlTagsOrEntities;
 }
@@ -377,10 +379,10 @@ function validazioneFormAggiutaEvento() {
       .getElementById("artist_name")
       .setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(artistName)) {
+  if (!StringaValida(artistName,4,50)) {
     isValid = false;
     document.getElementById("artist_name").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Il nome del artista non accetta codice HTML!");
+    appendError(errorContainer, "Il nome del artista non accetta codice HTML o lunghezza stringa non valida!");
   } else {
     document
       .getElementById("artist_name")
@@ -395,10 +397,10 @@ function validazioneFormAggiutaEvento() {
       .getElementById("artist_name")
       .setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(description)) {
+  if (!StringaValida(description,4,500)) {
     isValid = false;
     document.getElementById("description").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Nella descrizione non è ammesso codice HTML!");
+    appendError(errorContainer, "Nella descrizione non è ammesso codice HTML o lunghezza stringa non valida: massimo 500 caratteri!");
   } else {
     document
       .getElementById("description")
@@ -454,11 +456,11 @@ function validazioneFormLogin() {
   const fieldsToValidate = [
     {
       name: "username",
-      errorMessage: "Il campo username non accetta codice HTML!",
+      errorMessage: "Il campo username non accetta codice HTML o lunghezza stringa non valida!",
     },
     {
       name: "password",
-      errorMessage: "Il campo password non accetta codice HTML!",
+      errorMessage: "Il campo password non accetta codice HTML o lunghezza stringa non valida!",
     },
   ];
 
@@ -467,7 +469,7 @@ function validazioneFormLogin() {
   fieldsToValidate.forEach((field) => {
     const value = document.forms["formLogin"][field.name].value;
 
-    if (!StringaValida(value) && isValid == true) {
+    if (!StringaValida(value,4,50) && isValid == true) {
       isValid = false;
       document.getElementById(field.name).setAttribute("aria-invalid", "true");
       appendError(errorContainer, field.errorMessage);
@@ -495,17 +497,17 @@ function validazioneFormRegistrazione() {
     document.forms["RegistrationForm"]["confermaPassword"].value;
 
   let isValid = true;
-  if (!StringaValida(nome)) {
+  if (!StringaValida(nome,2,50)) {
     isValid = false;
     document.getElementById("nome").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML o lunghezza stringa non valida!");
   } else {
     document.getElementById("nome").setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(cognome)) {
+  if (!StringaValida(cognome,2,50)) {
     isValid = false;
     document.getElementById("cognome").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML o lounghezza stringa non valida!");
   } else {
     document.getElementById("cognome").setAttribute("aria-invalid", "false");
   }
@@ -518,33 +520,33 @@ function validazioneFormRegistrazione() {
       .getElementById("dataNascita")
       .setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(indirizzo)) {
+  if (!StringaValida(indirizzo,2,75)) {
     isValid = false;
     document.getElementById("indirizzo").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML o lunghezza stringa non valida!");
   } else {
     document.getElementById("indirizzo").setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(username)) {
+  if (!StringaValida(username,4,30)) {
     isValid = false;
     document.getElementById("username").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML o lunghezza stringa non valida!");
   } else {
     document.getElementById("username").setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(password)) {
+  if (!StringaValida(password,4,50)) {
     isValid = false;
     document.getElementById("password").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML o lunghezza stringa non valida!");
   } else {
     document.getElementById("password").setAttribute("aria-invalid", "false");
   }
-  if (!StringaValida(confermapassword)) {
+  if (!StringaValida(confermapassword,4,50)) {
     isValid = false;
     document
       .getElementById("confermaPassword")
       .setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML o lunghezza non valida!");
   } else {
     document
       .getElementById("confermaPassword")
@@ -582,10 +584,10 @@ function validazioneFormUpdate() {
 
   let isValid = true;
   if (indirizzo.trim() !== "") {
-    if (!StringaValida(indirizzo)) {
+    if (!StringaValida(indirizzo,2,75)) {
       isValid = false;
       document.getElementById("indirizzo").setAttribute("aria-invalid", "true");
-      appendError(errorContainer, "Questo campo non accetta codice HTML!");
+      appendError(errorContainer, "Questo campo non accetta codice HTML o lunghezza stringa non valida!");
     } else {
       document
         .getElementById("indirizzo")
@@ -607,9 +609,9 @@ function validazioneFormUpdate() {
     confermapassword.trim() !== ""
   ) {
     if (
-      !StringaValida(passwordvecchia) ||
-      !StringaValida(nuovapassword) ||
-      !StringaValida(confermapassword)
+      !StringaValida(passwordvecchia,4,50) ||
+      !StringaValida(nuovapassword,4,50) ||
+      !StringaValida(confermapassword,4,50)
     ) {
       isValid = false;
       document
@@ -623,7 +625,7 @@ function validazioneFormUpdate() {
         .setAttribute("aria-invalid", "true");
       appendError(
         errorContainer,
-        "Le password contengono caratteri non validi."
+        "Le password contengono caratteri non validi o lunghezza non valida."
       );
     } else {
       // Verifica che la nuova password e la conferma coincidano
@@ -661,10 +663,10 @@ function validazioneFormEliminazioneUser() {
   errorContainer.innerHTML = "";
   const password = document.forms["formeliminaaccount"]["password"].value;
   let isValid = true;
-  if (!StringaValida(password)) {
+  if (!StringaValida(password,4,50)) {
     isValid = false;
     document.getElementById("password").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "Non è accettato codice HTML!");
+    appendError(errorContainer, "Non è accettato codice HTML o lunghezza stringa non valida!");
   } else {
     document.getElementById("password").setAttribute("aria-invalid", "false");
   }
