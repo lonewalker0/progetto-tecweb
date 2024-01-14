@@ -17,14 +17,7 @@ $description = 'Registrati al sito di TechnoLum250, inserisci i dati personali e
 $main = "<h1>Registrazione</h1>";
 
 
-$main.= '<div id="errorContainerRegistrazione">'; 
-        if (isset($_SESSION['add_register_form_errors'])) {
-            foreach ($_SESSION['add_register_form_errors'] as $error) {
-                $main .= '    <p>' . $error . '</p>';
-            }
-            unset($_SESSION['add_register_form_errors']);
-        }
-        $main .= '</div>';
+
 
 
 $formContent =file_get_contents(__DIR__.'/html/form/registerform.html');   
@@ -52,6 +45,15 @@ $replaceValues[] = isset($form_data['username']) ? htmlspecialchars($form_data['
 
 $formContent = str_replace($placeholders, $replaceValues, $formContent);
 $main .= $formContent;
+
+$main.= '<div id="errorContainerRegistrazione">'; 
+        if (isset($_SESSION['add_register_form_errors'])) {
+            foreach ($_SESSION['add_register_form_errors'] as $error) {
+                $main .= '    <p>' . $error . '</p>';
+            }
+            unset($_SESSION['add_register_form_errors']);
+        }
+        $main .= '</div>';
 
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);

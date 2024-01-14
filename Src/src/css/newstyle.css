@@ -5,7 +5,7 @@
   scroll-padding-top: 2rem;
   scroll-behavior: smooth;
   box-sizing: border-box;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 :root {
@@ -221,13 +221,14 @@ header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bold;
   background-color: var(--verde-scurino);
   border-radius: 1rem;
 }
 .fixed-menu {
   position: fixed;  
+  max-width: 1792px;
   z-index: 100; 
 }
 .fixed-menu + * {
@@ -337,7 +338,7 @@ footer {
 }
 
 div#footer-content {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 200;
 }
 #footer-content p {
@@ -431,9 +432,6 @@ div.programma-animation2.active {
   color: var(--verde-scuro);
   font-size: 1.5rem;
   font-weight: 400;
-
-  /* border: solid;
-  border-color: brown; */
 }
 
 /* Carosello dinamico del main */
@@ -605,13 +603,12 @@ div.programma-animation2.active {
 }
 
 #sponsor h3 {
-  font-size: 30px;
   color: var(--verde-scuro);
   padding: 0;
   border-bottom: 2px solid var(--verde-scuro);
   text-align: left;
-  margin-left: 15px;
-  margin-right: 15px;
+  margin-left: 1rem ;
+  margin-right: 1rem ; 
 }
 
 .sponsors-container {
@@ -654,19 +651,8 @@ div.programma-animation2.active {
 #chi-siamo-container {
   padding: 1rem;
 
-  /*border: solid;
-  border-color: orange;*/
 }
-/*
-#storia-festival {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1rem;
-  background-color: var(--verde-lime);
-  color: var(--verde-scuro);
-  border-radius: 4px;
-}
-*/
+
 #storia-festival p {
   font-weight: 100;
   text-align: justify;
@@ -714,16 +700,10 @@ div.programma-animation2.active {
 #ringraziamenti {
   margin: 1rem 0 0.5rem 0;
   font-weight: bold;
-
-  /*border: solid;
-  border-color: orange;*/
 }
 
 #ul-ringraziamenti {
   list-style: none;
-
-  /*border: solid;
-  border-color: yellow;*/
 }
 
 /* Location */
@@ -734,9 +714,6 @@ div.programma-animation2.active {
   padding-bottom: 0;
   background-color: var(--light-bg-color);
   color: var(--dark-bg-color);
-
-  /*border: solid;
-  border-color: orange;*/
 }
 
 #location-contenuto {
@@ -1100,9 +1077,7 @@ input[type="button"]:focus {
   font-style: italic;
 }
 
-/*ERROR 404*/
 
-/*ERROR 500*/
 
 main {
   background-color: var(--light-bg-color);
@@ -1162,12 +1137,7 @@ fieldset#login-fieldset legend
   text-align: center;
   font-size: 1.5rem;
 }
-div#error_login p
-{
-  text-align: center;
-  font-size: 1rem;
-  color:var(--verde-lime);
-}
+
 fieldset#login-fieldset div#login-username,
 fieldset#login-fieldset div#login-password
 {
@@ -1283,12 +1253,6 @@ div input#registrati
   font-size: 20px;
   cursor: pointer;
 }
-fieldset#register-fieldset2 div#passwordError
-{
-  font-size: 20px;
-  padding: 1rem;
-}
-
 /*SIDEBAR ACCOUNT*/
 div#sidebar h1#h1-account{
   margin-top:0;
@@ -1628,7 +1592,7 @@ form#logout div#logout-div input#input-logout{
   cursor: pointer;
 }
 
-#errorContainerAggiuntaEvento {
+#errorContainerAggiuntaEvento p {
   margin: 1rem 4rem;
   padding: 1rem;
   font-size: 1rem;
@@ -1636,6 +1600,36 @@ form#logout div#logout-div input#input-logout{
   background-color: var(--verde-lime);
   border-radius: 1rem;
 }
+
+#error_login p{
+  margin: 1rem 4rem;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--verde-scuro); 
+  background-color: var(--verde-lime);
+  border-radius: 1rem; 
+}
+
+#errorContainerRegistrazione p {
+  margin: 1rem 4rem;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--verde-scuro); 
+  background-color: var(--verde-lime);
+  border-radius: 1rem; 
+}
+
+#errorupdate p{
+  margin: 1rem 4rem;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--verde-scuro); 
+  background-color: var(--verde-lime);
+  border-radius: 1rem;
+}
+
+
+
 
 form#event-elimination input[type="submit"]
 {
