@@ -57,9 +57,7 @@ if (!isset($_SESSION["username"]) ) {
         $accountOperation= new accountOperation();
         $main.=$accountOperation->getMain();
     }
-    #bottone per il logout
-    $main .= '<form id="logout" action="phputilities/logoutprocess.php" method="post"> <div id = "logout-div"><input id="input-logout" type="submit" name="logout" value="Logout"></div></form>';
-
+    
 }
 
     
