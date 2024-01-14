@@ -1479,25 +1479,6 @@ div#elimina div#elimina-account li
   padding: 4px;
 }
 
-/*LOGOUT BUTTON*/
-form#logout div#logout-div{
-    display:flex;
-    margin-left:auto;
-    margin-top: 2rem;
-    margin-right:auto;
-    width:22.5%;
-    justify-content: space-around;
-    
-}
-
-form#logout div#logout-div input#input-logout{
-    width: 35%;
-    border-radius: 1rem;
-    padding: 8px;
-    text-align: center;
-    font-size: 20px;
-    cursor:pointer;
-}
 
 /*ELIMINAZIONE ACCOUNT*/
 
