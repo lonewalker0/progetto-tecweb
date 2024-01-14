@@ -44,7 +44,7 @@ class accountOperation {
             $output .= str_replace("{{username}}", $username, $htmlform);
             $output.="</div>";
 
-            $output.= "<class='section' id='ordini'>";
+            $output.= "<div class='section' id='ordini'>";
             $output .= "<h2 >Ordini</h2>";
             if(!empty($userorder)) {
                 $table = file_get_contents(__DIR__ . '/../html/table/tabellaOrdiniUtente.html'); 
@@ -61,9 +61,10 @@ class accountOperation {
                 }
 
                 $output .= str_replace("{{rows}}", $rows, $table);
-
+                $output.="</div>";
                 } else {
                     $output .= "<p>Nessun ordine effettuato.</p>";
+                    $output.="</div>";
                 }
                 $output .= file_get_contents(__DIR__ . '/../html/eliminazioneAccount.html');
             }}
