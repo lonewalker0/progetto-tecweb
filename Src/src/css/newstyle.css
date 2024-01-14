@@ -18,8 +18,7 @@
   --alt-visited-link: yellow;
 }
 ::placeholder{
-  color:var(--verde-lime);
-  opacity: 1;
+  color:var(--verde-lime);  
 }
 ::-ms-input-placeholder{
   color:var(--verde-lime);
@@ -57,6 +56,14 @@ h3 {
   font-size: 1.8rem;
   font-weight: bold;
 }
+
+h4 {
+  padding: 1rem;
+  color: var(--verde-nero);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 a:link {
   color: var(--link);
 }
@@ -418,8 +425,8 @@ div.programma-animation2.active {
 .entry-info {
   flex: 1;
   max-width: 70%;
-  margin: 2rem;
-  padding: 2rem;
+  margin: 1rem;
+  padding: 1rem;
   color: var(--verde-scuro);
   font-size: 1.5rem;
   font-weight: 400;
@@ -782,6 +789,12 @@ div.programma-animation2.active {
 
 /* Merch */
 
+div#shop
+{
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
 .product {
   margin: 4rem 0 4rem 0;
   color: var(--verde-lime);
@@ -801,10 +814,11 @@ div.programma-animation2.active {
 
 .product-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 1rem;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 4px;
   background-color: var(--verde-lime);
 
@@ -813,8 +827,8 @@ div.programma-animation2.active {
 }
 
 .product-image {
-  width: 600px;
-  height: 600px;
+  width: 350px;
+  height: 350px;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
 
@@ -1097,8 +1111,9 @@ main {
 /*PRIVACY POLICY*/
 div#privacy-container {
   display: block;
-  background-color: var(--verde-lime);
-  color: var(--verde-scuro);
+  background-color: var(--verde-scurino);
+  color: var(--verde-lime);
+  border: 1px solid var(--verde-lime);
   border-radius: 1rem;
   padding: 4rem;
   margin-left: 4rem;
@@ -1112,6 +1127,12 @@ div#privacy-container h4 {
 }
 div#privacy-container h2 span{
   font-size: 2rem;
+}
+div#privacy-container h3 span{
+  font-size: 1.8rem;
+}
+div#privacy-container h4 span{
+  font-size: 1.5rem;
 }
 
 div#privacy-container ul li {
