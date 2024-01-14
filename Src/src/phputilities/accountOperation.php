@@ -44,7 +44,7 @@ class accountOperation {
             $output .= str_replace("{{username}}", $username, $htmlform);
             $output.="</div>";
 
-            $output.= "<div class='section' id='ordini'>";
+            $output.= "<class='section' id='ordini'>";
             $output .= "<h2 >Ordini</h2>";
             if(!empty($userorder)) {
                 $table = file_get_contents(__DIR__ . '/../html/table/tabellaOrdiniUtente.html'); 
@@ -65,16 +65,7 @@ class accountOperation {
                 } else {
                     $output .= "<p>Nessun ordine effettuato.</p>";
                 }
-                $output .= "</div>";
-                $output .= "<div class='section' id='elimina' >";
-                $output .="<h2 >Elimina account</h2>";
-                $output .= "<div id='elimina-account'>";
-                $output .= "<p>Ti ricordiamo che durante l'eliminazione del tuo account verranno cancellati, dal nostro sistema, i seguenti dati personali:</p>";
-                $output .= "<li>Nome</li><li>Cognome</li><li>Indirizzo di residenza</li><li>Data di nascita</li>";
-                $output .= "<p>E i seguenti dati relativi al tuo account:</p>";
-                $output .= "<li>E-mail</li><li>Username</li><li>Password</li>";
-                $output .= "<p>Per eliminare il tuo account ti consigliamo di visitare la nostra pagina dedicata cliccando <a href='eliminazione.php' tabindex=0>qui</a></p></div>";
-                $output .= "</div>";
+                $output .= file_get_contents(__DIR__ . '/../html/eliminazioneAccount.html');
             }}
         return $output;}
             
