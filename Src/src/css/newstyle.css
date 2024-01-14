@@ -1006,6 +1006,19 @@ input[type="button"]:focus {
 
 .ticket-vip ul li span.vip-privilegi {
   font-weight: bold;
+  margin-right:0.5rem;
+}
+
+@media (max-width: 750px) {
+  .ticket-vip ul li {
+    flex-direction: column; /* Imposta il layout a colonna */
+    align-items: flex-start; /* Allinea gli elementi sulla colonna all'inizio */
+  }
+
+  .ticket-vip ul li span.vip-privilegi {
+    margin-right: 0; /* Rimuove il margine a destra quando la larghezza diminuisce */
+    margin-bottom: 0.5rem; /* Aggiunge uno spazio tra lo span e il testo sotto quando la larghezza diminuisce */
+  }
 }
 
 /* Domande */
