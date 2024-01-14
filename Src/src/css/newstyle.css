@@ -816,11 +816,6 @@ div.programma-animation2.active {
   border-color: red; */
 }
 
-/* .product-details {
-  border: solid;
-  border-color: orange;
-} */
-
 .product-title {
   display: none;
 
@@ -855,14 +850,19 @@ div.programma-animation2.active {
 }
 
 .ticket-entry dl {
-  width: 72%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 75%;
   padding: 0 2rem 0 2rem;
   border-right: solid;
   border-color: rgba(24, 31, 8, 0.7);
 }
 
 .ticket-entry dd {
-  margin-right: 3rem;
+  margin-right: 2rem;
 }
 
 .hidden-element {
@@ -870,7 +870,6 @@ div.programma-animation2.active {
 }
 
 .ticket-name {
-  display: inline-block;
   text-align: center;
   padding: 2rem 1rem 2rem 1rem;
   font-weight: bold;
@@ -885,7 +884,6 @@ div.programma-animation2.active {
 }
 
 .ticket-description {
-  display: inline-block;
   text-align: center;
   font-weight: bold;
 
@@ -894,9 +892,7 @@ div.programma-animation2.active {
 }
 
 .ticket-price {
-  display: inline-block;
   text-align: center;
-  margin-top: 1rem;
   font-style: italic;
 
   /* border: solid;
@@ -906,7 +902,6 @@ div.programma-animation2.active {
 .ticket-form {
   width: 20%;
   padding: 1rem;
-  box-sizing: border-box;
   box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
   border-radius: 0.2rem;
 
