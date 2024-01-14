@@ -3,7 +3,7 @@
     <legend>Aggiungi un nuovo evento</legend>
     <div>
       <label for="artist_name">Nome dell'artista:</label>
-      <input type="text" id="artist_name" name="artist_name" value="{{artistName}}" required maxlength="50">
+      <input type="text" id="artist_name" name="artist_name" value="{{artistName}}" required maxlength="50" placeholder="Inserisci il nome dell'artista">
     </div>
     <div>
       <label for="date">Data:</label>
@@ -19,7 +19,7 @@
     </div>
     <div>
       <label for="description">Descrizione:</label>
-      <textarea id="description" name="description" rows="4" cols="50" required spellcheck="true">{{description}}</textarea>
+      <textarea id="description" name="description" rows="4" cols="50" required maxlength="150" spellcheck="true" placeholder="Inserisci una breve descrizione contenente al max. 150 caratteri">{{description}}</textarea>
     </div>
   </fieldset>
   <input type="submit" name="add_event" value="Aggiungi evento">

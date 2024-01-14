@@ -62,12 +62,25 @@ a:link {
 }
 
 a:visited {
-  color: var(--visited-link);
+  color: var(--alt-visited-link);
 }
 
 .container {
   margin: 0;
   width: 100%;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="button"]:focus,
+input[type="submit"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus,
+input[type="date"]:focus,
+input[type="time"]:focus,
+input[type="file"]:focus,
+textarea:focus
+{
+  outline: 1px solid var(--verde-lime)  ;
 }
 
 /* Header */
@@ -947,13 +960,6 @@ input[type="button"] {
   transition: transform 0.1s ease-in-out;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="submit"]:focus,
-input[type="email"]:focus{
-  outline: 1px solid var(--verde-lime);
-}
-
 input[type="submit"]:hover,
 input[type="submit"]:focus,
 input[type="button"]:hover,
@@ -1286,8 +1292,11 @@ div#sidebar nav{
 
 div#sidebar li{
   list-style: none;
-  line-height: 5rem;
+  line-height: 4rem;
   font-size:1.25rem;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 div#sidebar li a,
@@ -1378,6 +1387,7 @@ fieldset#modifica-account input
   height: 2rem;
   border-radius: 2rem;
   border: 1px solid var(--verde-lime);
+  background-color: var(--verde-scurino);
   padding: 1rem;
   font-size: 1rem;
   margin-top: 8px;
@@ -1464,17 +1474,17 @@ div#elimina div#elimina-account{
 
 div#elimina div#elimina-account p{
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 div#elimina div#elimina-account p a{
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color:var(--alt-visited-link);
 }
 
 div#elimina div#elimina-account li
 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin-left:4rem;
   padding: 4px;
 }
@@ -1486,7 +1496,7 @@ form#formeliminaaccount label
 {
   margin-top: 2rem;
   padding: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   display: flex;
   justify-content: flex-start;
 }
@@ -1501,12 +1511,13 @@ form#formeliminaaccount input[type="password"]
 {
   margin-left: 1rem;
   width:25%;
-  padding: 4px;
+  padding: 0.5rem;
   border-radius: 1rem;
   color: var(--verde-lime);
   border: 1px solid var(--verde-lime);
   background-color: var(--verde-scurino);
   margin-bottom: 4rem;
+  font-size: 1rem;
 }
 form#formeliminaaccount input[type="submit"]
 {
@@ -1516,6 +1527,21 @@ form#formeliminaaccount input[type="submit"]
   border: 1px solid var(--verde-lime);
   background-color: var(--verde-scurino);
   padding: 0.5rem;
+}
+
+/* PAGINA ADMIN*/
+
+form#logout div#logout-div{
+  width: 100%;
+}
+form#logout div#logout-div input#input-logout{
+  width: 10%;
+  display:flex;
+  justify-content: space-around;
+  border-radius: 2rem;
+  background-color:var(--verde-scurino);
+  border: 1px solid var(--verde-lime);
+  color: var(--verde-lime);
 }
 
 #addEventForm {
@@ -1550,23 +1576,26 @@ form#formeliminaaccount input[type="submit"]
 #addEventForm textarea {
   width: 100%;
   padding: 0.5rem;
-  border-radius: 10px;
+  border-radius: 2rem;
   border: 1px solid var(--verde-lime);
   background-color: #333;
-  color: var(--verde-lime); /* Lime green text color */
+  color: var(--verde-lime);
 }
 
 #addEventForm textarea {
   resize: vertical;
+  padding-left: 1rem
 }
 
 #addEventForm input[type="submit"] {  
-  border-radius: 0.2rem;
-  background-color: var(--verde-lime); /* Dark green background */
-  color: var(--verde-scurino); /* Lime green text */
-  border: 1px solid var(--verde-scurino); /* Lime green border */
+  display:flex;
+  justify-content: space-around;
+  width: 15%;
+  border-radius: 2rem;
+  background-color: var(--verde-scurino);
+  color: var(--verde-lime);
+  border: 1px solid var(--verde-lime);
   cursor: pointer;
-  transition: none;
 }
 
 #errorContainerAggiuntaEvento {
@@ -1576,4 +1605,16 @@ form#formeliminaaccount input[type="submit"]
   color: var(--verde-scuro); 
   background-color: var(--verde-lime);
   border-radius: 1rem;
+}
+
+form#event-elimination input[type="submit"]
+{
+  display: flex;
+  justify-content: space-around;
+  font-size: 1rem;
+  width:10%;
+  border-radius: 1rem;
+  border: 1px solid var(--verde-lime);
+  background-color: var(--verde-scurino);
+  padding: 0.5rem;
 }
