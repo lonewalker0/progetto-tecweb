@@ -305,6 +305,7 @@ nav.menu a:hover > div#punto-dom {
 footer {
   position: static;
   display: flex;
+  bottom:0;
   flex-direction: column;
   margin: 1rem 4rem 1rem 4rem;
   border-radius: 1rem;
@@ -1461,6 +1462,8 @@ table#tabellaordini{
   padding: 2rem;
 }
 
+
+
 div#ordini table#tabellaordini caption
 {
   font-size: 2rem;
@@ -1470,6 +1473,12 @@ div#ordini table#tabellaordini thead tr th
 {
   padding: 1.5rem;
   font-size: 1.5rem;
+}
+div#ordini #tabellaordini thead th {
+  border-bottom: 1px solid;
+  background-color:var(--verde-scurino);
+  
+  
 }
 div#ordini table#tabellaordini tbody tr td
 {
