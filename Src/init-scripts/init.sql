@@ -78,11 +78,12 @@ CREATE TABLE Biglietti (
 );
 
 INSERT INTO Biglietti (nome, descrizione, prezzo) VALUES
-( 'Giornata Singola', 'Giornata Singola - 5 Luglio', 50.00),
-( 'Giornata Singola', 'Giornata Singola - 6 Luglio', 55.00),
-( 'Giornata Singola', 'Giornata Singola - 7 Luglio', 50.00),
-( 'Intero', 'Intero comprende tutte le giornate',110.00),
-( 'vip', 'VIP tutte le giornate con inclusi incontri con gli artisti', 150.00);
+( '5 Luglio 2024', 'Giornata Singola - 5 Luglio', 30.00 ),
+( '6 Luglio 2024', 'Giornata Singola - 6 Luglio', 30.00 ),
+( '7 Luglio 2024', 'Giornata Singola - 7 Luglio', 30.00 ),
+( '6-7 Luglio 2024', 'Weekend', 50.00 ),
+( '5-6-7 Luglio 2024', 'Intero', 80.00 ),
+( '5-6-7 Luglio 2024', 'Vip', 100.00 );
 
 CREATE TABLE Ordini (
     id INT PRIMARY KEY AUTO_INCREMENT,

@@ -836,12 +836,14 @@ div.programma-animation2.active {
 /* Prevendite */
 
 .ticket-entry {
+  max-width: 1080px;
+  margin: 0 auto;
+
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  max-width: 1080px;
-  margin: 0 auto;
+
   margin-bottom: 3rem;
   padding: 2rem;
   background-color: var(--verde-lime);
@@ -849,7 +851,18 @@ div.programma-animation2.active {
   border-radius: 0.2rem;
 
   /* border: solid;
-  border-color: orange; */
+  border-color: blue; */
+}
+
+.ticket-entry dl {
+  width: 72%;
+  padding: 0 2rem 0 2rem;
+  border-right: solid;
+  border-color: rgba(24, 31, 8, 0.7);
+}
+
+.ticket-entry dd {
+  margin-right: 3rem;
 }
 
 .hidden-element {
@@ -857,6 +870,8 @@ div.programma-animation2.active {
 }
 
 .ticket-name {
+  display: inline-block;
+  text-align: center;
   padding: 2rem 1rem 2rem 1rem;
   font-weight: bold;
   font-size: 1.3rem;
@@ -866,40 +881,36 @@ div.programma-animation2.active {
   border-radius: 0.2rem;
 
   /* border: solid;
-  border-color: white; */
-}
-
-.ticket-description {
-  font-weight: bold;
-
-  /* border: solid;
   border-color: purple; */
 }
 
+.ticket-description {
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+
+  /* border: solid;
+  border-color: red; */
+}
+
 .ticket-price {
+  display: inline-block;
   text-align: center;
   margin-top: 1rem;
   font-style: italic;
 
   /* border: solid;
-  border-color: violet; */
+  border-color: orange; */
 }
-
-/*ticket-sale {
-  text-align: center;
-  padding: 1rem;
-  border-radius: 0.2rem;
-  box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
-  
-  *//* border: solid;
-  border-color: brown; 
-}*/
 
 .ticket-form {
   width: 19%;
   padding: 1rem;
   box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
   border-radius: 0.2rem;
+
+  /* border: solid;
+  border-color: white; */
 }
 
 fieldset {
@@ -975,35 +986,31 @@ input[type="button"]:focus {
 }
 
 .ticket-vip {
-  text-align: center; /* Centra il contenuto rispetto alla pagina */
+  text-align: center;
+  margin-bottom: 2rem;
 }
 .ticket-vip p {
   line-height: 1.5em;
 }
 
 .ticket-vip ul {
-  list-style-type: none;
   padding: 1rem;
- 
-  margin: 0; /* Rimuove il margine predefinito della lista */
 }
 
 .ticket-vip ul li {
-  margin-bottom: 2rem; /* Aggiunge spazio tra gli elementi della lista */
-  display: flex; /* Utilizza il modello di layout flexbox */
-  align-items: center; /* Centra gli elementi verticalmente */
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .ticket-vip ul li::before {
-  content: url('../assets/arrow/spuntaverde.png'); /* Sostituisci con il percorso dell'immagine desiderata */
+  content: url('../assets/arrow/spuntaverde.png');
   margin-right: 1rem;
 }
 
 .ticket-vip ul li span.vip-privilegi {
   font-weight: bold;
-  
-  
 }
 
 /* Domande */
