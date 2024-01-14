@@ -679,10 +679,11 @@ div.programma-animation2.active {
   padding-top: 3rem;
   background-color: var(--verde-lime);
   border-radius: 4px;
+  width:90%;
 }
 
 #chi-siamo-contenuto h2 {
-  text-align: left;
+  text-align: center;
   padding-left: 0;
   text-transform: uppercase;
   font-weight: bold;
@@ -692,7 +693,8 @@ div.programma-animation2.active {
 #img-chi-siamo {
   display: block;
   margin: 0 auto;
-  width: 800px;
+  width: 90%;
+  
   height: auto;
   margin-bottom: 1rem;
   border-radius: 4px;
