@@ -95,9 +95,6 @@ textarea:focus
 header {
   width: calc(100% - 8rem);
   margin: 1rem 4rem 1rem 4rem;
-
-  /* border: solid;
-  border-color: blue; */
 }
 
 #flexContainerHeader {
@@ -107,9 +104,6 @@ header {
   padding: 0 1rem 0 1rem;
   border-radius: 1rem;
   background-color: var(--verde-scurino);
-
-  /* border: solid;
-  border-color: purple; */
 }
 
 #left-group {
@@ -118,18 +112,18 @@ header {
 }
 
 #logo a {
-  display: flex; /* Makes the anchor block-level to fit the content */
-  line-height: 0; /* Removes any extra line-height space */
-  padding: 0; /* Ensures there's no extra padding */
-  height: auto; /* Ensures the anchor height matches the image if the image height is variable */
-  max-height: 170px; /* Matches the max-height of the image to constrain the anchor */
+  display: flex;
+  line-height: 0;
+  padding: 0;
+  height: auto;
+  max-height: 170px;
   transition: all 0.5s ease-in-out;
 }
 
 #logo img {
-  height: 170px; /* Maintains aspect ratio */
-  width: auto; /* Adjusts width as per your logo's aspect ratio */
-  max-width: 100%; /* Ensures image is not bigger than its container */
+  height: 170px;
+  width: auto;
+  max-width: 100%;
 }
 
 #aiutoSkipnav {
@@ -209,7 +203,7 @@ header {
 
 #logo a:hover,
 #logo a:focus {
-  transform: scale(1.1); /* Slight increase */
+  transform: scale(1.1);
 }
 
 /* Navigation Menu */
@@ -234,7 +228,7 @@ header {
   
 }
 .fixed-menu + * {
-  padding-top: 3rem; /* Same as the height of the fixed menu */
+  padding-top: 3rem;
 }
 
 .menu ul {
@@ -259,8 +253,6 @@ header {
   display: block;
   text-decoration: none;
   color: var(--verde-lime);
-  /* color: white;
-  transition: color 0.3s ease; */
 }
 
 div#punto-ind,
@@ -369,8 +361,6 @@ div#footer-content {
 #navEventi {
   text-align: center;
   margin: 1rem 0 2rem 0;
-  /*border: solid;
-  border-color: red;*/
 }
 
 #navEventi li,
@@ -378,21 +368,17 @@ div#footer-content {
   display: inline-block;
   margin-right: 0.5rem;
 }
-#navEventi a:link {
-  color: var(--alt-link);
-}
 
+#navEventi a,
 #navEventi a:visited {
-  color: var(--alt-visited-link);
+  color: var(--verde-lime);
+  text-decoration: none;
 }
 
 .event-container {
   margin: 0;
   padding: 0 1rem 0 1rem;
   margin: 1rem 0 1rem 0;
-
-  /* border: solid;
-  border-color: orange; */
 }
 
 .programma-entry {
@@ -411,9 +397,6 @@ div#footer-content {
   margin: 1rem;
   margin-left: 3rem;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
-
-  /* border: solid;
-  border-color: red; */
 }
 
 div.programma-animation,
@@ -558,12 +541,10 @@ div.programma-animation2.active {
 .fade {
   animation-name: fade;
   animation-duration: 4s;
-  animation-iteration-count: infinite, infinite;
 }
 
 /*BOTTONE TORNA SU PAGINA HOME*/
 #scrollToTopBtn {
-  /*display:none;*/
   position: fixed;
   bottom: 2em;
   left: 50%;
@@ -625,9 +606,6 @@ div.programma-animation2.active {
   padding: 1rem;
   margin: 0 1rem 1rem 1rem;
   border-radius: 1rem;
-
-  /* border: solid;
-  border-color: white; */
 }
 
 #sponsor-title {
@@ -643,8 +621,6 @@ div.programma-animation2.active {
   margin-left: 1rem ;
   margin-right: 1rem ; 
   font-weight: bold;
-  
-
 }
 
 .sponsors-container {
@@ -732,17 +708,11 @@ div.programma-animation2.active {
   margin-bottom: 1rem;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
-
-  /*border: solid;
-  border-color: white;*/
 }
 
 #chi-siamo-testo {
   text-align: justify;
   color: var(--verde-scuro);
-
-  /*border: solid;
-  border-color: black;*/
 }
 
 #ringraziamenti {
@@ -827,17 +797,12 @@ div#shop
 .product {
   margin: 4rem 0 4rem 0;
   color: var(--verde-lime);
-  /* border: solid;
-  border-color: blue; */
 }
 
 #live-info {
   font-style: italic;
   text-align: center;
   margin: 0 4rem 0 4rem;
-
-  /* border: solid;
-  border-color: white; */
 }
 
 .product-container {
@@ -848,10 +813,8 @@ div#shop
   padding: 1rem;
   border-radius: 4px;
   background-color: var(--verde-lime);
-
-  /* border: solid;
-  border-color: violet; */
 }
+
 @media screen and (max-width: 1200px)
 {
   .product-container {
@@ -868,23 +831,14 @@ div#shop
   height: 300px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
-
-  /* border: solid;
-  border-color: purple; */
 }
 
 .entry-info  {
   color: var(--verde-scuro);
-
-  /* border: solid;
-  border-color: red; */
 }
 
 .product-title {
   display: none;
-
-  /* border: solid;
-  border-color: yellow; */
 }
 
 .definition-term {
@@ -908,9 +862,6 @@ div#shop
   background-color: var(--verde-lime);
   color: var(--verde-scuro);
   border-radius: 0.2rem;
-
-  /* border: solid;
-  border-color: blue; */
 }
 
 .ticket-entry dl {
@@ -942,25 +893,16 @@ div#shop
   color: var(--verde-lime);
   box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
   border-radius: 0.2rem;
-
-  /* border: solid;
-  border-color: purple; */
 }
 
 .ticket-description {
   text-align: center;
   font-weight: bold;
-
-  /* border: solid;
-  border-color: red; */
 }
 
 .ticket-price {
   text-align: center;
   font-style: italic;
-
-  /* border: solid;
-  border-color: orange; */
 }
 
 .ticket-form {
@@ -968,9 +910,6 @@ div#shop
   padding: 1rem;
   box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
   border-radius: 0.2rem;
-
-  /* border: solid;
-  border-color: white; */
 }
 
 fieldset {
@@ -1090,17 +1029,11 @@ input[type="button"]:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* border: solid;
-  border-color: orange; */
 }
 
 .faq-section {
   width: 100%;
   margin-bottom: 2rem;
-
-  /* border: solid;
-  border-color: yellow; */
 }
 
 .faq-box-container {
@@ -1108,9 +1041,6 @@ input[type="button"]:focus {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  /* border: solid;
-  border-color: white; */
 }
 
 .faq-item {
@@ -1122,13 +1052,15 @@ input[type="button"]:focus {
   margin-bottom: 2rem;
   background-color: var(--verde-lime);
   color: var(--verde-scuro);
-
-  /* border: solid;
-  border-color: yellowgreen; */
 }
-.faq-item ul li
-{
+
+.faq-item ul li{
   margin-left: 1.5rem;
+}
+
+.faq-item p a,
+.faq-item p a:visited{
+  color:var(--verde-scuro);
 }
 
 .question, .question span {
@@ -1148,8 +1080,6 @@ input[type="button"]:focus {
 .note {
   font-style: italic;
 }
-
-
 
 main {
   background-color: var(--light-bg-color);
@@ -1337,39 +1267,60 @@ div#sidebar{
   display:flex;
   width:100%;
   text-align:center;
-  padding: 2rem;
   justify-content: space-around;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 div#sidebar nav{
-  width: 22.5%;
+  width: 100%;
   border-radius:2rem;
   background-color: var(--verde-scurino);
   border: 1px solid var(--verde-lime);
 }
 
+div#sidebar ul
+{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+@media screen and (max-width: 770px)
+{
+  div#sidebar ul
+  {
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+}
+
 div#sidebar li{
   list-style: none;
-  line-height: 4rem;
+  line-height: 2.75rem;
   font-size:1.25rem;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
+  transition: all 0.2s ease-in-out;
+  border-radius: 2rem;
+  padding:8px;
+  width: 100%;
 }
 
 div#sidebar li a,
 div#sidebar li a:visited{
-  color:var(--alt-visited-link);
+  display: inline-block;
+  color:var(--verde-lime);
   font-size:1.25rem;
   text-align: center;
-  border-radius: 2rem;
-  transition: all 0.2s ease-in-out;
-  padding:8px;
+  text-decoration: none;
+  width: 100%;
 }
 
-div#sidebar li a:hover{
-    color:var(--verde-scuro);
+div#sidebar li:hover{
     background-color:var(--verde-lime);
+}
+
+div#sidebar li:hover > a
+{
+  color:var(--verde-scuro);
 }
 
 /*INFORMAZIONI ACCOUNT*/
@@ -1524,7 +1475,6 @@ div#ordini table#tabellaordini tbody tr td
 
 /*ELIMINA ACCOUNT*/
 div#elimina{
-  padding: 2rem;
   width: 100%;
   margin-right:4rem;
 }
