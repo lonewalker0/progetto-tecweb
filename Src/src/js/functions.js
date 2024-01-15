@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   // Controlla se siamo sulla pagina account.php prima di eseguire il codice
-  if (window.location.pathname.includes("account.php")) {
+  if (window.location.pathname.indexOf('account.php') > -1) {
     var menuLinks = document.querySelectorAll("#sidebar a");
     var sections = document.querySelectorAll(".section");
 
