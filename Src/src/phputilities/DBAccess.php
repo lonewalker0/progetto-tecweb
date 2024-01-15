@@ -2,10 +2,10 @@
 
 class DBAccess {
    
-   private const HOST_DB = "db";
+   private const HOST_DB = "localhost";
    private const DATABASE_NAME = "dbtecweb";
    private const USERNAME = "root";
-   private const PASSWORD = "root";
+   private const PASSWORD = "";
    private $connection;
 
    public function openConnection(): bool{

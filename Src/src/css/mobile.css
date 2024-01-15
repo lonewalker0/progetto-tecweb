@@ -1,28 +1,195 @@
 /* Usa la larghezza critica del contenitore .nav come punto di rottura */
-@media (max-width: 770px) {
-    .nav {
-      justify-content: center; /* Center align the entire navigation container */
-    }
-  
-    .left-group {
-      flex-direction: column; /* Stack the children of .left-group vertically */
-      align-items: center; /* Center align the items horizontally within .left-group */
-      margin-bottom: 1rem; /* Add some space below .left-group, if needed */
-    }
-  
-    .icons {
-      display: none; /* Hide icons at this breakpoint */
-    }
-  
-    .vertical-bar {
-      display: none;
-    }
-  
-    .logo a {
-      max-height: none; /* Remove max-height restriction for smaller screens */
-    }
-  
-    .logo img {
-      max-height: 150px; /* You can adjust the size for smaller screens if needed */
-    }
+@media only screen and (max-width: 770px) {
+  h1 {
+    padding: 0.5rem;
+    font-size: 2.2rem;
   }
+  
+  h2 {
+    padding: 0.5rem;
+    font-size: 1.8rem;
+  }
+  
+  h3 {
+    padding: 0.5rem;
+    font-size: 1.5rem;
+  }
+  
+  h4 {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  /*HEADER*/
+  header{
+    margin: 0.5rem 2rem 0.5rem 2rem;
+    width: calc(100% - 4rem);
+  }
+
+  div#logo img{
+    height:100px;
+  }
+
+  div#countdown-data p{
+    font-size:1rem;
+  }
+
+  div.icons{
+    display:none;
+  }
+
+  /*NAV MENU*/
+  nav.menu{
+    margin: 0rem 2rem 0rem 2rem;
+    width: calc(100% - 4rem);
+    flex-direction: column;
+    align-items: unset;
+    justify-content: unset;
+  }
+  
+  nav.menu ul{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 0.6rem;
+    text-align: center;
+  }
+
+  nav.menu li{
+    margin-right: 0;
+    text-align: center;
+  }
+
+  /*CAROSELLO*/
+  span.puntini{
+    height: 10px;
+    width: 10px;
+  }
+  #foto0,
+  #foto1,
+  #foto2,
+  #foto3,
+  #foto4,
+  #foto5 {  
+    padding-top: 100%;
+  }
+
+  /*MAIN*/
+  main{
+    margin: 0 2rem 0 2rem;
+  }
+  .programma-entry {
+    flex-direction: column;
+    align-items:  center;
+  }
+
+  .programma-entry img {
+    width: 50%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  /*PAGINA MERCH*/
+  div#live-info{
+    margin: 0;
+  }
+  div#shop{
+    grid-template-columns: 1fr;
+  }
+
+  div.entry-info{
+    margin: 0.5rem;
+    padding: 0.5rem;  
+  }
+
+  div#shop article.product{
+    margin: 2rem 0 2rem 0;
+  }
+
+  img.product-image{
+    width: 200px;
+    height: 200px;
+  }
+
+  /*PAGINA DOMANDE (FAQ)*/
+  .faq-box-container{
+    grid-template-columns: 1fr;
+  }
+
+  .faq-item{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /*PAGINA PREVENDITE*/
+  .ticket-vip ul li {
+    flex-direction: column; /* Imposta il layout a colonna */
+    align-items: flex-start; /* Allinea gli elementi sulla colonna all'inizio */
+  }
+
+  .ticket-vip ul li span.vip-privilegi {
+    margin-right: 0; /* Rimuove il margine a destra quando la larghezza diminuisce */
+    margin-bottom: 0.5rem; /* Aggiunge uno spazio tra lo span e il testo sotto quando la larghezza diminuisce */
+  }
+
+  /*PAGINA LOCATION*/
+  #location-contenuto {
+    flex-direction: row; /* Modifica qui, impostando la direzione della riga */
+  }
+
+  /*PAGINA PRIVACY*/
+  div#privacy-container h1 span, h1#privacy-title span{
+    font-size: 2.2rem;
+  }
+
+  div#privacy-container h2 span{
+    font-size: 1.8rem;
+  }
+
+  div#privacy-container h3 span{
+    font-size: 1.5rem;
+  }
+
+  div#privacy-container h4 span{
+    font-size: 1.2rem;
+  }
+
+  div#privacy-container{
+    margin-top: 0.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1.5rem;
+  }
+
+  /*SEZIONE SPONSOR*/
+  .sponsors-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  #sponsor h3{
+    text-align: center;
+  }
+
+  /*SIDEBAR ACCOUNT*/
+  div#sidebar ul{
+    grid-template-columns: none;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+}
+/* In caso la pagina si ridimesioni e non c'è più spazio disponibile per gli oggetti*/
+@media only screen and (min-width: 771px) and (max-width: 1250px) {
+  /*PAGINA MERCH*/
+  .product-container {
+    flex-direction: column;
+  }
+  .entry-info
+  {
+    max-width: 100%;
+  }
+
+  /*PAGINA DOMANDE(FAQ)*/
+  .faq-box-container
+  {
+    grid-template-columns: 1fr 1fr;
+  }
+}
