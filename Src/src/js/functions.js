@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname === "/index.php") {
+  if (window.location.pathname.indexOf('index.php') > -1) {
     var scrollToTopBtn = document.getElementById("scrollToTopBtn");
     var navEventi = document.getElementById("navEventi");
 
@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-if (window.location.pathname === "/index.php") {
+if (window.location.pathname.indexOf('index.php') > -1) {
   document.addEventListener("DOMContentLoaded", function () {
     carosello();
     countdownFestival();
