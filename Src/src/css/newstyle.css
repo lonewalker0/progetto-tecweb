@@ -231,7 +231,7 @@ header {
   position: fixed;  
   max-width: 1792px;
   z-index: 100; 
-  max-width:1792px;
+  
 }
 .fixed-menu + * {
   padding-top: 3rem; /* Same as the height of the fixed menu */
@@ -457,6 +457,7 @@ div.programma-animation2.active {
   position: relative;
   padding: 10px;
   margin-top: 1em;
+  
 }
 #foto0,
 #foto1,
@@ -464,11 +465,14 @@ div.programma-animation2.active {
 #foto3,
 #foto4,
 #foto5 {
-  width: 600px;
-  height: 600px;
+  
+  width: 100%;
+  /* Impedisce alle immagini di superare la loro dimensione naturale */
+  padding-top: 40%;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
   margin-left: auto;
   margin-right: auto;
 }
@@ -521,6 +525,8 @@ div.programma-animation2.active {
 .carosello-dinamico {
   position: relative;
   padding: 10px;
+  
+
 }
 
 @keyframes fade {
