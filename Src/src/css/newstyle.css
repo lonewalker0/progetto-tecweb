@@ -696,25 +696,19 @@ div.programma-animation2.active {
 }
 
 #ringraziamenti {
-  
   max-width: 1080px;
   margin: 0 auto;
-  text-align: left;
-  padding: 2rem;
-  padding-top: 3rem;
+  padding: 1rem;
   background-color: var(--verde-lime);
   border-radius: 4px;
   width:90%;
   margin-top:2rem;
-  
-  
 }
+
 #ringraziamenti h3 {
-  
   font-weight: bold;
   text-align:center;
   color: var(--verde-scuro);
-  
 }
 
 #ul-ringraziamenti {
@@ -814,24 +808,6 @@ div#shop
   
 }
 
-<<<<<<< HEAD
-=======
-@media screen and (max-width: 1200px)
-{
-  .product-container {
-    flex-direction: column;
-  }
-  .entry-info
-  {
-    max-width: 80%;
-  }
-  .product-image{
-    width:100%;
-    
-  }
-}
-
->>>>>>> 443a029 (chi siamo e merch resposive)
 .product-image {
   width: 60%;
   height: auto;
