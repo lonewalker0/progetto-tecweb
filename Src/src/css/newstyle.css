@@ -808,23 +808,6 @@ div#shop
   
 }
 
-
-@media screen and (max-width: 1200px)
-{
-  .product-container {
-    flex-direction: column;
-  }
-  .entry-info
-  {
-    max-width: 80%;
-  }
-  .product-image{
-    width:100%;
-    
-  }
-}
-
-
 .product-image {
   width: 60%;
   height: auto;
