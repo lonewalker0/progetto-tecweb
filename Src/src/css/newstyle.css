@@ -696,12 +696,31 @@ div.programma-animation2.active {
 }
 
 #ringraziamenti {
-  margin: 1rem 0 0.5rem 0;
+  
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 2rem;
+  padding-top: 3rem;
+  background-color: var(--verde-lime);
+  border-radius: 4px;
+  width:90%;
+  margin-top:2rem;
+  
+  
+}
+#ringraziamenti h3 {
+  
   font-weight: bold;
+  text-align:center;
+  color: var(--verde-scuro);
+  
 }
 
 #ul-ringraziamenti {
   list-style: none;
+  text-align:center;
+  color: var(--verde-scuro);
 }
 
 /* Location */
@@ -764,13 +783,15 @@ div.programma-animation2.active {
 
 div#shop
 {
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
+  display: grid;
+  max-width: 99%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap:1rem;
 }
 .product {
-  margin: 4rem 0 4rem 0;
+  margin: 2rem 0 2rem 0;
   color: var(--verde-lime);
+  width:100%;
 }
 
 #live-info {
@@ -783,21 +804,45 @@ div#shop
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap:wrap;
+  
   margin: 1rem;
   padding: 1rem;
   border-radius: 4px;
   background-color: var(--verde-lime);
+  width:90%;
+  
 }
 
+<<<<<<< HEAD
+=======
+@media screen and (max-width: 1200px)
+{
+  .product-container {
+    flex-direction: column;
+  }
+  .entry-info
+  {
+    max-width: 80%;
+  }
+  .product-image{
+    width:100%;
+    
+  }
+}
+
+>>>>>>> 443a029 (chi siamo e merch resposive)
 .product-image {
-  width: 300px;
-  height: 300px;
+  width: 60%;
+  height: auto;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
 }
 
 .entry-info  {
   color: var(--verde-scuro);
+  text-align: center;
+  justify-content: space-between;
 }
 
 .product-title {
