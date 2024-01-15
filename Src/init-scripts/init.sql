@@ -113,10 +113,7 @@ VALUES
 
 ('assets/merchitem/bluecap.png', 'Braccialetto in Pelle', 'Nero', 9.99, 'Braccialetto in pelle nera con logo del festival.'),
 
-('assets/merchitem/bluecap.png', 'Cappellino Estivo', 'Blu', 14.99, 'Cappello estivo blu per mantenerti fresco sotto il sole del festival.
-
-
-
-
-
-');
+('assets/merchitem/bluecap.png', 'Cappellino Estivo', 'Blu', 14.99, 'Cappello estivo blu per mantenerti fresco sotto il sole del festival.'),
+('assets/merchitem/bluecap.png', 'Gamba di legno', 'Bianco e nero', 1000.99, 'Burbero, attaccabrighe e disonesto, è sempre pronto a compiere qualunque genere di rapina'),
+('assets/merchitem/bluecap.png', 'Gamba di legno', 'Bianco e nero', 1000.99, 'Burbero, attaccabrighe e disonesto, è sempre pronto a compiere qualunque genere di rapina'),
+('assets/merchitem/bluecap.png', 'Gamba di legno', 'Bianco e nero', 1000.99, 'Burbero, attaccabrighe e disonesto, è sempre pronto a compiere qualunque genere di rapina');
