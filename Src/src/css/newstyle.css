@@ -734,46 +734,49 @@ div.programma-animation2.active {
 #location-contenuto {
   padding: 2rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Modifica qui, impostando la direzione della colonna */
+  gap: 2rem;
   align-items: center;
   background-color: var(--verde-lime);
   color: var(--verde-scuro);
   border-radius: 4px;
-
-  /*border: solid;
-  border-color: yellow;*/
+  max-width: 1792px;
+  overflow: hidden;
+  height: auto;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
 }
 
-#h2-location {
-  text-align: left;
-  padding-left: 1rem;
-  font-weight: bold;
+@media only screen and (min-width: 870px) {
+  #location-contenuto {
+    flex-direction: row; /* Modifica qui, impostando la direzione della riga */
+  }
 }
 
 #map {
-  width: 600px;
-  height: 600px;
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  max-width: 600px;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
   border: none;
-
-  /*border: solid;
-  border-color: white;*/
+  margin-bottom: 1rem; /* Modifica qui, poiché non stai più utilizzando la proprietà margin-right */
 }
 
-#testo-location {
-  max-width: 60%;
-  padding: 1rem;
-  margin-left: 2rem;
-  border-radius: 4px;
 
-  /* border: solid;
-    border-color: orange; */
+
+#testo-location {
+  max-width: 90%;
+  padding: 1rem;
+  border-radius: 4px;
 }
 
 #testo-location p {
   padding-left: 1rem;
   padding-bottom: 0.5rem;
+  text-align: justify;
 }
 
 #indirizzo {
