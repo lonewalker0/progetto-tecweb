@@ -109,11 +109,17 @@ CREATE TABLE Shop (
 
 INSERT INTO Shop (productImage, productName, productColor, productPrice, productLongDescription)
 VALUES
-('assets/merchitem/redT.png', 'Festival T-Shirt', 'Rosso', 19.99, 'T-shirt a maniche corta comoda e perfetta per i festival.'),
+('assets/merchitem/redT.png', 'T-shirt Festival', 'Rosso', 19.99, 'T-shirt a maniche corta di colore rosso con una rappresentazione bianca, comoda e leggera.'),
+('assets/merchitem/bluecap.png', 'Cappellino Festival Technolum250', 'Blu', 14.99, 'Fantastico cappellino blu con ricamo centrale, 100% cotone con ricamo bianco frontale. Perfetto per mantenerti fresco sotto il sole del festival.'),
+('assets/merchitem/bermudaverdi.png', 'Bermuda Festival Technolum250', 'Verde', 35.99, 'Bermuda brandizzati Technolum250, presentano un fantasia ispirata alla musica Urban. Fantastici dettagli presenti.'),
+('assets/merchitem/cappelliniverdi.png', 'Cappellino Festival Technolum250', 'Verde', 14.99, 'Fantastico cappellino verde, 100% cotone con ricamo bianco frontale. Perfetto per mantenerti fresco sotto il sole del festival.'),
+('assets/merchitem/cdvecchiaedizione.png', 'Cd Technolum250 2023', 'Verde', 19.99, 'CD in formato mp4 contentente una registrazione del Festival nella sua edizione del 2023. Magnifici dettagli verdi a decorare.'),
+('assets/merchitem/polo.png', 'Polo Festival Technolum250', 'Bianco', 39.99, 'Polo Bianca realizzata in cotone finissimo da abili artigiani. Presenta il numero 250 ricamato in verde presso il petto.'),
+('assets/merchitem/poloverde.png', 'Polo Festival Technolum250', 'Verde', 39.99, 'Polo Verde realizzata in cotone finissimo da abili artigiani. Presenta il numero 250 ricamato in bianco presso il petto.'),
+('assets/merchitem/felpabianca.png', 'Felpa Festival Technolum250', 'Bianco', 59.99, 'Felpa Bianca realizzata in mordido cotone da abili artigiani. Presenta il numero 250 ricamato in verde presso il petto.'),
+('assets/merchitem/setsticker.png', 'Set di Sticker Festival Technolum250', 'Bianco/Verde', 9.99, 'Set di Sticker di varie dimensioni.'),
+('assets/merchitem/fantasticabandane.png', 'Bandana Festival Technolum250', 'Bianco/Verde', 14.99, 'Bandana realizzata in cotone finissimo, riporta fantastici dettagli verdi. Ideali a proteggere il capo durante le ore più calde.'); 
 
-('assets/merchitem/bluecap.png', 'Braccialetto in Pelle', 'Nero', 9.99, 'Braccialetto in pelle nera con logo del festival.'),
 
-('assets/merchitem/bluecap.png', 'Cappellino Estivo', 'Blu', 14.99, 'Cappello estivo blu per mantenerti fresco sotto il sole del festival.'),
-('assets/merchitem/bluecap.png', 'Gamba di legno', 'Bianco e nero', 1000.99, 'Burbero, attaccabrighe e disonesto, è sempre pronto a compiere qualunque genere di rapina'),
-('assets/merchitem/bluecap.png', 'Gamba di legno', 'Bianco e nero', 1000.99, 'Burbero, attaccabrighe e disonesto, è sempre pronto a compiere qualunque genere di rapina'),
-('assets/merchitem/bluecap.png', 'Gamba di legno', 'Bianco e nero', 1000.99, 'Burbero, attaccabrighe e disonesto, è sempre pronto a compiere qualunque genere di rapina');
+
+
