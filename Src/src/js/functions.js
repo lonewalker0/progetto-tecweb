@@ -413,11 +413,11 @@ function validazioneFormAggiutaEvento() {
   } else {
     document.getElementById("date").setAttribute("aria-invalid", "false");
   }
-  const allowedDates = ["25/07/2024", "26/07/2024", "27/07/2024"];
+  const allowedDates = ["05/07/2024", "06/07/2024", "07/07/2024"];
   if (!allowedDates.includes(date)) {
         isValid = false;
         document.getElementById("date").setAttribute("aria-invalid", "true");
-        appendError(errorContainer, "La data deve essere 25, 26 o 27 Luglio 2024!");
+        appendError(errorContainer, "La data deve essere 5, 6 o 7 Luglio 2024!");
   } else {
         document.getElementById("date").setAttribute("aria-invalid", "false");
   }
