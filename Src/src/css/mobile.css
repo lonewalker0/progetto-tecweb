@@ -39,6 +39,18 @@
   }
 
   /*NAV MENU*/
+  #aiutoSkipnav:focus {     
+    width: 50px;        
+    height: 50px;
+    white-space: wrap;
+    font-size: 0.5rem;       
+  }
+
+  #breadcrumb{
+    margin: 1rem 2rem 0.5rem 3rem;
+    width: calc(100% - 5rem);
+  }
+
   nav.menu{
     margin: 0rem 2rem 0rem 2rem;
     width: calc(100% - 4rem);
@@ -83,12 +95,16 @@
   }
 
   .programma-entry img {
-    width: 50%;
+    width: 75%;
     height: auto;
-    margin-left: 0;
+    margin: 1rem 0 0 0;
   }
 
   /*PAGINA MERCH*/
+  div.product-container{
+    flex-direction: column;
+  }
+
   div#live-info{
     margin: 0;
   }
@@ -102,7 +118,7 @@
   }
 
   div#shop article.product{
-    margin: 2rem 0 2rem 0;
+    margin: 0;
   }
 
   img.product-image{
@@ -162,11 +178,16 @@
 
   /*SEZIONE SPONSOR*/
   .sponsors-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     text-align: center;
   }
+
   #sponsor h3{
-    text-align: center;
+    text-align: left;
+  }
+
+  .sponsor-icon img{
+    max-width: 55%;
   }
 
   /*SIDEBAR ACCOUNT*/
@@ -185,6 +206,11 @@
   .entry-info
   {
     max-width: 100%;
+  }
+  /*SKIPNAV*/
+  #aiutoSkipnav:focus {     
+    width: 20px;        
+    height: 20px;       
   }
 
   /*PAGINA DOMANDE(FAQ)*/
