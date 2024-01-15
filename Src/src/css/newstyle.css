@@ -982,8 +982,6 @@ input[type="button"]:focus {
     flex-direction: column;
     border-right:none;
     border-bottom: solid;
-    
-    
   }
 
   .ticket-entry dd {
@@ -1084,20 +1082,39 @@ input[type="button"]:focus {
 
 .faq-box-container {
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .faq-item {
-  width: 25%;
+  width: fit-content;
   box-sizing: border-box;
   padding: 2rem;
   border-radius: 4px;
   margin-right: 2rem;
+  margin-left: 2rem;
   margin-bottom: 2rem;
   background-color: var(--verde-lime);
   color: var(--verde-scuro);
+}
+
+@media screen and (max-width: 1250px) {
+
+  .faq-box-container
+  {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 770px) {
+
+  .faq-box-container{
+    grid-template-columns: 1fr;
+  }
+  .faq-item{
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .faq-item ul li{
