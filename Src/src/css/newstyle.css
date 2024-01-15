@@ -814,8 +814,7 @@ div#shop
   
 }
 
-<<<<<<< HEAD
-=======
+
 @media screen and (max-width: 1200px)
 {
   .product-container {
@@ -831,7 +830,7 @@ div#shop
   }
 }
 
->>>>>>> 443a029 (chi siamo e merch resposive)
+
 .product-image {
   width: 60%;
   height: auto;
