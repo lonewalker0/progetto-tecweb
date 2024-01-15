@@ -442,6 +442,7 @@ div.programma-animation2.active {
     height: auto;
     margin-left: 0;
   }
+  
 }
 
 /* Carosello dinamico del main */
@@ -849,14 +850,15 @@ div#shop
 /* Prevendite */
 
 .ticket-entry {
-  max-width: 1080px;
+  max-width: 62%;
   margin: 0 auto;
 
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-
+  
   margin-bottom: 3rem;
   padding: 2rem;
   background-color: var(--verde-lime);
@@ -868,12 +870,14 @@ div#shop
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
   width: 75%;
   padding: 0 2rem 0 2rem;
   border-right: solid;
   border-color: rgba(24, 31, 8, 0.7);
+
 }
 
 .ticket-entry dd {
@@ -893,6 +897,10 @@ div#shop
   color: var(--verde-lime);
   box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
   border-radius: 0.2rem;
+  margin-bottom: 1.25rem;
+
+  /* border: solid;
+  border-color: purple; */
 }
 
 .ticket-description {
@@ -910,6 +918,14 @@ div#shop
   padding: 1rem;
   box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
   border-radius: 0.2rem;
+
+
+  
+  
+
+  /* border: solid;
+  border-color: white; */
+
 }
 
 fieldset {
@@ -917,7 +933,7 @@ fieldset {
 }
 
 input[type="number"] {
-  width: calc(100% - 1rem);
+  width: 100%;
   border: none;
   border-radius: 0.2rem;
 }
@@ -955,6 +971,37 @@ input[type="submit"]:focus,
 input[type="button"]:hover,
 input[type="button"]:focus {
   transform: scale(1.1);
+}
+@media screen and (max-width: 768px) {
+  .ticket-entry {
+    flex-direction: column; /* Cambia la direzione in colonna per schermi più piccoli */
+    align-items: center; /* Allinea gli elementi su tutta la larghezza */
+  }
+
+  .ticket-entry dl {
+    width: 100%; /* Utilizza l'intera larghezza su schermi più piccoli */
+    flex-direction: column;
+    border-right:none;
+    border-bottom: solid;
+    
+    
+  }
+
+  .ticket-entry dd {
+    margin-bottom: 0.4rem;
+    margin-right: none;
+    
+  }
+
+  .ticket-form {
+    width: 100%; /* Utilizza l'intera larghezza su schermi più piccoli */
+    max-width: none; /* Rimuove la larghezza massima per il form */
+    margin-top: 1rem;
+  }
+
+  .ticket-name {
+    width:90%;
+  }
 }
 
 .total-price {
