@@ -11,11 +11,9 @@
 :root {
   --verde-lime: #B1DD40;
   --verde-scuro: #111606;
-  --link: #0000C7;
-  --visited-link: #6B006B;
+  --link: white;
+  --visited-link: rgb(217, 217, 8); 
   --verde-scurino:rgba(24, 31, 8);
-  --alt-link: white;
-  --alt-visited-link: yellow;
 }
 ::placeholder{
   color:var(--verde-lime);  
@@ -69,7 +67,7 @@ a:link {
 }
 
 a:visited {
-  color: var(--alt-visited-link);
+  color: var(--visited-link);
 }
 
 .container {
@@ -133,7 +131,8 @@ header {
   height: 1px;
   overflow: hidden;
   white-space: nowrap;
-  border: 0;           
+  border: 0; 
+  color: white;           
 }
 
 /* Focused State */
@@ -273,7 +272,7 @@ header {
   display: inline-block;
   position: relative;
   margin-right: 2rem;
-  color: white;
+  color: var(--link);
   
 }
 
@@ -372,13 +371,8 @@ div#footer-content {
 #footer-content a {
   display: inline-block;
   width: 140px;
-  color: var(--verde-lime);
+  
 }
-
-#footer-content a:visited {
-  color: var(--alt-visited-link);
-}
-
 /* Main */
 
 #navEventi {
@@ -390,12 +384,13 @@ div#footer-content {
 #navEventi p {
   display: inline-block;
   margin-right: 0.5rem;
+
 }
 
 #navEventi a,
 #navEventi a:visited {
-  color: var(--verde-lime);
-  text-decoration: none;
+  color: var(--link);
+  
 }
 
 .event-container {
@@ -810,7 +805,11 @@ div#shop
 }
 
 .product h2{
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  background-color: var(--verde-scurino);
+  border-radius: 1rem;
+  color: var(--verde-lime)
+
 }
 
 #live-info {
@@ -821,6 +820,7 @@ div#shop
 
 .product-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   margin: 1rem;
   padding: 1rem;
@@ -843,9 +843,6 @@ div#shop
   text-align: center;
 }
 
-.product-title {
-  display: none;
-}
 
 .definition-term {
   margin-top: 1rem;
@@ -1067,18 +1064,7 @@ input[type="button"]:focus {
   margin-left: 1.5rem;
 }
 
-.faq-item p a{
-  color: var(--alt-link);
-  background-color: var(--verde-scuro);
-  padding: 2px 4px;
-  border-radius: 1rem;
-}
-.faq-item p a:visited{
-  color: var(--alt-visited-link);
-  background-color: var(--verde-scuro);
-  padding: 2px 4px;
-  border-radius: 1rem;
-}
+
 
 .question, .question span {
   font-size: 1.4rem;
@@ -1096,6 +1082,10 @@ input[type="button"]:focus {
 
 .note {
   font-style: italic;
+  background-color: var(--verde-scurino);
+  padding: 1rem; 
+  border-radius: 1rem;
+  color: var(--verde-lime); 
 }
 
 main {
@@ -1315,10 +1305,9 @@ div#sidebar li{
 div#sidebar li a,
 div#sidebar li a:visited{
   display: inline-block;
-  color:var(--verde-lime);
+  color:var(--link);
   font-size:1.25rem;
   text-align: center;
-  text-decoration: none;
   width: 100%;
 }
 
@@ -1502,8 +1491,7 @@ div#elimina div#elimina-account p{
 }
 
 div#elimina div#elimina-account p a{
-  font-size: 1.25rem;
-  color:var(--alt-visited-link);
+  font-size: 1.25rem; 
 }
 
 div#elimina div#elimina-account li
