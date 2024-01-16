@@ -362,7 +362,7 @@ footer {
 }
 
 div#footer-content {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 200;
 }
 #footer-content p {
@@ -371,7 +371,6 @@ div#footer-content {
 #footer-content a {
   display: inline-block;
   width: 140px;
-  
 }
 /* Main */
 
