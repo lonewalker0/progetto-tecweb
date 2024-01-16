@@ -236,15 +236,15 @@ function triggerView() {
   let type = true;
   setInterval(() => {
     if (type) {
-      df.classList.remove("show");
-      df.classList.add("hide");
-      cd.classList.remove("hide");
-      cd.classList.add("show");
+      df.classList.remove("accessibleShow");
+      df.classList.add("accessibleHide");
+      cd.classList.remove("accessibleHide");
+      cd.classList.add("accessibleShow");
     } else {
-      df.classList.remove("hide");
-      df.classList.add("show");
-      cd.classList.remove("show");
-      cd.classList.add("hide");
+      df.classList.remove("accessibleHide");
+      df.classList.add("accessibleShow");
+      cd.classList.remove("accessibleShow");
+      cd.classList.add("accessibleHide");
     }
     type = !type;
   }, 4000);
