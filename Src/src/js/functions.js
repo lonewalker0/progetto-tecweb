@@ -197,11 +197,15 @@ document.addEventListener("DOMContentLoaded", function () {
 if (window.location.pathname.indexOf('index.php') > -1) {
   document.addEventListener("DOMContentLoaded", function () {
     carosello();
-    countdownFestival();
-    triggerView();
     document.addEventListener("scroll", scrollView);
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  countdownFestival();
+  triggerView();
+  document.addEventListener("scroll", scrollView);
+});
 
 //funzione per il countdown del festival
 const getCountdown = (eventDate) => {
