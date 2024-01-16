@@ -311,6 +311,7 @@ function appendError(conteinerId, message) {
   errorElement.setAttribute("role", "alert");
   errorElement.setAttribute("aria-live", "assertive");
   errorElement.setAttribute("aria-atomic", "true");
+  //questi forse si possono togliere se si va ad agiungere qualche roulo al container in cui vengono displayati. forse ha più senso in realtà
   errorElement.textContent = message;
   conteinerId.appendChild(errorElement);
 }

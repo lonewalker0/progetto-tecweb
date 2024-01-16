@@ -20,7 +20,7 @@ class adminOperation
         #costruzione del menu per l'elimizazione
         $events = $this->dbOperation->getEventEntries();
         
-        $html .= '<div id="errorContainerAggiuntaEvento">'; #è lo stesso container utilizzato dalla validazione di js
+        $html .= '<div id="errorContainerAggiuntaEvento">'; 
         if (isset($_SESSION['add_event_form_errors'])) {
             foreach ($_SESSION['add_event_form_errors'] as $error) {
                 $html .= '    <p>' . $error . '</p>';

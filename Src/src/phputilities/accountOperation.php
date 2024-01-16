@@ -33,12 +33,14 @@ class accountOperation {
             $output = str_replace("{{email}}", $userInfo['email'], $output);
             $output .= "<div class='section' id='modifica'>";
 
+            $output .= "<div id='errorupdate>'";
             if (isset($_SESSION['update_form_errors'])) {
                 foreach ($_SESSION['update_form_errors'] as $error) {
                     $output .= '    <p>' . $error . '</p>';
                 }
                 unset($_SESSION['update_form_errors']);
             }
+            $output.="</div>";
             
             $htmlform = file_get_contents(__DIR__ . '/../html/UpdateDataUser.html');
             $output .= str_replace("{{username}}", $username, $htmlform);
