@@ -34,11 +34,30 @@
     font-size:1rem;
   }
 
-  div.icons{
+  header div.icons{
     display:none;
   }
 
   /*NAV MENU*/
+  div#punto-ind,
+  div#punto-loc,
+  div#punto-dom,
+  div#punto-mer,
+  div#punto-chi,
+  div#punto-pre,
+  div#punto-acc {
+    right: 30%;
+  }
+
+  nav.menu a:hover > div#punto-ind,
+  nav.menu a:hover > div#punto-loc,
+  nav.menu a:hover > div#punto-mer,
+  nav.menu a:hover > div#punto-chi,
+  nav.menu a:hover > div#punto-pre,
+  nav.menu a:hover > div#punto-acc,
+  nav.menu a:hover > div#punto-dom {
+    width: 40%;
+  }
   #aiutoSkipnav:focus {     
     width: 50px;        
     height: 50px;
@@ -69,6 +88,7 @@
   nav.menu li{
     margin-right: 0;
     text-align: center;
+    padding: 0.2rem;
   }
 
   /*CAROSELLO*/
@@ -82,7 +102,7 @@
   #foto3,
   #foto4,
   #foto5 {  
-    padding-top: 100%;
+    padding-top: 80%;
   }
 
   /*MAIN*/
@@ -95,7 +115,7 @@
   }
 
   .programma-entry img {
-    width: 75%;
+    width: 55%;
     height: auto;
     margin: 1rem 0 0 0;
   }
@@ -137,19 +157,66 @@
   }
 
   /*PAGINA PREVENDITE*/
+  .ticket-entry {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ticket-entry form input[value="Acquista"]{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .ticket-entry dl {
+    width: 100%;
+    flex-direction: column;
+    border-right:none;
+    border-bottom: solid;
+  }
+
+  .ticket-entry dd {
+    margin-bottom: 0.4rem;
+    margin-right: none;
+
+  }
+
+  .ticket-form {
+    width: 100%;
+    max-width: none;
+    margin-top: 1rem;
+  }
+
+  .ticket-name {
+    width:90%;
+  }
+
   .ticket-vip ul li {
-    flex-direction: column; /* Imposta il layout a colonna */
-    align-items: flex-start; /* Allinea gli elementi sulla colonna all'inizio */
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .ticket-vip ul li span.vip-privilegi {
-    margin-right: 0; /* Rimuove il margine a destra quando la larghezza diminuisce */
-    margin-bottom: 0.5rem; /* Aggiunge uno spazio tra lo span e il testo sotto quando la larghezza diminuisce */
+    margin-right: 0;
+    margin-bottom: 0.5rem;
   }
 
   /*PAGINA LOCATION*/
+  #location-container{
+    margin-bottom: 6rem;
+  }
+
   #location-contenuto {
-    flex-direction: row; /* Modifica qui, impostando la direzione della riga */
+    flex-direction: row;
+    align-items: unset;
+  }
+
+  #testo-location{
+    max-width: 100%;
+    padding: 0.5rem;
   }
 
   /*PAGINA PRIVACY*/
@@ -187,7 +254,17 @@
   }
 
   .sponsor-icon img{
-    max-width: 55%;
+    max-width: 40%;
+  }
+
+  /*FOOTER*/
+  footer{
+    width: calc(100% - 4rem);
+    margin: 1rem 2rem 1rem 2rem;
+  }
+
+  div#footer-content{
+    font-size: 1rem;
   }
 
   /*SIDEBAR ACCOUNT*/
