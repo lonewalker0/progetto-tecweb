@@ -300,11 +300,6 @@ div#punto-acc {
   cursor: pointer;
 }
 
-.menu a:hover,
-.menu a:focus {
-  color: var(--verde-lime);
-}
-
 nav.menu a:hover > div#punto-ind,
 nav.menu a:hover > div#punto-loc,
 nav.menu a:hover > div#punto-mer,
@@ -744,42 +739,43 @@ div.programma-animation2.active {
 /* Location */
 
 #location-container {
-  margin: 0 auto;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4rem;
   padding: 1rem;
   padding-bottom: 0;
-  background-color: var(--light-bg-color);
-  color: var(--dark-bg-color);
 }
 
 #location-contenuto {
   padding: 2rem;
   display: flex;
+  border: 1px solid var(--verde-lime);
   flex-direction: column; /* Modifica qui, impostando la direzione della colonna */
   gap: 2rem;
   align-items: center;
-  background-color: var(--verde-lime);
-  color: var(--verde-scuro);
-  border-radius: 4px;
+  background-color: var(--verde-scuro);;
+  color: var(--verde-lime);
+  border-radius: 1rem;
   max-width: 1792px;
   overflow: hidden;
   height: auto;
   width: 100%;
   box-sizing: border-box;
   height: 100%;
+  box-shadow: 0 0 10px var(--verde-lime);
 }
 
 #map {
-  width: 100%;
-  max-height: 600px;
+  width: 600px;
+  height: 300px;
   object-fit: cover;
   max-width: 600px;
   border-radius: 4px;
-  box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+  box-shadow: 0 0 10px var(--verde-lime);
   border: none;
   margin-bottom: 1rem; /* Modifica qui, poiché non stai più utilizzando la proprietà margin-right */
 }
-
-
 
 #testo-location {
   max-width: 90%;
@@ -812,6 +808,10 @@ div#shop
   width:100%;
 }
 
+.product h2{
+  margin-bottom: 2rem;
+}
+
 #live-info {
   font-style: italic;
   text-align: center;
@@ -820,16 +820,13 @@ div#shop
 
 .product-container {
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap:wrap;
-  
   margin: 1rem;
   padding: 1rem;
   border-radius: 4px;
   background-color: var(--verde-lime);
-  width:90%;
-  
+  width:100%;
+  min-height: 550px;
 }
 
 .product-image {
@@ -840,9 +837,9 @@ div#shop
 }
 
 .entry-info  {
+  height: 100% !important;
   color: var(--verde-scuro);
   text-align: center;
-  justify-content: space-between;
 }
 
 .product-title {
