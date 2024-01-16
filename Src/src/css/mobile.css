@@ -102,7 +102,7 @@
   #foto3,
   #foto4,
   #foto5 {  
-    padding-top: 80%;
+    padding-top: 100%;
   }
 
   /*MAIN*/
@@ -123,11 +123,13 @@
   /*PAGINA MERCH*/
   div.product-container{
     flex-direction: column;
+    margin: 2rem 0 0 0;
   }
 
   div#live-info{
     margin: 0;
   }
+
   div#shop{
     grid-template-columns: 1fr;
   }
@@ -160,13 +162,14 @@
   .ticket-entry {
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
   }
 
   .ticket-entry form input[value="Acquista"]{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -174,13 +177,13 @@
   .ticket-entry dl {
     width: 100%;
     flex-direction: column;
-    border-right:none;
+    border-right: none;
     border-bottom: solid;
   }
 
   .ticket-entry dd {
     margin-bottom: 0.4rem;
-    margin-right: none;
+    margin-right: 0;
 
   }
 
@@ -210,13 +213,16 @@
   }
 
   #location-contenuto {
-    flex-direction: row;
+    flex-direction: column;
     align-items: unset;
   }
 
   #testo-location{
     max-width: 100%;
     padding: 0.5rem;
+  }
+  #map{
+    width: auto;
   }
 
   /*PAGINA PRIVACY*/
@@ -375,19 +381,16 @@
     margin-left: 1rem;
     padding: 0.75rem;
   }
-  
-  
+  div#ordini table#tabellaordini tbody tr td{
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
   table#tabellaordini caption {
-    display: block;
     width: 100%;
   }
 
-
-  
   table#tabellaordini thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+    display:none;
   }
 
   table#tabellaordini tr { 
@@ -396,25 +399,23 @@
 
   table#tabellaordini td {
     white-space: normal;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; 
-    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    text-align: center;
+    gap: 2rem;
     margin-bottom: 1rem; 
   }
   
   table#tabellaordini td:before {
-  width: auto;
-  content: attr(data-title);
-  color: white;  
+    width: 50px;
+    text-align:left;
+    content: attr(data-title);
+    color: white;  
   }
 
-  table#tabellaordini tr td:first-child {
-    border-top: 1px solid white;
+  table#tabellaordini tr td:first-child{
+    border-top: 2px solid white;
   }
-
-
-
 
   /*ELIMINA ACCOUNT*/
   div#elimina div#elimina-account{
@@ -446,20 +447,24 @@
 }
 /* In caso la pagina si ridimesioni e non c'è più spazio disponibile per gli oggetti*/
 @media only screen and (min-width: 771px) and (max-width: 1250px) {
+  
   /*LOGIN ACCOUNT*/
   div#login-registrati input#registrazione,
   div#login-registrati input#accedi{
     width: 20%;
   }
   
+  /*PAGINA PREVENDITE*/
+  .ticket-entry {
+    max-width: 100%;
+  }
+
   /*PAGINA MERCH*/
   .product-container {
     flex-direction: column;
+    margin: 2rem 0 0 0;
   }
-  .entry-info
-  {
-    max-width: 100%;
-  }
+
   /*SKIPNAV*/
   #aiutoSkipnav:focus {     
     width: 20px;        

@@ -3,7 +3,7 @@
 </IfModule>
 
 # Blocca l'accesso diretto a error404.php
-<FilesMatch "errors/error404.php">
+<FilesMatch "error404.php">
     Require all denied
 </FilesMatch>
 
@@ -13,7 +13,7 @@
 
 
 
-ErrorDocument 404 /errors/error404.php
-ErrorDocument 500 /errors/error500.php
+ErrorDocument 404 error404.php
+ErrorDocument 500 error500.php
 
 

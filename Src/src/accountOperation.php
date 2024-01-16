@@ -45,14 +45,14 @@ class accountOperation {
 
                 $output .= "<h3>Modifiche account</h3>";
                 $output .= "<form action='phputilities/updateUserInfo.php' method='post' id='formUpdate'>";
-                $output .= "<div id='errorupdate>'";
+                /*$output .= "<div id='errorupdate>'";
                 if (isset($_SESSION['update_form_errors'])) {
                     foreach ($_SESSION['update_form_errors'] as $error) {
                         $output .= '    <p>' . $error . '</p>';
                     }
                     unset($_SESSION['update_form_errors']);
                 }
-                $output .= "</div>";
+                $output .= "</div>";*/
                 $output .= "<fieldset>";
                 $output .= "<legend>Aggiornamento dati</legend>";
                 $output .= "<p><label for='indirizzo'>Indirizzo:</label> <input type='text' id='indirizzo' name='indirizzo' value=''></p>";
