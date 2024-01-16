@@ -1322,7 +1322,7 @@ div#informazioni{
 }
 
 div#informazioni dl{
-  margin-top:1rem;
+  
   display:flex;
   flex-direction: column;
   border: 1px solid var(--verde-lime);
@@ -1334,7 +1334,9 @@ div#informazioni dl{
 
 div#informazioni dt{
   padding-top:1rem;
-  font-size: 1.25rem;
+  color: white;
+  
+  
 }
 
 div#informazioni dd{
@@ -1345,15 +1347,10 @@ div#informazioni dd{
   border-radius: 2rem;
   width: 15%;
   text-align: center;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+
+
 }
 
-div#informazioni dd:hover{
-  background-color:var(--verde-lime);
-  color: var(--verde-scuro);
-}
 
 /*MODIFICA ACCOUNT*/
 fieldset#modifica-account
@@ -1461,6 +1458,15 @@ div#ordini table#tabellaordini tbody tr td
 {
   padding: 2rem;
   font-size: 1.25rem;
+  border-bottom: 1px solid #ccc;
+}
+
+div#ordini table#tabellaordini tbody tr:nth-child(odd) {
+  background-color: var(--verde-scurino); 
+}
+
+div#ordini table#tabellaordini tbody tr:nth-child(even) {
+  background-color: var(--verde-scuro); 
 }
 
 /*ELIMINA ACCOUNT*/
@@ -1541,7 +1547,7 @@ form#logout div#logout-div{
   width: 100%;
 }
 form#logout div#logout-div input#input-logout{
-  width: 10%;
+  width: 40%;
   display:flex;
   justify-content: space-around;
   border-radius: 2rem;
