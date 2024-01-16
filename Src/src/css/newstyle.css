@@ -1135,7 +1135,7 @@ div#privacy-container ul li {
 /*LOGIN FORM*/
 fieldset#login-fieldset
 {
-  margin: 1rem 4rem 1rem 4rem;
+  margin: 1rem 0 1rem 0;
   border-radius: 2rem;
   border: 2px solid var(--verde-lime);
   background-color: rgba(24, 31, 8, 0.85);
@@ -1172,13 +1172,10 @@ fieldset#login-fieldset div#login-password input#password
 }
 fieldset#login-fieldset div label
 {
-  display: flex;
-  justify-content: space-between;
   font-size: 1.5rem;
   width: 50%;
   margin-left:auto;
   margin-right:auto;
-  align-items: center;
 }
 div#login-registrati 
 {
@@ -1190,7 +1187,7 @@ div#login-registrati
 div#login-registrati input#registrazione,
 div#login-registrati input#accedi
 {
-  width: 10%;
+  width: 15%;
   height: 2.5rem;
   border-radius: 1rem;
   font-size: 1rem;
@@ -1206,7 +1203,7 @@ div#login-registrati input#accedi
 fieldset#register-fieldset,
 fieldset#register-fieldset2{
   display:grid;
-  margin: 1rem 4rem 1rem 4rem;
+  margin: 1rem 0;
   border-radius: 2rem;
   border: 2px solid var(--verde-lime);
   background-color: rgba(24, 31, 8, 0.85);
@@ -1284,6 +1281,7 @@ div#sidebar nav{
   border-radius:2rem;
   background-color: var(--verde-scurino);
   border: 1px solid var(--verde-lime);
+  box-shadow: 0 0 10px var(--verde-lime);
 }
 
 div#sidebar ul
@@ -1296,8 +1294,6 @@ div#sidebar li{
   list-style: none;
   line-height: 2.75rem;
   font-size:1.25rem;
-  transition: all 0.2s ease-in-out;
-  border-radius: 2rem;
   padding:8px;
   width: 100%;
 }
@@ -1309,15 +1305,14 @@ div#sidebar li a:visited{
   font-size:1.25rem;
   text-align: center;
   width: 100%;
+  border-radius: 2rem;
+  transition: all 0.2s ease-in-out;
 }
 
-div#sidebar li:hover{
-    background-color:var(--verde-lime);
-}
-
-div#sidebar li:hover > a
+div#sidebar li a:hover
 {
   color:var(--verde-scuro);
+  background-color:var(--verde-lime);
 }
 
 /*INFORMAZIONI ACCOUNT*/
@@ -1332,6 +1327,7 @@ div#informazioni dl{
   flex-direction: column;
   border: 1px solid var(--verde-lime);
   background-color: rgba(24, 31, 8, 0.85);
+  box-shadow: 0 0 10px var(--verde-lime);
   border-radius: 2rem;
   align-items: center;
 }
@@ -1368,6 +1364,7 @@ fieldset#modifica-account
   border-radius: 2rem;
   border: 1px solid var(--verde-lime);
   background-color: rgba(24, 31, 8, 0.85);
+  box-shadow: 0 0 10px var(--verde-lime);
   padding: 1rem;
 }
 fieldset#modifica-account legend{
@@ -1424,11 +1421,10 @@ div#ordini div#dtable{
   font-size: 1.25rem;
   border: 1px solid var(--verde-lime);
   background-color: rgba(24, 31, 8, 0.85);
+  box-shadow: 0 0 10px var(--verde-lime);
   padding: 2rem;
   border-radius: 2rem;  
-  width:70%;
-  margin-left: auto;
-  margin-right: auto;
+  width:100%;
 }
 
 div#ordini li{
@@ -1446,24 +1442,21 @@ table#tabellaordini{
   padding: 2rem;
 }
 
-
-
-div#ordini table#tabellaordini caption
-{
+div#ordini table#tabellaordini caption{
   font-size: 2rem;
   padding:2rem;
 }
-div#ordini table#tabellaordini thead tr th
-{
+
+div#ordini table#tabellaordini thead tr th{
   padding: 1.5rem;
   font-size: 1.5rem;
 }
+
 div#ordini #tabellaordini thead th {
   border-bottom: 1px solid;
   background-color:var(--verde-scurino);
-  
-  
 }
+
 div#ordini table#tabellaordini tbody tr td
 {
   padding: 2rem;
@@ -1481,6 +1474,7 @@ div#elimina div#elimina-account{
   text-align:left;
   border: 1px solid var(--verde-lime);
   background-color: var(--verde-scuro);
+  box-shadow: 0 0 10px var(--verde-lime);
   border-radius: 2rem;
   padding:2rem;
 }

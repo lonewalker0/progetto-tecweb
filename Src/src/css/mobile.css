@@ -266,16 +266,192 @@
   div#footer-content{
     font-size: 1rem;
   }
+  /*LOGIN ACCOUNT*/
+  div#login-registrati{
+    display:flex;
+    flex-direction: row;
+  }
+
+  div#login-registrati input#accedi,
+  div#login-registrati a{
+    width: 30%;
+  }
+
+  div#login-registrati a{
+    margin-right: auto;
+  }
+
+  div#login-registrati input#registrazione{
+    width: 100%;
+    margin-top: 0;
+  }
+
+  div#login-registrati input#accedi{
+    margin: 0 0.5rem 0 auto;
+  }
+
+  fieldset#login-fieldset div label{
+    margin: 0;  
+    font-size: 1.25rem;
+  }
+
+  fieldset#login-fieldset div#login-username input#username, 
+  fieldset#login-fieldset div#login-password input#password{
+    width: 100%;
+    margin: 1rem 0;
+  }
+
+  /*REGISTER FORM*/
+  fieldset#register-fieldset legend,
+  fieldset#register-fieldset2 legend{
+    font-size: 1.5rem;
+  }
+
+  fieldset#register-fieldset label,
+  fieldset#register-fieldset2 label{
+    font-size: 1.15rem;
+    margin: 0;
+    width: 60%;
+  }
+
+  fieldset#register-fieldset input,
+  fieldset#register-fieldset2 input{
+    width: 100%;
+    margin: 1rem 0 0 0;
+  }
+
+  div input#registrati{
+    width: 40%;
+    font-size: 1rem;
+  }
 
   /*SIDEBAR ACCOUNT*/
+  div#sidebar li{
+    line-height: 2.25rem;
+    font-size: 1.15rem;
+  }
+
+  form#logout div#logout-div input#input-logout{
+    width: 40%;
+  }
+
   div#sidebar ul{
     grid-template-columns: none;
     grid-template-rows: 1fr 1fr 1fr 1fr;
   }
 
+  /*INFORMAZIONI ACCOUNT*/
+  div#informazioni dd{
+    width: 50%;
+  }
+
+  /*MODIFICA ACCOUNT*/
+  fieldset#modifica-account{
+    margin-bottom: 2rem;
+  }
+  
+  fieldset#modifica-account p{
+    margin: 0;
+    width: 100%;
+    padding: 0.5rem;
+  }
+  
+  fieldset#modifica-account p label{
+    font-size: 1.15rem;
+  }
+  
+  form#formUpdate input#input-salva{
+    width: 40%;
+    font-size: 1rem;
+  }
+
+  /*ORDINI ACCOUNT*/
+  div#ordini div#dtable{
+    font-size: 1.15rem;
+  }
+
+  div#ordini li{
+    font-size: 1.15rem;
+    margin-left: 1rem;
+    padding: 0.75rem;
+  }
+  
+  div#ordini #tabellaordini thead th{
+    border-right: 1px solid;
+    border-bottom: none;
+  }
+
+  div#ordini table#tabellaordini tbody,
+  div#ordini table#tabellaordini thead{
+    width: 50%;
+  }
+
+  div#ordini table#tabellaordini tbody tr,
+  div#ordini table#tabellaordini thead tr{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  div#ordini table#tabellaordini thead tr th{
+    padding: 1rem;
+    font-size: 1.15rem;
+  }
+
+  div#ordini table#tabellaordini tbody tr td{
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  table#tabellaordini{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 3rem;
+  }
+  
+  div#ordini table#tabellaordini caption{
+    display: none;
+    font-size: 1.5rem;
+    padding: 1rem;
+  }
+  /*ELIMINA ACCOUNT*/
+  div#elimina div#elimina-account{
+    padding: 1rem;
+  }
+
+  div#elimina div#elimina-account p,
+  div#elimina div#elimina-account p a,
+  div#elimina div#elimina-account li{
+    font-size: 1.15rem;
+  }
+
+  /*ELIMINAZIONE ACCOUNT*/
+
+  form#formeliminaaccount label{
+    font-size: 1.15rem;
+    padding: 0.5rem;
+  }
+
+  form#formeliminaaccount input[type="password"]{
+    width: 100%;
+    margin-left: 0;
+  }
+
+  form#formeliminaaccount input[type="submit"]{
+    width: 50%;
+  }
+
 }
 /* In caso la pagina si ridimesioni e non c'è più spazio disponibile per gli oggetti*/
 @media only screen and (min-width: 771px) and (max-width: 1250px) {
+  /*LOGIN ACCOUNT*/
+  div#login-registrati input#registrazione,
+  div#login-registrati input#accedi{
+    width: 20%;
+  }
+  
   /*PAGINA MERCH*/
   .product-container {
     flex-direction: column;
