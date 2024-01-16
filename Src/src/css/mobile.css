@@ -133,10 +133,10 @@
   div#shop{
     grid-template-columns: 1fr;
   }
-
-  div.entry-info{
+  div.product-container div.entry-info{
     margin: 0.5rem;
     padding: 0.5rem;  
+    min-height: 350px;
   }
 
   div#shop article.product{
