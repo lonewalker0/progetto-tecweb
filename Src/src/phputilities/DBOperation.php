@@ -166,11 +166,45 @@ class DBOperation{
         try {
             $this->db->openConnection();
     
-                
             if ($username === 'admin') {
                 throw new Exception("Impossibile eliminare l'utente 'admin'.");
             }
     
+            // Verifica se l'utente ha effettuato degli ordini
+            $checkOrdersQuery = "SELECT COUNT(*) FROM Ordini WHERE username = ?";
+            $checkOrdersStmt = mysqli_prepare($this->db->getConnection(), $checkOrdersQuery);
+    
+            if (!$checkOrdersStmt) {
+                throw new Exception("Error preparing the query to check orders: " . mysqli_error($this->db->getConnection()));
+            }
+    
+            mysqli_stmt_bind_param($checkOrdersStmt, "s", $username);
+            mysqli_stmt_execute($checkOrdersStmt);
+            mysqli_stmt_bind_result($checkOrdersStmt, $orderCount);
+            mysqli_stmt_fetch($checkOrdersStmt);
+    
+            mysqli_stmt_close($checkOrdersStmt);
+    
+            // Se l'utente ha effettuato ordini, imposta a NULL nella tabella Ordini
+            if ($orderCount > 0) {
+                $updateOrdersQuery = "UPDATE Ordini SET username = NULL WHERE username = ?";
+                $updateOrdersStmt = mysqli_prepare($this->db->getConnection(), $updateOrdersQuery);
+    
+                if (!$updateOrdersStmt) {
+                    throw new Exception("Error preparing the query to update orders: " . mysqli_error($this->db->getConnection()));
+                }
+    
+                mysqli_stmt_bind_param($updateOrdersStmt, "s", $username);
+                $updateOrdersSuccess = mysqli_stmt_execute($updateOrdersStmt);
+    
+                if (!$updateOrdersSuccess) {
+                    throw new Exception("Error updating orders: " . mysqli_error($this->db->getConnection()));
+                }
+    
+                mysqli_stmt_close($updateOrdersStmt);
+            }
+    
+            // Elimina l'utente dalla tabella users
             $deleteQuery = "DELETE FROM users WHERE username = ?";
             $deleteStmt = mysqli_prepare($this->db->getConnection(), $deleteQuery);
     
@@ -185,7 +219,7 @@ class DBOperation{
                 throw new Exception("Error during user deletion: " . mysqli_error($this->db->getConnection()));
             }
     
-            return true; 
+            return true;
     
         } catch (Exception $e) {
             error_log("Error during user deletion: " . $e->getMessage());
@@ -194,6 +228,7 @@ class DBOperation{
             $this->db->closeConnection();
         }
     }
+    
 
     public function isAdmin($username): bool {
         try {

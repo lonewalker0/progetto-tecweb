@@ -87,7 +87,7 @@ INSERT INTO Biglietti (nome, descrizione, prezzo) VALUES
 
 CREATE TABLE Ordini (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(255) NOT NULL,
+    username VARCHAR(255),
     id_biglietto INT NOT NULL,
     quantita INT NOT NULL,
     data_acquisto DATETIME NOT NULL,
