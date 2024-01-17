@@ -119,9 +119,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Nascondi tutte le sezioni tranne "Informazioni account" inizialmente
     sections.forEach(function (section) {
       if (section.id === "informazioni") {
-        section.style.display = "block";
+        section.classList.add("show");
       } else {
-        section.style.display = "none";
+        section.classList.add("hide");
       }
     });
 
@@ -132,9 +132,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         sections.forEach(function (section) {
           if (section.id === targetSectionId) {
-            section.style.display = "block";
+            section.classList.remove("hide");
+            section.classList.add("show");
           } else {
-            section.style.display = "none";
+            section.classList.remove("show");
+            section.classList.add("hide");
           }
         });
       });
@@ -696,12 +698,14 @@ function calculateTotalPrice(id) {
   var quantita = parseInt(quantitaInput.value, 10);
   var prezzoTotale = prezzoSingolo * quantita;
 
-  // Aggiorna il testo del paragrafo
+  // Aggiorna il testo del paragrafo e gestisci le classi
   if (!isNaN(prezzoSingolo) && !isNaN(quantita) && quantita > 0) {
     prezzoTotaleParagraph.innerHTML =
       "Prezzo totale: " + prezzoTotale.toFixed(2) + "€";
-    prezzoTotaleParagraph.style.display = "block";
+    prezzoTotaleParagraph.classList.remove("hide");
+    prezzoTotaleParagraph.classList.add("show");
   } else {
-    prezzoTotaleParagraph.style.display = "none";
+    prezzoTotaleParagraph.classList.remove("show");
+    prezzoTotaleParagraph.classList.add("hide");
   }
 }
