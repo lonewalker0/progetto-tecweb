@@ -1,5 +1,13 @@
 /* Usa la larghezza critica del contenitore .nav come punto di rottura */
 @media only screen and (max-width: 770px) {
+  ::placeholder{
+    font-size: 1rem;
+  }
+
+  ::-ms-input-placeholder{
+    font-size: 1rem;
+  }
+
   h1 {
     padding: 0.5rem;
     font-size: 2.2rem;
@@ -381,16 +389,23 @@
     margin-left: 1rem;
     padding: 0.75rem;
   }
+
   div#ordini table#tabellaordini tbody tr td{
     padding: 0.5rem;
     font-size: 1rem;
   }
+
   table#tabellaordini caption {
     width: 100%;
   }
 
   table#tabellaordini thead tr {
-    display:none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0; 
   }
 
   table#tabellaordini tr { 
@@ -444,7 +459,27 @@
     width: 50%;
   }
 
+  /*ADMIN ACCOUNT*/
+  #addEventForm legend{
+    font-size: 1.5rem;
+    padding: 1rem 0;
+  }
+
+  div#addEventForm form fieldset div label,
+  #addEventForm input[type="text"]{
+    font-size: 1rem;
+  }
+
+  #addEventForm input[type="submit"]{
+    width: 50%;
+  }
+
+  form#event-elimination input[type="submit"]{
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
 }
+
 /* In caso la pagina si ridimesioni e non c'è più spazio disponibile per gli oggetti*/
 @media only screen and (min-width: 771px) and (max-width: 1250px) {
   
@@ -472,8 +507,27 @@
   }
 
   /*PAGINA DOMANDE(FAQ)*/
-  .faq-box-container
-  {
+  .faq-box-container{
     grid-template-columns: 1fr 1fr;
+  }
+
+  /*SALVA MODIFICHE*/
+  form#formUpdate input#input-salva{
+    width: 35%;
+    font-size: 1rem;
+    border-radius: 1rem;
+  }
+  
+  /*ELIMINA ACCOUNT*/
+  form#formeliminaaccount input[type="submit"]{
+    width:40%;
+  }
+  form#formeliminaaccount input[type="password"]{
+    width: 50%;
+  }
+
+  /*ADMIN ACCOUNT*/
+  #addEventForm input[type="submit"]{
+    width: 50%;
   }
 }

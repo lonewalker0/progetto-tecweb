@@ -15,6 +15,7 @@
   --visited-link: rgb(217, 217, 8); 
   --verde-scurino:rgba(24, 31, 8);
 }
+
 ::placeholder{
   color:var(--verde-lime);  
 }
@@ -1241,21 +1242,20 @@ fieldset#register-fieldset2 input{
   padding: 1rem;
 }
 
-form#RegistrationForm div
-{
+form#RegistrationForm div{
   display:flex;
   width: 100%;
   justify-content: space-around;
 }
 
-div input#registrati
-{
+div input#registrati{
   width: 15%;
   height: 2rem;
   border-radius: 1rem;
   font-size: 20px;
   cursor: pointer;
 }
+
 /*SIDEBAR ACCOUNT*/
 div#sidebar h1#h1-account{
   margin-top:0;
@@ -1278,8 +1278,7 @@ div#sidebar nav{
   border-bottom: 1px solid var(--verde-lime);
 }
 
-div#sidebar ul
-{
+div#sidebar ul{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
@@ -1308,7 +1307,6 @@ div#informazioni{
 }
 
 div#informazioni dl{
-  
   display:flex;
   flex-direction: column;
   border: 1px solid var(--verde-lime);
@@ -1321,8 +1319,6 @@ div#informazioni dl{
 div#informazioni dt{
   padding-top:1rem;
   color: white;
-  
-  
 }
 
 div#informazioni dd{
@@ -1333,8 +1329,6 @@ div#informazioni dd{
   border-radius: 2rem;
   width: 15%;
   text-align: center;
-
-
 }
 
 
@@ -1490,23 +1484,22 @@ div#elimina div#elimina-account li
 
 /*ELIMINAZIONE ACCOUNT*/
 
-form#formeliminaaccount label
-{
+form#formeliminaaccount label{
   margin-top: 2rem;
   padding: 1rem;
   font-size: 1.25rem;
   display: flex;
   justify-content: flex-start;
 }
-form#formeliminaaccount input
-{
+
+form#formeliminaaccount input{
   display:flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
-form#formeliminaaccount input[type="password"]
-{
+
+form#formeliminaaccount input[type="password"]{
   margin-left: 1rem;
   width:25%;
   padding: 0.5rem;
@@ -1517,6 +1510,7 @@ form#formeliminaaccount input[type="password"]
   margin-bottom: 4rem;
   font-size: 1rem;
 }
+
 form#formeliminaaccount input[type="submit"]
 {
   font-size: 1rem;
@@ -1527,11 +1521,24 @@ form#formeliminaaccount input[type="submit"]
   padding: 0.5rem;
 }
 
+div#errorContainerEliminazione p{
+  text-align: center;
+  margin: 1rem 4rem;
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--verde-lime); 
+  border: 1px solid var(--verde-lime);
+  background-color: var(--verde-scuro);
+  box-shadow: 0 0 10px var(--verde-lime);
+  border-radius: 1rem; 
+}
+
 /* PAGINA ADMIN*/
 
 form#logout div#logout-div{
   width: 100%;
 }
+
 form#logout div#logout-div input#input-logout{
   width: 40%;
   display:flex;
@@ -1543,10 +1550,7 @@ form#logout div#logout-div input#input-logout{
 }
 
 #addEventForm {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-  margin: 1rem 4rem;
+  margin: 1rem 0;
   border-radius: 2rem;
   border: 2px solid var(--verde-lime);
   background-color: rgba(24, 31, 8, 0.85);
@@ -1562,9 +1566,11 @@ form#logout div#logout-div input#input-logout{
   padding: 0.5rem 0; 
 }
 
-#addEventForm label {
+div#addEventForm form fieldset div label {
+  display:inline-block;
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 #addEventForm input[type="text"],
@@ -1581,7 +1587,6 @@ form#logout div#logout-div input#input-logout{
 }
 
 #addEventForm textarea {
-  resize: vertical;
   padding-left: 1rem
 }
 
@@ -1633,7 +1638,6 @@ form#logout div#logout-div input#input-logout{
   background-color: var(--verde-lime);
   border-radius: 1rem;
   position:relative;
-  
 }
 
 #errorupdate p::before {
@@ -1650,16 +1654,13 @@ form#logout div#logout-div input#input-logout{
   transform: translateY(-50%);
 }
 
-
-
 form#event-elimination input[type="submit"]
 {
-  display: flex;
-  justify-content: space-around;
   font-size: 1rem;
   width:100%;
   border-radius: 1rem;
   border: 1px solid var(--verde-lime);
   background-color: var(--verde-scurino);
   padding: 0.5rem;
+  margin-right: 0.5rem;
 }
