@@ -273,14 +273,12 @@ header {
   display: inline-block;
   position: relative;
   margin-right: 2rem;
-  color: var(--link);
+  color: var(--verde-lime);
   
 }
 
 .menu a {
   display: block;
-  text-decoration: none;
-  color: var(--verde-lime);
 }
 
 div#punto-ind,
@@ -355,11 +353,6 @@ footer {
   margin: 0 10px;
   cursor: pointer;
   transition: transform 0.1s ease-in-out;
-}
-
-.icons img:hover,
-.icons img:focus {
-  transform: scale(1.25);
 }
 
 div#footer-content {

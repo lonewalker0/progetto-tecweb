@@ -46,6 +46,16 @@
     display:none;
   }
 
+  div.icons img:hover,
+  div.icons img:focus {
+    transform: unset;
+  }
+  
+  #logo a:hover,
+  #logo a:focus {
+    transform: unset;
+  }
+
   /*NAV MENU*/
   div#punto-ind,
   div#punto-loc,
@@ -64,8 +74,9 @@
   nav.menu a:hover > div#punto-pre,
   nav.menu a:hover > div#punto-acc,
   nav.menu a:hover > div#punto-dom {
-    width: 40%;
+    width: 0%;
   }
+
   #aiutoSkipnav:focus {     
     width: 50px;        
     height: 50px;
@@ -269,6 +280,9 @@
 
   .sponsor-icon img{
     max-width: 40%;
+  }
+  .sponsor-icon:hover {
+    transform: unset;
   }
 
   /*FOOTER*/

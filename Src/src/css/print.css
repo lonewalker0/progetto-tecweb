@@ -572,7 +572,6 @@
     font-style: italic;
   }
   
-  
   #purchase_result a {
     color: var(--alt-link);
   }
@@ -925,8 +924,7 @@
   }
   
   /*MODIFICA ACCOUNT*/
-  fieldset#modifica-account
-  {
+  fieldset#modifica-account{
     width: 100%;
     margin-bottom:4rem;
     margin-right: 4rem;
@@ -936,12 +934,13 @@
     box-shadow: 0 0 10px var(--verde-lime);
     padding: 1rem;
   }
+  
   fieldset#modifica-account legend{
     font-size: 1.5rem;
     text-align: center;
   }
-  fieldset#modifica-account p
-  {
+
+  fieldset#modifica-account p{
     display:flex;
     flex-direction: column;
     padding: 1rem;
@@ -949,12 +948,12 @@
     margin-left: auto;
     margin-right: auto;
   }
-  fieldset#modifica-account p label
-  {
+
+  fieldset#modifica-account p label{
     font-size:1.25rem;
   }
-  fieldset#modifica-account input
-  {
+
+  fieldset#modifica-account input{
     width: 100%;
     height: 2rem;
     border-radius: 2rem;
@@ -964,12 +963,13 @@
     font-size: 1rem;
     margin-top: 8px;
   }
-  form#formUpdate div#salva-modifiche
-  {
+
+  form#formUpdate div#salva-modifiche{
     display:flex;
     justify-content: space-around;
     width: 100%;
   }
+
   form#formUpdate input#input-salva
   {
     width: 12.5%;
@@ -1209,11 +1209,7 @@
     border-radius: 1rem;
   }
   
-  
-  
-  
-  form#event-elimination input[type="submit"]
-  {
+  form#event-elimination input[type="submit"]{
     display: flex;
     justify-content: space-around;
     font-size: 1rem;
