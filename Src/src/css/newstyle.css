@@ -1625,13 +1625,30 @@ form#logout div#logout-div input#input-logout{
 
 #errorupdate p{
   margin: 1rem 4rem;
-  padding: 1rem;
+  padding-left: 2rem;
+  padding-top:0.8rem;
+  padding-bottom: 0.8rem;
   font-size: 1rem;
   color: var(--verde-scuro); 
   background-color: var(--verde-lime);
   border-radius: 1rem;
+  position:relative;
+  
 }
 
+#errorupdate p::before {
+  content: ""; /* Contenuto vuoto poiché useremo un'immagine */
+  background-image: url('../assets/arrow/error.png'); /* Percorso dell'immagine locale */
+  background-size: contain; /* Regola la dimensione dell'immagine */
+  height: 32px; /* Altezza desiderata dell'immagine */
+  width: 32px;
+  display: inline-block;
+  position: absolute;
+  left: 0; /* Regola la posizione dell'icona a sinistra del paragrafo */
+  top: 50%;
+  margin-right: 0.5rem;
+  transform: translateY(-50%);
+}
 
 
 
