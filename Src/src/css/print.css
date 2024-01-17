@@ -1,88 +1,74 @@
 * {
     font-family: "Times New Roman", serif;
+    font-size: 12pt; /* valore slides prof */
     margin: 0;
     padding: 0;
     scroll-padding-top: 2rem;
     box-sizing: border-box;
-    font-size: 1rem;
-  }
-  
-  :root {
-    --verde-lime: #B1DD40;
-    --verde-scuro: #111606;
-    --link: white;
-    --visited-link: rgb(217, 217, 8); 
-    --verde-scurino:rgba(24, 31, 8);
-  }
-  ::placeholder{
-    color:var(--verde-lime);  
-  }
-  ::-ms-input-placeholder{
-    color:var(--verde-lime);
   }
   
   body {
-    background-color: var(--verde-scuro);
-    color: var(--verde-lime);
     max-width: 1920px;
-    background-size: cover;
     height: 100%;
     display:flex;
     flex-direction: column;
+    background-color: white;
+    color: black;
   }
   
   h1 {
     text-align: center;
-    padding: 1rem;
-    color: var(--verde-lime);
-    font-size: 3rem;
+    font-size: 2.6rem;
     font-weight: bold;
+    color: var(--text-color);
   }
   
   h2 {
     text-align: center;
     padding: 1rem;
-    color: var(--verde-nero);
     font-size: 2rem;
     font-weight: bold;
+    color: var(--text-color);
   }
   
   h3 {
     padding: 1rem;
-    color: var(--verde-nero);
     font-size: 1.8rem;
     font-weight: bold;
+    color: var(--text-color);
   }
   
   h4 {
     padding: 1rem;
-    color: var(--verde-nero);
     font-size: 1.5rem;
     font-weight: bold;
+    color: var(--text-color);
   }
   
-  a:link {
-    color: var(--link);
+
+  /* Da rivedere */
+  /* Link interni non anchor - ricordarsi di aggironare il path */
+  a:not([href*="#"]):not([href*="http"]):after{ 
+    content: " ( http://tecweb.studenti.math.unipd.it/nome_referente/" attr(href) " )";
   }
-  
-  a:visited {
-    color: var(--visited-link);
+
+  /* Link esterni*/
+  a[href*="http"]:after{
+    content: " ( " attr(href) " )";
   }
   
   /* Header */
   
   header {
-    width: calc(100% - 8rem);
-    margin: 1rem 4rem 1rem 4rem;
+    width: 90%;
+    margin-left: 0em;
   }
   
   #flexContainerHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem 0 1rem;
-    border-radius: 1rem;
-    background-color: var(--verde-scurino);
+    padding: 0;
   }
   
   #left-group {
@@ -113,7 +99,6 @@
   #vertical-bar-container {
     height: 50px;
     width: 4px;
-    background-color: var(--verde-lime);
   }
   
   .show {
@@ -171,7 +156,6 @@
     width: calc(100% - 8rem);
     text-align: center;
     padding: 1rem 0 1rem 0;
-    background-color: rgba(24, 31, 8, 0.85);
   }
   
   div#footer-content {
@@ -204,17 +188,14 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--verde-lime);
     border-radius: 1rem;
   }
   
   .programma-entry img {
     width: 20%;
     height: auto;
-    border-radius: 4px;
     margin: 1rem;
     margin-left: 3rem;
-    box-shadow: 0 0 10px rgba(37, 53, 25, 1);
   }
   
   .entry-info {
@@ -222,7 +203,6 @@
     max-width: 70%;
     margin: 1rem;
     padding: 1rem;
-    color: var(--verde-scuro);
     font-size: 1.5rem;
     font-weight: 400;
   }
@@ -239,7 +219,6 @@
   
   #sponsor {
     text-align: center;
-    background-color: var(--verde-lime);
     align-items: center;
     padding: 1rem;
     margin: 0 1rem 1rem 1rem;
@@ -247,14 +226,13 @@
   }
   
   #sponsor-title {
-    margin-top: 4rem;
-    color: var(--verde-lime);
+    margin-top: 1rem;
+    color: var(--text-color);
   }
   
   #sponsor h3 {
-    color: var(--verde-scuro);
     padding: 0;
-    border-bottom: 2px solid var(--verde-scuro);
+    border-bottom: 2px solid var(--text-color);
     text-align: left;
     margin-left: 1rem ;
     margin-right: 1rem ; 
@@ -292,7 +270,6 @@
     text-align: left;
     padding: 2rem;
     padding-top: 3rem;
-    background-color: var(--verde-lime);
     border-radius: 4px;
     width:90%;
   }
@@ -302,7 +279,6 @@
     padding-left: 0;
     text-transform: uppercase;
     font-weight: bold;
-    color: var(--verde-scuro);
   }
   
   #img-chi-siamo {
@@ -311,14 +287,12 @@
   
   #chi-siamo-testo {
     text-align: justify;
-    color: var(--verde-scuro);
   }
   
   #ringraziamenti {
     max-width: 1080px;
     margin: 0 auto;
     padding: 1rem;
-    background-color: var(--verde-lime);
     border-radius: 4px;
     width:90%;
     margin-top:2rem;
@@ -327,13 +301,11 @@
   #ringraziamenti h3 {
     font-weight: bold;
     text-align:center;
-    color: var(--verde-scuro);
   }
   
   #ul-ringraziamenti {
     list-style: none;
     text-align:center;
-    color: var(--verde-scuro);
   }
   
   /* Location */
@@ -350,12 +322,9 @@
   #location-contenuto {
     padding: 2rem;
     display: flex;
-    border: 1px solid var(--verde-lime);
     flex-direction: column; /* Modifica qui, impostando la direzione della colonna */
     gap: 2rem;
     align-items: center;
-    background-color: var(--verde-scuro);;
-    color: var(--verde-lime);
     border-radius: 1rem;
     max-width: 1792px;
     overflow: hidden;
@@ -363,7 +332,6 @@
     width: 100%;
     box-sizing: border-box;
     height: 100%;
-    box-shadow: 0 0 10px var(--verde-lime);
   }
   
   #map {
@@ -372,7 +340,6 @@
     object-fit: cover;
     max-width: 600px;
     border-radius: 4px;
-    box-shadow: 0 0 10px var(--verde-lime);
     border: none;
     margin-bottom: 1rem; /* Modifica qui, poiché non stai più utilizzando la proprietà margin-right */
   }
@@ -404,15 +371,12 @@
   }
   .product {
     margin: 2rem 0 2rem 0;
-    color: var(--verde-lime);
     width:100%;
   }
   
   .product h2{
     margin-bottom: 1rem;
-    background-color: var(--verde-scurino);
     border-radius: 1rem;
-    color: var(--verde-lime)
   
   }
   
@@ -429,7 +393,6 @@
     margin: 1rem;
     padding: 1rem;
     border-radius: 4px;
-    background-color: var(--verde-lime);
     width:100%;
     min-height: 550px;
   }
@@ -438,12 +401,10 @@
     width: 60%;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(37, 53, 25, 1);
   }
   
   .entry-info  {
     height: 100% !important;
-    color: var(--verde-scuro);
     text-align: center;
   }
   
@@ -467,8 +428,6 @@
     
     margin-bottom: 3rem;
     padding: 2rem;
-    background-color: var(--verde-lime);
-    color: var(--verde-scuro);
     border-radius: 0.2rem;
   }
   
@@ -482,7 +441,7 @@
     width: 75%;
     padding: 0 2rem 0 2rem;
     border-right: solid;
-    border-color: rgba(24, 31, 8, 0.7);
+    border-color: var(--text-color);
   
   }
   
@@ -499,9 +458,6 @@
     padding: 2rem 1rem 2rem 1rem;
     font-weight: bold;
     font-size: 1.3rem;
-    background-color: var(--verde-scurino);
-    color: var(--verde-lime);
-    box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
     border-radius: 0.2rem;
     margin-bottom: 1.25rem;
   }
@@ -519,7 +475,6 @@
   .ticket-form {
     width: 20%;
     padding: 1rem;
-    box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
     border-radius: 0.2rem;  
   }
   
@@ -540,10 +495,6 @@
     padding: 0.5rem;
     border: none;
     border-radius: 0.2rem;
-    background-color: var(--verde-scurino);
-    color: var(--verde-lime);
-    border: 1px solid var(--verde-lime);
-    cursor: pointer;
   }
   
   input[type="button"] {
@@ -553,10 +504,6 @@
     padding: 0.5rem;
     border: none;
     border-radius: 0.2rem;
-    background-color: var(--verde-scurino);
-    color: var(--verde-lime);
-    border: 1px solid var(--verde-lime);
-    cursor: pointer;
   }
   
   .total-price {
@@ -570,14 +517,6 @@
     text-align: center;
     margin: 1rem 0 1rem 0;
     font-style: italic;
-  }
-  
-  #purchase_result a {
-    color: var(--alt-link);
-  }
-  
-  #purchase_result a:visited {
-    color: var(--alt-visited-link);
   }
   
   .ticket-vip {
@@ -614,8 +553,6 @@
   #faq-container {
     margin: 0 auto;
     padding: 1rem;
-    background-color: var(--light-bg-color);
-    color: var(--dark-bg-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -640,8 +577,6 @@
     margin-right: 2rem;
     margin-left: 2rem;
     margin-bottom: 2rem;
-    background-color: var(--verde-lime);
-    color: var(--verde-scuro);
   }
   
   .faq-item ul li{
@@ -664,23 +599,17 @@
   
   .note {
     font-style: italic;
-    background-color: var(--verde-scurino);
     padding: 1rem; 
     border-radius: 1rem;
-    color: var(--verde-lime); 
   }
   
   main {
-    background-color: var(--light-bg-color);
     margin: 0rem 4rem 0rem 4rem;
   }
   
   /*PRIVACY POLICY*/
   div#privacy-container {
     display: block;
-    background-color: var(--verde-scurino);
-    color: var(--verde-lime);
-    border: 1px solid var(--verde-lime);
     border-radius: 1rem;
     padding: 4rem;
     margin-left: 4rem;
@@ -707,7 +636,6 @@
   }
   #privacy-title {
     margin-top: 2rem;
-    color: var(--verde-lime);
   }
   #privacy-title span
   {
@@ -719,8 +647,7 @@
   {
     margin: 1rem 0 1rem 0;
     border-radius: 2rem;
-    border: 2px solid var(--verde-lime);
-    background-color: rgba(24, 31, 8, 0.85);
+    border: 2px solid var(--text-color);
   }
   fieldset#login-fieldset legend
   {
@@ -748,9 +675,7 @@
     border-radius: 1rem;
     text-align: left;
     font-size: 1rem;
-    color: var(--verde-lime);
-    border: 1px solid var(--verde-lime);
-    background-color: var(--verde-scurino);
+    border: 1px solid var(--text-color);
   }
   fieldset#login-fieldset div label
   {
@@ -787,8 +712,7 @@
     display:grid;
     margin: 1rem 0;
     border-radius: 2rem;
-    border: 2px solid var(--verde-lime);
-    background-color: rgba(24, 31, 8, 0.85);
+    border: 2px solid var(--text-color);
     padding: 1rem;
   }
   
@@ -820,9 +744,7 @@
     border-radius: 1rem;
     text-align: left;
     font-size: 15px;
-    color: var(--verde-lime);
-    background-color: var(--verde-scurino);
-    border: 1px solid var(--verde-lime);
+    border: 1px solid var(--text-color);
     padding: 1rem;
   }
   
@@ -861,9 +783,7 @@
   div#sidebar nav{
     width: 100%;
     border-radius:2rem;
-    background-color: var(--verde-scurino);
-    border: 1px solid var(--verde-lime);
-    box-shadow: 0 0 10px var(--verde-lime);
+    border: 1px solid var(--text-color);
   }
   
   div#sidebar ul
@@ -883,7 +803,6 @@
   div#sidebar li a,
   div#sidebar li a:visited{
     display: inline-block;
-    color:var(--link);
     font-size:1.25rem;
     text-align: center;
     width: 100%;
@@ -900,9 +819,7 @@
     margin-top:1rem;
     display:flex;
     flex-direction: column;
-    border: 1px solid var(--verde-lime);
-    background-color: rgba(24, 31, 8, 0.85);
-    box-shadow: 0 0 10px var(--verde-lime);
+    border: 1px solid var(--text-color);
     border-radius: 2rem;
     align-items: center;
   }
@@ -929,9 +846,7 @@
     margin-bottom:4rem;
     margin-right: 4rem;
     border-radius: 2rem;
-    border: 1px solid var(--verde-lime);
-    background-color: rgba(24, 31, 8, 0.85);
-    box-shadow: 0 0 10px var(--verde-lime);
+    border: 1px solid var(--text-color);
     padding: 1rem;
   }
   
@@ -957,8 +872,7 @@
     width: 100%;
     height: 2rem;
     border-radius: 2rem;
-    border: 1px solid var(--verde-lime);
-    background-color: var(--verde-scurino);
+    border: 1px solid var(--text-color);
     padding: 1rem;
     font-size: 1rem;
     margin-top: 8px;
@@ -988,9 +902,7 @@
   
   div#ordini div#dtable{
     font-size: 1.25rem;
-    border: 1px solid var(--verde-lime);
-    background-color: rgba(24, 31, 8, 0.85);
-    box-shadow: 0 0 10px var(--verde-lime);
+    border: 1px solid var(--text-color);
     padding: 2rem;
     border-radius: 2rem;  
     width:100%;
@@ -1004,8 +916,7 @@
   
   table#tabellaordini{
     width: 100%;
-    border: 1px solid var(--verde-lime);
-    background-color: var(--verde-scuro);
+    border: 1px solid var(--text-color);
     border-radius: 2rem;
     text-align: center;
     padding: 2rem;
@@ -1023,7 +934,6 @@
   
   div#ordini #tabellaordini thead th {
     border-bottom: 1px solid;
-    background-color:var(--verde-scurino);
   }
   
   div#ordini table#tabellaordini tbody tr td
@@ -1041,9 +951,7 @@
   div#elimina div#elimina-account{
     width: 100%;
     text-align:left;
-    border: 1px solid var(--verde-lime);
-    background-color: var(--verde-scuro);
-    box-shadow: 0 0 10px var(--verde-lime);
+    border: 1px solid var(--text-color);
     border-radius: 2rem;
     padding:2rem;
   }
@@ -1088,9 +996,7 @@
     width:25%;
     padding: 0.5rem;
     border-radius: 1rem;
-    color: var(--verde-lime);
-    border: 1px solid var(--verde-lime);
-    background-color: var(--verde-scurino);
+    border: 1px solid var(--text-color);
     margin-bottom: 4rem;
     font-size: 1rem;
   }
@@ -1099,8 +1005,7 @@
     font-size: 1rem;
     width:10%;
     border-radius: 1rem;
-    border: 1px solid var(--verde-lime);
-    background-color: var(--verde-scurino);
+    border: 1px solid var(--text-color);
     padding: 0.5rem;
   }
   
@@ -1114,9 +1019,7 @@
     display:flex;
     justify-content: space-around;
     border-radius: 2rem;
-    background-color:var(--verde-scurino);
-    border: 1px solid var(--verde-lime);
-    color: var(--verde-lime);
+    border: 1px solid var(--text-color);
   }
   
   #addEventForm {
@@ -1125,10 +1028,8 @@
     gap: 1rem;
     margin: 1rem 4rem;
     border-radius: 2rem;
-    border: 2px solid var(--verde-lime);
-    background-color: rgba(24, 31, 8, 0.85);
+    border: 2px solid var(--text-color);
     padding: 1rem;
-    color: var(--verde-lime); 
   }
   
   #addEventForm legend {
@@ -1152,9 +1053,7 @@
     width: 100%;
     padding: 0.5rem;
     border-radius: 2rem;
-    border: 1px solid var(--verde-lime);
-    background-color: #333;
-    color: var(--verde-lime);
+    border: 1px solid var(--text-color);
   }
   
   #addEventForm textarea {
@@ -1167,18 +1066,13 @@
     justify-content: space-around;
     width: 15%;
     border-radius: 2rem;
-    background-color: var(--verde-scurino);
-    color: var(--verde-lime);
-    border: 1px solid var(--verde-lime);
-    cursor: pointer;
+    border: 1px solid var(--text-color);
   }
   
   #errorContainerAggiuntaEvento p {
     margin: 1rem 4rem;
     padding: 1rem;
     font-size: 1rem;
-    color: var(--verde-scuro); 
-    background-color: var(--verde-lime);
     border-radius: 1rem;
   }
   
@@ -1186,8 +1080,6 @@
     margin: 1rem 4rem;
     padding: 1rem;
     font-size: 1rem;
-    color: var(--verde-scuro); 
-    background-color: var(--verde-lime);
     border-radius: 1rem; 
   }
   
@@ -1195,8 +1087,6 @@
     margin: 1rem 4rem;
     padding: 1rem;
     font-size: 1rem;
-    color: var(--verde-scuro); 
-    background-color: var(--verde-lime);
     border-radius: 1rem; 
   }
   
@@ -1204,8 +1094,6 @@
     margin: 1rem 4rem;
     padding: 1rem;
     font-size: 1rem;
-    color: var(--verde-scuro); 
-    background-color: var(--verde-lime);
     border-radius: 1rem;
   }
   
@@ -1215,8 +1103,7 @@
     font-size: 1rem;
     width:100%;
     border-radius: 1rem;
-    border: 1px solid var(--verde-lime);
-    background-color: var(--verde-scurino);
+    border: 1px solid var(--text-color);
     padding: 0.5rem;
   }
   
