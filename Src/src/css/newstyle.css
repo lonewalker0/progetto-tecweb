@@ -1555,12 +1555,12 @@ form#logout div#logout-div input#input-logout{
   padding: 0.5rem 0; 
 }
 
-/*div#addEventForm form fieldset div label {
+div#addEventForm form fieldset div label {
   display:inline-block;
   font-size: 1.2rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-}*/
+}
 
 #addEventForm input[type="text"],
 #addEventForm input[type="date"],
