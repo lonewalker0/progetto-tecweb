@@ -418,7 +418,7 @@ function validazioneFormAggiutaEvento() {
   } else {
     document.getElementById("date").setAttribute("aria-invalid", "false");
   }
-  const allowedDates = ["05/07/2024", "06/07/2024", "07/07/2024"];
+  const allowedDates = ["2024-07-05", "2024-07-06", "2024-07-07"];
   if (!allowedDates.includes(date)) {
         isValid = false;
         document.getElementById("date").setAttribute("aria-invalid", "true");
