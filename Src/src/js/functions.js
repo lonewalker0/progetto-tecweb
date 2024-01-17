@@ -117,13 +117,13 @@ document.addEventListener("DOMContentLoaded", function () {
     var sections = document.querySelectorAll(".section");
 
     // Nascondi tutte le sezioni tranne "Informazioni account" inizialmente
-    sections.forEach(function (section) {
+   /* sections.forEach(function (section) {
       if (section.id === "informazioni") {
         section.classList.add("show");
       } else {
         section.classList.add("hide");
       }
-    });
+    });*/
 
     menuLinks.forEach(function (link) {
       link.addEventListener("click", function (event) {

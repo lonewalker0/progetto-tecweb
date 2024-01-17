@@ -7,7 +7,7 @@ $dbOperation = new DBOperation();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Verifica se l'utente è autenticato
-    $errors[]='';
+    $errors=[];
     
     $username = $_SESSION["username"];
 
