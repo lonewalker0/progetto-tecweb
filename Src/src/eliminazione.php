@@ -1,5 +1,6 @@
 <?php
 include('phputilities/PageBuilder.php');
+session_start(); 
 
 $breadcrumb = '<a href="account.php">Account</a>&nbsp>> Elimina';
 $breadcrumblen = 'it'; 
