@@ -37,7 +37,7 @@ class accountOperation {
             $output .= "<div id='errorupdate'>";
             if (isset($_SESSION['update_form_errors'])) {
                 foreach ($_SESSION['update_form_errors'] as $error) {
-                    $output .= '    <p>' . $error . '</p>';
+                    $output .= '<p>' . $error . '</p>';
                 }
                 unset($_SESSION['update_form_errors']);
             }
