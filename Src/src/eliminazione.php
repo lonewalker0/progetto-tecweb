@@ -9,7 +9,7 @@ $keyword = 'Festival, Techno, Lum250, Account, Eliminazione;';
 $description = 'Eliminazione account dal festival :('; 
 
 $main= "<h1 id='conferma'>Conferma eliminazione</h1>";
-$main.= '<div id="errorContainerEliminazione">'; 
+$main.= '<div id="errorContainerEliminazione" role="alert" aria-live="polite" aria-atomic="true">'; 
         if (isset($_SESSION['form_delete_errors'])) {
             foreach ($_SESSION['form_delete_errors'] as $error) {
                 $main .= '    <p>' . $error . '</p>';

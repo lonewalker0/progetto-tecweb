@@ -21,8 +21,8 @@ class IndexMainBuilder
         
         $this->mainHTML =  file_get_contents(__DIR__ . '/../html/carosello.html');
         $this->mainHTML .='<div id="programma-menu">';
-        $this->mainHTML .= '<h1>Programma';
-        $this->mainHTML .= '<div class="programma-animation"></div><div class="programma-animation2"></div></h1>';
+        $this->mainHTML .= '<h1>Programma</h1>';
+        $this->mainHTML .= '<div class="programma-animation"></div><div class="programma-animation2"></div>';
         
         $dates = ['2024-07-05', '2024-07-06', '2024-07-07']; //date in programma
 
@@ -30,7 +30,7 @@ class IndexMainBuilder
         $this->mainHTML .= '</div>';
         foreach ($dates as $date) {
             $this->mainHTML .= "<div id='giornata" . str_replace('-', '', $date) . "'>";
-            $this->mainHTML .= "<h2>$date</h2>"; 
+            $this->mainHTML .= "<h2><time datetime='$date'>$date</time></h2>"; 
 
             foreach ($this->eventEntries as $event) {
                 if ($event->getDate() === $date) {

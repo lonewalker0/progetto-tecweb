@@ -39,7 +39,7 @@ INSERT INTO Programma (date, hour, image_path, description, artist_name)
 VALUES ('2024-07-05', '23:00:00', 'assets/artisti/tony-boy.png', "Tony Boy, rapper classe <abbr title='1999'>'99</abbr> nato a Padova, spicca per la sua capacità di scrittura, interpretazione e versatilità nel <span lang='en'>flow</span>, mischiando tematiche sentimentali con un'attitudine più cruda.", 'Tony Boy');
 
 INSERT INTO Programma (date, hour, image_path, description, artist_name)
-VALUES ('2024-07-05', '24:00:00', 'assets/artisti/peggy-gou.png', "La rivoluzionaria regina della musica elettronica Peggy Gou, ritorna in Italia! Dopo il trionfale successo di <cite lang='en'>It Goes Like Nanana</cite>, Peggy è pronta a trasformare TechnoLum250 Festival in un grande evento <span lang='en'>dance</span> per tutti i suoi fan Italiani!", 'Peggy Gou');
+VALUES ('2024-07-05', '23:30:00', 'assets/artisti/peggy-gou.png', "La rivoluzionaria regina della musica elettronica Peggy Gou, ritorna in Italia! Dopo il trionfale successo di <cite lang='en'>It Goes Like Nanana</cite>, Peggy è pronta a trasformare TechnoLum250 Festival in un grande evento <span lang='en'>dance</span> per tutti i suoi fan Italiani!", 'Peggy Gou');
 
 
 /* 6 Luglio */
@@ -53,7 +53,7 @@ INSERT INTO Programma (date, hour, image_path, description, artist_name)
 VALUES ('2024-07-06', '23:00:00', 'assets/artisti/thelonius-b.png', "Hanno pubblicato solo un disco ufficiale, ma i Thelonious B. sono in giro da parecchio tempo. Nel <time datetime='2020'>2020</time>, questo duo iconico in bilico fra post-trap e emo-rap ha dato vita al primo album <cite>THB</cite>, che ha macinato milioni di <span lang='en'>stream</span> sulle piattaforme e attirato l'attenzione di una grossa fetta di pubblico del genere.", 'Thelonius B');
 
 INSERT INTO Programma (date, hour, image_path, description, artist_name)
-VALUES ('2024-07-06', '24:00:00', 'assets/artisti/franchino.png', "Francesco Principato in arte Franchino, è uno dei più noti DJ di musica elettronica in Italia. Conosciuto per la sua tecnica di mixaggio e le sue performance energiche, ha contribuito a diffondere la cultura della musica dance nel nostro Paese.", 'Franchino');
+VALUES ('2024-07-06', '23:30:00', 'assets/artisti/franchino.png', "Francesco Principato in arte Franchino, è uno dei più noti DJ di musica elettronica in Italia. Conosciuto per la sua tecnica di mixaggio e le sue performance energiche, ha contribuito a diffondere la cultura della musica dance nel nostro Paese.", 'Franchino');
 
 
 /* 7 Luglio */
@@ -67,7 +67,7 @@ INSERT INTO Programma (date, hour, image_path, description, artist_name)
 VALUES ('2024-07-07', '23:00:00', 'assets/artisti/anna-pepe.png', "A soli 16 anni è già una ragazza da record. Anna Pepe è una giovane rapper classe <time datetime='2003'>2003</time>. Cresciuta tra i vinili del padre DJ, coltiva la passione per la cultura <span lang='en'>Urban</span> americana che l'ha portata ad appassionarsi all'hip hop.", 'Anna Pepe');
 
 INSERT INTO Programma (date, hour, image_path, description, artist_name)
-VALUES ('2024-07-07', '24:00:00', 'assets/artisti/gigi-dagostino.png', "All'anagrafe Luigino Di Agostino, per tutti è Gigi D'Agostino o Gigi D'Ag. E' impossibile non aver ballato o cantato una sua canzone, anche se non si è grandi fan della musica da discoteca.", 'Gigi D''Agostino');
+VALUES ('2024-07-07', '23:30:00', 'assets/artisti/gigi-dagostino.png', "All'anagrafe Luigino Di Agostino, per tutti è Gigi D'Agostino o Gigi D'Ag. E' impossibile non aver ballato o cantato una sua canzone, anche se non si è grandi fan della musica da discoteca.", 'Gigi D''Agostino');
 
 
 CREATE TABLE Biglietti (

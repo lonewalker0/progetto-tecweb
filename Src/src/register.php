@@ -46,7 +46,7 @@ $replaceValues[] = isset($form_data['username']) ? htmlspecialchars($form_data['
 $formContent = str_replace($placeholders, $replaceValues, $formContent);
 $main .= $formContent;
 
-$main.= '<div id="errorContainerRegistrazione">'; 
+$main.= '<div id="errorContainerRegistrazione" role="alert" aria-live="polite" aria-atomic="true">'; 
         if (isset($_SESSION['add_register_form_errors'])) {
             foreach ($_SESSION['add_register_form_errors'] as $error) {
                 $main .= '    <p>' . $error . '</p>';

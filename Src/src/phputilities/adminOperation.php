@@ -20,7 +20,7 @@ class adminOperation
         #costruzione del menu per l'elimizazione
         $events = $this->dbOperation->getEventEntries();
         
-        $html .= '<div id="errorContainerAggiuntaEvento">'; 
+        $html .= "<div id='errorContainerAggiuntaEvento' role='alert' aria-live='polite' aria-atomic='true'>"; 
         if (isset($_SESSION['add_event_form_errors'])) {
             foreach ($_SESSION['add_event_form_errors'] as $error) {
                 $html .= '    <p>' . $error . '</p>';
