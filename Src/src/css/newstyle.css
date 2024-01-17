@@ -1133,8 +1133,8 @@ fieldset#login-fieldset
 }
 fieldset#login-fieldset legend
 {
-  display:none;
-  text-align: center;
+  
+  /*text-align: center;*/
   font-size: 1.5rem;
 }
 
