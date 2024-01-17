@@ -1203,7 +1203,7 @@ fieldset#register-fieldset2 legend{
   font-size: 35px;
 }
 
-/*fieldset#register-fieldset label,
+fieldset#register-fieldset label,
 fieldset#register-fieldset2 label{
   display: flex;
   justify-content: space-between;
@@ -1213,7 +1213,7 @@ fieldset#register-fieldset2 label{
   margin-right:auto;
   align-items: center;
   padding-top: 1rem;
-}*/
+}
 
 fieldset#register-fieldset input,
 fieldset#register-fieldset2 input{
