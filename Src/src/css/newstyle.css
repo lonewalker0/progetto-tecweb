@@ -380,11 +380,7 @@ div#footer-content {
 
 }
 
-#navEventi a,
-#navEventi a:visited {
-  color: var(--link);
-  
-}
+
 
 .event-container {
   margin: 0;
@@ -1207,7 +1203,7 @@ fieldset#register-fieldset2 legend{
   font-size: 35px;
 }
 
-fieldset#register-fieldset label,
+/*fieldset#register-fieldset label,
 fieldset#register-fieldset2 label{
   display: flex;
   justify-content: space-between;
@@ -1217,7 +1213,7 @@ fieldset#register-fieldset2 label{
   margin-right:auto;
   align-items: center;
   padding-top: 1rem;
-}
+}*/
 
 fieldset#register-fieldset input,
 fieldset#register-fieldset2 input{
@@ -1559,12 +1555,12 @@ form#logout div#logout-div input#input-logout{
   padding: 0.5rem 0; 
 }
 
-div#addEventForm form fieldset div label {
+/*div#addEventForm form fieldset div label {
   display:inline-block;
   font-size: 1.2rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-}
+}*/
 
 #addEventForm input[type="text"],
 #addEventForm input[type="date"],
