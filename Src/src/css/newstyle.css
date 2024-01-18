@@ -170,7 +170,9 @@ header {
   margin-left: 1.5rem;
 }
 
-#countdown-data p {
+#countdown-data p#dataFestival time,
+#countdown-data p#dataFestival,
+#countdown-data p#intervalloFestival{
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -390,8 +392,7 @@ div#footer-content {
 
 .programma-entry {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: var(--verde-lime);
   border-radius: 1rem;
@@ -1239,7 +1240,7 @@ form#RegistrationForm div{
 
 div input#registrati{
   width: 15%;
-  height: 2rem;
+  height: 2.5rem;
   border-radius: 1rem;
   font-size: 20px;
   cursor: pointer;
@@ -1406,6 +1407,10 @@ div#ordini li{
   padding: 1rem;
   margin-left: 1rem;
   font-size: 1.25rem;
+}
+
+div#dtable{
+  font-size: 1.25rem;;
 }
 
 table#tabellaordini{
@@ -1647,13 +1652,23 @@ div#addEventForm form fieldset div label {
   transform: translateY(-50%);
 }
 
-form#event-elimination input[type="submit"]
-{
-  font-size: 1rem;
-  width:100%;
-  border-radius: 1rem;
-  border: 1px solid var(--verde-lime);
-  background-color: var(--verde-scurino);
+form#event-elimination input[type="submit"]{
+  background-image: url(../assets/delete.png);
+  width:32px;
+  height: 34.5px;
+  border-radius: 4px;
+  color: var(--verde-scurino);
+  background-color: unset;
   padding: 0.5rem;
-  margin-right: 0.5rem;
+  margin-top: 5px;
+  margin-right: 5px;
+  transition: none;
+}
+
+form#event-elimination input[type="submit"]:hover{
+  transform: unset;
+}
+
+form#event-elimination{
+  height: 380.59px
 }

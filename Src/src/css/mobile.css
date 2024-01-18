@@ -452,9 +452,12 @@
     width: 50%;
   }
 
+  form#event-elimination{
+    height: 50px
+  }
+
   form#event-elimination input[type="submit"]{
-    margin-right: 0;
-    margin-bottom: 0.5rem;
+    margin: 0;
   }
 }
 
