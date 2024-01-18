@@ -7,10 +7,10 @@
     <legend>Dati Personali</legend>
 
     <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required value="{{nome}}" placeholder="Inserisci il tuo nome">
+    <input type="text" id="nome" name="nome" required value="{{nome}}" placeholder="Inserisci il tuo nome" minlength="2" maxlength="45">
 
     <label for="cognome">Cognome:</label>
-    <input type="text" id="cognome" name="cognome" required value="{{cognome}}" placeholder="Inserisci il tuo cognome">
+    <input type="text" id="cognome" name="cognome" required value="{{cognome}}" placeholder="Inserisci il tuo cognome" minlength="2" maxlength="45">
 
     <label for="dataNascita">Data nascita:</label>
     <input
@@ -25,7 +25,7 @@
     
 
     <label for="indirizzo">Indirizzo:</label>
-    <input type="text" id="indirizzo" name="indirizzo" required value="{{indirizzo}}" placeholder="Inserisci il tuo indirizzo di residenza"/>
+    <input type="text" id="indirizzo" name="indirizzo" required value="{{indirizzo}}" placeholder="Inserisci il tuo indirizzo di residenza" minlength="5" maxlength="80"/>
   </fieldset>
 
   <fieldset id="register-fieldset2">
@@ -35,10 +35,10 @@
     <input type="email" id="email" name="email" required value="{{email}}" placeholder="Inserisci la tua email"/>
 
     <label for="username">Username:</label>
-    <input type="text" id="username" name="username" required value="{{username}}" placeholder="Inserisci il tuo username"/>
+    <input type="text" id="username" name="username" required value="{{username}}" placeholder="Inserisci il tuo username" minlength="4" maxlength="25"/>
 
     <label for="password">Password:</label>
-    <input type="password" id="password" name="password" placeholder="Inserisci la password del tuo account" required />
+    <input type="password" id="password" name="password" placeholder="Inserisci la password del tuo account" required minlength="5" maxlength="50"/>
 
     <label for="confermaPassword">Conferma Password:</label>
     <input
@@ -47,6 +47,7 @@
       name="confermaPassword"
       placeholder="Conferma la password del tuo account"
       required
+      minlength="5" maxlength="50"
     />
   </fieldset>
   <div>
