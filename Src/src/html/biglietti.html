@@ -17,7 +17,7 @@
     id="formCompraBiglietto-{{id}}"
   >
     <fieldset>
-      <legend class='accessibleHide'>Acquisto</legend>
+      <legend class='accessibleHide'>Acquisto--{{Description}}</legend>
       <label for="quantita-{{id}}">Quantità:</label>
       <input
         type="number"
@@ -27,11 +27,14 @@
         max="5"
         required
       />
-    </fieldset>
-
-    <input type="hidden" name="id" value="{{id}}" />
-    <input type="submit" value="Acquista-{{id}}" />
+    
+   
+      
+      <input type="hidden" name="id" value="{{id}}" />
+    <input type="submit" value="Acquista" />
 
     <p class="total-price" aria-atomic="true" aria-live="polite" id="prezzo-totale-{{id}}"></p>
+    
+  </fieldset>
   </form>
 </div>
