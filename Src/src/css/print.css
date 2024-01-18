@@ -1,1109 +1,553 @@
-* {
-    font-family: "Times New Roman", serif;
-    font-size: 12pt; /* valore slides prof */
-    margin: 0;
-    padding: 0;
-    scroll-padding-top: 2rem;
-    box-sizing: border-box;
-  }
-  
-  body {
-    max-width: 1920px;
-    height: 100%;
-    display:flex;
-    flex-direction: column;
-    background-color: white;
-    color: black;
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 2.6rem;
-    font-weight: bold;
-    color: var(--text-color);
-  }
-  
-  h2 {
-    text-align: center;
-    padding: 1rem;
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--text-color);
-  }
-  
-  h3 {
-    padding: 1rem;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--text-color);
-  }
-  
-  h4 {
-    padding: 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--text-color);
-  }
-  
+html, body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+  line-height: 1.5em;
+}
 
-  /* Da rivedere */
-  /* Link interni non anchor - ricordarsi di aggironare il path */
-  a:not([href*="#"]):not([href*="http"]):after{ 
-    content: " ( http://tecweb.studenti.math.unipd.it/nome_referente/" attr(href) " )";
-  }
+body {
+  margin-left: 0em;
+  width: 100%;
+  padding: 0.3em 0em 0.5em;
+}
 
-  /* Link esterni*/
-  a[href*="http"]:after{
-    content: " ( " attr(href) " )";
-  }
-  
-  /* Header */
-  
-  header {
-    width: 90%;
-    margin-left: 0em;
-  }
-  
-  #flexContainerHeader {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
-  }
-  
-  #left-group {
-    display: flex;
-    align-items: center;
-  }
-  
-  #logo a {
-    display: flex;
-    line-height: 0;
-    padding: 0;
-    height: auto;
-    max-height: 170px;
-  }
-  
-  #logo img {
-    height: 170px;
-    width: auto;
-    max-width: 100%;
-  }
-  
-  #logo a img {
-    width: auto;
-    height: 170px;
-    align-self: center;
-  }
-  
-  #vertical-bar-container {
-    height: 50px;
-    width: 4px;
-  }
-  
-  .show {
-    display: block;
-  }
-  
-  .hide {
-    display: none;
-  }
-  
-  .accessibleHide {
-    position: relative;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-    margin: -1px;
-    padding: 0;
-  }
-  
-  .accessibleShow {
-    position: static; 
-    width: auto;
-    height: auto; 
-    overflow: visible; 
-    white-space: normal; 
-    border: initial; 
-    margin: 0;
-    padding: initial; 
-  }
-  
-  .icons {
-    display: none;
-  }
-  
-  .menu {
-    display: none;
-  }
-  
-  #breadcrumb {
-    display: none;
-  }
+a[href*="http"]:after{
+  content: " ( " attr(href) " )";
+}
 
-  /* Footer */
-  
-  footer {
-    position: static;
-    display: flex;
-    bottom:0;
-    flex-direction: column;
-    margin: 1rem 4rem 1rem 4rem;
-    border-radius: 1rem;
-    width: calc(100% - 8rem);
-    text-align: center;
-    padding: 1rem 0 1rem 0;
-  }
-  
-  div#footer-content {
-    font-size: 1.2rem;
-    font-weight: 200;
-  }
-  #footer-content p {
-    margin-top: 10px;
-  }
-  #footer-content a {
-    display: inline-block;
-    width: 140px;
-    
-  }
+/* da rivedere */
+a:not([href*="#"]):not([href*="http"]):after{ 
+  content: " ( http://tecweb.studenti.math.unipd.it/referente/" attr(href) " )";
+}
 
-  /* Main */
-  
-  #navEventi {
-    display: none;
-  }
-  
-  .event-container {
-    margin: 0;
-    padding: 0 1rem 0 1rem;
-    margin: 1rem 0 1rem 0;
-  }
-  
-  .programma-entry {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 1rem;
-  }
-  
-  .programma-entry img {
-    width: 20%;
-    height: auto;
-    margin: 1rem;
-    margin-left: 3rem;
-  }
-  
-  .entry-info {
-    flex: 1;
-    max-width: 70%;
-    margin: 1rem;
-    padding: 1rem;
-    font-size: 1.5rem;
-    font-weight: 400;
-  }
-  
-  .carosello-dinamico {
-    display: none;
-  }
+h1 {
+  text-align: center;
+  font-size: 2.6rem;
+}
 
-  #scrollToTopBtn {
-    display: none;   
-  }
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
 
-  /* Sponsor */
-  
-  #sponsor {
-    text-align: center;
-    align-items: center;
-    padding: 1rem;
-    margin: 0 1rem 1rem 1rem;
-    border-radius: 1rem;
-  }
-  
-  #sponsor-title {
-    margin-top: 1rem;
-    color: var(--text-color);
-  }
-  
-  #sponsor h3 {
-    padding: 0;
-    border-bottom: 2px solid var(--text-color);
-    text-align: left;
-    margin-left: 1rem ;
-    margin-right: 1rem ; 
-    font-weight: bold;
-  }
-  
-  .sponsors-container {
-    display: inline-grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 75%;
-    align-items: center;
-  }
-  
-  /* Countdown */
-  
-  #intervalloFestival {
-    display: nome;
-  }
-  
-  /* Chi siamo */
-  
-  #chi-siamo-container {
-    padding: 1rem;
-  
-  }
-  
-  #storia-festival p {
-    font-weight: 100;
-    text-align: justify;
-  }
-  
-  #chi-siamo-contenuto {
-    max-width: 1080px;
-    margin: 0 auto;
-    text-align: left;
-    padding: 2rem;
-    padding-top: 3rem;
-    border-radius: 4px;
-    width:90%;
-  }
-  
-  #chi-siamo-contenuto h2 {
-    text-align: center;
-    padding-left: 0;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  
-  #img-chi-siamo {
-    display: none;
-  }
-  
-  #chi-siamo-testo {
-    text-align: justify;
-  }
-  
-  #ringraziamenti {
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 1rem;
-    border-radius: 4px;
-    width:90%;
-    margin-top:2rem;
-  }
-  
-  #ringraziamenti h3 {
-    font-weight: bold;
-    text-align:center;
-  }
-  
-  #ul-ringraziamenti {
-    list-style: none;
-    text-align:center;
-  }
-  
-  /* Location */
-  
-  #location-container {
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 4rem;
-    padding: 1rem;
-    padding-bottom: 0;
-  }
-  
-  #location-contenuto {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column; /* Modifica qui, impostando la direzione della colonna */
-    gap: 2rem;
-    align-items: center;
-    border-radius: 1rem;
-    max-width: 1792px;
-    overflow: hidden;
-    height: auto;
-    width: 100%;
-    box-sizing: border-box;
-    height: 100%;
-  }
-  
-  #map {
-    width: 600px;
-    height: 300px;
-    object-fit: cover;
-    max-width: 600px;
-    border-radius: 4px;
-    border: none;
-    margin-bottom: 1rem; /* Modifica qui, poiché non stai più utilizzando la proprietà margin-right */
-  }
-  
-  #testo-location {
-    max-width: 90%;
-    padding: 1rem;
-    border-radius: 4px;
-  }
-  
-  #testo-location p {
-    padding-left: 1rem;
-    padding-bottom: 0.5rem;
-    text-align: justify;
-  }
-  
-  #indirizzo {
-    font-style: italic;
-  }
-  
-  /* Merch */
-  
-  div#shop
-  {
-    display: grid;
-    max-width: 99%;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap:1rem;
-  }
-  .product {
-    margin: 2rem 0 2rem 0;
-    width:100%;
-  }
-  
-  .product h2{
-    margin-bottom: 1rem;
-    border-radius: 1rem;
-  
-  }
-  
-  #live-info {
-    font-style: italic;
-    text-align: center;
-    margin: 0 4rem 0 4rem;
-  }
-  
-  .product-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 4px;
-    width:100%;
-    min-height: 550px;
-  }
-  
-  .product-image {
-    width: 60%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
-  .entry-info  {
-    height: 100% !important;
-    text-align: center;
-  }
-  
-  
-  .definition-term {
-    margin-top: 1rem;
-    font-weight: bold;
-  }
-  
-  /* Prevendite */
-  
-  .ticket-entry {
-    max-width: 62%;
-    margin: 0 auto;
-  
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    
-    margin-bottom: 3rem;
-    padding: 2rem;
-    border-radius: 0.2rem;
-  }
-  
-  .ticket-entry dl {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    
-    width: 75%;
-    padding: 0 2rem 0 2rem;
-    border-right: solid;
-    border-color: var(--text-color);
-  
-  }
-  
-  .ticket-entry dd {
-    margin-right: 2rem;
-  }
-  
-  .hidden-element {
-    display: none;
-  }
-  
-  .ticket-name {
-    text-align: center;
-    padding: 2rem 1rem 2rem 1rem;
-    font-weight: bold;
-    font-size: 1.3rem;
-    border-radius: 0.2rem;
-    margin-bottom: 1.25rem;
-  }
-  
-  .ticket-description {
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .ticket-price {
-    text-align: center;
-    font-style: italic;
-  }
-  
-  .ticket-form {
-    width: 20%;
-    padding: 1rem;
-    border-radius: 0.2rem;  
-  }
-  
-  fieldset {
-    border: none;
-  }
-  
-  input[type="number"] {
-    width: 100%;
-    border: none;
-    border-radius: 0.2rem;
-  }
-  
-  input[type="submit"] {
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 0.2rem;
-  }
-  
-  input[type="button"] {
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 0.5rem;
-    padding: 0.5rem;
-    border: none;
-    border-radius: 0.2rem;
-  }
-  
-  .total-price {
-    text-align: center;
-    margin-top: 0.5rem;
-    font-style: italic;
-    font-size: 0.8rem;
-  }
-  
-  #purchase_result {
-    text-align: center;
-    margin: 1rem 0 1rem 0;
-    font-style: italic;
-  }
-  
-  .ticket-vip {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  .ticket-vip p {
-    line-height: 1.5em;
-  }
-  
-  .ticket-vip ul {
-    padding: 1rem;
-  }
-  
-  .ticket-vip ul li {
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .ticket-vip ul li::before {
-    content: url('../assets/arrow/spuntaverde.png');
-    margin-right: 1rem;
-  }
-  
-  .ticket-vip ul li span.vip-privilegi {
-    font-weight: bold;
-    margin-right:0.5rem;
-  }
-  
-  /* Domande */
-  
-  #faq-container {
-    margin: 0 auto;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .faq-section {
-    width: 100%;
-    margin-bottom: 2rem;
-  }
-  
-  .faq-box-container {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-  
-  .faq-item {
-    width: fit-content;
-    box-sizing: border-box;
-    padding: 2rem;
-    border-radius: 4px;
-    margin-right: 2rem;
-    margin-left: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  .faq-item ul li{
-    margin-left: 1.5rem;
-  }
-  
-  .question, .question span {
-    font-size: 1.4rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .answer {
-    margin-bottom: 10px;
-  }
-  
-  .faq-item .answer ul {
-    margin-bottom: 10px;
-  }
-  
-  .note {
-    font-style: italic;
-    padding: 1rem; 
-    border-radius: 1rem;
-  }
-  
-  main {
-    margin: 0rem 4rem 0rem 4rem;
-  }
-  
-  /*PRIVACY POLICY*/
-  div#privacy-container {
-    display: block;
-    border-radius: 1rem;
-    padding: 4rem;
-    margin-left: 4rem;
-    margin-right: 4rem;
-    margin-top: 1rem;
-  }
-  div#privacy-container h2,
-  div#privacy-container h3,
-  div#privacy-container h4 {
-    padding-left: 0;
-  }
-  div#privacy-container h2 span{
-    font-size: 2rem;
-  }
-  div#privacy-container h3 span{
-    font-size: 1.8rem;
-  }
-  div#privacy-container h4 span{
-    font-size: 1.5rem;
-  }
-  
-  div#privacy-container ul li {
-    margin-left: 25px;
-  }
-  #privacy-title {
-    margin-top: 2rem;
-  }
-  #privacy-title span
-  {
-    font-size: 3rem;
-  }
-  
-  /*LOGIN FORM*/
-  fieldset#login-fieldset
-  {
-    margin: 1rem 0 1rem 0;
-    border-radius: 2rem;
-    border: 2px solid var(--text-color);
-  }
-  fieldset#login-fieldset legend
-  {
-    display:none;
-    text-align: center;
-    font-size: 1.5rem;
-  }
-  
-  fieldset#login-fieldset div#login-username,
-  fieldset#login-fieldset div#login-password
-  {
-    display:grid;
-    width: 100%;
-    padding: 2rem;
-  }
-  fieldset#login-fieldset div#login-username input#username,
-  fieldset#login-fieldset div#login-password input#password
-  {
-    padding: 8px;
-    margin-top: 1rem;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 2.5rem;
-    border-radius: 1rem;
-    text-align: left;
-    font-size: 1rem;
-    border: 1px solid var(--text-color);
-  }
-  fieldset#login-fieldset div label
-  {
-    font-size: 1.5rem;
-    width: 50%;
-    margin-left:auto;
-    margin-right:auto;
-  }
-  div#login-registrati 
-  {
-    text-align: center;
-    width: 100%;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  div#login-registrati input#registrazione,
-  div#login-registrati input#accedi
-  {
-    width: 15%;
-    height: 2.5rem;
-    border-radius: 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  div#login-registrati input#accedi
-  {
-    margin-right:1rem;
-  }
-  
-  /*REGISTER FORM*/
-  fieldset#register-fieldset,
-  fieldset#register-fieldset2{
-    display:grid;
-    margin: 1rem 0;
-    border-radius: 2rem;
-    border: 2px solid var(--text-color);
-    padding: 1rem;
-  }
-  
-  fieldset#register-fieldset legend,
-  fieldset#register-fieldset2 legend{
-    text-align: center;
-    font-size: 35px;
-  }
-  
-  fieldset#register-fieldset label,
-  fieldset#register-fieldset2 label{
-    display: flex;
-    justify-content: space-between;
-    font-size: 25px;
-    width: 50%;
-    margin-left:auto;
-    margin-right:auto;
-    align-items: center;
-    padding-top: 1rem;
-  }
-  
-  fieldset#register-fieldset input,
-  fieldset#register-fieldset2 input{
-    margin-top: 1rem;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    height: 2rem;
-    border-radius: 1rem;
-    text-align: left;
-    font-size: 15px;
-    border: 1px solid var(--text-color);
-    padding: 1rem;
-  }
-  
-  form#RegistrationForm div
-  {
-    display:flex;
-    width: 100%;
-    justify-content: space-around;
-  }
-  
-  div input#registrati
-  {
-    width: 15%;
-    height: 2rem;
-    border-radius: 1rem;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  /*SIDEBAR ACCOUNT*/
-  div#sidebar h1#h1-account{
-    margin-top:0;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    padding:0;
-  }
-  
-  div#sidebar{
-    display:flex;
-    width:100%;
-    text-align:center;
-    justify-content: space-around;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
-  
-  div#sidebar nav{
-    width: 100%;
-    border-radius:2rem;
-    border: 1px solid var(--text-color);
-  }
-  
-  div#sidebar ul
-  {
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-  
-  div#sidebar li{
-    list-style: none;
-    line-height: 2.75rem;
-    font-size:1.25rem;
-    padding:8px;
-    width: 100%;
-  }
-  
-  div#sidebar li a,
-  div#sidebar li a:visited{
-    display: inline-block;
-    font-size:1.25rem;
-    text-align: center;
-    width: 100%;
-    border-radius: 2rem;
-  }
-  
-  /*INFORMAZIONI ACCOUNT*/
-  div#informazioni{
-    width: 100%;
-    margin-bottom: 4rem;
-  }
-  
-  div#informazioni dl{
-    margin-top:1rem;
-    display:flex;
-    flex-direction: column;
-    border: 1px solid var(--text-color);
-    border-radius: 2rem;
-    align-items: center;
-  }
-  
-  div#informazioni dt{
-    padding-top:1rem;
-    font-size: 1.25rem;
-  }
-  
-  div#informazioni dd{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    padding: 8px;
-    border: 1px solid var(--alt-visited-link);
-    border-radius: 2rem;
-    width: 15%;
-    text-align: center;
-    font-size: 1rem;
-  }
-  
-  /*MODIFICA ACCOUNT*/
-  fieldset#modifica-account{
-    width: 100%;
-    margin-bottom:4rem;
-    margin-right: 4rem;
-    border-radius: 2rem;
-    border: 1px solid var(--text-color);
-    padding: 1rem;
-  }
-  
-  fieldset#modifica-account legend{
-    font-size: 1.5rem;
-    text-align: center;
-  }
+h3 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-top: 2rem;
+}
 
-  fieldset#modifica-account p{
-    display:flex;
-    flex-direction: column;
-    padding: 1rem;
-    width:50%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+/* Header */
 
-  fieldset#modifica-account p label{
-    font-size:1.25rem;
-  }
+header {
+  width: 100%;
+  margin-left: 0em;
+}
 
-  fieldset#modifica-account input{
-    width: 100%;
-    height: 2rem;
-    border-radius: 2rem;
-    border: 1px solid var(--text-color);
-    padding: 1rem;
-    font-size: 1rem;
-    margin-top: 8px;
-  }
+#aiutoSkipnav {
+  display: none;
+}
 
-  form#formUpdate div#salva-modifiche{
-    display:flex;
-    justify-content: space-around;
-    width: 100%;
-  }
+#left-group {
+  display: flex;
+  align-items: left;
+}
 
-  form#formUpdate input#input-salva
-  {
-    width: 12.5%;
-    height: 3rem;
-    border-radius: 1rem;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
-  /*ORDINI ACCOUNT*/
-  
-  div#ordini{
-    width: 100%;
-    margin-bottom: 4rem;
-  }
-  
-  div#ordini div#dtable{
-    font-size: 1.25rem;
-    border: 1px solid var(--text-color);
-    padding: 2rem;
-    border-radius: 2rem;  
-    width:100%;
-  }
-  
-  div#ordini li{
-    padding: 1rem;
-    margin-left: 1rem;
-    font-size: 1.25rem;
-  }
-  
-  table#tabellaordini{
-    width: 100%;
-    border: 1px solid var(--text-color);
-    border-radius: 2rem;
-    text-align: center;
-    padding: 2rem;
-  }
-  
-  div#ordini table#tabellaordini caption{
-    font-size: 2rem;
-    padding:2rem;
-  }
-  
-  div#ordini table#tabellaordini thead tr th{
-    padding: 1.5rem;
-    font-size: 1.5rem;
-  }
-  
-  div#ordini #tabellaordini thead th {
-    border-bottom: 1px solid;
-  }
-  
-  div#ordini table#tabellaordini tbody tr td
-  {
-    padding: 2rem;
-    font-size: 1.25rem;
-  }
-  
-  /*ELIMINA ACCOUNT*/
-  div#elimina{
-    width: 100%;
-    margin-right:4rem;
-  }
-  
-  div#elimina div#elimina-account{
-    width: 100%;
-    text-align:left;
-    border: 1px solid var(--text-color);
-    border-radius: 2rem;
-    padding:2rem;
-  }
-  
-  div#elimina div#elimina-account p{
-    padding: 1rem;
-    font-size: 1.25rem;
-  }
-  
-  div#elimina div#elimina-account p a{
-    font-size: 1.25rem; 
-  }
-  
-  div#elimina div#elimina-account li
-  {
-    font-size: 1.25rem;
-    margin-left:4rem;
-    padding: 4px;
-  }
-  
-  
-  /*ELIMINAZIONE ACCOUNT*/
-  
-  form#formeliminaaccount label
-  {
-    margin-top: 2rem;
-    padding: 1rem;
-    font-size: 1.25rem;
-    display: flex;
-    justify-content: flex-start;
-  }
-  form#formeliminaaccount input
-  {
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-  form#formeliminaaccount input[type="password"]
-  {
-    margin-left: 1rem;
-    width:25%;
-    padding: 0.5rem;
-    border-radius: 1rem;
-    border: 1px solid var(--text-color);
-    margin-bottom: 4rem;
-    font-size: 1rem;
-  }
-  form#formeliminaaccount input[type="submit"]
-  {
-    font-size: 1rem;
-    width:10%;
-    border-radius: 1rem;
-    border: 1px solid var(--text-color);
-    padding: 0.5rem;
-  }
-  
-  /* PAGINA ADMIN*/
-  
-  form#logout div#logout-div{
-    width: 100%;
-  }
-  form#logout div#logout-div input#input-logout{
-    width: 10%;
-    display:flex;
-    justify-content: space-around;
-    border-radius: 2rem;
-    border: 1px solid var(--text-color);
-  }
-  
-  #addEventForm {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin: 1rem 4rem;
-    border-radius: 2rem;
-    border: 2px solid var(--text-color);
-    padding: 1rem;
-  }
-  
-  #addEventForm legend {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bold; 
-    width: 100%;
-    padding: 0.5rem 0; 
-  }
-  
-  #addEventForm label {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  #addEventForm input[type="text"],
-  #addEventForm input[type="date"],
-  #addEventForm input[type="time"],
-  #addEventForm input[type="file"],
-  #addEventForm textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 2rem;
-    border: 1px solid var(--text-color);
-  }
-  
-  #addEventForm textarea {
-    resize: vertical;
-    padding-left: 1rem
-  }
-  
-  #addEventForm input[type="submit"] {  
-    display:flex;
-    justify-content: space-around;
-    width: 15%;
-    border-radius: 2rem;
-    border: 1px solid var(--text-color);
-  }
-  
-  #errorContainerAggiuntaEvento p {
-    margin: 1rem 4rem;
-    padding: 1rem;
-    font-size: 1rem;
-    border-radius: 1rem;
-  }
-  
-  #error_login p{
-    margin: 1rem 4rem;
-    padding: 1rem;
-    font-size: 1rem;
-    border-radius: 1rem; 
-  }
-  
-  #errorContainerRegistrazione p {
-    margin: 1rem 4rem;
-    padding: 1rem;
-    font-size: 1rem;
-    border-radius: 1rem; 
-  }
-  
-  #errorupdate p{
-    margin: 1rem 4rem;
-    padding: 1rem;
-    font-size: 1rem;
-    border-radius: 1rem;
-  }
-  
-  form#event-elimination input[type="submit"]{
-    display: flex;
-    justify-content: space-around;
-    font-size: 1rem;
-    width:100%;
-    border-radius: 1rem;
-    border: 1px solid var(--text-color);
-    padding: 0.5rem;
-  }
-  
+#logo img {
+  height: 170px;
+  width: auto;
+  max-width: 100%;
+}
+
+#vertical-bar-container {
+  height: 50px;
+  width: 4px;
+  color: black;
+}
+
+#countdown-data {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+
+#countdown-data p#dataFestival time,
+#countdown-data p#dataFestival,
+#countdown-data p#intervalloFestival{
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.accessibleHide {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  margin: -1px;
+  padding: 0;
+}
+
+.accessibleShow {
+  position: static; 
+  width: auto;
+  height: auto; 
+  overflow: visible; 
+  white-space: normal; 
+  border: initial; 
+  margin: 0;
+  padding: initial; 
+}
+
+.icons {
+  display: none;
+}
+
+/* Navigation Menu */
+
+.menu {
+  display: none;
+}
+
+/* Breadcrumb */
+
+#breadcrumb {
+  margin-left: 1rem;
+}
+
+/* Footer */
+
+footer {
+  position: static;
+  bottom:0;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+footer a {
+  display: none;
+}
+
+/* Pagina home */
+
+.carosello-dinamico {
+  display: none;
+}
+
+.carosello-puntini {
+  display: none;
+}
+
+#navEventi {
+  display: none;
+}
+
+#scrollToTopBtn {
+  display: none;
+}
+
+/* Pagina home - Programma */
+
+.event-container {
+  margin: 1rem;
+}
+
+.programma-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.programma-entry img {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1rem;
+}
+
+.entry-info {
+  text-align: left;
+  margin-left: 1rem;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.entry-info dd {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  padding: 0;
+  font-size: 10pt;
+}
+
+/* Pagina home - Sponsor */
+
+#sponsor {
+  text-align: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+#sponsor h3 {
+  text-align: left;
+}
+
+.sponsors-container {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 75%;
+  align-items: center;
+}
+
+.sponsor-icon {
+  vertical-align: middle;
+  margin-bottom: 1rem;
+}
+
+.sponsor-icon img {
+  max-width: 30%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+/* Pagina Chi siamo */
+
+#chi-siamo-container {
+  padding: 1rem;
+}
+
+#chi-siamo-contenuto {
+  max-width: 1080px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+#img-chi-siamo {
+  display: none;
+}
+
+#chi-siamo-testo {
+  text-align: justify;
+}
+
+#ul-ringraziamenti {
+  list-style: none;
+  text-align:center;
+}
+
+/* Pagina Location */
+
+#location-container {
+  padding: 1rem;
+}
+
+#location-contenuto {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1792px;
+}
+
+#map {
+  width: 600px;
+  height: 400px;
+  object-fit: cover;
+  border: none;
+}
+
+#testo-location p {
+  text-align: center;
+}
+
+#testo-location #link {
+  display: none;
+}
+
+#indirizzo {
+  font-style: italic;
+}
+
+/* Pagina Merch */
+
+div#shop
+{
+  display: grid;
+  max-width: 99%;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap:1rem;
+}
+
+.product {
+  width: 100%;
+}
+
+#live-info {
+  font-style: italic;
+  text-align: center;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem 0 1rem;
+  padding: 1rem;
+  width: 100%;
+  min-height: 300px;
+}
+
+.product-image {
+  width: 60%;
+  height: auto;
+}
+
+div.product-container div.entry-info{
+  min-height: 200px;
+  text-align: center;
+  max-width: 100%;
+}
+
+/* Pagina Prevendite */
+
+.ticket-entry {
+  max-width: 62%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  margin-bottom: 3rem;
+  padding: 2rem;
+  border: solid;
+  border-color: black;
+}
+
+.ticket-entry dl {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 75%;
+}
+
+.hidden-element {
+  display: none;
+}
+
+.ticket-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.ticket-price {
+  font-style: italic;
+}
+
+.ticket-form {
+  display: none;
+}
+
+.ticket-vip {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+/* Pagina Domande */
+
+#faq-container {
+  padding: 1rem;
+}
+
+#faq-container h2 {
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 3rem;
+}
+.question {
+  font-weight: bold;
+}
+
+.note {
+  font-style: italic;
+}
+
+/* Pagina Privacy */
+
+div#privacy-container {
+  padding: 1rem;
+}
+
+/* Pagina Account */
+
+#sidebar {
+  display: none;
+}
+
+form#logout {
+  display: none;
+}
+
+/* Form di login */
+
+fieldset#login-fieldset
+{
+  max-width: 70%;
+  margin: 0 auto 1rem;
+  padding: 1rem;
+}
+
+fieldset#login-fieldset div#login-username,
+fieldset#login-fieldset div#login-password
+{
+  display:grid;
+  width: 100%;
+}
+
+fieldset#login-fieldset div#login-username input#username,
+fieldset#login-fieldset div#login-password input#password
+{
+  width: 50%;
+  margin: 1rem auto 2rem;
+  padding-left: 1rem;
+  height: 2.5rem;
+  text-align: left;
+  border: solid;
+  border-color: black;
+}
+fieldset#login-fieldset div label
+{
+  width: 50%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#login-registrati {
+  display: none;
+}
+
+/* Form di registrazione */
+
+fieldset#register-fieldset,
+fieldset#register-fieldset2 {
+  max-width: 70%;
+  display:grid;
+  margin: 0 auto 1rem;
+  padding: 1rem;
+}
+
+fieldset#register-fieldset label,
+fieldset#register-fieldset2 label{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin-left:auto;
+  margin-right:auto;
+  align-items: center;
+}
+
+fieldset#register-fieldset input,
+fieldset#register-fieldset2 input{
+  width: 50%;
+  margin: 1rem auto 2rem;
+  height: 2rem;
+  text-align: left;
+  border: solid;
+  border-color: black;
+  padding: 1rem;
+}
+
+div input#registrati{
+  display: none;
+}
+
+/* Informazioni account */
+
+div#informazioni {
+  margin-left: 1rem;
+  padding: 1rem;
+}
+
+div#informazioni dt {
+  font-weight: bold;
+}
+
+div#informazioni dd {
+  margin: 0 0 1rem;
+}
+
+/* Modifica account */
+
+fieldset#modifica-account input
+{
+  width: 50%;
+  margin-left: 1rem;
+  padding: 0.5rem;
+}
+
+div#salva-modifiche {
+  display: none;
+}
+
+/* Ordini Account */
+
+div#ordini{
+  width: 100%;
+}
+
+div#ordini div#dtable{
+  padding: 2rem;  
+  width:100%;
+}
+
+div#ordini li{
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+table#tabellaordini{
+  width: 100%;  
+  text-align: center; 
+}
+
+div#ordini table#tabellaordini caption{
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+div#ordini #tabellaordini thead th {
+  border-bottom: 1px solid;
+}
+
+div#ordini table#tabellaordini tbody tr td
+{
+  padding: 2rem;
+  font-size: 1.25rem;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Elimina account */
+
+div#elimina {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+/* Conferma eliminazione */
+
+form#formeliminaaccount {
+  margin: 1rem;
+  padding: 1rem;
+}
