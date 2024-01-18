@@ -33,7 +33,7 @@ body {
   flex-direction: column;
 }
 
-h1 {
+h1, h1 time {
   text-align: center;
   padding: 1rem;
   color: var(--verde-lime);
@@ -41,7 +41,7 @@ h1 {
   font-weight: bold;
 }
 
-h2 {
+h2, h2 time {
   text-align: center;
   padding: 1rem;
   color: var(--verde-nero);
@@ -49,14 +49,14 @@ h2 {
   font-weight: bold;
 }
 
-h3 {
+h3, h3 time {
   padding: 1rem;
   color: var(--verde-nero);
   font-size: 1.8rem;
   font-weight: bold;
 }
 
-h4 {
+h4, h4 time {
   padding: 1rem;
   color: var(--verde-nero);
   font-size: 1.5rem;
@@ -1052,8 +1052,6 @@ input[type="button"]:focus {
   margin-left: 1.5rem;
 }
 
-
-
 .question, .question span {
   font-size: 1.4rem;
   font-weight: bold;
@@ -1143,8 +1141,7 @@ fieldset#login-fieldset div#login-password
   padding: 2rem;
 }
 fieldset#login-fieldset div#login-username input#username,
-fieldset#login-fieldset div#login-password input#password
-{
+fieldset#login-fieldset div#login-password input#password{
   padding: 8px;
   margin-top: 1rem;
   width: 50%;
@@ -1158,21 +1155,26 @@ fieldset#login-fieldset div#login-password input#password
   border: 1px solid var(--verde-lime);
   background-color: var(--verde-scurino);
 }
-fieldset#login-fieldset div label
-{
+
+fieldset#login-fieldset div label{
   font-size: 1.5rem;
   width: 50%;
   margin-left:auto;
   margin-right:auto;
 }
-div#login-registrati 
-{
+
+div#login-registrati {
   text-align: center;
   width: 100%;
   font-size: 20px;
-  cursor: pointer;
 }
-div#login-registrati input#registrazione,
+
+div#login-registrati p#registrati,
+div#login-registrati p#registrati span{
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
 div#login-registrati input#accedi
 {
   width: 15%;
@@ -1284,7 +1286,6 @@ div#sidebar li{
 div#sidebar li a,
 div#sidebar li a:visited{
   display: inline-block;
-  color:var(--link);
   font-size:1.25rem;
   text-align: center;
   width: 100%;
@@ -1652,27 +1653,37 @@ div#addEventForm form fieldset div label {
   transform: translateY(-50%);
 }
 
+.programma-admin{
+  background-color: var(--verde-lime);
+  border-radius: 1rem;
+}
+
+.programma-admin img {
+  width: 20%;
+  height: auto;
+  border-radius: 4px;
+  margin: 1rem;
+  margin-left: 3rem;
+  box-shadow: 0 0 10px rgba(37, 53, 25, 1);
+}
+
+form.event-elimination{
+  display: contents;
+}
 
 form.event-elimination input[type="submit"]
 {
+  width: 100%;
   font-size: 1rem;
-  width:100%;
   border-radius: 1rem;
   border: 1px solid var(--verde-lime);
   background-color: var(--verde-scurino);
-
   padding: 0.5rem;
-  margin-top: 5px;
-  margin-right: 5px;
   transition: none;
 }
 
-form#event-elimination input[type="submit"]:hover{
+form.event-elimination input[type="submit"]:hover{
   transform: unset;
-}
-
-form#event-elimination{
-  height: 380.59px
 }
 
 

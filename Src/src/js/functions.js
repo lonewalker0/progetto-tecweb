@@ -111,42 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Controlla se siamo sulla pagina account.php prima di eseguire il codice
-  if (window.location.pathname.indexOf('account.php') > -1) {
-    var menuLinks = document.querySelectorAll("#sidebar a");
-    var sections = document.querySelectorAll(".section");
-
-    // Nascondi tutte le sezioni tranne "Informazioni account" inizialmente
-   /* sections.forEach(function (section) {
-      if (section.id === "informazioni") {
-        section.classList.add("show");
-      } else {
-        section.classList.add("hide");
-      }
-    });*/
-
-    menuLinks.forEach(function (link) {
-      link.addEventListener("click", function (event) {
-        event.preventDefault();
-        var targetSectionId = this.getAttribute("href").substring(1);
-
-        sections.forEach(function (section) {
-          if (section.id === targetSectionId) {
-            section.classList.remove("hide");
-            section.classList.add("show");
-          } else {
-            section.classList.remove("show");
-            section.classList.add("hide");
-          }
-        });
-      });
-    });
-  }
-});
-
-
-
-document.addEventListener("DOMContentLoaded", function () {
   if (window.location.pathname.indexOf('index.php') > -1) {
     var scrollToTopBtn = document.getElementById("scrollToTopBtn");
     var navEventi = document.getElementById("navEventi");

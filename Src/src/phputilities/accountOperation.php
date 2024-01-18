@@ -31,7 +31,7 @@ class accountOperation {
             $output = str_replace("{{eta}}", $userInfo['data_nascita'], $output);
             $output = str_replace("{{indirizzo}}", $userInfo['indirizzo'], $output);
             $output = str_replace("{{email}}", $userInfo['email'], $output);
-            $output .= "<div class='section hide' id='modifica'>";
+            $output .= "<div class='section' id='modifica'>";
             
 
             
@@ -49,7 +49,7 @@ class accountOperation {
             $output .= str_replace("{{username}}", $username, $htmlform);
             $output.="</div>";
 
-            $output.= "<div class='section hide' id='ordini'>";
+            $output.= "<div class='section' id='ordini'>";
             if(!empty($userorder)) {
                 $table = file_get_contents(__DIR__ . '/../html/table/tabellaOrdiniUtente.html'); 
                 $rows = "";

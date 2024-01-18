@@ -14,7 +14,7 @@ $main = "
 <h1>Pagina non trovata</h1>
     
 <h2>La pagina che hai cercato non é disponibile</h2>
-<p>Controlla lindirizzo digitato</p>";
+<p>Controlla l'indirizzo digitato</p>";
 
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);

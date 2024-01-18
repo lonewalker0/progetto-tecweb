@@ -8,22 +8,22 @@
     font-size: 1rem;
   }
 
-  h1 {
+  h1, h1 time {
     padding: 0.5rem;
     font-size: 2.2rem;
   }
   
-  h2 {
+  h2, h2 time {
     padding: 0.5rem;
     font-size: 1.8rem;
   }
   
-  h3 {
+  h3, h3 time {
     padding: 0.5rem;
     font-size: 1.5rem;
   }
   
-  h4 {
+  h4, h4 time {
     padding: 0.5rem;
     font-size: 1.2rem;
   }
@@ -54,6 +54,12 @@
   #logo a:hover,
   #logo a:focus {
     transform: unset;
+  }
+  
+  #countdown-data p#dataFestival time,
+  #countdown-data p#dataFestival,
+  #countdown-data p#intervalloFestival{
+    font-size: 1rem;
   }
 
   /*NAV MENU*/
@@ -297,7 +303,7 @@
   /*LOGIN ACCOUNT*/
   div#login-registrati{
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
   }
 
   div#login-registrati input#accedi,
@@ -315,7 +321,7 @@
   }
 
   div#login-registrati input#accedi{
-    margin: 0 0.5rem 0 auto;
+    margin: 0 auto;
   }
 
   fieldset#login-fieldset div label{
@@ -458,6 +464,12 @@
 
   form#event-elimination input[type="submit"]{
     margin: 0;
+  }
+
+  .programma-admin img {
+    width: 55%;
+    height: auto;
+    margin: 1rem 4.5rem 0 5rem;
   }
 }
 
