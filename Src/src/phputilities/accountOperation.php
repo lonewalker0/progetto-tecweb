@@ -47,8 +47,7 @@ class accountOperation {
             $output .= str_replace("{{username}}", $username, $htmlform);
             $output.="</div>";
 
-            $output.= "<div class='section' id='ordini'>";
-            $output .= "<h2 >Ordini</h2>";
+            $output.= "<div id='ordini'>";
             if(!empty($userorder)) {
                 $table = file_get_contents(__DIR__ . '/../html/table/tabellaOrdiniUtente.html'); 
                 $rows = "";

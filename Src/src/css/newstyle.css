@@ -1325,8 +1325,7 @@ div#informazioni dd{
 fieldset#modifica-account
 {
   width: 100%;
-  margin-bottom:4rem;
-  margin-right: 4rem;
+  margin-bottom: 1rem;
   border-radius: 2rem;
   border: 1px solid var(--verde-lime);
   background-color: rgba(24, 31, 8, 0.85);
@@ -1384,13 +1383,23 @@ div#ordini{
 }
 
 div#ordini div#dtable{
-  font-size: 1.25rem;
   border: 1px solid var(--verde-lime);
   background-color: rgba(24, 31, 8, 0.85);
   box-shadow: 0 0 10px var(--verde-lime);
   padding: 2rem;
   border-radius: 2rem;  
   width:100%;
+}
+
+div#ordini .scrollable-table {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 0 10px var(--verde-lime);
+  border: 1px solid var(--verde-lime);
+  border-radius: 2rem;
+  background-color: var(--verde-scuro);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 div#ordini li{
@@ -1400,12 +1409,8 @@ div#ordini li{
 }
 
 table#tabellaordini{
-  width: 100%;
-  border: 1px solid var(--verde-lime);
-  background-color: var(--verde-scuro);
-  border-radius: 2rem;
-  text-align: center;
-  padding: 2rem;
+  width: 100%;  
+  text-align: center; 
 }
 
 div#ordini table#tabellaordini caption{
@@ -1515,10 +1520,9 @@ div#errorContainerEliminazione p{
   margin: 1rem 4rem;
   padding: 1rem;
   font-size: 1rem;
-  color: var(--verde-lime); 
+  color: var(--verde-scuro); 
   border: 1px solid var(--verde-lime);
-  background-color: var(--verde-scuro);
-  box-shadow: 0 0 10px var(--verde-lime);
+  background-color: var(--verde-lime); 
   border-radius: 1rem; 
 }
 

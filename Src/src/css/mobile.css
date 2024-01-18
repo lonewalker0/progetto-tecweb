@@ -394,6 +394,12 @@
   }
 
   /*ORDINI ACCOUNT*/
+
+  div#oridini .scrollable-table {
+      margin: 0 -15px; /* Optional: Adjust if you want to align with outer content */
+  }
+ 
+
   div#ordini div#dtable{
     font-size: 1.15rem;
   }
@@ -402,48 +408,6 @@
     font-size: 1.15rem;
     margin-left: 1rem;
     padding: 0.75rem;
-  }
-
-  div#ordini table#tabellaordini tbody tr td{
-    padding: 0.5rem;
-    font-size: 1rem;
-  }
-
-  table#tabellaordini caption {
-    width: 100%;
-  }
-
-  table#tabellaordini thead tr {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    border: 0; 
-  }
-
-  table#tabellaordini tr { 
-    margin-bottom: 0.5rem; 
-  }
-
-  table#tabellaordini td {
-    white-space: normal;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    text-align: center;
-    gap: 2rem;
-    margin-bottom: 1rem; 
-  }
-  
-  table#tabellaordini td:before {
-    width: 50px;
-    text-align:left;
-    content: attr(data-title);
-    color: white;  
-  }
-
-  table#tabellaordini tr td:first-child{
-    border-top: 2px solid white;
   }
 
   /*ELIMINA ACCOUNT*/
