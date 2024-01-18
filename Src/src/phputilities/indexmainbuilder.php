@@ -43,7 +43,7 @@ class IndexMainBuilder
 
 
         $this->mainHTML .=  file_get_contents(__DIR__ . '/../html/sponsor.html');
-        $this->mainHTML .= '<button id="scrollToTopBtn" class="hide" aria-label="Torna in alto" tabindex="0" ><span class="visually-hidden">Torna Su</span></button>';
+        $this->mainHTML .= '<button id="scrollToTopBtn" class="hide" aria-label="Ritorna inizio pagina programmi" tabindex="0" ><span class="visually-hidden">Ritorna inizio pagina programmi</span></button>';
 
 
         return $this->mainHTML;

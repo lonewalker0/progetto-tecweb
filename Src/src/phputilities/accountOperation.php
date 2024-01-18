@@ -14,17 +14,17 @@ class accountOperation {
     public function getMain(): string{
 
         $username = isset($_SESSION["username"]) ? $_SESSION["username"] : '';
-
+        $output="";
         if (!empty($username)) {
 
-            
             $userInfo = $this->dbOperation->getUserInfo($username);
             $userorder= $this->dbOperation->getUserOrders($username);
-            $output = file_get_contents(__DIR__ . '/../html/sidebar.html');           
+            $output .= file_get_contents(__DIR__ . '/../html/sidebar.html');           
 
             
             if ($userInfo) { //la condizione sarebbe sempre true ugualmente
             //mostro i dati personali del utente
+            $output.="<h1>Benvenuto </h1>";
             $htmlTemplate = file_get_contents(__DIR__ . '/../html/informazioniUtente.html');           
             $output = str_replace("{{nome}}", $userInfo['nome'], $htmlTemplate);
             $output = str_replace("{{cognome}}", $userInfo['cognome'], $output);
@@ -32,6 +32,8 @@ class accountOperation {
             $output = str_replace("{{indirizzo}}", $userInfo['indirizzo'], $output);
             $output = str_replace("{{email}}", $userInfo['email'], $output);
             $output .= "<div class='section hide' id='modifica'>";
+            
+
             
 
             $output .= "<div id='errorupdate' role='alert' aria-live='polite' aria-atomic='true' >";

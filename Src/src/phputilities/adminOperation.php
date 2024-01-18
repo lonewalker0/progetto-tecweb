@@ -14,7 +14,7 @@ class adminOperation
     
     public function getMain(): string
     {
-        $html = '<h2>Bentornato Admin!</h2>';
+        $html = '<h1>Bentornato Admin!</h1>';
         
         $html .= '<div id="ProgramManagement">';
         #costruzione del menu per l'elimizazione
