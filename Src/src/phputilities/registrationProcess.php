@@ -11,11 +11,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $errors = [];
     
-    if (!isValidString($_POST['nome'],2,30) or !isValidString($_POST['cognome'],2,30)
-         or !isValidString($_POST['indirizzo'],2,75) or !isValidString($_POST['username'],4,25)
-        or !isValidString($_POST['password'],4,50) or !isValidString($_POST['confermaPassword'],4,50)) {
-        $errors[] = "Non è accettato codice HTML o lunghezza stringa non valida!";
+    if (!isValidString($_POST['nome']) or !isValidString($_POST['cognome'])
+         or !isValidString($_POST['indirizzo']) or !isValidString($_POST['username'])
+        or !isValidString($_POST['password']) or !isValidString($_POST['confermaPassword'])) {
+        $errors[] = "Non è accettato codice HTML!";
     }
+    if(!isvalidlength($_POST['nome'],2,45)){
+        $errors[]="lunghezza campo nome non valida!";
+    }
+    if(!isvalidlength($_POST['cognome'],2,45)){
+        $errors[]="lunghezza campo cognome non valida!";
+    }
+
+    if(!isvalidlength($_POST['indirizzo'],5,80)){
+        $errors[]="lunghezza campo indirizzo non valida massimo 80 caratteri!";
+    }
+    if(!isValidAddressFormat($_POST['indirizzo'])){
+        $errors[]="Campo indirizzo deve iniziare con via o piazza contenere un numero civico e la città separata da virgola";
+    }
+    if(!isvalidlength($_POST['username'],4,25)){
+        $errors[]="lunghezza campo username non valida(deve essere compreso tra 4 e 25)!";
+    }
+    if(!isvalidlength($_POST['password'],4,50) ||!isvalidlength($_POST['confermaPassword'],4,50) ){
+        $errors[]="lunghezza campo password non valida minimo 5 massimo 50 caratteri!";
+    }
+
     if(!isValidEmail($_POST['email'])) {
         $errors[] = "Formato email non valido!";
     }

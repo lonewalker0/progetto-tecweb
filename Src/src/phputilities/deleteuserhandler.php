@@ -6,8 +6,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
     $errors = [];
     $username = $_SESSION['username'];
-    if (!isValidString($_POST['password'],4,50)) {
-        $errors[] = "Non è accettato codice HTML o lunghezza non valida!";
+    if (!isValidString($_POST['password'])) {
+        $errors[] = "Non è accettato codice HTML!";
+    }
+    if(!isvalidlength($_POST['password'],5,50)){
+        $errors[]="Lunghezza password non valida, riprovare";
     }
     $password=$_POST['password'];
     if(!$dboperation->verifyOldPassword($username,$password )) {

@@ -23,8 +23,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($_FILES['image']['error'] !== UPLOAD_ERR_OK) {
         $errors[] = "Errore nel caricamento dell'immagine.";
     }
-    if (!isValidString($_POST['artist_name'],4,50) or !isValidString($_POST['description'],4,500)) {
-        $errors[] = "Non è accettato codice html o lunghezza non valida!";
+    if (!isValidString($_POST['artist_name']) or !isValidString($_POST['description'])) {
+        $errors[] = "Non è accettato codice html!";
+    }
+    if(!isvalidlength($_POST['artist_name'],4,50)){
+        $errors[]="Lunghezza artista non valida,deve essere tra 4 e 50 caratteri!";
+    }
+    if(!isvalidlength($_POST['description'],5,300)){
+        $errors[]="Descrizione minimo 5 caratteri e massimo 300!";
     }
     if (!isValidHour($_POST['hour'])) {
         $errors[] = "Orario inserito non valido!";

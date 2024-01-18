@@ -6,12 +6,8 @@ function isValidHour($hour) {
     return (bool) preg_match('/^([0-1][0-9]|2[0-3]):([0-5][0-9])$/', $hour);
 }
 
-function isValidString($string, $minLength, $maxLength) {
-    $length = strlen($string);
-
-    if ($length < $minLength || $length > $maxLength) {
-        return false;
-    }
+function isValidString($string) {
+    
 
     // Controllo l'assenza di tag HTML o entità HTML
     if (preg_match('/<[^>]*>|&[^;]+;/', $string)) {
@@ -19,6 +15,20 @@ function isValidString($string, $minLength, $maxLength) {
     }
 
         return true;
+}
+
+function isValidAddressFormat($address) {
+    // L'indirizzo deve iniziare con "Via" o "Piazza", seguito da un numero civico e terminare con una città
+    return preg_match('/^(Via|Piazza)\s[\pL\s]+\d+[\w\s,.\-]+[A-Za-z\s,.\-]+[A-Za-z]{2,}$/u', $address);
+}
+
+function isvalidlength($string,$minlength,$maxlength) : bool{
+    $length = strlen($string);
+
+    if ($length < $minlength || $length > $maxlength) {
+        return false;
+    }
+    return true;
 }
 
 
