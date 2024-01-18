@@ -19,7 +19,7 @@ function isValidString($string) {
 
 function isValidAddressFormat($address) {
     // L'indirizzo deve iniziare con "Via" o "Piazza", seguito da un numero civico e terminare con una città
-    return preg_match('/^(Via|Piazza)\s[\pL\s]+\d+[\w\s,.\-]+[A-Za-z\s,.\-]+[A-Za-z]{2,}$/u', $address);
+    return preg_match('/^(Via|Piazza)\s[\pL\s]+\d+[\w\s,.\-]+[A-Za-z\s,.\-]+[A-Za-z]{2,}$/ui', $address);
 }
 
 function isvalidlength($string,$minlength,$maxlength) : bool{
