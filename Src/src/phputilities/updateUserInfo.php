@@ -44,9 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     (!empty($vecchia_password) && !isValidString($vecchia_password))) {
         $errors[] = "Non è accettato codice HTML!";
     }
-    if ((!empty($nuova_password) && !isvalidlength($nuova_password,5,50)) || 
-    (!empty($conferma_password) && !isvalidlength($conferma_password,5,50)) ||
-    (!empty($vecchia_password) && !isvalidlength($vecchia_password,5,50))) {
+    if ((!empty($nuova_password) && !isvalidlength($nuova_password,4,50)) || 
+    (!empty($conferma_password) && !isvalidlength($conferma_password,4,50)) ||
+    (!empty($vecchia_password) && !isvalidlength($vecchia_password,4,50))) {
         $errors[] = "Lunghezza della password non valida minimo 5!";
     }
     #se almeno un dato non è presente controlla qual'è

@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[]="lunghezza campo username non valida(deve essere compreso tra 4 e 25)!";
     }
     if(!isvalidlength($_POST['password'],4,50) ||!isvalidlength($_POST['confermaPassword'],4,50) ){
-        $errors[]="lunghezza campo password non valida minimo 5 massimo 50 caratteri!";
+        $errors[]="lunghezza campo password non valida minimo 4 massimo 50 caratteri!";
     }
 
     if(!isValidEmail($_POST['email'])) {
