@@ -17,10 +17,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "Non è accettato codice HTML!";
     }
     if(!isvalidlength($_POST['nome'],2,45)){
-        $errors[]="lunghezza campo nome non valida!";
+        $errors[]="lunghezza campo nome non valida: caratteri consentiti tra 2 e 45!";
     }
     if(!isvalidlength($_POST['cognome'],2,45)){
-        $errors[]="lunghezza campo cognome non valida!";
+        $errors[]="lunghezza campo cognome non valida: caratteri consentiti tra 2 e 45!";
     }
 
     if(!isvalidlength($_POST['indirizzo'],5,80)){

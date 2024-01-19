@@ -747,10 +747,10 @@ function calculateTotalPrice(id) {
   if (!isNaN(prezzoSingolo) && !isNaN(quantita) && quantita > 0) {
     prezzoTotaleParagraph.innerHTML =
       "Prezzo totale: " + prezzoTotale.toFixed(2) + "€";
-    prezzoTotaleParagraph.classList.remove("hide");
-    prezzoTotaleParagraph.classList.add("show");
+    prezzoTotaleParagraph.classList.remove("accessibleHide");
+    prezzoTotaleParagraph.classList.add("accessibleShow");
   } else {
-    prezzoTotaleParagraph.classList.remove("show");
-    prezzoTotaleParagraph.classList.add("hide");
+    prezzoTotaleParagraph.classList.remove("accessibleShow");
+    prezzoTotaleParagraph.classList.add("accessibleHide");
   }
 }
