@@ -39,6 +39,7 @@ $replaceValues[] = isset($form_data['nome']) ? htmlspecialchars($form_data['nome
 $replaceValues[] = isset($form_data['cognome']) ? htmlspecialchars($form_data['cognome']) : '';
 $replaceValues[] = isset($form_data['dataNascita']) ? htmlspecialchars($form_data['dataNascita']) : '';
 $replaceValues[] = isset($form_data['indirizzo']) ? htmlspecialchars($form_data['indirizzo']) : '';
+$replaceValues[] = isset($form_data['email']) ? htmlspecialchars($form_data['email']) : '';
 $replaceValues[] = isset($form_data['username']) ? htmlspecialchars($form_data['username']) : '';
 
 
