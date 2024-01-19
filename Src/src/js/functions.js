@@ -291,6 +291,12 @@ function lunghezzaValida(string, minLength, maxLength) {
   return lunghezza >= minLength && lunghezza <= maxLength;
 }
 
+function isValidAddressFormat(address) {
+  // L'indirizzo deve iniziare con "Via" o "Piazza", seguito da un numero civico e terminare con una città
+  const regex = /^(Via|Piazza)\s[\p{L}\s]+\d+[\w\s,.\-]+[A-Za-z\s,.\-]+[A-Za-z]{2,}$/ui;
+  return regex.test(address);
+}
+
 function isValidAge(dateOfBirth) {
   var currentDate = new Date();
   var birthdateArray = dateOfBirth.split("-");
@@ -536,6 +542,10 @@ function validazioneFormRegistrazione() {
     isValid = false;
     document.getElementById("indirizzo").setAttribute("aria-invalid", "true");
     appendError(errorContainer, "Lunghezza indirizzo non valida: caratteri consentiti tra 5 e 80!");
+  } else if (!isValidAddressFormat(indirizzo)){
+    isValid = false;
+    document.getElementById("indirizzo").setAttribute("aria-invalid", "true");
+    appendError(errorContainer, "L'indirizzo deve iniziare con 'via' o 'piazza', avere un numero civico, una virgola e a seguire la città!");
   }
   else {
     document.getElementById("indirizzo").setAttribute("aria-invalid", "false");
@@ -624,6 +634,10 @@ function validazioneFormUpdate() {
       isValid = false;
       document.getElementById("indirizzo").setAttribute("aria-invalid", "true");
       appendError(errorContainer, "Lunghezza indirizzo non valida: caratteri consentiti da 5 a 80!");
+    }else if (!isValidAddressFormat(indirizzo)){
+      isValid = false;
+      document.getElementById("indirizzo").setAttribute("aria-invalid", "true");
+      appendError(errorContainer, "L'indirizzo deve iniziare con 'via' o 'piazza', avere un numero civico, una virgola e a seguire la città!");
     }
     else {
       document
