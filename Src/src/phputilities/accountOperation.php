@@ -16,7 +16,7 @@ class accountOperation {
         $username = isset($_SESSION["username"]) ? $_SESSION["username"] : '';
         $output="";
         if (!empty($username)) {
-
+            $output.="<h1>Benvenuto ". $_SESSION['username']."!</h1>";
             $userInfo = $this->dbOperation->getUserInfo($username);
             $userorder= $this->dbOperation->getUserOrders($username);
             $output .= file_get_contents(__DIR__ . '/../html/sidebar.html');           
@@ -24,13 +24,14 @@ class accountOperation {
             
             if ($userInfo) { //la condizione sarebbe sempre true ugualmente
             //mostro i dati personali del utente
-            $output.="<h1>Benvenuto </h1>";
+            
             $htmlTemplate = file_get_contents(__DIR__ . '/../html/informazioniUtente.html');           
-            $output = str_replace("{{nome}}", $userInfo['nome'], $htmlTemplate);
-            $output = str_replace("{{cognome}}", $userInfo['cognome'], $output);
-            $output = str_replace("{{eta}}", $userInfo['data_nascita'], $output);
-            $output = str_replace("{{indirizzo}}", $userInfo['indirizzo'], $output);
-            $output = str_replace("{{email}}", $userInfo['email'], $output);
+            $output1 = str_replace("{{nome}}", $userInfo['nome'], $htmlTemplate);
+            $output1 = str_replace("{{cognome}}", $userInfo['cognome'], $output1);
+            $output1 = str_replace("{{eta}}", $userInfo['data_nascita'], $output1);
+            $output1 = str_replace("{{indirizzo}}", $userInfo['indirizzo'], $output1);
+            $output1 = str_replace("{{email}}", $userInfo['email'], $output1);
+            $output.=$output1;
             $output .= "<div class='section' id='modifica'>";
             
 

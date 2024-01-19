@@ -52,8 +52,10 @@ if (!isset($_SESSION["username"]) ) {
         $main = '<form id="logout" action="phputilities/logoutprocess.php" method="post"> <div id = "logout-div"><input id="input-logout" type="submit" name="logout" value="Logout"></div></form>'; 
         $main .= $adminOperation->getMain(); 
     } elseif (isset($_SESSION["is_admin"]) && $_SESSION["is_admin"] === false) {
+         
         $main = '<form id="logout" action="phputilities/logoutprocess.php" method="post"> <div id = "logout-div"><input id="input-logout" type="submit" name="logout" value="Logout"></div></form>'; 
-        $main .= file_get_contents(__DIR__ . '/html/sidebar.html');
+        
+        
         $accountOperation= new accountOperation();
         $main.=$accountOperation->getMain();
     }
