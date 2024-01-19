@@ -2,6 +2,7 @@ html, body {
   font-family: "Times New Roman", Times, serif;
   font-size: 12pt;
   line-height: 1.5em;
+  background-color: white;
 }
 
 body {
@@ -10,37 +11,56 @@ body {
   padding: 0.3em 0em 0.5em;
 }
 
-a[href*="http"]:after{
-  content: " ( " attr(href) " )";
+a:link:after, a:visited:after{
+  content: " [" attr(href) "] ";
+  font-size: 90%;
+  color: black;
 }
 
-/* da rivedere */
-a:not([href*="#"]):not([href*="http"]):after{ 
-  content: " ( http://tecweb.studenti.math.unipd.it/referente/" attr(href) " )";
+a[href^="/"]:after{
+  content: "( http://tecweb.studenti.math.unipd.it/referente/" attr(href) ")";
+  color:black;
 }
 
-h1 {
+h1, h1 time {
   text-align: center;
-  font-size: 2.6rem;
+  padding: 1rem;
+  color: black;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
-h2 {
+h2, h2 time {
   text-align: center;
+  padding: 1rem;
+  color: black;
   font-size: 2rem;
-  margin-top: 2rem;
+  font-weight: bold;
 }
 
-h3 {
-  text-align: center;
-  font-size: 1.4rem;
-  margin-top: 2rem;
+h3, h3 time {
+  padding: 1rem;
+  color: black;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+h4, h4 time {
+  padding: 1rem;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 /* Header */
 
 header {
   width: 100%;
-  margin-left: 0em;
+  margin: 0 4rem;
+}
+
+#flexContainerHeader {
+  background-color: white;
 }
 
 #aiutoSkipnav {
@@ -48,20 +68,13 @@ header {
 }
 
 #left-group {
-  display: flex;
   align-items: left;
-}
-
-#logo img {
-  height: 170px;
-  width: auto;
-  max-width: 100%;
 }
 
 #vertical-bar-container {
   height: 50px;
   width: 4px;
-  color: black;
+  background-color: white;
 }
 
 #countdown-data {
@@ -71,10 +84,11 @@ header {
 }
 
 #countdown-data p#dataFestival time,
-#countdown-data p#dataFestival,
+#countdown-data p#dataFestival, 
 #countdown-data p#intervalloFestival{
   font-size: 1.5rem;
   font-weight: bold;
+  color: black;
 }
 
 .show {
@@ -115,6 +129,7 @@ header {
 /* Navigation Menu */
 
 .menu {
+  margin-top: 0;
   display: none;
 }
 
@@ -122,6 +137,12 @@ header {
 
 #breadcrumb {
   margin-left: 1rem;
+  background-color: white;
+}
+
+#breadcrumb p,
+#breadcrumb p span{
+  color:black;
 }
 
 /* Footer */
@@ -131,10 +152,16 @@ footer {
   bottom:0;
   text-align: center;
   margin-top: 1rem;
+  background-color: white;
 }
 
-footer a {
-  display: none;
+#footer-content a {
+  color:black;
+}
+
+#footer-content, 
+#footer-content span{
+  color:black;
 }
 
 /* Pagina home */
@@ -162,23 +189,23 @@ footer a {
 }
 
 .programma-entry {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  background-color: white;
 }
 
 .programma-entry img {
   width: 200px;
   height: 200px;
   margin-bottom: 1rem;
+  box-shadow: none;
 }
 
 .entry-info {
+  max-width: 100%;
   text-align: left;
-  margin-left: 1rem;
-  padding: 1rem;
-  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
 }
 
 .entry-info dd {
@@ -194,6 +221,11 @@ footer a {
   text-align: center;
   align-items: center;
   padding: 1rem;
+  background-color:white;
+}
+
+#sponsor-title{
+  color: black;
 }
 
 #sponsor h3 {
@@ -225,9 +257,12 @@ footer a {
 }
 
 #chi-siamo-contenuto {
-  max-width: 1080px;
-  margin: 0 auto;
+  max-width: none;
+  width: 100%;
+  margin: 0;
   text-align: left;
+  padding: 1rem;
+  background-color: white;
 }
 
 #img-chi-siamo {
@@ -235,7 +270,14 @@ footer a {
 }
 
 #chi-siamo-testo {
-  text-align: justify;
+  width: 100%;
+}
+
+#ringraziamenti{
+  background-color: white;
+  width: 100%;
+  max-width: none;
+  margin:0;
 }
 
 #ul-ringraziamenti {
@@ -247,6 +289,7 @@ footer a {
 
 #location-container {
   padding: 1rem;
+  margin: 0;
 }
 
 #location-contenuto {
@@ -255,13 +298,28 @@ footer a {
   flex-direction: column;
   align-items: center;
   max-width: 1792px;
+  gap: 1rem;
+  border: unset; 
+  box-shadow: none;
+  color:black;
+  background-color: white;
 }
 
 #map {
-  width: 600px;
-  height: 400px;
+  width: 400px;
+  height: 200px;
   object-fit: cover;
   border: none;
+  box-shadow: none;
+}
+
+#testo-location{
+  max-width: 100%;
+}
+
+#testo-location h2{
+  padding: 2rem;
+  font-size: 1.5rem;
 }
 
 #testo-location p {
@@ -281,18 +339,21 @@ footer a {
 div#shop
 {
   display: grid;
-  max-width: 99%;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  max-width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap:1rem;
 }
 
 .product {
   width: 100%;
+  margin: 0;
 }
 
 #live-info {
   font-style: italic;
   text-align: center;
+  color:black;
+  margin: 0;
 }
 
 .product-container {
@@ -308,6 +369,7 @@ div#shop
 .product-image {
   width: 60%;
   height: auto;
+  box-shadow: none;
 }
 
 div.product-container div.entry-info{
@@ -319,25 +381,22 @@ div.product-container div.entry-info{
 /* Pagina Prevendite */
 
 .ticket-entry {
-  max-width: 62%;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-between; 
-  margin-bottom: 3rem;
-  padding: 2rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
   border: solid;
   border-color: black;
 }
 
 .ticket-entry dl {
-  display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  flex-wrap: wrap;
-  width: 75%;
+  width: 100%;
+  border-right: unset;
 }
 
 .hidden-element {
@@ -359,7 +418,6 @@ div.product-container div.entry-info{
 
 .ticket-vip {
   text-align: left;
-  margin-bottom: 2rem;
 }
 
 /* Pagina Domande */
@@ -370,18 +428,31 @@ div.product-container div.entry-info{
 
 #faq-container h2 {
   margin-top: 3rem;
-  text-align: left;
+  text-align: center;
+}
+
+.faq-box-container{
+  grid-template-columns: 1fr 1fr;
 }
 
 .faq-item {
-  margin-bottom: 3rem;
+  margin: 0 0 1rem 0;
+  background-color: white;
+  color: black;
 }
+
 .question {
   font-weight: bold;
 }
 
 .note {
   font-style: italic;
+  color: black;
+  background-color: white;
+}
+
+.note a{
+  color:black;
 }
 
 /* Pagina Privacy */
