@@ -1639,19 +1639,19 @@ div#addEventForm form fieldset div label {
   position:relative;
 }
 
-#errorupdate p::before {
-  content: ""; /* Contenuto vuoto poiché useremo un'immagine */
-  background-image: url('../assets/arrow/error.png'); /* Percorso dell'immagine locale */
-  background-size: contain; /* Regola la dimensione dell'immagine */
-  height: 32px; /* Altezza desiderata dell'immagine */
+/*#errorupdate p::before {
+  content: ""; 
+  background-image: url('../assets/arrow/error.png'); 
+  background-size: contain;
+  height: 32px;
   width: 32px;
   display: inline-block;
   position: absolute;
-  left: 0; /* Regola la posizione dell'icona a sinistra del paragrafo */
+  left: 0; 
   top: 50%;
   margin-right: 0.5rem;
   transform: translateY(-50%);
-}
+}*/
 
 .programma-admin{
   background-color: var(--verde-lime);
