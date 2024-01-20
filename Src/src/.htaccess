@@ -2,7 +2,8 @@
    RewriteEngine On
 </IfModule>
 
+RedirectMatch 403 ^/html/.*$
+
+ErrorDocument 403 /error403.php
 ErrorDocument 404 /error404.php
 ErrorDocument 500 /error500.php
-
-

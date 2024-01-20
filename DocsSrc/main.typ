@@ -26,7 +26,7 @@
         #rotate(
           -30deg, 
           [
-            #rect(width: 1000pt, height: 300pt, fill: rgb("#FFE600"), stroke: none)
+            #rect(width: 1000pt, height: 300pt, fill: rgb("#9b0014"), stroke: none)
           ]
         )
       ]
