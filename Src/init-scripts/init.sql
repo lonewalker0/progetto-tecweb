@@ -81,9 +81,9 @@ INSERT INTO Biglietti (validita, tipologia, prezzo) VALUES
 ( '<time datetime="2024-07-05">5 Luglio 2024</time>', 'Giornata Singola', 30.00 ),
 ( '<time datetime="2024-07-06">6 Luglio 2024</time>', 'Giornata Singola', 30.00 ),
 ( '<time datetime="2024-07-07">7 Luglio 2024</time>', 'Giornata Singola', 30.00 ),
-( '<time datetime="2024-07-06">6 Luglio 2024</time> - <time datetime="2024-07-07">7 Luglio 2024</time>', 'Weekend', 50.00 ),
-( '<time datetime="2024-07-05">5 Luglio 2024</time> - <time datetime="2024-07-06">6 Luglio 2024</time> - <time datetime="2024-07-07">7 Luglio 2024</time>', 'Intero', 80.00 ),
-( '<time datetime="2024-07-05">5 Luglio 2024</time> - <time datetime="2024-07-06">6 Luglio 2024</time> - <time datetime="2024-07-07">7 Luglio 2024</time>', 'Vip', 100.00 );
+( '<time datetime="2024-07-06">6</time> - <time datetime="2024-07-07">7 Luglio 2024</time>', 'Weekend', 50.00 ),
+( '<time datetime="2024-07-05">5</time> - <time datetime="2024-07-06">6</time> - <time datetime="2024-07-07">7 Luglio 2024</time>', 'Intero', 80.00 ),
+( '<time datetime="2024-07-05">5</time> - <time datetime="2024-07-06">6</time> - <time datetime="2024-07-07">7 Luglio 2024</time>', 'Vip', 100.00 );
 
 
 
