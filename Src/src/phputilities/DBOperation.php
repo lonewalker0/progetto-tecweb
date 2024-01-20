@@ -574,59 +574,6 @@ public function isArtistNameExists($artistName) {
 }
     
 
-
-/*public function addBiglietto($nome, $descrizione, $imagePath,$datainizio,$datafine, $prezzo): bool {
-    try {
-        $this->db->openConnection();
-        $nome = mysqli_real_escape_string($this->db->getConnection(), $nome);
-        $descrizione = mysqli_real_escape_string($this->db->getConnection(), $descrizione);
-        $imagePath = mysqli_real_escape_string($this->db->getConnection(), $imagePath);
-        $sql = "INSERT INTO Biglietti (nome, descrizione, image_path, data_ora_inizio, data_ora_fine, prezzo) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = mysqli_prepare($this->db->getConnection(), $sql);
-        mysqli_stmt_bind_param($stmt, "sssssd", $nome, $descrizione, $imagePath,$datainizio,$datafine, $prezzo);
-        mysqli_stmt_execute($stmt);
-
-        $success = mysqli_stmt_affected_rows($stmt) > 0;
-
-        return $success;
-
-    } catch (Exception $e) {
-            // Registra l'errore nei log del server
-            error_log("Errore durante l'inserimento:  " . $e->getMessage());
-        return false;
-
-    } finally {
-            $this->db->closeConnection();
-        }
-}  
-
-
-public function deleteBiglietto($id): bool {
-    try {
-        $this->db->openConnection();
-        $sql = "DELETE FROM Biglietti WHERE id = ?";
-        $stmt = mysqli_prepare($this->db->getConnection(), $sql);
-        mysqli_stmt_bind_param($stmt, "i", $id);
-        mysqli_stmt_execute($stmt);
-
-    
-        if (mysqli_stmt_affected_rows($stmt) > 0) {
-            return true;
-        } else {
-            return false; 
-
-        }
-    } catch (Exception $e) {
-            // Registra l'errore nei log del server
-            error_log("Errore durante l'eliminazione: " . $e->getMessage());
-
-            return false;
-
-    } finally {
-            $this->db->closeConnection();
-        }
-}  
-*/
 public function getBigliettiEntries(): array
 {
     $bigliettiEntries = [];
@@ -640,8 +587,8 @@ public function getBigliettiEntries(): array
         while ($row = $result->fetch_assoc()) {
             $bigliettoEntry = new BigliettiEntry(
                 $row['id'],
-                $row['nome'],
-                $row['descrizione'],
+                $row['validita'],
+                $row['tipologia'],
                 $row['prezzo']
             );
             $bigliettiEntries[] = $bigliettoEntry;
@@ -713,14 +660,14 @@ public function getUserOrders($username) {
         $this->db->openConnection();
 
         // Esegui una query per ottenere le informazioni sugli ordini dell'utente
-        $sql = "SELECT Ordini.id AS numero_ordine, Ordini.data_acquisto, Biglietti.nome AS tipo_biglietto, Biglietti.descrizione as descrizione, Ordini.prezzo
+        $sql = "SELECT Ordini.id AS numero_ordine, Ordini.data_acquisto, Biglietti.validita AS validita, Biglietti.tipologia as tipologia, Ordini.prezzo
                 FROM Ordini
                 INNER JOIN Biglietti ON Ordini.id_biglietto = Biglietti.id
                 WHERE Ordini.username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $sql);
         mysqli_stmt_bind_param($stmt, "s", $username);
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $numero_ordine, $data_acquisto, $tipo_biglietto, $descrizione, $prezzo);
+        mysqli_stmt_bind_result($stmt, $numero_ordine, $data_acquisto, $validita, $tipologia, $prezzo);
 
         $orders = [];
 
@@ -729,8 +676,8 @@ public function getUserOrders($username) {
             $orders[] = [
                 'numero_ordine' => $numero_ordine,
                 'data_acquisto' => $data_acquisto,
-                'tipo_biglietto' => $tipo_biglietto,
-                'descrizione' => $descrizione,
+                'validita' => $validita,
+                'tipologia' => $tipologia,
                 'prezzo_totale' => $prezzo
             ];
         }

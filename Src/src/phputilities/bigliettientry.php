@@ -1,19 +1,19 @@
 <?php
 
 class BigliettiEntry {
-    private $nome;
-    private $description;
+    private $validita;
+    private $tipologia;
     private $prezzo;
 
     private $id;
 
     private $template; 
 
-    public function __construct($id,$nome,$description,$prezzo )
+    public function __construct($id,$validita,$tipologia,$prezzo )
     {
         $this->id = $id;
-        $this->nome = $nome;
-        $this->description = $description;
+        $this->validita = $validita;
+        $this->tipologia = $tipologia;
         $this->prezzo = $prezzo;
 
         try {
@@ -32,8 +32,8 @@ class BigliettiEntry {
         
         
         $html = str_replace(
-            ['{{nome}}', '{{Description}}','{{prezzo}}','{{id}}'],
-            [$this->nome, $this->description, $this->prezzo, $this->id],
+            ['{{validita}}', '{{tipologia}}','{{prezzo}}','{{id}}'],
+            [$this->validita, $this->tipologia, $this->prezzo, $this->id],
             $this->template
         );
 

@@ -58,8 +58,8 @@ class accountOperation {
                     $singleRow = file_get_contents(__DIR__ . '/../html/table/rowTabellaOrdiniUtente.html');
                     $singleRow = str_replace("{{numero_ordine}}", $order['numero_ordine'], $singleRow);
                     $singleRow = str_replace("{{data_acquisto}}", $order['data_acquisto'], $singleRow);
-                    $singleRow = str_replace("{{tipo_biglietto}}", $order['tipo_biglietto'], $singleRow);
-                    $singleRow = str_replace("{{descrizione}}", $order['descrizione'], $singleRow);
+                    $singleRow = str_replace("{{validita}}", $order['validita'], $singleRow);
+                    $singleRow = str_replace("{{tipologia}}", $order['tipologia'], $singleRow);
                     $singleRow = str_replace("{{prezzo_totale}}", $order['prezzo_totale'], $singleRow);
 
                     $rows .= $singleRow;

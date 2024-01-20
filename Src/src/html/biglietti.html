@@ -1,10 +1,10 @@
 <div class="ticket-entry" id="biglietto-{{id}}">
   <dl>
-      <dt class="accessibleHide">Nome:</dt>
-      <dd class="ticket-name" id="biglietto-title{{id}}">{{nome}}</dd>
+      <dt class="accessibleHide">Validità:</dt>
+      <dd class="ticket-name" id="biglietto-title{{id}}">{{validita}}</dd>
 
-      <dt class="accessibleHide">Descrizione:</dt>
-      <dd class="ticket-description">{{Description}}</dd>
+      <dt class="accessibleHide">Tipologia:</dt>
+      <dd class="ticket-description">{{tipologia}}</dd>
 
       <dt class="accessibleHide">Prezzo:</dt>
       <dd class="ticket-price" id="prezzo-{{id}}">{{prezzo}}€</dd>
@@ -17,7 +17,7 @@
     id="formCompraBiglietto-{{id}}"
   >
     <fieldset>
-      <legend class='accessibleHide'>Acquisto--{{Description}}</legend>
+      <legend class="accessibleHide">Acquisto {{tipologia}} {{validita}}</legend>
       <label for="quantita-{{id}}">Quantità:</label>
       <input
         type="number"

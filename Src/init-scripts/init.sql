@@ -72,15 +72,15 @@ VALUES ('2024-07-07', '23:30:00', 'assets/artisti/gigi-dagostino.png', "All'anag
 
 CREATE TABLE Biglietti (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(50) NOT NULL,
-    descrizione VARCHAR(255) NOT NULL,
+    validita VARCHAR(50) NOT NULL,
+    tipologia VARCHAR(255) NOT NULL,
     prezzo DECIMAL(10, 2) NOT NULL
 );
 
-INSERT INTO Biglietti (nome, descrizione, prezzo) VALUES
-( '5 Luglio 2024', 'Giornata Singola - 5 Luglio', 30.00 ),
-( '6 Luglio 2024', 'Giornata Singola - 6 Luglio', 30.00 ),
-( '7 Luglio 2024', 'Giornata Singola - 7 Luglio', 30.00 ),
+INSERT INTO Biglietti (validita, tipologia, prezzo) VALUES
+( '5 Luglio 2024', 'Giornata Singola', 30.00 ),
+( '6 Luglio 2024', 'Giornata Singola', 30.00 ),
+( '7 Luglio 2024', 'Giornata Singola', 30.00 ),
 ( '6-7 Luglio 2024', 'Weekend', 50.00 ),
 ( '5-6-7 Luglio 2024', 'Intero', 80.00 ),
 ( '5-6-7 Luglio 2024', 'Vip', 100.00 );
