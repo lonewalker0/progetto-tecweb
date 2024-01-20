@@ -72,18 +72,20 @@ VALUES ('2024-07-07', '23:30:00', 'assets/artisti/gigi-dagostino.png', "All'anag
 
 CREATE TABLE Biglietti (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    validita VARCHAR(50) NOT NULL,
-    tipologia VARCHAR(255) NOT NULL,
+    validita VARCHAR(255) NOT NULL,
+    tipologia VARCHAR(50) NOT NULL,
     prezzo DECIMAL(10, 2) NOT NULL
 );
 
 INSERT INTO Biglietti (validita, tipologia, prezzo) VALUES
-( '5 Luglio 2024', 'Giornata Singola', 30.00 ),
-( '6 Luglio 2024', 'Giornata Singola', 30.00 ),
-( '7 Luglio 2024', 'Giornata Singola', 30.00 ),
-( '6-7 Luglio 2024', 'Weekend', 50.00 ),
-( '5-6-7 Luglio 2024', 'Intero', 80.00 ),
-( '5-6-7 Luglio 2024', 'Vip', 100.00 );
+( '<time datetime="2024-07-05">5 Luglio 2024</time>', 'Giornata Singola', 30.00 ),
+( '<time datetime="2024-07-06">6 Luglio 2024</time>', 'Giornata Singola', 30.00 ),
+( '<time datetime="2024-07-07">7 Luglio 2024</time>', 'Giornata Singola', 30.00 ),
+( '<time datetime="2024-07-06">6 Luglio 2024</time> - <time datetime="2024-07-07">7 Luglio 2024</time>', 'Weekend', 50.00 ),
+( '<time datetime="2024-07-05">5 Luglio 2024</time> - <time datetime="2024-07-06">6 Luglio 2024</time> - <time datetime="2024-07-07">7 Luglio 2024</time>', 'Intero', 80.00 ),
+( '<time datetime="2024-07-05">5 Luglio 2024</time> - <time datetime="2024-07-06">6 Luglio 2024</time> - <time datetime="2024-07-07">7 Luglio 2024</time>', 'Vip', 100.00 );
+
+
 
 CREATE TABLE Ordini (
     id INT PRIMARY KEY AUTO_INCREMENT,
