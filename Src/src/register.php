@@ -14,7 +14,7 @@ $keyword = 'Festival, Techno, Lum250, Account, Dati personali, Pagamenti, Biglie
 $description = 'Registrati al sito di TechnoLum250, inserisci i dati personali e le informazioni di accesso.'; 
 
 
-$main = "<h1>Registrazione</h1>";
+$main = "<h1>Registrati!</h1>";
 
 
 

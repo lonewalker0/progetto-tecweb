@@ -11,10 +11,10 @@ $description = 'Pagina non trovata';
 $main = "
 <img src='../assets/error404.png' alt=''>
 
-<h1>Pagina non trovata</h1>
+<h1>Pagina non trovata.</h1>
     
-<h2>La pagina che hai cercato non é disponibile</h2>
-<p>Controlla l'indirizzo digitato</p>";
+<h2>La pagina che hai cercato non é disponibile.</h2>
+<p>Controlla l'indirizzo digitato.</p>";
 
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);

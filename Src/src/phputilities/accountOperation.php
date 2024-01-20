@@ -16,7 +16,7 @@ class accountOperation {
         $username = isset($_SESSION["username"]) ? $_SESSION["username"] : '';
         $output="";
         if (!empty($username)) {
-            $output.="<h1>Benvenuto ". $_SESSION['username']."!</h1>";
+            $output.="<h1>Ciao ". $_SESSION['username']."!</h1>";
             $userInfo = $this->dbOperation->getUserInfo($username);
             $userorder= $this->dbOperation->getUserOrders($username);
             $output .= file_get_contents(__DIR__ . '/../html/sidebar.html');           
