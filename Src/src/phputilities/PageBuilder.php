@@ -6,9 +6,11 @@ class PageBuilder {
 
         $html = file_get_contents(__DIR__ . '/../html/layout/struttura.html');
         $header = file_get_contents(__DIR__ . '/../html/layout/header.html');
+        
         if (trim($breadcrumb) === 'Home') {
-        $header = self::removeHomeLogoLink($header);
+        $header = self::removeHomeLogoLink($header); 
         }
+
 
         $footer = file_get_contents(__DIR__ . '/../html/layout/footer.html');
         $footer = self::resolveCircularLinks($footer, $breadcrumb);                             //rimuove il link circolare della privacy policy 
@@ -22,6 +24,11 @@ class PageBuilder {
         $html = str_replace('{{breadcrumb}}', $breadcrumb, $html);
         $html = str_replace('{{main}}', $main, $html);
         $html = str_replace('{{footer}}', $footer, $html);
+        
+
+        if (trim($breadcrumb) === 'Home') {
+            $html = self::removeLinkAndSubsequentTextFromHTML($html); 
+            }
 
         return $html;
     }
@@ -29,6 +36,13 @@ class PageBuilder {
     public static function removeHomeLogoLink($header): string {
         $header = preg_replace('/<a\b[^>]*href="index\.php"[^>]*>(.*?)<\/a>/s', '$1', $header);
         return $header;
+    }
+
+    public static function removeLinkAndSubsequentTextFromHTML($html) {
+        // Use regular expression to remove <a> tag with href="index.php" and subsequent text
+        $html = preg_replace('/<a\b[^>]*href="index\.php"[^>]*>.*?<\/a> &gt;&gt;/s', '', $html);
+        
+        return $html;
     }
 
     public static function resolveCircularLinks($menu, $breadcrumb) {
