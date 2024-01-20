@@ -1,5 +1,4 @@
 * {
-  font-family: "Trebuchet MS", sans-serif;
   margin: 0;
   padding: 0;
   scroll-padding-top: 2rem;
@@ -16,9 +15,31 @@
   --verde-scurino:rgba(24, 31, 8);
 }
 
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: url('../font/TrebuchetMS.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: url('../font/TrebuchetMS-Italic.woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: url('../font/TrebuchetMS-Bold.woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
 ::placeholder{
   color:var(--verde-lime);  
 }
+
 ::-ms-input-placeholder{
   color:var(--verde-lime);
 }
@@ -31,6 +52,7 @@ body {
   height: 100%;
   display:flex;
   flex-direction: column;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h1, h1 time {
@@ -470,32 +492,25 @@ div.programma-animation2.active {
 }
 
 #foto0 {
-  background-image: url("../assets/artisti/tony2milli.jpg");
+  background-image: url("../assets/foto_festival/festival1.jpeg");
 }
 
 #foto1 {
-  background-image: url("../assets/artisti/anna-pepe.png");
+  background-image: url("../assets/foto_festival/festival2.jpeg");
 }
 
 #foto2 {
-  background-image: url("../assets/artisti/gigi-dagostino.png");
+  background-image: url("../assets/foto_festival/festival3.jpeg");
 }
 
 #foto3 {
-  background-image: url("../assets/artisti/peggy-gou.png");
-}
-
-#foto4 {
-  background-image: url("../assets/artisti/night-skinny.png");
-}
-
-#foto5 {
-  background-image: url("../assets/artisti/prince.png");
+  background-image: url("../assets/logo.png");
 }
 
 .foto-hide {
   display: none;
 }
+
 .puntini {
   height: 15px;
   width: 15px;
@@ -1332,6 +1347,7 @@ fieldset#modifica-account
   border-radius: 2rem;
   border: 1px solid var(--verde-lime);
   background-color: rgba(24, 31, 8, 0.85);
+  color:var(--verde-lime);
   box-shadow: 0 0 10px var(--verde-lime);
   padding: 1rem;
 }
@@ -1639,20 +1655,6 @@ div#addEventForm form fieldset div label {
   border-radius: 1rem;
   position:relative;
 }
-
-/*#errorupdate p::before {
-  content: ""; 
-  background-image: url('../assets/arrow/error.png'); 
-  background-size: contain;
-  height: 32px;
-  width: 32px;
-  display: inline-block;
-  position: absolute;
-  left: 0; 
-  top: 50%;
-  margin-right: 0.5rem;
-  transform: translateY(-50%);
-}*/
 
 .programma-admin{
   background-color: var(--verde-lime);
