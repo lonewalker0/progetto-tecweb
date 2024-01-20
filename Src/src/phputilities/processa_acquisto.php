@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 header("Location: ../prevendite.php"); 
                 die();
             } else {
-                $_SESSION['purchase_result'] = "<p>C'è stato un errore nel processo di acquisto, si prega di riprovare :(</p>";
+                $_SESSION['purchase_result'] = "<p>C'è stato un errore nel processo di acquisto, si prega di riprovare.</p>";
                 header("Location: ../prevendite.php"); 
                 die();
             }
