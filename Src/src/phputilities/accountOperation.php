@@ -34,7 +34,7 @@ class accountOperation {
             $output.=$output1;
             $output .= "<div class='section' id='modifica'>";
             
-
+            $output .= "<h2>Modifica Dati</h2>";
             
 
             $output .= "<div id='errorupdate' role='alert' aria-live='polite' aria-atomic='true' >";
@@ -68,7 +68,7 @@ class accountOperation {
                 $output .= str_replace("{{rows}}", $rows, $table);
                 $output.="</div>";
                 } else {
-                    $output .= "<p>Nessun ordine effettuato.</p>";
+                    $output .= "<h2>Non hai ancora effettuato ordini!.</h2>";
                     $output.="</div>";
                 }
                 $output .= file_get_contents(__DIR__ . '/../html/eliminazioneAccount.html');
