@@ -775,7 +775,8 @@ div.programma-animation2.active {
   text-align: justify;
 }
 
-#indirizzo {
+#testo-location p#indirizzo {
+  text-align: center;
   font-style: italic;
 }
 
