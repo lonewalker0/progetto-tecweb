@@ -18,7 +18,7 @@ $description = 'Gestisci il tuo account TechnoLum250, modifica i tuoi dati perso
 
 if (!isset($_SESSION["username"]) ) {
     
-    $main = "<h1>Accedi</h1>";
+    $main = "<h1>Accedi al tuo Account!</h1>";
     $main .= file_get_contents(__DIR__ . '/html/form/loginform.html');
 
     if (isset($_SESSION['add_login_form_errors'])) {
@@ -28,17 +28,15 @@ if (!isset($_SESSION["username"]) ) {
         unset($_SESSION['add_login_form_errors']);
     }
     
-    // Check if there is an error in the session
+    
     if(isset($_SESSION['NomeUtente_Error'])){
-        // Set the error message
+        //solo gli errori di validazione lato php. 
         $errormessage = '<p>Username o password errati, prego riprovare!</p>';
-        // Replace the placeholders with the actual error message and username
+        
         $main = str_replace('{{loginerror}}', $errormessage, $main);
         $main = str_replace('{{NomeUtenteDaReinserire}}', $_SESSION['NomeUtente_Error'], $main);
-        // Reset or clear the session variable to avoid showing the error after refreshing the page
-        unset($_SESSION['NomeUtente_Error']);
+                unset($_SESSION['NomeUtente_Error']);
     } else {
-        // If there is no error, replace the placeholders with an empty string
         $main = str_replace('{{loginerror}}', "", $main);
         $main = str_replace('{{NomeUtenteDaReinserire}}', "", $main);
     }
