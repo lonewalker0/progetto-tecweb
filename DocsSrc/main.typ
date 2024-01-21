@@ -93,6 +93,16 @@ _Email Referente_:\
   numbering: "1.1",
   outlined: true,
 )
+
+#show heading.where(level: 1): it => {
+ 
+
+ pagebreak(weak: true)
+ 
+
+ it
+ 
+}
 #show outline.entry.where(
   level: 1
 ): it => {

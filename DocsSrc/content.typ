@@ -7,6 +7,14 @@ Gli utenti hanno la possibilità di creare un account personale, rendendoli part
 
 = Analisi dei requisiti
 
+== Wireframe e mockup
+
+Prima di avviare lo sviluppo del nostro sito web, abbiamo adottato una metodologia di progettazione che includeva la creazione di wireframe e mockup. I wireframe hanno fornito una base solida, uno scheletro visuale che ha delineato la struttura e la disposizione degli elementi chiave sulla pagina. Questi schizzi grezzi hanno concentrato la nostra attenzione sulla logica della disposizione, sulla navigazione e sulla gerarchia degli elementi, senza distrazioni grafiche.
+
+Successivamente, abbiamo trasformato i wireframe in mockup, aggiungendo dettagli grafici essenziali come colori, stili e immagini. I mockup ci hanno consentito di visualizzare in modo più tangibile l'aspetto finale del sito web, aiutandoci a comunicare in modo chiaro il design visivo previsto. Queste rappresentazioni più dettagliate sono diventate una guida visiva fondamentale, permettendoci di comprendere l'estetica generale e di rifinire la direzione del progetto.
+
+In sintesi, il processo di creazione di wireframe e mockup è stato cruciale per definire la direzione e l'aspetto del nostro sito web prima di entrare nella fase di sviluppo. Queste fasi iniziali ci hanno permesso di stabilire una solida base visiva, garantendo chiarezza interna sulla visione del progetto prima di procedere con la fase successiva.
+
 
 = Progettazione e implementazione
 
