@@ -110,13 +110,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function(){
-  if(window.location.pathname.indexOf('html') > -1)
-  {
-      setTimeout(() => {  this.location.pathname = '/index.php'; }, 4000);
-  }
-});
-
 document.addEventListener("DOMContentLoaded", function () {
   if (window.location.pathname.indexOf('index.php') > -1) {
     var scrollToTopBtn = document.getElementById("scrollToTopBtn");

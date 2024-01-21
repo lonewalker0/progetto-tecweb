@@ -1347,7 +1347,6 @@ fieldset#modifica-account
   border-radius: 2rem;
   border: 1px solid var(--verde-lime);
   background-color: rgba(24, 31, 8, 0.85);
-  color:var(--verde-lime);
   box-shadow: 0 0 10px var(--verde-lime);
   padding: 1rem;
 }
@@ -1375,6 +1374,7 @@ fieldset#modifica-account input
   border-radius: 2rem;
   border: 1px solid var(--verde-lime);
   background-color: var(--verde-scurino);
+  color:var(--verde-lime);
   padding: 1rem;
   font-size: 1rem;
   margin-top: 8px;
