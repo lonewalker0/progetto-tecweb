@@ -10,6 +10,9 @@ class PageBuilder {
         if (trim($breadcrumb) === 'Home') {
         $header = self::removeHomeLogoLink($header); 
         }
+        if (trim($breadcrumb) === 'Privacy Policy' || trim($breadcrumb) === 'Home' || trim($breadcrumb) === 'Pagina non trovata' || trim($breadcrumb) === 'Server Error') {
+            $html = self::removeLinkAndSubsequentTextFromHTML($html); 
+            }
 
 
         $footer = file_get_contents(__DIR__ . '/../html/layout/footer.html');
@@ -26,9 +29,7 @@ class PageBuilder {
         $html = str_replace('{{footer}}', $footer, $html);
         
 
-        if (trim($breadcrumb) === 'Home') {
-            $html = self::removeLinkAndSubsequentTextFromHTML($html); 
-            }
+        
 
         return $html;
     }
