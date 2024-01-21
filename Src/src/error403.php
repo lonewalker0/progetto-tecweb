@@ -15,5 +15,7 @@ $main = "
     
 <h2>Verrai reinderizzato alla home tra pochi secondi...</h2>";
 
+header('Refresh: 5; URL=index.php');
+
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);
 ?>
