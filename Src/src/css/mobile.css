@@ -471,6 +471,17 @@
     height: auto;
     margin: 1rem 4.5rem 0 5rem;
   }
+
+  /*ERROR 404 - ERROR 500*/
+  div#error-container img{
+    width: 350px; 
+  }
+
+  div#error-container h1,
+  div#error-container h2,
+  div#error-container p{
+    padding: 0.75rem;
+  }
 }
 
 /* In caso la pagina si ridimesioni e non c'è più spazio disponibile per gli oggetti*/

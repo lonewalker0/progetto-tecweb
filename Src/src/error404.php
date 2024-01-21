@@ -9,12 +9,12 @@ $keyword = 'Festival, Techno, Lum250, 404, errore, pagina non trovata;';
 $description = 'Pagina non trovata'; 
 
 $main = "
-<img src='../assets/error404.png' alt=''>
-
-<h1>Pagina non trovata.</h1>
-    
-<h2>La pagina che hai cercato non é disponibile.</h2>
-<p>Controlla l'indirizzo digitato.</p>";
+<div id='error-container'>
+    <img src='../assets/error404.png' alt=''>
+    <h1>Pagina non trovata.</h1>
+    <h2>La pagina che hai cercato non é disponibile.</h2>
+    <p>Controlla l'indirizzo digitato.</p>
+</div>";
 
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);

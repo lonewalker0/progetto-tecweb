@@ -394,7 +394,7 @@ div#footer-content {
 
 #navEventi {
   text-align: center;
-  margin: 1rem 0 2rem 0;
+  margin: 4rem 0 2rem 0;
 }
 
 #navEventi li,
@@ -1687,6 +1687,21 @@ form.event-elimination input[type="submit"]
 
 form.event-elimination input[type="submit"]:hover{
   transform: unset;
+}
+
+/*ERROR 404 - ERROR 500*/
+
+div#error-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+}
+
+div#error-container h1,
+div#error-container h2
+div#error-container p{
+  padding: 2rem;
 }
 
 
