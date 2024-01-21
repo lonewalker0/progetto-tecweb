@@ -33,9 +33,14 @@ class PageBuilder {
         return $html;
     }
 
-    public static function removeHomeLogoLink($header): string {
-        $header = preg_replace('/<a\b[^>]*href="index\.php"[^>]*>(.*?)<\/a>/s', '$1', $header);
-        return $header;
+    public static function removeHomeLogoLink($input) {
+        // Regular expression to match <a> tags with variations in case
+        $pattern = '/<a\b[^>]*href\s*=\s*(\'|")[^\'"]*\.?\.?\/?index\.php\1[^>]*>(.*?)<\/a>/si';
+    
+        // Replace the matched <a> tags with their content
+        $output = preg_replace($pattern, '$2', $input);
+    
+        return $output;
     }
 
     public static function removeLinkAndSubsequentTextFromHTML($html) {
