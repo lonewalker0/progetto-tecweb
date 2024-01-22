@@ -26,12 +26,13 @@ Per un'esperienza ottimale, si consiglia l'utilizzo di browser aggiornati e rece
 
 Vengono elencate le considerazioni che io team ha adottato per favorire un buon indice di posizionamento all'interno dei motori di ricerca:
 
+  + Codice HTML5 e CSS sono stati validati;
   + L'adozione di parole chiave comuni a tutte le pagine e alcune varianti a seconda della pagina, all'interno del meta tag "keyword";
   + In ogni pagina è presente un "title" che va dal particolare al generale, in modo da fornire un contesto specifico;
   + È stato usato un unico file Javascript;
   + È presente un design Responsive;
   + È stato creato un file "robots.txt", per evitare l'indicizzazione di alcune pagine dai motori di ricerca, considerate non essenziali, in modo tale che le risorse dei crawler siano orientate verso le pagine più ricche di contenuto e non verso pagine sensibili o di amministrazione;
-  + Codice HTML5 e CSS sono stati validati;
+  
 
 
   
