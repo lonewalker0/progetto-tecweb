@@ -5,7 +5,7 @@ session_start();
 $breadcrumb = '<a href="account.php">Account</a>&nbsp &gt&gt Elimina';
 $breadcrumblen = 'it'; 
 $title = 'Elimina Account | TechnoLum250';
-$keyword = 'Festival, Techno, Lum250, Account, Eliminazione;'; 
+$keyword = 'Festival, Techno, Lum250, TechnoLum250 Account, Eliminazione;'; 
 $description = 'Eliminazione account dal festival :('; 
 
 $main= "<h1 id='conferma'>Conferma eliminazione</h1>";

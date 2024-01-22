@@ -21,6 +21,9 @@ TechnoLum250Festival è un sito web che presenta un layout semplice, ma allo ste
 Per un'esperienza ottimale, si consiglia l'utilizzo di browser aggiornati e recenti.
 
 
+= SEO  
+
+
 
 
 = Progettazione e implementazione
