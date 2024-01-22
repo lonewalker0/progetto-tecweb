@@ -10,7 +10,7 @@ include('phputilities/adminOperation.php');
 $breadcrumb = '<a href="account.php">Account</a> &gt;&gt; Registrazione';
 $breadcrumblen = 'it'; 
 $title = 'Registrazione | TechnoLum250'; 
-$keyword = 'Festival, Techno, Lum250, TechnoLum250, Account, Dati personali, Pagamenti, Biglietti, Ordini'; 
+$keyword = 'Padova, Festival, evento, Techno, Lum250, TechnoLum250, Account, Dati personali, Pagamenti, Biglietti, Ordini'; 
 $description = 'Registrati al sito di TechnoLum250, inserisci i dati personali e le informazioni di accesso.'; 
 
 

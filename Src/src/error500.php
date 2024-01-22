@@ -5,7 +5,7 @@ include('phputilities/PageBuilder.php');
 $breadcrumb = 'Server Error';
 $breadcrumblen = 'it'; 
 $title = 'Server Error | TechnoLum250';
-$keyword = 'Festival, Techno, Lum250, TechnoLum250, 500, errore, errore interno server;'; 
+$keyword = 'Padova, Festival, evento, Techno, Lum250, TechnoLum250, 500, errore, errore interno server;'; 
 $description = 'Pagina non trovata'; 
 
 $main = "
