@@ -31,8 +31,20 @@ Vengono elencate le considerazioni che io team ha adottato per favorire un buon 
   + In ogni pagina è presente un "title" che va dal particolare al generale, in modo da fornire un contesto specifico;
   + È stato usato un unico file Javascript;
   + È presente un design Responsive;
-  + È stato creato un file "robots.txt", per evitare l'indicizzazione di alcune pagine dai motori di ricerca, considerate non essenziali, in modo tale che le risorse dei crawler siano orientate verso le pagine più ricche di contenuto e non verso pagine sensibili o di amministrazione;
-  
+  + È stato creato un file "robots.txt", per evitare l'indicizzazione di alcune pagine dai motori di ricerca, considerate non essenziali, in modo tale che le risorse dei crawler siano orientate verso le pagine più ricche di contenuto e non verso pagine sensibili o di amministrazione.
+
+La gerarchia del sito è stata sviluppata in ampiezza con una grandezza pari a 7 e una profondità massima di 3 livelli.
+
+Vengono di seguito elencate, per importanza, le ricerche a cui il sito si propone di rispondere:
+
+  + Nome del Festival(TechnoLum250);
+  + Date dello svolgimento del Festival;
+  + Parole generiche quali Festival, Padova, Evento etc.;
+  + Nomi degli artisti presenti al Festival.
+
+
+
+
 
 
   
