@@ -74,7 +74,7 @@ header {
 }
 
 #left-group {
-  align-items: left;
+  align-items:flex-start;
 }
 
 #vertical-bar-container {
