@@ -100,14 +100,16 @@ Nel Main le informazioni principali della pagina.
 Nel footer le icone dei social, i diritti di copyright e l'informativa riguardante la privacy. 
 
 
+== Schema organizzativo 
+
+È stato adottato uno schema esatto per i contenuti ospitati nel sito, garantendo che ogni sezione sia mutualmente esclusiva, con contenuti p distinti e senza sovvrapposizioni. La categorizzazione degli eventi è stata implementata seguendo un ordine cronologico.
+
+= Implementazione
 
 
 
 
 
-
-
-== [forse qui sarebbe da mettersi a scrivere qualcosa sulla struttura organizzativa.]
  
 
 
