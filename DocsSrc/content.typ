@@ -104,7 +104,12 @@ Nel footer le icone dei social, i diritti di copyright e l'informativa riguardan
 
 È stato adottato uno schema esatto per i contenuti ospitati nel sito, garantendo che ogni sezione sia mutualmente esclusiva, con contenuti p distinti e senza sovvrapposizioni. La categorizzazione degli eventi è stata implementata seguendo un ordine cronologico.
 
-= Implementazione
+= Realizzazione 
+
+== HTML  
+
+Il sito è stato sviluppato seguendo la sintassi di HTML5. 
+
 
 
 
