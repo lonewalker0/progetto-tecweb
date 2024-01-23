@@ -81,7 +81,6 @@
 
   #aiutoSkipnav:focus {     
     width: 50px;        
-    height: 50px;
     font-size: 0.5rem;       
   }
 
@@ -500,9 +499,8 @@
   }
 
   /*SKIPNAV*/
-  #aiutoSkipnav:focus {     
-    width: 20px;        
-    height: 20px;       
+  #aiutoSkipnav:focus {    
+    width: fit-content;     
   }
 
   /*PAGINA DOMANDE(FAQ)*/
