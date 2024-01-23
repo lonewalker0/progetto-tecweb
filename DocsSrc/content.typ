@@ -1,29 +1,68 @@
 = Introduzione
 
-Il progetto del sito web per il corso di Tecnologie Web, nell'Anno Accademico 2023-2024, è finalizzato alla creazione di una piattaforma completa per il Festival TechnoLum250Festival. Questa piattaforma consente agli utenti, siano essi registrati o no, di esplorare con facilità gli artisti in programma, fornendo dettagli sugli orari e brevi, ma esaustive, descrizioni dei performer. L'amministratore del sito ha in dotazione un pannello di amministrazione che semplifica la gestione degli eventi, garantendo un'organizzazione efficiente e precisa delle informazioni nel database.
-Per gli utenti non registrati, il sito offre una panoramica chiara delle opzioni disponibili, compresi i biglietti acquistabili e il merchandising esclusivo. Una sezione dedicata alle Domande (FAQ) fornisce risposte immediate a interrogativi comuni, mentre la sezione "Chi Siamo" offre una visione della storia del festival.
-Gli utenti hanno la possibilità di creare un account personale, rendendoli partecipi del processo di acquisto dei biglietti per il festival. Inoltre, possono gestire in modo dinamico le proprie informazioni personali, modificare la password e persino eliminare il proprio account, garantendo un controllo completo sulla propria esperienza nel sito.
-
+Per il progetto didattico del corso di Tecnologie Web, nell'Anno Accademico 2023-2024, il nostro gruppo si è dedicato alla realizzazione di un sito per un ipotetico Festival musicale chiamato TechnoLum250Festival. 
 
 = Analisi dei requisiti
 
+== Target di Utenza
+Il suddetto festival si rivolge principalmente a un pubblico giovane, la cui età spazia tra i 16 e i 35 anni, attirati da generi musicali quali hip-hop, R&B e musica elettronica.
+Il sito sviluppato deve di conseguenza rivolgersi principalmente a queste categorie di utenti,
+La demografia rilevata, apprezza un'interfaccia utente intuitiva, design accattivante e facilmente navigabile da dispositivi mobili, riflettendo il loro stile di vita dinamico.
+Sebbene il sito web sia da sviluppare in modo tale da strizzare l'occhio ad un pubblico giovane e costantemente al passo con la tecnologia, è fondamentale che il design non escluda fasce d'età più mature.
+Di conseguenza è necessario che il sito offra un'esperienza utente accessibile a un utente più anziano, che potrebbe essere interessato a esplorare e partecipare all'evento.
+Più in generale, il contesto in oggetto si propone di essere un punto di incontro per l'intera comunità, di conseguenza In linea con questo presupposto di inclusione, è fondamentale che il sito web sia pienamente accessibile alle persone con disabilità, e garantire loro una navigazione piacevole e chiara. 
+
+== Tipi di utenti e funzionalità
+
+
+Il gruppo già in fase di analisi ha stabilito che non si sarebbero implementate una serie di funzionalità che, in ottica di un reale utilizzo, sarebbero ideali. 
+Per esempio la possibilità di avere delle prevendite nominative, la possibilità di refound delle stesse oppure la possibilità per l'amministratore di visualizzare l'andamento delle vendite.
+Questo è dovuto principalmente alle limitazioni di tempo e risorse tipiche di un progetto accademico.
+Ci si è infatti posti l'obbiettivo di realizzare funzionalità diversificate, in modo tale da poter esplorare a pieno le possibilità offerte dai linguaggi utilizzati. 
+Successivamente sono presentate le categorie di utenti e le funzionalità che il team ha individuato in sede di analisi. 
+
+=== Visitatori Standart: 
+Questa categoria deve poter aver accesso a tutte le informazioni generali riguardanti il festival: in particolare deve poter esplorare la lineup degli artisti, visualizzare le FAQ, avere una preview del merch disponibile in Loco. Inoltre deve poter effettuare la registrazione. 
+
+=== Utenti Registrati:
+Tali utenti, oltre a tutte le possibilità offerte al visitatore Standart , devono poter aggiornare i propri dati personali, acquistare prevendite e visualizzare i dettagli degli acquisti. 
+
+=== Admin: 
+L'admin ha inoltre la possibilità di modificare la lineup del festival inserendo ed eliminando gli eventi.  
+Tali eventi sono caratterizzati univocamente dal perfomer, da una sua foto, da un data e da un orario e da un descrizione.
+
+= Progettazione 
+
 == Wireframe e mockup
+Prima di avviare lo sviluppo, abbiamo adottato una metodologia di progettazione che includeva la creazione di wireframe e mockup.
+L'attività è stata fondamentale: abbiamo infatti potuto circonscrivere meglio i requisiti e inoltre ci ha portato a ragionare subito sulle possibili implementazioni.
+Inoltre ci ha permesso di definire un idea comune di quello che saremmo andati a realizzare. 
+In questa sede abbiamo inoltre avuto modo di approfondire il tema in oggetto, analizzando le caratteristiche presenti in siti simili. 
+I disegni realizzati si sono concentrati sulla logica della disposizione degli elementi, sulla navigazione e sulla gerarchia degli elementi, lasciando da parte dettagli grafici. 
+In incontri successivi, a seguito dell'individuazione di una prima palette di colori, abbiamo specializzato il dettaglio di quei disegni, senza però entrare troppo nello specifico. 
+Questo processo preparatorio è risultato molto utile per scolpire un primo aspetto, prima di entrare nella fase di sviluppo.
 
-Prima di avviare lo sviluppo del nostro sito web, abbiamo adottato una metodologia di progettazione che includeva la creazione di wireframe e mockup. I wireframe hanno fornito una base solida, uno scheletro visuale che ha delineato la struttura e la disposizione degli elementi chiave sulla pagina. Questi schizzi grezzi hanno concentrato la nostra attenzione sulla logica della disposizione, sulla navigazione e sulla gerarchia degli elementi, senza distrazioni grafiche.
+== Convenzioni adottate
+Si riportano di seguito le convenzioni adottate dal gruppo: 
+=== Link
+Il team ha deciso di mantenere i link sottolineati come da Standart WACG, inoltre per ridurre il disorientamento cognitivo si è optato per mantenere un colore diverso per i link visitati. 
+=== Logo cliccabile
+Il team ha scelto di addottare la pratica ormai quasi universale nel web design di associare al logo un link cliccabile che riporto alla pagina home. Tramite espressioni regolari si è garantita l'eliminazione dei link circolari. 
+=== Breadcrumbs
+Abbiamo abbracciato la convenzione di addottare una breadcrumbs per favorire la navigazione, e limitare il sovraccarico cognitivo per l'utente.
 
-Successivamente, abbiamo trasformato i wireframe in mockup, aggiungendo dettagli grafici essenziali come colori, stili e immagini. I mockup ci hanno consentito di visualizzare in modo più tangibile l'aspetto finale del sito web, aiutandoci a comunicare in modo chiaro il design visivo previsto. Queste rappresentazioni più dettagliate sono diventate una guida visiva fondamentale, permettendoci di comprendere l'estetica generale e di rifinire la direzione del progetto.
+== [forse qui sarebbe da mettersi a scrivere qualcosa sulla struttura organizzativa.]
+ 
 
-In sintesi, il processo di creazione di wireframe e mockup è stato cruciale per definire la direzione e l'aspetto del nostro sito web prima di entrare nella fase di sviluppo. Queste fasi iniziali ci hanno permesso di stabilire una solida base visiva, garantendo chiarezza interna sulla visione del progetto prima di procedere con la fase successiva.
 
-== Utenti
 
-TechnoLum250Festival è un sito web che presenta un layout semplice, ma allo stesso tempo accattivante. È stato ideato per coinvolgere un vasto pubblico, la cui età spazia dai 16 ai 35 anni. È stato adottato un linguaggio semplice, informale e per questo accessibili a tutti. 
-Per un'esperienza ottimale, si consiglia l'utilizzo di browser aggiornati e recenti.
+
+
+
+
 
 
 = SEO  
-
-
 Vengono elencate le considerazioni che io team ha adottato per favorire un buon indice di posizionamento all'interno dei motori di ricerca:
 
   + Codice HTML5 e CSS sono stati validati;
