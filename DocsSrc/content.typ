@@ -87,33 +87,58 @@ Il sito web rispetta la lingua e cultura italiana, eventuali parole inglesi sono
 
 In questa sezione vengono mostrate le decisione intraprese nel corso dello sviluppo.
 
-==HTML
+== HTML
 Il sito, come da specifiche di progetto, è stato sviluppato seguendo la sintassi di HTML5.
-Il gruppo si è impegnato nell'utilizzare i tag semantici corretti già dai primi momenti dello sviluppo, inoltre il processo di scrittura di codice html è stato sempre accompagnato da relativa validazione. 
+Il gruppo si è impegnato nell'utilizzare i tag semantici corretti già dai primi momenti dello sviluppo, inoltre il processo di scrittura di codice HTML è stato sempre accompagnato da relativa validazione. 
 
 Nel corso dello sviluppo abbiamo cercato di mantenere un rapporto di massima separazione tra il contenuto HTML e le componenti di php, competenti della loro unione in quello che sarà il codice HTML finale, quello che sarà poi disponibile all'utente. 
 Nella nostra repository è infatti presente una cartella "html" in cui sono contenute tutte le componenti html necessarie alla visualizzazione del sito.
 
-==Struttura principale
+== Struttura principale
 La struttura di ogni pagina si caratterizza di un header, un main e un footer.
 Nell'header possiamo trovare il logo, il nome del festival, le icone dei social e il menù principale.
 Nel Main il contenuto della pagina.
 Nel footer le icone dei social, i diritti di copyright e l'informativa riguardante la privacy. 
+Le pagine "struttura.html","header.html", "footer.html", "menu.html" contengono la struttura portante di tutte le pagine presenti sul sito, sono state usate come template.
 
-==CSS
+== Pagine di errore 
+
+Sono state personalizzate le pagine di errore 404, ad esempio se l'utente visitasse un link scorretto o inesistente, e la pagina di errore 500, in caso si verificassero errori nel server interno. I messaggi servono per non disorientare l'utente e contribuire a mantenere un clima di fiducia. 
+
+== CSS
 Il design è stato sviluppato inizialmente per il sito nella sua versione Desktop, successivamente è stato rielaborato per l'acceso tramite schermi di dimensioni minori. 
 Il layout finale è responisive: si utilizzano punti di ruttura e all'interno di essi si garantisce fluidità.
 Per garantire una maggiore accessibilità è stata implementata una classe css chiamata accessibleHide: questa classe ci permette di eliminare gli elementi dalla vista mantenendoli però interpretabili dagli screen reader.
 Come da specifiche è stato elaborato un design per la stampa: sono stati rimossi i background e più in generale gli elementi non prettamente contenutistici (tra cui il menù), inoltre, sono stati sistemati i margini a garantire che tutto il contenuto sia effettivamente stampato. 
 Nonostante non sia usuale, per garantire l'accessbilità della tabella relativa agli acquisti delle prevendite a tutti gli utenti si è deciso di renderla scrollabile orizzontalemnte. //anche qui bisogna vedere se rimane effettivamente una buona sceltà
 
-==PHP
+== Javascript  
+
+È stato usato javascript per lo sviluppo del carosello dinamico, per il countdown e per il pulsante di scrolltotop nella pagina home,
+per mostrare in modo dinamico il prezzo dei vari biglietti acquistati.
+
+
+== PHP
 PHP è stato ampiamente utilizzato. Si riportano successivamente le principali funzioni svolte. 
 === Link circolari  
 Per rimuovere i link circolari, ovvero link che portano alla stessa pagina, è stata sviluppata una funzione in php che permette di rimuovere direttamente il tag \<a\> se ci troviamo in quella specifica pagina. 
 === Template
 Per evitare duplicazione di codice e favorire il riuso di quest'ultimo, il PHP si occupa della costruzione dinamica delle pagine, importando i vari file template HTML e, attraverso gli ancoraggi, se presenti, si va ad aggiungere il contenuto.
 Gli ancoraggi vengono definiti in HTML con le doppie parentesi graffe.
+
+=== Costruzione pagine 
+
+Per la costruzione dinamica delle pagina si è usata la funzione principale BuildPage che fa un ampio uso di string_replace per svolgere il proprio lavoro.
+
+== Validazione  
+
+== Database 
+
+
+
+
+
+
 
 
 
