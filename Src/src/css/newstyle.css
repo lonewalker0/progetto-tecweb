@@ -810,6 +810,7 @@ div#shop
 }
 
 .product h2{
+  font-size: 1.8rem;
   margin-bottom: 1rem;
   background-color: var(--verde-scurino);
   border-radius: 1rem;
