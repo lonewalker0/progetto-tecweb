@@ -60,6 +60,7 @@ class accountOperation {
                     $singleRow = str_replace("{{data_acquisto}}", $order['data_acquisto'], $singleRow);
                     $singleRow = str_replace("{{validita}}", $order['validita'], $singleRow);
                     $singleRow = str_replace("{{tipologia}}", $order['tipologia'], $singleRow);
+                    $singleRow = str_replace("{{quantita}}", $order['quantita'], $singleRow);
                     $singleRow = str_replace("{{prezzo_totale}}", $order['prezzo_totale'], $singleRow);
 
                     $rows .= $singleRow;

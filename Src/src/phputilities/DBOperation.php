@@ -650,14 +650,14 @@ public function getUserOrders($username) {
         $this->db->openConnection();
 
         // Esegui una query per ottenere le informazioni sugli ordini dell'utente
-        $sql = "SELECT Ordini.id AS numero_ordine, Ordini.data_acquisto, Biglietti.validita AS validita, Biglietti.tipologia as tipologia, Ordini.prezzo
+        $sql = "SELECT Ordini.id AS numero_ordine, Ordini.data_acquisto as data_acquisto,  Biglietti.validita AS validita, Biglietti.tipologia as tipologia, Ordini.quantita AS quantita, Ordini.prezzo
                 FROM Ordini
                 INNER JOIN Biglietti ON Ordini.id_biglietto = Biglietti.id
                 WHERE Ordini.username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $sql);
         mysqli_stmt_bind_param($stmt, "s", $username);
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $numero_ordine, $data_acquisto, $validita, $tipologia, $prezzo);
+        mysqli_stmt_bind_result($stmt, $numero_ordine, $data_acquisto, $validita, $tipologia, $quantita, $prezzo);
 
         $orders = [];
 
@@ -668,6 +668,7 @@ public function getUserOrders($username) {
                 'data_acquisto' => $data_acquisto,
                 'validita' => $validita,
                 'tipologia' => $tipologia,
+                'quantita' =>  $quantita, 
                 'prezzo_totale' => $prezzo
             ];
         }
