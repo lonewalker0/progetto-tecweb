@@ -66,21 +66,21 @@ h1, h1 time {
 h2, h2 time {
   text-align: center;
   padding: 1rem;
-  color: var(--verde-nero);
+  color: var(--verde-scuro);
   font-size: 2rem;
   font-weight: bold;
 }
 
 h3, h3 time {
   padding: 1rem;
-  color: var(--verde-nero);
+  color: var(--verde-scuro);
   font-size: 1.8rem;
   font-weight: bold;
 }
 
 h4, h4 time {
   padding: 1rem;
-  color: var(--verde-nero);
+  color: var(--verde-scuro);
   font-size: 1.5rem;
   font-weight: bold;
 }
@@ -212,7 +212,7 @@ header {
   width: 1px;
   height: 1px;
   overflow: hidden;
-  clip-path: rect(0, 0, 0, 0);
+  /*clip-path: rect(0, 0, 0, 0);*/
   white-space: nowrap;
   border: 0;
   margin: -1px;
@@ -343,7 +343,7 @@ nav.menu a:hover > div#punto-dom {
 
 #breadcrumb p span{
   text-align: left;
-  color: var(--dark-bg-color);
+ /* color: var(--verde-lime);*/
   font-weight: bold;
 }
 
@@ -1033,8 +1033,8 @@ input[type="button"]:focus {
 #faq-container {
   margin: 0 auto;
   padding: 1rem;
-  background-color: var(--light-bg-color);
-  color: var(--dark-bg-color);
+ /* background-color: var(--light-bg-color);
+  color: var(--dark-bg-color);*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1090,7 +1090,7 @@ input[type="button"]:focus {
 }
 
 main {
-  background-color: var(--light-bg-color);
+ /* background-color: var(--light-bg-color);*/
   margin: 0rem 4rem 0rem 4rem;
 }
 
@@ -1331,7 +1331,7 @@ div#informazioni dd{
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 8px;
-  border: 1px solid var(--alt-visited-link);
+  /*border: 1px solid var(--alt-visited-link);*/
   border-radius: 2rem;
   width: 15%;
   text-align: center;
