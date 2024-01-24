@@ -8,7 +8,7 @@ $title = 'Prevendite | TechnoLum250';
 $keyword = 'Padova, Festival, evento, Techno, Lum250, TechnoLum250, Prevendite, Biglietti, Acquisto, Compra, Ticket'; 
 $description = 'Acquista i biglietti per il festival TechnoLum250, scopri i nostri biglietti.'; 
 
-$main = "<h1>Acquista la tua prevendità!</h1>";
+$main = "<h1>Acquista la tua prevendita!</h1>";
 
 
 

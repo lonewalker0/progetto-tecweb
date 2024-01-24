@@ -66,21 +66,21 @@ h1, h1 time {
 h2, h2 time {
   text-align: center;
   padding: 1rem;
-  color: var(--verde-scuro);
+  color: var(--verde-lime);
   font-size: 2rem;
   font-weight: bold;
 }
 
 h3, h3 time {
   padding: 1rem;
-  color: var(--verde-scuro);
+  color: var(--verde-lime);
   font-size: 1.8rem;
   font-weight: bold;
 }
 
 h4, h4 time {
   padding: 1rem;
-  color: var(--verde-scuro);
+  color: var(--verde-lime);
   font-size: 1.5rem;
   font-weight: bold;
 }
