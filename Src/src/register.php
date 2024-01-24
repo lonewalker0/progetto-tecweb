@@ -14,7 +14,7 @@ $keyword = 'Padova, Festival, evento, Techno, Lum250, TechnoLum250, Account, Dat
 $description = 'Registrati al sito di TechnoLum250, inserisci i dati personali e le informazioni di accesso.'; 
 
 
-$main = "<h1>Registrati!</h1>";
+$main = "<h1>Crea il tuo Account!</h1>";
 
 
 
