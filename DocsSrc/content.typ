@@ -25,11 +25,11 @@ Successivamente sono presentate le categorie di utenti e le funzionalità che il
 Questa categoria deve poter aver accesso a tutte le informazioni generali riguardanti il festival: in particolare deve poter esplorare la lineup degli artisti, visualizzare le FAQ, avere una preview del merch disponibile in Loco. Inoltre deve poter effettuare la registrazione. 
 
 === Utenti Registrati:
-Tali utenti, oltre a tutte le possibilità offerte al visitatore Standart , devono poter aggiornare i propri dati personali, acquistare prevendite e visualizzare i dettagli degli acquisti. 
+Tali utenti, oltre a tutte le possibilità offerte al visitatore Standard, devono poter aggiornare i propri dati personali, poter cambiare la password, acquistare prevendite e visualizzare i dettagli degli acquisti sotto forma tabellare. Inoltre hanno la possibilità di eliminare definitivamente l'account dal sito web.
 
 === Admin: 
 L'admin ha inoltre la possibilità di modificare la lineup del festival inserendo ed eliminando gli eventi.  
-Tali eventi sono caratterizzati univocamente dal perfomer, da una sua foto, da un data e da un orario e da un descrizione.
+Tali eventi sono caratterizzati univocamente dal perfomer, da una sua foto, da una data e un orario e infine, da una descrizione.
 
 = Progettazione 
 
@@ -51,7 +51,70 @@ Il team ha scelto di addottare la pratica ormai quasi universale nel web design 
 === Breadcrumbs
 Abbiamo abbracciato la convenzione di addottare una breadcrumbs per favorire la navigazione, e limitare il sovraccarico cognitivo per l'utente.
 
-== [forse qui sarebbe da mettersi a scrivere qualcosa sulla struttura organizzativa.]
+=== Link circolari  
+
+Per rimuovere i link circolari, ovvero link che portano alla stessa pagina, è stata sviluppata una funzione in php che permette di rimuovere direttamente il tag \<a\> se ci troviamo in quella specifica pagina. 
+
+=== Template 
+
+Per evitare duplicazione di codice e favorire il riuso di quest'ultimo, il PHP si occupa della costruzione dinamica delle pagine, importando i vari file template HTML e, attraverso gli ancoraggi, se presenti, si va ad aggiungere il contenuto.
+Gli ancoraggi vengono definiti in HTML con le doppie parentesi graffe.
+
+=== Lingua 
+
+Il sito web rispetta la lingua e cultura italiana, eventuali parole inglesi sono state marcate con il tag _span_ e attributo _lang='en'_.
+
+== Area comune 
+
+ - *Home*: pagina principale del sito e la prima visualizzata quando si accede al sito. Incorpora un carosello scorrevole in modo dinamico in cui vengono mostrate varie foto del Festival. Per ogni giornata del festival vengono mostrati gli artisti che si esibiscono con l'orario rispettivo.
+ - *Chi siamo*: pagina che descrive brevemente la nascita del Festival e i vari ringraziamenti.
+ - *Location*: pagina in cui viene mostrata l'ubicazione del Festival.
+ - *Merch*: pagina in cui vengono visualizzati e descritti brevemente i vari item che possono essere acquistati in Loco al Festival o nel negozio.
+ - *Prevendita*: pagina in cui vengono mostrati i biglietti che si possono acquistare online. Inoltre vengono descritti i vantaggi dell'acquisto di un biglietto categoria VIP, non si possono comprare se non autenticati.
+ - *Domande*: pagina in cui vengono mostrate le domande più frequenti e le relative risposte.
+ - *Account*: pagina in cui è presente il form per poter effettuare l'accesso.
+ - *Privacy Policy*: pagina che contiene le informative riguardo la privacy.
+
+== Area utente privata 
+
+ 
+ - *Registrazione*: pagina che permette all'utente generico di potersi registrare. L'attività di registrazione richiede nome, cognome, età, indirizzo di residenza, email, username e una password.
+ - *Account*: una volta effettuato l'accesso si potranno visualizzare i propri dati personali inseriti precedentemente, nella fase di registrazione. Una sezione riguardante la possibilità di modificare indirizzo di residenza, email o password. La visualizzazione dei propri acquisti sotto forma tabellare se presenti.
+ - *Eliminazione*: pagina che consente l'eliminazione dell'account dal sito web. È richiesta la password.
+ 
+== Area Admin 
+
+- *Account*: sempre in questa pagina l'admin può visualizzare gli eventi e gli artisti che si esibiranno. Ha la possibilità di effettuare l'inserimento di eventi o la loro rimozione.
+
+== Struttura gerarchica 
+
+Il sito è stato sviluppato maggiormente in ampiezza.
+Il menù principale ha come sezioni: Home, Chi Siamo, Location, Merch, Prevendite,Domande, Account per un totale di 7.
+La profondità massima è 2:  nella pagina Account abbiamo Account >> Registrazione e Account >> Eliminazione.
+
+== Struttura 
+
+Ogni pagina è dotata di un Header, un Main e un Footer.
+Nell'header possiamo trovare il logo, il nome del festival, le icone dei social e il menù principale.
+Nel Main le informazioni principali della pagina.
+Nel footer le icone dei social, i diritti di copyright e l'informativa riguardante la privacy. 
+
+
+== Schema organizzativo 
+
+È stato adottato uno schema esatto per i contenuti ospitati nel sito, garantendo che ogni sezione sia mutualmente esclusiva, con contenuti p distinti e senza sovvrapposizioni. La categorizzazione degli eventi è stata implementata seguendo un ordine cronologico.
+
+= Realizzazione 
+
+== HTML  
+
+Il sito è stato sviluppato seguendo la sintassi di HTML5. 
+
+
+
+
+
+
  
 
 
@@ -82,6 +145,8 @@ Vengono di seguito elencate, per importanza, le ricerche a cui il sito si propon
   + Nomi degli artisti presenti al Festival.
 
 
+= Suddivisione lavoro
+
 
 
 
@@ -89,7 +154,6 @@ Vengono di seguito elencate, per importanza, le ricerche a cui il sito si propon
   
 
 
-= Progettazione e implementazione
 
 
 
