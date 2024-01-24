@@ -50,18 +50,11 @@ Il team ha deciso di mantenere i link sottolineati come da Standart WACG, inoltr
 Il team ha scelto di addottare la pratica ormai quasi universale nel web design di associare al logo un link cliccabile che riporto alla pagina home. Tramite espressioni regolari si è garantita l'eliminazione dei link circolari. 
 === Breadcrumbs
 Abbiamo abbracciato la convenzione di addottare una breadcrumbs per favorire la navigazione, e limitare il sovraccarico cognitivo per l'utente.
-=== Link circolari  
-Per rimuovere i link circolari, ovvero link che portano alla stessa pagina, è stata sviluppata una funzione in php che permette di rimuovere direttamente il tag \<a\> se ci troviamo in quella specifica pagina. 
-=== Template
-Per evitare duplicazione di codice e favorire il riuso di quest'ultimo, il PHP si occupa della costruzione dinamica delle pagine, importando i vari file template HTML e, attraverso gli ancoraggi, se presenti, si va ad aggiungere il contenuto.
-Gli ancoraggi vengono definiti in HTML con le doppie parentesi graffe.
 
-=== Lingua 
+== Pagine
+Si riporta una breve descrizione delle pagine implementate e disponibili alle varie categorie di utenti 
 
-Il sito web rispetta la lingua e cultura italiana, eventuali parole inglesi sono state marcate con il tag _span_ e attributo _lang='en'_.
-
-== Area comune 
-
+=== Area comune 
  - *Home*: pagina principale del sito e la prima visualizzata quando si accede al sito. Incorpora un carosello scorrevole in modo dinamico in cui vengono mostrate varie foto del Festival. Per ogni giornata del festival vengono mostrati gli artisti che si esibiscono con l'orario rispettivo.
  - *Chi siamo*: pagina che descrive brevemente il Festival e contiene i vari ringraziamenti.
  - *Location*: pagina in cui sono presenti le informazioni per raggiungere il Festival.
@@ -71,43 +64,56 @@ Il sito web rispetta la lingua e cultura italiana, eventuali parole inglesi sono
  - *Account*: pagina  per poter effettuare l'accesso.
  - *Privacy Policy*: pagina che contiene le informative riguardo la privacy.
 
-== Area utente privata 
-
- 
+=== Area riservata utente
  - *Registrazione*: pagina che permette all'utente generico di potersi registrare. L'attività di registrazione richiede nome, cognome, età, indirizzo di residenza, email, username e una password.
  - *Account*: una volta effettuato l'accesso si potranno visualizzare i propri dati personali inseriti precedentemente, nella fase di registrazione. Una sezione permette all'utente di modificare indirizzo di residenza, email o password. La visualizzazione delle prevendite acquistate sotto forma tabellare se presenti. Inoltre permette l'accesso alla pagina di eliminazione dell'account.
  - *Eliminazione*: pagina che consente l'eliminazione dell'account dal sito web. È richiesta la password.
  
-== Area Admin 
-
+=== Area Amministrativa
 - *Account*: sempre in questa pagina l'admin può visualizzare gli eventi e gli artisti che si esibiranno. Ha la possibilità di effettuare l'inserimento di eventi o la loro rimozione.
 
 == Struttura gerarchica 
-
 La gerarchia è stata sviluppato principalmente in ampiezza.
-Il menù principale ha come sezioni: Home, Chi Siamo, Location, Merch, Prevendite,Domande, Account per un totale di 7.
-La profondità massima è 2:  nella pagina Account abbiamo Account >> Registrazione e Account >> Eliminazione.
-
-== Struttura 
-
-Ogni pagina è dotata di un Header, un Main e un Footer.
-Nell'header possiamo trovare il logo, il nome del festival, le icone dei social e il menù principale.
-Nel Main le informazioni principali della pagina.
-Nel footer le icone dei social, i diritti di copyright e l'informativa riguardante la privacy. 
-
+Il menù principale ha come sezioni: Home, Chi Siamo, Location, Merch, Prevendite,Domande, Account per un totale di 7 voci.
+La profondità massima è 3: nella pagina Account abbiamo di Registrazione e epr l'eliminazione Account.
 
 == Schema organizzativo 
-
 È stato adottato uno schema esatto per i contenuti ospitati nel sito, garantendo che ogni sezione sia mutualmente esclusiva, con contenuti p distinti e senza sovvrapposizioni. La categorizzazione degli eventi è stata implementata seguendo un ordine cronologico.
+
+=== Lingua 
+Il sito web rispetta la lingua e cultura italiana, eventuali parole inglesi sono state marcate con il tag _span_ e attributo _lang='en'_.
 
 = Realizzazione 
 
-== HTML  
+In questa sezione vengono mostrate le decisione intraprese nel corso dello sviluppo.
 
-Il sito è stato sviluppato seguendo la sintassi di HTML5. 
+==HTML
+Il sito, come da specifiche di progetto, è stato sviluppato seguendo la sintassi di HTML5.
+Il gruppo si è impegnato nell'utilizzare i tag semantici corretti già dai primi momenti dello sviluppo, inoltre il processo di scrittura di codice html è stato sempre accompagnato da relativa validazione. 
 
+Nel corso dello sviluppo abbiamo cercato di mantenere un rapporto di massima separazione tra il contenuto HTML e le componenti di php, competenti della loro unione in quello che sarà il codice HTML finale, quello che sarà poi disponibile all'utente. 
+Nella nostra repository è infatti presente una cartella "html" in cui sono contenute tutte le componenti html necessarie alla visualizzazione del sito.
 
+==Struttura principale
+La struttura di ogni pagina si caratterizza di un header, un main e un footer.
+Nell'header possiamo trovare il logo, il nome del festival, le icone dei social e il menù principale.
+Nel Main il contenuto della pagina.
+Nel footer le icone dei social, i diritti di copyright e l'informativa riguardante la privacy. 
 
+==CSS
+Il design è stato sviluppato inizialmente per il sito nella sua versione Desktop, successivamente è stato rielaborato per l'acceso tramite schermi di dimensioni minori. 
+Il layout finale è responisive: si utilizzano punti di ruttura e all'interno di essi si garantisce fluidità.
+Per garantire una maggiore accessibilità è stata implementata una classe css chiamata accessibleHide: questa classe ci permette di eliminare gli elementi dalla vista mantenendoli però interpretabili dagli screen reader.
+Come da specifiche è stato elaborato un design per la stampa: sono stati rimossi i background e più in generale gli elementi non prettamente contenutistici (tra cui il menù), inoltre, sono stati sistemati i margini a garantire che tutto il contenuto sia effettivamente stampato. 
+Nonostante non sia usuale, per garantire l'accessbilità della tabella relativa agli acquisti delle prevendite a tutti gli utenti si è deciso di renderla scrollabile orizzontalemnte. //anche qui bisogna vedere se rimane effettivamente una buona sceltà
+
+==PHP
+PHP è stato ampiamente utilizzato. Si riportano successivamente le principali funzioni svolte. 
+=== Link circolari  
+Per rimuovere i link circolari, ovvero link che portano alla stessa pagina, è stata sviluppata una funzione in php che permette di rimuovere direttamente il tag \<a\> se ci troviamo in quella specifica pagina. 
+=== Template
+Per evitare duplicazione di codice e favorire il riuso di quest'ultimo, il PHP si occupa della costruzione dinamica delle pagine, importando i vari file template HTML e, attraverso gli ancoraggi, se presenti, si va ad aggiungere il contenuto.
+Gli ancoraggi vengono definiti in HTML con le doppie parentesi graffe.
 
 
 
