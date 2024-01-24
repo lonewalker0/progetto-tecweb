@@ -50,13 +50,9 @@ Il team ha deciso di mantenere i link sottolineati come da Standart WACG, inoltr
 Il team ha scelto di addottare la pratica ormai quasi universale nel web design di associare al logo un link cliccabile che riporto alla pagina home. Tramite espressioni regolari si è garantita l'eliminazione dei link circolari. 
 === Breadcrumbs
 Abbiamo abbracciato la convenzione di addottare una breadcrumbs per favorire la navigazione, e limitare il sovraccarico cognitivo per l'utente.
-
 === Link circolari  
-
 Per rimuovere i link circolari, ovvero link che portano alla stessa pagina, è stata sviluppata una funzione in php che permette di rimuovere direttamente il tag \<a\> se ci troviamo in quella specifica pagina. 
-
-=== Template 
-
+=== Template
 Per evitare duplicazione di codice e favorire il riuso di quest'ultimo, il PHP si occupa della costruzione dinamica delle pagine, importando i vari file template HTML e, attraverso gli ancoraggi, se presenti, si va ad aggiungere il contenuto.
 Gli ancoraggi vengono definiti in HTML con le doppie parentesi graffe.
 
@@ -67,19 +63,19 @@ Il sito web rispetta la lingua e cultura italiana, eventuali parole inglesi sono
 == Area comune 
 
  - *Home*: pagina principale del sito e la prima visualizzata quando si accede al sito. Incorpora un carosello scorrevole in modo dinamico in cui vengono mostrate varie foto del Festival. Per ogni giornata del festival vengono mostrati gli artisti che si esibiscono con l'orario rispettivo.
- - *Chi siamo*: pagina che descrive brevemente la nascita del Festival e i vari ringraziamenti.
- - *Location*: pagina in cui viene mostrata l'ubicazione del Festival.
- - *Merch*: pagina in cui vengono visualizzati e descritti brevemente i vari item che possono essere acquistati in Loco al Festival o nel negozio.
- - *Prevendita*: pagina in cui vengono mostrati i biglietti che si possono acquistare online. Inoltre vengono descritti i vantaggi dell'acquisto di un biglietto categoria VIP, non si possono comprare se non autenticati.
+ - *Chi siamo*: pagina che descrive brevemente il Festival e contiene i vari ringraziamenti.
+ - *Location*: pagina in cui sono presenti le informazioni per raggiungere il Festival.
+ - *Merch*: pagina in cui vengono visualizzati e descritti brevemente gli item  del merch che possono essere acquistati in Loco.
+ - *Prevendita*: pagina in cui vengono mostrati i biglietti che si possono acquistare online. Inoltre vengono descritti i vantaggi dell'acquisto di un biglietto categoria VIP, l'acquisto rimane però bloccato ad utenti non autentificati.
  - *Domande*: pagina in cui vengono mostrate le domande più frequenti e le relative risposte.
- - *Account*: pagina in cui è presente il form per poter effettuare l'accesso.
+ - *Account*: pagina  per poter effettuare l'accesso.
  - *Privacy Policy*: pagina che contiene le informative riguardo la privacy.
 
 == Area utente privata 
 
  
  - *Registrazione*: pagina che permette all'utente generico di potersi registrare. L'attività di registrazione richiede nome, cognome, età, indirizzo di residenza, email, username e una password.
- - *Account*: una volta effettuato l'accesso si potranno visualizzare i propri dati personali inseriti precedentemente, nella fase di registrazione. Una sezione riguardante la possibilità di modificare indirizzo di residenza, email o password. La visualizzazione dei propri acquisti sotto forma tabellare se presenti.
+ - *Account*: una volta effettuato l'accesso si potranno visualizzare i propri dati personali inseriti precedentemente, nella fase di registrazione. Una sezione permette all'utente di modificare indirizzo di residenza, email o password. La visualizzazione delle prevendite acquistate sotto forma tabellare se presenti. Inoltre permette l'accesso alla pagina di eliminazione dell'account.
  - *Eliminazione*: pagina che consente l'eliminazione dell'account dal sito web. È richiesta la password.
  
 == Area Admin 
@@ -88,7 +84,7 @@ Il sito web rispetta la lingua e cultura italiana, eventuali parole inglesi sono
 
 == Struttura gerarchica 
 
-Il sito è stato sviluppato maggiormente in ampiezza.
+La gerarchia è stata sviluppato principalmente in ampiezza.
 Il menù principale ha come sezioni: Home, Chi Siamo, Location, Merch, Prevendite,Domande, Account per un totale di 7.
 La profondità massima è 2:  nella pagina Account abbiamo Account >> Registrazione e Account >> Eliminazione.
 

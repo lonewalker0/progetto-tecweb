@@ -396,20 +396,12 @@
   /*ORDINI ACCOUNT*/
 
   div#oridini .scrollable-table {
-      margin: 0 -15px; /* Optional: Adjust if you want to align with outer content */
-  }
- 
-
-  div#ordini div#dtable{
-    font-size: 1.15rem;
+      margin: 0 -15px;
   }
 
-  div#ordini li{
-    font-size: 1.15rem;
-    margin-left: 1rem;
-    padding: 0.75rem;
+  div#ordini caption{
+    text-align: left;
   }
-
   /*ELIMINA ACCOUNT*/
   div#elimina div#elimina-account{
     padding: 1rem;

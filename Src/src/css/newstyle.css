@@ -1398,6 +1398,7 @@ form#formUpdate input#input-salva
 div#ordini{
   width: 100%;
   margin-bottom: 4rem;
+  margin-top: 6rem;
 }
 
 div#ordini div#dtable{
@@ -1407,7 +1408,10 @@ div#ordini div#dtable{
   padding: 2rem;
   border-radius: 2rem;  
   width:100%;
+  font-size: 1rem;
 }
+
+
 
 div#ordini .scrollable-table {
   overflow-x: auto;
@@ -1421,9 +1425,8 @@ div#ordini .scrollable-table {
 }
 
 div#ordini li{
-  padding: 1rem;
   margin-left: 1rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 div#dtable{
@@ -1552,6 +1555,7 @@ div#errorContainerEliminazione p{
 
 form#logout div#logout-div{
   width: 100%;
+  margin-bottom: 4rem;
 }
 
 form#logout div#logout-div input#input-logout{
