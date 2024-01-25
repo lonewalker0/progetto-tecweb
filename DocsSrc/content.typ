@@ -93,13 +93,14 @@ Il gruppo si è impegnato nell'utilizzare i tag semantici corretti già dai prim
 
 Nel corso dello sviluppo abbiamo cercato di mantenere un rapporto di massima separazione tra il contenuto HTML e le componenti di php, competenti della loro unione in quello che sarà il codice HTML finale, quello che sarà poi disponibile all'utente. 
 Nella nostra repository è infatti presente una cartella "html" in cui sono contenute tutte le componenti html necessarie alla visualizzazione del sito.
+Le pagine "struttura.html","header.html", "footer.html", "menu.html" contengono la struttura portante di tutte le pagine presenti sul sito, sono state usate come template e poi dinamicamente modificate a formare il risultato finale. 
 
 == Struttura principale
 La struttura di ogni pagina si caratterizza di un header, un main e un footer.
 Nell'header possiamo trovare il logo, il nome del festival, le icone dei social e il menù principale.
 Nel Main il contenuto della pagina.
 Nel footer le icone dei social, i diritti di copyright e l'informativa riguardante la privacy. 
-Le pagine "struttura.html","header.html", "footer.html", "menu.html" contengono la struttura portante di tutte le pagine presenti sul sito, sono state usate come template.
+
 
 == Pagine di errore 
 
@@ -109,30 +110,37 @@ Sono state personalizzate le pagine di errore 404, ad esempio se l'utente visita
 Il design è stato sviluppato inizialmente per il sito nella sua versione Desktop, successivamente è stato rielaborato per l'acceso tramite schermi di dimensioni minori. 
 Il layout finale è responisive: si utilizzano punti di ruttura e all'interno di essi si garantisce fluidità.
 Per garantire una maggiore accessibilità è stata implementata una classe css chiamata accessibleHide: questa classe ci permette di eliminare gli elementi dalla vista mantenendoli però interpretabili dagli screen reader.
+Nonostante non sia usuale, per garantire l'accessbilità della tabella relativa agli acquisti delle prevendite a tutti gli utenti si è deciso di renderla scrollabile orizzontalemnte. Questa soluzione non è stata l'unica provata: precedentemente si era provato a cambiare il layout della tabella, il risultato ottenuto però risultava difficilemente comprensibile agli screen reader.
 Come da specifiche è stato elaborato un design per la stampa: sono stati rimossi i background e più in generale gli elementi non prettamente contenutistici (tra cui il menù), inoltre, sono stati sistemati i margini a garantire che tutto il contenuto sia effettivamente stampato. 
-Nonostante non sia usuale, per garantire l'accessbilità della tabella relativa agli acquisti delle prevendite a tutti gli utenti si è deciso di renderla scrollabile orizzontalemnte. //anche qui bisogna vedere se rimane effettivamente una buona sceltà
+ 
 
 == Javascript  
 
-È stato usato javascript per lo sviluppo del carosello dinamico, per il countdown e per il pulsante di scrolltotop nella pagina home,
-per mostrare in modo dinamico il prezzo dei vari biglietti acquistati.
+Il linguaggio Javascript è stato utilizzato per lo sviluppo del carosello dinamico, per il countdown alla giorno di inizio del festival e per il pulsante di "scrolltotop" nella pagina home, per mostrare in modo dinamico il prezzo dei vari biglietti acquistati.
+Inoltre è stato essenziale nel processo di validazione degli imput inseriti da parte dell'utente, ogni form infatti presenta controlli lato client e produce degli errori che tramite la funzione "appendError" vengono mostrati a schermo all'interno di un determinato "div".
+Abbiamo provveduto, per quanto fattibile, a mantenere gli stessi controlli lato client e lato server. 
+Inoltre tutto il sito è stato sviluppato considerando il fatto che sarebbe dovuto rimanere pienamente accessibile e usabile anche nel momento in cui js non fosse disponibile.
+Tutto il codice è stato incorporato all'interno di un unico file in modo tale da limitare le richieste HTTP e per una più agevole manutenzione. Per garantire che tutti gli script aspettassero l'effettivo caricamento del DOM prima di operare è stato fatto ampio uso di event listener legati all'evento DOMContentLoaded. 
+Inoltre per garantire che alcuni script fossero disponibili solo in determinate pagine è stato adottato il costrutto window.location.pathname.indexOf('index.php') > -1 nel codice JavaScript. 
 
 
 == PHP
 PHP è stato ampiamente utilizzato. Si riportano successivamente le principali funzioni svolte. 
+=== Template
+Per evitare duplicazione di codice e favorire il riuso di quest'ultimo, il PHP si occupa della costruzione dinamica delle pagine, importando i vari file template HTML e, attraverso ancoraggi e funzioni di string replace, iniettando il contenuto.
+Gli ancoraggi vengono definiti nei file html HTML con le doppie parentesi graffe.
 === Link circolari  
 Per rimuovere i link circolari, ovvero link che portano alla stessa pagina, è stata sviluppata una funzione in php che permette di rimuovere direttamente il tag \<a\> se ci troviamo in quella specifica pagina. 
-=== Template
-Per evitare duplicazione di codice e favorire il riuso di quest'ultimo, il PHP si occupa della costruzione dinamica delle pagine, importando i vari file template HTML e, attraverso gli ancoraggi, se presenti, si va ad aggiungere il contenuto.
-Gli ancoraggi vengono definiti in HTML con le doppie parentesi graffe.
-
-=== Costruzione pagine 
-
-Per la costruzione dinamica delle pagina si è usata la funzione principale BuildPage che fa un ampio uso di string_replace per svolgere il proprio lavoro.
-
-== Validazione  
+=== Connessione al Database
+La classe DBAccess effettua l'effettivo collegamento al database e costituisce l'oggetto effettivo della connesione, mentre le query vengono effettuate tramite la classe DBoperation: per interfacciarsi al database è stata utilizzata la libreria mysqli.
+=== Form e validazione degli imput
+Ogni form è stato configurato per essere gestito da un file PHP dedicato, utilizzando il metodo POST per la trasmissione sicura dei dati. Sono stati garantiti gli stessi controlli presenti nella validazione lato client, inoltre i messaggi di errore vengono ristampanti nel medesimo contenitore utilizzato da js. 
+Per i form di dimensione maggiore è stata inoltre implementata la funzionalità di ricostruzione dell'imput. 
+=== Variabili di sessione
+La gestione delle sessioni utente è stata interamente delegata al linguaggio php tramite variabili di sessione. Questo approccio produce un cookie di sessione esistente solo ed esclusivamente nel browser dell'utente, motivo per cui nel nostro sito non è presente un form per acconsentire all'uso dei cookie. 
 
 == Database 
+Il database
 
 
 

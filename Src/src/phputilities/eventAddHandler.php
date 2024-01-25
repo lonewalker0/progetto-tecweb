@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $maxFileSize = 1000 * 1024; 
     if ($_FILES['image']['size'] > $maxFileSize) {
-        $errors[] = "L'immagine è troppo grande. Inserisci immagine di dimensione inferiore a 1 MB.";
+        $errors[] = "L'immagine è troppo grande. Inserisci un immagine di dimensione inferiore a 1 MB.";
     }
     if ($_FILES['image']['error'] !== UPLOAD_ERR_OK) {
         $errors[] = "Errore nel caricamento dell'immagine.";
@@ -78,12 +78,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: ../account.php"); 
                 die();
             } else {
-                // Display an error message or redirect to an error page
-                echo "Error adding event. Please try again.";
+                
+                echo "Errore nel aggiunta dell'evento, riprovare.";
             }
         } else {
-            // Display an error message for file upload failure
-            echo "Error uploading file. Please try again.";
+            
+            echo "Errore nel aggiunta del file, riprovare.";
         }
         
     }
