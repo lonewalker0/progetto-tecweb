@@ -47,7 +47,6 @@
 body {
   background-color: var(--verde-scuro);
   color: var(--verde-lime);
-  max-width: 1920px;
   background-size: cover; 
   height: 100%;
   min-height: 100vh;
@@ -274,7 +273,6 @@ header {
 }
 .fixed-menu {
   position: fixed;  
-  max-width: 1792px;
   z-index: 100; 
   
 }
@@ -459,6 +457,7 @@ div#footer-content {
 #foto5 {
   
   width: 100%;
+  max-width: 1792px;
   /* Impedisce alle immagini di superare la loro dimensione naturale */
   padding-top: 40%;
   background-position: center;
@@ -533,7 +532,7 @@ div#footer-content {
 
 /*BOTTONE TORNA SU PAGINA HOME*/
 #scrollToTopBtn {
-  position: fixed; 
+  position: fixed;
   bottom: 2em;
   left: 50%;
   transform: translateX(-50%);
@@ -729,14 +728,13 @@ div#footer-content {
 #location-contenuto {
   padding: 2rem;
   display: flex;
-  border: 1px solid var(--verde-lime);
+  border: 1px solid white;
   flex-direction: column; /* Modifica qui, impostando la direzione della colonna */
   gap: 2rem;
   align-items: center;
   background-color: var(--verde-scuro);;
   color: var(--verde-lime);
   border-radius: 1rem;
-  max-width: 1792px;
   overflow: hidden;
   height: auto;
   width: 100%;
@@ -1118,7 +1116,7 @@ fieldset#login-fieldset
 {
   margin: 1rem 0 1rem 0;
   border-radius: 2rem;
-  border: 2px solid var(--verde-lime);
+  border: 2px solid white;
   background-color: rgba(24, 31, 8, 0.85);
 }
 fieldset#login-fieldset legend
@@ -1147,7 +1145,7 @@ fieldset#login-fieldset div#login-password input#password{
   text-align: left;
   font-size: 1rem;
   color: var(--verde-lime);
-  border: 1px solid var(--verde-lime);
+  border: 1px solid white;
   background-color: var(--verde-scurino);
 }
 
@@ -1190,7 +1188,7 @@ fieldset#register-fieldset2{
   display:grid;
   margin: 1rem 0;
   border-radius: 2rem;
-  border: 2px solid var(--verde-lime);
+  border: 2px solid white;
   background-color: rgba(24, 31, 8, 0.85);
   padding: 1rem;
 }
@@ -1295,7 +1293,7 @@ div#informazioni{
 div#informazioni dl{
   display:flex;
   flex-direction: column;
-  border: 1px solid var(--verde-lime);
+  border: 1px solid white;
   background-color: rgba(24, 31, 8, 0.85);
   box-shadow: 0 0 10px var(--verde-lime);
   border-radius: 2rem;
@@ -1311,7 +1309,6 @@ div#informazioni dd{
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 8px;
-  /*border: 1px solid var(--alt-visited-link);*/
   border-radius: 2rem;
   width: 15%;
   text-align: center;
@@ -1324,7 +1321,7 @@ fieldset#modifica-account
   width: 100%;
   margin-bottom: 1rem;
   border-radius: 2rem;
-  border: 1px solid var(--verde-lime);
+  border: 1px solid white;
   background-color: rgba(24, 31, 8, 0.85);
   box-shadow: 0 0 10px var(--verde-lime);
   padding: 1rem;
@@ -1382,7 +1379,7 @@ div#ordini{
 }
 
 div#ordini div#dtable{
-  border: 1px solid var(--verde-lime);
+  border: 1px solid white;
   background-color: rgba(24, 31, 8, 0.85);
   box-shadow: 0 0 10px var(--verde-lime);
   padding: 2rem;
@@ -1397,7 +1394,7 @@ div#ordini .scrollable-table {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   box-shadow: 0 0 10px var(--verde-lime);
-  border: 1px solid var(--verde-lime);
+  border: 1px solid white;
   border-radius: 2rem;
   background-color: var(--verde-scuro);
   margin-top: 2rem;
@@ -1457,7 +1454,7 @@ div#elimina{
 div#elimina div#elimina-account{
   width: 100%;
   text-align:left;
-  border: 1px solid var(--verde-lime);
+  border: 1px solid white;
   background-color: var(--verde-scuro);
   box-shadow: 0 0 10px var(--verde-lime);
   border-radius: 2rem;
@@ -1551,7 +1548,7 @@ form#logout div#logout-div input#input-logout{
 #addEventForm {
   margin: 1rem 0;
   border-radius: 2rem;
-  border: 2px solid var(--verde-lime);
+  border: 2px solid white;
   background-color: rgba(24, 31, 8, 0.85);
   padding: 1rem;
   color: var(--verde-lime); 
