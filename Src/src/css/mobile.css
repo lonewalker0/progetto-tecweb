@@ -395,12 +395,42 @@
 
   /*ORDINI ACCOUNT*/
 
-  div#oridini .scrollable-table {
-      margin: 0 -15px;
+
+  div#ordini table#tabellaordini tbody tr td{
+    padding: 0.5rem;
+    font-size: 1rem;
   }
 
-  div#ordini caption{
-    text-align: left;
+  table#tabellaordini caption {
+    width: 100%;
+  }
+
+  table#tabellaordini thead tr {
+    display: none; 
+  }
+
+  table#tabellaordini tr { 
+    margin-bottom: 0.5rem; 
+  }
+
+  table#tabellaordini td {
+    white-space: normal;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    text-align: center;
+    gap: 2rem;
+    margin-bottom: 1rem; 
+  }
+  
+  table#tabellaordini td:before {
+    width: 50px;
+    text-align:left;
+    content: attr(data-title);
+    color: white;  
+  }
+
+  table#tabellaordini tr td:first-child{
+    border-top: 2px solid white;
   }
   /*ELIMINA ACCOUNT*/
   div#elimina div#elimina-account{

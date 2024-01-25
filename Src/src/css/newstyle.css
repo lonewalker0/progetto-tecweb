@@ -1406,19 +1406,6 @@ div#ordini div#dtable{
   font-size: 1rem;
 }
 
-
-
-div#ordini .scrollable-table {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  box-shadow: 0 0 10px var(--verde-lime);
-  border: 1px solid white;
-  border-radius: 2rem;
-  background-color: var(--verde-scuro);
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
 div#ordini li{
   margin-left: 1rem;
   font-size: 1rem;
@@ -1429,8 +1416,13 @@ div#dtable{
 }
 
 table#tabellaordini{
-  width: 100%;  
-  text-align: center; 
+  width: 100%;
+  border: 1px solid white;
+  box-shadow: 0 0 10px var(--verde-lime);
+  background-color: var(--verde-scuro);
+  border-radius: 2rem;
+  text-align: center;
+  padding: 2rem;
 }
 
 div#ordini table#tabellaordini caption{
@@ -1462,6 +1454,7 @@ div#ordini table#tabellaordini tbody tr:nth-child(odd) {
 div#ordini table#tabellaordini tbody tr:nth-child(even) {
   background-color: var(--verde-scuro); 
 }
+
 
 /*ELIMINA ACCOUNT*/
 div#elimina{
