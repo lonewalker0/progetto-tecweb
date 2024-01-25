@@ -48,8 +48,9 @@ body {
   background-color: var(--verde-scuro);
   color: var(--verde-lime);
   max-width: 1920px;
-  background-size: cover;
+  background-size: cover; 
   height: 100%;
+  min-height: 100vh;
   display:flex;
   flex-direction: column;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -1091,8 +1092,8 @@ input[type="button"]:focus {
 }
 
 main {
- /* background-color: var(--light-bg-color);*/
   margin: 0rem 4rem 0rem 4rem;
+  flex: 1; 
 }
 
 /*PRIVACY POLICY*/
