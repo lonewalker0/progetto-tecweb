@@ -390,6 +390,27 @@ div#footer-content {
 }
 /* Main */
 
+div.programma-animation,
+div.programma-animation2 {
+  margin-top: 10px;
+  background-color: var(--verde-lime);
+  transition: all 1s ease-in-out;
+  position: absolute;
+  width: 0;
+  height: 2px;
+}
+div.programma-animation {
+  left: 50%;
+}
+div.programma-animation2 {
+  right: 50%;
+}
+div.programma-animation.active,
+div.programma-animation2.active {
+  
+  width:48%;
+}
+
 #navEventi {
   text-align: center;
   margin: 2rem 0 2rem 0;
