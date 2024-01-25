@@ -212,7 +212,6 @@ header {
   width: 1px;
   height: 1px;
   overflow: hidden;
-  /*clip-path: rect(0, 0, 0, 0);*/
   white-space: nowrap;
   border: 0;
   margin: -1px;
@@ -470,16 +469,14 @@ div.programma-animation2.active {
   margin-top: 1em;
   
 }
+
 #foto0,
 #foto1,
 #foto2,
-#foto3,
-#foto4,
-#foto5 {
-  
+#foto3
+{
   width: 100%;
   max-width: 1792px;
-  /* Impedisce alle immagini di superare la loro dimensione naturale */
   padding-top: 40%;
   background-position: center;
   background-size: contain;
@@ -502,7 +499,7 @@ div.programma-animation2.active {
 }
 
 #foto3 {
-  background-image: url("../assets/logo.png");
+  background-image: url("../assets/newlogo.png");
 }
 
 .foto-hide {
