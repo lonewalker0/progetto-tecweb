@@ -21,9 +21,7 @@ class IndexMainBuilder
         
         $this->mainHTML =  file_get_contents(__DIR__ . '/../html/carosello.html');
         $this->mainHTML .='<div id="programma-menu">';
-        $this->mainHTML .= '<h1>Programma del Festival</h1>';
-        $this->mainHTML .= '<div class="programma-animation"></div><div class="programma-animation2"></div>';
-        
+        $this->mainHTML .= '<h1>Programma del Festival</h1>'; 
         $dates = ['2024-07-05', '2024-07-06', '2024-07-07']; //date in programma
 
         $this->mainHTML .=  file_get_contents(__DIR__ . '/../html/navEventi.html');

@@ -394,7 +394,7 @@ div#footer-content {
 
 #navEventi {
   text-align: center;
-  margin: 4rem 0 2rem 0;
+  margin: 2rem 0 2rem 0;
 }
 
 #navEventi li,
@@ -427,28 +427,6 @@ div#footer-content {
   margin: 1rem;
   margin-left: 3rem;
   box-shadow: 0 0 10px rgba(37, 53, 25, 1);
-}
-
-div.programma-animation,
-div.programma-animation2 {
-  margin-top: 10px;
-  background-color: var(--verde-lime);
-  transition: all 1s ease-in-out;
-  position: absolute;
-  width: 0;
-  height: 2px;
-  max-width: 1792px;
-}
-div.programma-animation {
-  left: 50%;
-}
-div.programma-animation2 {
-  right: 50%;
-}
-div.programma-animation.active,
-div.programma-animation2.active {
-  
-  width:48%;
 }
 
 .entry-info {
@@ -555,7 +533,7 @@ div.programma-animation2.active {
 
 /*BOTTONE TORNA SU PAGINA HOME*/
 #scrollToTopBtn {
-  position: fixed;
+  position: fixed; 
   bottom: 2em;
   left: 50%;
   transform: translateX(-50%);
