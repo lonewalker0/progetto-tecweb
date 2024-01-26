@@ -133,30 +133,31 @@ Gli ancoraggi vengono definiti nei file html HTML con le doppie parentesi graffe
 Per rimuovere i link circolari, ovvero link che portano alla stessa pagina, è stata sviluppata una funzione in php che permette di rimuovere direttamente il tag \<a\> se ci troviamo in quella specifica pagina. 
 === Connessione al Database
 La classe DBAccess effettua l'effettivo collegamento al database e costituisce l'oggetto effettivo della connesione, mentre le query vengono effettuate tramite la classe DBoperation: per interfacciarsi al database è stata utilizzata la libreria mysqli.
-=== Form e validazione degli imput
+=== Form e validazione degli input
 Ogni form è stato configurato per essere gestito da un file PHP dedicato, utilizzando il metodo POST per la trasmissione sicura dei dati. Sono stati garantiti gli stessi controlli presenti nella validazione lato client, inoltre i messaggi di errore vengono ristampanti nel medesimo contenitore utilizzato da js. 
-Per i form di dimensione maggiore è stata inoltre implementata la funzionalità di ricostruzione dell'imput. 
+Per i form di dimensione maggiore è stata inoltre implementata la funzionalità di ricostruzione dell'input. 
 === Variabili di sessione
 La gestione delle sessioni utente è stata interamente delegata al linguaggio php tramite variabili di sessione. Questo approccio produce un cookie di sessione esistente solo ed esclusivamente nel browser dell'utente, motivo per cui nel nostro sito non è presente un form per acconsentire all'uso dei cookie. 
+Per la pagina account, è risultato molto utile salvare l'username su una variabile di sessione, per gestire in modo efficace l'accesso e le interazioni dell'utente.
 
-== Database 
-Il database
+=== Sicurezza 
 
+ - Nel database le password non sono state salvate in modo chiaro su testo, bensì è stato utilizzato l'algoritmo di hashing di default di php usando la funzione PASSWORD_DEFAULT;
+ - Per prevenire attacchi di tipo XSS Cross-Site_scripting e Javascript Injection è stata sviluppata una funzione con le espressioni regolari che mi avvisa con un errore, in caso mettessi tag html all'interno degli input form;
+ - Sono state realizzate query parametriche per prevenire attacchi di tipo SQL Injection.
 
+== Database  
 
+Come Database si è deciso di usare MYSql, classico database di tipo relazionale. Disponiamo di 5 tabelle:
+ - Tabella _users_ in cui vengono elencati tutti gli utenti registrati al sito, con relative informazioni anagrafiche;
+ - Tabella _Programma_ in cui si memorizzano gli artisti e l'orario in cui si esibiranno, correddati da una foto;
+ - Tabella _Biglietti_ in cui si salvano le varie tipologie di Biglietti che è possibile acquistare;
+ - Tabella _Ordini_ per registrare tutti gli ordini effettuati dagli utenti;
+ - Tabella _Shop_ per salvare gli articoli, che è possibile acquistare al Festival. 
 
+ Nelle tabelle Shop e Programma, per gestire le immagini, si è salvato il path della locazione delle foto.
 
-
-
-
-
- 
-
-
-
-
-
-
+ Tutte le foto hanno una dimensione inferiore al MB, e sono stati sviluppati i relativi controlli, lato php e js, per evitare il carimento di immagini più pesanti.
 
 
 
@@ -179,8 +180,66 @@ Vengono di seguito elencate, per importanza, le ricerche a cui il sito si propon
   + Parole generiche quali Festival, Padova, Evento etc.;
   + Nomi degli artisti presenti al Festival.
 
+= Test 
+
+== Validazione sito 
+
+Per validare il codice HTML5 del sito è stato usato come strumento #link("https://validator.w3.org/") e Total Validator Basic presente nei Pc del paolotti.
+
+Per validare il codice CSS è invece stato usato #link("https://jigsaw.w3.org/css-validator/")
+
+== Browser web 
+
+Sono stati testati i seguenti browser:
+
+  - Google Chrome;
+  - Mozilla Firefox;
+  - Microsoft Edge;
+  - Opera;
+  - Brave;
+  - Safari (testato 1 volta, nessuno dei componenti usava Apple quindi è risultato più difficile)
+
+  Per testare il sito su dispositivi mobili, si sono usati gli strumenti per sviluppatori sia di Google Chrome che di Mozilla.
+
+= Accessibilità  
+
+Il sito ha adottato come standard il WCAG AA, questo per rendere il sito accessibile anche per i diversamenti abili.
+
+Come strumenti si sono utilizzati:
+ - Total Validator presente nei pc di laboratori del Paolotti;
+ - Wave, un estensione per Google Chrome;
+ - Gli strumenti di accessibilità di Mozilla Firefox;
+ - Lo screen Reader NVDA su Windows e per ambienti Linux il sistema _orca_.
+
+== Tabindex 
+
+Per ogni link si è usato il tabindex nell'ordine naturale.
+È presente un pulsante per saltare direttamente alla navigazione e un pulsante per tornare su sviluppato per la pagina _Home_.
+
+== Colori 
+
+I colori usati nel sito sono accessibili, in quanto hanno un buon livello di contrasto.
+
+== Tabella 
+
+La tabella degli ordini nella Pagina Account è stata resa ampiamenti accessibili, adottando i criteri standard.
+
+= Installazione Progetto 
+
+Norme riguardanti l'attività di installazione del progetto sul server:
+  + Nel file DBAccess si devono cambiare le credenziali di accesso al database;
+  + Si copia la cartella src, all'interno della cartella public_html del server di tecweb;
+  + Su phpmyadmin si importa il file init.sql presente nella cartella sql;
+  + Per la gestione degli errori personalizzata bisogna modificare il file .htaccess impostando il percorso assoluto della pagina:
+     ErrorDocument [errore] #link("http://tecweb.studenti.math.unipd.it/errore[errrore].php")
+  
+  in cui [errore] va sostituito con 404 e 500.
+
+
 
 = Suddivisione lavoro
+
+= Conclusioni
 
 
 
