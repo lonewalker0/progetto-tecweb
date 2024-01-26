@@ -756,3 +756,12 @@ form#formeliminaaccount input[type="submit"] {
   background-color: white;
   color: black;
 }
+.event-elimination input[type="submit"]{
+  display: none;
+}
+.programma-admin{
+  page-break-inside: avoid;
+}
+.section-admin h2{
+  page-break-before: always;
+}
