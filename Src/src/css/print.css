@@ -417,6 +417,7 @@ h2.titolo-item-merch{
   padding: 1rem;
   border: solid;
   border-color: black;
+  background-color: white;
 }
 
 .ticket-entry dl {
