@@ -13,6 +13,7 @@ body {
   padding: 0.3em 0em 0.5em;
 }
 
+
 a:link {
   color: black;
 }
@@ -400,6 +401,10 @@ div.product-container div.entry-info{
   text-align: center;
   max-width: 100%;
 }
+h2.titolo-item-merch{
+  color:black;
+  background-color: white;
+}
 
 /* Pagina Prevendite */
 
@@ -413,6 +418,7 @@ div.product-container div.entry-info{
   padding: 1rem;
   border: solid;
   border-color: black;
+  background-color: white;
 }
 
 .ticket-entry dl {
@@ -450,6 +456,7 @@ div.product-container div.entry-info{
 
 #faq-container {
   padding: 1rem;
+  
 }
 
 #faq-container h2 {
@@ -458,13 +465,16 @@ div.product-container div.entry-info{
 }
 
 .faq-box-container{
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  
 }
 
 .faq-item {
   margin: 0 0 1rem 0;
   background-color: white;
   color: black;
+  page-break-inside: avoid;
+  text-align: justify;
 }
 
 .question {
@@ -531,6 +541,12 @@ fieldset#login-fieldset div#login-password input#password
   border: solid;
   border-color: black;
   background-color: white;
+  
+  
+}
+fieldset#login-fieldset div#login-username input#username::placeholder,
+fieldset#login-fieldset div#login-password input#password::placeholder {
+  color: black;
 }
 fieldset#login-fieldset div label
 {
@@ -712,3 +728,40 @@ form#formeliminaaccount input[type="submit"] {
   display: none;
 }
 
+/*admin*/
+#addEventForm,
+#formAggiuntaEvento input,
+#formAggiuntaEvento textarea{
+  color:black;
+  background-color: white;
+  
+}
+
+#formAggiuntaEvento ::placeholder {
+  color: black;
+}
+#formAggiuntaEvento input[type="submit"]{
+  display:none;
+}
+
+#addEventForm input[type="text"],
+#addEventForm input[type="date"],
+#addEventForm input[type="time"],
+#addEventForm input[type="file"],
+#addEventForm textarea {
+  
+  
+  border-radius: 0;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
+.event-elimination input[type="submit"]{
+  display: none;
+}
+.programma-admin{
+  page-break-inside: avoid;
+}
+.section-admin h2{
+  page-break-before: always;
+}
