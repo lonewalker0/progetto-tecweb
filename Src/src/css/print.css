@@ -607,20 +607,24 @@ div#informazioni {
 }
 
 div#informazioni dl {
-  margin-top: 2rem;
+  margin-top: 1rem;
   box-shadow: unset;
   background-color: white;
+  align-items: flex-start;
+  
 }
 
 div#informazioni dt {
   font-weight: bold;
   color: black;
+  text-align: left;
 }
 
 div#informazioni dd {
-  margin: 0 0 1rem;
+  margin: 0;
   width: 30%;
   color: black;
+  text-align: left;
 }
 
 /* Modifica account */
@@ -641,11 +645,17 @@ fieldset#modifica-account input
   border-color: black;
   background-color: white;
 }
+#formUpdate input::placeholder {
+  color: black;
+}
 
 form#formUpdate input#input-salva {
   display: none;
 }
 
+.section{
+  page-break-inside: avoid;
+}
 /* Ordini Account */
 
 div#ordini{
@@ -674,7 +684,13 @@ div#ordini li{
 table#tabellaordini{
   width: 100%;  
   text-align: center; 
+  border-radius: 0;
+  box-shadow: 0;
+  border: none !important;
+  
 }
+
+
 
 div#ordini table#tabellaordini caption{
   font-size: 2rem;
