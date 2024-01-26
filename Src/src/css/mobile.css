@@ -90,11 +90,17 @@
   }
 
   .menu {
-    display: none;
+    position: absolute;
+    left: -9999px;
     background-color: var(--verde-scurino); 
     margin-top: 1rem;
     padding: 20px;
   }
+
+  .menu:focus-within {
+    position: relative;
+    left: 0;
+}
   
   .menu ul {
     padding: 0;
@@ -121,8 +127,8 @@
 }
   /*in questo modo la classe non fa niente se applicata in dispositivi più piccoli*/
   .fixed-menu {
-    position: relative;
-    
+    position: absolute;
+    left: -9999px;
   }
   /*e questo per non appliare effettivamente la cosa dello scroll che in non */
   .fixed-menu + * {
@@ -142,7 +148,8 @@
 
 
   .menu-checkbox:checked ~ .menu {
-    display: block;
+    position: relative;
+    left: 0;
   }
 
   /*CAROSELLO*/
