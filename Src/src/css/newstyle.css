@@ -1428,7 +1428,7 @@ div#ordini li{
 }
 
 div#dtable{
-  font-size: 1.25rem;;
+  font-size: 1rem;
 }
 
 table#tabellaordini{
@@ -1439,7 +1439,7 @@ table#tabellaordini{
   border-radius: 2rem;
   text-align: center;
   padding: 2rem;
-  font-size: 1.25rem;;
+  font-size: 1rem;
 }
 
 div#ordini table#tabellaordini caption{

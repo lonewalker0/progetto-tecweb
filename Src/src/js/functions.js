@@ -127,49 +127,32 @@ document.addEventListener("DOMContentLoaded", function () {
     var scrollToTopBtn = document.getElementById("scrollToTopBtn");
     var navEventi = document.getElementById("navEventi");
 
-    var timeout;
-
-    function hideScrollToTopBtn() {
-      // Nascondi il pulsante dopo 2 secondi di inattività
-      scrollToTopBtn.classList.add("hide");
-      scrollToTopBtn.classList.remove("show");
-    }
     
 
     window.addEventListener("scroll", function () {
-      clearTimeout(timeout);
-
       if (window.scrollY > 1250) {
         // Aggiungi la classe 'show' e rimuovi la classe 'hide'
         scrollToTopBtn.classList.add("show");
         scrollToTopBtn.classList.remove("hide");
+        scrollToTopBtn.setAttribute("tabindex", "0");
+        // Rendi il pulsante visibile per gli screen reader
+        scrollToTopBtn.setAttribute("aria-hidden", "false");
       } else {
         // Aggiungi la classe 'hide' e rimuovi la classe 'show'
         scrollToTopBtn.classList.add("hide");
         scrollToTopBtn.classList.remove("show");
+        scrollToTopBtn.setAttribute("tabindex", "-1");
+        // Rendi il pulsante invisibile per gli screen reader
+        scrollToTopBtn.setAttribute("aria-hidden", "true");
       }
-
-      timeout = setTimeout(hideScrollToTopBtn, 2000); // Puoi regolare il periodo di inattività a tuo piacimento
     });
 
     scrollToTopBtn.addEventListener("click", function () {
       // Scorrimento graduale al navEventi
       var navEventiPosition = navEventi.offsetTop;
       window.scrollTo({ top: navEventiPosition - 150, behavior: "smooth" });
-
-      // Annulla il timeout quando il pulsante viene cliccato
-      clearTimeout(timeout);
     });
 
-    scrollToTopBtn.addEventListener("mouseenter", function () {
-      // Annulla il timeout quando il mouse entra nel pulsante
-      clearTimeout(timeout);
-    });
-
-    scrollToTopBtn.addEventListener("mouseleave", function () {
-      // Riavvia il timeout quando il mouse esce dal pulsante
-      timeout = setTimeout(hideScrollToTopBtn, 3000); // Puoi regolare il periodo di inattività a tuo piacimento
-    });
   }
 });
 
