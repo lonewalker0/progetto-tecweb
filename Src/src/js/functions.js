@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 
     window.addEventListener("scroll", function () {
-      if (window.scrollY > 1250) {
+      if (window.scrollY > 600) {
         // Aggiungi la classe 'show' e rimuovi la classe 'hide'
         scrollToTopBtn.classList.add("show");
         scrollToTopBtn.classList.remove("hide");

@@ -617,6 +617,12 @@ div.programma-animation2.active {
   background: url('../assets/arrow/arrowsu.png') center center no-repeat;
   background-size: 50%;
 }
+#scrollToTopBtn:focus {
+  outline: 2px solid white;
+  opacity:1;
+}
+
+
 
 /* Sponsor */
 
@@ -1438,7 +1444,7 @@ table#tabellaordini{
   background-color: var(--verde-scuro);
   border-radius: 2rem;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   font-size: 1rem;
 }
 
@@ -1448,8 +1454,9 @@ div#ordini table#tabellaordini caption{
 }
 
 div#ordini table#tabellaordini thead tr th{
-  padding: 1.5rem;
-  font-size: 1.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 div#ordini #tabellaordini thead th {
@@ -1460,7 +1467,7 @@ div#ordini #tabellaordini thead th {
 div#ordini table#tabellaordini tbody tr td
 {
   padding: 2rem;
-  font-size: 1.25rem;
+  font-size: 1rem;
   border-bottom: 1px solid #ccc;
 }
 
