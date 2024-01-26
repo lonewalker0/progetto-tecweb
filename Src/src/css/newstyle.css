@@ -279,6 +279,22 @@ header {
   padding-top: 3rem;
 }
 
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+
+}
+#menuToggle {
+  display: none;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: var(--verde-lime);
+  margin: 5px 0;
+}
+
 .menu ul {
   list-style: none;
   padding: 0;
@@ -1423,6 +1439,7 @@ table#tabellaordini{
   border-radius: 2rem;
   text-align: center;
   padding: 2rem;
+  font-size: 1.25rem;;
 }
 
 div#ordini table#tabellaordini caption{
