@@ -12,6 +12,18 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+document.addEventListener("DOMContentLoaded", function() {
+  var label = document.getElementById("menuToggleLabel");
+  var checkbox = document.getElementById("menuToggle");
+  if(label && checkbox){
+  label.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      checkbox.checked = !checkbox.checked;}
+  });}
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
   var form = document.getElementById("formAggiuntaEvento");
   if (form) {
@@ -122,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
       scrollToTopBtn.classList.add("hide");
       scrollToTopBtn.classList.remove("show");
     }
+    
 
     window.addEventListener("scroll", function () {
       clearTimeout(timeout);
