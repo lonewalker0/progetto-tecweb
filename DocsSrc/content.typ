@@ -161,27 +161,6 @@ Come Database si è deciso di usare MYSql, classico database di tipo relazionale
 
 
 
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
 = SEO  
 Vengono elencate le considerazioni che io team ha adottato per favorire un buon indice di posizionamento all'interno dei motori di ricerca:
 
@@ -223,6 +202,38 @@ Sono stati testati i seguenti browser:
   Per testare il sito su dispositivi mobili, si sono usati gli strumenti per sviluppatori sia di Google Chrome che di Mozilla.
 
 = Accessibilità  
+
+Il sito ha adottato come standard il WCAG AA, questo per rendere il sito accessibile anche per i diversamenti abili.
+
+Come strumenti si sono utilizzati:
+ - Total Validator presente nei pc di laboratori del Paolotti;
+ - Wave, un estensione per Google Chrome;
+ - Gli strumenti di accessibilità di Mozilla Firefox;
+ - Lo screen Reader NVDA su Windows e per ambienti Linux il sistema _orca_.
+
+== Tabindex 
+
+Per ogni link si è usato il tabindex nell'ordine naturale.
+È presente un pulsante per saltare direttamente alla navigazione e un pulsante per tornare su sviluppato per la pagina _Home_.
+
+== Colori 
+
+I colori usati nel sito sono accessibili, in quanto hanno un buon livello di contrasto.
+
+== Tabella 
+
+La tabella degli ordini nella Pagina Account è stata resa ampiamenti accessibili, adottando i criteri standard.
+
+= Installazione Progetto 
+
+Norme riguardanti l'attività di installazione del progetto sul server:
+  + Nel file DBAccess si devono cambiare le credenziali di accesso al database;
+  + Si copia la cartella src, all'interno della cartella public_html del server di tecweb;
+  + Su phpmyadmin si importa il file init.sql presente nella cartella sql;
+  + Per la gestione degli errori personalizzata bisogna modificare il file .htaccess impostando il percorso assoluto della pagina:
+     ErrorDocument [errore] #link("http://tecweb.studenti.math.unipd.it/errore[errrore].php")
+  
+  in cui [errore] va sostituito con 404 e 500.
 
 
 
