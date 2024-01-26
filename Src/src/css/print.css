@@ -540,6 +540,12 @@ fieldset#login-fieldset div#login-password input#password
   border: solid;
   border-color: black;
   background-color: white;
+  
+  
+}
+fieldset#login-fieldset div#login-username input#username::placeholder,
+fieldset#login-fieldset div#login-password input#password::placeholder {
+  color: black;
 }
 fieldset#login-fieldset div label
 {
