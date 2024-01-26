@@ -134,16 +134,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // Aggiungi la classe 'show' e rimuovi la classe 'hide'
         scrollToTopBtn.classList.add("show");
         scrollToTopBtn.classList.remove("hide");
-        scrollToTopBtn.setAttribute("tabindex", "0");
-        // Rendi il pulsante visibile per gli screen reader
-        scrollToTopBtn.setAttribute("aria-hidden", "false");
+        
       } else {
         // Aggiungi la classe 'hide' e rimuovi la classe 'show'
         scrollToTopBtn.classList.add("hide");
         scrollToTopBtn.classList.remove("show");
-        scrollToTopBtn.setAttribute("tabindex", "-1");
-        // Rendi il pulsante invisibile per gli screen reader
-        scrollToTopBtn.setAttribute("aria-hidden", "true");
+        
       }
     });
 

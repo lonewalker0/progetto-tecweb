@@ -1455,7 +1455,7 @@ div#ordini table#tabellaordini caption{
 
 div#ordini table#tabellaordini thead tr th{
   padding: 1rem;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 
@@ -1466,8 +1466,8 @@ div#ordini #tabellaordini thead th {
 
 div#ordini table#tabellaordini tbody tr td
 {
-  padding: 2rem;
-  font-size: 1rem;
+  padding: 1rem;
+  font-size: 1.25rem;
   border-bottom: 1px solid #ccc;
 }
 
