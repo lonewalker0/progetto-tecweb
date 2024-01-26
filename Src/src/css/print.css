@@ -455,6 +455,7 @@ h2.titolo-item-merch{
 
 #faq-container {
   padding: 1rem;
+  
 }
 
 #faq-container h2 {
@@ -463,13 +464,16 @@ h2.titolo-item-merch{
 }
 
 .faq-box-container{
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  
 }
 
 .faq-item {
   margin: 0 0 1rem 0;
   background-color: white;
   color: black;
+  page-break-inside: avoid;
+  text-align: justify;
 }
 
 .question {
