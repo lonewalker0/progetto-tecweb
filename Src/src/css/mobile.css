@@ -132,26 +132,31 @@
 
   .menu-toggle {
     position: absolute;
-    top: 40px; /* Adjust the distance from the top as needed */
+    top: 125px; /* Adjust the distance from the top as needed */
     right: 60px; /* Adjust the distance from the right as needed */
     display: block;
-    background-color: var(--verde-scuro) ;
+    z-index: 999;
+    background-color: var(--verde-scuro);
     border: 4px solid var(--verde-scuro);
     cursor: pointer;
+    border-radius: 1rem;
     overflow: hidden;
-    font-size: 0.8rem;
+    font-size: 0rem;
   }
+  
+  .hamburger-icon {
+    display: inline-block;
+    width: 30px; /* Adjust the size as needed */
+    height: 30px; /* Adjust the height as needed */
+    background-image: url('../assets/hamburger.png'); /* Replace 'path/to/your/image.png' with the path to your image */
+    background-size: cover; /* Adjust as needed */
+    background-position: center; /* Adjust as needed */
+}
 
-  #menuToggle {
-    position: relative;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    white-space: nowrap;
-    border: 0;
-    margin: -1px;
-    padding: 0;
-  }
+
+
+
+
   
 
 
