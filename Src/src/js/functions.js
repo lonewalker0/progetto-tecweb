@@ -41,9 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   var menu = document.querySelector('.menu');
   var originalMenuPosition = menu.offsetTop; 
-
   window.addEventListener('scroll', function() {
-    if(this.screen.width > 770)
     {
       if (window.scrollY >= originalMenuPosition) { 
         menu.classList.add('fixed-menu');
@@ -52,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   });
+
 });
 
 
