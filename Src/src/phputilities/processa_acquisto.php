@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $success = $dboperation->addOrder($username, $productId, $purchaseDate, $quantity,$prezzo_totale);
 
             if ($success) {
-                $_SESSION['purchase_result'] = "<p>Acquisto avvenuto con successo! :)</p>";
+                $_SESSION['purchase_result'] = "<p>Acquisto avvenuto con successo!</p>";
                 header("Location: ../prevendite.php"); 
                 die();
             } else {
