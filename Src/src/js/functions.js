@@ -588,13 +588,12 @@ function validazioneFormRegistrazione() {
   if (!isValidEmail(email)) {
     isValid = false;
     document.getElementById("email").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "formato email non valido!");
+    appendError(errorContainer, "Formato email non valido!");
   } else {
     document.getElementById("email").setAttribute("aria-invalid", "false");
   }
   if (password !== confermapassword) {
     isValid = false;
-    //document.getElementById('passwordError').innerHTML = "Le password non coincidono!";
     appendError(errorContainer, "Le password non coincidono!");
   }
   if(!isValid)
@@ -640,7 +639,7 @@ function validazioneFormUpdate() {
     if (!isValidEmail(email)) {
       isValid = false;
       document.getElementById("email").setAttribute("aria-invalid", "true");
-      appendError(errorContainer, "Campo email non accetta codice HTML!");
+      appendError(errorContainer, "Formato email non valido!");
     }else {
       document.getElementById("email").setAttribute("aria-invalid", "false");
     }
