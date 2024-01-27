@@ -2,7 +2,7 @@
 include('phputilities/PageBuilder.php');
 session_start(); 
 
-$breadcrumb = '<a href="account.php">Account</a>&nbsp &gt&gt Elimina';
+$breadcrumb = '<a href="account.php">Account</a> /  Elimina';
 $breadcrumblen = 'it'; 
 $title = 'Elimina Account | TechnoLum250';
 $keyword = 'Padova, Festival, evento, Techno, Lum250, TechnoLum250 Account, Eliminazione;'; 

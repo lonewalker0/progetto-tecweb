@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 include('phputilities/PageBuilder.php');
 include('phputilities/adminOperation.php'); 
 
-$breadcrumb = '<a href="account.php">Account</a> &gt;&gt; Registrazione';
+$breadcrumb = '<a href="account.php">Account</a> / Registrazione';
 $breadcrumblen = 'it'; 
 $title = 'Registrazione | TechnoLum250'; 
 $keyword = 'Padova, Festival, evento, Techno, Lum250, TechnoLum250, Account, Dati personali, Pagamenti, Biglietti, Ordini'; 
