@@ -10,7 +10,7 @@ class PageBuilder {
         if (trim($breadcrumb) === 'Home') {
         $header = self::removeHomeLogoLink($header); 
         }
-        if (trim($breadcrumb) === 'Privacy Policy' || trim($breadcrumb) === 'Home' || trim($breadcrumb) === 'Pagina non trovata' || trim($breadcrumb) === 'Server Error') {
+        if (trim($breadcrumb) === 'Home' || trim($breadcrumb) === 'Pagina non trovata' || trim($breadcrumb) === 'Server Error') {
             $html = self::removeLinkAndSubsequentTextFromHTML($html); 
             }
 
