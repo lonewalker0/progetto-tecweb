@@ -115,6 +115,11 @@ Il primo viene trasformato in un menu ad hamburger, reso accessibile anche agli 
 Il menu ad hamburger e il suo funzionamento sono stati garantiti solo attraverso l'utilizzo di css, una funzione javascript permette invece di poterlo cliccare una volta raggiunto tramite navigazione con il tasto _tab_. 
 Per garantire una maggiore accessibilità è stata implementata una classe css chiamata accessibleHide: questa classe ci permette di eliminare gli elementi dalla vista mantenendoli però rilevabili dagli screen reader.
 Come da specifiche è stato elaborato un design per la stampa: sono stati rimossi i background e più in generale gli elementi non prettamente contenutistici (tra cui il menù), inoltre, sono stati sistemati i margini a garantire che tutto il contenuto sia effettivamente stampato. 
+
+=== Layout di stampa  
+
+Viene fornito un file .css, dedicato al layout di stampa del sito. Sono stati rimossi il menù, le immagini del carosello, i pulsanti di tipo submit dei vari form. Nella stampa le pagine sono solamente in bianco e nero, l'unica eccezione è il logo. Per garantire che un elemento non venisse spezzato su varie pagine si è utilizzata la proprietà _page-break_. 
+Su alcune pagine è stato cambiata totalmente la disposizione dei vari elementi per garantire una lettura più piacevole.
  
 
 == Javascript  
@@ -232,7 +237,43 @@ Norme riguardanti l'attività di installazione del progetto sul server:
 
 
 
-= Suddivisione lavoro
+= Processi organizzativi
+
+== Organizzazione interna  
+
+Si è preferito organizzare il lavoro a gruppi da 2. Un sottoteam per implementare tutte le funzionalità dinamiche richieste dal sito, e l'altro sottoteam per  sviluppare l'estetica del sito con le relative animazioni.
+
+== Suddivisione lavoro 
+
+   - Davide Malgarise:
+        - CSS;
+        - HTML pagine statiche;
+        - Verifica relazione.
+   - Giacomo D'Ovidio:
+        - Template HTML;
+        - PHP;
+        - Database: creazione file e operazioni;
+        - Javascript: controlli front-end;
+        - Accessibilità;
+        - Validazione;
+        - Controlli input;
+        - Relazione.
+   - Marco Picooli:
+        - HTML pagine statiche;
+        - CSS;
+        - Carosello dinamico e animazioni Javascript;
+        - Verifica relazione.
+        
+   - Riccardo Alberto Costantin;
+        - Template HTML;
+        - PHP;
+        - Database: accesso e operazioni;
+        - Javascript: controlli front-end;
+        - Validazione;
+        - Controlli input;
+        - Relazione.
+
+
 
 
 = Conclusioni

@@ -52,7 +52,7 @@
 Progetto Tecnologie Web 2023/2024
 
 _Componenti_:\
-Davide Malgarise\
+Davide Malgarise 2009994\
 Giacomo D'Ovidio 2009101\
 Marco Piccoli\
 Riccardo Alberto Costantin 2013451\
