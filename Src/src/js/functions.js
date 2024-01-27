@@ -43,11 +43,14 @@ document.addEventListener("DOMContentLoaded", function () {
   var originalMenuPosition = menu.offsetTop; 
 
   window.addEventListener('scroll', function() {
+    if(this.screen.width > 770)
+    {
       if (window.scrollY >= originalMenuPosition) { 
-          menu.classList.add('fixed-menu');
+        menu.classList.add('fixed-menu');
       } else {
           menu.classList.remove('fixed-menu');
       }
+    }
   });
 });
 
