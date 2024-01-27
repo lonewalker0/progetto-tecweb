@@ -16,7 +16,7 @@ class PageBuilder {
 
 
         $footer = file_get_contents(__DIR__ . '/../html/layout/footer.html');
-        $footer = self::resolveCircularLinks($footer, $breadcrumb);                             //rimuove il link circolare della privacy policy 
+        $footer = self::resolveCircularLinks($footer, $breadcrumb);            //rimuove il link circolare della privacy policy 
         $html = str_replace('{{header}}', $header, $html);
         $html = str_replace('{{keyword}}', $keyword, $html);
         $html = str_replace('{{title}}', $title, $html); 
@@ -41,7 +41,6 @@ class PageBuilder {
     }
 
     public static function removeLinkAndSubsequentTextFromHTML($html) {
-        // Use regular expression to remove <a> tag with href="index.php" and subsequent text including /
         $html = preg_replace('/<a\b[^>]*href="index\.php"[^>]*>.*?<\/a>\s*\/?/s', '', $html);
         
         return $html;

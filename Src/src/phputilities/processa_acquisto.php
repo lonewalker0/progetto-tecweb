@@ -52,7 +52,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
 
     } catch (Exception $e) {
-        // Gestisci eccezioni globali qui se necessario
         echo "Si è verificato un errore generale durante l'elaborazione. Si prega di riprovare.";
     }
 

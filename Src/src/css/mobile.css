@@ -103,28 +103,27 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-}
+  }
 
-.menu li {
+  .menu li {
     text-align: center;
     margin-bottom: 10px;
     padding: 0.5rem;
     border-bottom: 1px solid var(--verde-scuro);
+  }
 
-}
-
-.menu a {
+  .menu a {
     display: block;
     color: var(--link); 
-}
+  }
 
-.menu a:visited { 
-  color: var(--visited-link);
-}
+  .menu a:visited { 
+    color: var(--visited-link);
+  }
   /*in questo modo la classe non fa niente se applicata in dispositivi più piccoli*/
   .fixed-menu {
     position: relative;
-} 
+  } 
   /*e questo per non appliare effettivamente la cosa dello scroll che in non */
   .fixed-menu + * {
     padding-top: 0rem;
@@ -132,8 +131,8 @@
 
   .menu-toggle {
     position: absolute;
-    top: 125px; /* Adjust the distance from the top as needed */
-    right: 60px; /* Adjust the distance from the right as needed */
+    top: 125px;
+    right: 60px;
     display: block;
     z-index: 999;
     background-color: var(--verde-scuro);
@@ -146,19 +145,12 @@
   
   .hamburger-icon {
     display: inline-block;
-    width: 30px; /* Adjust the size as needed */
-    height: 30px; /* Adjust the height as needed */
-    background-image: url('../assets/hamburger.png'); /* Replace 'path/to/your/image.png' with the path to your image */
-    background-size: cover; /* Adjust as needed */
-    background-position: center; /* Adjust as needed */
-}
-
-
-
-
-
-  
-
+    width: 30px;
+    height: 30px;
+    background-image: url('../assets/hamburger.png');
+    background-size: cover;
+    background-position: center;
+  }
 
   .menu-checkbox:checked ~ .menu {
     display: block;
@@ -169,6 +161,7 @@
     height: 10px;
     width: 10px;
   }
+
   #foto0,
   #foto1,
   #foto2,

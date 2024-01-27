@@ -2,14 +2,11 @@
 #funzioni php che ritoranono true se l'imput è valido. per fare il sanitize. 
 
 function isValidHour($hour) {
-    // A simple check for the format HH:MM
     return (bool) preg_match('/^([0-1][0-9]|2[0-3]):([0-5][0-9])$/', $hour);
 }
 
 function isValidString($string) {
     
-
-    // Controllo l'assenza di tag HTML o entità HTML
     if (preg_match('/<[^>]*>|&[^;]+;/', $string)) {
         return false;
     }

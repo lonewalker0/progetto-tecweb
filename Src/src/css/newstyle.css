@@ -292,11 +292,11 @@ header {
 .menu ul {
   list-style: none;
   padding: 0;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
     
 }
 
@@ -351,7 +351,6 @@ nav.menu a:hover > div#punto-dom {
 
 #breadcrumb p span{
   text-align: left;
- /* color: var(--verde-lime);*/
   font-weight: bold;
 }
 
@@ -431,8 +430,6 @@ div.programma-animation2.active {
   margin-right: 0.5rem;
 
 }
-
-
 
 .event-container {
   margin: 0;
@@ -588,7 +585,7 @@ div.programma-animation2.active {
 }
 
 #scrollToTopBtn:hover {
-  bottom: 2.5em; /* Imposta la nuova distanza dal basso durante l'hover */
+  bottom: 2.5em;
   opacity: 1;
 }
 
@@ -611,12 +608,11 @@ div.programma-animation2.active {
   background: url('../assets/arrow/arrowsu.png') center center no-repeat;
   background-size: 50%;
 }
+
 #scrollToTopBtn:focus {
   outline: 2px solid white;
   opacity:1;
 }
-
-
 
 /* Sponsor */
 
@@ -683,7 +679,6 @@ div.programma-animation2.active {
 
 #chi-siamo-container {
   padding: 1rem;
-
 }
 
 #storia-festival p {
@@ -763,7 +758,7 @@ div.programma-animation2.active {
   padding: 2rem;
   display: flex;
   border: 1px solid white;
-  flex-direction: column; /* Modifica qui, impostando la direzione della colonna */
+  flex-direction: column;
   gap: 2rem;
   align-items: center;
   background-color: var(--verde-scuro);;
@@ -785,7 +780,7 @@ div.programma-animation2.active {
   border-radius: 4px;
   box-shadow: 0 0 10px var(--verde-lime);
   border: none;
-  margin-bottom: 1rem; /* Modifica qui, poiché non stai più utilizzando la proprietà margin-right */
+  margin-bottom: 1rem;
 }
 
 #testo-location {
@@ -897,7 +892,6 @@ div.product-container div.entry-info{
   padding: 0 2rem 0 2rem;
   border-right: solid;
   border-color: rgba(24, 31, 8, 0.7);
-
 }
 
 .ticket-entry dd {
@@ -918,9 +912,6 @@ div.product-container div.entry-info{
   box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
   border-radius: 0.2rem;
   margin-bottom: 1.25rem;
-
-  /* border: solid;
-  border-color: purple; */
 }
 
 .ticket-description {
@@ -938,13 +929,6 @@ div.product-container div.entry-info{
   padding: 1rem;
   box-shadow: 0 0 10px rgba(37, 53, 25, 0.5);
   border-radius: 0.2rem;
-
-
-  
-
-  /* border: solid;
-  border-color: white; */
-
 }
 
 fieldset {
@@ -1045,8 +1029,6 @@ input[type="button"]:focus {
 #faq-container {
   margin: 0 auto;
   padding: 1rem;
- /* background-color: var(--light-bg-color);
-  color: var(--dark-bg-color);*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1155,8 +1137,6 @@ fieldset#login-fieldset
 }
 fieldset#login-fieldset legend
 {
-  
-  /*text-align: center;*/
   font-size: 1.5rem;
 }
 

@@ -125,7 +125,7 @@ class DBOperation{
         try {
             $this->db->openConnection();
 
-            // Esegui la query per ottenere l'hash della password dell'utente
+            //esegue la query per ottenere l'hash della password dell'utente
             $query = "SELECT password FROM users WHERE username = ?";
             $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
@@ -182,7 +182,7 @@ class DBOperation{
             mysqli_stmt_fetch($checkOrdersStmt);
             mysqli_stmt_close($checkOrdersStmt);
     
-            // Se l'utente ha effettuato ordini, imposta a NULL nella tabella Ordini
+            // se l'utente ha effettuato ordini, imposta a NULL nella tabella Ordini
             if ($orderCount > 0) {
                 $updateOrdersQuery = "UPDATE Ordini SET username = NULL WHERE username = ?";
                 $updateOrdersStmt = mysqli_prepare($this->db->getConnection(), $updateOrdersQuery);
@@ -201,7 +201,7 @@ class DBOperation{
                 mysqli_stmt_close($updateOrdersStmt);
             }
     
-            // Elimina l'utente dalla tabella users
+            //elimina l'utente dalla tabella users
             $deleteQuery = "DELETE FROM users WHERE username = ?";
             $deleteStmt = mysqli_prepare($this->db->getConnection(), $deleteQuery);
     
@@ -364,7 +364,7 @@ public function getUserInfo($username) {
     try {
         $this->db->openConnection();
 
-        // Esegui la query per ottenere le informazioni dell'utente
+        // esegue la query per ottenere le informazioni dell'utente
         $query = "SELECT username, nome, cognome, data_nascita, indirizzo, email FROM users WHERE username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
@@ -400,7 +400,7 @@ public function updateEmail($username, $newEmail) {
     try {
         $this->db->openConnection();
 
-        // Esegui la query per aggiornare l'email dell'utente
+        //esegue la query per aggiornare l'email dell'utente
         $query = "UPDATE users SET email = ? WHERE username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
@@ -432,7 +432,7 @@ public function updateIndirizzo($username, $newAddress) {
     try {
         $this->db->openConnection();
 
-        // Esegui la query per aggiornare l'email dell'utente
+        // esegue la query per aggiornare l'email dell'utente
         $query = "UPDATE users SET indirizzo = ? WHERE username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
@@ -511,7 +511,7 @@ public function updatePassword($username, $newPassword) {
         // Genera l'hash della nuova password
         $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
-        // Esegui la query per aggiornare la password dell'utente
+        // esegue la query per aggiornare la password dell'utente
         $query = "UPDATE users SET password = ? WHERE username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
@@ -649,7 +649,7 @@ public function getUserOrders($username) {
     try {
         $this->db->openConnection();
 
-        // Esegui una query per ottenere le informazioni sugli ordini dell'utente
+        // esegue una query per ottenere le informazioni sugli ordini dell'utente
         $sql = "SELECT Ordini.id AS numero_ordine, Ordini.data_acquisto as data_acquisto,  Biglietti.validita AS validita, Biglietti.tipologia as tipologia, Ordini.quantita AS quantita, Ordini.prezzo
                 FROM Ordini
                 INNER JOIN Biglietti ON Ordini.id_biglietto = Biglietti.id

@@ -113,9 +113,9 @@ document.addEventListener("DOMContentLoaded", function () {
   var confirmPasswordField = document.getElementById("conferma_password2");
   var oldPasswordField = document.getElementById("vecchia_password");
   if (newPasswordField && confirmPasswordField && oldPasswordField) {
-    // Aggiungi un gestore agli eventi per il campo di input della nuova password
+    // aggiunge un gestore agli eventi per il campo di input della nuova password
     newPasswordField.addEventListener("input", function () {
-      // Rendi i campi obbligatori solo se la nuova password ha un valore
+      // rende i campi obbligatori solo se la nuova password ha un valore
       confirmPasswordField.required = this.value.trim() !== "";
       oldPasswordField.required = this.value.trim() !== "";
     });
@@ -131,12 +131,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     window.addEventListener("scroll", function () {
       if (window.scrollY > 600) {
-        // Aggiungi la classe 'show' e rimuovi la classe 'hide'
+        // aggiunge la classe 'show' e rimuove la classe 'hide'
         scrollToTopBtn.classList.add("show");
         scrollToTopBtn.classList.remove("hide");
         
       } else {
-        // Aggiungi la classe 'hide' e rimuovi la classe 'show'
+        // aggiunge la classe 'hide' e rimuove la classe 'show'
         scrollToTopBtn.classList.add("hide");
         scrollToTopBtn.classList.remove("show");
         
@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     scrollToTopBtn.addEventListener("click", function () {
-      // Scorrimento graduale al navEventi
+      // scorrimento graduale al navEventi
       var navEventiPosition = navEventi.offsetTop;
       window.scrollTo({ top: navEventiPosition - 150, behavior: "smooth" });
     });
@@ -180,7 +180,7 @@ const getCountdown = (eventDate) => {
 
   return " " + giorni + "d " + ore + "h " + minuti + "m " + secondi + "s ";
 };
-//funzione per il countdown del festival
+
 function countdownFestival() {
   const DOMELEMENT = document.getElementById("intervalloFestival");
   const eventDate = new Date("Jul 5, 2024 12:00:00");
@@ -216,12 +216,12 @@ function carosello() {
   let idfoto = "foto";
   let i;
   let img = document.querySelector("#carosello-foto"); //mi rappresenta tutto il carosello, nel suo insieme (senza comprendere i puntini)
-  let imgtot = img.querySelectorAll("*").length; //mi rappresenta il numero di foto del carosello
+  let imgtot = img.querySelectorAll("*").length; //numero di foto del carosello
   let puntini = document.getElementsByClassName("puntini");
 
   for (i = 0; i < imgtot; i++) {
     if (caroselloj > 0) {
-      caroselloimg = document.getElementById(idfoto + i); //mi rappresenta la foto in cui sto lavorando in quel momento
+      caroselloimg = document.getElementById(idfoto + i); //foto in cui sto lavorando in quel momento
       caroselloimg.classList.remove("fade");
       caroselloimg.classList.add("foto-hide");
     }
@@ -242,7 +242,7 @@ function carosello() {
     }
   }
   caroselloj++;
-  setTimeout(carosello, 4000); //Cambia l'immagine del carosello ogni 4 secondi
+  setTimeout(carosello, 4000); //cambia l'immagine del carosello ogni 4 secondi
 }
 
 //funzione che fa visualizzare il bordo con animazione sotto la scritta programma
@@ -262,6 +262,7 @@ function scrollView() {
     }
   }
 }
+
 //funzione per andare ad aggiungere un paragrafo al div di errore
 function appendError(conteinerId, message) {
   const errorElement = document.createElement("p");
@@ -283,7 +284,7 @@ function lunghezzaValida(string, minLength, maxLength) {
 }
 
 function isValidAddressFormat(address) {
-  // L'indirizzo deve iniziare con "Via" o "Piazza", seguito da un numero civico e terminare con una città
+  //l'indirizzo deve iniziare con "Via" o "Piazza", seguito da un numero civico e terminare con una città
   const regex = /^(Via|Piazza)\s[\p{L}\s]+\d+[\w\s,.\-]+[A-Za-z\s,.\-]+[A-Za-z]{2,}$/ui;
   return regex.test(address);
 }
@@ -305,7 +306,7 @@ function isValidAge(dateOfBirth) {
 }
 
 function isValidEmail(email) {
-  // Pattern per la validazione dell'indirizzo email
+  //pattern per la validazione dell'indirizzo email
   var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   var isEmailValid = emailPattern.test(email);
@@ -315,12 +316,12 @@ function isValidEmail(email) {
   return isEmailValid && !hasHtmlTagsOrEntities;
 }
 function formatoData(stringa) {
-  // Espressione regolare per corrispondere al formato data standard (YYYY-MM-DD)
+  //espressione regolare per corrispondere al formato data standard (YYYY-MM-DD)
   const espressione = /^\d{4}-\d{2}-\d{2}$/;
   return !espressione.test(stringa);
 }
 function formatoOra(stringa) {
-  // Espressione regolare per corrispondere al formato ora standard (HH:mm)
+  // espressione regolare per corrispondere al formato ora standard (HH:mm)
   const espressione = /^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/;
   return !espressione.test(stringa);
 }
@@ -472,7 +473,7 @@ function validazioneFormLogin() {
     }
   });
 
-  return isValid; // Aggiunto per restituire il risultato della validazione
+  return isValid; // aggiunto per restituire il risultato della validazione
 }
 
 function validazioneFormRegistrazione() {
@@ -737,18 +738,18 @@ function validazioneFormEliminazioneUser() {
   }
   return isValid;
 }
-//calcolare il prezzo totale del biglietto, prima di inviare l'acquisto al submit
+//calcola il prezzo totale del biglietto, prima di inviare l'acquisto al submit
 function calculateTotalPrice(id) {
   var quantitaInput = document.getElementById("quantita-" + id);
   var prezzoTotaleParagraph = document.getElementById("prezzo-totale-" + id);
   var prezzoElement = document.getElementById("prezzo-" + id);
 
-  // Ottenere il valore contenuto all'interno del <dd>
+  // Ottiene il valore contenuto all'interno del <dd>
   var prezzoSingolo = parseFloat(prezzoElement.textContent.trim());
   var quantita = parseInt(quantitaInput.value, 10);
   var prezzoTotale = prezzoSingolo * quantita;
 
-  // Aggiorna il testo del paragrafo e gestisci le classi
+  // Aggiorna il testo del paragrafo e gestisce le classi
   if (!isNaN(prezzoSingolo) && !isNaN(quantita) && quantita > 0) {
     prezzoTotaleParagraph.innerHTML =
       "Prezzo totale: " + prezzoTotale.toFixed(2) + "€";
