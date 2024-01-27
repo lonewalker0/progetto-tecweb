@@ -10,8 +10,7 @@ $description = 'Esplora il nostro store e acquista i nostri prodotti ufficiali p
 
 $shopMainBuilder = new shopMainBuilder();
 // Call the buildMainHTML method to get the generated HTML
-$main = "<h1>Ecco i nostri prodotti!!</h1>";
-$main .= $shopMainBuilder->buildMainHTML();
+$main = $shopMainBuilder->buildMainHTML();
 
 echo PageBuilder::buildPage($breadcrumb, $breadcrumblen, $title ,$keyword, $description, $main);
 ?>

@@ -16,8 +16,8 @@ class ShopMainBuilder
 
     public function buildMainHTML(): string
     {
-        
-        $this->mainHTML = '<div id="live-info"><p>
+        $this->mainHTML =  "<h1>Ecco i nostri prodotti!</h1>";
+        $this->mainHTML .= '<div id="live-info"><p>
         I nostri prodotti sono acquistabili esclusivamente al nostro festival negli appositi punti vendita.
         Per quanto riguarda taglie e vestibilità sarà possibile provare i capi prima di acquistarli.
         </p></div>';
