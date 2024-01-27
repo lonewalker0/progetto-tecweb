@@ -17,7 +17,7 @@ INSERT INTO users (username, password, is_admin) VALUES
 ('admin', '$2y$10$sJAmdb2vfldMZ3hFwPJCVOR5GoUKLocPQsGhlouVHw8sx8V5WnSuO', 1);
 
 INSERT INTO users (username, password, is_admin, nome, cognome,data_nascita, indirizzo,email) VALUES
-('user','$2y$10$8D4EMtUVTkZfOgKcqqXOtubJyVKSPpyku96UT20NGo7znAb6pabQS',0,'user','user','1990-01-15','via dei crucchi 45','user@user.com');
+('user','$2y$10$8D4EMtUVTkZfOgKcqqXOtubJyVKSPpyku96UT20NGo7znAb6pabQS',0,'Utente','Default','1990-01-15','Piazza Garibaldi 12, Padova','fakeemail@gmail.com');
 
 CREATE TABLE Programma (
     artist_name VARCHAR(100) PRIMARY KEY,
@@ -111,7 +111,7 @@ CREATE TABLE Shop (
 
 INSERT INTO Shop (productImage, productName, productColor, productPrice, productLongDescription)
 VALUES
-('assets/merchitem/redT.png', 'T-shirt Festival', 'Rosso', 19.99, 'T-shirt a maniche corta di colore rosso con una rappresentazione bianca, comoda e leggera.'),
+('assets/merchitem/redT.png', 'T-shirt Festival', 'Rosso', 19.99, 'T-shirt a maniche corte di colore rosso con una rappresentazione bianca, comoda e leggera.'),
 ('assets/merchitem/bluecap.png', 'Cappellino Festival Technolum250', 'Blu', 14.99, 'Fantastico cappellino blu con ricamo centrale, 100% cotone con ricamo bianco frontale. Perfetto per mantenerti fresco sotto il sole del festival.'),
 ('assets/merchitem/bermudaverdi.png', 'Bermuda Festival Technolum250', 'Verde', 35.99, 'Bermuda brandizzati Technolum250, presentano un fantasia ispirata alla musica Urban. Fantastici dettagli presenti.'),
 ('assets/merchitem/cappelliniverdi.png', 'Cappellino Festival Technolum250', 'Verde', 14.99, 'Fantastico cappellino verde, 100% cotone con ricamo bianco frontale. Perfetto per mantenerti fresco sotto il sole del festival.'),
@@ -119,7 +119,7 @@ VALUES
 ('assets/merchitem/polo.png', 'Polo Festival Technolum250', 'Bianco', 39.99, 'Polo Bianca realizzata in cotone finissimo da abili artigiani. Presenta il numero 250 ricamato in verde presso il petto.'),
 ('assets/merchitem/poloverde.png', 'Polo Festival Technolum250', 'Verde', 39.99, 'Polo Verde realizzata in cotone finissimo da abili artigiani. Presenta il numero 250 ricamato in bianco presso il petto.'),
 ('assets/merchitem/felpabianca.png', 'Felpa Festival Technolum250', 'Bianco', 59.99, 'Felpa Bianca realizzata in mordido cotone da abili artigiani. Presenta il numero 250 ricamato in verde presso il petto.'),
-('assets/merchitem/setsticker.png', 'Set di Sticker Festival Technolum250', 'Bianco/Verde', 9.99, 'Set di Sticker di varie dimensioni, rimandi vari al numero 250'),
+('assets/merchitem/setsticker.png', 'Set di Sticker Festival Technolum250', 'Bianco/Verde', 9.99, 'Set di Sticker di varie dimensioni, rimandi vari al numero 250.'),
 ('assets/merchitem/fantasticabandane.png', 'Bandana Festival Technolum250', 'Bianco/Verde', 14.99, 'Bandana realizzata in cotone finissimo, riporta fantastici dettagli verdi. Ideali per proteggere il capo durante le ore più calde.'); 
 
 
