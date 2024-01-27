@@ -232,7 +232,43 @@ Norme riguardanti l'attività di installazione del progetto sul server:
 
 
 
-= Suddivisione lavoro
+= Processi organizzativi
+
+== Organizzazione interna  
+
+Si è preferito organizzare il lavoro a gruppi da 2. Un sottoteam per implementare tutte le funzionalità dinamiche richieste dal sito, e l'altro sottoteam per  sviluppare l'estetica del sito con le relative animazioni.
+
+== Suddivisione lavoro 
+
+   - Davide Malgarise:
+        - CSS;
+        - HTML pagine statiche;
+        - Verifica relazione.
+   - Giacomo D'Ovidio:
+        - Template HTML;
+        - PHP;
+        - Database: creazione file e operazioni;
+        - Javascript: controlli front-end;
+        - Accessibilità;
+        - Validazione;
+        - Controlli input;
+        - Relazione.
+   - Marco Picooli:
+        - HTML pagine statiche;
+        - CSS;
+        - Carosello dinamico e animazioni Javascript;
+        - Verifica relazione.
+        
+   - Riccardo Alberto Costantin;
+        - Template HTML;
+        - PHP;
+        - Database: accesso e operazioni;
+        - Javascript: controlli front-end;
+        - Validazione;
+        - Controlli input;
+        - Relazione.
+
+
 
 
 = Conclusioni
