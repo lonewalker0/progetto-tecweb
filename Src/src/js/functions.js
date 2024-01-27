@@ -122,35 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname.indexOf('index.php') > -1) {
-    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    var navEventi = document.getElementById("navEventi");
 
-    
-
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 600) {
-        // Aggiungi la classe 'show' e rimuovi la classe 'hide'
-        scrollToTopBtn.classList.add("show");
-        scrollToTopBtn.classList.remove("hide");
-        
-      } else {
-        // Aggiungi la classe 'hide' e rimuovi la classe 'show'
-        scrollToTopBtn.classList.add("hide");
-        scrollToTopBtn.classList.remove("show");
-        
-      }
-    });
-
-    scrollToTopBtn.addEventListener("click", function () {
-      // Scorrimento graduale al navEventi
-      var navEventiPosition = navEventi.offsetTop;
-      window.scrollTo({ top: navEventiPosition - 150, behavior: "smooth" });
-    });
-
-  }
-});
 
 if (window.location.pathname.indexOf('index.php') > -1) {
   document.addEventListener("DOMContentLoaded", function () {
