@@ -46,6 +46,7 @@ Questo processo preparatorio è risultato molto utile per scolpire un primo aspe
 Si riportano di seguito le convenzioni adottate dal gruppo: 
 === Link
 Il team ha deciso di mantenere i link sottolineati come da Standart WACG, inoltre per ridurre il disorientamento cognitivo si è optato per mantenere un colore diverso per i link visitati. 
+I colori individuati sono stati il bianco e il giallo rispettivamente per i link visitati e non visitati. 
 === Logo cliccabile
 Il team ha scelto di addottare la pratica ormai quasi universale nel web design di associare al logo un link cliccabile che riporto alla pagina home. Tramite espressioni regolari si è garantita l'eliminazione dei link circolari. 
 === Breadcrumbs
@@ -75,10 +76,10 @@ Si riporta una breve descrizione delle pagine implementate e disponibili alle va
 == Struttura gerarchica 
 La gerarchia è stata sviluppato principalmente in ampiezza.
 Il menù principale ha come sezioni: Home, Chi Siamo, Location, Merch, Prevendite,Domande, Account per un totale di 7 voci.
-La profondità massima è 3: nella pagina Account abbiamo di Registrazione e epr l'eliminazione Account.
+La profondità massima è 3: nella pagina Account abbiamo di Registrazione e per la pagina di eliminazione dell'Account.
 
 == Schema organizzativo 
-È stato adottato uno schema esatto per i contenuti ospitati nel sito, garantendo che ogni sezione sia mutualmente esclusiva, con contenuti p distinti e senza sovvrapposizioni. La categorizzazione degli eventi è stata implementata seguendo un ordine cronologico.
+È stato adottato uno schema esatto per i contenuti ospitati nel sito, garantendo che ogni sezione sia mutualmente esclusiva, con contenuti distinti e senza sovvrapposizioni. La categorizzazione degli eventi è stata implementata seguendo un ordine cronologico.
 
 === Lingua 
 Il sito web rispetta la lingua e cultura italiana, eventuali parole inglesi sono state marcate con il tag _span_ e attributo _lang='en'_.
@@ -109,19 +110,21 @@ Sono state personalizzate le pagine di errore 404, ad esempio se l'utente visita
 == CSS
 Il design è stato sviluppato inizialmente per il sito nella sua versione Desktop, successivamente è stato rielaborato per l'acceso tramite schermi di dimensioni minori. 
 Il layout finale è responisive: si utilizzano punti di ruttura e all'interno di essi si garantisce fluidità.
-Per garantire una maggiore accessibilità è stata implementata una classe css chiamata accessibleHide: questa classe ci permette di eliminare gli elementi dalla vista mantenendoli però interpretabili dagli screen reader.
-Nonostante non sia usuale, per garantire l'accessbilità della tabella relativa agli acquisti delle prevendite a tutti gli utenti si è deciso di renderla scrollabile orizzontalemnte. Questa soluzione non è stata l'unica provata: precedentemente si era provato a cambiare il layout della tabella, il risultato ottenuto però risultava difficilemente comprensibile agli screen reader.
+Le principali differenze tra le due visulazzazioni si trovano nel menu di navigazione principale e nella tabella relativa agli ordini degli utenti. 
+Il primo viene trasformato in un menu ad hamburger, reso accessibile anche agli screen reader. La tabella viene invece resa verticale, eliminando l'header dalla visualizzazione (anche per gli screen reader), e sostituendone le funzionalità tramite l'utilizzo del costrutto _td:before_ per iniettare nella singola cella il contenuto dell'attributo _data-title_.
+Il menu ad hamburger e il suo funzionamento sono stati garantiti solo attraverso l'utilizzo di css, una funzione javascript permette invece di poterlo cliccare una volta raggiunto tramite navigazione con il tasto _tab_. 
+Per garantire una maggiore accessibilità è stata implementata una classe css chiamata accessibleHide: questa classe ci permette di eliminare gli elementi dalla vista mantenendoli però rilevabili dagli screen reader.
 Come da specifiche è stato elaborato un design per la stampa: sono stati rimossi i background e più in generale gli elementi non prettamente contenutistici (tra cui il menù), inoltre, sono stati sistemati i margini a garantire che tutto il contenuto sia effettivamente stampato. 
  
 
 == Javascript  
 
 Il linguaggio Javascript è stato utilizzato per lo sviluppo del carosello dinamico, per il countdown alla giorno di inizio del festival e per il pulsante di "scrolltotop" nella pagina home, per mostrare in modo dinamico il prezzo dei vari biglietti acquistati.
-Inoltre è stato essenziale nel processo di validazione degli imput inseriti da parte dell'utente, ogni form infatti presenta controlli lato client e produce degli errori che tramite la funzione "appendError" vengono mostrati a schermo all'interno di un determinato "div".
+Inoltre è stato essenziale nel processo di validazione degli imput inseriti da parte dell'utente, ogni form infatti presenta controlli lato client e produce degli errori che tramite la funzione "appendError" vengono mostrati a schermo all'interno di un determinato _div_.
 Abbiamo provveduto, per quanto fattibile, a mantenere gli stessi controlli lato client e lato server. 
 Inoltre tutto il sito è stato sviluppato considerando il fatto che sarebbe dovuto rimanere pienamente accessibile e usabile anche nel momento in cui js non fosse disponibile.
 Tutto il codice è stato incorporato all'interno di un unico file in modo tale da limitare le richieste HTTP e per una più agevole manutenzione. Per garantire che tutti gli script aspettassero l'effettivo caricamento del DOM prima di operare è stato fatto ampio uso di event listener legati all'evento DOMContentLoaded. 
-Inoltre per garantire che alcuni script fossero disponibili solo in determinate pagine è stato adottato il costrutto window.location.pathname.indexOf('index.php') > -1 nel codice JavaScript. 
+Inoltre per garantire che alcuni script fossero disponibili solo in determinate pagine è stato adottato il costrutto _window.location.pathname.indexOf('index.php') > -1_ nel codice JavaScript. 
 
 
 == PHP
@@ -142,27 +145,25 @@ Per la pagina account, è risultato molto utile salvare l'username su una variab
 
 === Sicurezza 
 
- - Nel database le password non sono state salvate in modo chiaro su testo, bensì è stato utilizzato l'algoritmo di hashing di default di php usando la funzione PASSWORD_DEFAULT;
- - Per prevenire attacchi di tipo XSS Cross-Site_scripting e Javascript Injection è stata sviluppata una funzione con le espressioni regolari che mi avvisa con un errore, in caso mettessi tag html all'interno degli input form;
+ - Nel database le password non sono salvate in modo chiaro su testo, bensì utilizzando l'algoritmo di hashing di default di php usando la funzione _PASSWORD_DEFAULT_;
+ - Per prevenire attacchi di tipo _XSS Cross-Site_scripting_ e _Javascript Injection_ sono state sviluppate delle funzioni che tramite espressioni rilevano l'immisione di tag html all'interno degli input form; 
  - Sono state realizzate query parametriche per prevenire attacchi di tipo SQL Injection.
 
 == Database  
 
 Come Database si è deciso di usare MYSql, classico database di tipo relazionale. Disponiamo di 5 tabelle:
  - Tabella _users_ in cui vengono elencati tutti gli utenti registrati al sito, con relative informazioni anagrafiche;
- - Tabella _Programma_ in cui si memorizzano gli artisti e l'orario in cui si esibiranno, correddati da una foto;
+ - Tabella _Programma_ in cui si memorizzano gli artisti e l'orario in cui si esibiranno, insieme all'indirzzo relativo;
  - Tabella _Biglietti_ in cui si salvano le varie tipologie di Biglietti che è possibile acquistare;
  - Tabella _Ordini_ per registrare tutti gli ordini effettuati dagli utenti;
  - Tabella _Shop_ per salvare gli articoli, che è possibile acquistare al Festival. 
 
  Nelle tabelle Shop e Programma, per gestire le immagini, si è salvato il path della locazione delle foto.
-
- Tutte le foto hanno una dimensione inferiore al MB, e sono stati sviluppati i relativi controlli, lato php e js, per evitare il carimento di immagini più pesanti.
-
+ Tutte le foto hanno una dimensione inferiore al MB, e sono stati sviluppati i relativi controlli, lato php e js, per evitare il carimento di immagini più pesanti o di formati non accettati.
 
 
 = SEO  
-Vengono elencate le considerazioni che io team ha adottato per favorire un buon indice di posizionamento all'interno dei motori di ricerca:
+Vengono elencate le considerazioni che il gruppo ha adottato per favorire un buon indice di posizionamento all'interno dei motori di ricerca:
 
   + Codice HTML5 e CSS sono stati validati;
   + L'adozione di parole chiave comuni a tutte le pagine e alcune varianti a seconda della pagina, all'interno del meta tag "keyword";
@@ -170,8 +171,6 @@ Vengono elencate le considerazioni che io team ha adottato per favorire un buon 
   + È stato usato un unico file Javascript;
   + È presente un design Responsive;
   + È stato creato un file "robots.txt", per evitare l'indicizzazione di alcune pagine dai motori di ricerca, considerate non essenziali, in modo tale che le risorse dei crawler siano orientate verso le pagine più ricche di contenuto e non verso pagine sensibili o di amministrazione.
-
-La gerarchia del sito è stata sviluppata in ampiezza con una grandezza pari a 7 e una profondità massima di 3 livelli.
 
 Vengono di seguito elencate, per importanza, le ricerche a cui il sito si propone di rispondere:
 
@@ -185,11 +184,9 @@ Vengono di seguito elencate, per importanza, le ricerche a cui il sito si propon
 == Validazione sito 
 
 Per validare il codice HTML5 del sito è stato usato come strumento #link("https://validator.w3.org/") e Total Validator Basic presente nei Pc del paolotti.
-
 Per validare il codice CSS è invece stato usato #link("https://jigsaw.w3.org/css-validator/")
 
 == Browser web 
-
 Sono stati testati i seguenti browser:
 
   - Google Chrome;
@@ -197,35 +194,33 @@ Sono stati testati i seguenti browser:
   - Microsoft Edge;
   - Opera;
   - Brave;
-  - Safari (testato 1 volta, nessuno dei componenti usava Apple quindi è risultato più difficile)
 
-  Per testare il sito su dispositivi mobili, si sono usati gli strumenti per sviluppatori sia di Google Chrome che di Mozilla.
+  Per quanto riguarda il testing su Safari, dato che nessuno dei componenti possiede alcun dispostivo Apple, e che l'ultima versione rilasciata per dispositivi Window non supporta _flexbox_, non ci è stato possibile.
+  Per testare il sito su dispositivi mobili, si sono usati gli strumenti per sviluppatori sia di Google Chrome che di Firefox.
 
 = Accessibilità  
 
-Il sito ha adottato come standard il WCAG AA, questo per rendere il sito accessibile anche per i diversamenti abili.
-
-Come strumenti si sono utilizzati:
+Per rendere il sito accessibile si sono usati i seguenti strumenti: 
  - Total Validator presente nei pc di laboratori del Paolotti;
  - Wave, un estensione per Google Chrome;
- - Gli strumenti di accessibilità di Mozilla Firefox;
+ - L'anlisi dell'accessibili offerta da Mozilla Firefox;
  - Lo screen Reader NVDA su Windows e per ambienti Linux il sistema _orca_.
 
 == Tabindex 
+Non è stato alterato l'ordine naturale dei tabindex. 
 
-Per ogni link si è usato il tabindex nell'ordine naturale.
-È presente un pulsante per saltare direttamente alla navigazione e un pulsante per tornare su sviluppato per la pagina _Home_.
+== Aiuti alla navigazione
+È presente un pulsante per saltare direttamente al contenuto e un pulsante per tornare al menu di navigazione interna alla pagina sviluppato per la pagina _Home_ (l'implementazione è stata limitata a tale pagina in quanto l'unica pagina ad avere una lunghezza che lo rende necessario).
 
 == Colori 
-
-I colori usati nel sito sono accessibili, in quanto hanno un buon livello di contrasto.
+Si è prestata molta attenzione ai colori e ai contrasti, i contrasti sono stati per lo più rilevati tramite strumenti automatici.
+Per quanto riguarda gli utenti soggetti ad alterazione del senso cromatico, il gruppo ha effettuato varie simulazioni a garantire che il contenuto potesse rimanere ugualmente fruibile.
+Inoltre si precisa che i colori non sono mai stati usati come unica modialità di trasmissione dell'informazione, per esempio tutti i link risultano essere sottolineati.  
 
 == Tabella 
-
-La tabella degli ordini nella Pagina Account è stata resa ampiamenti accessibili, adottando i criteri standard.
+La tabella degli ordini nella Pagina _Account_ è stata resa accessibile, adottando i criteri standard.
 
 = Installazione Progetto 
-
 Norme riguardanti l'attività di installazione del progetto sul server:
   + Nel file DBAccess si devono cambiare le credenziali di accesso al database;
   + Si copia la cartella src, all'interno della cartella public_html del server di tecweb;
@@ -239,7 +234,10 @@ Norme riguardanti l'attività di installazione del progetto sul server:
 
 = Suddivisione lavoro
 
+
 = Conclusioni
+
+
 
 
 
