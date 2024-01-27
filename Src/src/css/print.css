@@ -823,8 +823,5 @@ div#errorContainerEliminazione p,
 #error_login p,
 #errorContainerRegistrazione p,
 #errorupdate p{
-  border: unset;
-  background-color: unset; 
-  border-radius: unset;
-  color: black; 
+  display: none;
 }
