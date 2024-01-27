@@ -53,9 +53,9 @@ Progetto Tecnologie Web 2023/2024
 
 _Componenti_:\
 Davide Malgarise\
-Giacomo D'Ovidio\
+Giacomo D'Ovidio 2009101\
 Marco Piccoli\
-Riccardo Alberto Costantin\
+Riccardo Alberto Costantin 2013451\
 
 _Indirizzo sito web_:\
 
@@ -68,6 +68,7 @@ username: admin\
 password: admin
 
 _Email Referente_:\
+giacomo.dovidio\@studenti.unipd.it
 
 
 #set page(
