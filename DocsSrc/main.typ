@@ -58,6 +58,7 @@ Marco Piccoli\
 Riccardo Alberto Costantin 2013451\
 
 _Indirizzo sito web_:\
+#link("http://tecweb.studenti.math.unipd.it/")
 
 _Credenziali utente_:\
 username: user\
@@ -68,7 +69,7 @@ username: admin\
 password: admin
 
 _Email Referente_:\
-giacomo.dovidio\@studenti.unipd.it
+#link("mailto:giacomo.dovidio@studenti.unipd.it")
 
 
 #set page(
