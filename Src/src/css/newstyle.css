@@ -1241,6 +1241,11 @@ fieldset#register-fieldset2 input{
   padding: 1rem;
 }
 
+fieldset#register-fieldset input[type="date"]
+{
+  color-scheme: dark;
+}
+
 form#RegistrationForm div{
   display:flex;
   width: 100%;

@@ -117,21 +117,20 @@
     color: var(--link); 
   }
 
-  .menu a:visited { 
-    color: var(--visited-link);
-  }
-  /*in questo modo la classe non fa niente se applicata in dispositivi più piccoli*/
+.menu a:visited { 
+  color: var(--visited-link);
+}
   .fixed-menu {
     position: relative;
-  } 
-  /*e questo per non appliare effettivamente la cosa dello scroll che in non */
+} 
+  
   .fixed-menu + * {
     padding-top: 0rem;
   }
 
   .menu-toggle {
     position: absolute;
-    top: 125px;
+    top: 125px; 
     right: 60px;
     display: block;
     z-index: 999;
@@ -265,7 +264,7 @@
 
   .ticket-vip ul li {
     flex-direction: column;
-    align-items: flex-start;
+    
   }
 
   .ticket-vip ul li span.vip-privilegi {

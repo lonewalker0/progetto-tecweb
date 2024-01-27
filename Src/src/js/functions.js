@@ -41,14 +41,16 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
   var menu = document.querySelector('.menu');
   var originalMenuPosition = menu.offsetTop; 
-
   window.addEventListener('scroll', function() {
+    {
       if (window.scrollY >= originalMenuPosition) { 
-          menu.classList.add('fixed-menu');
+        menu.classList.add('fixed-menu');
       } else {
           menu.classList.remove('fixed-menu');
       }
+    }
   });
+
 });
 
 
@@ -589,13 +591,12 @@ function validazioneFormRegistrazione() {
   if (!isValidEmail(email)) {
     isValid = false;
     document.getElementById("email").setAttribute("aria-invalid", "true");
-    appendError(errorContainer, "formato email non valido!");
+    appendError(errorContainer, "Formato email non valido!");
   } else {
     document.getElementById("email").setAttribute("aria-invalid", "false");
   }
   if (password !== confermapassword) {
     isValid = false;
-    //document.getElementById('passwordError').innerHTML = "Le password non coincidono!";
     appendError(errorContainer, "Le password non coincidono!");
   }
   if(!isValid)
@@ -641,7 +642,7 @@ function validazioneFormUpdate() {
     if (!isValidEmail(email)) {
       isValid = false;
       document.getElementById("email").setAttribute("aria-invalid", "true");
-      appendError(errorContainer, "Campo email non accetta codice HTML!");
+      appendError(errorContainer, "Formato email non valido!");
     }else {
       document.getElementById("email").setAttribute("aria-invalid", "false");
     }

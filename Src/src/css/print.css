@@ -13,7 +13,6 @@ body {
   padding: 0.3em 0em 0.5em;
 }
 
-
 a:link {
   color: black;
 }
@@ -531,8 +530,8 @@ form#logout {
 
 fieldset#login-fieldset
 {
-  max-width: 70%;
-  margin: 0 auto 1rem;
+  max-width: 100%;
+  margin: 0;
   padding: 1rem;
   background-color: white;
 }
@@ -545,10 +544,15 @@ fieldset#login-fieldset div#login-password
   
 }
 
+fieldset#login-fieldset div#login-username label,
+fieldset#login-fieldset div#login-password label{
+  width: 100%;
+}
+
 fieldset#login-fieldset div#login-username input#username,
 fieldset#login-fieldset div#login-password input#password
 {
-  width: 70%;
+  width: 100%;
   margin: 1rem auto 2rem;
   padding-left: 1rem;
   height: 2.5rem;
@@ -557,9 +561,9 @@ fieldset#login-fieldset div#login-password input#password
   border: solid;
   border-color: black;
   background-color: white;
-  
-  
+  color:black;
 }
+
 fieldset#login-fieldset div#login-username input#username::placeholder,
 fieldset#login-fieldset div#login-password input#password::placeholder {
   color: black;
@@ -590,7 +594,7 @@ fieldset#register-fieldset label,
 fieldset#register-fieldset2 label{
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 100%;
   margin-left:auto;
   margin-right:auto;
   align-items: center;
@@ -600,7 +604,7 @@ fieldset#register-fieldset2 label{
 
 fieldset#register-fieldset input,
 fieldset#register-fieldset2 input{
-  width: 70%;
+  width: 100%;
   margin: 1rem auto 2rem;
   height: 2rem;
   text-align: left;
@@ -609,7 +613,15 @@ fieldset#register-fieldset2 input{
   border-color: black;
   padding: 1rem;
   background-color: white;
+  color: black;
 }
+
+fieldset#register-fieldset input::placeholder,
+fieldset#register-fieldset2 input::placeholder{
+  color:black;
+}
+
+
 
 div input#registrati{
   display: none;
@@ -650,6 +662,10 @@ fieldset#modifica-account {
   background-color: white;
 }
 
+fieldset#modifica-account p{
+  width: 100%;
+}
+
 fieldset#modifica-account p label {
   color: black;
 }
@@ -660,6 +676,7 @@ fieldset#modifica-account input
   padding: 0.5rem;
   border-color: black;
   background-color: white;
+  color:black;
 }
 #formUpdate input::placeholder {
   color: black;
@@ -797,4 +814,14 @@ form#formeliminaaccount input[type="submit"] {
 }
 .section-admin h2{
   page-break-before: always;
+}
+
+/*MESSAGGI DI ERRORE*/
+
+div#errorContainerEliminazione p,
+#errorContainerAggiuntaEvento p,
+#error_login p,
+#errorContainerRegistrazione p,
+#errorupdate p{
+  display: none;
 }
