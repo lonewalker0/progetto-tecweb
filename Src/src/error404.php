@@ -5,7 +5,7 @@ include('phputilities/PageBuilder.php');
 $breadcrumb = 'Pagina non trovata';
 $breadcrumblen = 'it'; 
 $title = 'Pagina non trovata | TechnoLum250';
-$keyword = 'Padova, Festival, evento, Techno, Lum250,TechnoLum250, 404, errore, pagina non trovata;'; 
+$keyword = 'Padova, Festival, evento, Techno, Lum250,TechnoLum250, 404, errore, pagina non trovata'; 
 $description = 'Pagina non trovata'; 
 
 $main = "
