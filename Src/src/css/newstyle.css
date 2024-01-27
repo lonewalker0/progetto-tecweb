@@ -288,12 +288,6 @@ header {
   display: none; 
 }
 
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: var(--verde-lime);
-  margin: 5px 0;
-}
 
 .menu ul {
   list-style: none;
