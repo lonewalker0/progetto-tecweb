@@ -124,42 +124,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
-  if (window.location.pathname.indexOf('index.php') > -1) {
-    var scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    var navEventi = document.getElementById("navEventi");
-
-    
-
-    window.addEventListener("scroll", function () {
-      if (window.scrollY > 600) {
-        // aggiunge la classe 'show' e rimuove la classe 'hide'
-        scrollToTopBtn.classList.add("show");
-        scrollToTopBtn.classList.remove("hide");
-        
-      } else {
-        // aggiunge la classe 'hide' e rimuove la classe 'show'
-        scrollToTopBtn.classList.add("hide");
-        scrollToTopBtn.classList.remove("show");
-        
-      }
-    });
-
-    scrollToTopBtn.addEventListener("click", function () {
-      // scorrimento graduale al navEventi
-      var navEventiPosition = navEventi.offsetTop;
-      window.scrollTo({ top: navEventiPosition - 150, behavior: "smooth" });
-    });
-
-  }
+    //adesso funziona anche nel server
+    var caroselloElement = document.getElementById('carosello-foto');
+    //se nella pagina c'è il carosello cìè per forza anche programma animation
+    if (caroselloElement) {
+        carosello();
+        document.addEventListener("scroll", scrollView);
+    }
 });
-
-if (window.location.pathname.indexOf('index.php') > -1) {
-  document.addEventListener("DOMContentLoaded", function () {
-    carosello();
-    document.addEventListener("scroll", scrollView);
-  });
-}
 
 document.addEventListener("DOMContentLoaded", function () {
   countdownFestival();
