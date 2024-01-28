@@ -6,11 +6,11 @@ Per il progetto didattico del corso di Tecnologie Web, nell'Anno Accademico 2023
 
 == Target di Utenza
 Il suddetto festival si rivolge principalmente a un pubblico giovane, la cui età spazia tra i 16 e i 35 anni, attirati da generi musicali quali hip-hop, R&B e musica elettronica.
-Il sito sviluppato deve di conseguenza rivolgersi principalmente a queste categorie di utenti,
+Il sito sviluppato deve di conseguenza rivolgersi principalmente a queste categorie di utenti.
 La demografia rilevata, apprezza un'interfaccia utente intuitiva, design accattivante e facilmente navigabile da dispositivi mobili, riflettendo il loro stile di vita dinamico.
 Sebbene il sito web sia da sviluppare in modo tale da strizzare l'occhio ad un pubblico giovane e costantemente al passo con la tecnologia, è fondamentale che il design non escluda fasce d'età più mature.
 Di conseguenza è necessario che il sito offra un'esperienza utente accessibile a un utente più anziano, che potrebbe essere interessato a esplorare e partecipare all'evento.
-Più in generale, il contesto in oggetto si propone di essere un punto di incontro per l'intera comunità, di conseguenza In linea con questo presupposto di inclusione, è fondamentale che il sito web sia pienamente accessibile alle persone con disabilità, e garantire loro una navigazione piacevole e chiara. 
+Più in generale, il contesto in oggetto si propone di essere un punto di incontro per l'intera comunità, di conseguenza, in linea con questo presupposto di inclusione, è fondamentale che il sito web sia pienamente accessibile alle persone con disabilità, e garantire loro una navigazione piacevole e chiara. 
 
 == Tipi di utenti e funzionalità
 
@@ -49,8 +49,8 @@ Il team ha deciso di mantenere i link sottolineati come da Standart WACG, inoltr
 I colori individuati sono stati il bianco e il giallo rispettivamente per i link visitati e non visitati. 
 === Logo cliccabile
 Il team ha scelto di addottare la pratica ormai quasi universale nel web design di associare al logo un link cliccabile che riporto alla pagina home. Tramite espressioni regolari si è garantita l'eliminazione dei link circolari. 
-=== Breadcrumbs
-Abbiamo abbracciato la convenzione di addottare una breadcrumbs per favorire la navigazione, e limitare il sovraccarico cognitivo per l'utente.
+=== Breadcrumb
+Abbiamo abbracciato la convenzione di addottare una breadcrumb per favorire la navigazione, e limitare il sovraccarico cognitivo per l'utente.
 
 == Pagine
 Si riporta una breve descrizione delle pagine implementate e disponibili alle varie categorie di utenti 
@@ -67,7 +67,7 @@ Si riporta una breve descrizione delle pagine implementate e disponibili alle va
 
 === Area riservata utente
  - *Registrazione*: pagina che permette all'utente generico di potersi registrare. L'attività di registrazione richiede nome, cognome, età, indirizzo di residenza, email, username e una password.
- - *Account*: una volta effettuato l'accesso si potranno visualizzare i propri dati personali inseriti precedentemente, nella fase di registrazione. Una sezione permette all'utente di modificare indirizzo di residenza, email o password. La visualizzazione delle prevendite acquistate sotto forma tabellare se presenti. Inoltre permette l'accesso alla pagina di eliminazione dell'account.
+ - *Account*: una volta effettuato l'accesso si potranno visualizzare i propri dati personali inseriti precedentemente, nella fase di registrazione. Una sezione permette all'utente di modificare indirizzo di residenza, email o password, un'altra permette la visualizzazione delle prevendite acquistate sotto forma tabellare (se presenti) e infine un'ultima sezione permette l'accesso alla pagina di eliminazione dell'account.
  - *Eliminazione*: pagina che consente l'eliminazione dell'account dal sito web. È richiesta la password.
  
 === Area Amministrativa
@@ -75,8 +75,8 @@ Si riporta una breve descrizione delle pagine implementate e disponibili alle va
 
 == Struttura gerarchica 
 La gerarchia è stata sviluppato principalmente in ampiezza.
-Il menù principale ha come sezioni: Home, Chi Siamo, Location, Merch, Prevendite,Domande, Account per un totale di 7 voci.
-La profondità massima è 3: nella pagina Account abbiamo di Registrazione e per la pagina di eliminazione dell'Account.
+Il menù principale ha come sezioni: Home, Chi Siamo, Location, Merch, Prevendite, Domande e Account per un totale di 7 voci.
+La profondità massima è di 3 elementi che si verifica nella pagina Account.
 
 == Schema organizzativo 
 È stato adottato uno schema esatto per i contenuti ospitati nel sito, garantendo che ogni sezione sia mutualmente esclusiva, con contenuti distinti e senza sovvrapposizioni. La categorizzazione degli eventi è stata implementata seguendo un ordine cronologico.
@@ -92,9 +92,9 @@ In questa sezione vengono mostrate le decisione intraprese nel corso dello svilu
 Il sito, come da specifiche di progetto, è stato sviluppato seguendo la sintassi di HTML5.
 Il gruppo si è impegnato nell'utilizzare i tag semantici corretti già dai primi momenti dello sviluppo, inoltre il processo di scrittura di codice HTML è stato sempre accompagnato da relativa validazione. 
 
-Nel corso dello sviluppo abbiamo cercato di mantenere un rapporto di massima separazione tra il contenuto HTML e le componenti di php, competenti della loro unione in quello che sarà il codice HTML finale, quello che sarà poi disponibile all'utente. 
+Nel corso dello sviluppo abbiamo cercato di mantenere un rapporto di massima separazione tra il contenuto HTML e le componenti di php, competenti della loro unione in quello che sarà il codice HTML finale disponibile all'utente. 
 Nella nostra repository è infatti presente una cartella "html" in cui sono contenute tutte le componenti html necessarie alla visualizzazione del sito.
-Le pagine "struttura.html","header.html", "footer.html", "menu.html" contengono la struttura portante di tutte le pagine presenti sul sito, sono state usate come template e poi dinamicamente modificate a formare il risultato finale. 
+Le pagine "struttura.html", "header.html", "footer.html", "menu.html" contengono la struttura portante di tutte le pagine presenti sul sito, sono state usate come template e poi dinamicamente modificate a formare il risultato finale. 
 
 == Struttura principale
 La struttura di ogni pagina si caratterizza di un header, un main e un footer.
@@ -107,11 +107,11 @@ Sono state personalizzate le pagine di errore 404, ad esempio se l'utente visita
 
 == CSS
 Il design è stato sviluppato inizialmente per il sito nella sua versione Desktop, successivamente è stato rielaborato per l'acceso tramite schermi di dimensioni minori. 
-Il layout finale è responisive: si utilizzano punti di ruttura e all'interno di essi si garantisce fluidità.
 Le principali differenze tra le due visulazzazioni si trovano nel menu di navigazione principale e nella tabella relativa agli ordini degli utenti. 
 Il primo viene trasformato in un menu ad hamburger, reso accessibile anche agli screen reader. La tabella viene invece resa verticale, eliminando l'header dalla visualizzazione (anche per gli screen reader), e sostituendone le funzionalità tramite l'utilizzo del costrutto _td:before_ per iniettare nella singola cella il contenuto dell'attributo _data-title_.
 Il menu ad hamburger e il suo funzionamento sono stati garantiti solo attraverso l'utilizzo di css, una funzione javascript permette invece di poterlo cliccare una volta raggiunto tramite navigazione con il tasto _tab_. 
 Per garantire una maggiore accessibilità è stata implementata una classe css chiamata accessibleHide: questa classe ci permette di eliminare gli elementi dalla vista mantenendoli però rilevabili dagli screen reader.
+Il layout finale è responsive: si utilizzano punti di rottura e all'interno di essi si garantisce fluidità.
 
 === Layout di stampa  
 
@@ -132,11 +132,11 @@ Tutto il codice è stato incorporato all'interno di un unico file in modo tale d
 PHP è stato ampiamente utilizzato. Si riportano successivamente le principali funzioni svolte. 
 === Template
 Per evitare duplicazione di codice e favorire il riuso di quest'ultimo, il PHP si occupa della costruzione dinamica delle pagine, importando i vari file template HTML e, attraverso ancoraggi e funzioni di string replace, iniettando il contenuto.
-Gli ancoraggi vengono definiti nei file html HTML con le doppie parentesi graffe.
+Gli ancoraggi vengono definiti nei file HTML con le doppie parentesi graffe.
 === Link circolari  
 Per rimuovere i link circolari, ovvero link che portano alla stessa pagina, è stata sviluppata una funzione in php che permette di rimuovere direttamente il tag \<a\> se ci troviamo in quella specifica pagina. 
 === Connessione al Database
-La classe DBAccess effettua l'effettivo collegamento al database e costituisce l'oggetto effettivo della connesione, mentre le query vengono effettuate tramite la classe DBoperation: per interfacciarsi al database è stata utilizzata la libreria mysqli.
+La classe DBAccess effettua il collegamento al database e costituisce l'oggetto effettivo della connesione, mentre le query vengono effettuate tramite la classe DBoperation: per interfacciarsi al database è stata utilizzata la libreria mysqli.
 === Form e validazione degli input
 Ogni form è stato configurato per essere gestito da un file PHP dedicato, utilizzando il metodo POST per la trasmissione sicura dei dati. Sono stati garantiti gli stessi controlli presenti nella validazione lato client, inoltre i messaggi di errore vengono ristampanti nel medesimo contenitore utilizzato da js. 
 Per i form di dimensione maggiore è stata inoltre implementata la funzionalità di ricostruzione dell'input. 
@@ -174,6 +174,7 @@ Vengono elencate le considerazioni che il gruppo ha adottato per favorire un buo
   + È presente un design Responsive;
   + È stato creato un file "robots.txt", per evitare l'indicizzazione di alcune pagine dai motori di ricerca, considerate non essenziali, in modo tale che le risorse dei crawler siano orientate verso le pagine più ricche di contenuto e non verso pagine sensibili o di amministrazione.
 
+== Possibili ricerche
 Vengono di seguito elencate, in ordine di importanza, le ricerche a cui il sito si propone di rispondere:
 
   + Nome del Festival(TechnoLum250);
@@ -209,7 +210,7 @@ Per testare navigabilità e usabilità del sito è stato fatto provare ad utenti
 Per rendere il sito accessibile si sono usati i seguenti strumenti: 
  - Total Validator presente nei pc di laboratori del Paolotti;
  - Wave, un estensione per Google Chrome;
- - L'anlisi dell'accessibili offerta da Mozilla Firefox;
+ - L'analisi dell'accessibilità offerta da Mozilla Firefox;
  - Lo screen Reader NVDA su Windows e per ambienti Linux il sistema _orca_.
 
 == Tabindex 
@@ -258,9 +259,10 @@ Per la condivisione e il versionamento del codice sorgente si è utilizzato GitH
 
    - Davide Malgarise:
         - CSS;
-        - layout di stampa; 
+        - Layout di stampa; 
         - HTML pagine statiche;
-        - Verifica relazione.
+        - Popolamento database;
+        - Verifica relazione;
         - Attività di revisione del codice.
    - Giacomo D'Ovidio:
         - Template HTML;
@@ -274,8 +276,8 @@ Per la condivisione e il versionamento del codice sorgente si è utilizzato GitH
         - HTML pagine statiche;
         - CSS;
         - Carosello dinamico e animazioni css e Javascript;
-        - Verifica relazione.
-        - Attività di revisione del codice.
+        - Verifica relazione;
+        - Attività di revisione del codice;
    - Riccardo Alberto Costantin;
         - Amministratore della repository; 
         - Template HTML;
