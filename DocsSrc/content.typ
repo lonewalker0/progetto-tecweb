@@ -125,8 +125,7 @@ Il linguaggio Javascript è stato utilizzato per lo sviluppo del carosello dinam
 Inoltre è stato essenziale nel processo di validazione degli imput inseriti da parte dell'utente, ogni form infatti presenta controlli lato client e produce degli errori che tramite la funzione "appendError" vengono mostrati a schermo all'interno di un determinato _div_.
 Abbiamo provveduto, per quanto fattibile, a mantenere gli stessi controlli lato client e lato server. Per i controlli che interagiscono con il database o con le variabili di sessione i controlli rimangono solomente lato server.
 Inoltre tutto il sito è stato sviluppato considerando il fatto che sarebbe dovuto rimanere pienamente accessibile e usabile anche nel momento in cui javascript non fosse disponibile o disattivato.
-Tutto il codice è stato incorporato all'interno di un unico file in modo tale da limitare le richieste HTTP e per una più agevole manutenzione. Per garantire che tutti gli script aspettassero l'effettivo caricamento del DOM prima di operare è stato fatto ampio uso di event listener legati all'evento DOMContentLoaded. 
-Inoltre per garantire che alcuni script fossero disponibili solo in determinate pagine è stato adottato il costrutto _window.location.pathname.indexOf('index.php') > -1_ nel codice JavaScript. 
+Tutto il codice è stato incorporato all'interno di un unico file in modo tale da limitare le richieste HTTP e per una più agevole manutenzione. Per garantire che tutti gli script aspettassero l'effettivo caricamento del DOM prima di operare è stato fatto ampio uso di event listener legati all'evento DOMContentLoaded.  
 
 
 == PHP
@@ -224,12 +223,15 @@ La tabella degli ordini nella Pagina _Account_ è stata resa accessibile, adotta
 
 = Installazione Progetto 
 Questa guida consente, a partire dalla consegna effettuata tramite moodle, di reinstallare il progetto nel server dedicato.
+Se il progetto dev'essere istallato sul server gdovidio non è necessario aggiornare il contenuto dei file. 
 Si elencano i passaggi da eseguire.
   + Nel file src/phputilities/DBAccess.php si devono cambiare le credenziali di accesso al database;
   + Accedere a _phpmyadmin_ e eliminare il contenuto del proprio database; 
   + Sostituire il nome del database usato nel file init-scripts/init.sql; 
   + Importare il database tramite _phpmyadmin_; 
-  + inserire tutto il contenuto della cartella src (non la cartella stessa) all'interno della cartella public_html del server.
+  + inserire tutto il contenuto della cartella src (non la cartella stessa) all'interno della cartella public_html del server; 
+  + Dobbiamo ancora inserire la parte relativa ala gestione degli errori. 
+
 
 
 
@@ -286,6 +288,7 @@ Per la condivisione e il versionamento del codice sorgente si è utilizzato GitH
 
 
 = Conclusioni
+
 
 
 
