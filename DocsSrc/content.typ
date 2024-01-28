@@ -159,8 +159,9 @@ Come Database si è deciso di usare MYSql, classico database di tipo relazionale
  - Tabella _Ordini_ per registrare tutti gli ordini effettuati dagli utenti;
  - Tabella _Shop_ per salvare gli articoli, che è possibile acquistare al Festival. 
 
- Nelle tabelle Shop e Programma, per gestire le immagini, si è salvato il path della locazione delle foto.
- Tutte le foto hanno una dimensione inferiore al MB, e sono stati sviluppati i relativi controlli, lato php e js, per evitare il carimento di immagini più pesanti o di formati non accettati.
+La tabella user in realtà non è totalmente ottimizzata, contiene infatti una campo booleano che definisce la tipologia di utente, si è comunque deciso di manetenere una tabella unica e non dividerla appunto per mantenere delle query più semplici.
+Nelle tabelle Shop e Programma, per gestire le immagini, si è salvato il path della locazione delle foto.
+Tutte le foto hanno una dimensione inferiore al MB, e sono stati sviluppati i relativi controlli, lato php e js, per evitare il carimento di immagini più pesanti o di formati non accettati.
 
 
 = SEO  
@@ -180,6 +181,8 @@ Vengono di seguito elencate, in ordine di importanza, le ricerche a cui il sito 
   + Parole generiche quali Festival, Padova, Evento etc.;
   + Nomi degli artisti presenti al Festival.
 
+Essendo comunque tutti campi di ricerca generali, escludendo chiaramente il titolo stesso del festival, e dunque ormai affollato da altri siti.Sarà dunque necessario, in fase di rilascio del sito al pubblico, andare ad effettuare una qualche campagna di pubblicizzazione tramite piattaforme social in maniera tale da andare ad aumentare il quantitivo di visite in entrata e dunque a ,igliorare il suo posizionamento. 
+
 = Test 
 
 == Validazione sito 
@@ -189,14 +192,17 @@ Per validare il codice CSS è invece stato usato #link("https://jigsaw.w3.org/cs
 == Browser web 
 Sono stati testati i seguenti browser:
 
-  - Google Chrome;
-  - Mozilla Firefox;
-  - Microsoft Edge;
-  - Opera;
-  - Brave;
+  - Google Chrome(Window 10 e 11 e linux);
+  - Mozilla Firefox (Window 10 e 11 e linux);
+  - Microsoft Edge (Windows 10 e 11 e linux);
+  - Opera (Windows 11);
+  - Brave (Linux);
 
   Per quanto riguarda il testing su Safari, dato che nessuno dei componenti possiede alcun dispostivo Apple, e che l'ultima versione rilasciata per dispositivi Window non supporta _flexbox_, non ci è stato possibile.
   Per testare il sito su dispositivi mobili, si sono usati gli strumenti per sviluppatori sia di Google Chrome che di Firefox.
+
+== Test umani
+Per testare navigabilità e usabilità del sito è stato fatto provare ad utenti reali delle cerchie di conoscienza dei componenti del gruppo, in generale si sono sempre ottenuti responsi positivi.
 
 = Accessibilità  
 
@@ -210,12 +216,13 @@ Per rendere il sito accessibile si sono usati i seguenti strumenti:
 Non è stato alterato l'ordine naturale dei tabindex. 
 
 == Aiuti alla navigazione
-È presente un pulsante per saltare direttamente al contenuto e un pulsante per tornare al menu di navigazione interna alla pagina sviluppato per la pagina _Home_ (l'implementazione è stata limitata a tale pagina in quanto l'unica pagina ad avere una lunghezza che lo rende necessario).
+È presente un pulsante per saltare direttamente al contenuto.
 
 == Colori 
 Si è prestata molta attenzione ai colori e ai contrasti, i contrasti sono stati per lo più rilevati tramite strumenti automatici.
 Per quanto riguarda gli utenti soggetti ad alterazione del senso cromatico, il gruppo ha effettuato varie simulazioni a garantire che il contenuto potesse rimanere ugualmente fruibile.
 Inoltre si precisa che i colori non sono mai stati usati come unica modialità di trasmissione dell'informazione, per esempio tutti i link risultano essere sottolineati.  
+
 == Tabella 
 La tabella degli ordini nella Pagina _Account_ è stata resa accessibile, adottando i criteri standard.
 
@@ -231,17 +238,14 @@ Si elencano i passaggi da eseguire.
   + inserire tutto il contenuto della cartella src (non la cartella stessa) all'interno della cartella public_html del server; 
   + Dobbiamo ancora inserire la parte relativa ala gestione degli errori. 
 
+//qui bisongna finire 
 
 Norme riguardanti l'attività di installazione del progetto sul server:
   + Nel file DBAccess si devono cambiare le credenziali di accesso al database;
   + Si copia la cartella src, all'interno della cartella public_html del server di tecweb;
   + Su phpmyadmin si importa il file init.sql presente nella cartella sql;
   + Per la gestione degli errori personalizzata bisogna modificare il file .htaccess impostando il percorso assoluto della pagina:
-     ErrorDocument [errore] #link("http://tecweb.studenti.math.unipd.it/errore[errrore].php")
-  
-  in cui [errore] va sostituito con 404 e 500.
-
-
+     ErrorDocument [errore] #link("http://tecweb.studenti.math.unipd.it/errore[errrore].php")  in cui [errore] va sostituito con 404 e 500.
 
 = Organizzazione
 
