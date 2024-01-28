@@ -183,7 +183,6 @@ Vengono di seguito elencate, in ordine di importanza, le ricerche a cui il sito 
 = Test 
 
 == Validazione sito 
-
 Per validare il codice HTML5 del sito è stato usato come strumento #link("https://validator.w3.org/") e Total Validator Basic presente nei Pc del paolotti.
 Per validare il codice CSS è invece stato usato #link("https://jigsaw.w3.org/css-validator/")
 
@@ -233,8 +232,6 @@ Si elencano i passaggi da eseguire.
   + Dobbiamo ancora inserire la parte relativa ala gestione degli errori. 
 
 
-
-
 Norme riguardanti l'attività di installazione del progetto sul server:
   + Nel file DBAccess si devono cambiare le credenziali di accesso al database;
   + Si copia la cartella src, all'interno della cartella public_html del server di tecweb;
@@ -246,10 +243,10 @@ Norme riguardanti l'attività di installazione del progetto sul server:
 
 
 
-= Processi organizzativi
+= Organizzazione
 
 == Organizzazione interna  
-Per lavorare in maniera efficacie al progetto, si è deciso di adottare Docker: è stato realizzato un file docker compose che una volta avviato mettesse a disposizione del team tutte le componenti necessarie allo sviluppo nelle medesime versioni. Inoltre durante lo sviluppo si sono fatte continue prove nel server deedicato. 
+Per lavorare in maniera efficente al progetto, si è deciso di adottare Docker: è stato realizzato un file docker compose che una volta avviato mettesse a disposizione del team tutte le componenti necessarie allo sviluppo nelle medesime versioni. Inoltre durante lo sviluppo si sono fatte continue prove nel server deedicato. 
 Per la condivisione e il versionamento del codice sorgente si è utilizzato GitHub.
 
 
@@ -258,6 +255,7 @@ Per la condivisione e il versionamento del codice sorgente si è utilizzato GitH
 
    - Davide Malgarise:
         - CSS;
+        - layout di stampa; 
         - HTML pagine statiche;
         - Verifica relazione.
         - Attività di revisione del codice.
@@ -286,8 +284,14 @@ Per la condivisione e il versionamento del codice sorgente si è utilizzato GitH
 
 
 
-
 = Conclusioni
+Il gruppo conviene nel dire che il  progetto è stata un esperienza estremamente formativa e interessante. 
+Si è infatti avuto modo di sviluppare e consolidare competenze tecniche molto importanti anche in vista di ipotetici sbocchi professionali. 
+Il gruppo essendo per lo più composto da componenti provenienti da Licei scientifici tradizionali non aveva mai avuto modo di imterfacciarsi direttamente a queste tecnologie. 
+Inoltre si sono dovute affrontare tutta una serie di difficoltà legate allo sviluppo non individuale( problemi di comunicazione, di gestione del codice sorgente condiviso, di pianificazione, etc). 
+Nel farlo possiamo dire di aver imparato molto. 
+
+
 
 
 
