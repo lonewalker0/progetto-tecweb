@@ -102,9 +102,7 @@ Nell'header possiamo trovare il logo, il nome del festival, le icone dei social 
 Nel Main il contenuto della pagina.
 Nel footer le icone dei social, i diritti di copyright e l'informativa riguardante la privacy. 
 
-
 == Pagine di errore 
-
 Sono state personalizzate le pagine di errore 404, ad esempio se l'utente visitasse un link scorretto o inesistente, e la pagina di errore 500, in caso si verificassero errori nel server interno. I messaggi servono per non disorientare l'utente e contribuire a mantenere un clima di fiducia. 
 
 == CSS
@@ -114,20 +112,19 @@ Le principali differenze tra le due visulazzazioni si trovano nel menu di naviga
 Il primo viene trasformato in un menu ad hamburger, reso accessibile anche agli screen reader. La tabella viene invece resa verticale, eliminando l'header dalla visualizzazione (anche per gli screen reader), e sostituendone le funzionalità tramite l'utilizzo del costrutto _td:before_ per iniettare nella singola cella il contenuto dell'attributo _data-title_.
 Il menu ad hamburger e il suo funzionamento sono stati garantiti solo attraverso l'utilizzo di css, una funzione javascript permette invece di poterlo cliccare una volta raggiunto tramite navigazione con il tasto _tab_. 
 Per garantire una maggiore accessibilità è stata implementata una classe css chiamata accessibleHide: questa classe ci permette di eliminare gli elementi dalla vista mantenendoli però rilevabili dagli screen reader.
-Come da specifiche è stato elaborato un design per la stampa: sono stati rimossi i background e più in generale gli elementi non prettamente contenutistici (tra cui il menù), inoltre, sono stati sistemati i margini a garantire che tutto il contenuto sia effettivamente stampato. 
 
 === Layout di stampa  
 
-Viene fornito un file .css, dedicato al layout di stampa del sito. Sono stati rimossi il menù, le immagini del carosello, i pulsanti di tipo submit dei vari form. Nella stampa le pagine sono solamente in bianco e nero, l'unica eccezione è il logo. Per garantire che un elemento non venisse spezzato su varie pagine si è utilizzata la proprietà _page-break_. 
+Come da specifiche di progetto viene fornito un file .css, dedicato al layout di stampa del sito. Sono stati rimossi il menù, le immagini del carosello, i pulsanti di tipo submit dai vari form. Nella stampa le pagine sono solamente in bianco e nero, l'unica eccezione è il logo. Per garantire che un elemento non venisse spezzato su varie pagine si è utilizzata la proprietà _page-break_. 
 Su alcune pagine è stato cambiata totalmente la disposizione dei vari elementi per garantire una lettura più piacevole.
  
 
 == Javascript  
 
-Il linguaggio Javascript è stato utilizzato per lo sviluppo del carosello dinamico, per il countdown alla giorno di inizio del festival e per il pulsante di "scrolltotop" nella pagina home, per mostrare in modo dinamico il prezzo dei vari biglietti acquistati.
+Il linguaggio Javascript è stato utilizzato per lo sviluppo del carosello dinamico, per il countdown al giorno di inizio del festival e per mostrare in modo dinamico il prezzo totale inse di acquisto dei biglietti.
 Inoltre è stato essenziale nel processo di validazione degli imput inseriti da parte dell'utente, ogni form infatti presenta controlli lato client e produce degli errori che tramite la funzione "appendError" vengono mostrati a schermo all'interno di un determinato _div_.
-Abbiamo provveduto, per quanto fattibile, a mantenere gli stessi controlli lato client e lato server. 
-Inoltre tutto il sito è stato sviluppato considerando il fatto che sarebbe dovuto rimanere pienamente accessibile e usabile anche nel momento in cui js non fosse disponibile.
+Abbiamo provveduto, per quanto fattibile, a mantenere gli stessi controlli lato client e lato server. Per i controlli che interagiscono con il database o con le variabili di sessione i controlli rimangono solomente lato server.
+Inoltre tutto il sito è stato sviluppato considerando il fatto che sarebbe dovuto rimanere pienamente accessibile e usabile anche nel momento in cui javascript non fosse disponibile o disattivato.
 Tutto il codice è stato incorporato all'interno di un unico file in modo tale da limitare le richieste HTTP e per una più agevole manutenzione. Per garantire che tutti gli script aspettassero l'effettivo caricamento del DOM prima di operare è stato fatto ampio uso di event listener legati all'evento DOMContentLoaded. 
 Inoltre per garantire che alcuni script fossero disponibili solo in determinate pagine è stato adottato il costrutto _window.location.pathname.indexOf('index.php') > -1_ nel codice JavaScript. 
 
@@ -177,7 +174,7 @@ Vengono elencate le considerazioni che il gruppo ha adottato per favorire un buo
   + È presente un design Responsive;
   + È stato creato un file "robots.txt", per evitare l'indicizzazione di alcune pagine dai motori di ricerca, considerate non essenziali, in modo tale che le risorse dei crawler siano orientate verso le pagine più ricche di contenuto e non verso pagine sensibili o di amministrazione.
 
-Vengono di seguito elencate, per importanza, le ricerche a cui il sito si propone di rispondere:
+Vengono di seguito elencate, in ordine di importanza, le ricerche a cui il sito si propone di rispondere:
 
   + Nome del Festival(TechnoLum250);
   + Date dello svolgimento del Festival;
@@ -221,11 +218,21 @@ Non è stato alterato l'ordine naturale dei tabindex.
 Si è prestata molta attenzione ai colori e ai contrasti, i contrasti sono stati per lo più rilevati tramite strumenti automatici.
 Per quanto riguarda gli utenti soggetti ad alterazione del senso cromatico, il gruppo ha effettuato varie simulazioni a garantire che il contenuto potesse rimanere ugualmente fruibile.
 Inoltre si precisa che i colori non sono mai stati usati come unica modialità di trasmissione dell'informazione, per esempio tutti i link risultano essere sottolineati.  
-
 == Tabella 
 La tabella degli ordini nella Pagina _Account_ è stata resa accessibile, adottando i criteri standard.
 
+
 = Installazione Progetto 
+Questa guida consente, a partire dalla consegna effettuata tramite moodle, di reinstallare il progetto nel server dedicato.
+Si elencano i passaggi da eseguire.
+  + Nel file src/phputilities/DBAccess.php si devono cambiare le credenziali di accesso al database;
+  + Accedere a _phpmyadmin_ e eliminare il contenuto del proprio database; 
+  + Sostituire il nome del database usato nel file init-scripts/init.sql; 
+  + Importare il database tramite _phpmyadmin_; 
+  + inserire tutto il contenuto della cartella src (non la cartella stessa) all'interno della cartella public_html del server.
+
+
+
 Norme riguardanti l'attività di installazione del progetto sul server:
   + Nel file DBAccess si devono cambiare le credenziali di accesso al database;
   + Si copia la cartella src, all'interno della cartella public_html del server di tecweb;
@@ -240,8 +247,10 @@ Norme riguardanti l'attività di installazione del progetto sul server:
 = Processi organizzativi
 
 == Organizzazione interna  
+Per lavorare in maniera efficacie al progetto, si è deciso di adottare Docker: è stato realizzato un file docker compose che una volta avviato mettesse a disposizione del team tutte le componenti necessarie allo sviluppo nelle medesime versioni. Inoltre durante lo sviluppo si sono fatte continue prove nel server deedicato. 
+Per la condivisione e il versionamento del codice sorgente si è utilizzato GitHub.
 
-Si è preferito organizzare il lavoro a gruppi da 2. Un sottoteam per implementare tutte le funzionalità dinamiche richieste dal sito, e l'altro sottoteam per  sviluppare l'estetica del sito con le relative animazioni.
+
 
 == Suddivisione lavoro 
 
@@ -249,34 +258,35 @@ Si è preferito organizzare il lavoro a gruppi da 2. Un sottoteam per implementa
         - CSS;
         - HTML pagine statiche;
         - Verifica relazione.
+        - Attività di revisione del codice.
    - Giacomo D'Ovidio:
         - Template HTML;
         - PHP;
         - Database: creazione file e operazioni;
         - Javascript: controlli front-end;
-        - Accessibilità;
-        - Validazione;
-        - Controlli input;
+        - Garante dell'accessibilità;
+        - Validazione input;
         - Relazione.
-   - Marco Picooli:
+   - Marco Piccoli:
         - HTML pagine statiche;
         - CSS;
-        - Carosello dinamico e animazioni Javascript;
+        - Carosello dinamico e animazioni css e Javascript;
         - Verifica relazione.
-        
+        - Attività di revisione del codice.
    - Riccardo Alberto Costantin;
+        - Amministratore della repository; 
         - Template HTML;
         - PHP;
         - Database: accesso e operazioni;
         - Javascript: controlli front-end;
-        - Validazione;
-        - Controlli input;
+        - Validazione input;
         - Relazione.
 
 
 
 
 = Conclusioni
+
 
 
 
