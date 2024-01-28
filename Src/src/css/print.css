@@ -476,6 +476,9 @@ h2.titolo-item-merch{
 .ticket-vip {
   text-align: left;
 }
+.ticket-vip li::before{
+  filter: grayscale(100%);
+}
 
 /* Pagina Domande */
 
