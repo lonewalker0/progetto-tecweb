@@ -238,7 +238,6 @@ Si elencano i passaggi da eseguire.
   + inserire tutto il contenuto della cartella src (non la cartella stessa) all'interno della cartella public_html del server; 
   + Dobbiamo ancora inserire la parte relativa ala gestione degli errori. 
 
-//qui bisongna finire 
 
 Norme riguardanti l'attività di installazione del progetto sul server:
   + Nel file DBAccess si devono cambiare le credenziali di accesso al database;
