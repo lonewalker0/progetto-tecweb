@@ -821,10 +821,17 @@ form#formeliminaaccount input[type="submit"] {
 }
 .programma-admin{
   page-break-inside: avoid;
+  background-color: white;
+}
+.programma-admin img{
+  filter: grayscale(100%);
+  box-shadow: none;
 }
 .section-admin h2{
   page-break-before: always;
 }
+
+
 
 /*MESSAGGI DI ERRORE*/
 
