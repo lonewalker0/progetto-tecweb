@@ -1,8 +1,10 @@
 <IfModule mod_rewrite.c>
-   RewriteEngine On
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ error404.php [L,QSA]
+
+    ErrorDocument 404 /error404.php
+    ErrorDocument 500 /error500.php
 </IfModule>
-
-RedirectMatch 403 ^/html/.*$
-
-ErrorDocument 404 /error404.php
-ErrorDocument 500 /error500.php
