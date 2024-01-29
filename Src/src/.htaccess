@@ -6,5 +6,4 @@
     RewriteRule ^(.*)$ error404.php [L,QSA]
 
     ErrorDocument 404 /error404.php
-    ErrorDocument 500 /error500.php
 </IfModule>

@@ -103,7 +103,7 @@ Nel main il contenuto della pagina.
 Nel footer le icone dei social, i diritti di copyright e l'informativa riguardante la privacy. 
 
 == Pagine di errore 
-Sono state personalizzate le pagine di errore così da non disorientare l'utente e contribuire a mantenere un clima di fiducia. Questo accade ad esempio nella pagina di errore 404.
+Abbiamo personalizzato la pagina di errore 404 così da non disorientare l'utente e contribuire a mantenere un clima di fiducia. 
 
 == CSS
 Il design è stato sviluppato inizialmente per il sito nella sua versione Desktop, successivamente è stato rielaborato per l'accesso tramite schermi di dimensioni minori. 
