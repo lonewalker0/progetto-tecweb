@@ -147,8 +147,8 @@ Per la pagina _Account_, è risultato molto utile salvare l'username su una vari
 === Sicurezza 
 
  - Nel database le password non sono salvate in chiaro, bensì utilizzando l'algoritmo di hashing di default di PHP usando la funzione _PASSWORD_DEFAULT_;
- - Per prevenire attacchi di tipo _XSS Cross-Site-Scripting_ e _Javascript Injection_ sono state sviluppate delle funzioni che tramite espressioni rilevano l'immissione di tag HTML all'interno degli input form; 
- - Sono state realizzate query parametriche tramite la funzione _prepare()_ di _mysqli_ per prevenire attacchi di tipo SQL Injection.
+ - Per prevenire attacchi di tipo _XSS Cross-Site-Scripting_ e _Javascript Injection_ sono state sviluppate delle funzioni che tramite espressioni regolari rilevano l'immissione di tag HTML all'interno degli input form; 
+ - Sono state realizzate query parametriche tramite la funzione _mysqli\_prepare()_ di _mysqli_ per prevenire attacchi di tipo SQL Injection.
 
 == Database  
 
@@ -234,10 +234,10 @@ Se il progetto dev'essere installato sul server gdovidio non è necessario aggio
 Si elencano i passaggi da eseguire.
   + Nel file _src/phputilities/DBAccess.php_ si devono cambiare le credenziali di accesso al database;
   + Accedere a _phpmyadmin_ e eliminare il contenuto del proprio database; 
-  + Sostituire il nome del database usato nel file _init-scripts/init.sql_; 
+  + Sostituire il nome del database usato nel file _src/sql/init.sql_; 
   + Importare il database tramite _phpmyadmin_; 
-  + inserire tutto il contenuto della cartella _src_ (non la cartella stessa) all'interno della cartella _public_html_ del server;
-  + la gestione degli errori 404 e 500 è già stata settata per funzionare anche tramite tunnel ssh e non ha bisogno di ulteriori modifiche.
+  + inserire tutto il contenuto della cartella _src_ (il contunuto, non la cartella stessa) all'interno della cartella _public_html_ del server;
+  + la gestione dell'errore 404 è già stata impostata per funzionare anche tramite tunnel ssh e non ha bisogno di ulteriori modifiche.
 
 
 
