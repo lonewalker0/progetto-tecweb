@@ -134,7 +134,7 @@ PHP è stato ampiamente utilizzato. Si riportano successivamente le principali f
 Per evitare duplicazione di codice e favorire il riuso di quest'ultimo, il PHP si occupa della costruzione dinamica delle pagine, importando i vari file template HTML e, attraverso ancoraggi e funzioni di string replace, iniettando il contenuto.
 Gli ancoraggi vengono definiti nei file HTML con le doppie parentesi graffe.
 === Link circolari  
-Per rimuovere i link circolari, ovvero link che portano alla stessa pagina, è stata sviluppata una funzione in php che permette di rimuovere direttamente il tag \<a\> se ci troviamo in quella specifica pagina. 
+Per rimuovere i link circolari, ovvero link che portano alla stessa pagina, è stata sviluppata una funzione in php che tramite espressioni regolari permette di rimuovere direttamente il tag \<a\> se ci troviamo in quella specifica pagina. 
 === Connessione al Database
 La classe DBAccess effettua il collegamento al database e costituisce l'oggetto effettivo della connesione, mentre le query vengono effettuate tramite la classe DBoperation: per interfacciarsi al database è stata utilizzata la libreria mysqli.
 === Form e validazione degli input
@@ -146,20 +146,20 @@ Per la pagina account, è risultato molto utile salvare l'username su una variab
 
 === Sicurezza 
 
- - Nel database le password non sono salvate in modo chiaro su testo, bensì utilizzando l'algoritmo di hashing di default di php usando la funzione _PASSWORD_DEFAULT_;
+ - Nel database le password non sono salvate in chiaro, bensì utilizzando l'algoritmo di hashing di default di php usando la funzione _PASSWORD_DEFAULT_;
  - Per prevenire attacchi di tipo _XSS Cross-Site_scripting_ e _Javascript Injection_ sono state sviluppate delle funzioni che tramite espressioni rilevano l'immisione di tag html all'interno degli input form; 
- - Sono state realizzate query parametriche per prevenire attacchi di tipo SQL Injection.
+ - Sono state realizzate query parametriche tramite la funzione _prepare()_ di _mysqli_ per prevenire attacchi di tipo SQL Injection.
 
 == Database  
 
-Come Database si è deciso di usare MYSql, classico database di tipo relazionale. Disponiamo di 5 tabelle:
+Come Database si è deciso di usare MariaDB, classico database di tipo relazionale. Disponiamo di 5 tabelle:
  - Tabella _users_ in cui vengono elencati tutti gli utenti registrati al sito, con relative informazioni anagrafiche;
  - Tabella _Programma_ in cui si memorizzano gli artisti e l'orario in cui si esibiranno, insieme all'indirzzo relativo;
  - Tabella _Biglietti_ in cui si salvano le varie tipologie di Biglietti che è possibile acquistare;
  - Tabella _Ordini_ per registrare tutti gli ordini effettuati dagli utenti;
  - Tabella _Shop_ per salvare gli articoli, che è possibile acquistare al Festival. 
 
-La tabella user in realtà non è totalmente ottimizzata, contiene infatti una campo booleano che definisce la tipologia di utente, si è comunque deciso di manetenere una tabella unica e non dividerla appunto per mantenere delle query più semplici.
+La tabella _user_ in realtà non è totalmente ottimizzata, contiene infatti una campo booleano che definisce la tipologia di utente, si è comunque deciso di manetenere una tabella unica e non dividerla appunto per mantenere delle query più semplici.
 Nelle tabelle Shop e Programma, per gestire le immagini, si è salvato il path della locazione delle foto.
 Tutte le foto hanno una dimensione inferiore al MB, e sono stati sviluppati i relativi controlli, lato php e js, per evitare il carimento di immagini più pesanti o di formati non accettati.
 
@@ -182,7 +182,7 @@ Vengono di seguito elencate, in ordine di importanza, le ricerche a cui il sito 
   + Parole generiche quali Festival, Padova, Evento etc.;
   + Nomi degli artisti presenti al Festival.
 
-Essendo comunque tutti campi di ricerca generali, escludendo chiaramente il titolo stesso del festival, e dunque ormai affollato da altri siti.Sarà dunque necessario, in fase di rilascio del sito al pubblico, andare ad effettuare una qualche campagna di pubblicizzazione tramite piattaforme social in maniera tale da andare ad aumentare il quantitivo di visite in entrata e dunque a ,igliorare il suo posizionamento. 
+Essendo comunque tutti campi di ricerca generali, escludendo chiaramente il titolo stesso del festival, sono dunque ormai affollati da altri siti. Sarà dunque necessario, in fase di rilascio del sito al pubblico, andare ad effettuare una qualche campagna di pubblicizzazione tramite piattaforme social in maniera tale da andare ad aumentare il quantitivo di visite in entrata e dunque a migliorare il suo posizionamento. 
 
 = Test 
 
@@ -199,8 +199,8 @@ Sono stati testati i seguenti browser:
   - Opera (Windows 11);
   - Brave (Linux);
 
-  Per quanto riguarda il testing su Safari, dato che nessuno dei componenti possiede alcun dispostivo Apple, e che l'ultima versione rilasciata per dispositivi Window non supporta _flexbox_, non ci è stato possibile.
-  Per testare il sito su dispositivi mobili, si sono usati gli strumenti per sviluppatori sia di Google Chrome che di Firefox.
+Per quanto riguarda il testing su Safari, dato che nessuno dei componenti possiede alcun dispostivo Apple, e che l'ultima versione rilasciata per dispositivi Window non supporta _flexbox_, non ci è stato possibile.
+Per testare il sito su dispositivi mobili, si sono usati gli strumenti per sviluppatori sia di Google Chrome che di Firefox.
 
 == Test umani
 Per testare navigabilità e usabilità del sito è stato fatto provare ad utenti reali delle cerchie di conoscienza dei componenti del gruppo, in generale si sono sempre ottenuti responsi positivi.
@@ -236,16 +236,11 @@ Si elencano i passaggi da eseguire.
   + Accedere a _phpmyadmin_ e eliminare il contenuto del proprio database; 
   + Sostituire il nome del database usato nel file init-scripts/init.sql; 
   + Importare il database tramite _phpmyadmin_; 
-  + inserire tutto il contenuto della cartella src (non la cartella stessa) all'interno della cartella public_html del server; 
-  + Dobbiamo ancora inserire la parte relativa ala gestione degli errori. 
+  + inserire tutto il contenuto della cartella src (non la cartella stessa) all'interno della cartella public_html del server;
+  + la gestione degli errori 404 e 500 è già stata settata per funzionare anche tramite tunnel ssh e non ha bisogno di ulteriori mofifiche.
 
 
-Norme riguardanti l'attività di installazione del progetto sul server:
-  + Nel file DBAccess si devono cambiare le credenziali di accesso al database;
-  + Si copia la cartella src, all'interno della cartella public_html del server di tecweb;
-  + Su phpmyadmin si importa il file init.sql presente nella cartella sql;
-  + Per la gestione degli errori personalizzata bisogna modificare il file .htaccess impostando il percorso assoluto della pagina:
-     ErrorDocument [errore] #link("http://tecweb.studenti.math.unipd.it/errore[errrore].php")  in cui [errore] va sostituito con 404 e 500.
+
 
 = Organizzazione
 
@@ -267,7 +262,7 @@ Per la condivisione e il versionamento del codice sorgente si è utilizzato GitH
    - Giacomo D'Ovidio:
         - Template HTML;
         - PHP;
-        - Database: creazione file e operazioni;
+        - Database: accesso e operazioni;
         - Javascript: controlli front-end;
         - Garante dell'accessibilità;
         - Validazione input;
@@ -292,9 +287,9 @@ Per la condivisione e il versionamento del codice sorgente si è utilizzato GitH
 = Conclusioni
 Il gruppo conviene nel dire che il  progetto è stata un esperienza estremamente formativa e interessante. 
 Si è infatti avuto modo di sviluppare e consolidare competenze tecniche molto importanti anche in vista di ipotetici sbocchi professionali. 
-Il gruppo essendo per lo più composto da componenti provenienti da Licei scientifici tradizionali non aveva mai avuto modo di imterfacciarsi direttamente a queste tecnologie. 
+Il gruppo essendo per lo più composto da componenti provenienti da Licei scientifici tradizionali non aveva mai avuto modo di interfacciarsi direttamente a queste tecnologie. 
 Inoltre si sono dovute affrontare tutta una serie di difficoltà legate allo sviluppo non individuale( problemi di comunicazione, di gestione del codice sorgente condiviso, di pianificazione, etc). 
-Nel farlo possiamo dire di aver imparato molto. 
+In generale possiamo dire di aver imparato molto è che sicuramente nel complesso l'esperienza è stata formativa.
 
 
 
