@@ -10,7 +10,7 @@ $description = 'Pagina non trovata';
 
 $main = "
 <div id='error-container'>
-    <img src='../assets/error500.png' alt=''>
+    <img src='assets/error500.png' alt=''>
     <h1>Errore Server.</h1>
     <h2>Stiamo avendo dei problemi tecnici.</h2>
     <p>Ci scusiamo per il disagio.</p>

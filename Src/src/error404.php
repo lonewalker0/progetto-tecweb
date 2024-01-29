@@ -10,7 +10,7 @@ $description = 'Pagina non trovata';
 
 $main = "
 <div id='error-container'>
-    <img src='../assets/error404.png' alt=''>
+    <img src='assets/error404.png' alt=''>
     <h1>Pagina non trovata.</h1>
     <h2>La pagina che hai cercato non é disponibile.</h2>
     <p>Controlla l'indirizzo digitato.</p>
