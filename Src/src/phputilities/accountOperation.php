@@ -69,7 +69,7 @@ class accountOperation {
                 $output .= str_replace("{{rows}}", $rows, $table);
                 $output.="</div>";
                 } else {
-                    $output .= "<h2>Non hai ancora effettuato ordini!</h2>";
+                    $output .= "<h2>Non hai ancora acquisitato prevendite!</h2>";
                     $output.="</div>";
                 }
                 $output .= file_get_contents(__DIR__ . '/../html/eliminazioneAccount.html');
