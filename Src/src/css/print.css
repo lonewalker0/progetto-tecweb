@@ -757,7 +757,7 @@ table#tabellaordini{
   width: 100%;  
   text-align: center; 
   border-radius: 0;
-  box-shadow: 0;
+  
   border: none !important;
   box-shadow: unset;
   background-color: white;
