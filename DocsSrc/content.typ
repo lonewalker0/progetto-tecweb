@@ -22,10 +22,10 @@ Ci si è infatti posti l'obbiettivo di realizzare funzionalità diversificate, i
 Successivamente sono presentate le categorie di utenti e le funzionalità che il team ha individuato in sede di analisi. 
 
 === Visitatori standard: 
-Questa categoria deve poter aver accesso a tutte le informazioni generali riguardanti il festival: in particolare deve poter esplorare la lineup degli artisti, visualizzare le FAQ e avere una preview del merch disponibile in Loco. Inoltre deve poter effettuare la registrazione. 
+Questa categoria deve poter aver accesso a tutte le informazioni generali riguardanti il festival: in particolare deve poter esplorare la lineup degli artisti, visualizzare le FAQ e avere una preview del merch disponibile in loco. Inoltre deve poter effettuare la registrazione. 
 
 === Utenti registrati:
-Tali utenti, oltre a tutte le possibilità offerte al visitatore Standard, devono poter aggiornare i propri dati personali, poter cambiare la password, acquistare prevendite e visualizzare i dettagli degli acquisti sotto forma tabellare. Infine hanno la possibilità di eliminare definitivamente l'account dal sito web.
+Tali utenti, oltre a tutte le possibilità offerte al visitatore "standard", devono poter aggiornare i propri dati personali, poter cambiare la password, acquistare prevendite e visualizzare i dettagli degli acquisti sotto forma tabellare. Infine hanno la possibilità di eliminare definitivamente l'account dal sito web.
 
 === Admin: 
 L'admin ha inoltre la possibilità di modificare la lineup del festival inserendo ed eliminando gli eventi.  
@@ -99,7 +99,7 @@ Le pagine _struttura.html_, _header.html_, _footer.html_, _menu.html_ contengono
 == Struttura principale
 La struttura di ogni pagina si caratterizza di un header, un main e un footer.
 Nell'header possiamo trovare il logo, il nome del festival, le icone dei social e il menù principale.
-Nel Main il contenuto della pagina.
+Nel main il contenuto della pagina.
 Nel footer le icone dei social, i diritti di copyright e l'informativa riguardante la privacy. 
 
 == Pagine di errore 
@@ -115,7 +115,7 @@ Il layout finale è responsive: si utilizzano punti di rottura e all'interno di 
 
 === Layout di stampa  
 
-Come da specifiche di progetto viene fornito un file .css, dedicato al layout di stampa del sito. Sono stati rimossi il menù, le immagini del carosello, i pulsanti di tipo submit dai vari form. Nella stampa le pagine sono solamente in bianco e nero, l'unica eccezione è il logo. Per garantire che un elemento non venisse spezzato su varie pagine si è utilizzata la proprietà _page-break_. 
+Come da specifiche di progetto viene fornito un file _.css_, dedicato al layout di stampa del sito. Sono stati rimossi il menù, le immagini del carosello, i pulsanti di tipo submit dai vari form. Nella stampa le pagine sono solamente in bianco e nero, l'unica eccezione è il logo. Per garantire che un elemento non venisse spezzato su varie pagine si è utilizzata la proprietà _page-break_. 
 Su alcune pagine è stata cambiata totalmente la disposizione dei vari elementi per garantire una lettura più piacevole.
  
 
