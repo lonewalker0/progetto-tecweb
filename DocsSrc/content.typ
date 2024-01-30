@@ -70,7 +70,7 @@ Si riporta una breve descrizione delle pagine implementate e disponibili alle va
  - *Account*: una volta effettuato l'accesso si potranno visualizzare i propri dati personali inseriti precedentemente, nella fase di registrazione. Una sezione permette all'utente di modificare indirizzo di residenza, email o password, un'altra permette la visualizzazione delle prevendite acquistate sotto forma tabellare (se presenti) e infine un'ultima sezione permette l'accesso alla pagina di eliminazione dell'account.
  - *Eliminazione*: pagina che consente l'eliminazione dell'account dal sito web. È richiesta la password.
  
-=== Area Amministrativa
+=== Area amministrativa
 - *Account*: sempre in questa pagina l'admin può visualizzare gli eventi e gli artisti che si esibiranno. Ha la possibilità di effettuare l'inserimento di eventi o la loro rimozione.
 
 == Struttura gerarchica 
