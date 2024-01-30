@@ -1,7 +1,7 @@
 = Introduzione
 
 Per il progetto didattico del corso di Tecnologie Web, nell'Anno Accademico 2023-2024, il nostro gruppo si è dedicato alla realizzazione di un sito per un ipotetico Festival musicale chiamato TechnoLum250Festival. 
-Il TechnoLum250Festival è un festival rinomato nella città di Padova che trova come luogo per i suoi spettacoli il complesso luzzati.
+Il TechnoLum250Festival è un festival rinomato nella città di Padova che trova come luogo per i suoi spettacoli il complesso Luzzati.
 Il sito dovrà offrire la possibilità di visualizzare gli artisti che si esibiranno al Festival e dovrà permettere, per gli utenti autenticati, di effettuare l'acquisto di biglietti.
 Con tale sito il Festival allarga ulteriormente il pubblico a cui offre l'esperienza della Lum250 facendo crescere sempre di più, nel panorama locale e regionale, il brand TechnoLum250.
 
@@ -18,7 +18,7 @@ Più in generale, il contesto in oggetto si propone di essere un punto di incont
 == Tipi di utenti e funzionalità
 
 Il gruppo già in fase di analisi ha stabilito che non si sarebbero implementate una serie di funzionalità che, in ottica di un reale utilizzo, sarebbero ideali. 
-Per esempio la possibilità di avere delle prevendite nominative, la possibilità di refound delle stesse oppure la possibilità per l'amministratore di visualizzare l'andamento delle vendite.
+Per esempio la possibilità di avere delle prevendite nominative, la possibilità di rimborso delle stesse oppure la possibilità per l'amministratore di visualizzare l'andamento delle vendite.
 Questo è dovuto principalmente alle limitazioni di tempo e risorse tipiche di un progetto didattico.
 Ci si è infatti posti l'obbiettivo di realizzare funzionalità diversificate, in modo tale da poter esplorare a pieno le possibilità offerte dai linguaggi utilizzati. 
 Successivamente sono presentate le categorie di utenti e le funzionalità che il team ha individuato in sede di analisi. 
@@ -234,7 +234,7 @@ Inoltre si precisa che i colori non sono mai stati usati come unica modalità di
 Gli attributi alt delle immagini sono stati volutamente mantenuti vuoti, tali immagini infatti non aggiungono nessuna informazione al contenuto del sito, e dunque inserirli sarebbe stato pressochè inutile per i fruitori tramite screen reader.
 
 == Tabella 
-La tabella degli acquisti nella Pagina _Account_ è stata resa accessibile, adottando i criteri standard.
+La tabella degli acquisti nella Pagina _Account_ è stata resa accessibile, adottando i criteri standard, ovvero la presenza di attributi _scope_, _data-title_ e una breve descrizione tramite _aria-describedby_.
 
 
 = Installazione Progetto 
