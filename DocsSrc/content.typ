@@ -17,7 +17,7 @@ Più in generale, il contesto in oggetto si propone di essere un punto di incont
 
 Il gruppo già in fase di analisi ha stabilito che non si sarebbero implementate una serie di funzionalità che, in ottica di un reale utilizzo, sarebbero ideali. 
 Per esempio la possibilità di avere delle prevendite nominative, la possibilità di refound delle stesse oppure la possibilità per l'amministratore di visualizzare l'andamento delle vendite.
-Questo è dovuto principalmente alle limitazioni di tempo e risorse tipiche di un progetto accademico.
+Questo è dovuto principalmente alle limitazioni di tempo e risorse tipiche di un progetto didattico.
 Ci si è infatti posti l'obbiettivo di realizzare funzionalità diversificate, in modo tale da poter esplorare a pieno le possibilità offerte dai linguaggi utilizzati. 
 Successivamente sono presentate le categorie di utenti e le funzionalità che il team ha individuato in sede di analisi. 
 
