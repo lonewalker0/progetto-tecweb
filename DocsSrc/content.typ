@@ -1,9 +1,9 @@
 = Introduzione
 
 Per il progetto didattico del corso di Tecnologie Web, nell'Anno Accademico 2023-2024, il nostro gruppo si è dedicato alla realizzazione di un sito per un ipotetico Festival musicale chiamato TechnoLum250Festival. 
-Il TechnoLum250Festival è un festival rinomato nella città di Padova che trova come luogo per i suoi spettacoli l'aula Lum250, tale aula ha accompagnato di giorno e di notte la vita di molti studenti offrendo sempre strumenti e servizi all'avanguardia.
-Per questo il sito del Festival offre la possibilità di visualizzare gli artisti che si esibiranno al Festival e permette, per gli utenti autenticati, di effettuare l'acquisto di biglietti.
-Con tale sito il Festival allarga ulteriormente il pubblico a cui offre l'esperienza della Lum250 facendo crescere sempre di più, nel panorama locale e regionale, il brand del TechnoLum250.
+Il TechnoLum250Festival è un festival rinomato nella città di Padova che trova come luogo per i suoi spettacoli il complesso luzzati.
+Il sito dovrà offrire la possibilità di visualizzare gli artisti che si esibiranno al Festival e dovrà permettere, per gli utenti autenticati, di effettuare l'acquisto di biglietti.
+Con tale sito il Festival allarga ulteriormente il pubblico a cui offre l'esperienza della Lum250 facendo crescere sempre di più, nel panorama locale e regionale, il brand TechnoLum250.
 
 = Analisi dei requisiti
 
