@@ -24,6 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $_SESSION['username']; 
         $productId = $_POST['id']; 
         $quantity = $_POST['quantita']; // Assicura che il campo quantita sia presente nel tuo modulo
+        date_default_timezone_set('Europe/Rome');
         $purchaseDate = date("Y-m-d H:i:s"); // Imposta la data di acquisto come data corrente
         $prezzosingolo=$dboperation->getPrezzoBiglietto($productId);
         $prezzo_totale= $quantity * $prezzosingolo;
