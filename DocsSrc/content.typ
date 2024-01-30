@@ -50,13 +50,13 @@ I colori individuati sono stati il bianco e il giallo rispettivamente per i link
 === Logo cliccabile
 Il team ha scelto di adottare la pratica ormai quasi universale nel web design di associare al logo un link cliccabile che riporto alla pagina home. Tramite espressioni regolari si è garantita l'eliminazione dei link circolari. 
 === Breadcrumb
-Abbiamo abbracciato la convenzione di adottare una breadcrumb per favorire la navigazione e limitare il sovraccarico cognitivo per l'utente.
+Abbiamo abbracciato la convenzione di adottare una breadcrumb per favorire la navigazione e limitare il disorientamento. 
 
 == Pagine
 Si riporta una breve descrizione delle pagine implementate e disponibili alle varie categorie di utenti 
 
 === Area comune 
- - *Home*: pagina principale del sito e la prima visualizzata quando si accede al sito. Incorpora un carosello scorrevole in modo dinamico in cui vengono mostrate varie foto del Festival. Per ogni giornata del festival vengono mostrati gli artisti che si esibiscono con l'orario rispettivo.
+ - *Home*: pagina principale del sito, la prima visualizzata quando si accede al sito. Incorpora un carosello scorrevole in modo dinamico in cui vengono mostrate varie foto del Festival. Per ogni giornata del festival vengono mostrati gli artisti che si esibiscono con annesso l'orario dell'esibizione e una breve descrizione.
  - *Chi siamo*: pagina che descrive brevemente il Festival e contiene i vari ringraziamenti.
  - *Location*: pagina in cui sono presenti le informazioni per raggiungere il Festival.
  - *Merch*: pagina in cui vengono visualizzati e descritti gli item  del merch che possono essere acquistati in Loco.
@@ -134,7 +134,7 @@ PHP è stato ampiamente utilizzato. Si riportano successivamente le principali f
 Per evitare duplicazione di codice e favorire il riuso di quest'ultimo, il PHP si occupa della costruzione dinamica delle pagine, importando i vari file template HTML e, attraverso ancoraggi e funzioni di string replace, iniettando il contenuto.
 Gli ancoraggi vengono definiti nei file HTML con le doppie parentesi graffe.
 === Link circolari  
-Per rimuovere i link circolari, ovvero link che portano alla stessa pagina, è stata sviluppata una funzione in PHP che tramite espressioni regolari permette di rimuovere direttamente il tag \<a\> se ci troviamo in quella specifica pagina. 
+Per rimuovere i link circolari, ovvero link che portano alla stessa pagina, si sono sviluppate delle funzione in PHP che tramite espressioni regolari permettono di rimuovere direttamente il tag \<a\> se ci troviamo in quella specifica pagina. 
 === Connessione al Database
 La classe _DBAccess_ effettua il collegamento al database e costituisce l'oggetto effettivo della connessione, mentre le query vengono effettuate tramite la classe _DBoperation_: per interfacciarsi al database è stata utilizzata la libreria _mysqli_.
 === Form e validazione degli input
