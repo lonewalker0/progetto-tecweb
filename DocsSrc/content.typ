@@ -10,7 +10,7 @@ Il suddetto festival si rivolge principalmente a un pubblico giovane, la cui et�
 Il sito sviluppato deve di conseguenza rivolgersi principalmente a queste categorie di utenti.
 La demografia rilevata apprezza un'interfaccia utente intuitiva, un design accattivante e facilmente navigabile da dispositivi mobili, riflettendo il loro stile di vita dinamico.
 Sebbene il sito web sia da sviluppare in modo tale da strizzare l'occhio ad un pubblico giovane e costantemente al passo con la tecnologia, è fondamentale che il design non escluda fasce d'età più mature.
-Di conseguenza è necessario che il sito offra un'esperienza utente accessibile a un utente più anziano, che potrebbe essere interessato a esplorare e partecipare all'evento.
+Di conseguenza è necessario che il sito offra un'esperienza utente accessibile a un utente più anziano, che potrebbe essere interessato a esplorare e a partecipare all'evento.
 Più in generale, il contesto in oggetto si propone di essere un punto di incontro per l'intera comunità. Di conseguenza, in linea con questo presupposto di inclusione, è fondamentale che il sito web sia pienamente accessibile alle persone con disabilità per garantire loro una navigazione piacevole e chiara. 
 
 == Tipi di utenti e funzionalità
