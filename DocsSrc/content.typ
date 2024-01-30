@@ -159,7 +159,7 @@ Per la pagina _Account_, è risultato molto utile salvare l'username su una vari
 
 Come database si è deciso di usare _MariaDB_, classica base di dati di tipo relazionale. Disponiamo di 5 tabelle:
  - Tabella _users_ in cui vengono elencati tutti gli utenti registrati al sito, con relative informazioni anagrafiche;
- - Tabella _Programma_ in cui si memorizzano gli artisti e l'orario in cui si esibiranno, insieme all'indirizzo relativo;
+ - Tabella _Programma_ in cui si memorizzano gli eventi;
  - Tabella _Biglietti_ in cui si salvano le varie tipologie di Biglietti che è possibile acquistare;
  - Tabella _Ordini_ per registrare tutti gli ordini effettuati dagli utenti;
  - Tabella _Shop_ per salvare gli articoli, che è possibile acquistare al Festival. 
