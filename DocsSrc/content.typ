@@ -292,7 +292,7 @@ Per la condivisione e il versionamento del codice sorgente si è utilizzato GitH
 = Conclusioni
 Il gruppo conviene nel dire che il  progetto è stata un'esperienza estremamente formativa e interessante. 
 Si è infatti avuto modo di sviluppare e consolidare competenze tecniche molto importanti anche in vista di ipotetici sbocchi professionali. 
-Il gruppo essendo per lo più composto da componenti provenienti da Licei scientifici tradizionali non aveva mai avuto modo di interfacciarsi direttamente a queste tecnologie. 
+Il gruppo essendo per lo più composto da componenti provenienti da licei scientifici tradizionali non aveva mai avuto modo di interfacciarsi direttamente a queste tecnologie. 
 Inoltre si sono dovute affrontare tutta una serie di difficoltà legate allo sviluppo non individuale (problemi di comunicazione, di gestione del codice sorgente condiviso, di pianificazione, etc). 
 In generale possiamo dire di aver imparato molto e sicuramente nel complesso l'esperienza è stata formativa.
 
