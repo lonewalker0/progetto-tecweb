@@ -33,7 +33,7 @@ INSERT INTO Programma (date, hour, image_path, description, artist_name)
 VALUES ('2024-07-05', '21:00:00', 'assets/artisti/night-skinny.png', "<span lang='en'>Producer</span> e ingegnere del suono in ambito hip hop, Night Skinny è considerato uno dei maggiori esponenti della scena rap italiana, con numerose collaborazioni con gli artisti nostrani del genere musicale.", 'The Night Skinny');
 
 INSERT INTO Programma (date, hour, image_path, description, artist_name)
-VALUES ('2024-07-05', '22:00:00', 'assets/artisti/kid-yugi.png', "Kid Yugi è uno dei nomi più caldi della scena rap italiana. Singolo dopo singolo gli sguardi del pubblico si poggiano sempre più su di lui, raggiungendo l'apice con la pubblicazione di <cite lang='en'>The Globe</cite>, il suo primo disco ufficiale, a <time datetime='2022-11-01'>novembre 2022</time>. In 12 brani segna un esordio da rookie dell'anno.", 'Kid Yugi');
+VALUES ('2024-07-05', '22:00:00', 'assets/artisti/kid-yugi.png', "Kid Yugi è uno dei nomi più caldi della scena rap italiana. Singolo dopo singolo gli sguardi del pubblico si poggiano sempre più su di lui, raggiungendo l'apice con la pubblicazione di <cite lang='en'>The Globe</cite>, il suo primo disco ufficiale, a <time datetime='2022-11-01'>novembre 2022</time>. In 12 brani segna un esordio da record.", 'Kid Yugi');
 
 INSERT INTO Programma (date, hour, image_path, description, artist_name)
 VALUES ('2024-07-05', '23:00:00', 'assets/artisti/tony-boy.png', "Tony Boy, rapper classe <abbr title='1999'>'99</abbr> nato a Padova, spicca per la sua capacità di scrittura, interpretazione e versatilità nel <span lang='en'>flow</span>, mischiando tematiche sentimentali con un'attitudine più cruda.", 'Tony Boy');
