@@ -228,6 +228,9 @@ Si è prestata molta attenzione ai colori e ai contrasti, i contrasti sono stati
 Per quanto riguarda gli utenti soggetti ad alterazione del senso cromatico, il gruppo ha effettuato varie simulazioni a garantire che il contenuto potesse rimanere ugualmente fruibile.
 Inoltre si precisa che i colori non sono mai stati usati come unica modalità di trasmissione dell'informazione, per esempio tutti i link risultano essere sottolineati.  
 
+== Alt
+Gli attributi alt delle immagini sono stati volutamente mantenuti vuoti, tali immagini infatti non aggiungono nessuna informazione al contenuto del sito.
+
 == Tabella 
 La tabella degli acquisti nella Pagina _Account_ è stata resa accessibile, adottando i criteri standard.
 
