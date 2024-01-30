@@ -5,5 +5,9 @@
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ error404.php [L,QSA]
 
+
+
+
+    
     ErrorDocument 404 /error404.php
 </IfModule>
