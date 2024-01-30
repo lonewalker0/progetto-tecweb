@@ -191,7 +191,7 @@ Essendo comunque tutti campi di ricerca generali, escludendo chiaramente il tito
 = Test 
 
 == Validazione sito 
-Per validare il codice HTML5 del sito è stato usato come strumento _#link("https://validator.w3.org/")_ e Total Validator Basic presente nei computer del Paolotti.
+Per validare il codice HTML5 del sito sono stati usati gli strumenti _#link("https://validator.w3.org/")_ e Total Validator Basic presente nei computer del Paolotti.
 Per validare il codice CSS è invece stato usato _#link("https://jigsaw.w3.org/css-validator/")_.
 
 == Browser web 
