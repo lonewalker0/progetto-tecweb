@@ -231,7 +231,7 @@ Per quanto riguarda gli utenti soggetti ad alterazione del senso cromatico, il g
 Inoltre si precisa che i colori non sono mai stati usati come unica modalità di trasmissione dell'informazione, per esempio tutti i link risultano essere sottolineati.  
 
 == Alt
-Gli attributi alt delle immagini sono stati volutamente mantenuti vuoti, tali immagini infatti non aggiungono nessuna informazione al contenuto del sito.
+Gli attributi alt delle immagini sono stati volutamente mantenuti vuoti, tali immagini infatti non aggiungono nessuna informazione al contenuto del sito, e dunque inserirli sarebbe stato pressochè inutile per i fruitori tramite screen reader.
 
 == Tabella 
 La tabella degli acquisti nella Pagina _Account_ è stata resa accessibile, adottando i criteri standard.
