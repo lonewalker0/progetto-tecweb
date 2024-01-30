@@ -76,7 +76,7 @@ Si riporta una breve descrizione delle pagine implementate e disponibili alle va
 == Struttura gerarchica 
 La gerarchia è stata sviluppata principalmente in ampiezza.
 Il menù principale ha come sezioni: _Home_, _Chi Siamo_, _Location_, _Merch_, _Prevendite_, _Domande_ e _Account_ per un totale di 7 voci.
-La profondità massima è di 3 elementi che si verifica nella pagina _Account_.
+La profondità massima è di 3 elementi, nelle pagine di _Registrazione_ e di _Eliminazione_ dell'Account.
 
 == Schema organizzativo 
 È stato adottato uno schema esatto per i contenuti ospitati nel sito, garantendo che ogni sezione sia mutualmente esclusiva, con contenuti distinti e senza sovrapposizioni. La categorizzazione degli eventi è stata implementata seguendo un ordine cronologico.
