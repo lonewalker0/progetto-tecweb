@@ -115,7 +115,7 @@ Il layout finale è responsive: si utilizzano punti di rottura e all'interno di 
 
 === Layout di stampa  
 
-Come da specifiche di progetto viene fornito un file _.css_, dedicato al layout di stampa del sito. Sono stati rimossi il menù, le immagini del carosello, i pulsanti di tipo submit dai vari form. Nella stampa le pagine sono solamente in bianco e nero, eccezione fatta per il logo e per le immagini del merch. Per garantire che un elemento non venisse spezzato su varie pagine si è utilizzata la proprietà _page-break_. 
+Come da specifiche di progetto viene fornito un file _.css_, dedicato al layout di stampa del sito. Sono stati rimossi il menù, le immagini del carosello, i pulsanti di tipo submit dai vari form. Nella stampa le pagine sono solamente in bianco e nero, eccezione fatta per il logo e per le immagini del merch. Per garantire che un elemento non venga spezzato su varie pagine si è utilizzata la proprietà _page-break_. 
 Su alcune pagine è stata cambiata totalmente la disposizione dei vari elementi per garantire una lettura più piacevole.
  
 
