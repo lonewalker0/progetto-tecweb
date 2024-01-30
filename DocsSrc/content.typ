@@ -46,7 +46,7 @@ Questo processo preparatorio è risultato molto utile per scolpire un primo aspe
 Si riportano di seguito le convenzioni adottate dal gruppo: 
 === Link
 Il team ha deciso di mantenere i link sottolineati come da Standard WCAG, inoltre per ridurre il disorientamento cognitivo si è optato per mantenere un colore diverso per i link visitati. 
-I colori individuati sono stati il bianco e il giallo rispettivamente per i link visitati e non visitati. 
+I colori individuati sono stati il bianco e il giallo rispettivamente per i link non visitati e visitati. 
 === Logo cliccabile
 Il team ha scelto di adottare la pratica ormai quasi universale nel web design di associare al logo un link cliccabile che riporto alla pagina home. Tramite espressioni regolari si è garantita l'eliminazione dei link circolari. 
 === Breadcrumb
