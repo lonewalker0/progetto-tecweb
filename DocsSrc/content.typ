@@ -1,7 +1,7 @@
 = Introduzione
 
 Per il progetto didattico del corso di Tecnologie Web, nell'Anno Accademico 2023-2024, il nostro gruppo si è dedicato alla realizzazione di un sito per un ipotetico Festival musicale chiamato TechnoLum250Festival. 
-Il sito permette di visualizzare gli artisti che si esibiranno al Festival e permette, per gli utenti autenticati, di effettuare l'acquisto di biglietti
+Il sito permette di visualizzare gli artisti che si esibiranno al Festival e permette, per gli utenti autenticati, di effettuare l'acquisto di biglietti.
 
 = Analisi dei requisiti
 
@@ -14,7 +14,6 @@ Di conseguenza è necessario che il sito offra un'esperienza utente accessibile 
 Più in generale, il contesto in oggetto si propone di essere un punto di incontro per l'intera comunità. Di conseguenza, in linea con questo presupposto di inclusione, è fondamentale che il sito web sia pienamente accessibile alle persone con disabilità per garantire loro una navigazione piacevole e chiara. 
 
 == Tipi di utenti e funzionalità
-
 
 Il gruppo già in fase di analisi ha stabilito che non si sarebbero implementate una serie di funzionalità che, in ottica di un reale utilizzo, sarebbero ideali. 
 Per esempio la possibilità di avere delle prevendite nominative, la possibilità di refound delle stesse oppure la possibilità per l'amministratore di visualizzare l'andamento delle vendite.
@@ -116,7 +115,7 @@ Il layout finale è responsive: si utilizzano punti di rottura e all'interno di 
 
 === Layout di stampa  
 
-Come da specifiche di progetto viene fornito un file _.css_, dedicato al layout di stampa del sito. Sono stati rimossi il menù, le immagini del carosello, i pulsanti di tipo submit dai vari form. Nella stampa le pagine sono solamente in bianco e nero, l'unica eccezione è il logo. Per garantire che un elemento non venisse spezzato su varie pagine si è utilizzata la proprietà _page-break_. 
+Come da specifiche di progetto viene fornito un file _.css_, dedicato al layout di stampa del sito. Sono stati rimossi il menù, le immagini del carosello, i pulsanti di tipo submit dai vari form. Nella stampa le pagine sono solamente in bianco e nero, eccezione fatta per il logo e per le immagini del merch. Per garantire che un elemento non venisse spezzato su varie pagine si è utilizzata la proprietà _page-break_. 
 Su alcune pagine è stata cambiata totalmente la disposizione dei vari elementi per garantire una lettura più piacevole.
  
 
@@ -126,7 +125,7 @@ Il linguaggio JavaScript è stato utilizzato per lo sviluppo del carosello dinam
 Inoltre è stato essenziale nel processo di validazione degli input inseriti da parte dell'utente, ogni form infatti presenta controlli lato client e produce degli errori che tramite la funzione _appendError_ vengono mostrati a schermo all'interno di un determinato _div_.
 Abbiamo provveduto, per quanto fattibile, a mantenere gli stessi controlli lato client e lato server. Per i controlli che interagiscono con il database o con le variabili di sessione i controlli rimangono solamente lato server.
 Inoltre tutto il sito è stato sviluppato considerando il fatto che sarebbe dovuto rimanere pienamente accessibile e utilizzabile anche nel momento in cui JavaScript non fosse disponibile o disattivato.
-Tutto il codice è stato incorporato all'interno di un unico file in modo tale da limitare le richieste HTTP e per una più agevole manutenzione. Per garantire che tutti gli script aspettassero l'effettivo caricamento del DOM prima di operare è stato fatto ampio uso di event listener legati all'evento _DOMContentLoaded_.  
+Tutto il codice è stato incorporato all'interno di un unico file in modo tale da limitare le richieste HTTP e per una più agevole manutenzione. Per garantire che tutti gli script aspettassero l'effettivo caricamento del DOM prima di operare è stato fatto ampio uso di _event listener_ legati all'evento _DOMContentLoaded_.  
 
 
 == PHP
@@ -138,18 +137,17 @@ Gli ancoraggi vengono definiti nei file HTML con le doppie parentesi graffe.
 Per rimuovere i link circolari, ovvero link che portano alla stessa pagina, si sono sviluppate delle funzione in PHP che tramite espressioni regolari permettono di rimuovere direttamente il tag \<a\> se ci troviamo in quella specifica pagina. 
 === Connessione al Database
 La classe _DBAccess_ effettua il collegamento al database e costituisce l'oggetto effettivo della connessione, mentre le query vengono effettuate tramite la classe _DBoperation_: per interfacciarsi al database è stata utilizzata la libreria _mysqli_.
-=== Form e validazione degli input
-Ogni form è stato configurato per essere gestito da un file PHP dedicato, utilizzando il metodo POST per la trasmissione sicura dei dati. Sono stati garantiti gli stessi controlli presenti nella validazione lato client, inoltre i messaggi di errore vengono ristampati nel medesimo contenitore utilizzato da JavaScript. 
+=== Handler form 
+Per ogni form, si è creato un file PHP apposito che gestisce la richiesta POST. Ogni file si occupa di processare la richiesta ed eseguire le operazioni necessarie, e al termine, di fare il reindirizzamento usando la direttiva _header()_ di PHP.
+Questa tecnica, nell'ambito della programmazione web è nota come PRG (Post-Redirect-Get) ed impedisce la duplicazione dei contenuti durante l'invio dei moduli.
+=== Validazione degli input
+Sono stati garantiti gli stessi controlli presenti nella validazione lato client, inoltre i messaggi di errore vengono ristampati nel medesimo contenitore utilizzato da JavaScript. 
 Per i form di dimensione maggiore è stata inoltre implementata la funzionalità di ricostruzione dell'input. 
 Per il controllo dell'email e dell'indirizzo di residenza si sono usate due funzioni apposite con l'utilizzo di espressioni regolari. 
 === Variabili di sessione
 La gestione delle sessioni utente è stata interamente delegata al linguaggio PHP tramite variabili di sessione. Questo approccio produce un cookie di sessione esistente solo ed esclusivamente nel browser dell'utente, motivo per cui nel nostro sito non è presente un form per acconsentire all'uso dei cookie. 
 Per la pagina _Account_, è risultato molto utile salvare l'username su una variabile di sessione, per gestire in modo efficace l'accesso e le interazioni dell'utente.
 
-=== Handler form 
-
-Per ogni form, si è creato appositamente un file PHP che gestisse la richiesta POST. Questo file si occupava di processare la richiesta ed eseguire le operazioni necessarie, e al termine, si occupava di fare il reindirizzamento usando la direttiva _header()_ di PHP.
-Questa tecnica, nell'ambito della programmazione è nota come PRG (Post-Redirect-Get) ed impedisce la duplicazione dei contenuti durante l'invio dei moduli.
 
 === Sicurezza 
 
