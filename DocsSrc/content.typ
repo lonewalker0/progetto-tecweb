@@ -29,7 +29,7 @@ Tali utenti, oltre a tutte le possibilità offerte al visitatore "standard", dev
 
 === Admin: 
 L'admin ha inoltre la possibilità di modificare la lineup del festival inserendo ed eliminando gli eventi.  
-Tali eventi sono caratterizzati univocamente dal performer, da una sua foto, da una data e un orario e infine, da una descrizione.
+Tali eventi sono caratterizzati dal nome del performer (identificatore univoco), da una sua foto, da una data e un orario e infine, da una descrizione.
 
 = Progettazione 
 
@@ -45,10 +45,10 @@ Questo processo preparatorio è risultato molto utile per scolpire un primo aspe
 == Convenzioni adottate
 Si riportano di seguito le convenzioni adottate dal gruppo: 
 === Link
-Il team ha deciso di mantenere i link sottolineati come da Standard WCAG, inoltre per ridurre il disorientamento cognitivo si è optato per mantenere un colore diverso per i link visitati. 
+Il team ha deciso di mantenere i link sottolineati come da Standard WCAG, inoltre per ridurre il sovraccarico cognitivo si è optato per mantenere un colore diverso per i link visitati. 
 I colori individuati sono stati il bianco e il giallo rispettivamente per i link non visitati e visitati. 
 === Logo cliccabile
-Il team ha scelto di adottare la pratica ormai quasi universale nel web design di associare al logo un link cliccabile che riporto alla pagina home. Tramite espressioni regolari si è garantita l'eliminazione dei link circolari. 
+Il team ha scelto di adottare la pratica ormai quasi universale nel web design di associare al logo un link cliccabile che riporto alla pagina home. Tramite espressioni regolari si è garantita l'eliminazione del link circolare. 
 === Breadcrumb
 Abbiamo abbracciato la convenzione di adottare una breadcrumb per favorire la navigazione e limitare il disorientamento. 
 
@@ -107,7 +107,7 @@ Abbiamo personalizzato la pagina di errore 404 così da non disorientare l'utent
 
 == CSS
 Il design è stato sviluppato inizialmente per il sito nella sua versione Desktop, successivamente è stato rielaborato per l'accesso tramite schermi di dimensioni minori. 
-Le principali differenze tra le due visualizzazioni si trovano nel menù di navigazione e nella tabella relativa agli ordini degli utenti. 
+Le principali differenze tra le due visualizzazioni si trovano nel menù di navigazione e nella tabella relativa agli acquisti degli utenti. 
 Il primo viene trasformato in un menù ad hamburger accessibile anche agli screen reader. La tabella viene invece resa verticale, eliminando l'header dalla visualizzazione (anche per gli screen reader), e sostituendo le funzionalità tramite l'utilizzo del costrutto _td:before_ per iniettare nella singola cella il contenuto dell'attributo _data-title_.
 Il menù ad hamburger e il suo funzionamento sono stati garantiti solo attraverso l'utilizzo di CSS, una funzione JavaScript permette invece di poterlo cliccare una volta raggiunto tramite navigazione con il tasto _tab_. 
 Per garantire una maggiore accessibilità è stata implementata una classe CSS chiamata _accessibleHide_: questa classe ci permette di eliminare gli elementi dalla vista mantenendoli però rilevabili dagli screen reader.
@@ -161,7 +161,7 @@ Come database si è deciso di usare _MariaDB_, classica base di dati di tipo rel
  - Tabella _users_ in cui vengono elencati tutti gli utenti registrati al sito, con relative informazioni anagrafiche;
  - Tabella _Programma_ in cui si memorizzano gli eventi;
  - Tabella _Biglietti_ in cui si salvano le varie tipologie di Biglietti che è possibile acquistare;
- - Tabella _Ordini_ per registrare tutti gli ordini effettuati dagli utenti;
+ - Tabella _Ordini_ per registrare tutti gli acquisti effettuati dagli utenti;
  - Tabella _Shop_ per salvare gli articoli, che è possibile acquistare al Festival. 
 
 La tabella _users_ in realtà non è totalmente ottimizzata, contiene infatti una campo booleano che definisce la tipologia di utente, si è comunque deciso di mantenere una tabella unica e non dividerla appunto per mantenere delle query più semplici.
@@ -229,7 +229,7 @@ Per quanto riguarda gli utenti soggetti ad alterazione del senso cromatico, il g
 Inoltre si precisa che i colori non sono mai stati usati come unica modalità di trasmissione dell'informazione, per esempio tutti i link risultano essere sottolineati.  
 
 == Tabella 
-La tabella degli ordini nella Pagina _Account_ è stata resa accessibile, adottando i criteri standard.
+La tabella degli acquisti nella Pagina _Account_ è stata resa accessibile, adottando i criteri standard.
 
 
 = Installazione Progetto 
@@ -289,11 +289,11 @@ Per la condivisione e il versionamento del codice sorgente si è utilizzato GitH
 
 
 = Conclusioni
-Il gruppo conviene nel dire che il  progetto è stata un'esperienza estremamente formativa e interessante. 
+Il gruppo conviene nel dire che il progetto è stata un'esperienza estremamente formativa e interessante. 
 Si è infatti avuto modo di sviluppare e consolidare competenze tecniche molto importanti anche in vista di ipotetici sbocchi professionali. 
 Il gruppo essendo per lo più composto da componenti provenienti da licei scientifici tradizionali non aveva mai avuto modo di interfacciarsi direttamente a queste tecnologie. 
-Inoltre si sono dovute affrontare tutta una serie di difficoltà legate allo sviluppo non individuale (problemi di comunicazione, di gestione del codice sorgente condiviso, di pianificazione, etc). 
-In generale possiamo dire di aver imparato molto e sicuramente nel complesso l'esperienza è stata formativa.
+Inoltre si sono dovute affrontare tutta una serie di difficoltà legate allo sviluppo non individuale (problemi di comunicazione, di gestione del codice sorgente condiviso, di pianificazione, etc.). 
+In generale possiamo dire di aver imparato molto e che sicuramente nel complesso l'esperienza è stata formativa.
 
 
 
