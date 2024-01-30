@@ -73,7 +73,7 @@ Si riporta una breve descrizione delle pagine implementate e disponibili alle va
  - *Eliminazione*: pagina che consente l'eliminazione dell'account dal sito web. È richiesta la password.
  
 === Area amministrativa
-- *Account*: sempre in questa pagina l'admin può visualizzare gli eventi e gli artisti che si esibiranno. Ha la possibilità di effettuare l'inserimento di eventi o la loro rimozione.
+- *Account*: sempre in questa pagina l'admin può visualizzare gli eventi in programma. Ha la possibilità di effettuare l'inserimento di eventi o la loro rimozione.
 
 == Struttura gerarchica 
 La gerarchia è stata sviluppata principalmente in ampiezza.
@@ -98,19 +98,19 @@ Nel corso dello sviluppo abbiamo cercato di mantenere un rapporto di massima sep
 Nella nostra repository è infatti presente una cartella _html_ in cui sono contenute tutte le componenti HTML necessarie alla visualizzazione del sito.
 Le pagine _struttura.html_, _header.html_, _footer.html_, _menu.html_ contengono la struttura portante di tutte le pagine presenti sul sito, sono state usate come template e poi dinamicamente modificate a formare il risultato finale. 
 
-== Struttura principale
+=== Struttura principale
 La struttura di ogni pagina si caratterizza di un header, un main e un footer.
 Nell'header possiamo trovare il logo, il nome del festival, le icone dei social e il menù principale.
 Nel main il contenuto della pagina.
 Nel footer le icone dei social, i diritti di copyright e l'informativa riguardante la privacy. 
 
-== Pagine di errore 
+=== Pagine di errore 
 Abbiamo personalizzato la pagina di errore 404 così da non disorientare l'utente e contribuire a mantenere un clima di fiducia. 
 
 == CSS
 Il design è stato sviluppato inizialmente per il sito nella sua versione Desktop, successivamente è stato rielaborato per l'accesso tramite schermi di dimensioni minori. 
 Le principali differenze tra le due visualizzazioni si trovano nel menù di navigazione e nella tabella relativa agli acquisti degli utenti. 
-Il primo viene trasformato in un menù ad hamburger accessibile anche agli screen reader. La tabella viene invece resa verticale, eliminando l'header dalla visualizzazione (anche per gli screen reader), e sostituendo le funzionalità tramite l'utilizzo del costrutto _td:before_ per iniettare nella singola cella il contenuto dell'attributo _data-title_.
+Il primo viene trasformato in un menù ad _hamburger_. La tabella viene invece resa verticale, eliminando l'header dalla visualizzazione (anche per gli screen reader), e sostituendone la funzionalità tramite l'utilizzo del costrutto _td:before_ per iniettare nella singola cella il contenuto dell'attributo _data-title_.
 Il menù ad hamburger e il suo funzionamento sono stati garantiti solo attraverso l'utilizzo di CSS, una funzione JavaScript permette invece di poterlo cliccare una volta raggiunto tramite navigazione con il tasto _tab_. 
 Per garantire una maggiore accessibilità è stata implementata una classe CSS chiamata _accessibleHide_: questa classe ci permette di eliminare gli elementi dalla vista mantenendoli però rilevabili dagli screen reader.
 Il layout finale è responsive: si utilizzano punti di rottura e all'interno di essi si garantisce fluidità.
