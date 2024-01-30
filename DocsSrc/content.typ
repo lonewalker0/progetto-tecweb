@@ -141,9 +141,15 @@ La classe _DBAccess_ effettua il collegamento al database e costituisce l'oggett
 === Form e validazione degli input
 Ogni form è stato configurato per essere gestito da un file PHP dedicato, utilizzando il metodo POST per la trasmissione sicura dei dati. Sono stati garantiti gli stessi controlli presenti nella validazione lato client, inoltre i messaggi di errore vengono ristampati nel medesimo contenitore utilizzato da JavaScript. 
 Per i form di dimensione maggiore è stata inoltre implementata la funzionalità di ricostruzione dell'input. 
+Per il controllo dell'email e dell'indirizzo di residenza si sono usate due funzioni apposite con l'utilizzo di espressioni regolari. 
 === Variabili di sessione
 La gestione delle sessioni utente è stata interamente delegata al linguaggio PHP tramite variabili di sessione. Questo approccio produce un cookie di sessione esistente solo ed esclusivamente nel browser dell'utente, motivo per cui nel nostro sito non è presente un form per acconsentire all'uso dei cookie. 
 Per la pagina _Account_, è risultato molto utile salvare l'username su una variabile di sessione, per gestire in modo efficace l'accesso e le interazioni dell'utente.
+
+=== Handler form 
+
+Per ogni form, si è creato appositamente un file PHP che gestisse la richiesta POST. Questo file si occupava di processare la richiesta ed eseguire le operazioni necessarie, e al termine, si occupava di fare il reindirizzamento usando la direttiva _header()_ di PHP.
+Questa tecnica, nell'ambito della programmazione è nota come PRG (Post-Redirect-Get) ed impedisce la duplicazione dei contenuti durante l'invio dei moduli.
 
 === Sicurezza 
 
@@ -237,7 +243,7 @@ Si elencano i passaggi da eseguire.
   + Accedere a _phpmyadmin_ e eliminare il contenuto del proprio database; 
   + Sostituire il nome del database usato nel file _src/sql/init.sql_; 
   + Importare il database tramite _phpmyadmin_; 
-  + inserire tutto il contenuto della cartella _src_ (il contunuto, non la cartella stessa) all'interno della cartella _public_html_ del server;
+  + inserire tutto il contenuto della cartella _src_ (il contenuto, non la cartella stessa) all'interno della cartella _public_html_ del server;
   + la gestione dell'errore 404 è già stata impostata per funzionare anche tramite tunnel ssh e non ha bisogno di ulteriori modifiche.
 
 
