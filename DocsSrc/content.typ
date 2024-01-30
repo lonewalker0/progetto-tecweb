@@ -1,6 +1,7 @@
 = Introduzione
 
 Per il progetto didattico del corso di Tecnologie Web, nell'Anno Accademico 2023-2024, il nostro gruppo si è dedicato alla realizzazione di un sito per un ipotetico Festival musicale chiamato TechnoLum250Festival. 
+Il sito permette di visualizzare gli artisti che si esibiranno al Festival e permette, per gli utenti autenticati, di effettuare l'acquisto di biglietti
 
 = Analisi dei requisiti
 
