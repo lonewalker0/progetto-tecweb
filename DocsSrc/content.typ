@@ -184,8 +184,7 @@ Vengono di seguito elencate, in ordine di importanza, le ricerche a cui il sito 
 
   + Nome del Festival (TechnoLum250);
   + Date dello svolgimento del Festival;
-  + Parole generiche quali Festival, Padova, Evento etc.;
-  + Nomi degli artisti presenti al Festival.
+  + Parole generiche quali Festival, Padova, Evento etc. .
 
 Essendo comunque tutti campi di ricerca generali, escludendo chiaramente il titolo stesso del festival, sono dunque ormai affollati da altri siti. Sarà dunque necessario, in fase di rilascio del sito al pubblico, andare ad effettuare una qualche campagna di pubblicizzazione tramite piattaforme social in maniera tale da andare ad aumentare il quantitativo di visite in entrata e dunque a migliorare il suo posizionamento. 
 
