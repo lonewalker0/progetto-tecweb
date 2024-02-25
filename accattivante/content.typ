@@ -34,7 +34,8 @@ Per rendere il sito accessibile si sono usati i seguenti strumenti:
  - Total Validator presente nei pc di laboratori del Paolotti;
  - Wave, un'estensione per Google Chrome;
  - L'analisi dell'accessibilità offerta da Mozilla Firefox;
- - Lo screen reader NVDA su Windows e per ambienti Linux il sistema _orca_.
+ - Lo screen reader NVDA su Windows e per ambienti Linux il sistema _orca_;
+ - Per le performance LighHouse.
 
 === Tabindex 
 Non è stato alterato l'ordine naturale dei _tabindex_. 
@@ -53,3 +54,9 @@ Gli attributi alt delle immagini sono stati volutamente mantenuti vuoti, tali im
 === Tabella 
 La tabella degli acquisti nella Pagina _Account_ è stata resa accessibile, adottando i criteri standard, ovvero la presenza di attributi _scope_, _data-title_ e una breve descrizione tramite _aria-describedby_.
 
+== Risultati 
+
+#figure(
+  image("assets/tabellasitogenerale.png", width: 100%),
+  caption: [Test per le pagine normali]
+)
