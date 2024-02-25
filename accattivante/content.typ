@@ -60,3 +60,18 @@ La tabella degli acquisti nella Pagina _Account_ è stata resa accessibile, adot
   image("assets/tabellasitogenerale.png", width: 100%),
   caption: [Test per le pagine normali]
 )
+
+#figure(
+  image("assets/areautente.png", width: 100%),
+  caption: [Test per le pagine utenti]
+)
+
+#figure(
+  image("assets/area_admin.png", width: 100%),
+  caption: [Test per la pagina admin]
+)
+
+#figure(
+  image("assets/foglistile.png", width: 65%),
+  caption: [Test per i fogli di stile]
+)
