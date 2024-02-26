@@ -44,7 +44,7 @@ I test automatici per l'accessibilità sono stati realizzati tramite i seguenti 
 
 == Risultati 
 Al fine di rappresentare in questa relazione i risultati dei test effettuati si è scelto di dividere raggruppare le pagine in tre macrosezioni: pagine accessibili a tutti gli utenti, pagine riservate a utenti registrati, pagine di amministrazione.
-In questi grafici la spunta verde ha diversi significati, per quanto riguarda i validatori la spunta verda rappresenta la mancanza di errori, mentre per altri strumenti rappresenta generalmente un risultato generalmente positivo.
+In questi grafici la spunta verde rappresenta la mancanza di errori per quanto riguarda i validatori, mentre per le altre categorie di test rappresenta un risultato generalemente positivo.
 
 #figure(
   image("assets/tabellasitogenerale.png", width: 100%),
@@ -67,7 +67,7 @@ Nessuno dei fogli di stili presenta errori.
 
 
 = Browser web 
-Per completezza vengono riportati i browser su cui  test sono stati effettati, rispettivamente per sistemi Windows e Linux: 
+Per completezza vengono riportati i browser su cui si è lavorato nello sviluppo e dove di conseguenza sono stati effettuati test sono stati effettati, rispettivamente per sistemi Windows e Linux: 
 
  - *Windows 10 - Windows 11*:
 
