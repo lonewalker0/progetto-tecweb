@@ -47,7 +47,7 @@ Al fine di rappresentare in questa relazione i risultati dei test effettuati si 
 In questi grafici la spunta verde rappresenta la mancanza di errori per quanto riguarda i validatori, mentre per le altre categorie di test rappresenta un risultato positivo.
 
 #figure(
-  image("assets/tabellasitogenerale.png", width: 100%),
+  image("assets/tabgen2.png", width: 100%),
   caption: [Test per le pagine pagine accessibili a tutti gli utenti]
 )
 #figure(

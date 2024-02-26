@@ -94,15 +94,7 @@ _Email Referente_:\
   outlined: true,
 )
 
-#show heading.where(level: 1): it => {
- 
 
- pagebreak(weak: true)
- 
-
- it
- 
-}
 #show outline.entry.where(
   level: 1
 ): it => {
