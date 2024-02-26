@@ -1,19 +1,13 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ error404.php [L,QSA]
+
+
+
+
+    
+    ErrorDocument 404 /error404.php
 </IfModule>
-
-# Blocca l'accesso diretto a error404.php
-<FilesMatch "errors/error404.php">
-    Require all denied
-</FilesMatch>
-
-
-
-
-
-
-
-ErrorDocument 404 /errors/error404.php
-ErrorDocument 500 /errors/error500.php
-
-

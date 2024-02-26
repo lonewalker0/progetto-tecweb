@@ -1,19 +1,22 @@
 <div class="event-container">
-  <div class="programma-entry" role="article">
-    <img src="{{image}}" alt="ritratto di {{performer}}" />
+
+  <div class="programma-entry">
+
+    <img src="{{image}}" alt="" />
+
     <div class="entry-info">
+      
       <dl class="event-details">
-        <dt>Evento:</dt>
-        <dd class="event-title">{{performer}}</dd>
 
-        <dt>Data:</dt>
-        <dd><time datetime="{{datetime}}">{{datetime}}</time></dd>
+        <dt class="definition-term">Artista:</dt>
+        <dd>{{performer}}</dd>
 
-        <dt>Ora:</dt>
+        <dt class="definition-term">Ora:</dt>
         <dd><time datetime="{{time}}">{{time}}</time></dd>
 
-        <dt>Descrizione:</dt>
+        <dt class="definition-term">Descrizione:</dt>
         <dd>{{Description}}</dd>
+
       </dl>
     </div>
   </div>

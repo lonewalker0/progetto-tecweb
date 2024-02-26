@@ -1,18 +1,16 @@
-<p id="dtable">
-  La tabella ha 5 colonne ed informa su tutti gli ordini effettuati dallo utente
-  visualizzando Numero ordine, Data di acquisto, tipologia di biglietto,
-  descrizione, prezzo totale
-</p>
+
+<div>
 <table id="tabellaordini" aria-describedby="dtable">
   <caption>
-    Ordini Effettuati
+    Prevendite Acquistate
   </caption>
   <thead>
     <tr>
-      <th scope="col">Numero Ordine</th>
+      <th scope="col">Codice Acquisto</th>
       <th scope="col">Data Acquisto</th>
-      <th scope="col">Tipologia Biglietto</th>
-      <th scope="col">Descrizione</th>
+      <th scope="col">Validità</th>
+      <th scope="col">Tipologia</th>
+      <th scope="col">Quantità</th>
       <th scope="col">Prezzo Totale</th>
     </tr>
   </thead>
@@ -20,3 +18,15 @@
     {{rows}}
   </tbody>
 </table>
+</div>
+<div id="dtable">
+  La tabella ha 6 campi e ti informa sulle prevendite che hai acquistato. I campi sono:
+  <ul>
+    <li>Codice Acquisto(codice identificativo)</li>
+    <li>Data di acquisto</li>
+    <li>Validità</li>
+    <li>Tipologia</li>
+    <li>Quantità</li>
+    <li>Prezzo totale</li>
+  </ul>
+</div>

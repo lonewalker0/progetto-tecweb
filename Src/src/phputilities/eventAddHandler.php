@@ -18,19 +18,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $maxFileSize = 1000 * 1024; 
     if ($_FILES['image']['size'] > $maxFileSize) {
-        $errors[] = "L'immagine è troppo grande. Inserisci immagine di dimensione inferiore a 1 MB.";
+        $errors[] = "L'immagine è troppo grande. Inserisci un immagine di dimensione inferiore a 1 MB.";
     }
     if ($_FILES['image']['error'] !== UPLOAD_ERR_OK) {
         $errors[] = "Errore nel caricamento dell'immagine.";
     }
     if (!isValidString($_POST['artist_name']) or !isValidString($_POST['description'])) {
-        $errors[] = "Non è accettato codice htm!";
+        $errors[] = "Non è accettato codice html!";
+    }
+    if(!isvalidlength($_POST['artist_name'],4,50)){
+        $errors[]="Lunghezza artista non valida,deve essere tra 4 e 50 caratteri!";
+    }
+    if(!isvalidlength($_POST['description'],5,300)){
+        $errors[]="Descrizione minimo 5 caratteri e massimo 300!";
     }
     if (!isValidHour($_POST['hour'])) {
         $errors[] = "Orario inserito non valido!";
     }
     if (!isValidDate($_POST['date'])) {
         $errors[] = "Data inserita non valida!";
+    }
+    if (!isAllowedDate($_POST['date'])) {
+        $errors[] = "La data deve essere sceltra tra 05/07/2024, 06/07/2024, o 07/07/2024!";
     }
     if (!in_array($_FILES['image']['type'], $allowedFileTypes)) {
         $errors[] = "Tipo di file non supportato. Inserisci un'immagine JPEG, PNG o GIF.";
@@ -69,12 +78,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 header("Location: ../account.php"); 
                 die();
             } else {
-                // Display an error message or redirect to an error page
-                echo "Error adding event. Please try again.";
+                
+                echo "Errore nel aggiunta dell'evento, riprovare.";
             }
         } else {
-            // Display an error message for file upload failure
-            echo "Error uploading file. Please try again.";
+            
+            echo "Errore nel aggiunta del file, riprovare.";
         }
         
     }

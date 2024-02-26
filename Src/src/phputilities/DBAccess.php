@@ -2,10 +2,10 @@
 
 class DBAccess {
    
-   private const HOST_DB = "localhost";
+   private const HOST_DB = "db";
    private const DATABASE_NAME = "dbtecweb";
    private const USERNAME = "root";
-   private const PASSWORD = "";
+   private const PASSWORD = "root";
    private $connection;
 
    public function openConnection(): bool{
@@ -34,7 +34,7 @@ class DBAccess {
     }
 }
    
-   #funzione per passargli la query
+   #funzione per eseguire la query, viene usata solo quando non ci sono query parametriche
    public function executeQuery($query){
     try {
         $result = mysqli_query($this->connection, $query); 
@@ -43,27 +43,6 @@ class DBAccess {
         }
 
         return $result;
-    } catch (Exception $e) {
-        echo "Errore: " . $e->getMessage();
-        return false;
-    }
-}
-    //ricordarsi di toglierla se non viene usata
-    public function fetchAllRows($result): string{
-        try {
-        if (!$result) {
-            throw new Exception("Errore nella query: " . mysqli_error($this->connection));
-        }
-
-        $rows = array();
-
-        while ($row = mysqli_fetch_assoc($result)) {
-            $rows[] = $row;
-        }
-
-        mysqli_free_result($result);
-
-        return $rows;
     } catch (Exception $e) {
         echo "Errore: " . $e->getMessage();
         return false;

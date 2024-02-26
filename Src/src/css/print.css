@@ -1,0 +1,872 @@
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: url('../font/TrebuchetMS.woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: url('../font/TrebuchetMS-Italic.woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Trebuchet MS';
+  src: url('../font/TrebuchetMS-Bold.woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+html, body {
+  font-size: 1rem;
+  line-height: 1.5em;
+  color: black;
+  background-color: white;
+}
+
+body {
+  margin-left: 0em;
+  width: 100%;
+  padding: 0.3em 0em 0.5em;
+}
+
+a:link {
+  color: black;
+}
+
+a:link:after, a:visited:after{
+  content: " [" attr(href) "] ";
+  font-size: 90%;
+  color: black;
+}
+
+a[href^="/"]:after{
+  content: "( http://tecweb.studenti.math.unipd.it/govidio/" attr(href) ")";
+  color:black;
+}
+
+h1, h1 time {
+  text-align: center;
+  padding: 1rem;
+  color: black;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+h2, h2 time {
+  text-align: center;
+  padding: 1rem;
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h3, h3 time {
+  padding: 1rem;
+  color: black;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+h4, h4 time {
+  padding: 1rem;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Header */
+
+#logo img{
+  filter: grayscale(100%);
+}
+
+header {
+  width: 100%;
+  margin: 0 4rem;
+}
+
+#flexContainerHeader {
+  background-color: white;
+}
+
+#aiutoSkipnav {
+  display: none;
+}
+
+#left-group {
+  align-items:flex-start;
+}
+
+#vertical-bar-container {
+  height: 50px;
+  width: 4px;
+  background-color: white;
+}
+
+#countdown-data {
+  flex-direction: column;
+  margin-top: 4rem;
+}
+
+#countdown-data p#dataFestival time,
+#countdown-data p#dataFestival, 
+#countdown-data p#intervalloFestival{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: black;
+  width: auto;
+  height: auto;
+  position:unset;
+  overflow:unset;
+  white-space: unset;
+}
+
+#countdown-data p#intervalloFestival{
+  margin-top: 0.5rem;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+.icons {
+  display: none;
+}
+
+.accessibleHide {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  margin: -1px;
+  padding: 0;
+}
+
+.accessibleShow {
+  position: static; 
+  width: auto;
+  height: auto; 
+  overflow: visible; 
+  white-space: normal; 
+  border: initial; 
+  margin: 0;
+  padding: initial; 
+}
+
+/* Navigation Menu */
+
+.menu {
+  margin-top: 0;
+  display: none;
+}
+
+/* Breadcrumb */
+
+#breadcrumb {
+  margin-left: 1rem;
+  background-color: white;
+}
+
+#breadcrumb p,
+#breadcrumb p span{
+  color:black;
+}
+
+/* Footer */
+
+footer {
+  position: static;
+  bottom:0;
+  text-align: center;
+  margin-top: 4rem;
+  background-color: white;
+}
+
+#footer-content a {
+  color:black;
+}
+
+#footer-content, 
+#footer-content span{
+  color:black;
+}
+
+/* Pagina home */
+
+.carosello-dinamico {
+  display: none;
+}
+
+.carosello-puntini {
+  display: none;
+}
+
+#navEventi {
+  display: none;
+}
+
+#scrollToTopBtn {
+  display: none;
+}
+
+/* Pagina home - Programma */
+
+.programma-animation, .programma-animation2{
+  display: none;
+}
+
+.event-container {
+  margin: 1rem 0 1rem 0;
+}
+
+.programma-entry {
+  margin-bottom: 1rem;
+  background-color: white;
+  page-break-inside: avoid;
+}
+
+.programma-entry img {
+  width: 200px;
+  height: 200px;
+  margin: 0;
+  box-shadow: none;
+  filter: grayscale(100%);
+}
+
+.entry-info {
+  max-width: 100%;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1rem;
+  margin: 0;
+  color: black;
+}
+
+.entry-info dd {
+  margin: 0;
+  padding: 0;
+}
+
+.entry-info dd span,
+.entry-info dd abbr, 
+.entry-info dd cite{
+  font-size: 1rem;
+}
+.entry-info dd abbr{
+  text-decoration: none;
+}
+
+/* Pagina home - Sponsor */
+
+#sponsor {
+  text-align: center;
+  align-items: center;
+  padding: 1rem;
+  background-color:white;
+}
+
+#sponsor-title{
+  color: black;
+}
+
+#sponsor h3 {
+  text-align: left;
+}
+
+.sponsors-container {
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 75%;
+  align-items: center;
+}
+
+.sponsor-icon {
+  vertical-align: middle;
+  margin-bottom: 1rem;
+}
+
+.sponsor-icon img {
+  max-width: 30%;
+  object-fit: cover;
+  vertical-align: middle;
+  filter: grayscale(100%);
+}
+
+/* Pagina Chi siamo */
+
+#chi-siamo-container {
+  padding: 1rem;
+}
+
+#chi-siamo-contenuto {
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  text-align: left;
+  padding: 1rem;
+  background-color: white;
+}
+
+#chi-siamo-contenuto h2 {
+  color: black;
+}
+
+#img-chi-siamo {
+  display: none;
+}
+
+#chi-siamo-testo {
+  width: 100%;
+  color: black;
+}
+
+#ringraziamenti{
+  background-color: white;
+  width: 100%;
+  max-width: none;
+  margin:0;
+}
+
+#ringraziamenti h3 {
+  color: black;
+}
+
+#ul-ringraziamenti {
+  list-style: none;
+  text-align:center;
+  color: black;
+}
+
+/* Pagina Location */
+
+#location-container {
+  padding: 1rem;
+  margin: 0;
+}
+
+#location-contenuto {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1792px;
+  gap: 1rem;
+  border: unset; 
+  box-shadow: none;
+  color:black;
+  background-color: white;
+}
+
+#map {
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
+  border: none;
+  box-shadow: none;
+}
+
+#testo-location{
+  max-width: 100%;
+}
+
+#testo-location h2{
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
+#testo-location p {
+  text-align: center;
+}
+
+#indirizzo {
+  font-style: italic;
+  color:black;
+}
+
+#indirizzo a, 
+#indirizzo a:visited{
+  color: black;
+}
+
+/* Pagina Merch */
+
+div#shop
+{
+  display: grid;
+  max-width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap:1rem;
+}
+
+.product {
+  width: 100%;
+  margin: 0;
+}
+
+#live-info {
+  font-style: italic;
+  text-align: center;
+  color:black;
+  margin: 0;
+}
+
+.product-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem 0 1rem;
+  padding: 1rem;
+  width: 100%;
+  min-height: 300px;
+  background-color: white;
+  page-break-inside: avoid;
+}
+
+.product-image {
+  width: 60%;
+  height: auto;
+  box-shadow: none;
+}
+
+div.product-container div.entry-info{
+  min-height: 200px;
+  text-align: center;
+  max-width: 100%;
+  color: black;
+}
+
+h2.titolo-item-merch{
+  color:black;
+  background-color: white;
+}
+
+/* Pagina Prevendite */
+
+.ticket-entry {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border: solid;
+  border-color: black;
+  background-color: white;
+  color: black;
+}
+
+.ticket-entry dl {
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  border-right: unset;
+}
+
+.hidden-element {
+  display: none;
+}
+
+.ticket-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: unset;
+  color: black;
+  background-color: white;
+}
+
+.ticket-price {
+  font-style: italic;
+}
+
+.ticket-form {
+  display: none;
+}
+
+.ticket-vip {
+  text-align: left;
+}
+.ticket-vip li::before{
+  filter:brightness(0%);
+}
+
+/* Pagina Domande */
+
+#faq-container {
+  padding: 1rem;
+  
+}
+
+#faq-container h2 {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.faq-box-container{
+  grid-template-columns: 1fr;
+  
+}
+
+.faq-item {
+  margin: 0 0 1rem 0;
+  background-color: white;
+  color: black;
+  page-break-inside: avoid;
+  text-align: justify;
+}
+
+.question {
+  font-weight: bold;
+}
+
+.note {
+  font-style: italic;
+  color: black;
+  background-color: white;
+}
+
+.note a{
+  color:black;
+}
+
+/* Pagina Privacy */
+
+div#privacy-container {
+  padding: 1rem;
+  margin: 1rem 0 0 0;
+  border: unset;
+  color: black;
+  background-color: white;
+}
+
+/* Pagina Account */
+
+div#sidebar {
+  display: none;
+}
+
+form#logout {
+  display: none;
+}
+
+/* Form di login */
+
+fieldset#login-fieldset
+{
+  max-width: 100%;
+  margin: 0;
+  padding: 1rem;
+  background-color: white;
+}
+
+fieldset#login-fieldset div#login-username,
+fieldset#login-fieldset div#login-password
+{
+  display:grid;
+  width: 100%;
+  
+}
+
+fieldset#login-fieldset div#login-username label,
+fieldset#login-fieldset div#login-password label{
+  width: 100%;
+}
+
+fieldset#login-fieldset div#login-username input#username,
+fieldset#login-fieldset div#login-password input#password
+{
+  width: 100%;
+  margin: 1rem auto 2rem;
+  padding-left: 1rem;
+  height: 2.5rem;
+  text-align: left;
+  border-radius: unset;
+  border: solid;
+  border-color: black;
+  background-color: white;
+  color:black;
+}
+
+fieldset#login-fieldset div#login-username input#username::placeholder,
+fieldset#login-fieldset div#login-password input#password::placeholder {
+  color: black;
+}
+fieldset#login-fieldset div label
+{
+  width: 50%;
+  margin: 0 auto;
+  color: black;
+}
+
+#login-registrati {
+  display: none;
+}
+
+/* Form di registrazione */
+
+fieldset#register-fieldset,
+fieldset#register-fieldset2 {
+  max-width: 70%;
+  display:grid;
+  margin: 4rem auto 1rem;
+  padding: 1rem;
+  background-color: white;
+}
+
+fieldset#register-fieldset label,
+fieldset#register-fieldset2 label{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+  align-items: center;
+  color: black;
+  border: none; 
+}
+
+fieldset#register-fieldset input,
+fieldset#register-fieldset2 input{
+  width: 100%;
+  margin: 1rem auto 2rem;
+  height: 2rem;
+  text-align: left;
+  border-radius: unset;
+  border: solid;
+  border-color: black;
+  padding: 1rem;
+  background-color: white;
+  color: black;
+}
+
+fieldset#register-fieldset input::placeholder,
+fieldset#register-fieldset2 input::placeholder{
+  color:black;
+}
+
+
+
+div input#registrati{
+  display: none;
+}
+
+/* Informazioni account */
+
+div#informazioni {
+  margin-left: 1rem;
+  padding: 1rem;
+}
+
+div#informazioni dt,
+div#informazioni dd,
+div#informazioni dd time{
+  font-size: 1.25rem;
+}
+
+div#informazioni dl {
+  margin-top: 1rem;
+  box-shadow: unset;
+  background-color: white;
+  align-items: flex-start;
+  
+}
+
+div#informazioni dt {
+  font-weight: bold;
+  color: black;
+  text-align: left;
+}
+
+div#informazioni dd {
+  margin: 0;
+  width: 30%;
+  color: black;
+  text-align: left;
+}
+
+/* Modifica account */
+
+fieldset#modifica-account {
+  box-shadow: unset;
+  background-color: white;
+}
+
+fieldset#modifica-account p{
+  width: 100%;
+}
+
+fieldset#modifica-account p label {
+  color: black;
+}
+
+fieldset#modifica-account input
+{
+  border-radius: unset;
+  padding: 0.5rem;
+  border: 2px solid black;
+  background-color: white;
+  color:black;
+}
+
+#formUpdate input::placeholder {
+  color: black;
+}
+
+form#formUpdate input#input-salva {
+  display: none;
+}
+
+.section{
+  page-break-inside: avoid;
+}
+/* Ordini Account */
+
+div#ordini{
+  width: 100%;
+}
+
+div#ordini div#dtable {
+  margin-top: 2rem;
+  box-shadow: unset;
+  padding: 2rem;  
+  width:100%;
+  background-color: white;
+}
+
+div#ordini .scrollable-table {
+  all: unset;
+  margin: 2rem 0 2rem 0;
+  background-color: white;
+}
+
+div#ordini li{
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+table#tabellaordini{
+  width: 100%;  
+  text-align: center; 
+  border-radius: 0;
+  
+  border: none !important;
+  box-shadow: unset;
+  background-color: white;
+}
+
+
+
+div#ordini table#tabellaordini caption{
+  font-size: 2rem;
+  padding: 2rem;
+}
+
+div#ordini #tabellaordini thead th {
+  border-bottom: 1px solid;
+  background-color: white;
+}
+
+div#ordini table#tabellaordini tbody tr td
+{
+  padding: 2rem;
+  font-size: 1.25rem;
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+}
+
+/* Elimina account */
+
+div#elimina {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+div#elimina div#elimina-account {
+  box-shadow: unset;
+  background-color: white;
+}
+
+div#elimina div#elimina-account p a {
+  color: black;
+}
+
+/* Conferma eliminazione */
+
+form#formeliminaaccount {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+form#formeliminaaccount input[type="password"] {
+  border-radius: unset;
+  width: 70%;
+  border-color: black;
+  background-color: white;
+}
+
+form#formeliminaaccount input[type="submit"] {
+  display: none;
+}
+
+/*admin*/
+#addEventForm,
+#formAggiuntaEvento input,
+#formAggiuntaEvento textarea{
+  color:black;
+  background-color: white;
+  
+}
+
+#formAggiuntaEvento::placeholder {
+  color: black;
+}
+#formAggiuntaEvento input[type="submit"]{
+  display:none;
+}
+
+#addEventForm input[type="text"],
+#addEventForm input[type="date"],
+#addEventForm input[type="time"],
+#addEventForm input[type="file"],
+#addEventForm textarea {
+  border-radius: 0;
+  border: 1px solid black;
+  background-color: white;
+  color: black;
+}
+
+.event-elimination input[type="submit"]{
+  display: none;
+}
+.programma-admin{
+  page-break-inside: avoid;
+  background-color: white;
+}
+.programma-admin img{
+  filter: grayscale(100%);
+  box-shadow: none;
+}
+.section-admin h2{
+  page-break-before: always;
+}
+
+
+
+/*MESSAGGI DI ERRORE*/
+
+div#errorContainerEliminazione p,
+#errorContainerAggiuntaEvento p,
+#error_login p,
+#errorContainerRegistrazione p,
+#errorupdate p{
+  display: none;
+}

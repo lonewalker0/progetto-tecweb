@@ -16,6 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!isValidString($_POST['username']) or !isValidString($_POST['password'])) {
         $errors = "<p>Non è accettato codice html!</p>";
     }
+    if(!isvalidlength($_POST['username'],4,25)){
+        $errors="<p>Lunghezza username deve essere tra 4 e 25 caratteri!</p>";
+    }
+    if(!isvalidlength($_POST['password'],4,50)){
+        $errors="<p>Lunghezza password deve essere tra 4 e 50 caratteri!</p>";
+    }
     if (!empty($errors)) {
         
         

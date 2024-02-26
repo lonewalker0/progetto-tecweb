@@ -21,7 +21,7 @@ class DBOperation{
         try {
             $this->db->openConnection();
     
-            // Check if the username already exists
+            
             $checkQuery = "SELECT 1 FROM users WHERE username = ? LIMIT 1";
             $checkStmt = mysqli_prepare($this->db->getConnection(), $checkQuery);
     
@@ -48,7 +48,7 @@ class DBOperation{
         try {
             $this->db->openConnection();
     
-            // Check if the username already exists
+            
             $checkQuery = "SELECT 1 FROM users WHERE email = ? LIMIT 1";
             $checkStmt = mysqli_prepare($this->db->getConnection(), $checkQuery);
     
@@ -75,7 +75,7 @@ class DBOperation{
         try {
             $this->db->openConnection();
     
-            // Check if the username already exists
+            // controllo se lo username esiste
             $checkQuery = "SELECT 1 FROM users WHERE username = ? LIMIT 1";
             $checkStmt = mysqli_prepare($this->db->getConnection(), $checkQuery);
     
@@ -89,13 +89,13 @@ class DBOperation{
             $checkResult = mysqli_stmt_get_result($checkStmt);
     
             if (mysqli_fetch_assoc($checkResult)) {
-                return false; // Username already exists
+                return false; 
             }
     
-            // Hash the password
+            
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
     
-            // Insert the user into the database with is_admin set to false
+            
             $insertQuery = "INSERT INTO users (username, password, is_admin, nome, cognome, data_nascita, indirizzo, email) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $insertStmt = mysqli_prepare($this->db->getConnection(), $insertQuery);
     
@@ -110,7 +110,7 @@ class DBOperation{
                 throw new Exception("Error during user insertion: " . mysqli_error($this->db->getConnection()));
             }
     
-            return true; // User successfully registered
+            return true;
     
         } catch (Exception $e) {
             error_log("Error during user registration: " . $e->getMessage());
@@ -125,7 +125,7 @@ class DBOperation{
         try {
             $this->db->openConnection();
 
-            // Esegui la query per ottenere l'hash della password dell'utente
+            //esegue la query per ottenere l'hash della password dell'utente
             $query = "SELECT password FROM users WHERE username = ?";
             $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
@@ -153,9 +153,7 @@ class DBOperation{
             }
 
         } catch (Exception $e) {
-            // Registra l'errore nei log del server
             error_log("Errore durante il login: " . $e->getMessage());
-
             return false;
 
         } finally {
@@ -166,11 +164,44 @@ class DBOperation{
         try {
             $this->db->openConnection();
     
-                
             if ($username === 'admin') {
                 throw new Exception("Impossibile eliminare l'utente 'admin'.");
             }
     
+            // Verifica se l'utente ha effettuato degli ordini
+            $checkOrdersQuery = "SELECT COUNT(*) FROM Ordini WHERE username = ?";
+            $checkOrdersStmt = mysqli_prepare($this->db->getConnection(), $checkOrdersQuery);
+    
+            if (!$checkOrdersStmt) {
+                throw new Exception("Error preparing the query to check orders: " . mysqli_error($this->db->getConnection()));
+            }
+    
+            mysqli_stmt_bind_param($checkOrdersStmt, "s", $username);
+            mysqli_stmt_execute($checkOrdersStmt);
+            mysqli_stmt_bind_result($checkOrdersStmt, $orderCount);
+            mysqli_stmt_fetch($checkOrdersStmt);
+            mysqli_stmt_close($checkOrdersStmt);
+    
+            // se l'utente ha effettuato ordini, imposta a NULL nella tabella Ordini
+            if ($orderCount > 0) {
+                $updateOrdersQuery = "UPDATE Ordini SET username = NULL WHERE username = ?";
+                $updateOrdersStmt = mysqli_prepare($this->db->getConnection(), $updateOrdersQuery);
+    
+                if (!$updateOrdersStmt) {
+                    throw new Exception("Error preparing the query to update orders: " . mysqli_error($this->db->getConnection()));
+                }
+    
+                mysqli_stmt_bind_param($updateOrdersStmt, "s", $username);
+                $updateOrdersSuccess = mysqli_stmt_execute($updateOrdersStmt);
+    
+                if (!$updateOrdersSuccess) {
+                    throw new Exception("Error updating orders: " . mysqli_error($this->db->getConnection()));
+                }
+    
+                mysqli_stmt_close($updateOrdersStmt);
+            }
+    
+            //elimina l'utente dalla tabella users
             $deleteQuery = "DELETE FROM users WHERE username = ?";
             $deleteStmt = mysqli_prepare($this->db->getConnection(), $deleteQuery);
     
@@ -185,7 +216,7 @@ class DBOperation{
                 throw new Exception("Error during user deletion: " . mysqli_error($this->db->getConnection()));
             }
     
-            return true; 
+            return true;
     
         } catch (Exception $e) {
             error_log("Error during user deletion: " . $e->getMessage());
@@ -194,11 +225,11 @@ class DBOperation{
             $this->db->closeConnection();
         }
     }
+    
 
     public function isAdmin($username): bool {
         try {
             $this->db->openConnection();
-            // Execute a query to check if the user is an admin
             $query = "SELECT is_admin FROM users WHERE username = ?";
             $stmt = mysqli_prepare($this->db->getConnection(), $query);
             if (!$stmt) {
@@ -208,7 +239,7 @@ class DBOperation{
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
             if ($result->num_rows === 0) {
-                return false; // User not found
+                return false;
             }
             $row = mysqli_fetch_assoc($result);
             $isAdmin = $row['is_admin'];
@@ -225,7 +256,7 @@ class DBOperation{
 {
     $eventEntries = [];
 
-    $query = "SELECT * FROM Programma";
+    $query = "SELECT * FROM Programma ORDER BY date, hour";
 
     try {
         $this->db->openConnection();
@@ -297,7 +328,7 @@ public function getMerchItems(): array
 
             }
         } catch (Exception $e) {
-                // Registra l'errore nei log del server
+                
                 error_log("Errore durante l'eliminazione: " . $e->getMessage());
 
                 return false;
@@ -320,7 +351,7 @@ public function addEvent($artistName, $date, $hour, $imagePath, $description): b
         return $success;
 
     } catch (Exception $e) {
-            // Registra l'errore nei log del server
+            
             error_log("Errore durante l'inserimento:  " . $e->getMessage());
         return false;
 
@@ -333,7 +364,7 @@ public function getUserInfo($username) {
     try {
         $this->db->openConnection();
 
-        // Esegui la query per ottenere le informazioni dell'utente
+        // esegue la query per ottenere le informazioni dell'utente
         $query = "SELECT username, nome, cognome, data_nascita, indirizzo, email FROM users WHERE username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
@@ -355,7 +386,7 @@ public function getUserInfo($username) {
         return $userInfo;
 
     } catch (Exception $e) {
-        // Registra l'errore nei log del server
+        
         error_log("Errore durante il recupero delle informazioni dell'utente: " . $e->getMessage());
 
         return false;
@@ -369,7 +400,7 @@ public function updateEmail($username, $newEmail) {
     try {
         $this->db->openConnection();
 
-        // Esegui la query per aggiornare l'email dell'utente
+        //esegue la query per aggiornare l'email dell'utente
         $query = "UPDATE users SET email = ? WHERE username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
@@ -387,7 +418,7 @@ public function updateEmail($username, $newEmail) {
         return $success;
 
     } catch (Exception $e) {
-        // Registra l'errore nei log del server
+        
         error_log("Errore durante l'aggiornamento dell'email: " . $e->getMessage());
 
         return false;
@@ -401,7 +432,7 @@ public function updateIndirizzo($username, $newAddress) {
     try {
         $this->db->openConnection();
 
-        // Esegui la query per aggiornare l'email dell'utente
+        // esegue la query per aggiornare l'email dell'utente
         $query = "UPDATE users SET indirizzo = ? WHERE username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
@@ -419,7 +450,7 @@ public function updateIndirizzo($username, $newAddress) {
         return $success;
 
     } catch (Exception $e) {
-        // Registra l'errore nei log del server
+        
         error_log("Errore durante l'aggiornamento dell'email: " . $e->getMessage());
 
         return false;
@@ -437,7 +468,7 @@ public function updateIndirizzo($username, $newAddress) {
 public function verifyOldPassword($username, $oldPassword) :bool {
     try {
         $this->db->openConnection();
-        // Esegui la query per ottenere la password corrente dell'utente
+        
         $query = "SELECT password FROM users WHERE username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
@@ -457,7 +488,6 @@ public function verifyOldPassword($username, $oldPassword) :bool {
         $row = mysqli_fetch_assoc($result);
         $currentPassword = $row['password'];
 
-        // Verifica se la vecchia password è corretta
         if (!password_verify($oldPassword, $currentPassword)) {
             return false;
         }
@@ -465,7 +495,6 @@ public function verifyOldPassword($username, $oldPassword) :bool {
         return true;
 
     } catch (Exception $e) {
-        // Registra l'errore nei log del server
         error_log("Errore durante la verifica della vecchia password: " . $e->getMessage());
 
         return false;
@@ -482,7 +511,7 @@ public function updatePassword($username, $newPassword) {
         // Genera l'hash della nuova password
         $hashedNewPassword = password_hash($newPassword, PASSWORD_DEFAULT);
 
-        // Esegui la query per aggiornare la password dell'utente
+        // esegue la query per aggiornare la password dell'utente
         $query = "UPDATE users SET password = ? WHERE username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $query);
 
@@ -500,7 +529,6 @@ public function updatePassword($username, $newPassword) {
         return $success;
 
     } catch (Exception $e) {
-        // Registra l'errore nei log del server
         error_log("Errore durante l'aggiornamento della password: " . $e->getMessage());
 
         return false;
@@ -528,7 +556,6 @@ public function isArtistNameExists($artistName) {
         return $count > 0; #ritorna 1 solo se c'è un una corrispondenza
 
     } catch (Exception $e) {
-        // Registra l'errore nei log del server
         error_log("Errore durante il controllo dell'esistenza del nome dell'artista: " . $e->getMessage());
 
         return false;
@@ -538,59 +565,6 @@ public function isArtistNameExists($artistName) {
     }
 }
     
-
-
-public function addBiglietto($nome, $descrizione, $imagePath,$datainizio,$datafine, $prezzo): bool {
-    try {
-        $this->db->openConnection();
-        $nome = mysqli_real_escape_string($this->db->getConnection(), $nome);
-        $descrizione = mysqli_real_escape_string($this->db->getConnection(), $descrizione);
-        $imagePath = mysqli_real_escape_string($this->db->getConnection(), $imagePath);
-        $sql = "INSERT INTO Biglietti (nome, descrizione, image_path, data_ora_inizio, data_ora_fine, prezzo) VALUES (?, ?, ?, ?, ?, ?)";
-        $stmt = mysqli_prepare($this->db->getConnection(), $sql);
-        mysqli_stmt_bind_param($stmt, "sssssd", $nome, $descrizione, $imagePath,$datainizio,$datafine, $prezzo);
-        mysqli_stmt_execute($stmt);
-
-        $success = mysqli_stmt_affected_rows($stmt) > 0;
-
-        return $success;
-
-    } catch (Exception $e) {
-            // Registra l'errore nei log del server
-            error_log("Errore durante l'inserimento:  " . $e->getMessage());
-        return false;
-
-    } finally {
-            $this->db->closeConnection();
-        }
-}  
-
-
-public function deleteBiglietto($id): bool {
-    try {
-        $this->db->openConnection();
-        $sql = "DELETE FROM Biglietti WHERE id = ?";
-        $stmt = mysqli_prepare($this->db->getConnection(), $sql);
-        mysqli_stmt_bind_param($stmt, "i", $id);
-        mysqli_stmt_execute($stmt);
-
-    
-        if (mysqli_stmt_affected_rows($stmt) > 0) {
-            return true;
-        } else {
-            return false; 
-
-        }
-    } catch (Exception $e) {
-            // Registra l'errore nei log del server
-            error_log("Errore durante l'eliminazione: " . $e->getMessage());
-
-            return false;
-
-    } finally {
-            $this->db->closeConnection();
-        }
-}  
 
 public function getBigliettiEntries(): array
 {
@@ -605,11 +579,8 @@ public function getBigliettiEntries(): array
         while ($row = $result->fetch_assoc()) {
             $bigliettoEntry = new BigliettiEntry(
                 $row['id'],
-                $row['nome'],
-                $row['descrizione'],
-                $row['image_path'],
-                $row['data_ora_inizio'],
-                $row['data_ora_fine'],
+                $row['validita'],
+                $row['tipologia'],
                 $row['prezzo']
             );
             $bigliettiEntries[] = $bigliettoEntry;
@@ -643,7 +614,6 @@ public function getPrezzoBiglietto($id) : int {
         }
 
     } catch (Exception $e) {
-        // Registra l'errore nei log del server
         error_log("Errore durante il recupero del prezzo: " . $e->getMessage());
         return null;
 
@@ -667,7 +637,6 @@ public function addOrder($username, $ticketId, $purchaseDate, $quantity, $prezzo
         return $success;
 
     } catch (Exception $e) {
-        // Registra l'errore nei log del server
         error_log("Errore durante l'inserimento:  " . $e->getMessage());
         return false;
 
@@ -680,15 +649,15 @@ public function getUserOrders($username) {
     try {
         $this->db->openConnection();
 
-        // Esegui una query per ottenere le informazioni sugli ordini dell'utente
-        $sql = "SELECT Ordini.id AS numero_ordine, Ordini.data_acquisto, Biglietti.nome AS tipo_biglietto, Biglietti.descrizione as descrizione, Ordini.prezzo
+        // esegue una query per ottenere le informazioni sugli ordini dell'utente
+        $sql = "SELECT Ordini.id AS numero_ordine, Ordini.data_acquisto as data_acquisto,  Biglietti.validita AS validita, Biglietti.tipologia as tipologia, Ordini.quantita AS quantita, Ordini.prezzo
                 FROM Ordini
                 INNER JOIN Biglietti ON Ordini.id_biglietto = Biglietti.id
                 WHERE Ordini.username = ?";
         $stmt = mysqli_prepare($this->db->getConnection(), $sql);
         mysqli_stmt_bind_param($stmt, "s", $username);
         mysqli_stmt_execute($stmt);
-        mysqli_stmt_bind_result($stmt, $numero_ordine, $data_acquisto, $tipo_biglietto, $descrizione, $prezzo);
+        mysqli_stmt_bind_result($stmt, $numero_ordine, $data_acquisto, $validita, $tipologia, $quantita, $prezzo);
 
         $orders = [];
 
@@ -697,8 +666,9 @@ public function getUserOrders($username) {
             $orders[] = [
                 'numero_ordine' => $numero_ordine,
                 'data_acquisto' => $data_acquisto,
-                'tipo_biglietto' => $tipo_biglietto,
-                'descrizione' => $descrizione,
+                'validita' => $validita,
+                'tipologia' => $tipologia,
+                'quantita' =>  $quantita, 
                 'prezzo_totale' => $prezzo
             ];
         }
@@ -706,7 +676,6 @@ public function getUserOrders($username) {
         return $orders;
 
     } catch (Exception $e) {
-        // Registra l'errore nei log del server
         error_log("Errore durante il recupero degli ordini dell'utente: " . $e->getMessage());
         return [];
 

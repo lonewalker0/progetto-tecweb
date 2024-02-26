@@ -6,12 +6,17 @@ class PageBuilder {
 
         $html = file_get_contents(__DIR__ . '/../html/layout/struttura.html');
         $header = file_get_contents(__DIR__ . '/../html/layout/header.html');
+        
         if (trim($breadcrumb) === 'Home') {
-        $header = self::removeHomeLogoLink($header);
+        $header = self::removeHomeLogoLink($header); 
         }
+        if (trim($breadcrumb) === 'Privacy Policy' || trim($breadcrumb) === 'Home' || trim($breadcrumb) === 'Pagina non trovata' || trim($breadcrumb) === 'Server Error') {
+            $html = self::removeLinkAndSubsequentTextFromHTML($html); 
+            }
+
 
         $footer = file_get_contents(__DIR__ . '/../html/layout/footer.html');
-        $footer = self::resolveCircularLinks($footer, $breadcrumb);                             //rimuove il link circolare della privacy policy 
+        $footer = self::resolveCircularLinks($footer, $breadcrumb);            //rimuove il link circolare della privacy policy 
         $html = str_replace('{{header}}', $header, $html);
         $html = str_replace('{{keyword}}', $keyword, $html);
         $html = str_replace('{{title}}', $title, $html); 
@@ -22,14 +27,26 @@ class PageBuilder {
         $html = str_replace('{{breadcrumb}}', $breadcrumb, $html);
         $html = str_replace('{{main}}', $main, $html);
         $html = str_replace('{{footer}}', $footer, $html);
+        
+
+        
 
         return $html;
     }
+
 
     public static function removeHomeLogoLink($header): string {
         $header = preg_replace('/<a\b[^>]*href="index\.php"[^>]*>(.*?)<\/a>/s', '$1', $header);
         return $header;
     }
+
+    public static function removeLinkAndSubsequentTextFromHTML($html) {
+        $html = preg_replace('/<a\b[^>]*href="index\.php"[^>]*>.*?<\/a>\s*\/?/s', '', $html);
+        
+        return $html;
+    }
+    
+    
 
     public static function resolveCircularLinks($menu, $breadcrumb) {
         // converte menu e braedcrumb in minuscolo => case insensitive

@@ -14,18 +14,13 @@ class adminOperation
     
     public function getMain(): string
     {
-        $html = "<h1>Welcome Admin!</h1>";
-
+        $html = '<h1>Bentornato Admin!</h1>';
+        
         $html .= '<div id="ProgramManagement">';
         #costruzione del menu per l'elimizazione
         $events = $this->dbOperation->getEventEntries();
-        $html .= '<h2>Manutenzione del programma</h2>';
-        foreach ($events as $event) {
-            $html .= $event->generateEliminationHTML();
-        }
         
-
-        $html .= '<div id="errorContainerAggiuntaEvento">'; #è lo stesso container utilizzato dalla validazione di js
+        $html .= "<div id='errorContainerAggiuntaEvento' role='alert' aria-live='polite' aria-atomic='true'>"; 
         if (isset($_SESSION['add_event_form_errors'])) {
             foreach ($_SESSION['add_event_form_errors'] as $error) {
                 $html .= '    <p>' . $error . '</p>';
@@ -35,35 +30,41 @@ class adminOperation
         $html .= '</div>';
         
         
-        $html .= '<div id="addEventForm">';
+        $html .= '<div class="section-admin" id="addEventForm">';
+        //procedura necessaria a riceare le informazioni del form nel caso di malo inserimento da parte dell'admin a seguito di controllo lato server
         $formContent = file_get_contents(__DIR__ . '/../html/form/addEventForm.html');
 
-        // Replace placeholders in the form content
         $placeholders = [
             '{{artistName}}',
             '{{date}}',
             '{{hour}}',
             '{{description}}'
         ];
-
-
-        #recuperi i dati passati dall'handler dell'aggiunta evento
         $form_data = isset($_SESSION['add_event_form_data']) ? $_SESSION['add_event_form_data'] : [];
-        #elimina i dati passati dall'handler dell'aggiunta evento 
         unset($_SESSION['add_event_form_data']);
         $replaceValues = [];
-
         $replaceValues[] = isset($form_data['artist_name']) ? htmlspecialchars($form_data['artist_name']) : '';
         $replaceValues[] = isset($form_data['date']) ? htmlspecialchars($form_data['date']) : '';
         $replaceValues[] = isset($form_data['hour']) ? htmlspecialchars($form_data['hour']) : '';
         $replaceValues[] = isset($form_data['description']) ? htmlspecialchars($form_data['description']) : '';
         #notare htmlspecialchars per evitare che codice maligno possa essere interpretato come html
-        
-
         $formContent = str_replace($placeholders, $replaceValues, $formContent);
-        $html .= "<h3>Aggiungi Evento</h3>";
         $html .= $formContent;
         $html .= '</div>';
+        
+        $html .= '<h2>Manutenzione del programma</h2>';
+        $dates = ['2024-07-05', '2024-07-06', '2024-07-07'];
+        $html .= file_get_contents(__DIR__ . '/../html/navEventi.html');
+        foreach ($dates as $date) {
+            $html.= "<div class='section-admin' id='giornata" . str_replace('-', '', $date) . "'>";
+            $html .= "<h2> <time datetime='$date'>$date</time></h2>"; 
+
+            foreach ($events as $event) {
+                if ($event->getDate() === $date) {
+                    $html .= $event->generateEliminationHTML();
+                }
+            }
+            $html .= "</div>";}
         $html .= '</div>';
 
 

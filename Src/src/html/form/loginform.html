@@ -1,9 +1,9 @@
 <form action="phputilities/loginprocess.php" method="post" id="formLogin" >
-  <div id="error_login">{{loginerror}}</div> 
-  <fieldset>
-    <legend>Accesso</legend>
+  <div id="error_login" role='alert' aria-live='polite' aria-atomic='true'>{{loginerror}}</div> 
+  <fieldset id="login-fieldset">
+    <legend class="accessibleHide">Credenziali d'accesso</legend>
 
-    <div>
+    <div id="login-username">
       <label for="username">Username:</label>
       <input
         type="text"
@@ -11,30 +11,38 @@
         name="username"
         value="{{NomeUtenteDaReinserire}}"
         required
-        aria-required="true"
-        maxlength="50"
+        minlength="4"
+        maxlength="25"
+        placeholder="Inserisci il tuo username"
       />
     </div>
 
-    <div>
+    <div id="login-password">
       <label for="password">Password:</label>
       <input
         type="password"
         id="password"
         name="password"
         required
-        aria-required="true"
+        minlength="4"
         maxlength="50"
+        placeholder="Inserisci la tua password"
       />
     </div>
   </fieldset>
 
-  <div>
+  <div id="login-registrati">
     <input
+      id="accedi"
       type="submit"
       name="accedi"
-      value="accedi"
+      value="Accedi"
       aria-label="Accedi al tuo account"
     />
+    <p id="registrati">Non hai un <span lang="en">account</span>? 
+      <a href="register.php"> 
+        Registrati
+      </a>
+    </p>
   </div>
 </form>
