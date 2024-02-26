@@ -49,7 +49,7 @@
 
 = TechnoLum250Festival
 #set text(11pt)
-Progetto Tecnologie Web 2023/2024
+Relazione Accessibilità
 
 _Componenti_:\
 Davide Malgarise - 2009994\
@@ -57,8 +57,6 @@ Giacomo D'Ovidio - 2009101\
 Marco Piccoli - 2045039\
 Riccardo Alberto Costantin - 2013451\
 
-_Indirizzo sito web_:\
-#link("http://tecweb.studenti.math.unipd.it/gdovidio")
 
 _Credenziali utente_:\
 username: user\
