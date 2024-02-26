@@ -1,5 +1,11 @@
 = Test e strumenti 
 
+Di seguito vengono dettagliati tutti i test condotti e gli strumenti impiegati dal gruppo e dai suoi membri in modo organizzato e suddiviso.
+Il sito è stato analizzato nelle sue macrosezioni: sito principale, Area Utente e Area Admin. Ogni sezione è stata esaminata nelle singole pagine, utilizzando strumenti, browser ed estensioni appropriati riportati di seguito.
+
+Questo approccio dettagliato ha permesso al gruppo di condurre un'analisi completa e accurata del sito, identificando eventuali problemi di accessibilità.
+
+
 == Validazione 
 
 Per validare il codice HTML5 del sito sono stati usati gli strumenti _#link("https://validator.w3.org/")_ e Total Validator Basic presente nei computer del Paolotti.
@@ -23,7 +29,7 @@ Sono stati testati i seguenti browser sui seguenti sistemi operativi:
 
 
 Per quanto riguarda il testing su Safari, dato che nessuno dei componenti possiede alcun dispositivo Apple, e che l'ultima versione rilasciata per dispositivi Window non supporta _flexbox_, non è stato possibile.
-Per testare il sito su dispositivi mobili, si sono usati gli strumenti per sviluppatori sia di Google Chrome che di Firefox e scalano molto positivamente.
+Per testare il sito su dispositivi mobili, si sono usati gli strumenti per sviluppatori sia di Google Chrome che di Firefox.
 
 == Test umani
 Per testare navigabilità e usabilità del sito è stato fatto provare ad utenti reali delle cerchie di conoscenza dei componenti del gruppo, in generale si sono sempre ottenuti responsi positivi.
@@ -35,7 +41,7 @@ Per rendere il sito accessibile si sono usati i seguenti strumenti:
  - Wave, un'estensione per Google Chrome;
  - L'analisi dell'accessibilità offerta da Mozilla Firefox;
  - Lo screen reader NVDA su Windows e per ambienti Linux il sistema _orca_;
- - Per le performance LighHouse.
+ - Per le performance LightHouse.
 
 === Tabindex 
 Non è stato alterato l'ordine naturale dei _tabindex_. 
