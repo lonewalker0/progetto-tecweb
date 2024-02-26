@@ -13,7 +13,7 @@ Sono stati testati i seguenti browser sui seguenti sistemi operativi:
     - Google Chrome versione 121.0.6167.184;
     - Mozilla Firefox versione 123.0;
     - Microsoft Edge versione 122.0.2365.52;
-    - Opera versione ?;
+    - Opera versione versione 107.0.5045.21;
     - Brave versione  1.63.162 - 122.0.6261.69(Chromium).
  - *Linux (Pop Os 22.04)*:
     - Google Chrome versione 121.0.6167.184;
