@@ -5,21 +5,21 @@ Vengono inoltre elencati i Browser utilizzati nello sviluppo e dunque nella fase
 = Decisioni rilevanti 
 Vengono elencate le decisioni che il gruppo ha intrapreso per garantire l'acessibilità.
 
-=== Tabindex 
+== Tabindex 
 Non è stato alterato l'ordine naturale dei _tabindex_. 
 
-=== Aiuti alla navigazione
+== Aiuti alla navigazione
 È presente un pulsante per saltare direttamente al contenuto.
 
-=== Colori 
+== Colori 
 Si è prestata molta attenzione ai colori e ai contrasti, i contrasti sono stati per lo più rilevati tramite strumenti automatici.
 Per quanto riguarda gli utenti soggetti ad alterazione del senso cromatico, il gruppo ha effettuato varie simulazioni a garantire che il contenuto potesse rimanere ugualmente fruibile.
 Inoltre si precisa che i colori non sono mai stati usati come unica modalità di trasmissione dell'informazione, per esempio tutti i link risultano essere sottolineati.  
 
-=== Alt
+== Alt
 Gli attributi alt delle immagini sono stati volutamente mantenuti vuoti, tali immagini infatti non aggiungono nessuna informazione al contenuto del sito, e dunque inserirli sarebbe stato pressochè inutile per i fruitori tramite screen reader.
 
-=== Tabella 
+== Tabella 
 La tabella degli acquisti nella Pagina _Account_ è stata resa accessibile, adottando i criteri standard, ovvero la presenza di attributi _scope_, _data-title_ e una breve descrizione tramite _aria-describedby_.
 
 = Test di accessibilità
