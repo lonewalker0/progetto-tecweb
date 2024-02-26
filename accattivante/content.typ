@@ -4,7 +4,7 @@
 
 Per validare il codice HTML5 del sito sono stati usati gli strumenti _#link("https://validator.w3.org/")_ e Total Validator Basic presente nei computer del Paolotti.
 Per validare il codice CSS è invece stato usato _#link("https://jigsaw.w3.org/css-validator/")_.
-Il sito non presenta errori.
+Il sito non presenta errori di validazione.
 
 == Browser web 
 Sono stati testati i seguenti browser sui seguenti sistemi operativi:
