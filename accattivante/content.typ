@@ -1,8 +1,9 @@
 = Scopo del documento
 Questo documento vuole tener traccia delle decisioni e dei test che il nostro gruppo ha effettuato al fine di garantire l'accessibilità del sito.
-Vengono inoltre elencate le versioni dei Browser utilizzate nello sviluppo e dunque nel fase di testing.
+Vengono inoltre elencati i Browser utilizzati nello sviluppo e dunque nella fase di testing.
 
 = Decisioni rilevanti 
+Vengono elencate le decisioni che il gruppo ha intrapreso per garantire l'acessibilità.
 
 === Tabindex 
 Non è stato alterato l'ordine naturale dei _tabindex_. 
@@ -21,8 +22,7 @@ Gli attributi alt delle immagini sono stati volutamente mantenuti vuoti, tali im
 === Tabella 
 La tabella degli acquisti nella Pagina _Account_ è stata resa accessibile, adottando i criteri standard, ovvero la presenza di attributi _scope_, _data-title_ e una breve descrizione tramite _aria-describedby_.
 
-
-= Test per l'accessibilità
+= Test di accessibilità
 Di seguito vengono elencati tutti i test condotti e gli strumenti impiegati dal gruppo.
 Vengono inizialmente presentati gli strumenti che il gruppo ha utilizzato, successivamente ne vengono elencati i risulati in forma tabellare.
 
@@ -35,16 +35,16 @@ Il sito non presenta errori di validazione, caratteristica necessaria a garantir
 Per testare navigabilità e usabilità del sito è stato fatto provare ad utenti reali delle cerchie di conoscenza dei componenti del gruppo, in generale si sono sempre ottenuti responsi positivi.
 Inoltre il gruppo ha ampiamente testato ogni pagina tramite screen reader: sono stati utilizzati lo screen reader _NVDA_ su Windows e per ambienti Linux il sistema _orca_.
 
-== Test Automatici per l'accessibilità
+== Test Automatici
 I test automatici per l'accessibilità sono stati realizzati tramite i seguenti seguenti strumenti: 
  - Total Validator presente nei pc di laboratori del Paolotti;
  - Wave, un'estensione per Google Chrome;
  - L'analisi dell'accessibilità offerta da Mozilla Firefox;
- - Lighthouse (punteggio relativo all'accessibilità accessibilità).
+ - Lighthouse (punteggio relativo all'accessibilità).
 
 == Risultati 
 Al fine di rappresentare in questa relazione i risultati dei test effettuati si è scelto di dividere raggruppare le pagine in tre macrosezioni: pagine accessibili a tutti gli utenti, pagine riservate a utenti registrati, pagine di amministrazione.
-In questi grafici la spunta verde rappresenta la mancanza di errori per quanto riguarda i validatori, mentre per le altre categorie di test rappresenta un risultato generalemente positivo.
+In questi grafici la spunta verde rappresenta la mancanza di errori per quanto riguarda i validatori, mentre per le altre categorie di test rappresenta un risultato positivo.
 
 #figure(
   image("assets/tabellasitogenerale.png", width: 100%),
@@ -58,13 +58,11 @@ In questi grafici la spunta verde rappresenta la mancanza di errori per quanto r
   image("assets/area_admin.png", width: 100%),
   caption: [Test per la pagine di amministrazione]
 )
-
 #figure(
   image("assets/foglistile.png", width: 65%),
   caption: [Test per i fogli di stile]
 )
 Nessuno dei fogli di stili presenta errori.
-
 
 = Browser web 
 Per completezza vengono riportati i browser su cui si è lavorato nello sviluppo e dove di conseguenza sono stati effettuati test sono stati effettati, rispettivamente per sistemi Windows e Linux: 
