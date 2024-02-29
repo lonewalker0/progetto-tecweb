@@ -3,7 +3,7 @@ Questo documento vuole tener traccia delle decisioni e dei test che il nostro gr
 Vengono inoltre elencati i Browser utilizzati nello sviluppo e dunque nella fase di testing.
 
 = Decisioni rilevanti 
-Vengono elencate le decisioni che il gruppo ha intrapreso per garantire l'acessibilità.
+Vengono elencate le decisioni che il gruppo ha intrapreso per garantire l'accessibilità.
 
 == Tabindex 
 Non è stato alterato l'ordine naturale dei _tabindex_. 
@@ -24,7 +24,7 @@ La tabella degli acquisti nella Pagina _Account_ è stata resa accessibile, adot
 
 = Test di accessibilità
 Di seguito vengono elencati tutti i test condotti e gli strumenti impiegati dal gruppo.
-Vengono inizialmente presentati gli strumenti che il gruppo ha utilizzato, successivamente ne vengono elencati i risulati in forma tabellare.
+Vengono inizialmente presentati gli strumenti che il gruppo ha utilizzato, successivamente ne vengono elencati i risultati in forma tabellare.
 
 == Test di Validazione 
 Per validare il codice HTML5 del sito sono stati usati gli strumenti _#link("https://validator.w3.org/")_ e Total Validator Basic presente nei computer del Paolotti.
@@ -43,7 +43,7 @@ I test automatici per l'accessibilità sono stati realizzati tramite i seguenti 
  - Lighthouse (punteggio relativo all'accessibilità).
 
 == Risultati 
-Al fine di rappresentare in questa relazione i risultati dei test effettuati si è scelto di dividere raggruppare le pagine in tre macrosezioni: pagine accessibili a tutti gli utenti, pagine riservate a utenti registrati, pagine di amministrazione.
+Al fine di rappresentare in questa relazione i risultati dei test effettuati si è scelto di dividere raggruppare le pagine in tre macro sezioni: pagine accessibili a tutti gli utenti, pagine riservate a utenti registrati, pagine di amministrazione.
 In questi grafici la spunta verde rappresenta la mancanza di errori per quanto riguarda i validatori, mentre per le altre categorie di test rappresenta un risultato positivo.
 
 #figure(
@@ -65,21 +65,25 @@ In questi grafici la spunta verde rappresenta la mancanza di errori per quanto r
 Nessuno dei fogli di stili presenta errori.
 
 = Browser web 
-Per completezza vengono riportati i browser su cui si è lavorato nello sviluppo e dove di conseguenza sono stati effettuati test sono stati effettati, rispettivamente per sistemi Windows e Linux: 
+Per completezza vengono riportati i browser su cui si è lavorato nello sviluppo e dove di conseguenza sono stati effettuati i test, rispettivamente per sistemi Windows e Linux: 
 
  - *Windows 10 - Windows 11*:
 
-    - Google Chrome versione 121.0.6167.184;
-    - Mozilla Firefox versione 123.0;
-    - Microsoft Edge versione 122.0.2365.52;
-    - Opera versione versione 107.0.5045.21;
-    - Brave versione  1.63.162 - 122.0.6261.69(Chromium).
+    - Google Chrome versione 121; 
+    - Mozilla Firefox versione 123; 
+    - Microsoft Edge versione 122; 
+    - Opera versione versione 107; 
+
  - *Linux (Pop Os 22.04)*:
-    - Google Chrome versione 121.0.6167.184;
-    - Mozilla Firefox versione 123.0;
-    - Microsoft Edge versione 122.0.2365.52;
-    - Brave versione  1.63.162 - 122.0.6261.69(Chromium).
+    - Google Chrome versione 121; 
+    - Mozilla Firefox versione 123; 
+    - Microsoft Edge versione 122; 
+    - Brave versione 122 (Chromium).
 
 
 Per quanto riguarda il testing su Safari, dato che nessuno dei componenti possiede alcun dispositivo Apple, e che l'ultima versione rilasciata per dispositivi Window non supporta _flexbox_, non è stato possibile.
 Per testare il sito su dispositivi mobili, si sono usati gli strumenti per sviluppatori sia di Google Chrome che di Firefox.
+
+
+= Considerazione aggiuntiva
+Per necessità legate alla natura dei contenuti ospitati nel sito web, alcune delle immagini presenti potrebbero non essere conformi al copyright. 
