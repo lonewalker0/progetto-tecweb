@@ -85,5 +85,5 @@ Per quanto riguarda il testing su Safari, dato che nessuno dei componenti possie
 Per testare il sito su dispositivi mobili, si sono usati gli strumenti per sviluppatori sia di Google Chrome che di Firefox.
 
 
-= Considerazione aggiuntiva
+= Considerazione aggiuntiva copyright
 Per necessità legate alla natura dei contenuti ospitati nel sito web, alcune delle immagini presenti potrebbero non essere conformi al copyright. 
